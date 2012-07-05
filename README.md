@@ -1,0 +1,4 @@
+core
+====
+
+CyberChimps Core Framework
