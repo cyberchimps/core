@@ -38,7 +38,7 @@ function response_twitter_bar_element() {
 					// TODO: Twitter image missing
 					echo '<a href="'.$user_permalink.'"> <img src="'.get_template_directory_uri().'/library/images/twitterbird.png" /> '. $screen_name .' - </a>'.$latest_tweet[0]->text.' <small><a href="'.$tweet_permalink.'">' .human_time_diff(strtotime($latest_tweet[0]->created_at), current_time('timestamp')).' ago</a></small>';
 				} else {
-					echo '<p>No tweets to display</p>'; // TODO: apply_filters('response_no_tweets', '');
+					echo apply_filters('response_tweets_empty_message', '<p>'.__('No tweets to display', 'response').'</p>');
 				}
 			?>
 		</div><!-- #twitter-text .span12 -->
@@ -46,6 +46,7 @@ function response_twitter_bar_element() {
 	<?php
 }
 add_action ( 'response_twitter_bar', 'response_twitter_bar_element' );
+
 
 // TODO: Fix documentation
 function retrieve_remote_tweets($request_url) {
