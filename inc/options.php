@@ -38,6 +38,15 @@ function plugin_admin_add_page() {
 function plugin_load_styles() {
 	wp_enqueue_style('color-picker', get_template_directory_uri().'/options/css/colorpicker.css');
 	wp_enqueue_style('thickbox');
+	
+	wp_register_style( 'bootstrap', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap' );
+	
+	wp_register_style( 'bootstrap-responsive', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
+	wp_enqueue_style( 'bootstrap-responsive' );
+	
+		wp_register_style( 'plugin_option_styles', get_template_directory_uri().'/core/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'plugin_option_styles' );
 }
 
 // TODO: Once Class is applied remove plugin_ slug
@@ -57,15 +66,97 @@ function plugin_load_scripts() {
 function plugin_options_page() {
 	// TODO: Add translations to text
 ?>
-	<div>
-		<h2>Theme Options</h2>
-		<form action="options.php" method="post">
-		<?php settings_fields('plugin_options'); ?>
-		<?php do_settings_sections('plugin'); ?>
-		
-		<input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
-		</form>
-	</div>
+	<div class="wrap">
+  	<div class="container-fluid cc-options">
+    
+    <!-- header -->
+  		<div class="row-fluid cc-header">
+        <div class="span3 cc-title">
+       	 <div class="icon32" id="icon-tools"> <br /> </div>
+         <h2>Theme Options</h2>
+         </div><!-- span3 -->
+        <div class="span9">
+          <ul class="cc-header-links">
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Buy Themes</a></li>
+            <li><a href="#">Upgrade to Pro</a></li>
+          </ul>
+         </div><!-- span9 -->
+    	</div><!-- row-fluid -->
+     <!-- end header -->
+     
+     <!-- start sub menu --> 
+      <div class="row-fluid cc-submenu">        
+        <div class="span3 cc-collapse">
+          <p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
+        </div><!-- span3 -->
+        <div class="span9">
+        	<ul class="cc-submenu-links btn-group">
+            <li><a href="#" class="btn btn-inverse">Save All</a></li>
+            <li><a href="#" class="btn btn-inverse">Restore Settings</a></li>
+          </ul>
+        </div><!-- span 9 -->
+      </div><!-- row fluid -->
+     <!-- end sub menu -->
+     
+     <!-- start left menu --> 
+      <div class="row-fluid cc-content">
+      	<div class="span2 cc-left-menu">
+        	<ul class="cc-parent">
+            <li class=""><div class="cc-menu-arrow"><div></div></div><a class="" href="#">Welcome<i class="icon-chevron-down"></i></a></li>
+            <li class=""><div class="cc-menu-arrow"><div></div></div><a class="" href="#">Design<i class="icon-chevron-down"></i></a></li>
+            <li class="cc-active cc-has-children"><a href="#">Blog<i class="icon-chevron-down"></i></a>
+              <ul class="cc-child">
+                <li><a href="#">Drag & Drop Elements</a></li>
+                <li><a href="#">Blog Options</a></li>
+                <li><a href="#">Blog Slider</a></li>
+                <li><a href="#">SEO</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Templates<i class="icon-chevron-down"></i></a></li>
+            <li><a href="#">Footer<i class="icon-chevron-down"></i></a></li>
+            <li><a href="#">Import / Export <i class="icon-chevron-down"></i></a></li>
+          </ul>
+        </div><!-- span 2 -->
+       <!-- end left menu -->
+       
+       <!-- start main content -->
+        <div class="span10 cc-main-content">
+        	<div class="cc-content-section">
+          	<h3>Drag & Drop Elements</h3>
+            <p class="cc-content-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt, augue in rutrum tincidunt, diam risus interdum purus, eget gravida ligula enim ut tortor. Curabitur ut orci felis, in commodo lacus.</p>
+          </div><!-- content section -->
+          <div class="cc-content-section">
+          	<h3>Blog Options</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt, augue in rutrum tincidunt, diam risus interdum purus, eget gravida ligula enim ut tortor. Curabitur ut orci felis, in commodo lacus.</p>
+          </div><!-- content section -->
+       	</div><!-- span 10 -->
+      </div><!-- row fluid -->        
+      <!-- end main content -->
+      
+      <!-- start footer -->
+      <div class="row-fluid cc-footer">
+      	<div class="span6 cc-social">
+        	<p>CyberChimps <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+        </div><!-- span 6 -->
+        <div class="span6">
+        	<ul class="cc-submenu-links btn-group">
+            <li><a href="#" class="btn btn-inverse">Save All</a></li>
+            <li><a href="#" class="btn btn-inverse">Restore Settings</a></li>
+          </ul>
+        </div><!-- span 6 -->
+      </div><!-- row fluid -->
+      <!-- end footer -->
+
+    </div><!-- container-fluid -->
+	</div><!-- wrap -->
+            <form action="options.php" method="post">
+            <?php settings_fields('plugin_options'); ?>
+            <?php do_settings_sections('plugin'); ?>
+            
+            <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+            </form>
 <?php
 }
 
