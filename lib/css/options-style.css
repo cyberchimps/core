@@ -1,0 +1,152 @@
+/*************** HTML ************************/
+
+ul, ol {
+  margin: 0;
+}
+.cc-options ul, li {
+  list-style: none;
+}
+.cc-options a:hover {
+  text-decoration: none!important;
+}
+
+/************** Container ********************/
+
+.cc-options {
+  margin: 10px 0;
+  border: 1px solid #ddd;
+}
+
+/*************** Header **********************/
+
+.cc-header {
+  padding: 20px 0;
+}
+.cc-options cc-title { 
+}
+.cc-options ul.cc-header-links {
+  margin-top: 10px;
+  font-size: 1.2em;
+  text-align: right;
+}
+.cc-options ul.cc-header-links li {
+  display: inline;
+  position: relative;
+  margin-left: 20px;
+}
+.cc-options ul.cc-header-links li:after {
+  content: '|';
+  position: absolute;
+  right: -10px;
+}
+.cc-options ul.cc-header-links li:last-child:after {
+  content: '';
+}
+
+/***************** Sub Menu *******************/
+
+.cc-submenu {
+  width: 100%;
+  margin-left: -20px;
+  padding: 10px 20px;
+  background-color: #ddd;
+}
+.cc-submenu .cc-collapse p {
+  position: relative;
+  top: 10px;
+}
+.cc-submenu-links {
+  margin: 5px 0 0 0;
+  text-align: right;
+}
+.cc-submenu-links li {
+  display: inline-block;
+}
+.cc-submenu-links li a {
+  font-weight: bold;
+  background: #333;
+  padding: 5px 15px;
+}
+
+/*************** Content **********************/
+
+.cc-content {
+  margin-left: -20px;
+}
+
+/************** Left Menu *********************/
+
+.cc-left-menu {
+  margin-left: -20px;
+  background: #ddd;
+}
+ul.cc-parent {
+  margin-left: 0;
+  border-right: 1px solid #ddd;
+}
+ul.cc-parent > li {
+  padding: 10px 0 10px 20px;
+  background-color: #fff;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+ul.cc-parent > li.cc-active {
+  padding-bottom: 0;
+}
+ul.cc-parent > li > a {
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+ul.cc-parent > li > a i {
+  float: right;
+  margin-top: 2px;
+  margin-right: 5%;
+}
+ul.cc-parent > li.cc-active > a > i {
+  background-position: -288px -120px;
+}
+ul.cc-child {
+  margin: 10px 0 0 -20px;
+  padding: 10px 0 10px 20px;  
+  background-color: #ddd;
+}
+
+/**************** Main Content ******************/
+
+.cc-content-section {
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+.cc-content-section h3 {
+  display: inline;
+  color: #fff;
+  font-size: 1.3em;
+  background-color: #08C;
+  padding: 5px 10px;
+}
+.cc-content-section p {
+  color: #999;
+  margin: 10px 0;
+}
+
+/***************** Footer *********************/
+.cc-footer {
+  padding: 10px 20px;
+  margin-left: -20px;
+  background-color: #999;
+}
+.cc-social p {
+  color: #fff;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.cc-social p a {
+  color: #fff;
+}
+.cc-social p a:hover {
+  color: #08c;
+}
+  
+  
