@@ -94,8 +94,17 @@ function response_admin_init(){
 	response_create_fields( $fields_list );
 }
 
+function response_options_links() {
+	
+	$output = apply_filters('response_options_support_link', '<li><a href="http://cyberchimps.com/support/" target="_blank">Support</a></li>' );
+	$output .= apply_filters('response_options_documentation_link', '<li><a href="http://cyberchimps.com/docs/" target="_blank">Documentation</a></li>' );
+	$output .= apply_filters('response_options_buy_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Buy Themes</a></li>' );
+	$output .= apply_filters('response_options_upgrade_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Upgrade to Pro</a></li>' );
+	
+	return apply_filters('response_options_links', $output);
+}
+
 // create and display theme options page
-// TODO: Once Class is applied remove plugin_ slug
 function response_options_page() {
 	// TODO: Add translations to text
 ?>
@@ -104,11 +113,10 @@ function response_options_page() {
 		<div class="container-fluid cc-options">
 			
 			<form action="options.php" method="post">
-				<?php settings_fields('response_options'); ?>
-				<?php $headings_list = response_get_headings(); ?>
-				<?php $sections_list = response_get_sections(); ?>
-			
-				
+			<?php settings_fields('response_options'); ?>
+			<?php $headings_list = response_get_headings(); ?>
+			<?php $sections_list = response_get_sections(); ?>
+
 			<!-- header -->
 			<div class="row-fluid cc-header">
 				<div class="span3 cc-title">
@@ -117,10 +125,7 @@ function response_options_page() {
 				</div><!-- span3 -->
 				<div class="span9">
 					<ul class="cc-header-links">
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Documentation</a></li>
-						<li><a href="#">Buy Themes</a></li>
-						<li><a href="#">Upgrade to Pro</a></li>
+						<?php  echo response_options_links(); ?>
 					</ul>
 				</div><!-- span9 -->
 			</div><!-- row-fluid -->
@@ -128,10 +133,12 @@ function response_options_page() {
 			
 			<!-- start sub menu --> 
 			<div class="row-fluid cc-submenu">
+				<!-- TODO: hiding this section till we can implement 
 				<div class="span3 cc-collapse">
 					<p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
-				</div><!-- span3 -->
-				<div class="span9">
+				</div>
+				-->
+				<div class="span12">
 					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
 					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
 					<div class="clear"></div>
