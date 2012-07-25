@@ -25,7 +25,7 @@ function response_edit_themes_role_check() {
 		add_action( 'admin_menu', 'response_admin_add_page');
 		add_action( 'admin_init', 'response_admin_init' );
 		add_action( 'admin_init', 'optionsframework_mlu_init' );
-		// TODO: fix add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
+		add_action( 'wp_before_admin_bar_render', 'response_admin_bar' );
 	}
 }
 
@@ -37,7 +37,7 @@ function response_admin_add_page() {
 		__('Framework Options Page', 'response'),
 		__('Framework Options', 'response'),
 		'edit_theme_options',
-		'response_theme_options',
+		'response-theme-options',
 		'response_options_page'
 	);
 
@@ -720,13 +720,13 @@ function of_get_default_values() {
 /**
  * Add Theme Options menu item to Admin Bar.
  */
-function optionsframework_adminbar() {
+function response_admin_bar() {
 	global $wp_admin_bar;
-
+	
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'appearance',
-		'id' => 'of_theme_options',
+		'id' => 'response_options_page',
 		'title' => __( 'Theme Options', 'response' ),
-		'href' => admin_url( 'themes.php?page=options-framework' )
+		'href' => admin_url( 'themes.php?page=response-theme-options' )
 	));
 }
