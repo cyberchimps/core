@@ -153,17 +153,17 @@ function response_options_page() {
 							echo '<div class="cc-menu-arrow"></div>';
 							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
 							
+							echo '<ul class="cc-child">';
 							foreach( $sections_list as $section ) {
 								if ( in_array( $heading['id'], $section) ) { 
 									$jquery_click_section_hook = '';
 									$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['label']) );
 									$jquery_click_section_hook = "of-option-" . $jquery_click_section_hook;
 
-									echo '<ul class="cc-child">';
-									echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a><li>';
-									echo '</ul>';
+									echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
 								}
 							}
+							echo '</ul>';
 							echo '</li>';
 						} ?>
 					</ul>
