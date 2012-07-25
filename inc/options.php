@@ -105,7 +105,9 @@ function response_options_page() {
 			
 			<form action="options.php" method="post">
 				<?php settings_fields('response_options'); ?>
+				<?php $headings_list = response_get_headings(); ?>
 				<?php $sections_list = response_get_sections(); ?>
+			
 				
 			<!-- header -->
 			<div class="row-fluid cc-header">
@@ -143,7 +145,6 @@ function response_options_page() {
 				<div class="span2 cc-left-menu">
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
-						$headings_list = response_get_headings();
 						foreach ( $headings_list as $heading ) {
 							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
 							$jquery_click_hook = "of-option-" . $jquery_click_hook;
@@ -153,14 +154,18 @@ function response_options_page() {
 							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
 							
 							foreach( $sections_list as $section ) {
-									if ( in_array( $heading['id'], $section) ) {?>
-										<ul class="cc-child">
-											<li><a href="<?php echo $section['id']; ?>"><?php echo $section['label']; ?></a></li>
-										</ul>
-									<?php }
-								} ?>
-							</li>
-						<?php } ?>
+								if ( in_array( $heading['id'], $section) ) { 
+									$jquery_click_section_hook = '';
+									$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['label']) );
+									$jquery_click_section_hook = "of-option-" . $jquery_click_section_hook;
+
+									echo '<ul class="cc-child">';
+									echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a><li>';
+									echo '</ul>';
+								}
+							}
+							echo '</li>';
+						} ?>
 					</ul>
 				</div><!-- span 2 -->
 				<!-- end left menu -->
@@ -176,7 +181,6 @@ function response_options_page() {
 						if ( $heading['description'] ) {
 							echo '<p>' . esc_html( $heading['description'] ) . '</p>';
 						}
-						
 						response_do_settings_sections( $heading['id'] );
 						echo '</div>';
 					} ?>
@@ -204,6 +208,55 @@ function response_options_page() {
 <?php
 }
 
+/**
+ * FIXME: Fix documentation
+ *
+ * forked version of core function do_settings_sections()
+ * modified core code call response_do_settings_fields() and apply markup for section title and description
+ * returns mixed data
+ */
+function response_do_settings_sections( $page ) {
+	global $wp_settings_sections, $wp_settings_fields;
+	
+	if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
+		return;
+	
+	foreach ( (array) $wp_settings_sections[$page] as $section ) {
+		$jquery_click_section_hook = '';
+		$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['title']) );
+		$jquery_click_section_hook = "of-option-" . $jquery_click_section_hook;
+		
+		echo '<div class="section-group" id="' . esc_attr( $jquery_click_section_hook ) . '">';
+		if ( $section['title'] ) {
+			echo "<h3>{$section['title']}</h3>\n";
+		}
+		call_user_func($section['callback'], $section);
+		
+		if ( isset($wp_settings_fields) && isset($wp_settings_fields[$page]) && isset($wp_settings_fields[$page][$section['id']]) ) {
+			response_do_settings_fields($page, $section['id']);
+		}
+		echo '</div>';
+	}
+}
+
+/**
+ * FIXME: Fix documentation
+ *
+ * forked version of core function do_settings_fields()
+ * modified core code to remove table cell markup and apply custom markup
+ * returns mixed data
+ */
+function response_do_settings_fields($page, $section) {
+	global $wp_settings_fields;
+
+	if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section]) )
+		return;
+
+	foreach ( (array) $wp_settings_fields[$page][$section] as $field ) {
+		call_user_func($field['callback'], $field['args']);
+	}
+}
+
 function response_get_headings() {
 	$headings_list = array();
 	// pull in both default sections and users custom sections
@@ -228,14 +281,16 @@ function response_create_sections( $sections ) {
 	
 	// add in error checking and proper validation, escaping, and translation calls
 	foreach($sections as $section ) {
-		// TODO: phase back in if ( !response_section_exists( $section_parent, $section_id) ) {
+		if ( response_section_exists( $section['heading'], $section['id']) ){
+			continue;
+		} else {
 			add_settings_section(
 				$section['id'],
 				$section['label'],
 				'response_sections_callback',
 				$section['heading']
 			);
-		//}
+		}
 	}
 }
 
@@ -252,6 +307,21 @@ function response_sections_callback( $section_passed ) {
 	}
 }
 
+/**
+ * FIXME: Fix documentation
+ *
+ * custom function that checks if the section has been run through add_settings_section() function
+ * returns bool value true if section exists and false if it does not
+ */
+function response_section_exists( $heading, $section ) {
+	global $wp_settings_sections;
+
+	if ( $wp_settings_sections[$heading][$section] ) {
+		return true;
+	}
+	return false;
+}
+
 function response_create_fields( $fields ) {
 	if ( empty($fields) )
 		return false;
@@ -260,17 +330,21 @@ function response_create_fields( $fields ) {
 	foreach ($fields as $field_args) {
 		$field_defaults = array(
 			'id' => false,
-			'label' => __('Default Field', 'response'),
+			'name' => __('Default Field', 'response'),
 			'callback' => 'response_fields_callback',
-			'section' => 'response_core',
-			'heading' => 'response',
+			'section' => 'response_default_section',
+			'heading' => 'response_default_heading',
 		);
 		$field_args = wp_parse_args( $field_args, $field_defaults );
 		
-		if ( !empty($field_args['id']) ) {
+		if ( empty($field_args['id']) ) {
+			continue;
+		} elseif ( !response_section_exists( $field_args['heading'], $field_args['section']) ){
+			continue;
+		} else {
 			add_settings_field(
 				$field_args['id'],
-				$field_args['label'],
+				$field_args['name'],
 				$field_args['callback'],
 				$field_args['heading'],
 				$field_args['section'],
@@ -584,65 +658,6 @@ function response_fields_callback( $value ) {
 
 	echo $output;
 }
-
-/**
- * FIXME: Fix documentation
- *
- * custom function that checks if the section has been run through add_settings_section() function
- * returns bool value true if section exists and false if it does not
- */
-function response_section_exists( $section_parent, $section ) {
-	global $wp_settings_sections;
-
-	if ( $wp_settings_sections[$section_parent][$section] ) {
-		return true;
-	}
-	return false;
-}
-
-/**
- * FIXME: Fix documentation
- *
- * forked version of core function do_settings_sections()
- * modified core code call response_do_settings_fields() and apply markup for section title and description
- * returns mixed data
- */
-function response_do_settings_sections($page) {
-	global $wp_settings_sections, $wp_settings_fields;
-	if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
-		return;
-	
-	foreach ( (array) $wp_settings_sections[$page] as $section ) {
-		echo '<div id="'.$section['id'].'">';
-			if ( $section['title'] )
-				echo "<h3>{$section['title']}</h3>\n";
-			call_user_func($section['callback'], $section);
-			
-			if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
-				continue;
-			response_do_settings_fields($page, $section['id']);
-		echo '</div>';
-	}
-}
-
-/**
- * FIXME: Fix documentation
- *
- * forked version of core function do_settings_fields()
- * modified core code to remove table cell markup and apply custom markup
- * returns mixed data
- */
-function response_do_settings_fields($page, $section) {
-	global $wp_settings_fields;
-
-	if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section]) )
-		return;
-
-	foreach ( (array) $wp_settings_fields[$page][$section] as $field ) {
-		call_user_func($field['callback'], $field['args']);
-	}
-}
-
 /**
  * FIXME: Fix documentation
  *
