@@ -17,11 +17,6 @@
  */
 
 
-// TODO: Add entire code to Class
-
-// TODO: Call all other global variables here. It will probably become the construct__ function
-// TODO: Apply filter here
-
 /* If the user can't edit theme options, no use running this plugin */
 add_action('init', 'response_edit_themes_role_check' );
 function response_edit_themes_role_check() {
@@ -29,6 +24,8 @@ function response_edit_themes_role_check() {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_menu', 'response_admin_add_page');
 		add_action( 'admin_init', 'response_admin_init' );
+		add_action( 'admin_init', 'optionsframework_mlu_init' );
+		// TODO: fix add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
 	}
 }
 
@@ -36,21 +33,22 @@ function response_edit_themes_role_check() {
 add_action('admin_menu', 'response_admin_add_page');
 function response_admin_add_page() {
 
-	// TODO: Add translations to Text
-	$page = add_theme_page('Framework Options Page', 'Framework Options', 'edit_theme_options', 'response_theme_options', 'response_options_page');
-	
-	// TODO: Once Class is applied remove response_ slug on both calls
-	add_action( "admin_print_styles-$page", 'response_load_styles');
-	add_action( "admin_print_scripts-$page", 'response_load_scripts');
+	$response_page = add_theme_page(
+		__('Framework Options Page', 'response'),
+		__('Framework Options', 'response'),
+		'edit_theme_options',
+		'response_theme_options',
+		'response_options_page'
+	);
+
+	add_action( "admin_print_styles-$response_page", 'response_load_styles');
+	add_action( "admin_print_scripts-$response_page", 'response_load_scripts');
 }
 
 function response_load_styles() {
 	// TODO: Find better way to enqueque these scripts
-	wp_register_style( 'bootstrap', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap' );
-	
-	wp_register_style( 'bootstrap-responsive', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'bootstrap-responsive' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
 	
 	wp_enqueue_style( 'plugin_option_styles', get_template_directory_uri().'/core/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
 	
@@ -68,9 +66,17 @@ function response_load_scripts() {
 	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/lib/js/of-medialibrary-uploader.js', array('jquery'));
 }
 
+/* Loads the file for option sanitization */
+add_action('init', 'optionsframework_load_sanitization' );
+function optionsframework_load_sanitization() {
+	require_once dirname( __FILE__ ) . '/options-sanitize.php';
+}
+
 // add core and theme settings to options page
 add_action('admin_init', 'response_admin_init');
 function response_admin_init(){
+	
+	require_once dirname( __FILE__ ) . '/options-medialibrary-uploader.php';
 	
 	// register theme options settings
 	register_setting( 'response_options', 'response_options', 'response_options_validate' );
@@ -173,8 +179,8 @@ function response_options_page() {
 					<p>CyberChimps <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
 				</div><!-- span 6 -->
 				<div id="optionsframework-submit" class="span6">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div><!-- span 6 -->
 			</div><!-- row fluid -->
@@ -645,7 +651,8 @@ function response_fields_callback( $args ) {
 
 	$option_name = 'response_options';
 
-	//$settings = get_option('response_options');
+	$settings = get_option('response_options');
+
 	$value = $args;
 
 	$counter = 0;
@@ -672,6 +679,7 @@ function response_fields_callback( $args ) {
 				}
 			}
 		}
+		
 
 		// If there is a description save it for labels
 		$explain_value = '';
@@ -775,7 +783,7 @@ function response_fields_callback( $args ) {
 
 		// Uploader
 		case "upload":
-			// TODO: $output .= optionsframework_medialibrary_uploader( $value['id'], $val, null );
+			$output .= optionsframework_medialibrary_uploader( $value['id'], $val, null );
 			break;
 
 			// Typography
@@ -793,9 +801,9 @@ function response_fields_callback( $args ) {
 			$typography_stored = wp_parse_args( $val, $typography_defaults );
 			
 			$typography_options = array(
-				// TODO: 'sizes' => of_recognized_font_sizes(),
-				// TODO: 'faces' => of_recognized_font_faces(),
-				// TODO: 'styles' => of_recognized_font_styles(),
+				'sizes' => of_recognized_font_sizes(),
+				'faces' => of_recognized_font_faces(),
+				'styles' => of_recognized_font_styles(),
 				'color' => true
 			);
 			
@@ -861,7 +869,7 @@ function response_fields_callback( $args ) {
 				$background['image'] = '';
 			}
 
-			// TODO: $output .= optionsframework_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
+			$output .= optionsframework_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
 			$class = 'of-background-properties';
 			if ( '' == $background['image'] ) {
 				$class .= ' hide';
@@ -870,7 +878,7 @@ function response_fields_callback( $args ) {
 
 			// Background Repeat
 			$output .= '<select class="of-background of-background-repeat" name="' . esc_attr( $option_name . '[' . $value['id'] . '][repeat]'  ) . '" id="' . esc_attr( $value['id'] . '_repeat' ) . '">';
-			// TODO: $repeats = of_recognized_background_repeat();
+			$repeats = of_recognized_background_repeat();
 
 			foreach ($repeats as $key => $repeat) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['repeat'], $key, false ) . '>'. esc_html( $repeat ) . '</option>';
@@ -879,7 +887,7 @@ function response_fields_callback( $args ) {
 
 			// Background Position
 			$output .= '<select class="of-background of-background-position" name="' . esc_attr( $option_name . '[' . $value['id'] . '][position]' ) . '" id="' . esc_attr( $value['id'] . '_position' ) . '">';
-			// TODO: $positions = of_recognized_background_position();
+			$positions = of_recognized_background_position();
 
 			foreach ($positions as $key=>$position) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['position'], $key, false ) . '>'. esc_html( $position ) . '</option>';
@@ -888,7 +896,7 @@ function response_fields_callback( $args ) {
 
 			// Background Attachment
 			$output .= '<select class="of-background of-background-attachment" name="' . esc_attr( $option_name . '[' . $value['id'] . '][attachment]' ) . '" id="' . esc_attr( $value['id'] . '_attachment' ) . '">';
-			// TODO: $attachments = of_recognized_background_attachment();
+			$attachments = of_recognized_background_attachment();
 
 			foreach ($attachments as $key => $attachment) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['attachment'], $key, false ) . '>' . esc_html( $attachment ) . '</option>';
@@ -989,26 +997,108 @@ function response_do_settings_fields($page, $section) {
 }
 
 
-
-
-
 // validate our options
 function response_options_validate( $input ) {
 	
-	// validate all core settings and return validated fields
-	$newinput = apply_filters( 'response_validate_settings_filter', $input );
+	/*
+	 * Restore Defaults.
+	 *
+	 * In the event that the user clicked the "Restore Defaults"
+	 * button, the options defined in the theme's options.php
+	 * file will be added to the option for the active theme.
+	 */
+
+	if ( isset( $_POST['reset'] ) ) {
+		add_settings_error( 'response_options', 'restore_defaults', __( 'Default options restored.', 'response' ), 'updated fade' );
+		return of_get_default_values();
+	} else {
 	
-	// return final value (TODO: Maybe add additional security filtering here in case user hasnt done anything)
-	return $newinput;
+	/*
+	 * Update Settings
+	 *
+	 * This used to check for $_POST['update'], but has been updated
+	 * to be compatible with the theme customizer introduced in WordPress 3.4
+	 */
+		$clean = array();
+		$options = response_get_fields();
+		foreach ( $options as $option ) {
+
+			if ( ! isset( $option['id'] ) ) {
+				continue;
+			}
+
+			if ( ! isset( $option['type'] ) ) {
+				continue;
+			}
+
+			$id = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $option['id'] ) );
+
+			// Set checkbox to false if it wasn't sent in the $_POST
+			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+
+			// Set each item in the multicheck to false if it wasn't sent in the $_POST
+			if ( 'multicheck' == $option['type'] && ! isset( $input[$id] ) ) {
+				foreach ( $option['options'] as $key => $value ) {
+					$input[$id][$key] = false;
+				}
+			}
+
+			// For a value to be submitted to database it must pass through a sanitization filter
+			if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
+				$clean[$id] = apply_filters( 'of_sanitize_' . $option['type'], $input[$id], $option );
+			}
+		}
+
+		add_settings_error( 'response_options', 'save_options', __( 'Options saved.', 'response' ), 'updated fade' );
+		return $clean;
+	}
 }
 
-// validate core options
-add_filter( 'response_validate_core_settings_filter', 'response_validate_core_settings', 10, 1 );
-function response_validate_core_settings( $input ) {
-	
-	$newinput = $input;
-	
-	// TODO: Add validation for fields
-	
-	return $newinput;
+/**
+ * Format Configuration Array.
+ *
+ * Get an array of all default values as set in
+ * options.php. The 'id','std' and 'type' keys need
+ * to be defined in the configuration array. In the
+ * event that these keys are not present the option
+ * will not be included in this function's output.
+ *
+ * @return    array     Rey-keyed options configuration array.
+ *
+ * @access    private
+ */
+function of_get_default_values() {
+	$output = array();
+	$config = response_get_fields();
+	foreach ( (array) $config as $option ) {
+		if ( ! isset( $option['id'] ) ) {
+			continue;
+		}
+		if ( ! isset( $option['std'] ) ) {
+			continue;
+		}
+		if ( ! isset( $option['type'] ) ) {
+			continue;
+		}
+		if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
+			$output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $option['std'], $option );
+		}
+	}
+	return $output;
+}
+
+/**
+ * Add Theme Options menu item to Admin Bar.
+ */
+function optionsframework_adminbar() {
+	global $wp_admin_bar;
+
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'appearance',
+		'id' => 'of_theme_options',
+		'title' => __( 'Theme Options', 'response' ),
+		'href' => admin_url( 'themes.php?page=options-framework' )
+	));
 }
