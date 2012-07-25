@@ -24,7 +24,7 @@ function response_edit_themes_role_check() {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_menu', 'response_admin_add_page');
 		add_action( 'admin_init', 'response_admin_init' );
-		add_action( 'admin_init', 'optionsframework_mlu_init' );
+		add_action( 'admin_init', 'response_mlu_init' );
 		add_action( 'wp_before_admin_bar_render', 'response_admin_bar' );
 	}
 }
@@ -67,8 +67,8 @@ function response_load_scripts() {
 }
 
 /* Loads the file for option sanitization */
-add_action('init', 'optionsframework_load_sanitization' );
-function optionsframework_load_sanitization() {
+add_action('init', 'response_load_sanitization' );
+function response_load_sanitization() {
 	require_once dirname( __FILE__ ) . '/options-sanitize.php';
 }
 
@@ -427,9 +427,9 @@ function response_fields_callback( $value ) {
 			$typography_stored = wp_parse_args( $val, $typography_defaults );
 			
 			$typography_options = array(
-				'sizes' => of_recognized_font_sizes(),
-				'faces' => of_recognized_font_faces(),
-				'styles' => of_recognized_font_styles(),
+				'sizes' => response_recognized_font_sizes(),
+				'faces' => response_recognized_font_faces(),
+				'styles' => response_recognized_font_styles(),
 				'color' => true
 			);
 			
@@ -476,7 +476,7 @@ function response_fields_callback( $value ) {
 	
 			// Allow modification/injection of typography fields
 			$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_color' );
-			$typography_fields = apply_filters( 'of_typography_fields', $typography_fields, $typography_stored, $option_name, $value );
+			$typography_fields = apply_filters( 'response_typography_fields', $typography_fields, $typography_stored, $option_name, $value );
 			$output .= implode( '', $typography_fields );
 			
 			break;
@@ -504,7 +504,7 @@ function response_fields_callback( $value ) {
 
 			// Background Repeat
 			$output .= '<select class="of-background of-background-repeat" name="' . esc_attr( $option_name . '[' . $value['id'] . '][repeat]'  ) . '" id="' . esc_attr( $value['id'] . '_repeat' ) . '">';
-			$repeats = of_recognized_background_repeat();
+			$repeats = response_recognized_background_repeat();
 
 			foreach ($repeats as $key => $repeat) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['repeat'], $key, false ) . '>'. esc_html( $repeat ) . '</option>';
@@ -513,7 +513,7 @@ function response_fields_callback( $value ) {
 
 			// Background Position
 			$output .= '<select class="of-background of-background-position" name="' . esc_attr( $option_name . '[' . $value['id'] . '][position]' ) . '" id="' . esc_attr( $value['id'] . '_position' ) . '">';
-			$positions = of_recognized_background_position();
+			$positions = response_recognized_background_position();
 
 			foreach ($positions as $key=>$position) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['position'], $key, false ) . '>'. esc_html( $position ) . '</option>';
@@ -522,7 +522,7 @@ function response_fields_callback( $value ) {
 
 			// Background Attachment
 			$output .= '<select class="of-background of-background-attachment" name="' . esc_attr( $option_name . '[' . $value['id'] . '][attachment]' ) . '" id="' . esc_attr( $value['id'] . '_attachment' ) . '">';
-			$attachments = of_recognized_background_attachment();
+			$attachments = response_recognized_background_attachment();
 
 			foreach ($attachments as $key => $attachment) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['attachment'], $key, false ) . '>' . esc_html( $attachment ) . '</option>';
@@ -570,7 +570,7 @@ function response_fields_callback( $value ) {
 				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
 			}
 			if ( $value['desc'] ) {
-				$output .= apply_filters('of_sanitize_info', $value['desc'] ) . "\n";
+				$output .= apply_filters('response_sanitize_info', $value['desc'] ) . "\n";
 			}
 			$output .= '</div>' . "\n";
 			break;
@@ -585,6 +585,12 @@ function response_fields_callback( $value ) {
 	echo $output;
 }
 
+/**
+ * FIXME: Fix documentation
+ *
+ * custom function that checks if the section has been run through add_settings_section() function
+ * returns bool value true if section exists and false if it does not
+ */
 function response_section_exists( $section_parent, $section ) {
 	global $wp_settings_sections;
 
@@ -594,7 +600,13 @@ function response_section_exists( $section_parent, $section ) {
 	return false;
 }
 
-
+/**
+ * FIXME: Fix documentation
+ *
+ * forked version of core function do_settings_sections()
+ * modified core code call response_do_settings_fields() and apply markup for section title and description
+ * returns mixed data
+ */
 function response_do_settings_sections($page) {
 	global $wp_settings_sections, $wp_settings_fields;
 	if ( !isset($wp_settings_sections) || !isset($wp_settings_sections[$page]) )
@@ -613,6 +625,13 @@ function response_do_settings_sections($page) {
 	}
 }
 
+/**
+ * FIXME: Fix documentation
+ *
+ * forked version of core function do_settings_fields()
+ * modified core code to remove table cell markup and apply custom markup
+ * returns mixed data
+ */
 function response_do_settings_fields($page, $section) {
 	global $wp_settings_fields;
 
@@ -624,10 +643,13 @@ function response_do_settings_fields($page, $section) {
 	}
 }
 
-
-// validate our options
+/**
+ * FIXME: Fix documentation
+ *
+ * 
+ */
 function response_options_validate( $input ) {
-	
+
 	/*
 	 * Restore Defaults.
 	 *
@@ -635,50 +657,48 @@ function response_options_validate( $input ) {
 	 * button, the options defined in the theme's options.php
 	 * file will be added to the option for the active theme.
 	 */
-
 	if ( isset( $_POST['reset'] ) ) {
 		add_settings_error( 'response_options', 'restore_defaults', __( 'Default options restored.', 'response' ), 'updated fade' );
-		return of_get_default_values();
-	} else {
-	
+		return response_get_default_values();
+		
 	/*
 	 * Update Settings
 	 *
 	 * This used to check for $_POST['update'], but has been updated
 	 * to be compatible with the theme customizer introduced in WordPress 3.4
 	 */
+	} else {
 		$clean = array();
 		$options = response_get_fields();
 		foreach ( $options as $option ) {
-
 			if ( ! isset( $option['id'] ) ) {
 				continue;
 			}
-
+		
 			if ( ! isset( $option['type'] ) ) {
 				continue;
 			}
-
+		
 			$id = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $option['id'] ) );
-
+		
 			// Set checkbox to false if it wasn't sent in the $_POST
 			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
 				$input[$id] = false;
 			}
-
+		
 			// Set each item in the multicheck to false if it wasn't sent in the $_POST
 			if ( 'multicheck' == $option['type'] && ! isset( $input[$id] ) ) {
 				foreach ( $option['options'] as $key => $value ) {
 					$input[$id][$key] = false;
 				}
 			}
-
+		
 			// For a value to be submitted to database it must pass through a sanitization filter
-			if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
-				$clean[$id] = apply_filters( 'of_sanitize_' . $option['type'], $input[$id], $option );
+			if ( has_filter( 'response_sanitize_' . $option['type'] ) ) {
+				$clean[$id] = apply_filters( 'response_sanitize_' . $option['type'], $input[$id], $option );
 			}
 		}
-
+	
 		add_settings_error( 'response_options', 'save_options', __( 'Options saved.', 'response' ), 'updated fade' );
 		return $clean;
 	}
@@ -697,7 +717,7 @@ function response_options_validate( $input ) {
  *
  * @access    private
  */
-function of_get_default_values() {
+function response_get_default_values() {
 	$output = array();
 	$config = response_get_fields();
 	foreach ( (array) $config as $option ) {
@@ -710,8 +730,8 @@ function of_get_default_values() {
 		if ( ! isset( $option['type'] ) ) {
 			continue;
 		}
-		if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
-			$output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $option['std'], $option );
+		if ( has_filter( 'response_sanitize_' . $option['type'] ) ) {
+			$output[$option['id']] = apply_filters( 'response_sanitize_' . $option['type'], $option['std'], $option );
 		}
 	}
 	return $output;
