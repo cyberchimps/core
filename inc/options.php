@@ -78,11 +78,20 @@ function response_admin_init(){
 	
 	require_once dirname( __FILE__ ) . '/options-medialibrary-uploader.php';
 	
+	// pull in default core settings
+	require_once dirname( __FILE__ ) . '/options-core.php';
+	
 	// register theme options settings
 	register_setting( 'response_options', 'response_options', 'response_options_validate' );
 	
 	// add all core settings
-	do_action('response_add_settings');
+	// Create sections
+	$sections_list = response_get_sections();
+	response_create_sections( $sections_list );
+	
+	// Create fields
+	$fields_list = response_get_fields();
+	response_create_fields( $fields_list );
 }
 
 // create and display theme options page
@@ -120,9 +129,9 @@ function response_options_page() {
 				<div class="span3 cc-collapse">
 					<p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
 				</div><!-- span3 -->
-				<div id="optionsframework-submit" class="span9">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
+				<div class="span9">
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div><!-- span 9 -->
 			</div><!-- row fluid -->
@@ -146,7 +155,7 @@ function response_options_page() {
 							foreach( $sections_list as $section ) {
 									if ( in_array( $heading['id'], $section) ) {?>
 										<ul class="cc-child">
-											<li><a href="#"><?php echo $section['label']; ?></a></li>
+											<li><a href="<?php echo $section['id']; ?>"><?php echo $section['label']; ?></a></li>
 										</ul>
 									<?php }
 								} ?>
@@ -164,7 +173,9 @@ function response_options_page() {
 						
 						echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
 						echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
-						echo '<p>' . esc_html( $heading['description'] ) . '</p>';
+						if ( $heading['description'] ) {
+							echo '<p>' . esc_html( $heading['description'] ) . '</p>';
+						}
 						
 						response_do_settings_sections( $heading['id'] );
 						echo '</div>';
@@ -178,7 +189,7 @@ function response_options_page() {
 				<div class="span6 cc-social">
 					<p>CyberChimps <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
 				</div><!-- span 6 -->
-				<div id="optionsframework-submit" class="span6">
+				<div class="span6">
 					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
 					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
 					<div class="clear"></div>
@@ -193,53 +204,11 @@ function response_options_page() {
 <?php
 }
 
-// TODO: Move to file in core folder
-add_action('response_add_settings', 'response_add_core_settings');
-function response_add_core_settings() {
-	
-	// Create sections
-	$sections_list = response_get_sections();
-	response_create_sections( $sections_list );
-	
-	// Create fields
-	$fields_list = response_get_fields();
-	response_create_fields( $fields_list );
-}
-
-
 function response_get_headings() {
 	$headings_list = array();
 	// pull in both default sections and users custom sections
 	return apply_filters('response_heading_list', $headings_list);
 }
-
-// TODO: this is where we will build our default headings for the options page
-function response_add_core_headings( $headings_list ) {
-	
-	$headings_list = array();
-	
-	$headings_list[] = array(
-		'id' => 'response_welcome',
-		'title' => __('Welcome', 'response'),
-		'description' => __('Welcome Description', 'response'),
-	);
-	
-	$headings_list[] = array(
-		'id' => 'response_design',
-		'title' => __('Design', 'response'),
-		'description' => __('Design Description', 'response'),
-	);
-	
-	$headings_list[] = array(
-		'id' => 'response_blog',
-		'title' => __('Blog', 'response'),
-		'description' => __('Blog Description', 'response'),
-	);
-	
-	return $headings_list;
-}
-add_filter('response_heading_list', 'response_add_core_headings');
-
 
 function response_get_sections() {
 	$sections_list = array();
@@ -247,346 +216,11 @@ function response_get_sections() {
 	return apply_filters('response_section_list', $sections_list);
 }
 
-// TODO: this is where we will build our default sections for the options page
-function response_add_core_sections( $sections_list ) {
-	
-	$sections_list = array();
-	
-	$sections_list[] = array(
-		'id' => 'response_core',
-		'label' => __('Welcome', 'response'),
-		'description' => __('Welcome Description', 'response'),
-		'heading' => 'response_welcome'
-	);
-	
-	$sections_list[] = array(
-		'id' => 'response_header',
-		'label' => __('Header', 'response'),
-		'description' => __('Header Description', 'response'),
-		'heading' => 'response_design'
-	);
-	
-	$sections_list[] = array(
-		'id' => 'response_test',
-		'label' => __('Test All Options', 'response'),
-		'description' => __('This is the description of this section. We will show some information here.', 'response'),
-		'heading' => 'response_blog'
-	);
-
-	return $sections_list;
-}
-add_filter('response_section_list', 'response_add_core_sections');
-
-
 function response_get_fields() {
 	$fields_list = array();
 	// pull in both default fields and users custom fields
 	return apply_filters('response_field_list', $fields_list);
 }
-
-// TODO: this is where we will build our default sections for the options page
-function response_add_core_fields( $fields_list ) {
-	
-	// Test data
-	$test_array = array(
-		'one' => __('One', 'options_framework_theme'),
-		'two' => __('Two', 'options_framework_theme'),
-		'three' => __('Three', 'options_framework_theme'),
-		'four' => __('Four', 'options_framework_theme'),
-		'five' => __('Five', 'options_framework_theme')
-	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'options_framework_theme'),
-		'two' => __('Pancake', 'options_framework_theme'),
-		'three' => __('Omelette', 'options_framework_theme'),
-		'four' => __('Crepe', 'options_framework_theme'),
-		'five' => __('Waffle', 'options_framework_theme')
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-		
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-	);
-
-	// Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
-	
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
-
-
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
-
-	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
-	
-	$fields_list = array();
-	
-	$fields_list[] = array(
-		'id' => 'core_text',
-		'name' => __('Input Text', 'options_framework_theme'),
-		'desc' => __('A text input field.', 'options_framework_theme'),
-		'section' => 'response_test',
-		'heading' => 'response_blog', // TODO: try to remove and have add_settings_field pull from get_sections()
-		'std' => 'Default Value',
-		'type' => 'text',
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Input Text Mini', 'options_framework_theme'),
-		'desc' => __('A mini text input field.', 'options_framework_theme'),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
-		'class' => 'mini',
-		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Input Text', 'options_framework_theme'),
-		'desc' => __('A text input field.', 'options_framework_theme'),
-		'id' => 'example_text',
-		'std' => 'Default Value',
-		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Textarea', 'options_framework_theme'),
-		'desc' => __('Textarea description.', 'options_framework_theme'),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
-		'type' => 'textarea',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Input Select Small', 'options_framework_theme'),
-		'desc' => __('Small Select Box.', 'options_framework_theme'),
-		'id' => 'example_select',
-		'std' => 'three',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Input Select Wide', 'options_framework_theme'),
-		'desc' => __('A wider select box.', 'options_framework_theme'),
-		'id' => 'example_select_wide',
-		'std' => 'two',
-		'type' => 'select',
-		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Select a Category', 'options_framework_theme'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
-		'id' => 'example_select_categories',
-		'type' => 'select',
-		'options' => $options_categories,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-		
-	$fields_list[] = array(
-		'name' => __('Select a Tag', 'options_check'),
-		'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-		'id' => 'example_select_tags',
-		'type' => 'select',
-		'options' => $options_tags,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Select a Page', 'options_framework_theme'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
-		'id' => 'example_select_pages',
-		'type' => 'select',
-		'options' => $options_pages,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Input Radio (one)', 'options_framework_theme'),
-		'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
-		'id' => 'example_radio',
-		'std' => 'one',
-		'type' => 'radio',
-		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Example Info', 'options_framework_theme'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
-		'type' => 'info',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Input Checkbox', 'options_framework_theme'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('Click here and see what happens.', 'options_framework_theme'),
-		'id' => 'example_showhidden',
-		'type' => 'checkbox',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-		
-	$fields_list[] = array(
-		'name' => __('Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_framework_theme'),
-		'id' => 'example_text_hidden',
-		'std' => 'Hello',
-		'class' => 'hidden',
-		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Uploader Test', 'options_framework_theme'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
-		'id' => 'example_uploader',
-		'type' => 'upload',
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => "Example Image Selector",
-		'desc' => "Images for layout.",
-		'id' => "example_images",
-		'std' => "2c-l-fixed",
-		'type' => "images",
-		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'),
-		'section' => 'response_header',
-		'heading' => 'response_design'
-	);
-
-	$fields_list[] = array(
-		'name' =>  __('Example Background', 'options_framework_theme'),
-		'desc' => __('Change the background CSS.', 'options_framework_theme'),
-		'id' => 'example_background',
-		'std' => $background_defaults,
-		'type' => 'background',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
-
-	$fields_list[] = array(
-		'name' => __('Multicheck', 'options_framework_theme'),
-		'desc' => __('Multicheck description.', 'options_framework_theme'),
-		'id' => 'example_multicheck',
-		'std' => $multicheck_defaults, // These items get checked by default
-		'type' => 'multicheck',
-		'options' => $multicheck_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	$fields_list[] = array(
-		'name' => __('Colorpicker', 'options_framework_theme'),
-		'desc' => __('No color selected by default.', 'options_framework_theme'),
-		'id' => 'example_colorpicker',
-		'std' => '',
-		'type' => 'color',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
-		
-	$fields_list[] = array( 'name' => __('Typography', 'options_framework_theme'),
-		'desc' => __('Example typography.', 'options_framework_theme'),
-		'id' => "example_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
-		
-	$fields_list[] = array(
-		'name' => __('Custom Typography', 'options_framework_theme'),
-		'desc' => __('Custom typography options.', 'options_framework_theme'),
-		'id' => "custom_typography",
-		'std' => $typography_defaults,
-		'type' => 'typography',
-		'options' => $typography_options,
-		'section' => 'response_header',
-		'heading' => 'response_design');
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress' )
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Default Text Editor', 'options_framework_theme'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings,
-		'section' => 'response_header',
-		'heading' => 'response_design' );
-
-	return $fields_list;
-}
-add_filter('response_field_list', 'response_add_core_fields');
-
 
 function response_create_sections( $sections ) {
 	if ( empty($sections) )
@@ -646,49 +280,41 @@ function response_create_fields( $fields ) {
 	}
 }
 
-function response_fields_callback( $args ) {
+function response_fields_callback( $value ) {
 	global $allowedtags;
 
 	$option_name = 'response_options';
+	$settings = get_option($option_name);
 
-	$settings = get_option('response_options');
+	$val = '';
+	$select_value = '';
+	$checked = '';
+	$output = '';
+	
+	// Set default value to $val
+	if ( isset( $value['std'] ) ) {
+		$val = $value['std'];
+	}
 
-	$value = $args;
-
-	$counter = 0;
-	$menu = '';
-
-		$val = '';
-		$select_value = '';
-		$checked = '';
-		$output = '';
-		
-
-		// Set default value to $val
-		if ( isset( $value['std'] ) ) {
-			$val = $value['std'];
-		}
-
-		// If the option is already saved, ovveride $val
-		if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
-			if ( isset( $settings[($value['id'])]) ) {
-				$val = $settings[($value['id'])];
-				// Striping slashes of non-array options
-				if ( !is_array($val) ) {
-					$val = stripslashes( $val );
-				}
+	// If the option is already saved, ovveride $val
+	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
+		if ( isset( $settings[($value['id'])]) ) {
+			$val = $settings[($value['id'])];
+			// Striping slashes of non-array options
+			if ( !is_array($val) ) {
+				$val = stripslashes( $val );
 			}
 		}
+	}
+
+	// If there is a description save it for labels
+	$explain_value = '';
+	if ( isset( $value['desc'] ) ) {
+		$explain_value = $value['desc'];
+	}
+
+	switch ( $value['type'] ) {
 		
-
-		// If there is a description save it for labels
-		$explain_value = '';
-		if ( isset( $value['desc'] ) ) {
-			$explain_value = $value['desc'];
-		}
-
-		switch ( $value['type'] ) {
-			
 		// Basic text input
 		case 'text':
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
@@ -948,15 +574,15 @@ function response_fields_callback( $args ) {
 			}
 			$output .= '</div>' . "\n";
 			break;
-		}
+	}
 
-		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
-			if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
-				$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
-			}
+	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
+		if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
+			$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
 		}
+	}
 
-		echo $output;
+	echo $output;
 }
 
 function response_section_exists( $section_parent, $section ) {
@@ -975,13 +601,15 @@ function response_do_settings_sections($page) {
 		return;
 	
 	foreach ( (array) $wp_settings_sections[$page] as $section ) {
-		if ( $section['title'] )
-			echo "<h3>{$section['title']}</h3>\n";
-		call_user_func($section['callback'], $section);
-		
-		if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
-			continue;
-		response_do_settings_fields($page, $section['id']);
+		echo '<div id="'.$section['id'].'">';
+			if ( $section['title'] )
+				echo "<h3>{$section['title']}</h3>\n";
+			call_user_func($section['callback'], $section);
+			
+			if ( !isset($wp_settings_fields) || !isset($wp_settings_fields[$page]) || !isset($wp_settings_fields[$page][$section['id']]) )
+				continue;
+			response_do_settings_fields($page, $section['id']);
+		echo '</div>';
 	}
 }
 
