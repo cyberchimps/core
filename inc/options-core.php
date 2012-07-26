@@ -34,6 +34,12 @@ function response_add_core_headings( $headings_list ) {
 	);
 	
 	$headings_list[] = array(
+		'id' => 'response_header_heading',
+		'title' => __('Header', 'response'),
+		'description' => __('Header Description', 'response'),
+	);
+	
+	$headings_list[] = array(
 		'id' => 'response_blog_heading',
 		'title' => __('Blog', 'response'),
 		'description' => __('Blog Description', 'response'),
@@ -103,6 +109,13 @@ function response_add_core_sections( $sections_list ) {
 		'label' => __('Custom CSS', 'response'),
 		'description' => __('Custom CSS Description', 'response'),
 		'heading' => 'response_design_heading'
+	);
+	
+	$sections_list[] = array(
+		'id' => 'response_header_drag_drop_section',
+		'label' => __('Header Drag/Drop', 'response'),
+		'description' => __('Header Drag/Drop Description', 'response'),
+		'heading' => 'response_header_heading'
 	);
 
 	return $sections_list;
@@ -216,6 +229,27 @@ function response_add_core_fields( $fields_list ) {
 		'std' => '',
 		'section' => 'response_typography_section',
 		'heading' => 'response_design_heading'
+	);
+	
+	$fields_list[] = array(
+		'id' => 'response_drag_drop_field',
+		'name' => __('Typkit Code', 'response'),
+		'desc' => __('Typekit Code description.', 'response'),
+		'callback' => 'response_drag_drop_field',
+		'std' => "ifeature_header_content",
+		'options' => array(
+			"ifeature_header_content" => "Logo + Icons",
+			"ifeature_sitename_contact" => "Logo + Contact",
+			"ifeature_description_icons" => "Description + Icons",
+			"ifeature_logo_menu" => "Logo + Menu",
+			"ifeature_logo_Description" => "Logo + Description",
+			"ifeature_banner" => "Banner",
+			"ifeature_custom_header_element" => "Custom",
+			"synapse_navigation" => "iMenu",
+			"ifeature_sitename_register" => "Logo + Login"
+		),
+		'section' => 'response_header_drag_drop_section',
+		'heading' => 'response_header_heading'
 	);
 	
 	

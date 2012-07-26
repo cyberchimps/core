@@ -106,7 +106,7 @@ function response_options_links() {
 
 // create and display theme options page
 function response_options_page() {
-	// TODO: Add translations to text
+	settings_errors();
 ?>
 
 	<div class="wrap">
@@ -300,6 +300,73 @@ function response_create_sections( $sections ) {
 		}
 	}
 }
+
+function response_drag_drop_field( $value ) {
+	global $allowedtags;
+
+	$option_name = 'response_options';
+	$settings = get_option($option_name);
+
+	$val = '';
+	$output = '';
+	
+	// Set default value to $val
+	if ( isset( $value['std'] ) ) {
+		if (is_array($value['std'])) {
+			$val = implode(',', array_keys($value['std']));
+		} else {
+			$val = $value['std'];	
+		}
+	}
+	
+	// If the option is already saved, ovveride $val
+	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
+		if ( isset( $settings[($value['id'])]) ) {
+			$val = $settings[($value['id'])];
+			// Striping slashes of non-array options
+			if ( !is_array($val) ) {
+				$val = stripslashes( $val );
+			}
+		}
+	}
+	
+	$values = explode(",", $val);
+ 
+	$output .=  "<div class='section_order' id=" . esc_attr($value['id']) . ">";
+	$output .=  "<div class='left_list span6'>";
+	$output .=  "<div class='inactive'>Inactive Elements</div>";
+	$output .=  "<div class='list_items'>";
+	foreach($value['options'] as $k => $v) {
+		if(in_array($k, $values)) continue;
+		$output .=  "<div class='list_item'>";
+		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+		$output .=  "<span data-key='{$k}'>{$v}</span>";
+		$output .=  "</div>";
+	}
+	$output .=  "</div>";
+	$output .=  "</div>";
+	$output .=  '<div class="arrow span1 hidden-phone"><img src="'. get_template_directory_uri(). '/core/lib/images/arrowdrag.png" /></div>';
+	$output .=  "<div class='right_list span5'>";
+	$output .=  "<div class='active'>Active Elements</div>";
+	$output .=  "<div class='drag'>Drag & Drop Elements</div>";
+	$output .=  "<div class='list_items'>";
+	foreach($values as $k) {
+		if(!$k) continue;
+		$val = $value['options'][$k];
+		$output .=  "<div class='list_item'>";
+		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+		$output .=  "<span data-key='{$k}'>{$val}</span>";
+		$output .=  "</div>";
+	}
+	$output .=  "</div>";
+	$output .=  "</div>";
+	$output .=  "<input type='hidden' id='{$value['id']}' name='{$option_name}[{$value['id']}]' />";
+	$output .= '<div class="clear"></div>';
+	$output .=  "</div>";
+	
+	echo $output;
+}
+
 
 function response_sections_callback( $section_passed ) {
 	$sections = response_get_sections();
