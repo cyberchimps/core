@@ -557,7 +557,7 @@ function response_fields_callback( $value ) {
 
 		// Uploader
 		case "upload":
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $val, null );
+			$output .= response_medialibrary_uploader( $value['id'], $val, null );
 			break;
 
 			// Typography
@@ -643,7 +643,7 @@ function response_fields_callback( $value ) {
 				$background['image'] = '';
 			}
 
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
+			$output .= response_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
 			$class = 'of-background-properties';
 			if ( '' == $background['image'] ) {
 				$class .= ' hide';

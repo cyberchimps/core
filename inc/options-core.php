@@ -70,6 +70,12 @@ function response_add_core_sections( $sections_list ) {
 	$sections_list = array();
 	
 	$sections_list[] = array(
+		'id' => 'response_temp_styling_section',
+		'label' => __('Styling Section', 'response'),
+		'heading' => 'response_design_heading'
+	);
+	
+	$sections_list[] = array(
 		'id' => 'response_responsive_section',
 		'label' => __('Responsive', 'response'),
 		'description' => __('Responsive Description', 'response'),
@@ -253,7 +259,7 @@ function response_add_core_fields( $fields_list ) {
 	);
 	
 	
-	/* Fields for Reference Remove Once Fields are Finished
+	/* Fields for Reference Remove Once Fields are Finished */
 	// Test data
 	$test_array = array(
 		'one' => __('One', 'options_framework_theme'),
@@ -317,10 +323,10 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'core_text',
 		'name' => __('Input Text', 'options_framework_theme'),
 		'desc' => __('A text input field.', 'options_framework_theme'),
-		'section' => 'response_test',
-		'heading' => 'response_blog', // TODO: try to remove and have add_settings_field pull from get_sections()
 		'std' => 'Default Value',
 		'type' => 'text',
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading', // TODO: try to remove and have add_settings_field pull from get_sections()
 	);
 	
 	$fields_list[] = array(
@@ -330,8 +336,8 @@ function response_add_core_fields( $fields_list ) {
 		'std' => 'Default',
 		'class' => 'mini',
 		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Input Text', 'options_framework_theme'),
@@ -339,8 +345,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_text',
 		'std' => 'Default Value',
 		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Textarea', 'options_framework_theme'),
@@ -348,8 +354,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_textarea',
 		'std' => 'Default Text',
 		'type' => 'textarea',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Input Select Small', 'options_framework_theme'),
@@ -359,8 +365,8 @@ function response_add_core_fields( $fields_list ) {
 		'type' => 'select',
 		'class' => 'mini', //mini, tiny, small
 		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Input Select Wide', 'options_framework_theme'),
@@ -369,8 +375,8 @@ function response_add_core_fields( $fields_list ) {
 		'std' => 'two',
 		'type' => 'select',
 		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Select a Category', 'options_framework_theme'),
@@ -378,8 +384,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_select_categories',
 		'type' => 'select',
 		'options' => $options_categories,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Select a Tag', 'options_check'),
@@ -387,8 +393,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_select_tags',
 		'type' => 'select',
 		'options' => $options_tags,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Select a Page', 'options_framework_theme'),
@@ -396,8 +402,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_select_pages',
 		'type' => 'select',
 		'options' => $options_pages,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Input Radio (one)', 'options_framework_theme'),
@@ -406,15 +412,15 @@ function response_add_core_fields( $fields_list ) {
 		'std' => 'one',
 		'type' => 'radio',
 		'options' => $test_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Example Info', 'options_framework_theme'),
 		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
 		'type' => 'info',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Input Checkbox', 'options_framework_theme'),
@@ -422,16 +428,16 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_checkbox',
 		'std' => '1',
 		'type' => 'checkbox',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
 		'desc' => __('Click here and see what happens.', 'options_framework_theme'),
 		'id' => 'example_showhidden',
 		'type' => 'checkbox',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Hidden Text Input', 'options_framework_theme'),
@@ -440,16 +446,16 @@ function response_add_core_fields( $fields_list ) {
 		'std' => 'Hello',
 		'class' => 'hidden',
 		'type' => 'text',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Uploader Test', 'options_framework_theme'),
 		'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
 		'id' => 'example_uploader',
 		'type' => 'upload',
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => "Example Image Selector",
@@ -461,8 +467,8 @@ function response_add_core_fields( $fields_list ) {
 			'1col-fixed' => $imagepath . '1col.png',
 			'2c-l-fixed' => $imagepath . '2cl.png',
 			'2c-r-fixed' => $imagepath . '2cr.png'),
-		'section' => 'response_header',
-		'heading' => 'response_design'
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading'
 	);
 
 	$fields_list[] = array(
@@ -471,8 +477,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_background',
 		'std' => $background_defaults,
 		'type' => 'background',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading' );
 
 	$fields_list[] = array(
 		'name' => __('Multicheck', 'options_framework_theme'),
@@ -481,8 +487,8 @@ function response_add_core_fields( $fields_list ) {
 		'std' => $multicheck_defaults, // These items get checked by default
 		'type' => 'multicheck',
 		'options' => $multicheck_array,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	$fields_list[] = array(
 		'name' => __('Colorpicker', 'options_framework_theme'),
@@ -490,16 +496,16 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_colorpicker',
 		'std' => '',
 		'type' => 'color',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading' );
 		
 	$fields_list[] = array( 'name' => __('Typography', 'options_framework_theme'),
 		'desc' => __('Example typography.', 'options_framework_theme'),
 		'id' => "example_typography",
 		'std' => $typography_defaults,
 		'type' => 'typography',
-		'section' => 'response_header',
-		'heading' => 'response_design' );
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading' );
 		
 	$fields_list[] = array(
 		'name' => __('Custom Typography', 'options_framework_theme'),
@@ -508,8 +514,8 @@ function response_add_core_fields( $fields_list ) {
 		'std' => $typography_defaults,
 		'type' => 'typography',
 		'options' => $typography_options,
-		'section' => 'response_header',
-		'heading' => 'response_design');
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading');
 
 	/**
 	 * For $settings options see:
@@ -517,7 +523,7 @@ function response_add_core_fields( $fields_list ) {
 	 *
 	 * 'media_buttons' are not supported as there is no post to attach items to
 	 * 'textarea_name' is set by the 'id' you choose
-	 *
+		 */
 
 	$wp_editor_settings = array(
 		'wpautop' => true, // Default
@@ -531,9 +537,8 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_editor',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings,
-		'section' => 'response_header',
-		'heading' => 'response_design' );
-	*/
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading' );
 	
 	return $fields_list;
 }
