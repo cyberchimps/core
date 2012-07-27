@@ -316,7 +316,7 @@ function response_add_core_fields( $fields_list ) {
 	}
 
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
+	$imagepath =  get_template_directory_uri() . '/core/lib/images/';
 	
 	
 	$fields_list[] = array(
