@@ -77,58 +77,111 @@ ul, ol {
 /************** Left Menu *********************/
 
 .cc-left-menu {
-  margin-left: -20px;
-  background: #ddd;
 }
 ul.cc-parent {
-  margin-left: 0;
-  border-right: 1px solid #ddd;
+  margin-left: -1px;
 }
 ul.cc-parent > li {
-  padding: 10px 0 10px 20px;
-  background-color: #fff;
-  margin: 0;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 0;
 }
-ul.cc-parent > li.cc-active {
-  padding-bottom: 0;
+ul.cc-parent > li.cc-has-children {
+  padding-bottom: 0; 
 }
 ul.cc-parent > li > a {
   display: block;
+  padding: 10px 0 10px 20px;
   font-size: 1.3em;
   font-weight: bold;
+  background: #ffffff;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+  margin: 0;
+  border-top: 1px solid #cacaca;
+  border-right: 1px solid #cacaca;
+  border-left: 1px solid #cacaca;
+}
+ul.cc-parent > li:last-child > a {
+  border-bottom: 1px solid #cacaca;
+}
+ul.cc-parent > li.cc-active > a {
+  background: #5ea8f3;
+  background: -moz-linear-gradient(top,  #5ea8f3 1%, #4896e4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#5ea8f3), color-stop(100%,#4896e4));
+  background: -webkit-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: -o-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: -ms-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: linear-gradient(to bottom,  #5ea8f3 1%,#4896e4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea8f3', endColorstr='#4896e4',GradientType=0 );
+  border-top: 1px solid #2875c4;
+  border-right: 1px solid #2875c4;
+  border-left: 1px solid #2875c4;
+  border-bottom: none;
 }
 ul.cc-parent > li > a i {
   float: right;
   margin-top: 2px;
   margin-right: 5%;
 }
-ul.cc-parent > li.cc-active > a > i {
-  background-position: -288px -120px;
+ul.cc-parent > li.cc-active > a {
+  color: #ffffff;
 }
 ul.cc-child {
-  margin: 10px 0 0 -20px;
-  padding: 10px 0 10px 20px;  
+  display: none;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child { 
+  display: block; 
   background-color: #ddd;
+  border-top: 1px solid #2875c4;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child > li {
+  margin: 0;
+  line-height: 2.5em;
+  border-bottom: 1px solid #ddd;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child > li:last-child {
+  border-bottom: none;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(odd) {
+  background: #ffffff;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(even) {
+  background: #f7f7f7;
+}
+ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
+  margin: 10px 5px 10px 30px;
 }
 
 /**************** Main Content ******************/
 
+.cc-main-content {
+  padding-top: 20px;
+}
 .cc-content-section {
-  margin-top: 10px;
-  padding: 20px;
-  border: 1px solid #ddd;
 }
 .cc-content-section h3 {
-  display: inline;
-  color: #fff;
-  font-size: 1.3em;
-  background-color: #08C;
-  padding: 5px 10px;
+  margin-top: -8px;
+  margin-bottom: 30px;
 }
 .cc-content-section p {
   color: #999;
   margin: 10px 0;
+}
+.cc-content-section .section-group {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 15px;
+  background: #ffffff;
+  background: url('../images/options/section-group-bg.jpg') 0 0 repeat-x;
 }
 
 /***************** Footer *********************/
@@ -149,6 +202,19 @@ ul.cc-child {
   color: #08c;
 }
 
+/***************** Forms *****************************/
+
+.cc-main-content select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  height: auto;
+}
+.cc-main-content select.select-mini {
+  width: 80px;
+}
+.cc-main-content div.desc {
+  color: #666;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
 
 /***************** Section Order *********************/
 .section_order {

@@ -334,7 +334,7 @@ function response_add_core_fields( $fields_list ) {
 		'desc' => __('A mini text input field.', 'options_framework_theme'),
 		'id' => 'example_text_mini',
 		'std' => 'Default',
-		'class' => 'mini',
+		'class' => 'input-mini',
 		'type' => 'text',
 		'section' => 'response_temp_styling_section',
 		'heading' => 'response_design_heading');
@@ -363,7 +363,7 @@ function response_add_core_fields( $fields_list ) {
 		'id' => 'example_select',
 		'std' => 'three',
 		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
+		'class' => 'select-mini', //mini, tiny, small
 		'options' => $test_array,
 		'section' => 'response_temp_styling_section',
 		'heading' => 'response_design_heading');

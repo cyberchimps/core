@@ -158,7 +158,7 @@ function response_options_page() {
 							
 							echo '<li class="cc-active cc-has-children">';
 							echo '<div class="cc-menu-arrow"></div>';
-							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
+							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a>';
 							
 							echo '<ul class="cc-child">';
 							foreach( $sections_list as $section ) {
@@ -465,7 +465,7 @@ function response_fields_callback( $value ) {
 		
 		// Basic text input
 		case 'text':
-			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
+			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
 			break;
 
 		// Textarea
@@ -485,7 +485,7 @@ function response_fields_callback( $value ) {
 
 		// Select Box
 		case ($value['type'] == 'select'):
-			$output .= '<select class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
+			$output .= '<select class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 
 			foreach ($value['options'] as $key => $option ) {
 				$selected = '';
@@ -503,7 +503,7 @@ function response_fields_callback( $value ) {
 			$name = $option_name .'['. $value['id'] .']';
 			foreach ($value['options'] as $key => $option) {
 				$id = $option_name . '-' . $value['id'] .'-'. $key;
-				$output .= '<input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '">' . esc_html( $option ) . '</label>';
+				$output .= '<input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label>';
 			}
 			break;
 
@@ -726,7 +726,7 @@ function response_fields_callback( $value ) {
 
 	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
 		if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
-			$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
+			$output .= '<div class="desc">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
 		}
 	}
 
