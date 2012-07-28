@@ -16,6 +16,10 @@ ul, ol {
   margin: 10px 0;
   border: 1px solid #ddd;
 }
+.icon32 {
+  background-image: url('../images/options/chimp.png')!important;
+  background-position: 0 0!important;
+}
 
 /*************** Header **********************/
 

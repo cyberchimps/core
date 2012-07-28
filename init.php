@@ -31,6 +31,12 @@ function response_core_setup_theme() {
 	// FIXME: Fix documentation
 	// Load core options file
 	require_once( get_template_directory() . '/core/inc/options.php' );
+	
+	// HS: Load Meta Box Class
+	require_once( get_template_directory() . '/core/inc/meta-box-class.php' );
+	
+	//HS: Load Meta Boxes Functions
+	require_once( get_template_directory() . '/core/inc/meta-box.php' );
 
 	/**
 	 * Custom template tags for this theme.

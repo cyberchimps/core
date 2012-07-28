@@ -29,6 +29,22 @@ function response_edit_themes_role_check() {
 	}
 }
 
+//HS add styles and js for page meta boxes
+add_action('admin_head', 'meta_boxes_styles_scripts');
+
+function meta_boxes_styles_scripts() {
+
+	global $post_type; 
+	
+	if ( ( $_GET['post_type'] == 'page' ) || ( $post_type == 'page' ) ) :		
+
+		wp_enqueue_style( 'meta-boxes-css', get_template_directory_uri().'/core/lib/css/metabox-tabs.css' );
+		wp_enqueue_script('meta-boxes-js', get_template_directory_uri().'/core/lib/js/metabox-tabs.js', array('jquery'));	
+
+	endif;
+
+}
+
 // create the admin menu for the theme options page
 add_action('admin_menu', 'response_admin_add_page');
 function response_admin_add_page() {
