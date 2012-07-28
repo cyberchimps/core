@@ -170,10 +170,11 @@ function response_options_page() {
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
 						foreach ( $headings_list as $heading ) {
+							
 							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
 							$jquery_click_hook = "of-option-" . $jquery_click_hook;
 							
-							echo '<li class="cc-active cc-has-children">';
+							echo '<li class="cc-has-children">';
 							echo '<div class="cc-menu-arrow"></div>';
 							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a>';
 							
@@ -197,9 +198,10 @@ function response_options_page() {
 				<!-- start main content -->
 				<div class="span10 cc-main-content">
 					<?php foreach( $headings_list as $heading ) {
+						
 						$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
 						$jquery_click_hook = "of-option-" . $jquery_click_hook;
-						
+					
 						echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
 						echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
 						if ( $heading['description'] ) {
