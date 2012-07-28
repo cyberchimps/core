@@ -110,8 +110,8 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
 		}
 		
 		if ( $value ) { $class = ' has-file'; }
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Upload', 'response' ) . '" rel="' . $int . '" />' . "\n";
+		$output .= '<div class="input-append"><input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="btn" type="button" value="' . __( 'Upload', 'response' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="response_metabox_desc">' . $_desc . '</span>' . "\n";

@@ -164,7 +164,7 @@
     position: relative;
     width: 27px;
     height: 27px;
-    background: url(../images/colorpicker/select.png);
+    background: url(../images/colorpicker/select2.png);
     float:left;
 }
 .colorSelector div {
@@ -173,5 +173,5 @@
     left: 3px;
     width: 21px;
     height: 19px;
-    background: url(../images/colorpicker/select.png) center;
+    background: url(../images/colorpicker/select2.png) center;
 }

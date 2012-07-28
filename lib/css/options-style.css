@@ -207,13 +207,37 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
 .cc-main-content select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
   height: auto;
 }
+.cc-main-content select {
+  padding: 4px;
+}
 .cc-main-content select.select-mini {
   width: 80px;
 }
 .cc-main-content div.desc {
+  clear: left;
   color: #666;
   margin-bottom: 20px;
   margin-left: 5px;
+}
+.cc-main-content .input-append .btn {
+  margin-left: -5px;
+}
+.cc-main-content .colorSelector {
+  background: none;
+  overflow: hidden;
+}
+.cc-main-content .colorSelector div {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 26px;
+	height: 26px;
+  -webkit-border-radius: 2px 0px 0px 2px;
+  border-radius: 2px 0px 0px 2px;
+}
+.cc-main-content .of-typography {
+  float: left;
+  margin-right: 10px;
 }
 
 /***************** Section Order *********************/

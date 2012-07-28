@@ -551,8 +551,8 @@ function response_fields_callback( $value ) {
 
 		// Color picker
 		case "color":
-			$output .= '<div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
-			$output .= '<input class="of-color" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" type="text" value="' . esc_attr( $val ) . '" />';
+			$output .= '<div class="input-prepend"><div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
+			$output .= '<input class="of-color" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" type="text" value="' . esc_attr( $val ) . '" /></div>';
 			break;
 
 		// Uploader
@@ -618,8 +618,8 @@ function response_fields_callback( $value ) {
 
 			// Font Color
 			if ( $typography_options['color'] ) {
-				$font_color = '<div id="' . esc_attr( $value['id'] ) . '_color_picker" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
-				$font_color .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" />';
+				$font_color = '<div class="input-prepend of-typography"><div id="' . esc_attr( $value['id'] ) . '_color_picker" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
+				$font_color .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" /></div>';
 			}
 	
 			// Allow modification/injection of typography fields
@@ -635,8 +635,8 @@ function response_fields_callback( $value ) {
 			$background = $val;
 
 			// Background Color
-			$output .= '<div id="' . esc_attr( $value['id'] ) . '_color_picker" class="colorSelector"><div style="' . esc_attr( 'background-color:' . $background['color'] ) . '"></div></div>';
-			$output .= '<input class="of-color of-background of-background-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $background['color'] ) . '" />';
+			$output .= '<div class="input-prepend"><div id="' . esc_attr( $value['id'] ) . '_color_picker" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $background['color'] ) . '"></div></div>';
+			$output .= '<input class="of-color of-background of-background-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $background['color'] ) . '" /></div>';
 
 			// Background Image - New AJAX Uploader using Media Library
 			if (!isset($background['image'])) {
