@@ -229,7 +229,7 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
 .cc-main-content .colorSelector {
   cursor: pointer;
   background: none;
-  overflow: hidden;
+  z-index: 10;
 }
 .cc-main-content .colorSelector div {
   position: absolute;
@@ -239,6 +239,31 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
 	height: 26px;
   -webkit-border-radius: 2px 0px 0px 2px;
   border-radius: 2px 0px 0px 2px;
+  background-color: #fff;
+}
+.cc-main-content .of-color {
+  z-index: 5;
+}
+.cc-main-content .colorSelector:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 8px;
+  bottom: auto;
+  left: 100%;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent #ccc;
+}
+.cc-main-content .colorSelector:after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  bottom: auto;
+  left: 100%;
+  border-style: solid;
+  border-width: 4px 0 4px 4px;
+  border-color: transparent #fff;
 }
 .cc-main-content .of-typography {
   float: left;
