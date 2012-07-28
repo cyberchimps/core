@@ -29,13 +29,14 @@ function response_edit_themes_role_check() {
 	}
 }
 
-//HS add styles and js for page meta boxes
+//TODO HS add styles and js for page meta boxes
 add_action('admin_head', 'meta_boxes_styles_scripts');
 
 function meta_boxes_styles_scripts() {
 
 	global $post_type; 
 	
+	//TODO HS Will need to add more post types as they are created
 	if ( ( $_GET['post_type'] == 'page' ) || ( $post_type == 'page' ) ) :		
 
 		wp_enqueue_style( 'meta-boxes-css', get_template_directory_uri().'/core/lib/css/metabox-tabs.css' );
@@ -519,13 +520,14 @@ function response_fields_callback( $value ) {
 			$name = $option_name .'['. $value['id'] .']';
 			foreach ($value['options'] as $key => $option) {
 				$id = $option_name . '-' . $value['id'] .'-'. $key;
-				$output .= '<input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label>';
+				$output .= '<div class="radio-container"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label></div>';
 			}
 			break;
 
 		// Image Selectors
 		case "images":
 			$name = $option_name .'['. $value['id'] .']';
+			$output .= '<div class="images-radio-container">';
 			foreach ( $value['options'] as $key => $option ) {
 				$selected = '';
 				$checked = '';
@@ -535,16 +537,17 @@ function response_fields_callback( $value ) {
 						$checked = ' checked="checked"';
 					}
 				}
-				$output .= '<input type="radio" id="' . esc_attr( $value['id'] .'_'. $key) . '" class="of-radio-img-radio" value="' . esc_attr( $key ) . '" name="' . esc_attr( $name ) . '" '. $checked .' />';
+				$output .= '<div class="images-radio-subcontainer"><input type="radio" id="' . esc_attr( $value['id'] .'_'. $key) . '" class="of-radio-img-radio" value="' . esc_attr( $key ) . '" name="' . esc_attr( $name ) . '" '. $checked .' />';
 				$output .= '<div class="of-radio-img-label">' . esc_html( $key ) . '</div>';
-				$output .= '<img src="' . esc_url( $option ) . '" alt="' . $option .'" class="of-radio-img-img' . $selected .'" onclick="document.getElementById(\''. esc_attr($value['id'] .'_'. $key) .'\').checked=true;" />';
+				$output .= '<img src="' . esc_url( $option ) . '" alt="' . $option .'" class="of-radio-img-img' . $selected .'" onclick="document.getElementById(\''. esc_attr($value['id'] .'_'. $key) .'\').checked=true;" /></div>';
 			}
+			$output .= '</div>';
 			break;
 
 		// Checkbox
 		case "checkbox":
-			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
-			$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label>';
+			$output .= '<div class="checkbox-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
+			$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
 			break;
 
 		// Multicheck

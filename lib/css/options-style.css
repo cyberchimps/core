@@ -227,6 +227,7 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
   margin-left: -5px;
 }
 .cc-main-content .colorSelector {
+  cursor: pointer;
   background: none;
   overflow: hidden;
 }
@@ -243,6 +244,43 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
   float: left;
   margin-right: 10px;
 }
+.cc-main-content .radio-container, .cc-main-content .checkbox-container {
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+}
+.cc-main-content .radio-container input, .cc-main-content .checkbox-container input {
+  float: left;
+  margin-right: 10px;
+}
+.cc-main-content .radio-container label, .cc-main-content .checkbox-container label {
+  float: left;
+  margin-bottom: 0;
+}
+.cc-main-content .checkbox-container label {
+  margin-top: 2px;
+}
+.cc-main-content .images-radio-container {
+  float: left;
+  clear: left;
+  margin-bottom: 10px;
+}
+.cc-main-content .images-radio-container > .images-radio-subcontainer {;
+  float: left;
+  margin-right: 20px;
+}
+.cc-main-content .images-radio-container > .images-radio-subcontainer img {
+  border: 5px solid #eee;
+  padding: 2px;
+}
+.cc-main-content .images-radio-container > .images-radio-subcontainer img.of-radio-img-selected {
+  border: 5px solid #5DA7F2;
+}
+.cc-main-content .images-radio-container > .images-radio-subcontainer img:hover {
+  cursor: pointer;
+  border: 5px solid #5DA7F2;
+}
+
 
 /***************** Section Order *********************/
 .section_order {
