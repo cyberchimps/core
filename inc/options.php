@@ -479,7 +479,12 @@ function response_fields_callback( $value ) {
 	if ( isset( $value['desc'] ) ) {
 		$explain_value = $value['desc'];
 	}
-
+	
+	// Output field name
+	if ($value['name']) {
+		$output .= '<label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label>';
+	}
+	
 	switch ( $value['type'] ) {
 		
 		// Basic text input
