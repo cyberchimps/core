@@ -34,8 +34,8 @@ add_action('admin_menu', 'response_admin_add_page');
 function response_admin_add_page() {
 
 	$response_page = add_theme_page(
-		__('Framework Options Page', 'response'),
-		__('Framework Options', 'response'),
+		__('Theme Options Page', 'response'),
+		__('Theme Options', 'response'),
 		'edit_theme_options',
 		'response-theme-options',
 		'response_options_page'
@@ -111,18 +111,21 @@ function response_options_page() {
 
 	<div class="wrap">
 		<div class="container-fluid cc-options">
-			
+
 			<form action="options.php" method="post">
-			<?php settings_fields('response_options'); ?>
-			<?php $headings_list = response_get_headings(); ?>
-			<?php $sections_list = response_get_sections(); ?>
+			<?php
+			settings_fields('response_options');
+			$title = __('Theme Options', 'response');
+			$headings_list = response_get_headings();
+			$sections_list = response_get_sections();
+			?>
 
 			<!-- header -->
 			<div class="row-fluid cc-header">
 				<div class="span3">
         	<div class="cc-title">
             <div class="icon32" id="icon-tools"> <br /> </div>
-            	<h2>Theme Options</h2>
+            	<h2><?php echo esc_html( $title ); ?></h2>
             </div><!-- cc-title -->
 				</div><!-- span3 -->
 				<div class="span9">
@@ -137,10 +140,8 @@ function response_options_page() {
 			<div class="row-fluid">
 				<div class="cc-submenu"> 
 					<div class="span3">
-        		<div c;ass="cc-collapse">
-              <!-- TODO: hiding this section till we can implement
-                <p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
-              -->
+        		<div class="cc-collapse">
+                <a id="open-all-tabs" href="#">Open All</a> / <a id="close-all-tabs" href="#">Collapse All</a>
         		</div><!-- cc-collapse -->
 					</div><!-- span3 -->
 				
@@ -158,14 +159,13 @@ function response_options_page() {
 			<!-- start left menu --> 
 			<div class="row-fluid">
 				<div class="cc-content">
-				<div class="span2">
+				<div class="span3">
         <div class="cc-left-menu">
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
 						foreach ( $headings_list as $heading ) {
 							
-							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
-							$jquery_click_hook = "of-option-" . $jquery_click_hook;
+							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['id']) );
 							
 							echo '<li class="cc-has-children">';
 							echo '<div class="cc-menu-arrow"></div>';
@@ -175,9 +175,8 @@ function response_options_page() {
 							foreach( $sections_list as $section ) {
 								if ( in_array( $heading['id'], $section) ) { 
 									$jquery_click_section_hook = '';
-									$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['label']) );
-									$jquery_click_section_hook = "of-option-" . $jquery_click_section_hook;
-
+									$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['id']) );
+									
 									echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
 								}
 							}
@@ -186,16 +185,15 @@ function response_options_page() {
 						} ?>
 					</ul>
           </div><!-- cc-left-menu -->
-				</div><!-- span 2 -->
+				</div><!-- span3 -->
 				<!-- end left menu -->
 				
 				<!-- start main content -->
-				<div class="span10">
+				<div class="span9">
         <div class="cc-main-content">
 					<?php foreach( $headings_list as $heading ) {
 						
-						$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
-						$jquery_click_hook = "of-option-" . $jquery_click_hook;
+						$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['id']) );
 					
 						echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
 						echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
@@ -206,7 +204,7 @@ function response_options_page() {
 						echo '</div>';
 					} ?>
         </div><!-- cc-main-content -->
-				</div><!-- span 10 -->
+				</div><!-- span9 -->
         </div><!-- cc-content -->
 			</div><!-- row fluid -->
 			<!-- end main content -->
@@ -263,8 +261,7 @@ function response_do_settings_sections( $page ) {
 	
 	foreach ( (array) $wp_settings_sections[$page] as $section ) {
 		$jquery_click_section_hook = '';
-		$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['title']) );
-		$jquery_click_section_hook = "of-option-" . $jquery_click_section_hook;
+		$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['id']) );
 		
 		echo '<div class="section-group" id="' . esc_attr( $jquery_click_section_hook ) . '">';
 		if ( $section['title'] ) {

@@ -100,6 +100,9 @@ form {
 
 /***************** Sub Menu *******************/
 
+.cc-collapse {
+	display: none;
+}
 .cc-submenu {
   padding: 10px 0;
   background-color: #ddd;
@@ -123,8 +126,6 @@ form {
 .cc-content {
 }
 .cc-main-content {
-  height: 450px;
-  overflow: auto;
 }
 
 /************** Left Menu *********************/
@@ -188,11 +189,7 @@ ul.cc-parent > li.cc-active > a i {
 ul.cc-parent > li.cc-active > a {
   color: #ffffff;
 }
-ul.cc-child {
-  display: none;
-}
 ul.cc-parent > li.cc-active > ul.cc-child {
-  display: block;
   border-top: 1px solid #2875c4;
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child { 
