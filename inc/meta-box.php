@@ -10,95 +10,58 @@
  * @usage: please read document at project homepage and meta-box-usage.php file
  * @version: 3.0.1
  */
- 
-
-/********************* BEGIN DEFINITION OF META BOXES ***********************/
 
 add_action('init', 'initialize_the_meta_boxes');
-
 function initialize_the_meta_boxes() {
-
-	global  $themename, $themeslug, $themenamefull, $options; // call globals.
+	global $options;
 	
 	// Call taxonomies for select options
 	
-	$portfolioterms = get_terms('portfolio_categories', 'hide_empty=0');
-	$portfoliooptions = array();
-
-		foreach($portfolioterms as $term) {
-			$portfoliooptions[$term->slug] = $term->name;
-		}
-	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
-	$carouseloptions = array();
-
-		foreach($carouselterms as $term) {
-			$carouseloptions[$term->slug] = $term->name;
-		}
-
-	$terms = get_terms('slide_categories', 'hide_empty=0');
-	$slideroptions = array();
-
-		foreach($terms as $term) {
-			$slideroptions[$term->slug] = $term->name;
-		}
-
-	$terms2 = get_terms('category', 'hide_empty=0');
-	$blogoptions = array();
-	$blogoptions['all'] = "All";
-
-		foreach($terms2 as $term) {
-			$blogoptions[$term->slug] = $term->name;
-		}
+	$portfolio_terms = get_terms('portfolio_categories', 'hide_empty=0');
+	$portfolio_options = array();
+	foreach($portfolio_terms as $term) {
+		$portfolio_options[$term->slug] = $term->name;
+	}
+	
+	$carousel_terms = get_terms('carousel_categories', 'hide_empty=0');
+	$carousel_options = array();
+	foreach($carousel_terms as $term) {
+		$carousel_options[$term->slug] = $term->name;
+	}
+	
+	$slide_terms = get_terms('slide_categories', 'hide_empty=0');
+	$slider_options = array();
+	foreach($slide_terms as $term) {
+		$slider_options[$term->slug] = $term->name;
+	}
+	
+	$category_terms = get_terms('category', 'hide_empty=0');
+	$blog_options = array();
+	$blog_options['all'] = "All";
+	foreach($category_terms as $term) {
+		$blog_options[$term->slug] = $term->name;
+	}
 	
 	// End taxonomy call
 	
 	$meta_boxes = array();
-	
-	$mb = new Chimps_Metabox('Portfolio', 'Portfolio Element', array('pages' => array('portfolio_images')));
-	$mb
-		->tab("Portfolio Element")
-			->single_image('portfolio_image', 'Portfolio Image', '')
-			->checkbox('custom_portfolio_url_toggle', 'Custom Portfolio URL', '', array('std' => 'off'))
-			->text('custom_portfolio_url', 'URL', '')
-		->end();
-
-	$mb = new Chimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
+		
+	$mb = new Chimps_Metabox('post_slide_options', __('Response Slider Options', 'response'), array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->single_image($themeslug.'_slider_image', 'Slider Image', '')
-			->text($themeslug.'_slider_text', 'Slider Text', 'Enter your slider text here')			
-			->checkbox('slider_hidetitle', 'Title Bar', '', array('std' => 'on'))
-			->single_image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
-			->sliderhelp('', 'Need Help?', '')
-		->end();
-		
-	$mb = new Chimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array('featured_posts')));
-	$mb
-		->tab("Featured Post Carousel Options")
-			->text('post_title', 'Featured Post Title', '')
-			->single_image('post_image', 'Featured Post Image', '')
-			->text('post_url', 'Featured Post URL', '')
-			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
+			->single_image('response_slider_image', __('Slider Image', 'response'), '')
+			->text('response_slider_text', __('Slider Text', 'response'), __('Enter your slider text here', 'response'))			
+			->checkbox('slider_hidetitle', __('Title Bar', 'response'), '', array('std' => 'on'))
+			->single_image('slider_custom_thumb', __('Custom Thumbnail', 'response'), __('Use the image uploader to upload a custom navigation thumbnail', 'response'))
+			->sliderhelp('', __('Need Help?', 'response'), '')
 		->end();
 
-	$mb = new Chimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array('custom_slides')));
-	$mb
-		->tab("Custom Slide Options")
-			->text('slider_caption', 'Custom Slide Caption', '')
-			->text('slider_url', 'Custom Slide Link', '')
-			->single_image($themeslug.'_slider_image', 'Custom Slide Image', '')
-			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'on'))
-			->single_image('slider_custom_thumb', 'Custom Thumbnail', '')
-			->sliderhelp('', 'Need Help?', '')
-			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
-		->end();
-
-	$mb = new Chimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
+	$mb = new Chimps_Metabox('pages', 'Response Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select($themeslug.'_page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
-			->checkbox($themeslug.'_hide_page_title', 'Page Title', '', array('std' => 'on'))
-			->section_order($themeslug.'_page_section_order', 'Page Elements', '', array('options' => array(
+			->image_select('response_page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
+			->checkbox('response_hide_page_title', 'Page Title', '', array('std' => 'on'))
+			->section_order('response_page_section_order', 'Page Elements', '', array('options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
@@ -113,13 +76,12 @@ function initialize_the_meta_boxes() {
 					),
 					'std' => 'breadcrumbs,page_section'
 				))
-
 			->pagehelp('', 'Need Help?', '')
-		->tab($themenamefull." Slider Options")
+		->tab("Response Slider Options")
 			->select('page_slider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
 			->select('page_slider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
-			->select('slider_category', 'Custom Slide Category', '', array('options' => $slideroptions) )
-			->select('slider_blog_category', 'Blog Post Category', '', array('options' => $blogoptions, 'all') )
+			->select('slider_category', 'Custom Slide Category', '', array('options' => $slider_options) )
+			->select('slider_blog_category', 'Blog Post Category', '', array('options' => $blog_options, 'all') )
 			->text('slider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
 			->text('slider_height', 'Slider Height', '', array('std' => '330'))
 			->text('slider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
@@ -129,11 +91,11 @@ function initialize_the_meta_boxes() {
 			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
 			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
-		->tab($themenamefull." NivoSlider Options")
+		->tab("Response NivoSlider Options")
 			->select('page_nivoslider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
 			->select('page_nivoslider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
-			->select('nivoslider_category', 'Custom Slide Category', '', array('options' => $slideroptions) )
-			->select('nivoslider_blog_category', 'Blog Post Category', '', array('options' => $blogoptions, 'all') )
+			->select('nivoslider_category', 'Custom Slide Category', '', array('options' => $slider_options) )
+			->select('nivoslider_blog_category', 'Blog Post Category', '', array('options' => $blog_options, 'all') )
 			->text('nivoslider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
 			->text('nivoslider_height', 'Slider Height', '', array('std' => '330'))
 			->text('nivoslider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
@@ -145,15 +107,15 @@ function initialize_the_meta_boxes() {
 			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Product Options")
-			->select($themeslug.'_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
-			->text($themeslug.'_product_title', 'Product Title', '', array('std' => 'Product'))
-			->textarea($themeslug.'_product_text', 'Product Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
-			->select($themeslug.'_product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
-			->single_image($themeslug.'_product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
-			->textarea($themeslug.'_product_video', 'Video Embed', '')
-			->checkbox($themeslug.'_product_link_toggle', 'Product Link', '', array('std' => 'on'))
-			->text($themeslug.'_product_link_url', 'Link URL', '', array('std' => home_url()))
-			->text($themeslug.'_product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
+			->select('response_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
+			->text('response_product_title', 'Product Title', '', array('std' => 'Product'))
+			->textarea('response_product_text', 'Product Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
+			->select('response_product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
+			->single_image('response_product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
+			->textarea('response_product_video', 'Video Embed', '')
+			->checkbox('response_product_link_toggle', 'Product Link', '', array('std' => 'on'))
+			->text('response_product_link_url', 'Link URL', '', array('std' => home_url()))
+			->text('response_product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')
 			->textarea('callout_text', 'Callout Text', '')
@@ -170,21 +132,21 @@ function initialize_the_meta_boxes() {
 			->pagehelp('', 'Need help?', '')
 		->tab("Portfolio Options")
 			->select('portfolio_row_number', 'Images per row', '', array('options' => array('Three (default)', 'Two', 'Four')) )
-			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfoliooptions) )
+			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfolio_options) )
 			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
 			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
 		->tab("Carousel Options")
-			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
+			->select('carousel_category', 'Carousel Category', '', array('options' => $carousel_options) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
 		->tab("Custom HTML")
 			->textarea('custom_html', 'Enter your custom HTML', '')
 		->tab("Twitter Options")
-			->text($themeslug.'_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
-			->checkbox($themeslug.'_twitter_reply', 'Show @ Replies', '')
+			->text('response_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
+			->checkbox('response_twitter_reply', 'Show @ Replies', '')
 		->tab("SEO Options")
-			->text($themeslug.'_seo_title', 'SEO Title', '')
-			->textarea($themeslug.'_seo_description', 'SEO Description', '')
-			->textarea($themeslug.'_seo_keywords', 'SEO Keywords', '')
+			->text('response_seo_title', 'SEO Title', '')
+			->textarea('response_seo_description', 'SEO Description', '')
+			->textarea('response_seo_keywords', 'SEO Keywords', '')
 			->pagehelp('', 'Need help?', '')
 		->end();
 
