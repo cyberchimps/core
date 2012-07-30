@@ -155,7 +155,84 @@ function response_add_core_sections( $sections_list ) {
 	);
 	
 	/* BLOG */
+	
+	$sections_list[] = array(
+	'id' => 'response_blog_drag_and_drop_section',
+		'label' => __('Drag & Drop', 'response'),
+		'description' => __('Drag & drop description', 'response'),
+		'heading' => 'response_blog_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_blog_options_section',
+		'label' => __('Blog Options', 'response'),
+		'description' => __('Options description', 'response'),
+		'heading' => 'response_blog_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_blog_slider_section',
+		'label' => __('Blog Slider', 'response'),
+		'description' => __('Slider description', 'response'),
+		'heading' => 'response_blog_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_blog_seo_section',
+		'label' => __('SEO', 'response'),
+		'description' => __('SEO description', 'response'),
+		'heading' => 'response_blog_heading'
+	);
+	
+	/* TEMPLATE */
+	
+	$sections_list[] = array(
+	'id' => 'response_single_post_section',
+		'label' => __('Single Post', 'response'),
+		'description' => __('Single Post description', 'response'),
+		'heading' => 'response_templates_heading'
+	);
 		
+	$sections_list[] = array(
+	'id' => 'response_archive_section',
+		'label' => __('Archive', 'response'),
+		'description' => __('Archive description', 'response'),
+		'heading' => 'response_templates_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_search_section',
+		'label' => __('Search', 'response'),
+		'description' => __('Search description', 'response'),
+		'heading' => 'response_templates_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_error_section',
+		'label' => __('404', 'response'),
+		'description' => __('404 description', 'response'),
+		'heading' => 'response_templates_heading'
+	);
+	
+	/* FOOTER */
+	
+	$sections_list[] = array(
+	'id' => 'response_footer_section',
+		'label' => __('Footer Options', 'response'),
+		'description' => __('Footer description', 'response'),
+		'heading' => 'response_footer_heading'
+	);
+	
+	/* IMPORT/EXPORT */
+	
+	$sections_list[] = array(
+	'id' => 'response_import_export_section',
+		'label' => __('Import / Export', 'response'),
+		'description' => __('Import/Export description', 'response'),
+		'heading' => 'response_import_export_heading'
+	);
+	
+	
 
 	return $sections_list;
 }
@@ -163,6 +240,53 @@ add_filter('response_section_list', 'response_add_core_sections');
 
 // TODO: this is where we will build our default sections for the options page
 function response_add_core_fields( $fields_list ) {
+	
+	// post byline 
+	
+	$pbe_defaults = array(
+		'author' => 1,
+		'categories' => 1,
+		'date' => 1,
+		'comments' => 1,
+		'share' => 1,
+		'tags' => 1
+	);
+	$pbe_array = array (
+		'author' => __('Author', 'options_framework_theme'),
+		'categories' => __('Categories', 'options_framework_theme'),
+		'date' => __('Date', 'options_framework_theme'),
+		'comments' => __('Comments', 'options_framework_theme'),
+		'share' => __('Share', 'options_framework_theme'),
+		'tags' => __('Tags', 'options_framework_theme')
+	);
+	
+	
+	// Pull all the categories into an array
+	$options_categories = array();
+	$options_categories_obj = get_categories();
+	foreach ($options_categories_obj as $category) {
+		$options_categories['response_all'] = 'All';
+		$options_categories[$category->cat_ID] = $category->cat_name;
+	}
+	
+	// Pull all tags into an array
+	$options_tags = array();
+	$options_tags_obj = get_tags();
+	foreach ( $options_tags_obj as $tag ) {
+		$options_tags[$tag->term_id] = $tag->name;
+	}
+
+
+	// Pull all the pages into an array
+	$options_pages = array();
+	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
+	$options_pages[''] = 'Select a page:';
+	foreach ($options_pages_obj as $page) {
+		$options_pages[$page->ID] = $page->post_title;
+	}
+	
+	// If using image radio buttons, define a directory path
+	$imagepath =  get_template_directory_uri() . '/core/lib/images/';
 	
 	$fields_list = array();
 	
@@ -494,10 +618,873 @@ function response_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Background Image', 'options_framework_theme'),
 		'desc' => __('Enter URL or upload file', 'options_framework_theme'),
-		'id' => 'background_uploader',
+		'id' => 'header_background_uploader',
 		'type' => 'upload',
 		'section' => 'response_header_options_section',
 		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Favicon', 'options_framework_theme'),
+		'desc' => __('Enter URL or upload file', 'options_framework_theme'),
+		'id' => 'favicon_uploader',
+		'type' => 'upload',
+		'section' => 'response_header_options_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Apple Touch Icon', 'options_framework_theme'),
+		'desc' => __('Enter URL or upload file', 'options_framework_theme'),
+		'id' => 'apple_touch_uploader',
+		'type' => 'upload',
+		'section' => 'response_header_options_section',
+		'heading' => 'response_header_heading');
+		
+	/******************** iMenu Options *******************************/
+	
+	$fields_list[] = array(
+		'name' => __('Menu Typography', 'options_framework_theme'),
+		'desc' => __('Menu typography options.', 'options_framework_theme'),
+		'id' => "menu_typography",
+		'std' => $typography_defaults,
+		'type' => 'typography',
+		'options' => $typography_options,
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Menu Colors', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'custom_menu_colors_toggle',
+		'std' => '0',
+		'type' => 'checkbox',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Menu Bar Color', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'menu_bar_color_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Menu Text Color', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'menu_text_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Menu Dropdown Color', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'menu_dropdown_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Custom Menu Hover Color', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'menu_hover_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Menu Rounded Corners', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'menu_rounded_corners_toggle',
+		'std' => '0',
+		'type' => 'checkbox',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Home Icon', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'home_icon_toggle',
+		'std' => '0',
+		'type' => 'checkbox',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Searchbar', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'searchbar_toggle',
+		'std' => '0',
+		'type' => 'checkbox',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Mobile Searchbar', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'mobile_searchbar_toggle',
+		'std' => '0',
+		'type' => 'checkbox',
+		'section' => 'response_header_imenu_section',
+		'heading' => 'response_header_heading');
+		
+	/* SOCIAL */
+	
+	$fields_list[] = array(
+		'name' => "Choose you background image",
+		'desc' => "Images for background",
+		'id' => "theme_backgrounds",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'icons-classic' => $imagepath . 'social/thumbs/icons-classic.png',
+			'icons-default' => $imagepath . 'social/thumbs/icons-default.png',
+			'icons-round' => $imagepath . 'social/thumbs/icons-round.png'),
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Twitter', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_twitter',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Twitter URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'twitter_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Facebook', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_facebook',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Facebook URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'facebook_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Google', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_google',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Google URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'google_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Flickr', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_flickr',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Flickr URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'flickr_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Pinterest', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_pinterest',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Pinterest URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'pinterest_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('LinkedIn', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_linkedin',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('LinkedIn URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'linkedin_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('YouTube', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_youtube',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('YouTube URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'youtube_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Google Maps', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_googlemaps',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Google Maps URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'googlemaps_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Email', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_email',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Email Address', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'email_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('RSS', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'social_rss',
+		'type' => 'checkbox',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('RSS URL', 'options_framework_theme'),
+		'desc' => __('Description', 'options_framework_theme'),
+		'id' => 'rss_url',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_header_social_section',
+		'heading' => 'response_header_heading'
+	);
+	
+	/* TRACKING AND SCRIPTS */
+	
+	$fields_list[] = array(
+		'name' => __('Google Analytics Code', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'analytics_textarea',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_header_scripts_section',
+		'heading' => 'response_header_heading');
+	
+	$fields_list[] = array(
+		'name' => __('Custom Header Scripts', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'custom_scripts_textarea',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_header_scripts_section',
+		'heading' => 'response_header_heading');
+		
+	/**************************************************************************/
+	/* BLOG */
+	/**************************************************************************/
+	
+	$fields_list[] = array(
+		'id' => 'response_blog_drag_drop_field',
+		'name' => __('Drag & Drop Blog Elements', 'response'),
+		'desc' => __('description.', 'response'),
+		'callback' => 'response_drag_drop_field',
+		'std' => "blog_post_page",
+		'options' => array(
+			"blog_post_page" => "Post Page",
+			"response_slider" => "Slider",
+			"callout_section" => "Callout Section",
+			"twitter_bar" => "Twitter Bar",
+			"carousel" => "Carousel",
+			"portfolio" => "Portfolio",
+			"product" => "Product",
+			"boxes" => "Boxes"
+		),
+		'section' => 'response_blog_drag_and_drop_section',
+		'heading' => 'response_blog_heading'
+	);
+	
+	/********* BLOG OPTIONS *******************/
+	
+	$fields_list[] = array(
+		'name' => "Sidebar Options",
+		'desc' => "description",
+		'id' => "sidebar_images",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Formats Icons', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'post_format_icons',
+		'type' => 'checkbox',
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+	
+	$fields_list[] = array(
+		'name' => __('Post Excerpts', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'post_excerpts',
+		'type' => 'checkbox',
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Featured Images', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'post_featured_images',
+		'type' => 'checkbox',
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+	
+	$fields_list[] = array(
+		'name' => __('Post Byline Elements', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'post_byline_elements',
+		'std' => $pbe_defaults, // These items get checked by default
+		'type' => 'multicheck',
+		'options' => $pbe_array,
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Facebook Like Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'facebook_like',
+		'type' => 'checkbox',
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Google Plus One Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'google_plus_one',
+		'type' => 'checkbox',
+		'section' => 'response_blog_options_section',
+		'heading' => 'response_blog_heading');
+		
+	/*********** BLOG SLIDER ******************************/
+	
+	$fields_list[] = array(
+		'name' => __('Slider Size', 'response'),
+		'id' => 'blog_slider_size',
+		'type' => 'select',
+		'std' => 'full',
+		'options' => array(
+			'full' => __('Full', 'response'),
+			'half' => __('Half', 'response'),
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Type', 'response'),
+		'id' => 'blog_slider_type',
+		'type' => 'select',
+		'std' => 'posts',
+		'options' => array(
+			'posts' => __('Posts', 'response'),
+			'custom' => __('Custom', 'response'),
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Categories', 'response'),
+		'id' => 'blog_slider_post_cats',
+		'type' => 'select',
+		'std' => 'response_all',
+		'options' => $options_categories,
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Number of Featured Blog Posts', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'blog_no_featured_posts',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Height', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'blog_slider_height',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Animation', 'response'),
+		'id' => 'blog_slider_animation',
+		'type' => 'select',
+		'std' => 'horizontal-push',
+		'options' => array(
+			'horizontal-push' => __('Horizontal Push', 'response'),
+			'fade' => __('Fade', 'response'),
+			'horizontal-slide' => __('Horizontal Slide', 'response'),
+			'vertical-slide' => __('Vertical Slide', 'reponse')
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Caption Style', 'response'),
+		'id' => 'blog_slider_caption_style',
+		'type' => 'select',
+		'std' => 'bottom',
+		'options' => array(
+			'bottom' => __('Bottom', 'response'),
+			'right' => __('Right', 'response'),
+			'left' => __('Left', 'response'),
+			'none' => __('None', 'reponse')
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Caption Animation', 'response'),
+		'id' => 'blog_caption_animation',
+		'type' => 'select',
+		'std' => 'fade',
+		'options' => array(
+			'fade' => __('Fade', 'response'),
+			'slide-open' => __('Slide Open', 'response'),
+			'none' => __('None', 'response')
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Navigation', 'response'),
+		'id' => 'blog_slider_navigation',
+		'type' => 'select',
+		'std' => 'dots',
+		'options' => array(
+			'dots' => __('Dots', 'response'),
+			'thumbs' => __('Thumbnails', 'response'),
+			'none' => __('None', 'response')
+		),
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Arrows', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'blog_slider_arrows',
+		'type' => 'checkbox',
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Word Thumb Image Resizing', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'blog_word_image_resizing',
+		'type' => 'checkbox',
+		'section' => 'response_blog_slider_section',
+		'heading' => 'response_blog_heading'
+	);
+	
+	/*********** SEO *****************/
+	
+	$fields_list[] = array(
+		'name' => __('Home Description', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'seo_home_desc',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_blog_seo_section',
+		'heading' => 'response_blog_heading');	
+		
+	$fields_list[] = array(
+		'name' => __('Home Keywords', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'seo_home_keywords',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_blog_seo_section',
+		'heading' => 'response_blog_heading');	
+		
+	$fields_list[] = array(
+		'name' => __('Optional Home Title', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'seo_optional_title',
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_blog_seo_section',
+		'heading' => 'response_blog_heading',
+	);
+	
+	/*************************************************************/
+	/* TEMPLATES */
+	/*************************************************************/
+	
+	/* SINGLE POSTS */
+	
+	$fields_list[] = array(
+		'name' => "Sidebar Options",
+		'desc' => "Images for layout.",
+		'id' => "single_post_sidebar_options",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Breadcrumbs', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_breadcrumbs',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Featured Images', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_featured_images',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Format Icons', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_format_icons',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Byline Elements', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'single_post_byline_elements',
+		'std' => $pbe_defaults, // These items get checked by default
+		'type' => 'multicheck',
+		'options' => $pbe_array,
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+		);
+
+	$fields_list[] = array(
+		'name' => __('Facebook Like Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_facebook_like',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Google Plus One Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_google_plus',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Pagination Links', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'single_post_post_pagination',
+		'type' => 'checkbox',
+		'section' => 'response_single_post_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	/* ARCHIVE */
+	
+	$fields_list[] = array(
+		'name' => "Sidebar Options",
+		'desc' => "Images for layout.",
+		'id' => "archive_sidebar_options",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Breadcrumbs', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'archive_breadcrumbs',
+		'type' => 'checkbox',
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Featured Images', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'archive_featured_images',
+		'type' => 'checkbox',
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Format Icons', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'archive_format_icons',
+		'type' => 'checkbox',
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Byline Elements', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'archive_post_byline_elements',
+		'std' => $pbe_defaults, // These items get checked by default
+		'type' => 'multicheck',
+		'options' => $pbe_array,
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+		);
+
+	$fields_list[] = array(
+		'name' => __('Facebook Like Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'archive_facebook_like',
+		'type' => 'checkbox',
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Google Plus One Button', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'archive_google_plus',
+		'type' => 'checkbox',
+		'section' => 'response_archive_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	/*SEARCH */
+	
+	$fields_list[] = array(
+		'name' => "Sidebar Options",
+		'desc' => "Images for layout.",
+		'id' => "search_sidebar_options",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_search_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Excerpts', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'search_post_excerpts',
+		'type' => 'checkbox',
+		'section' => 'response_search_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	/*404 */
+	
+	$fields_list[] = array(
+		'name' => "Sidebar Options",
+		'desc' => "Images for layout.",
+		'id' => "error_sidebar_options",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_error_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Custom 404 Content', 'options_framework_theme'),
+		'desc' => __('Custom 404 description.', 'options_framework_theme'),
+		'id' => 'example_textarea',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_error_section',
+		'heading' => 'response_templates_heading'
+	);
+	
+	/************************************************************************************/
+	/* FOOTER */
+	/************************************************************************************/
+	
+	$fields_list[] = array(
+		'name' => __('Footer', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'footer_toggle',
+		'type' => 'checkbox',
+		'section' => 'response_footer_section',
+		'heading' => 'response_footer_heading'
+	);
+	
+	$fields_list[] = array(
+		'id' => 'footer_copyright_text',
+		'name' => __('Footer Copyright Text', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'std' => 'Default Value',
+		'type' => 'text',
+		'section' => 'response_footer_section',
+		'heading' => 'response_footer_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Cyberchimps Link', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'footer_cyberchimps_link',
+		'type' => 'checkbox',
+		'section' => 'response_footer_section',
+		'heading' => 'response_footer_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Afterfooter', 'options_framework_theme'),
+		'desc' => __('description', 'options_framework_theme'),
+		'id' => 'afterfooter_toggle',
+		'type' => 'checkbox',
+		'section' => 'response_footer_section',
+		'heading' => 'response_footer_heading'
+	);
+	
+	/****************************************************************/
+	/* IMPORT EXPORT */
+	/***************************************************************/
+	
+	$fields_list[] = array(
+		'name' => __('Export Settings', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'export_textarea',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_import_export_section',
+		'heading' => 'response_import_export_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Import Settings', 'options_framework_theme'),
+		'desc' => __('description.', 'options_framework_theme'),
+		'id' => 'import_textarea',
+		'std' => 'Default Text',
+		'type' => 'textarea',
+		'section' => 'response_import_export_section',
+		'heading' => 'response_import_export_heading'
+	);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
 		
 	
 	
@@ -533,32 +1520,6 @@ function response_add_core_fields( $fields_list ) {
 		'repeat' => 'repeat',
 		'position' => 'top center',
 		'attachment'=>'scroll' );
-
-	// Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
-	
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
-
-
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
-	$options_pages[''] = 'Select a page:';
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
-
-	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/core/lib/images/';
 	
 	$fields_list[] = array(
 		'id' => 'response_skin_color_field',
