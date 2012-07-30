@@ -136,9 +136,11 @@ function response_options_page() {
 
 			<!-- header -->
 			<div class="row-fluid cc-header">
-				<div class="span3 cc-title">
-					<div class="icon32" id="icon-tools"> <br /> </div>
-					<h2>Theme Options</h2>
+				<div class="span3">
+        	<div class="cc-title">
+            <div class="icon32" id="icon-tools"> <br /> </div>
+            	<h2>Theme Options</h2>
+            </div><!-- cc-title -->
 				</div><!-- span3 -->
 				<div class="span9">
 					<ul class="cc-header-links">
@@ -149,24 +151,32 @@ function response_options_page() {
 			<!-- end header -->
 			
 			<!-- start sub menu --> 
-			<div class="row-fluid cc-submenu">
-				<!-- TODO: hiding this section till we can implement 
-				<div class="span3 cc-collapse">
-					<p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
-				</div>
-				-->
-				<div class="span12">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
-					<div class="clear"></div>
-				</div><!-- span 9 -->
+			<div class="row-fluid">
+				<div class="cc-submenu"> 
+					<div class="span3">
+        		<div c;ass="cc-collapse">
+              <!-- TODO: hiding this section till we can implement
+                <p><a href="#">Open All</a> / <a href="#">Collapse All</a></p>
+              -->
+        		</div><!-- cc-collapse -->
+					</div><!-- span3 -->
+				
+					<div class="span9">
+            <div class="cc-submenu-links">
+              <input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
+              <input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
+            </div><!-- cc-submenu-links -->
+					</div><!-- span 9 -->
+          <div class="clear"></div>
+        </div><!-- cc-submenu -->
 			</div><!-- row fluid -->
 			<!-- end sub menu -->
 			
 			<!-- start left menu --> 
-			<div class="row-fluid cc-content">
-				
-				<div class="span2 cc-left-menu">
+			<div class="row-fluid">
+				<div class="cc-content">
+				<div class="span2">
+        <div class="cc-left-menu">
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
 						foreach ( $headings_list as $heading ) {
@@ -192,11 +202,13 @@ function response_options_page() {
 							echo '</li>';
 						} ?>
 					</ul>
+          </div><!-- cc-left-menu -->
 				</div><!-- span 2 -->
 				<!-- end left menu -->
 				
 				<!-- start main content -->
-				<div class="span10 cc-main-content">
+				<div class="span10">
+        <div class="cc-main-content">
 					<?php foreach( $headings_list as $heading ) {
 						
 						$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['title']) );
@@ -210,20 +222,39 @@ function response_options_page() {
 						response_do_settings_sections( $heading['id'] );
 						echo '</div>';
 					} ?>
+        </div><!-- cc-main-content -->
 				</div><!-- span 10 -->
+        </div><!-- cc-content -->
 			</div><!-- row fluid -->
 			<!-- end main content -->
 			
 			<!-- start footer -->
-			<div class="row-fluid cc-footer">
-				<div class="span6 cc-social">
-					<p>CyberChimps <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+			<div class="row-fluid">
+      <div class="cc-footer">
+      	<div class="span2">
+        <div class="cc-logo">
+        	<a href="http://cyberchimps.com" title="CyberChimps Wordpress Themes"><img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/options/cc-logo.png" alt="CyberChimps Wordpress Themes" /></a>
+        </div><!-- cc-logo -->
+        </div><!-- span2 -->
+				<div class="span4">
+        <div class="cc-social-container">
+					<div class="cc-social">
+          <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div><!-- cc-scoial -->
+          <div class="cc-social">
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+          </div><!-- cc-scoial -->
+         </div><!-- cc-social-container -->
 				</div><!-- span 6 -->
 				<div class="span6">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
-					<div class="clear"></div>
+        <div class="footer-links">
+					<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
+					<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
+        </div><!-- footer-links -->
 				</div><!-- span 6 -->
+       <div class="clear"></div>
+       </div><!-- cc-footer -->
 			</div><!-- row fluid -->
 			<!-- end footer -->
 				
@@ -261,7 +292,7 @@ function response_do_settings_sections( $page ) {
 		if ( isset($wp_settings_fields) && isset($wp_settings_fields[$page]) && isset($wp_settings_fields[$page][$section['id']]) ) {
 			response_do_settings_fields($page, $section['id']);
 		}
-		echo '</div>';
+		echo '<div class="clear"></div></div>';
 	}
 }
 

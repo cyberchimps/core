@@ -117,12 +117,45 @@ function response_add_core_sections( $sections_list ) {
 		'heading' => 'response_design_heading'
 	);
 	
+	/* HEADER */
+	
 	$sections_list[] = array(
 		'id' => 'response_header_drag_drop_section',
 		'label' => __('Header Drag/Drop', 'response'),
 		'description' => __('Header Drag/Drop Description', 'response'),
 		'heading' => 'response_header_heading'
 	);
+	
+	$sections_list[] = array(
+	'id' => 'response_header_options_section',
+		'label' => __('Header Options', 'response'),
+		'description' => __('Header Options description', 'response'),
+		'heading' => 'response_header_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_header_imenu_section',
+		'label' => __('iMenu Options', 'response'),
+		'description' => __('iMenu Options description', 'response'),
+		'heading' => 'response_header_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_header_social_section',
+		'label' => __('Social', 'response'),
+		'description' => __('Social description', 'response'),
+		'heading' => 'response_header_heading'
+	);
+	
+	$sections_list[] = array(
+	'id' => 'response_header_scripts_section',
+		'label' => __('Tracking and Scripts', 'response'),
+		'description' => __('Tracking and Scripts description', 'response'),
+		'heading' => 'response_header_heading'
+	);
+	
+	/* BLOG */
+		
 
 	return $sections_list;
 }
@@ -158,21 +191,7 @@ function response_add_core_fields( $fields_list ) {
 		),
 		'section' => 'response_responsive_section',
 		'heading' => 'response_design_heading',
-	);
-	
-	$fields_list[] = array(
-		'id' => 'response_skin_color_field',
-		'name' => __('Select a Skin Color', 'response'),
-		'type' => 'select',
-		'std' => 'default',
-		'options' => array(
-			'default' => __('Default', 'response'),
-			'greeb' => __('Green', 'response'),
-		),
-		'section' => 'response_responsive_section',
-		'heading' => 'response_design_heading',
-	);
-	
+	);	
 	
 	$fields_list[] = array(
 		'id' => 'response_responsive_videos_field',
@@ -236,6 +255,210 @@ function response_add_core_fields( $fields_list ) {
 		'section' => 'response_typography_section',
 		'heading' => 'response_design_heading'
 	);
+		
+	/* BACKGROUND */
+	
+	/* TODO different themes will need different backgrounds. We need a system that can work from core and list image files to be selected */
+	$fields_list[] = array(
+		'name' => "Choose you background image",
+		'desc' => "Images for background",
+		'id' => "theme_backgrounds",
+		'std' => "2c-l-fixed",
+		'type' => "images",
+		'options' => array(
+			'1col-fixed' => $imagepath . '1col.png',
+			'2c-l-fixed' => $imagepath . '2cl.png',
+			'2c-r-fixed' => $imagepath . '2cr.png'),
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Use Custom Backgrounds', 'options_framework_theme'),
+		'desc' => __('Click here to use custome backgrounds.', 'options_framework_theme'),
+		'id' => 'show_custom_backgrounds',
+		'type' => 'checkbox',
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Colorpicker', 'options_framework_theme'),
+		'desc' => __('Select background color', 'options_framework_theme'),
+		'id' => 'background_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Background Image', 'options_framework_theme'),
+		'desc' => __('Enter URL or upload file', 'options_framework_theme'),
+		'id' => 'background_uploader',
+		'type' => 'upload',
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading');
+		
+	$alignment_array = array(
+		'left' => __('Left', 'options_framework_theme'),
+		'center' => __('Center', 'options_framework_theme'),
+		'right' => __('Right', 'options_framework_theme')
+	);	
+	$fields_list[] = array(
+		'name' => __('Image Position', 'options_framework_theme'),
+		'desc' => __('Select the position of your image', 'options_framework_theme'),
+		'id' => 'background_image_position',
+		'std' => 'center',
+		'type' => 'radio',
+		'options' => $alignment_array,
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading');
+		
+	$tile_array = array(
+		'tile' => __('Tile', 'options_framework_theme'),
+		'tile-horizontally' => __('Tile Horizontally', 'options_framework_theme'),
+		'tile-vertically' => __('Tile Vertically', 'options_framework_theme'),
+		'no-tile' => __('No Tile', 'options_framework_theme')
+	);	
+	$fields_list[] = array(
+		'name' => __('Image Repeat', 'options_framework_theme'),
+		'desc' => __('How do you want the image to tile?', 'options_framework_theme'),
+		'id' => 'background_image_tile',
+		'std' => 'tile',
+		'type' => 'radio',
+		'options' => $tile_array,
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading');
+		
+	$attachment_array = array(
+		'scroll' => __('Scroll', 'options_framework_theme'),
+		'fixed' => __('Fixed', 'options_framework_theme')
+	);	
+	$fields_list[] = array(
+		'name' => __('Image Scroll', 'options_framework_theme'),
+		'desc' => __('Fixed or Scroll?', 'options_framework_theme'),
+		'id' => 'background_image_attachment',
+		'std' => 'scroll',
+		'type' => 'radio',
+		'options' => $attachment_array,
+		'section' => 'response_background_section',
+		'heading' => 'response_design_heading');
+		
+		
+	/* LAYOUT */
+	$fields_list[] = array(
+		'name' => __('Standard Web Layout', 'options_framework_theme'),
+		'desc' => __('I have no idea what this means?', 'options_framework_theme'),
+		'id' => 'standard_web_layout',
+		'type' => 'checkbox',
+		'section' => 'response_layout_section',
+		'heading' => 'response_design_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Row Max Width', 'options_framework_theme'),
+		'desc' => __('Maximum width of your pages, including any sidebars', 'options_framework_theme'),
+		'id' => 'row_max_width',
+		'std' => '980',
+		'type' => 'text',
+		'section' => 'response_layout_section',
+		'heading' => 'response_design_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Widget Title Background', 'options_framework_theme'),
+		'desc' => __('again I have no idea what this means?', 'options_framework_theme'),
+		'id' => 'widget_title_background',
+		'type' => 'checkbox',
+		'section' => 'response_layout_section',
+		'heading' => 'response_design_heading');
+
+	/* CUSTOMER COLORS */
+	
+	$fields_list[] = array(
+		'name' => __('Text Color', 'options_framework_theme'),
+		'desc' => __('Select text color', 'options_framework_theme'),
+		'id' => 'text_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Site Title Color', 'options_framework_theme'),
+		'desc' => __('Select site title color', 'options_framework_theme'),
+		'id' => 'site_title_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Site Description Color', 'options_framework_theme'),
+		'desc' => __('Select site description color', 'options_framework_theme'),
+		'id' => 'site_description_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Link Color', 'options_framework_theme'),
+		'desc' => __('Select link color', 'options_framework_theme'),
+		'id' => 'link_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Link Hover Color', 'options_framework_theme'),
+		'desc' => __('Select link hover color', 'options_framework_theme'),
+		'id' => 'link_hover_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Post Title Color', 'options_framework_theme'),
+		'desc' => __('Select post title color', 'options_framework_theme'),
+		'id' => 'post_title_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	$fields_list[] = array(
+		'name' => __('Text Color', 'options_framework_theme'),
+		'desc' => __('Select text color', 'options_framework_theme'),
+		'id' => 'text_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );	
+		
+	$fields_list[] = array(
+		'name' => __('Footer Color', 'options_framework_theme'),
+		'desc' => __('Select footer color', 'options_framework_theme'),
+		'id' => 'footer_colorpicker',
+		'std' => '',
+		'type' => 'color',
+		'section' => 'response_custom_colors_section',
+		'heading' => 'response_design_heading' );
+		
+	/* CUSTOM CSS */
+	$fields_list[] = array(
+		'name' => __('Custom CSS', 'response'),
+		'desc' => __('Add your custom CSS here', 'response'),
+		'id' => 'custom_css',
+		'type' => 'textarea',
+		'std' => '',
+		'section' => 'response_custom_css_section',
+		'heading' => 'response_design_heading'
+	);
+
+	
+	/********************************************************************/
+	/* HEADER */
+	/*******************************************************************/	
 	
 	$fields_list[] = array(
 		'id' => 'response_drag_drop_field',
@@ -257,6 +480,25 @@ function response_add_core_fields( $fields_list ) {
 		'section' => 'response_header_drag_drop_section',
 		'heading' => 'response_header_heading'
 	);
+
+	/********************* HEADER OPTIONS ********************************/
+	
+	$fields_list[] = array(
+		'name' => __('Header Bar', 'options_framework_theme'),
+		'desc' => __('Description for header bar', 'options_framework_theme'),
+		'id' => 'header_bar',
+		'type' => 'checkbox',
+		'section' => 'response_header_options_section',
+		'heading' => 'response_header_heading');
+	
+	$fields_list[] = array(
+		'name' => __('Background Image', 'options_framework_theme'),
+		'desc' => __('Enter URL or upload file', 'options_framework_theme'),
+		'id' => 'background_uploader',
+		'type' => 'upload',
+		'section' => 'response_header_options_section',
+		'heading' => 'response_header_heading');
+		
 	
 	
 	/* Fields for Reference Remove Once Fields are Finished */
@@ -318,6 +560,18 @@ function response_add_core_fields( $fields_list ) {
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/core/lib/images/';
 	
+	$fields_list[] = array(
+		'id' => 'response_skin_color_field',
+		'name' => __('Select a Skin Color', 'response'),
+		'type' => 'select',
+		'std' => 'default',
+		'options' => array(
+			'default' => __('Default', 'response'),
+			'greeb' => __('Green', 'response'),
+		),
+		'section' => 'response_temp_styling_section',
+		'heading' => 'response_design_heading',
+	);
 	
 	$fields_list[] = array(
 		'id' => 'core_text',

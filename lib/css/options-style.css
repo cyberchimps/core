@@ -1,4 +1,4 @@
-/*************** HTML ************************/
+/*************** HTML & Basics ****************/
 
 ul, ol {
   margin: 0;
@@ -9,6 +9,43 @@ ul, ol {
 .cc-options a:hover {
   text-decoration: none!important;
 }
+.cc-options input[type="submit"] {
+  border-color: #2c2c2c;
+}
+.clear {
+  clear: both;
+}
+
+/************** Bootstrap reset **************/
+
+.container-fluid {
+  padding: 0;
+}
+form {
+  margin: 0;
+}
+
+/************** Buttons **********************/
+
+.btn {
+  font-weight: bold;
+}
+.btn-primary {
+  color: #ffffff!important;
+  background: #5ea8f3;
+  background: -moz-linear-gradient(top,  #5ea8f3 1%, #4896e4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#5ea8f3), color-stop(100%,#4896e4));
+  background: -webkit-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: -o-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: -ms-linear-gradient(top,  #5ea8f3 1%,#4896e4 100%);
+  background: linear-gradient(to bottom,  #5ea8f3 1%,#4896e4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea8f3', endColorstr='#4896e4',GradientType=0 );
+}
+.btn-primary:hover {
+  color: #ffffff;
+  background: #4896e4;
+}
+
 
 /************** Container ********************/
 
@@ -24,58 +61,66 @@ ul, ol {
 /*************** Header **********************/
 
 .cc-header {
+  width:100%;
   padding: 20px 0;
+  border-bottom: 1px solid #4d4d4d;
 }
-.cc-options cc-title { 
+.cc-header .cc-title { 
+	margin-left: 20px; 
 }
 .cc-options ul.cc-header-links {
   margin-top: 10px;
+  margin-right: 20px;
   font-size: 1.2em;
   text-align: right;
 }
 .cc-options ul.cc-header-links li {
   display: inline;
-  position: relative;
   margin-left: 20px;
 }
-.cc-options ul.cc-header-links li:after {
-  content: '|';
-  position: absolute;
-  right: -10px;
+.cc-options ul.cc-header-links li a {
+  color: #4b4b4b;
+  font-weight: bold;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
-.cc-options ul.cc-header-links li:last-child:after {
-  content: '';
+.cc-options ul.cc-header-links li a:hover {
+  border: 1px solid #d8d8d8;
+  background: #f0f0f0;
+  background: -moz-linear-gradient(top,  #f0f0f0 0%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#e6e6e6));
+  background: -webkit-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%);
+  background: -o-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%);
+  background: -ms-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%);
+  background: linear-gradient(to bottom,  #f0f0f0 0%,#e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#e6e6e6',GradientType=0 );
 }
 
 /***************** Sub Menu *******************/
 
 .cc-submenu {
-  width: 100%;
-  margin-left: -20px;
-  padding: 10px 20px;
+  padding: 10px 0;
   background-color: #ddd;
-}
-.cc-submenu .cc-collapse p {
-  position: relative;
-  top: 10px;
+  border-bottom: 1px solid #626262;
+  background: #9a9a9a;
+  background: -moz-linear-gradient(top,  #9a9a9a 0%, #7e7e7e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9a9a9a), color-stop(100%,#7e7e7e));
+  background: -webkit-linear-gradient(top,  #9a9a9a 0%,#7e7e7e 100%);
+  background: -o-linear-gradient(top,  #9a9a9a 0%,#7e7e7e 100%);
+  background: -ms-linear-gradient(top,  #9a9a9a 0%,#7e7e7e 100%);
+  background: linear-gradient(to bottom,  #9a9a9a 0%,#7e7e7e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a9a9a', endColorstr='#7e7e7e',GradientType=0 );
 }
 .cc-submenu-links {
-  margin: 5px 0 0 0;
+  margin: 0 20px 0 0;
   text-align: right;
-}
-.cc-submenu-links li {
-  display: inline-block;
-}
-.cc-submenu-links li a {
-  font-weight: bold;
-  background: #333;
-  padding: 5px 15px;
 }
 
 /*************** Content **********************/
 
 .cc-content {
-  margin-left: -20px;
 }
 
 /************** Left Menu *********************/
@@ -200,21 +245,38 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
 }
 
 /***************** Footer *********************/
+
 .cc-footer {
-  padding: 10px 20px;
-  margin-left: -20px;
-  background-color: #999;
+  padding: 0;
+  background: #575757;
+  background: -moz-linear-gradient(top,  #575757 0%, #121212 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#575757), color-stop(100%,#121212));
+  background: -webkit-linear-gradient(top,  #575757 0%,#121212 100%);
+  background: -o-linear-gradient(top,  #575757 0%,#121212 100%);
+  background: -ms-linear-gradient(top,  #575757 0%,#121212 100%);
+  background: linear-gradient(to bottom,  #575757 0%,#121212 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575757', endColorstr='#121212',GradientType=0 );
 }
-.cc-social p {
-  color: #fff;
-  font-size: 1.5em;
-  margin-top: 10px;
+.cc-logo {
+  border-right: 1px solid #1d1d1d;
 }
-.cc-social p a {
-  color: #fff;
+.cc-logo img {
+	margin: 10px 0 10px 20px;
+}
+.cc-social-container {
+  margin: 10px 0;
+}
+.cc-social {
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
 }
 .cc-social p a:hover {
   color: #08c;
+}
+.footer-links {
+  text-align: right;
+  margin: 10px 20px 10px 0;
 }
 
 /***************** Forms *****************************/
@@ -283,6 +345,11 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
 .cc-main-content .of-typography {
   float: left;
   margin-right: 10px;
+}
+.cc-main-content .field-container {
+  float: left;
+  clear: left;
+  margin-bottom: 15px;
 }
 .cc-main-content .radio-container, .cc-main-content .checkbox-container {
   float: left;
