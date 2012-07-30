@@ -147,9 +147,9 @@ function response_options_page() {
 				
 					<div class="span9">
             <div class="cc-submenu-links">
-              <input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
-              <input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
-            </div><!-- cc-submenu-links -->
+				<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
+            	<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
+			</div><!-- cc-submenu-links -->
 					</div><!-- span 9 -->
           <div class="clear"></div>
         </div><!-- cc-submenu -->
@@ -230,8 +230,8 @@ function response_options_page() {
 				</div><!-- span 6 -->
 				<div class="span6">
         <div class="footer-links">
-					<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
-					<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
+			<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
+			<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
         </div><!-- footer-links -->
 				</div><!-- span 6 -->
        <div class="clear"></div>
