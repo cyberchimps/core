@@ -122,6 +122,10 @@ form {
 
 .cc-content {
 }
+.cc-main-content {
+  height: 450px;
+  overflow: auto;
+}
 
 /************** Left Menu *********************/
 
@@ -204,6 +208,9 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li {
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child > li:last-child {
   border-bottom: none;
+}
+ul.cc-parent > li.cc-active:last-child > ul.cc-child > li:last-child {
+  border-bottom:  1px solid #ddd;
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(odd) {
   background: #ffffff;
