@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'response_widgets_init' );
 function response_load_elements() {
 	
 	// TODO: Find out which elements are enabled by theme true is enabled and false is disabled
-	$options = array( 'callout' => true, 'twitter-bar' => true, 'breadcrumbs' => true );
+	$options = array( 'callout' => true, 'twitter-bar' => true, 'breadcrumbs' => true, 'pagination' => true );
 	
 	if ( $options['callout'] ) {
 		require_once( get_template_directory() . '/core/elements/callout.php' );
@@ -134,6 +134,19 @@ function response_load_elements() {
 	
 	if ( $options['breadcrumbs'] ) {
 		require_once( get_template_directory() . '/core/elements/breadcrumbs.php' );
-	}	
+	}
+	
+	if ( $options['pagination'] ) {
+		//require_once( get_template_directory() . '/core/elements/pagination.php' );
+	}
 }
 add_action('after_setup_theme', 'response_load_elements');
+
+
+require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
+
+require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
+
+require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
+
+require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
