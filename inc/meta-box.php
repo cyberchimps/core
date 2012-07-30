@@ -54,7 +54,7 @@ function initialize_the_meta_boxes() {
 	
 	$meta_boxes = array();
 	
-	$mb = new Chimps_Metabox('Portfolio', 'Portfolio Element', array('pages' => array($themeslug.'_portfolio_images')));
+	$mb = new Chimps_Metabox('Portfolio', 'Portfolio Element', array('pages' => array('portfolio_images')));
 	$mb
 		->tab("Portfolio Element")
 			->single_image('portfolio_image', 'Portfolio Image', '')
@@ -72,7 +72,7 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 		
-	$mb = new Chimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
+	$mb = new Chimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array('featured_posts')));
 	$mb
 		->tab("Featured Post Carousel Options")
 			->text('post_title', 'Featured Post Title', '')
@@ -81,7 +81,7 @@ function initialize_the_meta_boxes() {
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
 
-	$mb = new Chimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array($themeslug.'_custom_slides')));
+	$mb = new Chimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array('custom_slides')));
 	$mb
 		->tab("Custom Slide Options")
 			->text('slider_caption', 'Custom Slide Caption', '')
