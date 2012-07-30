@@ -387,7 +387,15 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
   cursor: pointer;
   border: 5px solid #5DA7F2;
 }
-
+.cc-main-content .toggle {
+	background:url("../images/toggle.png") bottom left;
+	display:block;
+	width:70px;
+	height:22px;
+}
+.cc-main-content .toggle.checked {
+	background-position:top left;
+}
 
 /***************** Section Order *********************/
 .section_order {
