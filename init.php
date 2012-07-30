@@ -32,6 +32,10 @@ function response_core_setup_theme() {
 	// Load core options file
 	require_once( get_template_directory() . '/core/inc/options.php' );
 	
+	// FIXME: Fix documentation
+	// Load options customizer file
+	require_once( get_template_directory() . '/core/inc/options-customizer.php' );
+	
 	// HS: Load Meta Box Class
 	require_once( get_template_directory() . '/core/inc/meta-box-class.php' );
 	
