@@ -511,6 +511,9 @@ function response_fields_callback( $value ) {
 		$explain_value = $value['desc'];
 	}
 	
+	// field wrapper
+	$output .= '<div class="field-container">';
+	
 	// Output field name
 	if ($value['name']) {
 		$output .= '<label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label>';
@@ -786,7 +789,10 @@ function response_fields_callback( $value ) {
 			$output .= '<div class="desc">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
 		}
 	}
-
+	
+	// end field wrapper
+	$output .= '</div>';
+	
 	echo $output;
 }
 /**
