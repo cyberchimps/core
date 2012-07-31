@@ -103,6 +103,9 @@ form {
 .cc-collapse {
 	display: none;
 }
+.cc-collapse .btn-group {
+  margin-left: 20px;
+}
 .cc-submenu {
   padding: 10px 0;
   background-color: #ddd;

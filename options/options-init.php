@@ -142,7 +142,10 @@ function response_options_page() {
 				<div class="cc-submenu"> 
 					<div class="span3">
         		<div class="cc-collapse">
-                <a id="open-all-tabs" href="#"><?php _e('Open All', 'response'); ?></a> / <a id="close-all-tabs" href="#"><?php _e('Collapse All', 'response'); ?></a>
+            	<div class="btn-group">
+              	<button class="btn" id="open-all-tabs"><?php _e('Open All', 'response'); ?></button>
+                <button class="btn" id="close-all-tabs"><?php _e('Collapse All', 'response'); ?></button>
+              </div>
         		</div><!-- cc-collapse -->
 					</div><!-- span3 -->
 				
