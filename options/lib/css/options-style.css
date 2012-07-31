@@ -139,6 +139,7 @@ ul.cc-parent {
   margin-left: -1px;
 }
 ul.cc-parent > li {
+  position: relative;
   margin-bottom: 0;
 }
 ul.cc-parent > li.cc-has-children {
@@ -176,7 +177,7 @@ ul.cc-parent > li.cc-active > a {
   background: linear-gradient(to bottom,  #5ea8f3 1%,#4896e4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea8f3', endColorstr='#4896e4',GradientType=0 );
   border-top: 1px solid #2875c4;
-  border-right: 1px solid #2875c4;
+  border-right: none;
   border-left: 1px solid #2875c4;
   border-bottom: none;
 }
@@ -220,6 +221,21 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(even) {
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
   margin: 10px 5px 10px 30px;
+}
+ul.cc-parent li .cc-menu-arrow {
+  display: none;
+  cursor: auto;
+  z-index: 25;
+  position: absolute;
+  top: 0;
+  right: -15px;
+  margin: 0;
+  height: 39px;
+  width: 15px;
+  background: url('../images/options/blue-arrow.png') no-repeat 0 0;
+}
+ul.cc-parent > li.cc-active > .cc-menu-arrow {
+  display: block;
 }
 
 /**************** Main Content ******************/
