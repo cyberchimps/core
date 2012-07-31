@@ -32,31 +32,38 @@ function response_init_meta_boxes() {
 	global $options;
 	
 	// Call taxonomies for select options
-	
 	$portfolio_terms = get_terms('portfolio_categories', 'hide_empty=0');
+	if( ! is_wp_error( $portfolio_terms ) ):
 	$portfolio_options = array();
 	foreach($portfolio_terms as $term) {
 		$portfolio_options[$term->slug] = $term->name;
 	}
+	endif;
 	
 	$carousel_terms = get_terms('carousel_categories', 'hide_empty=0');
+	if( ! is_wp_error( $carousel_terms ) ): 
 	$carousel_options = array();
 	foreach($carousel_terms as $term) {
 		$carousel_options[$term->slug] = $term->name;
 	}
+	endif;
 	
 	$slide_terms = get_terms('slide_categories', 'hide_empty=0');
+	if( ! is_wp_error( $slide_terms ) ):
 	$slider_options = array();
 	foreach($slide_terms as $term) {
 		$slider_options[$term->slug] = $term->name;
 	}
+	endif;
 	
 	$category_terms = get_terms('category', 'hide_empty=0');
+	if( ! is_wp_error( $category_terms ) ):
 	$blog_options = array();
 	$blog_options['all'] = "All";
 	foreach($category_terms as $term) {
 		$blog_options[$term->slug] = $term->name;
 	}
+	endif;
 	
 	// End taxonomy call
 	
