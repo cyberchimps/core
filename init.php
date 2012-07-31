@@ -146,7 +146,6 @@ function response_load_elements() {
 }
 add_action('after_setup_theme', 'response_load_elements');
 
-
 require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
 
 require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
