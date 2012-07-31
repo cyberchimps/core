@@ -18,7 +18,7 @@
 
 add_action('admin_head', 'response_load_meta_boxes_scripts');
 function response_load_meta_boxes_scripts() {
-	global $post_type; 
+	global $post_type;
 
 	//TODO HS Will need to add more post types as they are created
 	if ( ( $_GET['post_type'] == 'page' ) || ( $post_type == 'page' ) ) :		
@@ -31,10 +31,15 @@ add_action('init', 'response_init_meta_boxes');
 function response_init_meta_boxes() {
 	global $options;
 	
+	// Declare variables
+	$portfolio_options = array(); 
+	$carousel_options = array();
+	$slider_options = array();
+	$blog_options = array();
+	
 	// Call taxonomies for select options
 	$portfolio_terms = get_terms('portfolio_categories', 'hide_empty=0');
 	if( ! is_wp_error( $portfolio_terms ) ):
-	$portfolio_options = array();
 	foreach($portfolio_terms as $term) {
 		$portfolio_options[$term->slug] = $term->name;
 	}
@@ -42,7 +47,6 @@ function response_init_meta_boxes() {
 	
 	$carousel_terms = get_terms('carousel_categories', 'hide_empty=0');
 	if( ! is_wp_error( $carousel_terms ) ): 
-	$carousel_options = array();
 	foreach($carousel_terms as $term) {
 		$carousel_options[$term->slug] = $term->name;
 	}
@@ -50,7 +54,6 @@ function response_init_meta_boxes() {
 	
 	$slide_terms = get_terms('slide_categories', 'hide_empty=0');
 	if( ! is_wp_error( $slide_terms ) ):
-	$slider_options = array();
 	foreach($slide_terms as $term) {
 		$slider_options[$term->slug] = $term->name;
 	}
@@ -58,7 +61,6 @@ function response_init_meta_boxes() {
 	
 	$category_terms = get_terms('category', 'hide_empty=0');
 	if( ! is_wp_error( $category_terms ) ):
-	$blog_options = array();
 	$blog_options['all'] = "All";
 	foreach($category_terms as $term) {
 		$blog_options[$term->slug] = $term->name;
@@ -82,7 +84,7 @@ function response_init_meta_boxes() {
 	$mb = new Chimps_Metabox('pages', 'Response Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select('response_page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
+			->image_select('response_page_sidebar', 'Select Page Layout', '',  array('options' => array(get_template_directory_uri() . '/images/options/right.png', get_template_directory_uri() . '/images/options/tworight.png', get_template_directory_uri() . '/images/options/rightleft.png', get_template_directory_uri() . '/images/options/none.png', get_template_directory_uri() . '/images/options/left.png')))
 			->checkbox('response_hide_page_title', 'Page Title', '', array('std' => 'on'))
 			->section_order('response_page_section_order', 'Page Elements', '', array('options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
@@ -134,7 +136,7 @@ function response_init_meta_boxes() {
 			->text('response_product_title', 'Product Title', '', array('std' => 'Product'))
 			->textarea('response_product_text', 'Product Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
 			->select('response_product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
-			->single_image('response_product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
+			->single_image('response_product_image', 'Product Image', '', array('std' =>  get_template_directory_uri() . '/images/pro/product.jpg'))
 			->textarea('response_product_video', 'Video Embed', '')
 			->checkbox('response_product_link_toggle', 'Product Link', '', array('std' => 'on'))
 			->text('response_product_link_url', 'Link URL', '', array('std' => home_url()))
