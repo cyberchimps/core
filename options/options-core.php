@@ -68,12 +68,13 @@ add_filter('response_heading_list', 'response_add_core_headings');
 function response_add_core_sections( $sections_list ) {
 	
 	$sections_list = array();
-	
+	/*
 	$sections_list[] = array(
 		'id' => 'response_temp_styling_section',
 		'label' => __('Styling Section', 'response'),
 		'heading' => 'response_design_heading'
 	);
+	*/
 	
 	$sections_list[] = array(
 		'id' => 'response_responsive_section',
@@ -294,12 +295,8 @@ function response_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'id' => 'response_responsive_design_field',
 		'name' => __('Responsive Design', 'response'),
-		'type' => 'select',
-		'std' => 'on',
-		'options' => array(
-			'on' => __('On', 'response'),
-			'off' => __('Off', 'response'),
-		),
+		'type' => 'toggle',
+		'std' => 1,
 		'section' => 'response_responsive_section',
 		'heading' => 'response_design_heading',
 	);
@@ -307,25 +304,8 @@ function response_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'id' => 'response_responsive_videos_field',
 		'name' => __('Responsive Videos', 'response'),
-		'type' => 'select',
-		'std' => 'on',
-		'options' => array(
-			'on' => __('On', 'response'),
-			'off' => __('Off', 'response'),
-		),
-		'section' => 'response_responsive_section',
-		'heading' => 'response_design_heading',
-	);	
-	
-	$fields_list[] = array(
-		'id' => 'response_responsive_videos_field',
-		'name' => __('Responsive Videos', 'response'),
-		'type' => 'select',
-		'std' => 'on',
-		'options' => array(
-			'on' => __('On', 'response'),
-			'off' => __('Off', 'response'),
-		),
+		'type' => 'toggle',
+		'std' => 1,
 		'section' => 'response_responsive_section',
 		'heading' => 'response_design_heading',
 	);
@@ -399,7 +379,7 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Use Custom Backgrounds', 'options_framework_theme'),
-		'desc' => __('Click here to use custome backgrounds.', 'options_framework_theme'),
+		'desc' => __('Click here to use custom backgrounds.', 'options_framework_theme'),
 		'id' => 'show_custom_backgrounds',
 		'type' => 'checkbox',
 		'section' => 'response_background_section',

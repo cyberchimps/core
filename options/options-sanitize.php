@@ -48,6 +48,17 @@ function response_sanitize_multicheck( $input, $option ) {
 }
 add_filter( 'response_sanitize_multicheck', 'response_sanitize_multicheck', 10, 2 );
 
+/* Toggle */
+function response_sanitize_toggle( $input ) {
+	if ( $input ) {
+		$output = '1';
+	} else {
+		$output = false;
+	}
+	return $output;
+}
+add_filter( 'response_sanitize_toggle', 'response_sanitize_toggle' );
+
 /* Color Picker */
 add_filter( 'response_sanitize_color', 'response_sanitize_hex' );
 

@@ -6,8 +6,8 @@
 jQuery(document).ready(function($) {
 	
 	// Hide checkboxes and convert them to toggle switches
-	$('.checkbox').hide();
-	$('.checkbox').after(function() {
+	$('.checkbox-toggle').hide();
+	$('.checkbox-toggle').after(function() {
 		if ($(this).is(":checked")) {
 			return "<a href='#' class='toggle checked' ref='"+$(this).attr("id")+"'></a>";
 		} else {

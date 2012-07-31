@@ -30,9 +30,7 @@ function response_edit_themes_role_check() {
 }
 
 // create the admin menu for the theme options page
-add_action('admin_menu', 'response_admin_add_page');
 function response_admin_add_page() {
-
 	$response_page = add_theme_page(
 		__('Theme Options Page', 'response'),
 		__('Theme Options', 'response'),
@@ -50,9 +48,9 @@ function response_load_styles() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap.css' );
 	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri().'/core/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
 	
-	wp_enqueue_style( 'plugin_option_styles', get_template_directory_uri().'/core/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'plugin_option_styles', get_template_directory_uri().'/core/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
 	
-	wp_enqueue_style('color-picker', get_template_directory_uri().'/core/lib/css/colorpicker.css');
+	wp_enqueue_style('color-picker', get_template_directory_uri().'/core/options/lib/css/colorpicker.css');
 	wp_enqueue_style('thickbox');
 }
 
@@ -61,9 +59,9 @@ function response_load_scripts() {
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('jquery-ui-sortable');
 	wp_enqueue_script('thickbox');
-	wp_enqueue_script('color-picker', get_template_directory_uri().'/core/lib/js/colorpicker.js', array('jquery'));
-	wp_enqueue_script('options-custom', get_template_directory_uri().'/core/lib/js/options-custom.js', array('jquery'));
-	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/lib/js/of-medialibrary-uploader.js', array('jquery'));
+	wp_enqueue_script('color-picker', get_template_directory_uri().'/core/options/lib/js/colorpicker.js', array('jquery'));
+	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
+	wp_enqueue_script('options-custom', get_template_directory_uri().'/core/options/lib/js/options-custom.js', array('jquery'));
 }
 
 /* Loads the file for option sanitization */
@@ -72,14 +70,18 @@ function response_load_sanitization() {
 	require_once dirname( __FILE__ ) . '/options-sanitize.php';
 }
 
+// Load options customizer file
+add_action('init', 'response_load_customizer' );
+function response_load_customizer() {
+	require_once dirname( __FILE__ ) . '/options-customizer.php';
+}
+
 // add core and theme settings to options page
 add_action('admin_init', 'response_admin_init');
 function response_admin_init(){
 	
+	// Load options media uploader
 	require_once dirname( __FILE__ ) . '/options-medialibrary-uploader.php';
-	
-	// pull in default core settings
-	require_once dirname( __FILE__ ) . '/options-core.php';
 	
 	// register theme options settings
 	register_setting( 'response_options', 'response_options', 'response_options_validate' );
@@ -115,7 +117,6 @@ function response_options_page() {
 			<form action="options.php" method="post">
 			<?php
 			settings_fields('response_options');
-			$title = __('Theme Options', 'response');
 			$headings_list = response_get_headings();
 			$sections_list = response_get_sections();
 			?>
@@ -125,7 +126,7 @@ function response_options_page() {
 				<div class="span3">
         	<div class="cc-title">
             <div class="icon32" id="icon-tools"> <br /> </div>
-            	<h2><?php echo esc_html( $title ); ?></h2>
+            	<h2><?php echo esc_html_e( 'Theme Options', 'response' ); ?></h2>
             </div><!-- cc-title -->
 				</div><!-- span3 -->
 				<div class="span9">
@@ -141,7 +142,7 @@ function response_options_page() {
 				<div class="cc-submenu"> 
 					<div class="span3">
         		<div class="cc-collapse">
-                <a id="open-all-tabs" href="#">Open All</a> / <a id="close-all-tabs" href="#">Collapse All</a>
+                <a id="open-all-tabs" href="#"><?php _e('Open All', 'response'); ?></a> / <a id="close-all-tabs" href="#"><?php _e('Collapse All', 'response'); ?></a>
         		</div><!-- cc-collapse -->
 					</div><!-- span3 -->
 				
@@ -587,6 +588,12 @@ function response_fields_callback( $value ) {
 
 				$output .= '<input id="' . esc_attr( $id ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $name ) . '" ' . $checked . ' /><label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>';
 			}
+			break;
+	
+		// Toggle Switch
+		case "toggle":
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
+			$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
 			break;
 
 		// Color picker

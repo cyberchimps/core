@@ -22,3 +22,24 @@ function response_admin_add_customizer_page() {
 	// add the Customize link to the admin menu
 	add_theme_page( __('Customize', 'response'), __('Customize', 'response'), 'edit_theme_options', 'customize.php' );
 }
+
+add_action('customize_register', 'themedemo_customize');
+function themedemo_customize($wp_customize) {
+
+	$wp_customize->add_section( 'themedemo_demo_settings', array(
+		'title'          => 'Demonstration Stuff',
+		'priority'       => 35,
+	) );
+
+	$wp_customize->add_setting( 'response_options[core_text]', array(
+		'default'        => 'default_value',
+		'type'           => 'option',
+	) );
+
+	$wp_customize->add_control( 'core_text', array(
+		'label'   => 'Text Setting',
+		'section' => 'themedemo_demo_settings',
+		'type'    => 'text',
+		'settings'   => 'response_options[core_text]',
+	) );
+}

@@ -43,10 +43,10 @@ if ( ! function_exists( 'response_mlu_init' ) ) {
 if ( ! function_exists( 'response_mlu_css' ) ) {
 	function response_mlu_css () {
 		$_html = '';
-		$_html .= '<link rel="stylesheet" href="' . site_url() . '/' . WPINC . '/js/thickbox/thickbox.css" type="text/css" media="screen" />' . "\n";
+		$_html .= '<link rel="stylesheet" href="' . dirname( __FILE__ ) . '/lib/js/thickbox/thickbox.css" type="text/css" media="screen" />' . "\n";
 		$_html .= '<script type="text/javascript">
-		var tb_pathToImage = "' . site_url() . '/' . WPINC . '/js/thickbox/loadingAnimation.gif";
-	    var tb_closeImage = "' . site_url() . '/' . WPINC . '/js/thickbox/tb-close.png";
+		var tb_pathToImage = "' . dirname( __FILE__ ) . '/lib/js/thickbox/loadingAnimation.gif";
+	    var tb_closeImage = "' . dirname( __FILE__ ) . '/lib/js/thickbox/tb-close.png";
 	    </script>' . "\n";
 	    echo $_html;
 	}
@@ -59,7 +59,7 @@ if ( ! function_exists( 'response_mlu_css' ) ) {
 if ( ! function_exists( 'response_mlu_js' ) ) {
 	function response_mlu_js () {
 		// Registers custom scripts for the Media Library AJAX uploader.
-		wp_register_script( 'response-medialibrary-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/of-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
+		wp_register_script( 'response-medialibrary-uploader',  dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
 		wp_enqueue_script( 'response-medialibrary-uploader' );
 		wp_enqueue_script( 'media-upload' );
 	}
@@ -111,7 +111,7 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
 		
 		if ( $value ) { $class = ' has-file'; }
 		$output .= '<div class="input-append"><input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="btn" type="button" value="' . __( 'Upload', 'response' ) . '" rel="' . $int . '" /></div>' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'response' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="response_metabox_desc">' . $_desc . '</span>' . "\n";
