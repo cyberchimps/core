@@ -215,7 +215,7 @@ function response_options_page() {
       <div class="cc-footer">
       	<div class="span2">
         <div class="cc-logo">
-        	<a href="http://cyberchimps.com" title="CyberChimps Wordpress Themes"><img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/options/cc-logo.png" alt="CyberChimps Wordpress Themes" /></a>
+        	<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'response' ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/core/options/lib/images/options/cc-logo.png" alt="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'response' ); ?>" /></a>
         </div><!-- cc-logo -->
         </div><!-- span2 -->
 				<div class="span4">
