@@ -345,7 +345,12 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin-left: -5px;
 }
 .cc-main-content .colorSelector {
+  position: relative;
+  left: 1px;
   cursor: pointer;
+  height: 25px;
+  width: 24px;
+  padding: 0;
   background: none;
   z-index: 10;
 }
@@ -353,8 +358,8 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   position: absolute;
 	top: 0;
 	left: 0;
-	width: 26px;
-	height: 26px;
+	width: 24px;
+	height: 25px;
   -webkit-border-radius: 2px 0px 0px 2px;
   border-radius: 2px 0px 0px 2px;
   background-color: #fff;
@@ -371,7 +376,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin-left: -5px;
   left: 100%;
   border-style: solid;
-  border-width: 5px 5px 5px 0;
+  border-width: 6px 6px 6px 0;
   border-color: transparent #ccc;
   z-index: 11;
 }
@@ -383,7 +388,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin-left: -3px;
   left: 100%;
   border-style: solid;
-  border-width: 4px 4px 4px 0;
+  border-width: 5px 5px 5px 0;
   border-color: transparent #fff;
   z-index: 12;
 }
