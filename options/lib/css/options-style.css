@@ -367,6 +367,9 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-main-content .of-color {
   z-index: 5;
 }
+.colorpicker {
+  z-index: 1000;
+}
 .cc-main-content .colorSelector:before {
   content: '';
   position: absolute;
