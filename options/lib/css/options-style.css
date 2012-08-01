@@ -51,7 +51,7 @@ form {
 
 .cc-options {
   margin: 10px 0;
-  border: 1px solid #ddd;
+  border: 1px solid #c8c8c8;
 }
 .icon32 {
   background-image: url('../images/options/chimp.png')!important;
@@ -62,15 +62,22 @@ form {
 
 .cc-header {
   width:100%;
-  padding: 20px 0;
+  height: 50px;
   border-bottom: 1px solid #4d4d4d;
+  background: #fefefe;
+  background: -moz-linear-gradient(top,  #fefefe 0%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed));
+  background: -webkit-linear-gradient(top,  #fefefe 0%,#ededed 100%);
+  background: -o-linear-gradient(top,  #fefefe 0%,#ededed 100%);
+  background: -ms-linear-gradient(top,  #fefefe 0%,#ededed 100%);
+  background: linear-gradient(to bottom,  #fefefe 0%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );
 }
 .cc-header .cc-title { 
-	margin-left: 20px; 
+	margin: 3px 0 0 20px; 
 }
 .cc-options ul.cc-header-links {
-  margin-top: 10px;
-  margin-right: 20px;
+  margin: 15px 20px 0 0;
   font-size: 1.2em;
   text-align: right;
 }
@@ -104,10 +111,11 @@ form {
 	display: none;
 }
 .cc-collapse .btn-group {
-  margin-left: 20px;
+  margin: 12px 0 0 20px;
 }
 .cc-submenu {
-  padding: 10px 0;
+  height: 50px;
+  padding: 0;
   background-color: #ddd;
   border-bottom: 1px solid #626262;
   background: #9a9a9a;
@@ -118,15 +126,18 @@ form {
   background: -ms-linear-gradient(top,  #9a9a9a 0%,#7e7e7e 100%);
   background: linear-gradient(to bottom,  #9a9a9a 0%,#7e7e7e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a9a9a', endColorstr='#7e7e7e',GradientType=0 );
+  -webkit-box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .cc-submenu-links {
-  margin: 0 20px 0 0;
+  margin: 12px 20px 0 0;
   text-align: right;
 }
 
 /*************** Content **********************/
 
 .cc-content {
+  background-image: url('../images/options/contentbg.gif');
 }
 .cc-main-content {
 }
@@ -134,6 +145,8 @@ form {
 /************** Left Menu *********************/
 
 .cc-left-menu {
+  background-color: #f1f1f1;
+  border-right: 1px solid #c8c8c8;
 }
 ul.cc-parent {
   margin-left: -1px;
@@ -146,6 +159,7 @@ ul.cc-parent > li.cc-has-children {
   padding-bottom: 0; 
 }
 ul.cc-parent > li > a {
+  color: #424242;
   display: block;
   padding: 10px 0 10px 20px;
   font-size: 1.3em;
@@ -160,9 +174,17 @@ ul.cc-parent > li > a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
   margin: 0;
   border-top: 1px solid #cacaca;
-  border-right: 1px solid #cacaca;
+  border-right: none;
   border-bottom: none;
   border-left: 1px solid #cacaca;
+}
+ul.cc-parent > li > a:visited {
+  color: #424242;
+  text-decoration: none;
+}
+ul.cc-parent > li > a:hover {
+  color: #5ea8f3;
+  text-decoration: none;
 }
 ul.cc-parent > li:last-child > a {
   border-bottom: 1px solid #cacaca;
@@ -220,7 +242,7 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(even) {
   background: #f7f7f7;
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
-  margin: 10px 5px 10px 30px;
+  margin: 10px 5px 10px 20px;
 }
 ul.cc-parent li .cc-menu-arrow {
   display: none;
@@ -254,13 +276,12 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin: 10px 0;
 }
 .cc-content-section .section-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   padding: 15px;
-  background: #ffffff;
-  background: url('../images/options/section-group-bg.jpg') 0 0 repeat-x;
+  background: #ffffff url('../images/options/section-group-bg.jpg') 0 0 repeat-x;
 }
 .cc-content-section .section-group h3 {
   color: #666;

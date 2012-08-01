@@ -75,9 +75,13 @@ jQuery(document).ready(function($) {
 	}
 	
 	if (activetab != '' && $(activetab).length ) {
-		$(activetab).fadeIn();
+		$(activetab).fadeIn(function(){
+			cc_height($('.cc-content').height());
+		});
 	} else {
-		$('.group:first').fadeIn();
+		$('.group:first').fadeIn(function(){
+			cc_height($('.cc-content').height());
+		});
 	}
 	
 	$('.group .collapsed').each(function(){
@@ -109,7 +113,9 @@ jQuery(document).ready(function($) {
 				localStorage.setItem("activetab", $(this).attr('href'));
 			}
 			$('.group').hide();
-			$(clicked_group).fadeIn();
+			$(clicked_group).fadeIn(function(){
+				cc_height($(clicked_group).height());
+			});
 		}
 		evt.preventDefault();
 		
@@ -122,6 +128,23 @@ jQuery(document).ready(function($) {
 		});
 		
 	});
+	
+	// Height function
+	
+	function cc_height (height) {
+		var height_min = '';
+		var total_height = '';
+		var content_height = height;
+		if(height < 207){
+			height_min = 207;
+		}
+		else {
+			height_min = 50;
+		}
+		total_height = height_min + content_height + 'px';
+		
+		$('.cc-left-menu').css('height', total_height);
+	}
 	
 	
 	// scroll to section
@@ -262,4 +285,12 @@ jQuery(function($) {
 			});
 		});
 	}).trigger('change');
+});
+
+/* make left menu background same height as container */
+jQuery(function($) {
+	$('.cc-content').css('height').change(function(){
+		alert($this);
+		$('.cc-left-menu').css('height', $(this));
+	});
 });

@@ -161,10 +161,8 @@ function response_options_page() {
 			<!-- end sub menu -->
 			
 			<!-- start left menu --> 
-			<div class="row-fluid">
-				<div class="cc-content">
-				<div class="span3">
-        <div class="cc-left-menu">
+			<div class="row-fluid cc-content">
+				<div class="span3 cc-left-menu">
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
 						foreach ( $headings_list as $heading ) {
@@ -187,7 +185,6 @@ function response_options_page() {
 							echo '</li>';
 						} ?>
 					</ul>
-          </div><!-- cc-left-menu -->
 				</div><!-- span3 -->
 				<!-- end left menu -->
 				
@@ -208,7 +205,6 @@ function response_options_page() {
 					} ?>
         </div><!-- cc-main-content -->
 				</div><!-- span9 -->
-        </div><!-- cc-content -->
 			</div><!-- row fluid -->
 			<!-- end main content -->
 			
