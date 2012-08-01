@@ -25,6 +25,49 @@ form {
   margin: 0;
 }
 
+/************** Responsive *******************/
+
+@media all and (max-width: 1196px) {
+  .cc-options h2 {
+    font-size: 1.4em;
+  }
+}
+@media all and (max-width: 1064px) {
+  .cc-options h2 {
+    font-size: 1.2em;
+  }
+  .cc-header-links a {
+    font-size: 0.9em;
+  }
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.95em;
+  }
+}
+@media all and (max-width: 1000px) {
+  .cc-options h2 {
+    font-size: 0.95em;
+  }
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.80em;
+  }
+}
+@media all and (max-width: 805px) {
+   .cc-options h2 {
+    font-size: 0.85em;
+  }
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.70em;
+  }
+}
+@media all and (max-width: 767px) {
+  .cc-options h2 {
+    font-size: 1.6em;
+  }
+   .cc-header-links a {
+    font-size: 1em;
+  }
+}
+
 /************** Buttons **********************/
 
 .btn {
@@ -62,7 +105,7 @@ form {
 
 .cc-header {
   width:100%;
-  height: 50px;
+  padding: 5px 0;
   border-bottom: 1px solid #4d4d4d;
   background: #fefefe;
   background: -moz-linear-gradient(top,  #fefefe 0%, #ededed 100%);
@@ -74,10 +117,10 @@ form {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );
 }
 .cc-header .cc-title { 
-	margin: 3px 0 0 20px; 
+	margin-left: 20px; 
 }
 .cc-options ul.cc-header-links {
-  margin: 15px 20px 0 0;
+  margin: 10px 20px 0 0;
   font-size: 1.2em;
   text-align: right;
 }
@@ -111,11 +154,11 @@ form {
 	display: none;
 }
 .cc-collapse .btn-group {
-  margin: 12px 0 0 20px;
+  float: left;
+  margin-left: 20px;
 }
 .cc-submenu {
-  height: 50px;
-  padding: 0;
+  padding: 10px 0;
   background-color: #ddd;
   border-bottom: 1px solid #626262;
   background: #9a9a9a;
@@ -130,8 +173,8 @@ form {
   box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .cc-submenu-links {
-  margin: 12px 20px 0 0;
-  text-align: right;
+  float: right;
+  margin-right: 20px;
 }
 
 /*************** Content **********************/
@@ -292,7 +335,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 /***************** Footer *********************/
 
 .cc-footer {
-  padding: 0;
+  padding: 10px 0;
   background: #575757;
   background: -moz-linear-gradient(top,  #575757 0%, #121212 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#575757), color-stop(100%,#121212));
@@ -303,13 +346,23 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575757', endColorstr='#121212',GradientType=0 );
 }
 .cc-logo {
-  border-right: 1px solid #1d1d1d;
+  width: 100%;
 }
 .cc-logo img {
-	margin: 10px 0 10px 20px;
+	margin-left: 20px;
+  max-width: 100%;
+  height: auto;
+}
+.cc-footer .span9 {
+  margin-left: 0;
 }
 .cc-social-container {
-  margin: 10px 0;
+  float: left;
+  margin-left: 20px;
+  width: 266px;
+}
+.cc-social.facebook iframe {
+  max-width: 100px;
 }
 .cc-social {
   float: left;
@@ -320,8 +373,9 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   color: #08c;
 }
 .footer-links {
-  text-align: right;
-  margin: 10px 20px 10px 0;
+  float: right;
+  margin-top: 2px;
+  margin-right: 20px;
 }
 
 /***************** Forms *****************************/

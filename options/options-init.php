@@ -139,24 +139,23 @@ function response_options_page() {
 			
 			<!-- start sub menu --> 
 			<div class="row-fluid">
+      <div class="span12">
 				<div class="cc-submenu"> 
-					<div class="span3">
         		<div class="cc-collapse">
             	<div class="btn-group">
               	<button class="btn" id="open-all-tabs"><?php _e('Open All', 'response'); ?></button>
                 <button class="btn" id="close-all-tabs"><?php _e('Collapse All', 'response'); ?></button>
               </div>
         		</div><!-- cc-collapse -->
-					</div><!-- span3 -->
 				
-					<div class="span9">
+					
             <div class="cc-submenu-links">
 				<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
             	<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
-			</div><!-- cc-submenu-links -->
-					</div><!-- span 9 -->
+						</div><!-- cc-submenu-links -->
           <div class="clear"></div>
         </div><!-- cc-submenu -->
+        </div><!-- span12 -->
 			</div><!-- row fluid -->
 			<!-- end sub menu -->
 			
@@ -211,28 +210,26 @@ function response_options_page() {
 			<!-- start footer -->
 			<div class="row-fluid">
       <div class="cc-footer">
-      	<div class="span2">
+      	<div class="span3">
         <div class="cc-logo">
         	<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'response' ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/core/options/lib/images/options/cc-logo.png" alt="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'response' ); ?>" /></a>
         </div><!-- cc-logo -->
-        </div><!-- span2 -->
-				<div class="span4">
+        </div><!-- span3 -->
+				<div class="span9">
         <div class="cc-social-container">
-					<div class="cc-social">
+					<div class="cc-social twitter">
           <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
           </div><!-- cc-scoial -->
-          <div class="cc-social">
+          <div class="cc-social facebook">
           <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
           </div><!-- cc-scoial -->
          </div><!-- cc-social-container -->
-				</div><!-- span 6 -->
-				<div class="span6">
         <div class="footer-links">
 			<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'response' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'response' ) ); ?>' );" />
 			<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'response' ); ?>" />
         </div><!-- footer-links -->
-				</div><!-- span 6 -->
+				</div><!-- span 9 -->
        <div class="clear"></div>
        </div><!-- cc-footer -->
 			</div><!-- row fluid -->
