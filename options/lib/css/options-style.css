@@ -264,6 +264,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 
 .cc-main-content {
   padding-top: 20px;
+  padding-right: 40px;
 }
 .cc-content-section {
 }
@@ -280,7 +281,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   border: 1px solid #ddd;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px 30px;
   background: #ffffff url('../images/options/section-group-bg.jpg') 0 0 repeat-x;
 }
 .cc-content-section .section-group h3 {
