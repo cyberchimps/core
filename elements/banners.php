@@ -25,7 +25,7 @@ global $themeslug, $options, $root; //Call global variables
 
 ?>
 
-		<div id="banner">
+		<div id="banner" class="row-fluid">
 			
 			<?php if ($banner_type == "key1"):?>
 				<a href="<?php echo $affiliate_url; ?>/" target="_blank"><img src="http://placehold.it/1020x120" alt="Affiliate"></a>		
@@ -59,23 +59,20 @@ global $themeslug, $options, $root; //Call global variables
 	$embed = $options->get($themeslug.'_footer_banner_code_embed'); //Embed code for external ad.
 
 ?>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div id="banner">
-			
-			<?php if ($banner_type == "key1"):?>
-				<a href="<?php echo $affiliate_url; ?>/" target="_blank"><img src="http://placehold.it/1020x120" alt="Affiliate"></a>		
-			<?php endif; ?>
-			
-			<?php if ($banner_type == "key2"):?>
-				<a href="<?php echo $img_url; ?>/" target="_blank"><img src="<?php echo $image; ?>" alt="logo"></a>		
-			<?php endif; ?>
-			<?php if ($banner_type == "key3") { echo stripslashes($embed); } ?>
-			
-			
-		</div>	
-	</div>
-</div>
+
+  <div id="footer-banner" class="row-fluid">
+        
+      <?php if ($banner_type == "key1"):?>
+        <a href="<?php echo $affiliate_url; ?>/" target="_blank"><img src="http://placehold.it/1020x120" alt="Affiliate"></a>		
+      <?php endif; ?>
+      
+      <?php if ($banner_type == "key2"):?>
+        <a href="<?php echo $img_url; ?>/" target="_blank"><img src="<?php echo $image; ?>" alt="logo"></a>		
+      <?php endif; ?>
+      <?php if ($banner_type == "key3") { echo stripslashes($embed); } ?>
+        
+        
+  </div>	
 <?php
 }
 
@@ -97,7 +94,7 @@ global $themeslug, $options, $root; //Call global variables
 
 ?>
 
-		<div id="banner">
+		<div id="single-banner" class="row-fluid">
 			
 			<?php if ($banner_type == "key1"):?>
 				<a href="<?php echo $affiliate_url; ?>/" target="_blank"><img src="http://placehold.it/1020x120" alt="Affiliate"></a>		

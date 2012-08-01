@@ -27,35 +27,37 @@ function response_portfolio() {
 	<div id="portfolio" class="container-fluid">
 		<div class="row-fluid">
 			<div id="gallery" class="span12"><?php echo $title_output; ?>
-				<ul>
-					<li id="portfolio_wrap" class="span3">
-						<a href='<?php echo $img1 ;?>' rel="lightbox-portfolio" title='<?php echo $caption1 ;?>'>
-							<img src='<?php echo $img1 ;?>' alt='Image 1'/>
-							<div class="portfolio_caption"><?php echo $caption1 ;?></div>
-						</a>
-					</li><!-- #portfolio_wrap .span3-->
-				
-			    	<li id="portfolio_wrap" class="span3">
-						<a href='<?php echo $img2 ;?>' rel="lightbox-portfolio" title='<?php echo $caption2 ;?>'>
-							<img src='<?php echo $img2 ;?>' alt='Image 1'/>
-							<div class="portfolio_caption"><?php echo $caption2 ;?></div>
-						</a>
-					</li><!-- #portfolio_wrap .span3-->
-				
-					<li id="portfolio_wrap" class="span3">
-						<a href='<?php echo $img3 ;?>' rel="lightbox-portfolio" title='<?php echo $caption3 ;?>'>
-							<img src='<?php echo $img3 ;?>' alt='Image 1'/>
-							<div class="portfolio_caption"><?php echo $caption3 ;?></div>
-						</a>
-					</li><!-- #portfolio_wrap .span3-->
-					
-					<li id="portfolio_wrap" class="span3">
-						<a href='<?php echo $img4 ;?>' rel="lightbox-portfolio" title='<?php echo $caption4 ;?>'>
-							<img src='<?php echo $img4 ;?>' alt='Image 1'/>
-							<div class="portfolio_caption"><?php echo $caption4 ;?></div>
-						</a>
-					</li><!-- #portfolio_wrap .span3-->
-				</ul>
+      	<div class="row-fluid">
+          <ul>
+            <li id="portfolio_wrap" class="span3">
+              <a href='<?php echo $img1 ;?>' rel="lightbox-portfolio" title='<?php echo $caption1 ;?>'>
+                <img src='<?php echo $img1 ;?>' alt='Image 1'/>
+                <div class="portfolio_caption"><?php echo $caption1 ;?></div>
+              </a>
+            </li><!-- #portfolio_wrap .span3-->
+          
+              <li id="portfolio_wrap" class="span3">
+              <a href='<?php echo $img2 ;?>' rel="lightbox-portfolio" title='<?php echo $caption2 ;?>'>
+                <img src='<?php echo $img2 ;?>' alt='Image 1'/>
+                <div class="portfolio_caption"><?php echo $caption2 ;?></div>
+              </a>
+            </li><!-- #portfolio_wrap .span3-->
+          
+            <li id="portfolio_wrap" class="span3">
+              <a href='<?php echo $img3 ;?>' rel="lightbox-portfolio" title='<?php echo $caption3 ;?>'>
+                <img src='<?php echo $img3 ;?>' alt='Image 1'/>
+                <div class="portfolio_caption"><?php echo $caption3 ;?></div>
+              </a>
+            </li><!-- #portfolio_wrap .span3-->
+            
+            <li id="portfolio_wrap" class="span3">
+              <a href='<?php echo $img4 ;?>' rel="lightbox-portfolio" title='<?php echo $caption4 ;?>'>
+                <img src='<?php echo $img4 ;?>' alt='Image 1'/>
+                <div class="portfolio_caption"><?php echo $caption4 ;?></div>
+              </a>
+            </li><!-- #portfolio_wrap .span3-->
+          </ul>
+        </div><!-- row-fluid -->
 			</div><!-- #gallery .span12-->
 		</div><!-- .row-fluid-->
 	</div><!-- #portfolio .fluid-container-->

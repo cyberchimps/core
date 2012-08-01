@@ -38,6 +38,8 @@ function response_default_breadcrumbs() {
 	$delimiter = ' &raquo; ';
 	$before = '<span class="current">'; // tag before the current crumb
 	$after = '</span>'; // tag after the current crumb
+	
+	echo '<div id="breadcrumbs" class="row-fluid">';
 
 	if ( !is_home() && !is_front_page() || is_paged() ) {
 		global $post;
@@ -123,6 +125,7 @@ function response_default_breadcrumbs() {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 	}
+	echo '</div>';
 }
 
 // FIXME: Fix documentation
