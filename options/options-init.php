@@ -395,12 +395,22 @@ function response_drag_drop_field( $value ) {
 	$output .=  "<div class='left_list span6'>";
 	$output .=  "<div class='inactive'>Inactive Elements</div>";
 	$output .=  "<div class='list_items'>";
-	foreach ($value['options'] as $key => $option) {
-		if ( in_array( $key, $val ) ) continue;
-		$output .=  "<div class='list_item'>";
-		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-		$output .=  "<span data-key='{$key}'>{$option}</span>";
-		$output .=  "</div>";
+	if ( is_array( $val ) ) {
+		foreach ($value['options'] as $key => $option) {
+			if ( in_array( $key, $val ) ) continue;
+			$output .=  "<div class='list_item'>";
+			$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .=  "<span data-key='{$key}'>{$option}</span>";
+			$output .=  "</div>";
+		}
+	}
+	else {
+		foreach ($value['options'] as $key => $option) {
+			$output .=  "<div class='list_item'>";
+			$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .=  "<span data-key='{$key}'>{$option}</span>";
+			$output .=  "</div>";
+		}
 	}
 	$output .=  "</div>";
 	$output .=  "</div>";
@@ -409,12 +419,14 @@ function response_drag_drop_field( $value ) {
 	$output .=  "<div class='active'>Active Elements</div>";
 	$output .=  "<div class='drag'>Drag & Drop Elements</div>";
 	$output .=  "<div class='list_items'>";
-	foreach ($val as $key) {
-		if(!$key) continue;
-		$output .=  "<div class='list_item'>";
-		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-		$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";
-		$output .=  "</div>";
+	if ( is_array( $val ) ) {
+		foreach ($val as $key) {
+			if(!$key) continue;
+			$output .=  "<div class='list_item'>";
+			$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";
+			$output .=  "</div>";
+		}
 	}
 	$output .=  "</div>";
 	$output .=  "</div>";
