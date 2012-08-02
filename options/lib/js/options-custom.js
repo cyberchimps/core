@@ -244,3 +244,10 @@ jQuery(function($) {
 		initialize($(this).attr('id'));
 	});
 });
+
+// Mobile Modal Menu
+jQuery(function($) {
+		$('#cc-mobile-modal ul.cc-parent > li > a').click(function(){
+			$('#cc-mobile-modal').modal('hide');
+		});
+});

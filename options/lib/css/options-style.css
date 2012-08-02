@@ -67,17 +67,26 @@ form {
   }
 }
 @media all and (max-width: 767px) {
+  body {
+    padding-right: 0;
+  }
   .cc-header h2 {
     font-size: 1.6em;
   }
   .cc-header-links a {
     font-size: 0.8em;
   }
-  .cc-content .span9 {
-    width: 100%;
-  }
   .cc-collapse .btn-group {
     display: none;
+  }
+  .cc-mobile-menu {
+    display: block!important;
+  }
+  .cc-left-menu {
+    display: none!important;
+  }
+  .cc-main-content {
+    margin: 10px 10px 0 10px!important;
   }
 }
 @media all and (max-width: 533px) {
@@ -180,6 +189,20 @@ form {
   float: left;
   margin-left: 20px;
 }
+.cc-collapse .btn-group > .btn:first-child {
+  border-top: 1px solid #2C2C2C;
+  border-bottom: 1px solid #2C2C2C;
+  border-left: 1px solid #2C2C2C; 
+ 	-webkit-border-radius: 3px 0px 0px 3px;
+ 	border-radius: 3px 0px 0px 3px;
+}
+.cc-collapse .btn-group > .btn:last-child {
+  border-top: 1px solid #2C2C2C;
+  border-right: 1px solid #2C2C2C;
+  border-bottom: 1px solid #2C2C2C; 
+ 	-webkit-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px; 
+}
 .cc-submenu {
   padding: 10px 0;
   background-color: #ddd;
@@ -198,6 +221,30 @@ form {
 .cc-submenu-links {
   float: right;
   margin-right: 20px;
+}
+
+/*************** Mobile Menu **********************/
+
+.cc-mobile-menu {
+  display: none;
+}
+.cc-mobile-menu .btn {
+  float: left;
+  padding: 4px;
+  margin-right: 5px;
+  margin-left: 20px;
+  border: 1px solid #2C2C2C;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+#cc-mobile-modal .cc-parent > li {
+  width: 100%;
+}
+#cc-mobile-modal .cc-parent > li > a {
+  border-right: 1px solid #CACACA;
+}
+#cc-mobile-modal .cc-parent > li.active > a {
+  border-right: 1px solid #2875C4;
 }
 
 /*************** Content **********************/

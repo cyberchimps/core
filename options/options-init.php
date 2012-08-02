@@ -62,6 +62,7 @@ function response_load_scripts() {
 	wp_enqueue_script('color-picker', get_template_directory_uri().'/core/options/lib/js/colorpicker.js', array('jquery'));
 	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
 	wp_enqueue_script('options-custom', get_template_directory_uri().'/core/options/lib/js/options-custom.js', array('jquery'));
+	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/core/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
 }
 
 /* Loads the file for option sanitization */
@@ -142,11 +143,13 @@ function response_options_page() {
       <div class="span12">
 				<div class="cc-submenu"> 
         		<div class="cc-collapse">
-            		<!-- mobile menu -->
+            		<!-- mobile menu button -->
             		<div class="cc-mobile-menu">
+                	<a class="btn" data-toggle="modal" href="#cc-mobile-modal" >
+                    <i class="icon-th-list"></i>
+                  </a>
+                </div><!-- cc-mobil-menu -->
                 
-                
-                </div>
                 <div class="btn-group">
                   <button class="btn" id="open-all-tabs"><?php _e('Open All', 'response'); ?></button>
                   <button class="btn" id="close-all-tabs"><?php _e('Collapse All', 'response'); ?></button>
@@ -160,6 +163,33 @@ function response_options_page() {
 						</div><!-- cc-submenu-links -->
           <div class="clear"></div>
         </div><!-- cc-submenu -->
+        
+        <!-- hidden mobile menu -->
+        <div class="modal hide" id="cc-mobile-modal">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Modal header</h3>
+          </div>
+          <div class="modal-body">
+            <ul class="cc-parent nav-tab-wrapper">
+						<?php
+						foreach ( $headings_list as $heading ) {
+							
+							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['id']) );
+							
+							echo '<li class="cc-has-children">';
+							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
+							echo '</li>';
+						} ?>
+					</ul>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+            <a href="#" class="btn btn-primary">Save changes</a>
+          </div>
+        </div>
+        <!-- end mobile menu -->
+        
         </div><!-- span12 -->
 			</div><!-- row fluid -->
 			<!-- end sub menu -->
