@@ -470,7 +470,9 @@ class RW_Meta_Box {
 		echo "<div id='inactive'>Inactive Elements</div>";
 		echo "<div class='list_items'>";
 		foreach ($field['options'] as $key => $option) {
-			if ( in_array( $key, $meta ) ) continue;
+			if ( is_array($meta) ) {
+				if ( in_array( $key, $meta ) ) continue;
+			}
 			echo "<div class='list_item'>";
 				echo '<img src="'.get_template_directory_uri().'/core/lib/images/minus.png" class="action" title="Remove"/>';
 				echo "<span data-key='{$key}'>{$option}</span>";
@@ -483,12 +485,14 @@ class RW_Meta_Box {
 		echo "<div id='active'>Active Elements</div>";
 		echo "<div id='drag'>Drag & Drop Elements</div>";
 		echo "<div class='list_items'>";
-		foreach ($meta as $key) {
-			if(!$key) continue;
-			echo "<div class='list_item'>";
-				echo '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-				echo "<span data-key='{$key}'>{$field['options'][$key]}</span>";
-			echo "</div>";
+		if ( is_array($meta) ) {
+			foreach ($meta as $key => $option) {
+				if(!$option) continue;
+				echo "<div class='list_item'>";
+					echo '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+					echo '<span data-key="'.$option.'">'.$field['options'][$option].'</span>';
+				echo "</div>";
+			}
 		}
 		echo "</div>";
 		echo "</div>";
@@ -562,7 +566,7 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 		// var_dump($field, $meta);
 		echo "<div class='image_select'>";
-		foreach($field['options'] as $key=>$option) {
+		foreach($field['options'] as $key => $option) {
 			echo "<img data-key='{$key}' class='" . ($key == $meta ? ' selected' : '' ) . "' src='{$option}' />";
 		}
 		echo "<input type='hidden' name='{$field['id']}' />";

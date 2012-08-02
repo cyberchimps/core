@@ -1196,12 +1196,13 @@ function response_add_core_fields( $fields_list ) {
 		'name' => "Sidebar Options",
 		'desc' => "Images for layout.",
 		'id' => "single_post_sidebar_options",
-		'std' => "2c-l-fixed",
-		'type' => "images",
+		'std' => 'right_sidebar',
+		'type' => 'images',
 		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'),
+			'full_width' => $imagepath . '1col.png',
+			'right_sidebar' => $imagepath . '2cr.png',
+			'left_sidebar' => $imagepath . '2cl.png',
+		),
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
@@ -1277,12 +1278,13 @@ function response_add_core_fields( $fields_list ) {
 		'name' => "Sidebar Options",
 		'desc' => "Images for layout.",
 		'id' => "archive_sidebar_options",
-		'std' => "2c-l-fixed",
-		'type' => "images",
+		'std' => 'right_sidebar',
+		'type' => 'images',
 		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'),
+			'full_width' => $imagepath . '1col.png',
+			'right_sidebar' => $imagepath . '2cr.png',
+			'left_sidebar' => $imagepath . '2cl.png',
+		),
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
@@ -1346,15 +1348,16 @@ function response_add_core_fields( $fields_list ) {
 	/*SEARCH */
 	
 	$fields_list[] = array(
-		'name' => "Sidebar Options",
-		'desc' => "Images for layout.",
-		'id' => "search_sidebar_options",
-		'std' => "2c-l-fixed",
-		'type' => "images",
+		'name' => __('Sidebar Options', 'response'),
+		'desc' => __('Images for layout.', 'response'),
+		'id' => 'search_sidebar_options',
+		'std' => 'right_sidebar',
+		'type' => 'images',
 		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'),
+			'full_width' => $imagepath . '1col.png',
+			'right_sidebar' => $imagepath . '2cr.png',
+			'left_sidebar' => $imagepath . '2cl.png',
+		),
 		'section' => 'response_search_section',
 		'heading' => 'response_templates_heading'
 	);
@@ -1374,12 +1377,13 @@ function response_add_core_fields( $fields_list ) {
 		'name' => "Sidebar Options",
 		'desc' => "Images for layout.",
 		'id' => "error_sidebar_options",
-		'std' => "2c-l-fixed",
+		'std' => "full_width",
 		'type' => "images",
 		'options' => array(
-			'1col-fixed' => $imagepath . '1col.png',
-			'2c-l-fixed' => $imagepath . '2cl.png',
-			'2c-r-fixed' => $imagepath . '2cr.png'),
+			'full_width' => $imagepath . '1col.png',
+			'right_sidebar' => $imagepath . '2cr.png',
+			'left_sidebar' => $imagepath . '2cl.png',
+		),
 		'section' => 'response_error_section',
 		'heading' => 'response_templates_heading'
 	);

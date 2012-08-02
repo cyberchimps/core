@@ -23,8 +23,8 @@ function response_admin_add_customizer_page() {
 	add_theme_page( __('Customize', 'response'), __('Customize', 'response'), 'edit_theme_options', 'customize.php' );
 }
 
-add_action('customize_register', 'themedemo_customize');
-function themedemo_customize($wp_customize) {
+add_action('customize_register', 'response_customize');
+function response_customize($wp_customize) {
 
 	$wp_customize->add_section( 'themedemo_demo_settings', array(
 		'title'          => 'Demonstration Stuff',
@@ -43,3 +43,47 @@ function themedemo_customize($wp_customize) {
 		'settings'   => 'response_options[core_text]',
 	) );
 }
+
+/* TODO: Merge this with above
+
+// TODO: Rename and Restructure Code for Theme Options
+add_action( 'customize_register', 'themename_customize_register' );
+function themename_customize_register($wp_customize) {
+
+$wp_customize->add_section( 'themename_color_scheme', array(
+	'title'          => __( 'Color Scheme', 'themename' ),
+	'priority'       => 35,
+) );
+
+
+$wp_customize->add_setting( 'plugin_options[core_color]', array(
+	'default'        => '#000000',
+	'type'           => 'option',
+	'capability'     => 'edit_theme_options',
+	'transport'		=> 'postMessage',
+) );
+
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'core_color', array(
+	'label'   => __( 'Link Color', 'themename' ),
+	'section' => 'themename_color_scheme',
+	'settings'   => 'plugin_options[core_color]',
+) ) );
+
+if ( $wp_customize->is_preview() && ! is_admin() )
+	add_action( 'wp_footer', 'themename_customize_preview', 21);
+	
+}
+
+function themename_customize_preview() {
+	?>
+	<script type="text/javascript">
+	wp.customize('plugin_options[core_color]',function( value ) {
+		value.bind(function(to) {
+			jQuery('body').css('background', to );
+		});
+	});
+	</script>
+	<?php 
+}
+*/
