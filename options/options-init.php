@@ -328,13 +328,13 @@ function response_create_sections( $sections ) {
 }
 
 function response_drag_drop_field( $value ) {
-	global $allowedtags;
-
+	
 	$option_name = 'response_options';
 	$settings = get_option($option_name);
 
 	$val = '';
 	$output = '';
+	
 	
 	// Set default value to $val
 	if ( isset( $value['std'] ) ) {
@@ -356,17 +356,15 @@ function response_drag_drop_field( $value ) {
 		}
 	}
 	
-	$values = explode(",", $val);
- 
 	$output .=  "<div class='section_order' id=" . esc_attr($value['id']) . ">";
 	$output .=  "<div class='left_list span6'>";
 	$output .=  "<div class='inactive'>Inactive Elements</div>";
 	$output .=  "<div class='list_items'>";
-	foreach($value['options'] as $k => $v) {
-		if(in_array($k, $values)) continue;
+	foreach ($value['options'] as $key => $option) {
+		if ( array_key_exists( $key, $val ) ) continue;
 		$output .=  "<div class='list_item'>";
 		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-		$output .=  "<span data-key='{$k}'>{$v}</span>";
+		$output .=  "<span data-key='{$key}'>{$option}</span>";
 		$output .=  "</div>";
 	}
 	$output .=  "</div>";
@@ -376,17 +374,16 @@ function response_drag_drop_field( $value ) {
 	$output .=  "<div class='active'>Active Elements</div>";
 	$output .=  "<div class='drag'>Drag & Drop Elements</div>";
 	$output .=  "<div class='list_items'>";
-	foreach($values as $k) {
-		if(!$k) continue;
-		$val = $value['options'][$k];
+	foreach ($val as $key => $option) {
+		if(!$key) continue;
 		$output .=  "<div class='list_item'>";
 		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-		$output .=  "<span data-key='{$k}'>{$val}</span>";
+		$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";
 		$output .=  "</div>";
 	}
 	$output .=  "</div>";
 	$output .=  "</div>";
-	$output .=  "<input type='hidden' id='{$value['id']}' name='{$option_name}[{$value['id']}]' />";
+	$output .= '<div id="values" data-key="'.$option_name.'"></div>';
 	$output .= '<div class="clear"></div>';
 	$output .=  "</div>";
 	
@@ -518,15 +515,15 @@ function response_fields_callback( $value ) {
 			break;
 
 		// Select Box
-		case ($value['type'] == 'select'):
+		case 'select':
 			$output .= '<select class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 
 			foreach ($value['options'] as $key => $option ) {
 				$selected = '';
 				if ( $val != '' ) {
-					if ( $val == $key) { $selected = ' selected="selected"';}
+					$selected = selected( $val, $key, false);
 				}
-				$output .= '<option'. $selected .' value="' . esc_attr( $key ) . '">' . esc_html( $option ) . '</option>';
+				$output .= '<option value="' . esc_attr( $key ) . '" '.$selected.'>' . esc_html( $option ) . '</option>';
 			}
 			$output .= '</select>';
 			break;
@@ -883,4 +880,25 @@ function response_admin_bar() {
 		'title' => __( 'Theme Options', 'response' ),
 		'href' => admin_url( 'themes.php?page=response-theme-options' )
 	));
+}
+
+if ( ! function_exists( 'response_get_option' ) ) {
+
+	/**
+	 * Get Option.
+	 *
+	 * Helper function to return the theme option value.
+	 * If no value has been saved, it returns $default.
+	 * Needed because options are saved as serialized strings.
+	 */
+	 
+	function response_get_option( $name, $default = false ) {
+		$options = get_option( 'response_options' );
+		
+		if ( isset( $options[$name] ) ) {
+			return $options[$name];
+		}
+
+		return $default;
+	}
 }

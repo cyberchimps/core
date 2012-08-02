@@ -311,13 +311,14 @@ function response_add_core_fields( $fields_list ) {
 	);
 	
 	$fields_list[] = array(
-		'id' => 'response_skin_color_field',
+		'id' => 'skin_color',
 		'name' => __('Select a Skin Color', 'response'),
 		'type' => 'select',
-		'std' => 'default',
+		'std' => 'blue',
 		'options' => array(
 			'default' => __('Default', 'response'),
-			'greeb' => __('Green', 'response'),
+			'blue' => __('Blue', 'response'),
+			'green' => __('Green', 'response'),
 		),
 		'section' => 'response_responsive_section',
 		'heading' => 'response_design_heading',
@@ -565,11 +566,14 @@ function response_add_core_fields( $fields_list ) {
 	/*******************************************************************/	
 	
 	$fields_list[] = array(
-		'id' => 'response_drag_drop_field',
+		'id' => 'header_section_order',
 		'name' => __('Typkit Code', 'response'),
 		'desc' => __('Typekit Code description.', 'response'),
 		'callback' => 'response_drag_drop_field',
-		'std' => "ifeature_header_content",
+		'std' => array(
+			"ifeature_header_content" => "Logo + Icons",
+		),
+		'type' => 'section_order',
 		'options' => array(
 			"ifeature_header_content" => "Logo + Icons",
 			"ifeature_sitename_contact" => "Logo + Contact",

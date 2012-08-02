@@ -101,7 +101,6 @@ function response_sanitize_allowedposttags($input) {
 }
 add_filter( 'response_sanitize_info', 'response_sanitize_allowedposttags' );
 
-
 /* Check that the key value sent is valid */
 function response_sanitize_enum( $input, $option ) {
 	$output = '';
@@ -110,6 +109,20 @@ function response_sanitize_enum( $input, $option ) {
 	}
 	return $output;
 }
+
+/* Section Order */
+function response_sanitize_section_order( $input, $option ) {
+	$output = '';
+	if ( is_array( $input ) ) {
+		foreach( $input as $key => $value ) {
+			if ( array_key_exists( $key, $option['options'] ) && $value ) {
+				$output[$key] = true;
+			}
+		}
+	}
+	return $output;
+}
+add_filter( 'response_sanitize_section_order', 'response_sanitize_section_order', 10, 2 );
 
 /* Background */
 function response_sanitize_background( $input ) {
