@@ -1,5 +1,9 @@
 /*************** HTML & Basics ****************/
 
+body {
+  min-width: 300px;
+  padding-left: 0;
+}
 ul, ol {
   margin: 0;
 }
@@ -24,17 +28,20 @@ ul, ol {
 form {
   margin: 0;
 }
+.cc-content .span9 {
+  width: 76.623076923%;
+  margin-left: 0;
+} 
 
 /************** Responsive *******************/
 
 @media all and (max-width: 1196px) {
-  .cc-options h2 {
+  .cc-header h2 {
     font-size: 1.4em;
   }
 }
 @media all and (max-width: 1064px) {
-  .cc-options h2 {
-    font-size: 1.2em;
+  .cc-header h2 {
   }
   .cc-header-links a {
     font-size: 0.9em;
@@ -44,27 +51,38 @@ form {
   }
 }
 @media all and (max-width: 1000px) {
-  .cc-options h2 {
-    font-size: 0.95em;
+  .cc-header h2 {
+    
   }
   .cc-collapse button, .cc-submenu-links input, .footer-links input {
     font-size: 0.80em;
   }
 }
 @media all and (max-width: 805px) {
-   .cc-options h2 {
-    font-size: 0.85em;
+   .cc-header h2 {
+    
   }
   .cc-collapse button, .cc-submenu-links input, .footer-links input {
     font-size: 0.70em;
   }
 }
 @media all and (max-width: 767px) {
-  .cc-options h2 {
+  .cc-header h2 {
     font-size: 1.6em;
   }
+  .cc-header-links a {
+    font-size: 0.8em;
+  }
+  .cc-content .span9 {
+    width: 100%;
+  }
+  .cc-collapse .btn-group {
+    display: none;
+  }
+}
+@media all and (max-width: 533px) {
    .cc-header-links a {
-    font-size: 1em;
+    font-size: 0.5em;
   }
 }
 
@@ -104,7 +122,7 @@ form {
 /*************** Header **********************/
 
 .cc-header {
-  width:100%;
+  min-height: 45px;
   padding: 5px 0;
   border-bottom: 1px solid #4d4d4d;
   background: #fefefe;
@@ -116,17 +134,22 @@ form {
   background: linear-gradient(to bottom,  #fefefe 0%,#ededed 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );
 }
+.cc-header .span3 {
+  position: relative;
+}
 .cc-header .cc-title { 
-	margin-left: 20px; 
+	position: absolute;
+	left: 20px;
+  width: 300px; 
 }
 .cc-options ul.cc-header-links {
-  margin: 10px 20px 0 0;
+  margin: 15px 20px 0 0;
   font-size: 1.2em;
   text-align: right;
 }
 .cc-options ul.cc-header-links li {
   display: inline;
-  margin-left: 20px;
+  margin-left: 0.5em;
 }
 .cc-options ul.cc-header-links li a {
   color: #4b4b4b;
@@ -181,8 +204,6 @@ form {
 
 .cc-content {
   background-image: url('../images/options/contentbg.png');
-}
-.cc-main-content {
 }
 
 /************** Left Menu *********************/
@@ -306,8 +327,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 /**************** Main Content ******************/
 
 .cc-main-content {
-  padding-top: 20px;
-  padding-right: 40px;
+  margin: 20px 40px 0 40px;
 }
 .cc-content-section {
 }
@@ -402,7 +422,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   position: relative;
   left: 1px;
   cursor: pointer;
-  height: 25px;
+  height: 26px;
   width: 24px;
   padding: 0;
   background: none;
@@ -413,7 +433,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	top: 0;
 	left: 0;
 	width: 24px;
-	height: 25px;
+	height: 26px;
   -webkit-border-radius: 2px 0px 0px 2px;
   border-radius: 2px 0px 0px 2px;
   background-color: #fff;

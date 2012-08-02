@@ -185,14 +185,17 @@ jQuery(document).ready(function($) {
 		var height_min = '';
 		var total_height = '';
 		var content_height = height;
-		if ( height < 207 ){
-			height_min = 207;
-		} else {
-			height_min = 50;
+		if($('body').width() > 767)
+		{
+			if ( height < 207 ){
+				height_min = 207;
+			} else {
+				height_min = 50;
+			}
+			total_height = height_min + content_height + 'px';
+			
+			$('.cc-left-menu').css('height', total_height);
 		}
-		total_height = height_min + content_height + 'px';
-		
-		$('.cc-left-menu').css('height', total_height);
 	}
 });
 
