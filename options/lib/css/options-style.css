@@ -656,7 +656,7 @@ img.action {
     margin-left: 10px;
   }
   .cc-left-menu {
-    display: none;
+    display: none!important;
   }
   .cc-main-content {
     margin: 10px 10px 0 10px;
