@@ -175,6 +175,15 @@ form {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+#cc-mobile-modal .cc-mobile-title {
+  float: left;
+  height: 34px;
+  width: 36px;
+  margin-right: 10px;
+  background-image: url('../images/options/chimp.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
 #cc-mobile-modal .cc-parent > li {
   width: 100%;
 }
@@ -677,5 +686,11 @@ img.action {
 @media all and (max-width: 533px) {
    .cc-header-links a {
     font-size: 0.5em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 560px) {
+  .modal {
+    width: 480px;
+    margin-left: -240px;
   }
 }

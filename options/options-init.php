@@ -168,7 +168,8 @@ function response_options_page() {
         <div class="modal hide" id="cc-mobile-modal">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
-            <h3>Modal header</h3>
+            <div class="cc-mobile-title"></div>
+            <h3>Navigation</h3>
           </div>
           <div class="modal-body">
             <ul class="cc-parent nav-tab-wrapper">
@@ -185,7 +186,6 @@ function response_options_page() {
           </div>
           <div class="modal-footer">
             <a href="#" class="btn" data-dismiss="modal">Close</a>
-            <a href="#" class="btn btn-primary">Save changes</a>
           </div>
         </div>
         <!-- end mobile menu -->
