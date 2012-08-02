@@ -661,6 +661,9 @@ img.action {
   .cc-main-content {
     margin: 10px 10px 0 10px;
   }
+  .cc-content .span9 {
+    width: 100%;
+  }
   .cc-logo img {
     margin-left: 10px;
   }
