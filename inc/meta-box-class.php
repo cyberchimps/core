@@ -463,80 +463,85 @@ class RW_Meta_Box {
 	}
 
 	function show_field_section_order($field, $meta) {
-		$root = get_template_directory_uri();  
 		$this->show_field_begin($field, $meta);
-		$meta = explode(",", $meta);
-		echo "<div class='section_order'>";
+		
+		echo "<div class='section_order' id=" . esc_attr($field['id']) . ">";
 		echo "<div class='left_list'>";
 		echo "<div id='inactive'>Inactive Elements</div>";
 		echo "<div class='list_items'>";
-			foreach($field['options'] as $key => $value) {
-				if(in_array($key, $meta)) continue;
-				echo "<div class='list_item'>";
-					echo "<img src='$root/images/minus.png' class='action' title='Remove'/>";
-					echo "<span data-key='{$key}'>{$value}</span>";
-				echo "</div>";
-			}
+		foreach ($field['options'] as $key => $option) {
+			if ( in_array( $key, $meta ) ) continue;
+			echo "<div class='list_item'>";
+				echo '<img src="'.get_template_directory_uri().'/core/lib/images/minus.png" class="action" title="Remove"/>';
+				echo "<span data-key='{$key}'>{$option}</span>";
+			echo "</div>";
+		}
 		echo "</div>";
 		echo "</div>";
-		echo "<div id='arrow'><img src='$root/images/arrowdrag.png' /></div>";
+		echo '<div id="arrow"><img src="'.get_template_directory_uri().'/core/lib/images/arrowdrag.png" /></div>';
 		echo "<div class='right_list'>";
 		echo "<div id='active'>Active Elements</div>";
 		echo "<div id='drag'>Drag & Drop Elements</div>";
 		echo "<div class='list_items'>";
-			foreach($meta as $key) {
-				if(!$key) continue;
-				$value = $field['options'][$key];
-				echo "<div class='list_item'>";
-					echo "<img src='$root/images/minus.png' class='action' title='Remove'/>";
-					echo "<span data-key='{$key}'>{$value}</span>";
-				echo "</div>";
-			}
+		foreach ($meta as $key) {
+			if(!$key) continue;
+			echo "<div class='list_item'>";
+				echo '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+				echo "<span data-key='{$key}'>{$field['options'][$key]}</span>";
+			echo "</div>";
+		}
 		echo "</div>";
 		echo "</div>";
-		echo "<input type='hidden' id={$field['id']} name={$field['id']} />";
+		echo '<div id="values"></div>';
 		echo "</div>";
 ?>
 
 <script type="text/javascript">
-		jQuery(function($) {
+	// Section order function
+	jQuery(function($) {
+		var initialize = function(id) {
+			var el = $("#" + id);
 			function update(base) {
-				var hidden = base.find("input[type='hidden']");
-				var val = [];
+				var value_set = base.find("#values");
+				var val = '';
 				base.find('.right_list .list_items span').each(function() {
-					val.push($(this).data('key'));
-				})
-				hidden.val(val.join(",")).change();
-				$('.right_list .action').show();
-				$('.left_list .action').hide();
+					val += '<input type="hidden" name="'+id+'[]" value="'+$(this).data('key')+'" />';
+				});
+				value_set.html(val);
+			
+				el.find('.right_list .action').show();
+				el.find('.left_list .action').hide();
 			}
-			$(".left_list .list_items").delegate(".action", "click", function() {
+			el.find(".left_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
 				$(this).closest('.section_order').children('.right_list').children('.list_items').append(item);
 				update($(this).closest(".section_order"));
 			});
-			$(".right_list .list_items").delegate(".action", "click", function() {
+			el.find(".right_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
 				$(this).val('Add');
 				$(this).closest('.section_order').children('.left_list').children('.list_items').append(item);
 				$(this).hide();
 				update($(this).closest(".section_order"));
 			});
-			$(".right_list .list_items").sortable({
+			el.find(".right_list .list_items").sortable({
 				update: function() {
 					update($(this).closest(".section_order"));
 				},
-				connectWith: '.left_list .list_items'
+				connectWith: '#' + id + ' .left_list .list_items'
 			});
 
-			$(".left_list .list_items").sortable({
-				connectWith: '.right_list .list_items'
+			el.find(".left_list .list_items").sortable({
+				connectWith: '#' + id + ' .right_list .list_items'
 			});
 
-			$('.section_order').each(function() {
-				update($(this));
-			});
+			update(el);
+		}
+
+		$('.section_order').each(function() {
+			initialize($(this).attr('id'));
 		});
+	});
 </script>
 <style type="text/css">
 .left_list, .right_list {

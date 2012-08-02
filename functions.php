@@ -17,13 +17,6 @@
  */
 
 // FIXME: Fix documentation
-// TODO: Declare all directory constants for core
-// TODO: Not sure if I want to actually do it this way just yet
-function response_get_core_directory_uri() {
-	echo get_template_directory_uri() . '/core';
-}
-
-// FIXME: Fix documentation
 // Enqueue core scripts and core styles
 function response_core_scripts() {
 	global $post;

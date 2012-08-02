@@ -84,7 +84,7 @@ function response_init_meta_boxes() {
 	$mb = new Chimps_Metabox('pages', 'Response Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select('response_page_sidebar', 'Select Page Layout', '',  array('options' => array(get_template_directory_uri() . '/images/options/right.png', get_template_directory_uri() . '/images/options/tworight.png', get_template_directory_uri() . '/images/options/rightleft.png', get_template_directory_uri() . '/images/options/none.png', get_template_directory_uri() . '/images/options/left.png')))
+			->image_select('response_page_sidebar', 'Select Page Layout', '',  array('options' => array(get_template_directory_uri() . '/core/lib/images/right.png', get_template_directory_uri() . '/core/lib/images/tworight.png', get_template_directory_uri() . '/core/lib/images/rightleft.png', get_template_directory_uri() . '/core/lib/images/none.png', get_template_directory_uri() . '/core/lib/images/left.png')))
 			->checkbox('response_hide_page_title', 'Page Title', '', array('std' => 'on'))
 			->section_order('response_page_section_order', 'Page Elements', '', array('options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
@@ -99,7 +99,9 @@ function response_init_meta_boxes() {
 					'carousel_section' => 'Carousel',
 					'page_nivoslider' => 'NivoSlider'		
 					),
-					'std' => 'breadcrumbs,page_section'
+					'std' => array(
+						'breadcrumbs' => 'Breadcrumbs',
+					)
 				))
 			->pagehelp('', 'Need Help?', '')
 		->tab("Response Slider Options")

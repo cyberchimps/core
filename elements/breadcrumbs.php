@@ -21,16 +21,16 @@ function response_load_breadcrumbs() {
 	// TODO: Only check once maybe on plugin activation and maybe throw alerts that there is a plugin conflict or maybe allow a dropdown when breadcrumb is assigned that allows you to choose which plugin to use. Plugin options would be added as they become available
 	if (response_yoast_breadcrumbs()) {
 		// load yoast breadcrumbs
-		add_action('response_before_content', 'yoast_breadcrumb');
+		add_action('response_breadcrumbs', 'yoast_breadcrumb');
 	} else if (response_navxt_breadcrumbs()) {
 		// load navxt breadcrumbs
-		add_action('response_before_content', 'bcn_display');
+		add_action('response_breadcrumbs', 'bcn_display');
 	} else {
 		// load default breadcrumbs
-		add_action('response_before_content', 'response_default_breadcrumbs');
+		add_action('response_breadcrumbs', 'response_default_breadcrumbs');
 	}
 }
-//add_action('init', 'response_load_breadcrumbs');
+add_action('init', 'response_load_breadcrumbs');
 
 // FIXME: Fix documentation
 function response_default_breadcrumbs() {

@@ -20,11 +20,11 @@ if ( ! function_exists( 'response_core_setup_theme' ) ):
 // FIXME: Fix documentation
 function response_core_setup_theme() {
 	
-	// TODO: Fix documentation
+	// FIXME: Fix documentation	
 	// Load core functions file
 	require_once( get_template_directory() . '/core/functions.php' );
 	
-	// TODO: Fix documentation
+	// FIXME: Fix documentation	
 	// Load core hooks file
 	require_once( get_template_directory() . '/core/inc/hooks.php' );
 	
@@ -36,21 +36,13 @@ function response_core_setup_theme() {
 	// Load default core settings
 	require_once( get_template_directory() . '/core/options/options-core.php' );
 	
-	// HS: Load Meta Box Class
+	// FIXME: Fix documentation	
+	// Load Meta Box Class
 	require_once( get_template_directory() . '/core/inc/meta-box-class.php' );
 	
-	//HS: Load Meta Boxes Functions
+	// FIXME: Fix documentation	
+	// Load Meta Boxes Functions
 	require_once( get_template_directory() . '/core/inc/meta-box.php' );
-
-	/**
-	 * Custom template tags for this theme.
-	 */
-	// TODO: require( get_template_directory() . '/inc/template-tags.php' );
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'response', get_template_directory() . '/lib/languages' );
@@ -64,29 +56,14 @@ function response_core_setup_theme() {
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
 	
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
+	// FIXME: Fix documentation	
+	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'response' ),
 	) );
 }
 endif; // response_core_setup_theme
 add_action( 'after_setup_theme', 'response_core_setup_theme' );
-
-
-// FIXME: Fix documentation
-function response_core_init() {
-	
-}
-add_action( 'init', 'response_core_init' );
-
-
-// FIXME: Fix documentation
-function response_core_admin_init() {
-	
-}
-add_action( 'admin_init', 'response_core_admin_init' );
 
 // FIXME: Fix documentation
 // Register our sidebars and widgetized areas.
@@ -124,32 +101,19 @@ add_action( 'widgets_init', 'response_widgets_init' );
 // FIXME: Fix documentation
 // Load elements
 function response_load_elements() {
-	
-	// TODO: Find out which elements are enabled by theme true is enabled and false is disabled
-	$options = array( 'callout' => true, 'twitter-bar' => true, 'breadcrumbs' => true, 'pagination' => true );
-	
-	if ( $options['callout'] ) {
-		require_once( get_template_directory() . '/core/elements/callout.php' );
-	}
-	
-	if ( $options['twitter-bar'] ) {
-		require_once( get_template_directory() . '/core/elements/twitter-bar.php' );
-	}
-	
-	if ( $options['breadcrumbs'] ) {
-		require_once( get_template_directory() . '/core/elements/breadcrumbs.php' );
-	}
-	
-	if ( $options['pagination'] ) {
-		//require_once( get_template_directory() . '/core/elements/pagination.php' );
-	}
+	require_once( get_template_directory() . '/core/elements/callout.php' );
+	require_once( get_template_directory() . '/core/elements/twitter-bar.php' );
+	require_once( get_template_directory() . '/core/elements/breadcrumbs.php' );
+	require_once( get_template_directory() . '/core/elements/pagination.php' );
 }
 add_action('after_setup_theme', 'response_load_elements');
 
-require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
-
-require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
-
-require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
-
-require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
+// FIXME: Fix documentation
+// Load elements
+function response_load_post_types() {
+	require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
+}
+add_action('after_setup_theme', 'response_load_post_types');
