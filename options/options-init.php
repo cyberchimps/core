@@ -361,7 +361,7 @@ function response_drag_drop_field( $value ) {
 	$output .=  "<div class='inactive'>Inactive Elements</div>";
 	$output .=  "<div class='list_items'>";
 	foreach ($value['options'] as $key => $option) {
-		if ( array_key_exists( $key, $val ) ) continue;
+		if ( in_array( $key, $val ) ) continue;
 		$output .=  "<div class='list_item'>";
 		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
 		$output .=  "<span data-key='{$key}'>{$option}</span>";
@@ -374,7 +374,7 @@ function response_drag_drop_field( $value ) {
 	$output .=  "<div class='active'>Active Elements</div>";
 	$output .=  "<div class='drag'>Drag & Drop Elements</div>";
 	$output .=  "<div class='list_items'>";
-	foreach ($val as $key => $option) {
+	foreach ($val as $key) {
 		if(!$key) continue;
 		$output .=  "<div class='list_item'>";
 		$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';

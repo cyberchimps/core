@@ -115,8 +115,8 @@ function response_sanitize_section_order( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $input as $key => $value ) {
-			if ( array_key_exists( $key, $option['options'] ) && $value ) {
-				$output[$key] = true;
+			if ( array_key_exists( $key, $option['options'] ) && $key ) {
+				$output[] = $key;
 			}
 		}
 	}
