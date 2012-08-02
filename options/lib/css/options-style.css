@@ -33,68 +33,6 @@ form {
   margin-left: 0;
 } 
 
-/************** Responsive *******************/
-
-@media all and (max-width: 1196px) {
-  .cc-header h2 {
-    font-size: 1.4em;
-  }
-}
-@media all and (max-width: 1064px) {
-  .cc-header h2 {
-  }
-  .cc-header-links a {
-    font-size: 0.9em;
-  }
-  .cc-collapse button, .cc-submenu-links input, .footer-links input {
-    font-size: 0.95em;
-  }
-}
-@media all and (max-width: 1000px) {
-  .cc-header h2 {
-    
-  }
-  .cc-collapse button, .cc-submenu-links input, .footer-links input {
-    font-size: 0.80em;
-  }
-}
-@media all and (max-width: 805px) {
-   .cc-header h2 {
-    
-  }
-  .cc-collapse button, .cc-submenu-links input, .footer-links input {
-    font-size: 0.70em;
-  }
-}
-@media all and (max-width: 767px) {
-  body {
-    padding-right: 0;
-  }
-  .cc-header h2 {
-    font-size: 1.6em;
-  }
-  .cc-header-links a {
-    font-size: 0.8em;
-  }
-  .cc-collapse .btn-group {
-    display: none;
-  }
-  .cc-mobile-menu {
-    display: block!important;
-  }
-  .cc-left-menu {
-    display: none!important;
-  }
-  .cc-main-content {
-    margin: 10px 10px 0 10px!important;
-  }
-}
-@media all and (max-width: 533px) {
-   .cc-header-links a {
-    font-size: 0.5em;
-  }
-}
-
 /************** Buttons **********************/
 
 .btn {
@@ -420,12 +358,8 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   max-width: 100%;
   height: auto;
 }
-.cc-footer .span9 {
-  margin-left: 0;
-}
 .cc-social-container {
   float: left;
-  margin-left: 20px;
   width: 266px;
 }
 .cc-social.facebook iframe {
@@ -669,4 +603,76 @@ img.action {
 	text-align: right;
 	cursor: pointer;
 	padding: 2px;
+}
+
+/************** Responsive *******************/
+
+@media all and (max-width: 1196px) {
+  .cc-header h2 {
+    font-size: 1.4em;
+  }
+}
+@media all and (max-width: 1064px) {
+  .cc-header-links a {
+    font-size: 0.9em;
+  }
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.95em;
+  }
+}
+@media all and (max-width: 1000px) {
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.80em;
+  }
+}
+@media all and (max-width: 805px) {
+  .cc-collapse button, .cc-submenu-links input, .footer-links input {
+    font-size: 0.70em;
+  }
+}
+@media all and (max-width: 767px) {
+  body {
+    padding-right: 0;
+  }
+  .cc-header h2 {
+    font-size: 1.6em;
+  }
+  .cc-options ul.cc-header-links {
+    margin-right: 10px;
+  }
+  .cc-header-links a {
+    font-size: 0.8em;
+  }
+  .cc-collapse .btn-group {
+    display: none;
+  }
+  .cc-submenu-links {
+    margin-right: 10px;
+  }
+  .cc-mobile-menu {
+    display: block;
+  }
+  .cc-mobile-menu .btn {
+    margin-left: 10px;
+  }
+  .cc-left-menu {
+    display: none;
+  }
+  .cc-main-content {
+    margin: 10px 10px 0 10px;
+  }
+  .cc-logo img {
+    margin-left: 10px;
+  }
+  .cc-social-container {
+    margin-left: 10px;
+  }
+  .footer-links {
+    margin-right: 10px;
+  }
+}
+@media all and (max-width: 533px) {
+   .cc-header-links a {
+    font-size: 0.5em;
+  }
 }
