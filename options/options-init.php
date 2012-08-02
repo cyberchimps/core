@@ -404,14 +404,6 @@ function response_drag_drop_field( $value ) {
 			$output .=  "</div>";
 		}
 	}
-	else {
-		foreach ($value['options'] as $key => $option) {
-			$output .=  "<div class='list_item'>";
-			$output .=  '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
-			$output .=  "<span data-key='{$key}'>{$option}</span>";
-			$output .=  "</div>";
-		}
-	}
 	$output .=  "</div>";
 	$output .=  "</div>";
 	$output .=  '<div class="arrow span1 hidden-phone"><img src="'. get_template_directory_uri(). '/core/lib/images/arrowdrag.png" /></div>';

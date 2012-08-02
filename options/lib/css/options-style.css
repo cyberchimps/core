@@ -550,6 +550,10 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
 
+.list_items {
+	padding-bottom: 5px;
+}
+
 .active {
 	font-size: 12px;
 	font-weight: bold;
