@@ -623,8 +623,7 @@ function response_fields_callback( $value ) {
 	
 		// Toggle Switch
 		case "toggle":
-			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
-			$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /></div>';
 			break;
 
 		// Color picker
