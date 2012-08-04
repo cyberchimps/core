@@ -16,7 +16,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// TODO: this is where we will build our default headings for the options page
 function response_add_core_headings( $headings_list ) {
 	
 	$headings_list = array();
@@ -24,25 +23,21 @@ function response_add_core_headings( $headings_list ) {
 	$headings_list[] = array(
 		'id' => 'response_welcome_heading',
 		'title' => __('Welcome', 'response'),
-		'description' => __('Welcome Description', 'response'),
 	);
 	
 	$headings_list[] = array(
 		'id' => 'response_design_heading',
 		'title' => __('Design', 'response'),
-		'description' => __('Design Description', 'response'),
 	);
 	
 	$headings_list[] = array(
 		'id' => 'response_header_heading',
 		'title' => __('Header', 'response'),
-		'description' => __('Header Description', 'response'),
 	);
 	
 	$headings_list[] = array(
 		'id' => 'response_blog_heading',
 		'title' => __('Blog', 'response'),
-		'description' => __('Blog Description', 'response'),
 	);
 	
 	$headings_list[] = array(
@@ -64,50 +59,39 @@ function response_add_core_headings( $headings_list ) {
 }
 add_filter('response_heading_list', 'response_add_core_headings');
 
-// TODO: this is where we will build our default sections for the options page
 function response_add_core_sections( $sections_list ) {
 	
 	$sections_list = array();
-	/*
-	$sections_list[] = array(
-		'id' => 'response_temp_styling_section',
-		'label' => __('Styling Section', 'response'),
-		'heading' => 'response_design_heading'
-	);
-	*/
 	
 	$sections_list[] = array(
 		'id' => 'response_responsive_section',
 		'label' => __('Responsive', 'response'),
-		'description' => __('Responsive Description', 'response'),
 		'heading' => 'response_design_heading'
 	);
 	
 	$sections_list[] = array(
 		'id' => 'response_typography_section',
 		'label' => __('Typography', 'response'),
-		'description' => __('Typography Description', 'response'),
 		'heading' => 'response_design_heading'
 	);
 	
 	$sections_list[] = array(
 		'id' => 'response_background_section',
 		'label' => __('Background', 'response'),
-		'description' => __('Background Description', 'response'),
 		'heading' => 'response_design_heading'
 	);
 	
+	/* TODO: Decide to remove
 	$sections_list[] = array(
 		'id' => 'response_layout_section',
 		'label' => __('Layout', 'response'),
-		'description' => __('Layout Description', 'response'),
 		'heading' => 'response_design_heading'
 	);
+	*/
 	
 	$sections_list[] = array(
 		'id' => 'response_custom_colors_section',
 		'label' => __('Custom Colors', 'response'),
-		'description' => __('Custom Colors Description', 'response'),
 		'heading' => 'response_design_heading'
 	);
 	
@@ -119,131 +103,107 @@ function response_add_core_sections( $sections_list ) {
 	);
 	
 	/* HEADER */
-	
 	$sections_list[] = array(
 		'id' => 'response_header_drag_drop_section',
 		'label' => __('Header Drag/Drop', 'response'),
-		'description' => __('Header Drag/Drop Description', 'response'),
 		'heading' => 'response_header_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_header_options_section',
+		'id' => 'response_header_options_section',
 		'label' => __('Header Options', 'response'),
-		'description' => __('Header Options description', 'response'),
 		'heading' => 'response_header_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_header_imenu_section',
+		'id' => 'response_header_imenu_section',
 		'label' => __('iMenu Options', 'response'),
-		'description' => __('iMenu Options description', 'response'),
 		'heading' => 'response_header_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_header_social_section',
+		'id' => 'response_header_social_section',
 		'label' => __('Social', 'response'),
-		'description' => __('Social description', 'response'),
 		'heading' => 'response_header_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_header_scripts_section',
+		'id' => 'response_header_scripts_section',
 		'label' => __('Tracking and Scripts', 'response'),
-		'description' => __('Tracking and Scripts description', 'response'),
 		'heading' => 'response_header_heading'
 	);
 	
 	/* BLOG */
-	
 	$sections_list[] = array(
-	'id' => 'response_blog_drag_and_drop_section',
+		'id' => 'response_blog_drag_and_drop_section',
 		'label' => __('Drag & Drop', 'response'),
-		'description' => __('Drag & drop description', 'response'),
 		'heading' => 'response_blog_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_blog_options_section',
+		'id' => 'response_blog_options_section',
 		'label' => __('Blog Options', 'response'),
-		'description' => __('Options description', 'response'),
 		'heading' => 'response_blog_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_blog_slider_section',
+		'id' => 'response_blog_slider_section',
 		'label' => __('Blog Slider', 'response'),
-		'description' => __('Slider description', 'response'),
 		'heading' => 'response_blog_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_blog_seo_section',
+		'id' => 'response_blog_seo_section',
 		'label' => __('SEO', 'response'),
-		'description' => __('SEO description', 'response'),
 		'heading' => 'response_blog_heading'
 	);
 	
 	/* TEMPLATE */
-	
 	$sections_list[] = array(
-	'id' => 'response_single_post_section',
+		'id' => 'response_single_post_section',
 		'label' => __('Single Post', 'response'),
-		'description' => __('Single Post description', 'response'),
 		'heading' => 'response_templates_heading'
 	);
 		
 	$sections_list[] = array(
-	'id' => 'response_archive_section',
+		'id' => 'response_archive_section',
 		'label' => __('Archive', 'response'),
-		'description' => __('Archive description', 'response'),
 		'heading' => 'response_templates_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_search_section',
+		'id' => 'response_search_section',
 		'label' => __('Search', 'response'),
-		'description' => __('Search description', 'response'),
 		'heading' => 'response_templates_heading'
 	);
 	
 	$sections_list[] = array(
-	'id' => 'response_error_section',
+		'id' => 'response_error_section',
 		'label' => __('404', 'response'),
-		'description' => __('404 description', 'response'),
 		'heading' => 'response_templates_heading'
 	);
 	
 	/* FOOTER */
-	
 	$sections_list[] = array(
-	'id' => 'response_footer_section',
+		'id' => 'response_footer_section',
 		'label' => __('Footer Options', 'response'),
-		'description' => __('Footer description', 'response'),
 		'heading' => 'response_footer_heading'
 	);
 	
 	/* IMPORT/EXPORT */
-	
 	$sections_list[] = array(
-	'id' => 'response_import_export_section',
+		'id' => 'response_import_export_section',
 		'label' => __('Import / Export', 'response'),
-		'description' => __('Import/Export description', 'response'),
 		'heading' => 'response_import_export_heading'
 	);
-	
-	
 
 	return $sections_list;
 }
 add_filter('response_section_list', 'response_add_core_sections');
 
-// TODO: this is where we will build our default sections for the options page
 function response_add_core_fields( $fields_list ) {
 	
 	// post byline 
-	
 	$pbe_defaults = array(
 		'author' => 1,
 		'categories' => 1,
@@ -293,7 +253,7 @@ function response_add_core_fields( $fields_list ) {
 	
 	// Responsive Section
 	$fields_list[] = array(
-		'id' => 'response_responsive_design_field',
+		'id' => 'responsive_design',
 		'name' => __('Responsive Design', 'response'),
 		'type' => 'toggle',
 		'std' => 1,
@@ -302,7 +262,7 @@ function response_add_core_fields( $fields_list ) {
 	);
 	
 	$fields_list[] = array(
-		'id' => 'response_responsive_videos_field',
+		'id' => 'responsive_videos',
 		'name' => __('Responsive Videos', 'response'),
 		'type' => 'toggle',
 		'std' => 1,
@@ -341,9 +301,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	// Typography Section
 	$fields_list[] = array(
-		'id' => 'response_typography_field',
-		'name' => __('Typkit Code', 'response'),
-		'desc' => __('Typekit Code description.', 'response'),
+		'id' => 'typography_options',
+		'name' => __('Typkit Options', 'response'),
 		'type' => 'typography',
 		'std' => $typography_defaults,
 		'options' => $typography_options,
@@ -352,9 +311,8 @@ function response_add_core_fields( $fields_list ) {
 	);
 	
 	$fields_list[] = array(
-		'id' => 'response_typekit_code_field',
+		'id' => 'typekit_code',
 		'name' => __('Typkit Code', 'response'),
-		'desc' => __('Typekit Code description.', 'response'),
 		'type' => 'textarea',
 		'std' => '',
 		'section' => 'response_typography_section',
@@ -450,6 +408,7 @@ function response_add_core_fields( $fields_list ) {
 		'heading' => 'response_design_heading');
 		
 	/* LAYOUT */
+	/* TODO: Clean Up
 	$fields_list[] = array(
 		'name' => __('Standard Web Layout', 'response'),
 		'desc' => __('I have no idea what this means?', 'response'),
@@ -457,7 +416,9 @@ function response_add_core_fields( $fields_list ) {
 		'type' => 'checkbox',
 		'section' => 'response_layout_section',
 		'heading' => 'response_design_heading');
-		
+	*/
+	
+	/* TODO: Decide to remove	
 	$fields_list[] = array(
 		'name' => __('Row Max Width', 'response'),
 		'desc' => __('Maximum width of your pages, including any sidebars', 'response'),
@@ -466,15 +427,17 @@ function response_add_core_fields( $fields_list ) {
 		'type' => 'text',
 		'section' => 'response_layout_section',
 		'heading' => 'response_design_heading');
-		
+	*/
+	
+	/* TODO: Clean Up	
 	$fields_list[] = array(
 		'name' => __('Widget Title Background', 'response'),
-		'desc' => __('again I have no idea what this means?', 'response'),
 		'id' => 'widget_title_background',
 		'type' => 'checkbox',
 		'section' => 'response_layout_section',
 		'heading' => 'response_design_heading');
-
+	*/
+	
 	/* CUSTOMER COLORS */
 	
 	$fields_list[] = array(
@@ -567,43 +530,42 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'id' => 'header_section_order',
-		'name' => __('Typkit Code', 'response'),
-		'desc' => __('Typekit Code description.', 'response'),
+		'name' => __('Header Drag/Drop', 'response'),
 		'callback' => 'response_drag_drop_field',
 		'std' => array(
-			"ifeature_header_content" => "Logo + Icons",
+			"response_header_content" => "Logo + Icons",
 		),
 		'type' => 'section_order',
 		'options' => array(
-			"ifeature_header_content" => "Logo + Icons",
-			"ifeature_sitename_contact" => "Logo + Contact",
-			"ifeature_description_icons" => "Description + Icons",
-			"ifeature_logo_menu" => "Logo + Menu",
-			"ifeature_logo_Description" => "Logo + Description",
-			"ifeature_banner" => "Banner",
-			"ifeature_custom_header_element" => "Custom",
-			"synapse_navigation" => "iMenu",
-			"ifeature_sitename_register" => "Logo + Login"
+			"response_header_content" => "Logo + Icons",
+			"response_sitename_contact" => "Logo + Contact",
+			"response_description_icons" => "Description + Icons",
+			"response_logo_menu" => "Logo + Menu",
+			"response_logo_Description" => "Logo + Description",
+			"response_banner" => "Banner",
+			"response_custom_header_element" => "Custom",
+			"response_navigation" => "iMenu",
+			"response_sitename_register" => "Logo + Login"
 		),
 		'section' => 'response_header_drag_drop_section',
 		'heading' => 'response_header_heading'
 	);
 
 	/********************* HEADER OPTIONS ********************************/
-	
+
 	$fields_list[] = array(
-		'name' => __('Header Bar', 'response'),
-		'desc' => __('Description for header bar', 'response'),
-		'id' => 'header_bar',
-		'type' => 'checkbox',
+		'name' => __('Custom Logo', 'response'),
+		'id' => 'custom_logo_display',
+		'type' => 'toggle',
 		'section' => 'response_header_options_section',
 		'heading' => 'response_header_heading');
 	
 	$fields_list[] = array(
-		'name' => __('Background Image', 'response'),
+		'name' => __('Logo Image', 'response'),
 		'desc' => __('Enter URL or upload file', 'response'),
-		'id' => 'header_background_uploader',
+		'id' => 'custom_logo',
 		'type' => 'upload',
+		'std' => get_template_directory_uri() . '/core/lib/images/responselogo.png',
 		'section' => 'response_header_options_section',
 		'heading' => 'response_header_heading');
 		
@@ -627,7 +589,6 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Menu Typography', 'response'),
-		'desc' => __('Menu typography options.', 'response'),
 		'id' => 'menu_typography',
 		'std' => $typography_defaults,
 		'type' => 'typography',
@@ -637,16 +598,13 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Custom Menu Colors', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'custom_menu_colors_toggle',
-		'std' => '0',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_imenu_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Custom Menu Bar Color', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'menu_bar_color_colorpicker',
 		'std' => '',
 		'type' => 'color',
@@ -655,7 +613,6 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Custom Menu Text Color', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'menu_text_colorpicker',
 		'std' => '',
 		'type' => 'color',
@@ -664,7 +621,6 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Custom Menu Dropdown Color', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'menu_dropdown_colorpicker',
 		'std' => '',
 		'type' => 'color',
@@ -673,7 +629,6 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Custom Menu Hover Color', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'menu_hover_colorpicker',
 		'std' => '',
 		'type' => 'color',
@@ -682,37 +637,29 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Menu Rounded Corners', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'menu_rounded_corners_toggle',
-		'std' => '0',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_imenu_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Home Icon', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'home_icon_toggle',
-		'std' => '0',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_imenu_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Searchbar', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'searchbar_toggle',
-		'std' => '0',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_imenu_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Mobile Searchbar', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'mobile_searchbar_toggle',
-		'std' => '0',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_imenu_section',
 		'heading' => 'response_header_heading');
 		
@@ -722,29 +669,27 @@ function response_add_core_fields( $fields_list ) {
 		'name' => __('Choose you background image', 'response'),
 		'desc' => __('Images for background', 'response'),
 		'id' => 'theme_backgrounds',
-		'std' => 'icons-default',
+		'std' => 'default',
 		'type' => 'images',
 		'options' => array(
-			'icons-classic' => $imagepath . 'social/thumbs/icons-classic.png',
-			'icons-default' => $imagepath . 'social/thumbs/icons-default.png',
-			'icons-round' => $imagepath . 'social/thumbs/icons-round.png'),
+			'classic' => $imagepath . 'social/thumbs/icons-classic.png',
+			'default' => $imagepath . 'social/thumbs/icons-default.png',
+			'round' => $imagepath . 'social/thumbs/icons-round.png'),
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Twitter', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_twitter',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Twitter URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'twitter_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -752,17 +697,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Facebook', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_facebook',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Facebook URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'facebook_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -770,17 +713,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Google', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_google',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Google URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'google_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -788,17 +729,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Flickr', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_flickr',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Flickr URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'flickr_url',
-		'std' => 'Default Value',
+		'std' => 'http://www.flickr.com/',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -806,17 +745,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Pinterest', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_pinterest',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Pinterest URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'pinterest_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -824,17 +761,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('LinkedIn', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_linkedin',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('LinkedIn URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'linkedin_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -842,17 +777,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('YouTube', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_youtube',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('YouTube URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'youtube_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -860,17 +793,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Google Maps', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_googlemaps',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Google Maps URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'googlemaps_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -878,17 +809,15 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Email', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_email',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Email Address', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'email_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
@@ -896,38 +825,33 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('RSS', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'social_rss',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading');
 		
 	$fields_list[] = array(
 		'name' => __('RSS URL', 'response'),
-		'desc' => __('Description', 'response'),
 		'id' => 'rss_url',
-		'std' => 'Default Value',
+		'std' => 'http://',
 		'type' => 'text',
 		'section' => 'response_header_social_section',
 		'heading' => 'response_header_heading'
 	);
 	
 	/* TRACKING AND SCRIPTS */
-	
 	$fields_list[] = array(
 		'name' => __('Google Analytics Code', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'analytics_textarea',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_header_scripts_section',
 		'heading' => 'response_header_heading');
 	
 	$fields_list[] = array(
 		'name' => __('Custom Header Scripts', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'custom_scripts_textarea',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_header_scripts_section',
 		'heading' => 'response_header_heading');
@@ -937,11 +861,13 @@ function response_add_core_fields( $fields_list ) {
 	/**************************************************************************/
 	
 	$fields_list[] = array(
-		'id' => 'response_blog_drag_drop_field',
+		'id' => 'blog_section_order',
 		'name' => __('Drag & Drop Blog Elements', 'response'),
-		'desc' => __('description.', 'response'),
 		'callback' => 'response_drag_drop_field',
-		'std' => 'blog_post_page',
+		'std' => array(
+			"blog_post_page" => "Post Page",
+		),
+		'type' => 'section_order',
 		'options' => array(
 			"blog_post_page" => "Post Page",
 			"response_slider" => "Slider",
@@ -960,7 +886,6 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'sidebar_images',
 		'std' => 'right_sidebar',
 		'type' => 'images',
@@ -975,31 +900,27 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Post Formats Icons', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'post_format_icons',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_options_section',
 		'heading' => 'response_blog_heading');
 	
 	$fields_list[] = array(
 		'name' => __('Post Excerpts', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'post_excerpts',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_options_section',
 		'heading' => 'response_blog_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Featured Images', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'post_featured_images',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_options_section',
 		'heading' => 'response_blog_heading');
 	
 	$fields_list[] = array(
 		'name' => __('Post Byline Elements', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'post_byline_elements',
 		'std' => $pbe_defaults, // These items get checked by default
 		'type' => 'multicheck',
@@ -1009,17 +930,15 @@ function response_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Facebook Like Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'facebook_like',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_options_section',
 		'heading' => 'response_blog_heading');
 		
 	$fields_list[] = array(
 		'name' => __('Google Plus One Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'google_plus_one',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_options_section',
 		'heading' => 'response_blog_heading');
 		
@@ -1063,9 +982,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Number of Featured Blog Posts', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'blog_no_featured_posts',
-		'std' => 'Default Value',
+		'std' => '',
 		'type' => 'text',
 		'section' => 'response_blog_slider_section',
 		'heading' => 'response_blog_heading',
@@ -1073,9 +991,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Slider Height', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'blog_slider_height',
-		'std' => 'Default Value',
+		'std' => '',
 		'type' => 'text',
 		'section' => 'response_blog_slider_section',
 		'heading' => 'response_blog_heading',
@@ -1141,47 +1058,44 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Slider Arrows', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'blog_slider_arrows',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_slider_section',
 		'heading' => 'response_blog_heading'
 	);
 	
+	/* TODO: Add in support
 	$fields_list[] = array(
 		'name' => __('Word Thumb Image Resizing', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'blog_word_image_resizing',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_blog_slider_section',
 		'heading' => 'response_blog_heading'
 	);
+	*/
 	
 	/*********** SEO *****************/
 	
 	$fields_list[] = array(
 		'name' => __('Home Description', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'seo_home_desc',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_blog_seo_section',
 		'heading' => 'response_blog_heading');	
 		
 	$fields_list[] = array(
 		'name' => __('Home Keywords', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'seo_home_keywords',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_blog_seo_section',
 		'heading' => 'response_blog_heading');	
 		
 	$fields_list[] = array(
 		'name' => __('Optional Home Title', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'seo_optional_title',
-		'std' => 'Default Value',
+		'std' => '',
 		'type' => 'text',
 		'section' => 'response_blog_seo_section',
 		'heading' => 'response_blog_heading',
@@ -1210,34 +1124,30 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Breadcrumbs', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_breadcrumbs',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Featured Images', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_featured_images',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Post Format Icons', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_format_icons',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Post Byline Elements', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'single_post_byline_elements',
 		'std' => $pbe_defaults, // These items get checked by default
 		'type' => 'multicheck',
@@ -1248,33 +1158,29 @@ function response_add_core_fields( $fields_list ) {
 
 	$fields_list[] = array(
 		'name' => __('Facebook Like Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_facebook_like',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Google Plus One Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_google_plus',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Post Pagination Links', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'single_post_post_pagination',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_single_post_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	/* ARCHIVE */
-	
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'response'),
 		'desc' => __('Images for layout.', 'response'),
@@ -1292,34 +1198,30 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Breadcrumbs', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'archive_breadcrumbs',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Featured Images', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'archive_featured_images',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Post Format Icons', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'archive_format_icons',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Post Byline Elements', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'archive_post_byline_elements',
 		'std' => $pbe_defaults, // These items get checked by default
 		'type' => 'multicheck',
@@ -1330,24 +1232,21 @@ function response_add_core_fields( $fields_list ) {
 
 	$fields_list[] = array(
 		'name' => __('Facebook Like Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'archive_facebook_like',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Google Plus One Button', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'archive_google_plus',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_archive_section',
 		'heading' => 'response_templates_heading'
 	);
 	
-	/*SEARCH */
-	
+	/* SEARCH */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'response'),
 		'desc' => __('Images for layout.', 'response'),
@@ -1365,14 +1264,13 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Post Excerpts', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'search_post_excerpts',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_search_section',
 		'heading' => 'response_templates_heading'
 	);
 	
-	/*404 */
+	/* 404 */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'response'),
 		'desc' => __('Images for layout.', 'response'),
@@ -1390,9 +1288,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Custom 404 Content', 'response'),
-		'desc' => __('Custom 404 description.', 'response'),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
+		'id' => 'error_custom_content',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_error_section',
 		'heading' => 'response_templates_heading'
@@ -1404,9 +1301,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Footer', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'footer_toggle',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_footer_section',
 		'heading' => 'response_footer_heading'
 	);
@@ -1414,8 +1310,7 @@ function response_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'id' => 'footer_copyright_text',
 		'name' => __('Footer Copyright Text', 'response'),
-		'desc' => __('description', 'response'),
-		'std' => 'Default Value',
+		'std' => '',
 		'type' => 'text',
 		'section' => 'response_footer_section',
 		'heading' => 'response_footer_heading'
@@ -1423,18 +1318,16 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Cyberchimps Link', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'footer_cyberchimps_link',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_footer_section',
 		'heading' => 'response_footer_heading'
 	);
 	
 	$fields_list[] = array(
 		'name' => __('Afterfooter', 'response'),
-		'desc' => __('description', 'response'),
 		'id' => 'afterfooter_toggle',
-		'type' => 'checkbox',
+		'type' => 'toggle',
 		'section' => 'response_footer_section',
 		'heading' => 'response_footer_heading'
 	);
@@ -1445,9 +1338,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Export Settings', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'export_textarea',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_import_export_section',
 		'heading' => 'response_import_export_heading'
@@ -1455,9 +1347,8 @@ function response_add_core_fields( $fields_list ) {
 	
 	$fields_list[] = array(
 		'name' => __('Import Settings', 'response'),
-		'desc' => __('description.', 'response'),
 		'id' => 'import_textarea',
-		'std' => 'Default Text',
+		'std' => '',
 		'type' => 'textarea',
 		'section' => 'response_import_export_section',
 		'heading' => 'response_import_export_heading'

@@ -117,3 +117,9 @@ function response_load_post_types() {
 	require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
 }
 add_action('after_setup_theme', 'response_load_post_types');
+
+function response_load_hooks() {
+	require_once( get_template_directory() . '/core/hooks/header-hooks.php' );
+	require_once( get_template_directory() . '/core/hooks/footer-hooks.php' );
+}
+add_action('after_setup_theme', 'response_load_hooks');

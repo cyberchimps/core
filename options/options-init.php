@@ -370,7 +370,6 @@ function response_drag_drop_field( $value ) {
 	$val = '';
 	$output = '';
 	
-	
 	// Set default value to $val
 	if ( isset( $value['std'] ) ) {
 		if (is_array($value['std'])) {
