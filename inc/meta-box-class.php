@@ -162,7 +162,7 @@ class RW_Meta_Box {
 			$(".rw-delete-file").click(function(){
 				var $parent = $(this).parent(),
 					data = $(this).attr("rel");
-				$.post(ajaxurl, {action: \'rw_delete_file\', data: data}, function(response){
+				$.post(ajaxurl, {action: \'rw_delete_file\', data: data}, function(Cyber Chimps Framework){
 					$parent.fadeOut("slow");
 					
 				});

@@ -6,7 +6,7 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
-* Box section actions used by the CyberChimps Response Core Framework Pro Extension
+* Box section actions used by the CyberChimps Cyber Chimps Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -22,16 +22,16 @@ if ( !defined('ABSPATH')) exit;
 */
 
 /**
-* Response Box Section actions
+* Cyber Chimps Framework Box Section actions
 */
-add_action( 'response_box_element', 'response_box_element_content' );
+add_action( 'cyberchimps_box_element', 'cyberchimps_box_element_content' );
 
 /**
 * Sets up the Box Section wigetized area
 *
 * @since 1.0
 */
-function response_box_element_content() { 
+function cyberchimps_box_element_content() { 
 	global $post;
 ?>
 

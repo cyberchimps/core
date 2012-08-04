@@ -6,7 +6,7 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
-* Recent Posts Element used by the CyberChimps Response Core Framework
+* Recent Posts Element used by the CyberChimps Cyber Chimps Framework
 *
 * Authors: Benjamin Mueller, Tyler Cunningham
 * Copyright: © 2012
@@ -17,13 +17,13 @@ if ( !defined('ABSPATH')) exit;
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Response
+* @package Cyber Chimps Framework
 * @since 2.0
 */
 
-add_action( 'response_recent_posts_element', 'response_recent_posts_element_content' );
+add_action( 'cyberchimps_recent_posts_element', 'cyberchimps_recent_posts_element_content' );
 
-function response_recent_posts_element_content() {
+function cyberchimps_recent_posts_element_content() {
 	global $options, $themeslug, $wp_query, $custom_excerpt, $post;
 	$custom_excerpt = 'recent';
 	
@@ -63,7 +63,7 @@ function response_recent_posts_element_content() {
 			<div id="recent-posts-container" class="three columns">
 			
 				<h5 class="recent_posts_post_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
-				<h6 class="recent_posts_byline"><?php the_time( 'd/m/y');?> - <?php the_category(', ') ?> - <?php comments_popup_link( __('No Comments', 'response' ), __('1 Comment', 'response' ), __('% Comments' , 'response' )); //need a filer here ?></h6>
+				<h6 class="recent_posts_byline"><?php the_time( 'd/m/y');?> - <?php the_category(', ') ?> - <?php comments_popup_link( __('No Comments', 'cyberchimps' ), __('1 Comment', 'cyberchimps' ), __('% Comments' , 'cyberchimps' )); //need a filer here ?></h6>
 				<?php
 					if ( has_post_thumbnail() && $recent_posts_image == '1' OR has_post_thumbnail() && $recent_posts_image == 'on' ) {
 	 		 			echo '<div class="recent-posts-image">';

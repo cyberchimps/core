@@ -3,16 +3,16 @@
 
 
 
-add_action( 'response_header_banner_element', 'response_header_banner_element_content');
-add_action( 'response_footer_banner_element', 'response_footer_banner_element_content');
-add_action( 'response_single_banner_element', 'response_single_banner_element_content');
+add_action( 'cyberchimps_header_banner_element', 'cyberchimps_header_banner_element_content');
+add_action( 'cyberchimps_footer_banner_element', 'cyberchimps_footer_banner_element_content');
+add_action( 'cyberchimps_single_banner_element', 'cyberchimps_single_banner_element_content');
 
 /**
 * Header Banner Element
 *
 * @since 2.0
 */
-function response_header_banner_element_content() {
+function cyberchimps_header_banner_element_content() {
 global $themeslug, $options, $root; //Call global variables
 
 	$banner_type = $options->get($themeslug.'_header_banner_type'); //Type of header banner 
@@ -47,7 +47,7 @@ global $themeslug, $options, $root; //Call global variables
 *
 * @since 2.0
 */
-function response_footer_banner_element_content() {
+function cyberchimps_footer_banner_element_content() {
 global $themeslug, $options, $root; //Call global variables
 
 	$banner_type = $options->get($themeslug.'_footer_banner_type'); //Type of footer banner 
@@ -81,7 +81,7 @@ global $themeslug, $options, $root; //Call global variables
 *
 * @since 2.0
 */
-function response_single_banner_element_content() {
+function cyberchimps_single_banner_element_content() {
 global $themeslug, $options, $root; //Call global variables
 
 	$banner_type = $options->get($themeslug.'_single_banner_type'); //Type of single banner 

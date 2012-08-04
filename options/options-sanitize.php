@@ -1,27 +1,27 @@
 <?php
 
 /* Text */
-add_filter( 'response_sanitize_text', 'sanitize_text_field' );
+add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
 /* Textarea */
-function response_sanitize_textarea($input) {
+function cyberchimps_sanitize_textarea($input) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags);
 	return $output;
 }
-add_filter( 'response_sanitize_textarea', 'response_sanitize_textarea' );
+add_filter( 'cyberchimps_sanitize_textarea', 'cyberchimps_sanitize_textarea' );
 
 /* Select */
-add_filter( 'response_sanitize_select', 'response_sanitize_enum', 10, 2);
+add_filter( 'cyberchimps_sanitize_select', 'cyberchimps_sanitize_enum', 10, 2);
 
 /* Radio */
-add_filter( 'response_sanitize_radio', 'response_sanitize_enum', 10, 2);
+add_filter( 'cyberchimps_sanitize_radio', 'cyberchimps_sanitize_enum', 10, 2);
 
 /* Images */
-add_filter( 'response_sanitize_images', 'response_sanitize_enum', 10, 2);
+add_filter( 'cyberchimps_sanitize_images', 'cyberchimps_sanitize_enum', 10, 2);
 
 /* Checkbox */
-function response_sanitize_checkbox( $input ) {
+function cyberchimps_sanitize_checkbox( $input ) {
 	if ( $input ) {
 		$output = '1';
 	} else {
@@ -29,10 +29,10 @@ function response_sanitize_checkbox( $input ) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_checkbox', 'response_sanitize_checkbox' );
+add_filter( 'cyberchimps_sanitize_checkbox', 'cyberchimps_sanitize_checkbox' );
 
 /* Multicheck */
-function response_sanitize_multicheck( $input, $option ) {
+function cyberchimps_sanitize_multicheck( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
@@ -46,10 +46,10 @@ function response_sanitize_multicheck( $input, $option ) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_multicheck', 'response_sanitize_multicheck', 10, 2 );
+add_filter( 'cyberchimps_sanitize_multicheck', 'cyberchimps_sanitize_multicheck', 10, 2 );
 
 /* Toggle */
-function response_sanitize_toggle( $input ) {
+function cyberchimps_sanitize_toggle( $input ) {
 	if ( $input ) {
 		$output = '1';
 	} else {
@@ -57,13 +57,13 @@ function response_sanitize_toggle( $input ) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_toggle', 'response_sanitize_toggle' );
+add_filter( 'cyberchimps_sanitize_toggle', 'cyberchimps_sanitize_toggle' );
 
 /* Color Picker */
-add_filter( 'response_sanitize_color', 'response_sanitize_hex' );
+add_filter( 'cyberchimps_sanitize_color', 'cyberchimps_sanitize_hex' );
 
 /* Uploader */
-function response_sanitize_upload( $input ) {
+function cyberchimps_sanitize_upload( $input ) {
 	$output = '';
 	$filetype = wp_check_filetype($input);
 	if ( $filetype["ext"] ) {
@@ -71,10 +71,10 @@ function response_sanitize_upload( $input ) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_upload', 'response_sanitize_upload' );
+add_filter( 'cyberchimps_sanitize_upload', 'cyberchimps_sanitize_upload' );
 
 /* Editor */
-function response_sanitize_editor($input) {
+function cyberchimps_sanitize_editor($input) {
 	if ( current_user_can( 'unfiltered_html' ) ) {
 		$output = $input;
 	}
@@ -84,25 +84,25 @@ function response_sanitize_editor($input) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_editor', 'response_sanitize_editor' );
+add_filter( 'cyberchimps_sanitize_editor', 'cyberchimps_sanitize_editor' );
 
 /* Allowed Tags */
-function response_sanitize_allowedtags($input) {
+function cyberchimps_sanitize_allowedtags($input) {
 	global $allowedtags;
 	$output = wpautop(wp_kses( $input, $allowedtags));
 	return $output;
 }
 
 /* Allowed Post Tags */
-function response_sanitize_allowedposttags($input) {
+function cyberchimps_sanitize_allowedposttags($input) {
 	global $allowedposttags;
 	$output = wpautop(wp_kses( $input, $allowedposttags));
 	return $output;
 }
-add_filter( 'response_sanitize_info', 'response_sanitize_allowedposttags' );
+add_filter( 'cyberchimps_sanitize_info', 'cyberchimps_sanitize_allowedposttags' );
 
 /* Check that the key value sent is valid */
-function response_sanitize_enum( $input, $option ) {
+function cyberchimps_sanitize_enum( $input, $option ) {
 	$output = '';
 	if ( array_key_exists( $input, $option['options'] ) ) {
 		$output = $input;
@@ -111,7 +111,7 @@ function response_sanitize_enum( $input, $option ) {
 }
 
 /* Section Order */
-function response_sanitize_section_order( $input, $option ) {
+function cyberchimps_sanitize_section_order( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $input as $key => $value ) {
@@ -122,10 +122,10 @@ function response_sanitize_section_order( $input, $option ) {
 	}
 	return $output;
 }
-add_filter( 'response_sanitize_section_order', 'response_sanitize_section_order', 10, 2 );
+add_filter( 'cyberchimps_sanitize_section_order', 'cyberchimps_sanitize_section_order', 10, 2 );
 
 /* Background */
-function response_sanitize_background( $input ) {
+function cyberchimps_sanitize_background( $input ) {
 	$output = wp_parse_args( $input, array(
 		'color' => '',
 		'image'  => '',
@@ -134,45 +134,45 @@ function response_sanitize_background( $input ) {
 		'attachment' => 'scroll'
 	) );
 
-	$output['color'] = apply_filters( 'response_sanitize_hex', $input['color'] );
-	$output['image'] = apply_filters( 'response_sanitize_upload', $input['image'] );
-	$output['repeat'] = apply_filters( 'response_background_repeat', $input['repeat'] );
-	$output['position'] = apply_filters( 'response_background_position', $input['position'] );
-	$output['attachment'] = apply_filters( 'response_background_attachment', $input['attachment'] );
+	$output['color'] = apply_filters( 'cyberchimps_sanitize_hex', $input['color'] );
+	$output['image'] = apply_filters( 'cyberchimps_sanitize_upload', $input['image'] );
+	$output['repeat'] = apply_filters( 'cyberchimps_background_repeat', $input['repeat'] );
+	$output['position'] = apply_filters( 'cyberchimps_background_position', $input['position'] );
+	$output['attachment'] = apply_filters( 'cyberchimps_background_attachment', $input['attachment'] );
 
 	return $output;
 }
-add_filter( 'response_sanitize_background', 'response_sanitize_background' );
+add_filter( 'cyberchimps_sanitize_background', 'cyberchimps_sanitize_background' );
 
-function response_sanitize_background_repeat( $value ) {
-	$recognized = response_recognized_background_repeat();
+function cyberchimps_sanitize_background_repeat( $value ) {
+	$recognized = cyberchimps_recognized_background_repeat();
 	if ( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_background_repeat', current( $recognized ) );
+	return apply_filters( 'cyberchimps_default_background_repeat', current( $recognized ) );
 }
-add_filter( 'response_background_repeat', 'response_sanitize_background_repeat' );
+add_filter( 'cyberchimps_background_repeat', 'cyberchimps_sanitize_background_repeat' );
 
-function response_sanitize_background_position( $value ) {
-	$recognized = response_recognized_background_position();
+function cyberchimps_sanitize_background_position( $value ) {
+	$recognized = cyberchimps_recognized_background_position();
 	if ( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_background_position', current( $recognized ) );
+	return apply_filters( 'cyberchimps_default_background_position', current( $recognized ) );
 }
-add_filter( 'response_background_position', 'response_sanitize_background_position' );
+add_filter( 'cyberchimps_background_position', 'cyberchimps_sanitize_background_position' );
 
-function response_sanitize_background_attachment( $value ) {
-	$recognized = response_recognized_background_attachment();
+function cyberchimps_sanitize_background_attachment( $value ) {
+	$recognized = cyberchimps_recognized_background_attachment();
 	if ( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_background_attachment', current( $recognized ) );
+	return apply_filters( 'cyberchimps_default_background_attachment', current( $recognized ) );
 }
-add_filter( 'response_background_attachment', 'response_sanitize_background_attachment' );
+add_filter( 'cyberchimps_background_attachment', 'cyberchimps_sanitize_background_attachment' );
 
 /* Typography */
-function response_sanitize_typography( $input, $option ) {
+function cyberchimps_sanitize_typography( $input, $option ) {
 
 	$output = wp_parse_args( $input, array(
 		'size'  => '',
@@ -187,43 +187,43 @@ function response_sanitize_typography( $input, $option ) {
 		}
 	}
 	else {
-		$output['face']  = apply_filters( 'response_font_face', $output['face'] );
+		$output['face']  = apply_filters( 'cyberchimps_font_face', $output['face'] );
 	}
 
-	$output['size']  = apply_filters( 'response_font_size', $output['size'] );
-	$output['style'] = apply_filters( 'response_font_style', $output['style'] );
-	$output['color'] = apply_filters( 'response_sanitize_color', $output['color'] );
+	$output['size']  = apply_filters( 'cyberchimps_font_size', $output['size'] );
+	$output['style'] = apply_filters( 'cyberchimps_font_style', $output['style'] );
+	$output['color'] = apply_filters( 'cyberchimps_sanitize_color', $output['color'] );
 	return $output;
 }
-add_filter( 'response_sanitize_typography', 'response_sanitize_typography', 10, 2 );
+add_filter( 'cyberchimps_sanitize_typography', 'cyberchimps_sanitize_typography', 10, 2 );
 
-function response_sanitize_font_size( $value ) {
-	$recognized = response_recognized_font_sizes();
+function cyberchimps_sanitize_font_size( $value ) {
+	$recognized = cyberchimps_recognized_font_sizes();
 	$value_check = preg_replace('/px/','', $value);
 	if ( in_array( (int) $value_check, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_font_size', $recognized );
+	return apply_filters( 'cyberchimps_default_font_size', $recognized );
 }
-add_filter( 'response_font_size', 'response_sanitize_font_size' );
+add_filter( 'cyberchimps_font_size', 'cyberchimps_sanitize_font_size' );
 
-function response_sanitize_font_style( $value ) {
-	$recognized = response_recognized_font_styles();
+function cyberchimps_sanitize_font_style( $value ) {
+	$recognized = cyberchimps_recognized_font_styles();
 	if ( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_font_style', current( $recognized ) );
+	return apply_filters( 'cyberchimps_default_font_style', current( $recognized ) );
 }
-add_filter( 'response_font_style', 'response_sanitize_font_style' );
+add_filter( 'cyberchimps_font_style', 'cyberchimps_sanitize_font_style' );
 
-function response_sanitize_font_face( $value ) {
-	$recognized = response_recognized_font_faces();
+function cyberchimps_sanitize_font_face( $value ) {
+	$recognized = cyberchimps_recognized_font_faces();
 	if ( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
-	return apply_filters( 'response_default_font_face', current( $recognized ) );
+	return apply_filters( 'cyberchimps_default_font_face', current( $recognized ) );
 }
-add_filter( 'response_font_face', 'response_sanitize_font_face' );
+add_filter( 'cyberchimps_font_face', 'cyberchimps_sanitize_font_face' );
 
 /**
  * Get recognized background repeat settings
@@ -231,14 +231,14 @@ add_filter( 'response_font_face', 'response_sanitize_font_face' );
  * @return   array
  *
  */
-function response_recognized_background_repeat() {
+function cyberchimps_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __('No Repeat', 'response'),
-		'repeat-x'  => __('Repeat Horizontally', 'response'),
-		'repeat-y'  => __('Repeat Vertically', 'response'),
-		'repeat'    => __('Repeat All', 'response'),
+		'no-repeat' => __('No Repeat', 'cyberchimps'),
+		'repeat-x'  => __('Repeat Horizontally', 'cyberchimps'),
+		'repeat-y'  => __('Repeat Vertically', 'cyberchimps'),
+		'repeat'    => __('Repeat All', 'cyberchimps'),
 		);
-	return apply_filters( 'response_recognized_background_repeat', $default );
+	return apply_filters( 'cyberchimps_recognized_background_repeat', $default );
 }
 
 /**
@@ -247,19 +247,19 @@ function response_recognized_background_repeat() {
  * @return   array
  *
  */
-function response_recognized_background_position() {
+function cyberchimps_recognized_background_position() {
 	$default = array(
-		'top left'      => __('Top Left', 'response'),
-		'top center'    => __('Top Center', 'response'),
-		'top right'     => __('Top Right', 'response'),
-		'center left'   => __('Middle Left', 'response'),
-		'center center' => __('Middle Center', 'response'),
-		'center right'  => __('Middle Right', 'response'),
-		'bottom left'   => __('Bottom Left', 'response'),
-		'bottom center' => __('Bottom Center', 'response'),
-		'bottom right'  => __('Bottom Right', 'response')
+		'top left'      => __('Top Left', 'cyberchimps'),
+		'top center'    => __('Top Center', 'cyberchimps'),
+		'top right'     => __('Top Right', 'cyberchimps'),
+		'center left'   => __('Middle Left', 'cyberchimps'),
+		'center center' => __('Middle Center', 'cyberchimps'),
+		'center right'  => __('Middle Right', 'cyberchimps'),
+		'bottom left'   => __('Bottom Left', 'cyberchimps'),
+		'bottom center' => __('Bottom Center', 'cyberchimps'),
+		'bottom right'  => __('Bottom Right', 'cyberchimps')
 		);
-	return apply_filters( 'response_recognized_background_position', $default );
+	return apply_filters( 'cyberchimps_recognized_background_position', $default );
 }
 
 /**
@@ -268,12 +268,12 @@ function response_recognized_background_position() {
  * @return   array
  *
  */
-function response_recognized_background_attachment() {
+function cyberchimps_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __('Scroll Normally', 'response'),
-		'fixed'  => __('Fixed in Place', 'response')
+		'scroll' => __('Scroll Normally', 'cyberchimps'),
+		'fixed'  => __('Fixed in Place', 'cyberchimps')
 		);
-	return apply_filters( 'response_recognized_background_attachment', $default );
+	return apply_filters( 'cyberchimps_recognized_background_attachment', $default );
 }
 
 /**
@@ -284,8 +284,8 @@ function response_recognized_background_attachment() {
  * @return   string
  *
  */
-function response_sanitize_hex( $hex, $default = '' ) {
-	if ( response_validate_hex( $hex ) ) {
+function cyberchimps_sanitize_hex( $hex, $default = '' ) {
+	if ( cyberchimps_validate_hex( $hex ) ) {
 		return $hex;
 	}
 	return $default;
@@ -300,9 +300,9 @@ function response_sanitize_hex( $hex, $default = '' ) {
  *
  * @return   array
  */
-function response_recognized_font_sizes() {
+function cyberchimps_recognized_font_sizes() {
 	$sizes = range( 9, 71 );
-	$sizes = apply_filters( 'response_recognized_font_sizes', $sizes );
+	$sizes = apply_filters( 'cyberchimps_recognized_font_sizes', $sizes );
 	$sizes = array_map( 'absint', $sizes );
 	return $sizes;
 }
@@ -317,7 +317,7 @@ function response_recognized_font_sizes() {
  * @return   array
  *
  */
-function response_recognized_font_faces() {
+function cyberchimps_recognized_font_faces() {
 	$default = array(
 		'arial'     => 'Arial',
 		'verdana'   => 'Verdana, Geneva',
@@ -328,7 +328,7 @@ function response_recognized_font_faces() {
 		'palatino'  => 'Palatino',
 		'helvetica' => 'Helvetica*'
 		);
-	return apply_filters( 'response_recognized_font_faces', $default );
+	return apply_filters( 'cyberchimps_recognized_font_faces', $default );
 }
 
 /**
@@ -341,14 +341,14 @@ function response_recognized_font_faces() {
  * @return   array
  *
  */
-function response_recognized_font_styles() {
+function cyberchimps_recognized_font_styles() {
 	$default = array(
-		'normal'      => __('Normal', 'response'),
-		'italic'      => __('Italic', 'response'),
-		'bold'        => __('Bold', 'response'),
-		'bold italic' => __('Bold Italic', 'response')
+		'normal'      => __('Normal', 'cyberchimps'),
+		'italic'      => __('Italic', 'cyberchimps'),
+		'bold'        => __('Bold', 'cyberchimps'),
+		'bold italic' => __('Bold Italic', 'cyberchimps')
 		);
-	return apply_filters( 'response_recognized_font_styles', $default );
+	return apply_filters( 'cyberchimps_recognized_font_styles', $default );
 }
 
 /**
@@ -358,7 +358,7 @@ function response_recognized_font_styles() {
  * @return   bool
  *
  */
-function response_validate_hex( $hex ) {
+function cyberchimps_validate_hex( $hex ) {
 	$hex = trim( $hex );
 	
 	/* Strip recognized prefixes. */

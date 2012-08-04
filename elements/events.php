@@ -6,7 +6,7 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
-* Events actions used by the CyberChimps Response Core Framework
+* Events actions used by the CyberChimps Cyber Chimps Framework
 *
 * Authors: Benjamin Mueller, Tyler Cunningham
 * Copyright: © 2012
@@ -17,19 +17,19 @@ if ( !defined('ABSPATH')) exit;
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Response
+* @package Cyber Chimps Framework
 * @since 1.0.4
 */
 
 /**
-* Response Twitterbar actions
+* Cyber Chimps Framework Twitterbar actions
 */
-add_action( 'response_events_element', 'response_events_element_content' );
+add_action( 'cyberchimps_events_element', 'cyberchimps_events_element_content' );
 
 /*
  * Retrieves the Twitterbar options
  */
-function response_events_element_content() {
+function cyberchimps_events_element_content() {
 	global $options, $themeslug, $post; //call globals
 
 /**

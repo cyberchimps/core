@@ -6,21 +6,21 @@
  * 
  */
 if ( is_admin() ) {
-	// Load additional css and js for image uploads on the Response Theme Options page
-	$response_page = 'appearance_page_response_theme_options';
-	add_action( "admin_print_styles-$response_page", 'response_mlu_css', 0 );
-	add_action( "admin_print_scripts-$response_page", 'response_mlu_js', 0 );	
+	// Load additional css and js for image uploads on the Cyber Chimps Framework Theme Options page
+	$cyberchimps_page = 'appearance_page_cyberchimps_theme_options';
+	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_mlu_css', 0 );
+	add_action( "admin_print_scripts-$cyberchimps_page", 'cyberchimps_mlu_js', 0 );	
 }
 
 /**
  * Sets up a custom post type to attach image to. This allows us to have
  * individual galleries for different uploaders.
  */
-if ( ! function_exists( 'response_mlu_init' ) ) {
-	function response_mlu_init () {
-		register_post_type( 'responsethemeoptions', array(
+if ( ! function_exists( 'cyberchimps_mlu_init' ) ) {
+	function cyberchimps_mlu_init () {
+		register_post_type( 'cyberchimpsthemeoptions', array(
 			'labels' => array(
-				'name' => __( 'Theme Options Media', 'response' ),
+				'name' => __( 'Theme Options Media', 'cyberchimps' ),
 			),
 			'public' => true,
 			'show_ui' => false,
@@ -40,8 +40,8 @@ if ( ! function_exists( 'response_mlu_init' ) ) {
  * Adds the Thickbox CSS file and specific loading and button images to the header
  * on the pages where this function is called.
  */
-if ( ! function_exists( 'response_mlu_css' ) ) {
-	function response_mlu_css () {
+if ( ! function_exists( 'cyberchimps_mlu_css' ) ) {
+	function cyberchimps_mlu_css () {
 		$_html = '';
 		$_html .= '<link rel="stylesheet" href="' . dirname( __FILE__ ) . '/lib/js/thickbox/thickbox.css" type="text/css" media="screen" />' . "\n";
 		$_html .= '<script type="text/javascript">
@@ -56,11 +56,11 @@ if ( ! function_exists( 'response_mlu_css' ) ) {
  * Registers and enqueues (loads) the necessary JavaScript file for working with the
  * Media Library-driven AJAX File Uploader Module.
  */
-if ( ! function_exists( 'response_mlu_js' ) ) {
-	function response_mlu_js () {
+if ( ! function_exists( 'cyberchimps_mlu_js' ) ) {
+	function cyberchimps_mlu_js () {
 		// Registers custom scripts for the Media Library AJAX uploader.
-		wp_register_script( 'response-medialibrary-uploader',  dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
-		wp_enqueue_script( 'response-medialibrary-uploader' );
+		wp_register_script( 'cyberchimps-medialibrary-uploader',  dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
+		wp_enqueue_script( 'cyberchimps-medialibrary-uploader' );
 		wp_enqueue_script( 'media-upload' );
 	}
 }
@@ -78,13 +78,13 @@ if ( ! function_exists( 'response_mlu_js' ) ) {
  * Dependencies:
  * - optionsframework_mlu_get_silentpost()
  */
-if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
-	function response_medialibrary_uploader( $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '') {
+if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
+	function cyberchimps_medialibrary_uploader( $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '') {
 	
-		$response_settings = get_option('response_options');
+		$cyberchimps_settings = get_option('cyberchimps_options');
 		
 		// Gets the unique option id
-		$option_name = $response_settings['id'];
+		$option_name = $cyberchimps_settings['id'];
 	
 		$output = '';
 		$id = '';
@@ -95,7 +95,7 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
 		
 		$id = strip_tags( strtolower( $_id ) );
 		// Change for each field, using a "silent" post. If no post is present, one will be created.
-		$int = response_mlu_get_silentpost( $id );
+		$int = cyberchimps_mlu_get_silentpost( $id );
 		
 		// If a value is passed and we don't have a stored value, use the value that's passed through.
 		if ( $_value != '' && $value == '' ) {
@@ -111,10 +111,10 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
 		
 		if ( $value ) { $class = ' has-file'; }
 		$output .= '<div class="input-append"><input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'response' ) . '" rel="' . $int . '" /></div>' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
-			$output .= '<span class="response_metabox_desc">' . $_desc . '</span>' . "\n";
+			$output .= '<span class="cyberchimps_metabox_desc">' . $_desc . '</span>' . "\n";
 		}
 		
 		$output .= '<div class="screenshot" id="' . $id . '_image">' . "\n";
@@ -134,7 +134,7 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
 				$output .= '';
 			
 				// Standard generic output if it's not an image.	
-				$title = __( 'View File', 'response' );
+				$title = __( 'View File', 'cyberchimps' );
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span>' . $remove . '</div>';
 			}	
 		}
@@ -153,10 +153,10 @@ if ( ! function_exists( 'response_medialibrary_uploader' ) ) {
  * and the post_name of "of-$_token".
  *
  * Example Usage:
- * optionsframework_mlu_get_silentpost ( 'response_logo' );
+ * optionsframework_mlu_get_silentpost ( 'cyberchimps_logo' );
  */
-if ( ! function_exists( 'response_mlu_get_silentpost' ) ) {
-	function response_mlu_get_silentpost ( $_token ) {
+if ( ! function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
+	function cyberchimps_mlu_get_silentpost ( $_token ) {
 		global $wpdb;
 		$_id = 0;
 		
@@ -165,7 +165,7 @@ if ( ! function_exists( 'response_mlu_get_silentpost' ) ) {
 		if ( $_token ) {
 			
 			// Tell the function what to look for in a post.
-			$_args = array( 'post_type' => 'responsethemeoptions', 'post_name' => 'of-' . $_token, 'post_status' => 'draft', 'comment_status' => 'closed', 'ping_status' => 'closed' );
+			$_args = array( 'post_type' => 'cyberchimpsthemeoptions', 'post_name' => 'of-' . $_token, 'post_status' => 'draft', 'comment_status' => 'closed', 'ping_status' => 'closed' );
 			
 			// Look in the database for a "silent" post that meets our criteria.
 			$query = 'SELECT ID FROM ' . $wpdb->posts . ' WHERE post_parent = 0';
@@ -198,23 +198,23 @@ if ( ! function_exists( 'response_mlu_get_silentpost' ) ) {
 /**
  * Trigger code inside the Media Library popup.
  */
-if ( ! function_exists( 'response_mlu_insidepopup' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_insidepopup' ) ) {
 
-	function response_mlu_insidepopup () {
+	function cyberchimps_mlu_insidepopup () {
 	
-		if ( isset( $_REQUEST['is_responsethemeoptions'] ) && $_REQUEST['is_responsethemeoptions'] == 'yes' ) {
+		if ( isset( $_REQUEST['is_cyberchimpsthemeoptions'] ) && $_REQUEST['is_cyberchimpsthemeoptions'] == 'yes' ) {
 		
-			add_action( 'admin_head', 'response_mlu_js_popup' );
-			add_filter( 'media_upload_tabs', 'response_mlu_modify_tabs' );
+			add_action( 'admin_head', 'cyberchimps_mlu_js_popup' );
+			add_filter( 'media_upload_tabs', 'cyberchimps_mlu_modify_tabs' );
 		}
 	}
 }
 
-if ( ! function_exists( 'response_mlu_js_popup' ) ) {
-	function response_mlu_js_popup () {
+if ( ! function_exists( 'cyberchimps_mlu_js_popup' ) ) {
+	function cyberchimps_mlu_js_popup () {
 		
-		$_response_title = $_REQUEST['response_title'];
-		if ( ! $_response_title ) { $_response_title = 'file'; } // End IF Statement
+		$_cyberchimps_title = $_REQUEST['cyberchimps_title'];
+		if ( ! $_cyberchimps_title ) { $_cyberchimps_title = 'file'; } // End IF Statement
 ?>
 	<script type="text/javascript">
 	<!--
@@ -225,7 +225,7 @@ if ( ! function_exists( 'response_mlu_js_popup' ) ) {
 		// Change the title of each tab to use the custom title text instead of "Media File".
 		$( 'h3.media-title' ).each ( function () {
 			var current_title = $( this ).html();
-			var new_title = current_title.replace( 'media file', '<?php echo $_response_title; ?>' );
+			var new_title = current_title.replace( 'media file', '<?php echo $_cyberchimps_title; ?>' );
 			$( this ).html( new_title );
 		} );
 		
@@ -235,11 +235,11 @@ if ( ! function_exists( 'response_mlu_js_popup' ) ) {
 		// Hide the "Insert Gallery" settings box on the "Gallery" tab.
 		$( 'div#gallery-settings' ).hide();
 		
-		// Preserve the "is_responsethemeoptions" parameter on the "delete" confirmation button.
+		// Preserve the "is_cyberchimpsthemeoptions" parameter on the "delete" confirmation button.
 		$( '.savesend a.del-link' ).click ( function () {
 			var continueButton = $( this ).next( '.del-attachment' ).children( 'a.button[id*="del"]' );
 			var continueHref = continueButton.attr( 'href' );
-			continueHref = continueHref + '&is_responsethemeoptions=yes';
+			continueHref = continueHref + '&is_cyberchimpsthemeoptions=yes';
 			continueButton.attr( 'href', continueHref );
 		} );
 		
@@ -253,9 +253,9 @@ if ( ! function_exists( 'response_mlu_js_popup' ) ) {
 /**
  * Triggered inside the Media Library popup to modify the title of the "Gallery" tab.
  */
-if ( ! function_exists( 'response_mlu_modify_tabs' ) ) {
-	function response_mlu_modify_tabs ( $tabs ) {
-		$tabs['gallery'] = str_replace( __( 'Gallery', 'response' ), __( 'Previously Uploaded', 'response' ), $tabs['gallery'] );
+if ( ! function_exists( 'cyberchimps_mlu_modify_tabs' ) ) {
+	function cyberchimps_mlu_modify_tabs ( $tabs ) {
+		$tabs['gallery'] = str_replace( __( 'Gallery', 'cyberchimps' ), __( 'Previously Uploaded', 'cyberchimps' ), $tabs['gallery'] );
 		return $tabs;
 	}
 }
