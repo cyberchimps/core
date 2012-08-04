@@ -17,8 +17,10 @@
  */
 
 function cyberchimps_header_section_order() {
-	foreach(cyberchimps_get_option('header_section_order') as $func) {
-		do_action($func);
+	if ( is_array( cyberchimps_get_option('header_section_order') ) ) {
+		foreach(cyberchimps_get_option('header_section_order') as $func) {
+			do_action($func);
+		}
 	}
 }
 add_action('cyberchimps_header', 'cyberchimps_header_section_order');
@@ -62,14 +64,11 @@ add_action('cyberchimps_description_icons', 'cyberchimps_description_icons');
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
 	
-	$logo = cyberchimps_get_option('custom_logo');
-	var_dump($logo);
-	
 	if ( cyberchimps_get_option('custom_logo_display') == '1') {
-		
+		$logo = cyberchimps_get_option('custom_logo');
 	?>
 		<div id="logo">
-			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo); ?>" alt="logo"></a>
 		</div>
 	<?php } else {
 		if ( function_exists('cyberchimps_header_site_title') ) {
