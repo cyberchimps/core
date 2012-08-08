@@ -71,7 +71,7 @@ function cyberchimps_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar Left', 'cyberchimps' ),
 		'id' => 'sidebar-left',
-		'before_widget' => '<aside id="%1$s" class="widget row-fluid %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget-container row-fluid %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
@@ -80,7 +80,7 @@ function cyberchimps_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar-Right', 'cyberchimps' ),
 		'id' => 'sidebar-right',
-		'before_widget' => '<aside id="%1$s" class="widget row-fluid %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget-container row-fluid %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
@@ -89,7 +89,7 @@ function cyberchimps_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Footer Widgets', 'cyberchimps' ),
 		'id' => 'Cyber Chimps Framework-footer-widgets',
-		'before_widget' => '<aside id="%1$s" class="widget span3 %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget-container span3 %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
