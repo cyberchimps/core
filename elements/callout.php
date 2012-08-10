@@ -24,11 +24,13 @@ function cyberchimps_callout_element() {
 	$callouttext = ($text) ? $text : 'Default text';
 	?>
 	
-	<div id="callout" class="row-fluid">
+<div class="row-fluid">
+	<div class="callout">
 		<div id="callout-text" class="span12">
 			<h2 class="callout-title" ><?php echo $callouttext; ?></h2>
 		</div><!-- #callout-text .span12-->
-	</div><!-- #callout .row-fluid-->
+	</div><!-- callout -->
+</div><!-- .row-fluid-->
 	
 	<?php
 }

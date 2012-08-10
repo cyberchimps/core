@@ -29,9 +29,24 @@ function cyberchimps_slider() {
 		<!-- Carousel items -->
 		<div class="carousel-inner">
 			<?php // TODO: WP query here to create each <div class="item">...</div> ?>
-			<div class="active item"><img src="http://lorempixel.com/800/600/nature/1/" /></div>
-			<div class="item"><img src="http://lorempixel.com/800/600/nature/2/" /></div>
-			<div class="item"><img src="http://lorempixel.com/800/600/nature/3/" /></div>
+			<div class="active item"><img src="http://lorempixel.com/output/abstract-q-c-1134-480-1.jpg" />
+        <div class="carousel-caption">
+          <h4>First Thumbnail label</h4>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+      </div>
+			<div class="item"><img src="http://lorempixel.com/output/sports-q-c-1134-480-2.jpg" />
+        <div class="carousel-caption">
+          <h4>Second Thumbnail label</h4>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+      </div>
+			<div class="item"><img src="http://lorempixel.com/output/abstract-q-c-1134-480-6.jpg" />
+        <div class="carousel-caption">
+          <h4>Third Thumbnail label</h4>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </div>
+      </div>
 		</div>
 		
 		<!-- Carousel nav -->

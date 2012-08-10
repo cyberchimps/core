@@ -41,21 +41,33 @@ function cyberchimps_default_pagination() {
     if ($total_pages > 1){  
       
       $current_page = max(1, get_query_var('paged'));  
-        
-      echo '<div class="pagination">';  
-      echo '<ul>';
-      echo paginate_links(array(  
+          
+      $pagination = paginate_links(array(  
           'base' => get_pagenum_link(1) . '%_%',  
-          'format' => '/page/%#%',  
+          'format' => 'page/%#%',  
           'current' => $current_page,  
           'total' => $total_pages,  
           'prev_text' => 'Prev',  
-          'next_text' => 'Next'  
+          'next_text' => 'Next',
+					'type' => 'array' 
         ));  
-      echo '</ul>';  
-      echo '</div>';  
-        
     }
+		echo '<div class="pagination">';  
+    echo '<ul>';
+		foreach( $pagination as $pag ) {
+			if( strpos( $pag, 'dots' ) != false ) {
+				continue;
+			}
+			elseif( strpos( $pag, 'current' ) != false ) {
+				$num = preg_replace("/[^0-9]/", '', $pag);
+				echo '<li class="active"><a>'.$num.'</a></li>';
+			}
+			else {
+				echo '<li>'.$pag.'</li>';
+			}
+		}
+		echo '</ul>';
+		echo '</div>';
 
 	// TODO: Work on code to add more features and clean up markup
 	?>

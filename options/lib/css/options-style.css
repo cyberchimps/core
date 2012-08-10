@@ -137,7 +137,8 @@ form {
 .cc-collapse .btn-group > .btn:last-child {
   border-top: 1px solid #2C2C2C;
   border-right: 1px solid #2C2C2C;
-  border-bottom: 1px solid #2C2C2C; 
+  border-bottom: 1px solid #2C2C2C;
+  border-left: 1px solid #666; 
  	-webkit-border-radius: 0px 3px 3px 0px;
   border-radius: 0px 3px 3px 0px; 
 }
@@ -696,5 +697,10 @@ img.action {
   .modal {
     width: 480px;
     margin-left: -240px;
+  }
+}
+@media all and (max-width: 480px) {
+  .modal {
+    left: -43px;
   }
 }
