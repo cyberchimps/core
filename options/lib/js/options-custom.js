@@ -4,54 +4,6 @@
  */
 jQuery(document).ready(function($) {
 	
-	// Hide checkboxes and convert them to toggle switches
-	$('.checkbox-toggle').hide();
-	$('.checkbox-toggle').after(function() {
-		if ($(this).is(":checked")) {
-			return "<a href='#' class='toggle checked' ref='"+$(this).attr("id")+"'></a>";
-		} else {
-			return "<a href='#' class='toggle' ref='"+$(this).attr("id")+"'></a>";
-		}
-	});
-	
-	// When the toggle switch is clicked, check off / de-select the associated checkbox
-	$('.toggle').click(function(e) {
-		var checkboxID = $(this).attr("ref");
-		var checkbox = $('#'+checkboxID);
-		
-		if (checkbox.is(":checked")) {
-			checkbox.removeAttr("checked").change();
-		} else {
-			checkbox.attr("checked","checked").change();
-		}
-		$(this).toggleClass("checked");
-		e.preventDefault();
-	});
-
-	// Fade out the save message
-	$('.fade').delay(1000).fadeOut(1000);
-	
-	// Color Picker
-	$('.colorSelector').each(function(){
-		var Othis = this; //cache a copy of the this variable for use inside nested function
-		var initialColor = $(Othis).next('input').attr('value');
-		$(this).ColorPicker({
-			color: initialColor,
-			onShow: function (colpkr) {
-				$(colpkr).fadeIn(500);
-				return false;
-			},
-			onHide: function (colpkr) {
-				$(colpkr).fadeOut(500);
-				return false;
-			},
-			onChange: function (hsb, hex, rgb) {
-				$(Othis).children('div').css('backgroundColor', '#' + hex);
-				$(Othis).next('input').attr('value','#' + hex);
-			}
-		});
-	}); //end color picker
-	
 	// Open/Close all tabs
 	$('.cc-collapse').show();
 	$('ul.cc-child').hide();
@@ -86,8 +38,8 @@ jQuery(document).ready(function($) {
 		$(this).find('input:checked').parent().parent().parent().nextAll().each( function(){
 			if ($(this).hasClass('last')) {
 				$(this).removeClass('hidden');
-					return false;
-				}
+				return false;
+			}
 			$(this).filter('.hidden').removeClass('hidden');
 		});
 	});
@@ -126,49 +78,118 @@ jQuery(document).ready(function($) {
 		
 	});
 	
-	// scroll to section
-	$('.cc-child > li > a').click(function(evt) {
-		var parent_tab = $(this).parent().parent().parent();
-		var parent_group = $(this).parent().parent().siblings('a').attr('href');
+	// Show parent menu
+	function show_child_menu() {
 		
-		$(this).parent().parent().show();
-		
-		// fade in heading area if it is currently not open
-		if ( !parent_tab.hasClass('cc-active') ) {
-			
-			$('.nav-tab-wrapper > li > a').parent().removeClass('cc-active');
-			parent_tab.addClass('cc-active').blur();
-			if (typeof(localStorage) != 'undefined' ) {
-				localStorage.setItem("activetab", parent_group);
+	}
+	
+	// Show child menu
+	function show_child_menu( ) {
+		$(this).click(function(evt) {
+			var parent_tab = $(this).parent().parent().parent();
+			var parent_group = $(this).parent().parent().siblings('a').attr('href');
+
+			$(this).parent().parent().show();
+
+			// fade in heading area if it is currently not open
+			if ( !parent_tab.hasClass('cc-active') ) {
+				$('.nav-tab-wrapper > li > a').parent().removeClass('cc-active');
+				parent_tab.addClass('cc-active').blur();
+				if (typeof(localStorage) != 'undefined' ) {
+					localStorage.setItem("activetab", parent_group);
+				}
+
+				$('.group').hide();
+				$(parent_group).show();
 			}
-			
-			$('.group').hide();
-			$(parent_group).show();
-		}
-		
-		var section_group = $(this).attr('href');
-		$('html, body').animate({ scrollTop: $(section_group).offset().top - 30 }, 'slow');
-		evt.preventDefault();
-	});
+
+			var section_group = $(this).attr('href');
+			$('html, body').animate({ scrollTop: $(section_group).offset().top - 30 }, 'slow');
+			evt.preventDefault();
+		});
+	}
+	
+	// scroll to section
+	
     					
 	$('.group .collapsed input:checkbox').click(unhideHidden);
-				
+	
 	function unhideHidden(){
 		if ($(this).attr('checked')) {
 			$(this).parent().parent().parent().nextAll().removeClass('hidden');
-		}
-		else {
-			$(this).parent().parent().parent().nextAll().each( 
-			function(){
+		} else {
+			$(this).parent().parent().parent().nextAll().each( function(){
 				if ($(this).filter('.last').length) {
 					$(this).addClass('hidden');
 					return false;		
-					}
+				}
 				$(this).addClass('hidden');
-			});
-           					
+			});				
 		}
 	}
+	
+	// Height function
+	function cc_height( height ) {
+		var height_min = '';
+		var total_height = '';
+		var content_height = height;
+		if($('body').width() > 767) {
+			if ( height < 207 ){
+				//height_min = 207;
+				height_min = $('.cc-left-menu').height();
+			} else {
+				height_min = 50;
+			}
+			total_height = height_min + content_height + 'px';
+			
+			//$('.cc-left-menu').css('height', total_height);
+		}
+	}
+	
+	// Color Picker
+	$('.colorSelector').each(function(){
+		var Othis = this; //cache a copy of the this variable for use inside nested function
+		var initialColor = $(Othis).next('input').attr('value');
+		$(this).ColorPicker({
+			color: initialColor,
+			onShow: function (colpkr) {
+				$(colpkr).fadeIn(500);
+				return false;
+			},
+			onHide: function (colpkr) {
+				$(colpkr).fadeOut(500);
+				return false;
+			},
+			onChange: function (hsb, hex, rgb) {
+				$(Othis).children('div').css('backgroundColor', '#' + hex);
+				$(Othis).next('input').attr('value','#' + hex);
+			}
+		});
+	}); //end color picker
+	
+	// Hide checkboxes and convert them to toggle switches
+	$('.checkbox-toggle').hide();
+	$('.checkbox-toggle').after(function() {
+		if ($(this).is(":checked")) {
+			return "<a href='#' class='toggle checked' ref='"+$(this).attr("id")+"'></a>";
+		} else {
+			return "<a href='#' class='toggle' ref='"+$(this).attr("id")+"'></a>";
+		}
+	});
+	
+	// When the toggle switch is clicked, check off / de-select the associated checkbox
+	$('.toggle').click(function(e) {
+		var checkboxID = $(this).attr("ref");
+		var checkbox = $('#'+checkboxID);
+		
+		if (checkbox.is(":checked")) {
+			checkbox.removeAttr("checked").change();
+		} else {
+			checkbox.attr("checked","checked").change();
+		}
+		$(this).toggleClass("checked");
+		e.preventDefault();
+	});
 	
 	// Image Options
 	$('.of-radio-img-img').click(function(){
@@ -179,28 +200,11 @@ jQuery(document).ready(function($) {
 	$('.of-radio-img-label').hide();
 	$('.of-radio-img-img').show();
 	$('.of-radio-img-radio').hide();
-	
-	// Height function
-	function cc_height( height ) {
-		var height_min = '';
-		var total_height = '';
-		var content_height = height;
-		if($('body').width() > 767)
-		{
-			if ( height < 207 ){
-				height_min = 207;
-			} else {
-				height_min = 50;
-			}
-			total_height = height_min + content_height + 'px';
-			
-			$('.cc-left-menu').css('height', total_height);
-		}
-	}
-});
 
-// Section order function
-jQuery(function($) {
+	// Fade out the save message
+	$('.fade').delay(1000).fadeOut(1000);
+
+	// Section Order
 	var initialize = function(id) {
 		var el = $("#" + id);
 		function update(base) {
@@ -243,11 +247,9 @@ jQuery(function($) {
 	$('.section_order').each(function() {
 		initialize($(this).attr('id'));
 	});
-});
 
-// Mobile Modal Menu
-jQuery(function($) {
-		$('#cc-mobile-modal ul.cc-parent > li > a').click(function(){
-			$('#cc-mobile-modal').modal('hide');
-		});
+	// Mobile Modal Menu
+	$('#cc-mobile-modal ul.cc-parent > li > a').click(function(){
+		$('#cc-mobile-modal').modal('hide');
+	});
 });

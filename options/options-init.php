@@ -362,6 +362,23 @@ function cyberchimps_create_sections( $sections ) {
 	}
 }
 
+function cyberchimps_custom_events_callback( $value ) {
+	
+	$output = '';
+	
+	// TODO: remove later
+	$events_installed = false;
+	
+	// TODO: check if events plugin is installed
+	if ( $events_installed ) {
+		$output .= __('Link to Events plugin settings', 'cyberchimps');
+	} else {
+		$output .= __('Insert custom events info and insert install link', 'cyberchimps');
+	}
+	
+	echo $output;	
+}
+
 function cyberchimps_drag_drop_field( $value ) {
 	
 	$option_name = 'cyberchimps_options';

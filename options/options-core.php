@@ -55,6 +55,11 @@ function cyberchimps_add_core_headings( $headings_list ) {
 		'title' => __('Import/Export', 'cyberchimps'),
 	);
 	
+	$headings_list[] = array(
+		'id' => 'cyberchimps_extras_heading',
+		'title' => __('Extras', 'cyberchimps'),
+	);
+	
 	return $headings_list;
 }
 add_filter('cyberchimps_heading_list', 'cyberchimps_add_core_headings');
@@ -195,6 +200,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'id' => 'cyberchimps_import_export_section',
 		'label' => __('Import / Export', 'cyberchimps'),
 		'heading' => 'cyberchimps_import_export_heading'
+	);
+	
+	/* Extras */
+	$sections_list[] = array(
+		'id' => 'cyberchimps_events_section',
+		'label' => __('Events', 'cyberchimps'),
+		'heading' => 'cyberchimps_extras_heading'
 	);
 
 	return $sections_list;
@@ -1353,6 +1365,19 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'textarea',
 		'section' => 'cyberchimps_import_export_section',
 		'heading' => 'cyberchimps_import_export_heading'
+	);
+	
+	/****************************************************************/
+	/* EXTRAS */
+	/***************************************************************/
+	
+	$fields_list[] = array(
+		'name' => __('Events', 'cyberchimps'),
+		'id' => 'events_info',
+		'type' => 'info',
+		'callback' => 'cyberchimps_custom_events_callback',
+		'section' => 'cyberchimps_events_section',
+		'heading' => 'cyberchimps_extras_heading'
 	);
 	
 	return $fields_list;
