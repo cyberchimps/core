@@ -18,91 +18,50 @@
 
 // FIXME: Fix documentation
 function cyberchimps_load_pagination() {
-	// TODO: Only check once maybe on plugin activation and maybe throw alerts that there is a plugin conflict or maybe allow a dropdown when breadcrumb is assigned that allows you to choose which plugin to use. Plugin options would be added as they become available
-	if (cyberchimps_yoast_breadcrumbs()) {
-		// load yoast breadcrumbs
-		add_action('cyberchimps_before_content', 'yoast_breadcrumb');
-	} else if (cyberchimps_navxt_breadcrumbs()) {
-		// load navxt breadcrumbs
-		add_action('cyberchimps_before_content', 'bcn_display');
-	} else {
-		// load default pagination
-		add_action('cyberchimps_after_content', 'cyberchimps_default_pagination');
-	}
+	// load default pagination
+	add_action('cyberchimps_after_content', 'cyberchimps_default_pagination');
 }
 add_action('init', 'cyberchimps_load_pagination');
 
 // FIXME: Fix documentation
 function cyberchimps_default_pagination() {
-	global $wp_query;  
-      
-    $total_pages = $wp_query->max_num_pages;  
-      
-    if ($total_pages > 1){  
-      
-      $current_page = max(1, get_query_var('paged'));  
-          
-      $pagination = paginate_links(array(  
-          'base' => get_pagenum_link(1) . '%_%',  
-          'format' => 'page/%#%',  
-          'current' => $current_page,  
-          'total' => $total_pages,  
-          'prev_text' => 'Prev',  
-          'next_text' => 'Next',
-					'type' => 'array' 
-        ));  
-    }
-		echo '<div class="pagination">';  
-    echo '<ul>';
+	global $wp_query, $wp_rewrite;
+	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+
+	$pagination = array(
+		'base' => @add_query_arg('paged','%#%'),
+		'format' => '',
+		'total' => $wp_query->max_num_pages,
+		'current' => $current,
+		'show_all' => true,
+		'prev_text' => 'Prev',
+		'next_text' => 'Next',
+		'type' => 'array'
+	);
+
+	if ( $wp_rewrite->using_permalinks() )
+		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+
+	if ( !empty($wp_query->query_vars['s']) )
+		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+	$pagination = paginate_links( $pagination );
+	
+	if ( is_array($pagination) ) {
+		
+		echo '<div class="pagination">';
+		echo '<ul>';
 		foreach( $pagination as $pag ) {
-			if( strpos( $pag, 'dots' ) != false ) {
+			if ( strpos( $pag, 'dots' ) != false ) {
 				continue;
-			}
-			elseif( strpos( $pag, 'current' ) != false ) {
+			} else if ( strpos( $pag, 'current' ) != false ) {
 				$num = preg_replace("/[^0-9]/", '', $pag);
 				echo '<li class="active"><a>'.$num.'</a></li>';
-			}
-			else {
+			} else {
 				echo '<li>'.$pag.'</li>';
 			}
 		}
 		echo '</ul>';
 		echo '</div>';
-
-	// TODO: Work on code to add more features and clean up markup
-	?>
-	
-
-<?php
-}
-
-/*
-// FIXME: Fix documentation
-function cyberchimps_yoast_breadcrumbs() {
-	// check if yoast plugin is installed and activated
-	if ( cyberchimps_detect_plugin( array('constants' => array( 'WPSEO_VERSION' ) ) ) ) {
-		$options = get_wpseo_options(); // get yoast options
-		
-		// check if breadcrumbs are enabled and yoast_breadcrumb function exists
-		if ( ( isset($options['breadcrumbs-enable']) && $options['breadcrumbs-enable'] ) && ( function_exists( 'yoast_breadcrumb' ) ) ) {
-			return true;
-		}
 	}
-
-	return false;
 }
-
-// FIXME: Fix documentation
-function cyberchimps_navxt_breadcrumbs() {
-	// check if navxt breadcrumbs plugin is installed and activated
-	if ( cyberchimps_detect_plugin( array('classes' => array( 'bcn_breadcrumb' ) ) ) ) {
-		
-		// check if bcn_display function exists
-		if ( function_exists( 'bcn_display' ) ) {
-			return true;
-		}
-	}
-
-	return false;
-}
-*/

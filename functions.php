@@ -34,43 +34,6 @@ function cyberchimps_core_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
-
-if ( ! function_exists( 'cyberchimps_content_nav' ) ):
-// FIXME: Fix documentation
-// Display navigation to next/previous pages when applicable
-function cyberchimps_content_nav( $nav_id ) {
-	global $wp_query;
-
-	$nav_class = 'site-navigation paging-navigation';
-	if ( is_single() )
-		$nav_class = 'site-navigation post-navigation';
-
-	?>
-	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'cyberchimps' ); ?></h1>
-
-	<?php if ( is_single() ) : // navigation links for single posts ?>
-
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'cyberchimps' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'cyberchimps' ) . '</span>' ); ?>
-
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'cyberchimps' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'cyberchimps' ) ); ?></div>
-		<?php endif; ?>
-
-	<?php endif; ?>
-
-	</nav><!-- #<?php echo $nav_id; ?> -->
-	<?php
-}
-endif; // cyberchimps_content_nav
-
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 // FIXME: Fix documentation
 //Prints HTML with meta information for the current post-date/time and author.
