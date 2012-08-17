@@ -19,8 +19,8 @@
 // Don't load directly
 if ( !defined('ABSPATH') ) { die('-1'); }
 
-if ( !class_exists( 'CyberChimpsCallout' ) ) {
-	class CyberChimpsCallout {
+if ( !class_exists( 'CyberChimpsBoxes' ) ) {
+	class CyberChimpsBoxes {
 		
 		protected static $instance;
 		
@@ -54,21 +54,33 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			// TODO: query post get callout details
-			
-			// Temporary until options are saved
-			// TODO: Remove this default value
-			$callouttext = ($text) ? $text : 'Default text';
-		?>
-			<div class="callout">
+			?>
+			<div class="boxes">
 				<div class="row-fluid">
-					<div id="callout-text" class="span12">
-						<h2 class="callout-title" ><?php echo $callouttext; ?></h2>
-					</div><!-- #callout-text .span12-->
-				</div><!-- .row-fluid -->
-			</div><!-- .callout-->
+					<div id="box1" class="span4">
+						<div style="padding:15px;">
+						<h2 class="box-widget-title">Box Left</h2>
+						<p>This is the box left widgetized area.</p>
+						</div>
+					</div><!--end box1-->
+	
+					<div id="box2" class="span4">
+						<div style="padding:15px;">
+						<h2 class="box-widget-title">Box Middle</h2>
+						<p>This is the box middle widgetized area.</p>
+						</div>
+					</div><!--end box2-->
+				
+					<div id="box3" class="span4">
+						<div style="padding:15px;">
+						<h2 class="box-widget-title">Box Right</h2>
+						<p>This is the box right widgetized area.</p>
+						</div>
+					</div><!--end box3-->
+				</div>
+			</div>
 		<?php
 		}
 	}
 }
-CyberChimpsCallout::instance();
+CyberChimpsBoxes::instance();

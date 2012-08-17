@@ -16,52 +16,83 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// FIXME: Fix documentation
-function cyberchimps_load_pagination() {
-	// load default pagination
-	add_action('cyberchimps_after_content', 'cyberchimps_default_pagination');
-}
-add_action('init', 'cyberchimps_load_pagination');
+// Don't load directly
+if ( !defined('ABSPATH') ) { die('-1'); }
 
-// FIXME: Fix documentation
-function cyberchimps_default_pagination() {
-	global $wp_query, $wp_rewrite;
-	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
-
-	$pagination = array(
-		'base' => @add_query_arg('paged','%#%'),
-		'format' => '',
-		'total' => $wp_query->max_num_pages,
-		'current' => $current,
-		'show_all' => true,
-		'prev_text' => 'Prev',
-		'next_text' => 'Next',
-		'type' => 'array'
-	);
-
-	if ( $wp_rewrite->using_permalinks() )
-		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
-
-	if ( !empty($wp_query->query_vars['s']) )
-		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
-
-	$pagination = paginate_links( $pagination );
-	
-	if ( is_array($pagination) ) {
+if ( !class_exists( 'CyberChimpsPagination' ) ) {
+	class CyberChimpsPagination {
 		
-		echo '<div class="pagination">';
-		echo '<ul>';
-		foreach( $pagination as $pag ) {
-			if ( strpos( $pag, 'dots' ) != false ) {
-				continue;
-			} else if ( strpos( $pag, 'current' ) != false ) {
-				$num = preg_replace("/[^0-9]/", '', $pag);
-				echo '<li class="active"><a>'.$num.'</a></li>';
-			} else {
-				echo '<li>'.$pag.'</li>';
+		protected static $instance;
+		
+		/* Static Singleton Factory Method */
+		public static function instance() {
+			if (!isset(self::$instance)) {
+				$className = __CLASS__;
+				self::$instance = new $className;
+			}
+			return self::$instance;
+		}	
+		
+		/**
+		 * Initializes plugin variables and sets up WordPress hooks/actions.
+		 *
+		 * @return void
+		 */
+		protected function __construct( ) {
+			//add_action( 'init', array( $this, 'init'), 10 );
+			// TODO: Remove - Just for styling
+			// add_action( 'cyberchimps_after_content', array( $this, 'render_display' ) );
+			// TODO: Remove - Just for styling
+			add_action( 'cyberchimps_after_container', array( $this, 'render_display' ) );
+		}
+		
+		/**
+		 * Run on applied action init
+		 */
+		public function init() {
+		}
+		
+		// TODO: Fix documentation
+		public function render_display() {
+			global $wp_query, $wp_rewrite;
+			$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+			
+			$pagination = array(
+				'base' => @add_query_arg('paged','%#%'),
+				'format' => '',
+				'total' => $wp_query->max_num_pages,
+				'current' => $current,
+				'show_all' => true,
+				'prev_text' => 'Prev',
+				'next_text' => 'Next',
+				'type' => 'array'
+			);
+		
+			if ( $wp_rewrite->using_permalinks() )
+				$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+		
+			if ( !empty($wp_query->query_vars['s']) )
+				$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+		
+			$pagination = paginate_links( $pagination );
+			
+			if ( is_array($pagination) ) {
+				echo '<div class="pagination">';
+				echo '<ul>';
+				foreach( $pagination as $pag ) {
+					if ( strpos( $pag, 'dots' ) != false ) {
+						continue;
+					} else if ( strpos( $pag, 'current' ) != false ) {
+						$num = preg_replace("/[^0-9]/", '', $pag);
+						echo '<li class="active"><a>'.$num.'</a></li>';
+					} else {
+						echo '<li>'.$pag.'</li>';
+					}
+				}
+				echo '</ul>';
+				echo '</div>';
 			}
 		}
-		echo '</ul>';
-		echo '</div>';
 	}
 }
+CyberChimpsPagination::instance();

@@ -19,8 +19,8 @@
 // Don't load directly
 if ( !defined('ABSPATH') ) { die('-1'); }
 
-if ( !class_exists( 'CyberChimpsCallout' ) ) {
-	class CyberChimpsCallout {
+if ( !class_exists( 'CyberChimpsProduct' ) ) {
+	class CyberChimpsProduct {
 		
 		protected static $instance;
 		
@@ -54,21 +54,8 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			// TODO: query post get callout details
 			
-			// Temporary until options are saved
-			// TODO: Remove this default value
-			$callouttext = ($text) ? $text : 'Default text';
-		?>
-			<div class="callout">
-				<div class="row-fluid">
-					<div id="callout-text" class="span12">
-						<h2 class="callout-title" ><?php echo $callouttext; ?></h2>
-					</div><!-- #callout-text .span12-->
-				</div><!-- .row-fluid -->
-			</div><!-- .callout-->
-		<?php
 		}
 	}
 }
-CyberChimpsCallout::instance();
+CyberChimpsProduct::instance();
