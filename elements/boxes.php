@@ -55,30 +55,24 @@ if ( !class_exists( 'CyberChimpsBoxes' ) ) {
 		// TODO: Fix documentation
 		public function render_display() {
 			?>
-			<div class="boxes">
-				<div class="row-fluid">
-					<div id="box1" class="span4">
-						<div style="padding:15px;">
+			<div class="row-fluid">
+				<div class="boxes">
+					<div id="box1" class="box span4">
 						<h2 class="box-widget-title">Box Left</h2>
-						<p>This is the box left widgetized area.</p>
-						</div>
+						<p>Collaboratively build intuitive outsourcing before high-quality metrics. Interactively scale client-centric architectures through enterprise-wide "outside the box" thinking. Seamlessly benchmark end-to-end collaboration and idea-sharing and clicks-and-mortar.</p>
 					</div><!--end box1-->
 	
-					<div id="box2" class="span4">
-						<div style="padding:15px;">
+					<div id="box2" class="box span4">
 						<h2 class="box-widget-title">Box Middle</h2>
 						<p>This is the box middle widgetized area.</p>
-						</div>
 					</div><!--end box2-->
 				
-					<div id="box3" class="span4">
-						<div style="padding:15px;">
+					<div id="box3" class="box span4">
 						<h2 class="box-widget-title">Box Right</h2>
 						<p>This is the box right widgetized area.</p>
-						</div>
 					</div><!--end box3-->
-				</div>
-			</div>
+				</div><!-- boxes -->
+			</div><!-- row-fluid -->
 		<?php
 		}
 	}

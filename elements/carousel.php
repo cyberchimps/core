@@ -61,9 +61,9 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 				$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
 			}
 			?>
-			<div class="carousel">
-				<div class="row-fluid">
-					<div class="span12">
+			<div class="row-fluid">
+				<div class="carousel slide" id="cc-carousel">
+        	<div class="carousel-inner">
 						<?php
 						// TODO: Convert to get_posts()
 						query_posts( array ('post_type' => 'cyberchimps_carousel', 'showposts' => 50, true, 'carousel_categories' => $customcategory ));
@@ -98,30 +98,43 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 							$out .= '</ul>';
 							
 						else :
-							$out .= '<ul>';
-								$out .= '<li>';
+							$out .= '<div class="active item">';
+							$out .= '<ul class="thumnails">';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 1"/>';
+								$out .= '<div class="caption"><h3>Test 1</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 2"/>';
+								$out .= '<div class="caption"><h3>Test 2</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 3"/>';
+								$out .= '<div class="caption"><h3>Test 3</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 4"/>';
+								$out .= '<div class="caption"><h3>Test 4</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 5"/>';
+								$out .= '<div class="caption"><h3>Test 5</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 6"/>';
+								$out .= '<div class="caption"><h3>Test 6</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '</ul>';
+								$out .= '</div>';
+								$out .= '<div class="item">';
+								$out .= '<ul class="thumbnails">';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 7"/>';
+								$out .= '<div class="caption"><h3>Test 7</h3></div>';
 								$out .= '</li>';
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 8"/>';
+								$out .= '<div class="caption"><h3>Test 8</h3></div>';
 								$out .= '</li>';
 							$out .= '</ul>';
 						endif;
@@ -131,9 +144,11 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 						
 						echo $out;
 						?>
-					</div>
-				</div>
-			</div>
+          </div><!-- carousel -->
+				</div><!-- carousel-container -->
+        <a class="carousel-control left" href="#cc-carousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#cc-carousel" data-slide="next">&rsaquo;</a>
+			</div><!-- row-fluid -->
 			<?php
 		}
 	}

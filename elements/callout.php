@@ -60,12 +60,12 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 			// TODO: Remove this default value
 			$callouttext = ($text) ? $text : 'Default text';
 		?>
-			<div class="callout">
-				<div class="row-fluid">
-					<div id="callout-text" class="span12">
+			<div class="row-fluid">
+				<div class="callout span12">
+					<div class="callout-text">
 						<h2 class="callout-title" ><?php echo $callouttext; ?></h2>
-					</div><!-- #callout-text .span12-->
-				</div><!-- .row-fluid -->
+					</div><!-- #callout-text -->
+				</div><!-- .row-fluid .span12 -->
 			</div><!-- .callout-->
 		<?php
 		}
