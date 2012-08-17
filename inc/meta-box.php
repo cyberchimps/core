@@ -91,7 +91,6 @@ function cyberchimps_init_meta_boxes() {
 				'full_width' => get_template_directory_uri() . '/core/lib/images/none.png',
 				'left_sidebar' => get_template_directory_uri() . '/core/lib/images/left.png')
 			))
-			->checkbox('cyberchimps_hide_page_title', 'Page Title', '', array('std' => 'on'))
 			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(
 				'std' => array(
 					'breadcrumbs' => 'Breadcrumbs',
@@ -102,12 +101,10 @@ function cyberchimps_init_meta_boxes() {
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
 					'portfolio_element' => 'Portfolio',
-					'custom_html_element' => 'Custom HTML',
 					'product_element' => 'Product',
 					'page_section' => 'Page',
 					'box_section' => 'Boxes',
-					'carousel_section' => 'Carousel',
-					'page_nivoslider' => 'NivoSlider'		
+					'carousel_section' => 'Carousel',	
 				),
 				))
 			->pagehelp('', 'Need Help?', '')
@@ -124,21 +121,6 @@ function cyberchimps_init_meta_boxes() {
 			->select('page_slider_caption_style', 'Slider Caption Style', '', array('options' => array('None (default)', 'Bottom', 'Left', 'Right')) )
 			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
 			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
-			->sliderhelp('', 'Need Help?', '')
-		->tab("NivoSlider Options")
-			->select('page_nivoslider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
-			->select('page_nivoslider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
-			->select('nivoslider_category', 'Custom Slide Category', '', array('options' => $slider_options) )
-			->select('nivoslider_blog_category', 'Blog Post Category', '', array('options' => $blog_options, 'all') )
-			->text('nivoslider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
-			->text('nivoslider_height', 'Slider Height', '', array('std' => '330'))
-			->text('nivoslider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
-			->select('page_nivoslider_animation', 'Slider Animation Type', '', array('options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse')) )
-			->select('page_nivoslider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
-			->select('page_nivoslider_caption_style', 'Slider Caption Style', '', array('options' => array('None (default)', 'Bottom', 'Left', 'Right')) )
-			->checkbox('nivo_hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
-			->checkbox('nivo_nav_autohide', 'Navigation Arrows Autohide', '', array('std' => 'on'))
-			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Product Options")
 			->select('cyberchimps_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
@@ -172,16 +154,9 @@ function cyberchimps_init_meta_boxes() {
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carousel_options) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
-		->tab("Custom HTML")
-			->textarea('custom_html', 'Enter your custom HTML', '')
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
 			->checkbox('cyberchimps_twitter_reply', 'Show @ Replies', '')
-		->tab("SEO Options")
-			->text('cyberchimps_seo_title', 'SEO Title', '')
-			->textarea('cyberchimps_seo_description', 'SEO Description', '')
-			->textarea('cyberchimps_seo_keywords', 'SEO Keywords', '')
-			->pagehelp('', 'Need help?', '')
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {
