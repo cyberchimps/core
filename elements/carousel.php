@@ -99,7 +99,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 							
 						else :
 							$out .= '<div class="active item">';
-							$out .= '<ul class="thumnails">';
+							$out .= '<ul class="thumbnails">';
 								$out .= '<li class="span2">';
 								$out .= '<img src="'.$default.'" alt="Post 1"/>';
 								$out .= '<div class="caption"><h3>Test 1</h3></div>';
