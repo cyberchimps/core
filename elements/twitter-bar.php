@@ -67,22 +67,24 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 				echo $latest_tweet->get_error_code() . ' - ' . $latest_tweet->get_error_message();
 			} else {
 			?>
-			<div id="twitter-bar" class="row-fluid">
-				<div id="twitter-text" class="span12">
-					<?php
-					if ( $latest_tweet ) {	
-						$screen_name = $latest_tweet[0]->user->screen_name;
-						$user_permalink = 'http://twitter.com/#!/'.$screen_name;
-						$tweet_permalink = 'http://twitter.com/#!/'.$screen_name.'/status/'.$latest_tweet[0]->id_str;
-						echo '<a href="'.$user_permalink.'"> ';
-						echo '<img src="'.get_template_directory_uri().'/core/lib/images/twitterbird.png" /> ';
-						echo $screen_name .'</a> - '.$latest_tweet[0]->text.' <small><a href="'.$tweet_permalink.'">' .human_time_diff(strtotime($latest_tweet[0]->created_at), current_time('timestamp')).' ago</a></small>';
-					} else {
-						echo apply_filters('cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps').'</p>');
-					}
-					?>
-				</div><!-- #twitter-text .span12 -->
-			</div><!-- #twitter-bar .row-fluid -->
+			<div class="row-fluid">
+      	<div id="twitter-bar" class="span12">
+					<div id="twitter-text">
+						<?php
+            if ( $latest_tweet ) {	
+              $screen_name = $latest_tweet[0]->user->screen_name;
+              $user_permalink = 'http://twitter.com/#!/'.$screen_name;
+              $tweet_permalink = 'http://twitter.com/#!/'.$screen_name.'/status/'.$latest_tweet[0]->id_str;
+              echo '<a href="'.$user_permalink.'"> ';
+              echo '<img src="'.get_template_directory_uri().'/core/lib/images/twitterbird.png" /> ';
+              echo $screen_name .'</a> - '.$latest_tweet[0]->text.' <small><a href="'.$tweet_permalink.'">' .human_time_diff(strtotime($latest_tweet[0]->created_at), current_time('timestamp')).' ago</a></small>';
+            } else {
+              echo apply_filters('cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps').'</p>');
+            }
+            ?>
+					</div><!-- #twitter-text .span12 -->
+        </div><!-- #twitter-bar -->
+			</div><!-- .row-fluid -->
 			<?php
 			}
 		}

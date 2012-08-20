@@ -64,12 +64,11 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			$caption3 = 'Caption 3';
 			$caption4 = 'Caption 4';
 			?>
-			<div class="portfolio">
-				<div class="row-fluid">
-					<div id="gallery" class="span12">
-					<?php echo 'Title Placeholder'; ?>
-					<div class="row-fluid">
-						<ul>
+			<div class="row-fluid">
+     	 <div class="portfolio" class="span12">
+					<div id="gallery">
+					<h3><?php echo 'Title Placeholder'; ?></h3>
+						<ul class="row-fluid">
 							<li id="portfolio_wrap" class="span3">
 								<a href="<?php echo $img1 ;?>" rel="lightbox-portfolio" title="<?php echo $caption1 ;?>">
 									<img src="<?php echo $img1 ;?>" alt="Image 1"/>
@@ -95,10 +94,9 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 								</a>
 							</li><!-- #portfolio_wrap .span3-->
 						</ul>
-					</div><!-- row-fluid -->
 					</div><!-- #gallery .span12-->
-				</div><!-- .row-fluid-->
-			</div><!-- #portfolio .fluid-container-->
+				</div><!-- .portfolio -->
+			</div><!-- row-fluid -->
 			<?php
 		}
 	}
