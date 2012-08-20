@@ -39,22 +39,12 @@ if ( !class_exists( 'CyberChimpsProduct' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			//add_action( 'init', array( $this, 'init'), 10 );
-			// TODO: Remove - Just for styling
-			// add_action( 'cyberchimps_before_content', array( $this, 'render_display' ) );
-			// TODO: Remove - Just for styling
-			add_action( 'cyberchimps_before_container', array( $this, 'render_display' ) );
-		}
-		
-		/**
-		 * Run on applied action init
-		 */
-		public function init() {
+			add_action( 'product_element', array( $this, 'render_display' ) );
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			
+			echo '<h2>Product Element Coming Soon</h2>';
 		}
 	}
 }

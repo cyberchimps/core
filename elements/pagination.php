@@ -39,17 +39,7 @@ if ( !class_exists( 'CyberChimpsPagination' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			//add_action( 'init', array( $this, 'init'), 10 );
-			// TODO: Remove - Just for styling
-			// add_action( 'cyberchimps_after_content', array( $this, 'render_display' ) );
-			// TODO: Remove - Just for styling
 			add_action( 'cyberchimps_after_container', array( $this, 'render_display' ) );
-		}
-		
-		/**
-		 * Run on applied action init
-		 */
-		public function init() {
 		}
 		
 		// TODO: Fix documentation

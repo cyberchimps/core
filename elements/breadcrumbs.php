@@ -39,21 +39,27 @@ if ( !class_exists( 'CyberChimpsBreadcrumbs' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			//add_action( 'init', array( $this, 'init'), 10 );
-			// TODO: Remove - Just for styling
-			// add_action( 'cyberchimps_before_content', array( $this, 'render_display' ) );
-			// TODO: Remove - Just for styling
-			add_action( 'cyberchimps_before_container', array( $this, 'render_display' ) );
+			add_action( 'init', array( $this, 'init'), 10 );
 		}
 		
 		/**
 		 * Run on applied action init
 		 */
 		public function init() {
+			if (self::check_yoast_breadcrumbs()) {
+				// load yoast breadcrumbs
+				add_action('breadcrumbs', 'yoast_breadcrumb');
+			} else if (self::check_navxt_breadcrumbs()) {
+				// load navxt breadcrumbs
+				add_action('breadcrumbs', 'bcn_display');
+			} else {
+				// load default breadcrumbs
+				add_action( 'breadcrumbs', array( $this, 'default_display' ) );
+			}
 		}
 		
-		// TODO: Fix documentation
-		public function render_display() {
+		// FIXME: Fix documentation
+		public function default_display() {		
 			// TODO: Work on code to add more features and clean up markup
 			$delimiter = ' &raquo; ';
 			$before = '<span class="current">'; // tag before the current crumb
@@ -150,24 +156,8 @@ if ( !class_exists( 'CyberChimpsBreadcrumbs' ) ) {
 			}
 		}
 		
-		/* Need to rework with new structure
 		// FIXME: Fix documentation
-		function cyberchimps_load_breadcrumbs() {
-			// TODO: Only check once maybe on plugin activation and maybe throw alerts that there is a plugin conflict or maybe allow a dropdown when breadcrumb is assigned that allows you to choose which plugin to use. Plugin options would be added as they become available
-			if (cyberchimps_yoast_breadcrumbs()) {
-				// load yoast breadcrumbs
-				add_action('cyberchimps_breadcrumbs', 'yoast_breadcrumb');
-			} else if (cyberchimps_navxt_breadcrumbs()) {
-				// load navxt breadcrumbs
-				add_action('cyberchimps_breadcrumbs', 'bcn_display');
-			} else {
-				// load default breadcrumbs
-				add_action('cyberchimps_breadcrumbs', 'cyberchimps_default_breadcrumbs');
-			}
-		}
-		
-		// FIXME: Fix documentation
-		function cyberchimps_yoast_breadcrumbs() {
+		private function check_yoast_breadcrumbs() {
 			// check if yoast plugin is installed and activated
 			if ( cyberchimps_detect_plugin( array('constants' => array( 'WPSEO_VERSION' ) ) ) ) {
 				$options = get_wpseo_options(); // get yoast options
@@ -182,7 +172,7 @@ if ( !class_exists( 'CyberChimpsBreadcrumbs' ) ) {
 		}
 		
 		// FIXME: Fix documentation
-		function cyberchimps_navxt_breadcrumbs() {
+		private function check_navxt_breadcrumbs() {
 			// check if navxt breadcrumbs plugin is installed and activated
 			if ( cyberchimps_detect_plugin( array('classes' => array( 'bcn_breadcrumb' ) ) ) ) {
 				
@@ -194,7 +184,6 @@ if ( !class_exists( 'CyberChimpsBreadcrumbs' ) ) {
 		
 			return false;
 		}
-		*/
 	}
 }
 CyberChimpsBreadcrumbs::instance();

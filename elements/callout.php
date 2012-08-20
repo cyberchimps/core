@@ -39,31 +39,21 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			//add_action( 'init', array( $this, 'init'), 10 );
-			// TODO: Remove - Just for styling
-			// add_action( 'cyberchimps_before_content', array( $this, 'render_display' ) );
-			// TODO: Remove - Just for styling
-			add_action( 'cyberchimps_before_container', array( $this, 'render_display' ) );
-		}
-		
-		/**
-		 * Run on applied action init
-		 */
-		public function init() {
+			add_action( 'callout_section', array( $this, 'render_display' ) );
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			// TODO: query post get callout details
+			global $post;
 			
-			// Temporary until options are saved
-			// TODO: Remove this default value
-			$callouttext = ($text) ? $text : 'Default text';
+			$callout_title = (get_post_meta($post->ID, 'callout_title', true)) ? get_post_meta($post->ID, 'callout_title', true) : '';
+			$callout_text = (get_post_meta($post->ID, 'callout_text', true)) ? get_post_meta($post->ID, 'callout_text', true) : '';
 		?>
 			<div class="row-fluid">
 				<div class="callout span12">
 					<div class="callout-text">
-						<h2 class="callout-title" ><?php echo $callouttext; ?></h2>
+						<h2 class="callout-title"><?php echo esc_html($callout_title); ?></h2>
+						<p><?php echo esc_html($callout_text); ?></p>
 					</div><!-- #callout-text -->
 				</div><!-- .row-fluid .span12 -->
 			</div><!-- .callout-->

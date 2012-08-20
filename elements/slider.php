@@ -39,26 +39,11 @@ if ( !class_exists( 'CyberChimpsSlider' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			//add_action( 'init', array( $this, 'init'), 10 );
-			// TODO: Remove - Just for styling
-			// add_action( 'cyberchimps_before_content', array( $this, 'render_display' ) );
-			// TODO: Remove - Just for styling
-			add_action( 'cyberchimps_before_container', array( $this, 'render_display' ) );
-		}
-		
-		/**
-		 * Run on applied action init
-		 */
-		public function init() {
+			add_action( 'page_slider', array( $this, 'render_display' ) );
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			// TODO: query post get slider details
-	
-			// TODO: Replace Orbit with updated code
-			
-			// TODO: fix slider item markup
 			?>
 			<!-- New Slider -->
 			<div id="slider" class="carousel slide">
