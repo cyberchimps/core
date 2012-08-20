@@ -44,13 +44,14 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			// TODO: Temporary until options are saved
-			$user_details = array(
-				'screen_name' => 'CyberChimps',
-				'count' => '1',
-				'published_when' => '1',
-				'show_replies' => ''
-			);
+			global $post;
+			
+			$user_details = array();
+			$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
+			$user_details['count'] = '1';
+			$user_details['published_when'] = '1';
+			$user_details['exclude_replies'] =  !get_post_meta($post->ID, 'cyberchimps_twitter_reply', true);
+			
 			$latest_tweet = self::get_tweets( $user_details );
 			
 			if ( is_wp_error( $latest_tweet ) ) {
