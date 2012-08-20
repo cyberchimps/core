@@ -22,12 +22,15 @@
 * @since 1.0
 */
 function cyberchimps_footer_credit() { 
-
-	if (cyberchimps_get_option('footer_cyberchimps_link') == '1') { ?>
-		<div id="credit" class="span6">
-			<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/achimps.png" alt="credit" /></a>
+	?>
+	<div class="span6">
+		<div id="credit">
+			<?php if (cyberchimps_get_option('footer_cyberchimps_link') == '1') {  ?>
+			<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/achimps.png" alt="CyberChimps" /></a>
+			<?php } ?>
 		</div>
-	<?php }
+	</div>
+	<?php
 }
 add_action ( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
 
@@ -37,15 +40,9 @@ add_action ( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
 * @since 1.0
 */
 function cyberchimps_footer_copyright() {
-
-	if ( cyberchimps_get_option('footer_copyright_text') ) {
-		$copyright = cyberchimps_get_option('footer_copyright_text');
-	} else {
-		$copyright = get_bloginfo('name');
-	}
-
-	echo '<div id="footer-copyright" class="span6">';
-	echo "&copy; $copyright";
+	echo '<div class="span6">';
+	$copyright = ( cyberchimps_get_option('footer_copyright_text') ) ? cyberchimps_get_option('footer_copyright_text') : '';
+	echo '<div id="copyright">' . $copyright . '</div>';
 	echo '</div>';
 }
 add_action ( 'cyberchimps_footer', 'cyberchimps_footer_copyright' );

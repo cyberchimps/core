@@ -69,14 +69,8 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	$sections_list = array();
 	
 	$sections_list[] = array(
-		'id' => 'cyberchimps_responsive_section',
-		'label' => __('Responsive', 'cyberchimps'),
-		'heading' => 'cyberchimps_design_heading'
-	);
-	
-	$sections_list[] = array(
-		'id' => 'cyberchimps_typography_section',
-		'label' => __('Typography', 'cyberchimps'),
+		'id' => 'cyberchimps_custom_colors_section',
+		'label' => __('Custom Colors', 'cyberchimps'),
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
@@ -87,8 +81,8 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	);
 	
 	$sections_list[] = array(
-		'id' => 'cyberchimps_custom_colors_section',
-		'label' => __('Custom Colors', 'cyberchimps'),
+		'id' => 'cyberchimps_typography_section',
+		'label' => __('Typography', 'cyberchimps'),
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
@@ -243,39 +237,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	$fields_list = array();
 	
-	// Responsive Section
-	$fields_list[] = array(
-		'id' => 'responsive_design',
-		'name' => __('Responsive Design', 'cyberchimps'),
-		'type' => 'toggle',
-		'std' => 1,
-		'section' => 'cyberchimps_responsive_section',
-		'heading' => 'cyberchimps_design_heading',
-	);
-	
-	$fields_list[] = array(
-		'id' => 'responsive_videos',
-		'name' => __('Responsive Videos', 'cyberchimps'),
-		'type' => 'toggle',
-		'std' => 1,
-		'section' => 'cyberchimps_responsive_section',
-		'heading' => 'cyberchimps_design_heading',
-	);
-	
-	$fields_list[] = array(
-		'id' => 'skin_color',
-		'name' => __('Select a Skin Color', 'cyberchimps'),
-		'type' => 'select',
-		'std' => 'blue',
-		'options' => array(
-			'default' => __('Default', 'cyberchimps'),
-			'blue' => __('Blue', 'cyberchimps'),
-			'green' => __('Green', 'cyberchimps'),
-		),
-		'section' => 'cyberchimps_responsive_section',
-		'heading' => 'cyberchimps_design_heading',
-	);
-	
 	// Typography Defaults
 	$typography_defaults = array(
 		'size' => '15px',
@@ -400,6 +361,19 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading');
 	
 	/* CUSTOMER COLORS */
+	$fields_list[] = array(
+		'id' => 'skin_color',
+		'name' => __('Select a Skin Color', 'cyberchimps'),
+		'type' => 'select',
+		'std' => 'blue',
+		'options' => array(
+			'default' => __('Default', 'cyberchimps'),
+			'blue' => __('Blue', 'cyberchimps'),
+			'green' => __('Green', 'cyberchimps'),
+		),
+		'section' => 'cyberchimps_custom_colors_section',
+		'heading' => 'cyberchimps_design_heading',
+	);
 	
 	$fields_list[] = array(
 		'name' => __('Text Color', 'cyberchimps'),
@@ -1213,8 +1187,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/************************************************************************************/
 	
 	$fields_list[] = array(
-		'name' => __('Footer', 'cyberchimps'),
-		'id' => 'footer_toggle',
+		'name' => __('Show Footer Section', 'cyberchimps'),
+		'id' => 'footer_show_toggle',
+		'std' => 1,
 		'type' => 'toggle',
 		'section' => 'cyberchimps_footer_section',
 		'heading' => 'cyberchimps_footer_heading'
@@ -1223,7 +1198,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'id' => 'footer_copyright_text',
 		'name' => __('Footer Copyright Text', 'cyberchimps'),
-		'std' => '',
+		'std' => '&copy; ' . get_bloginfo('name'),
 		'type' => 'text',
 		'section' => 'cyberchimps_footer_section',
 		'heading' => 'cyberchimps_footer_heading'
@@ -1233,14 +1208,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Cyberchimps Link', 'cyberchimps'),
 		'id' => 'footer_cyberchimps_link',
 		'std' => 1,
-		'type' => 'toggle',
-		'section' => 'cyberchimps_footer_section',
-		'heading' => 'cyberchimps_footer_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Afterfooter', 'cyberchimps'),
-		'id' => 'afterfooter_toggle',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_footer_section',
 		'heading' => 'cyberchimps_footer_heading'

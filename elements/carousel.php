@@ -144,10 +144,12 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 						
 						echo $out;
 						?>
+			</div>
           </div><!-- carousel -->
-				</div><!-- carousel-container -->
+			
         <a class="carousel-control left" href="#cc-carousel" data-slide="prev">&lsaquo;</a>
 				<a class="carousel-control right" href="#cc-carousel" data-slide="next">&rsaquo;</a>
+				</div><!-- carousel-container -->
 			</div><!-- row-fluid -->
 			<?php
 		}
