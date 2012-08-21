@@ -50,7 +50,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 			
 			//HS Set Loop variables
 			$i = 1;
-			$x = 1;
+			$x = 0;
 
 			if ( is_page() ) {
 				$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
@@ -63,18 +63,21 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 						// TODO: Convert to get_posts()
 						query_posts( array ('post_type' => 'cyberchimps_carousel', 'showposts' => 50, true, 'carousel_categories' => $customcategory ));
 						
+						// HS set total posts so the loop can be finished correctly, this needs to be changed when we use get_posts()
+    				$total_posts = $wp_query->found_posts;
+		
 						if (have_posts()) :
 							
 							while ( have_posts() ) : 
 								the_post();
 								
 								// HS on the first loop through we add the active class
-								if( $i == 1 && $x == 1 ) {
+								if( $i == 1 && $x == 0 ) {
 									$out .= '<div class="active item">';
 									$out .= '<ul class="thumbnails>';
 								}
 								// HS after 6 loops through this is called to start a new 6 items but without active class
-								elseif ( $i == 1 && $x > 1 ) {
+								elseif ( $i == 1 && $x > 0 ) {
 									$out .= '<div class="active item">';
 									$out .= '<ul class="thumbnails>';
 								}									
@@ -101,8 +104,8 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 								$out .= '<div class="carousel_caption">'.$title.'</div>';
 								$out .= '</li>';
 							
-							// HS after 6 loops through we close the ul and div tags
-							if( $i == 6 ) {
+							// HS after 6 loops through or after all items have been listed we close the ul and div tags
+							if( $i == 6 || ( $x * 6 + $i )  == $total_posts ) {
 								$out .= '</ul>';
 								$out .= '</div>';
 								$i = 1;
