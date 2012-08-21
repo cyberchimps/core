@@ -46,6 +46,11 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 		public function render_display() {
 			$tmp_query = $wp_query; 
 			$default = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
+			$out = '';
+			
+			//HS Set Loop variables
+			$i = 1;
+			$x = 1;
 
 			if ( is_page() ) {
 				$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
@@ -59,10 +64,22 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 						query_posts( array ('post_type' => 'cyberchimps_carousel', 'showposts' => 50, true, 'carousel_categories' => $customcategory ));
 						
 						if (have_posts()) :
-							$out = '<ul>';
 							
 							while ( have_posts() ) : 
 								the_post();
+								
+								// HS on the first loop through we add the active class
+								if( $i == 1 && $x == 1 ) {
+									$out .= '<div class="active item">';
+									$out .= '<ul class="thumbnails>';
+								}
+								// HS after 6 loops through this is called to start a new 6 items but without active class
+								elseif ( $i == 1 && $x > 1 ) {
+									$out .= '<div class="active item">';
+									$out .= '<ul class="thumbnails>';
+								}									
+							
+								
 								
 								/* Post-specific variables */
 								$image = get_post_meta($post->ID, 'post_image', true);
@@ -79,53 +96,63 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 									$image = $default;
 								}
 								
-								$out .= '<li>';
+								$out .= '<li class="span2">';
 								$out .= '<a href="'.$link.'"><img src='.$image.'" alt="'.$title.'"/></a>';
 								$out .= '<div class="carousel_caption">'.$title.'</div>';
 								$out .= '</li>';
 							
+							// HS after 6 loops through we close the ul and div tags
+							if( $i == 6 ) {
+								$out .= '</ul>';
+								$out .= '</div>';
+								$i = 1;
+								$x++;
+							}
+							else {
+								$i++;
+							}							
+							
 							endwhile;	
-							$out .= '</ul>';
 							
 						else :
 							$out .= '<div class="active item">';
 							$out .= '<ul class="thumbnails">';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 1"/>';
-								$out .= '<div class="caption"><h3>Test 1</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 2"/>';
-								$out .= '<div class="caption"><h3>Test 2</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 3"/>';
-								$out .= '<div class="caption"><h3>Test 3</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 4"/>';
-								$out .= '<div class="caption"><h3>Test 4</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 5"/>';
-								$out .= '<div class="caption"><h3>Test 5</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 6"/>';
-								$out .= '<div class="caption"><h3>Test 6</h3></div>';
-								$out .= '</li>';
-								$out .= '</ul>';
-								$out .= '</div>';
-								$out .= '<div class="item">';
-								$out .= '<ul class="thumbnails">';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 7"/>';
-								$out .= '<div class="caption"><h3>Test 7</h3></div>';
-								$out .= '</li>';
-								$out .= '<li class="span2">';
-								$out .= '<img src="'.$default.'" alt="Post 8"/>';
-								$out .= '<div class="caption"><h3>Test 8</h3></div>';
-								$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 1"/>';
+							$out .= '<div class="caption"><h3>Test 1</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 2"/>';
+							$out .= '<div class="caption"><h3>Test 2</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 3"/>';
+							$out .= '<div class="caption"><h3>Test 3</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 4"/>';
+							$out .= '<div class="caption"><h3>Test 4</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 5"/>';
+							$out .= '<div class="caption"><h3>Test 5</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 6"/>';
+							$out .= '<div class="caption"><h3>Test 6</h3></div>';
+							$out .= '</li>';
+							$out .= '</ul>';
+							$out .= '</div>';
+							$out .= '<div class="item">';
+							$out .= '<ul class="thumbnails">';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 7"/>';
+							$out .= '<div class="caption"><h3>Test 7</h3></div>';
+							$out .= '</li>';
+							$out .= '<li class="span2">';
+							$out .= '<img src="'.$default.'" alt="Post 8"/>';
+							$out .= '<div class="caption"><h3>Test 8</h3></div>';
+							$out .= '</li>';
 							$out .= '</ul>';
 						endif;
 						
