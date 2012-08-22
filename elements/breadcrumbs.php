@@ -68,8 +68,8 @@ if ( !class_exists( 'CyberChimpsBreadcrumbs' ) ) {
 			if ( !is_home() && !is_front_page() || is_paged() ) {
 				global $post;
 				
-				echo '<div class="breadcrumbs">';
 				echo '<div class="row-fluid">';
+				echo '<div class="breadcrumbs">';
 				echo '<a href="' . get_site_url() . '">' . __('Home', 'cyberchimps') . '</a> ' . $delimiter . ' ';
 		
 				if ( is_category() ) {
