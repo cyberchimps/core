@@ -64,6 +64,7 @@ form {
 .icon32 {
   background-image: url('../images/options/chimp.png')!important;
   background-position: 0 0!important;
+  background-size: auto!important;
 }
 
 /*************** Header **********************/
