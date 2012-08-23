@@ -57,7 +57,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 			}
 			?>
 			<div class="row-fluid">
-				<div class="carousel slide" id="cc-carousel">
+				<div class="carousel slide" id="cc-carousel" data-pause="">
         	<div class="carousel-inner">
 						<?php
 						// TODO: Convert to get_posts()
