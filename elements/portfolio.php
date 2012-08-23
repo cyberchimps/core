@@ -55,7 +55,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			$caption4 = 'Caption 4';
 			?>
 			<div class="row-fluid">
-     	 <div class="portfolio" class="span12">
+     	 <div class="portfolio span12">
 					<div id="gallery">
 					<h3><?php echo 'Title Placeholder'; ?></h3>
 						<ul class="row-fluid">
