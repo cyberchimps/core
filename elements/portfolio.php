@@ -55,29 +55,29 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			$caption4 = 'Caption 4';
 			?>
 			<div class="row-fluid">
-     	 <div class="portfolio span12">
+     	 <div class="portfolio" class="span12">
 					<div id="gallery">
 					<h3><?php echo 'Title Placeholder'; ?></h3>
 						<ul class="row-fluid">
-							<li class="portfolio_wrap span3">
+							<li id="portfolio_wrap" class="span3">
 								<a href="<?php echo $img1 ;?>" rel="lightbox-portfolio" title="<?php echo $caption1 ;?>">
 									<img src="<?php echo $img1 ;?>" alt="Image 1"/>
 									<div class="portfolio_caption"><?php echo $caption1 ;?></div>
 								</a>
 							</li><!-- #portfolio_wrap .span3-->
-							<li class="portfolio_wrap span3">
+							<li id="portfolio_wrap" class="span3">
 								<a href="<?php echo $img2 ;?>" rel="lightbox-portfolio" title="<?php echo $caption2 ;?>">
 									<img src="<?php echo $img2 ;?>" alt="Image 2"/>
 									<div class="portfolio_caption"><?php echo $caption2 ;?></div>
 								</a>
 							</li><!-- #portfolio_wrap .span3-->
-							<li class="portfolio_wrap span3">
+							<li id="portfolio_wrap" class="span3">
 								<a href="<?php echo $img3 ;?>" rel="lightbox-portfolio" title="<?php echo $caption3 ;?>">
 									<img src="<?php echo $img3 ;?>" alt="Image 3"/>
 									<div class="portfolio_caption"><?php echo $caption3 ;?></div>
 								</a>
 							</li><!-- #portfolio_wrap .span3-->
-							<li class="portfolio_wrap span3">
+							<li id="portfolio_wrap" class="span3">
 								<a href="<?php echo $img4 ;?>" rel="lightbox-portfolio" title="<?php echo $caption4 ;?>">
 									<img src="<?php echo $img4 ;?>" alt="Image 4"/>
 									<div class="portfolio_caption"><?php echo $caption4 ;?></div>
