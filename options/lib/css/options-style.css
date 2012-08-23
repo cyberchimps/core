@@ -479,9 +479,13 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   float: left;
   margin-right: 10px;
 }
+.cc-main-content label {
+	font-weight: bold;
+}
 .cc-main-content .radio-container label, .cc-main-content .checkbox-container label {
   float: left;
   margin-bottom: 0;
+  font-weight: normal;
 }
 .cc-main-content .checkbox-container label {
   margin-top: 2px;
