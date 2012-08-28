@@ -3,11 +3,12 @@
 body {
   min-width: 300px;
   padding-left: 0;
+  background-color: transparent;
 }
 ul, ol {
   margin: 0;
 }
-.cc-options ul, li {
+.cc-options ul, .cc-options li {
   list-style: none;
 }
 .cc-options a:hover {
@@ -392,7 +393,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 
 /***************** Forms *****************************/
 
-.cc-main-content select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+.cc-main-content select, .cc-main-content textarea, .cc-main-content input[type="text"], .cc-main-content input[type="password"], .cc-main-content input[type="datetime"], .cc-main-content input[type="datetime-local"], .cc-main-content input[type="date"], .cc-main-content input[type="month"], .cc-main-content input[type="time"], .cc-main-content input[type="week"], .cc-main-content input[type="number"], .cc-main-content input[type="email"], .cc-main-content input[type="url"], .cc-main-content input[type="search"], .cc-main-content input[type="tel"], .cc-main-content input[type="color"], .cc-main-content .uneditable-input {
   height: auto;
 }
 .cc-main-content input, textarea {
