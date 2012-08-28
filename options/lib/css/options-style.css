@@ -7,7 +7,7 @@ body {
 ul, ol {
   margin: 0;
 }
-.cc-options ul, li {
+.cc-options ul, .cc-options li {
   list-style: none;
 }
 .cc-options a:hover {
