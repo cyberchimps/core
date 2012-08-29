@@ -78,39 +78,30 @@ jQuery(document).ready(function($) {
 		
 	});
 	
-	// Show parent menu
-	function show_child_menu() {
-		
-	}
-	
-	// Show child menu
-	function show_child_menu( ) {
-		$(this).click(function(evt) {
-			var parent_tab = $(this).parent().parent().parent();
-			var parent_group = $(this).parent().parent().siblings('a').attr('href');
-
-			$(this).parent().parent().show();
-
-			// fade in heading area if it is currently not open
-			if ( !parent_tab.hasClass('cc-active') ) {
-				$('.nav-tab-wrapper > li > a').parent().removeClass('cc-active');
-				parent_tab.addClass('cc-active').blur();
-				if (typeof(localStorage) != 'undefined' ) {
-					localStorage.setItem("activetab", parent_group);
-				}
-
-				$('.group').hide();
-				$(parent_group).show();
-			}
-
-			var section_group = $(this).attr('href');
-			$('html, body').animate({ scrollTop: $(section_group).offset().top - 30 }, 'slow');
-			evt.preventDefault();
-		});
-	}
-	
 	// scroll to section
-	
+	$('.cc-child > li > a').click(function(evt) {
+		var parent_tab = $(this).parent().parent().parent();
+		var parent_group = $(this).parent().parent().siblings('a').attr('href');
+
+		$(this).parent().parent().show();
+
+		// fade in heading area if it is currently not open
+		if ( !parent_tab.hasClass('cc-active') ) {
+
+		$('.nav-tab-wrapper > li > a').parent().removeClass('cc-active');
+		parent_tab.addClass('cc-active').blur();
+		if (typeof(localStorage) != 'undefined' ) {
+		localStorage.setItem("activetab", parent_group);
+		}
+
+		$('.group').hide();
+		$(parent_group).show();
+		}
+
+		var section_group = $(this).attr('href');
+		$('html, body').animate({ scrollTop: $(section_group).offset().top - 30 }, 'slow');
+		evt.preventDefault();
+	});
     					
 	$('.group .collapsed input:checkbox').click(unhideHidden);
 	
@@ -135,14 +126,11 @@ jQuery(document).ready(function($) {
 		var content_height = height;
 		if($('body').width() > 767) {
 			if ( height < 207 ){
-				//height_min = 207;
 				height_min = $('.cc-left-menu').height();
 			} else {
 				height_min = 50;
 			}
 			total_height = height_min + content_height + 'px';
-			
-			//$('.cc-left-menu').css('height', total_height);
 		}
 	}
 	
