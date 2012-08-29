@@ -543,7 +543,7 @@ function cyberchimps_fields_callback( $value ) {
 	$output .= '<div class="field-container">';
 	
 	// Output field name
-	if ($value['name']) {
+	if ($value['name'] && $value['type'] != 'info') {
 		$output .= '<label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label>';
 	}
 	
@@ -808,7 +808,7 @@ function cyberchimps_fields_callback( $value ) {
 
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
 			if ( isset($value['name']) ) {
-				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
+				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_sanitize_info_sub_heading', $value['name']) ) . '</h4>' . "\n";
 			}
 			if ( $value['desc'] ) {
 				$output .= apply_filters('cyberchimps_sanitize_info', $value['desc'] ) . "\n";

@@ -21,6 +21,11 @@ function cyberchimps_add_core_headings( $headings_list ) {
 	$headings_list = array();
 	
 	$headings_list[] = array(
+		'id' => 'cyberchimps_welcome_heading',
+		'title' => __('Welcome', 'cyberchimps'),
+	);
+	
+	$headings_list[] = array(
 		'id' => 'cyberchimps_design_heading',
 		'title' => __('Design', 'cyberchimps'),
 	);
@@ -57,6 +62,13 @@ add_filter('cyberchimps_heading_list', 'cyberchimps_add_core_headings');
 function cyberchimps_add_core_sections( $sections_list ) {
 	
 	$sections_list = array();
+	
+	/* WELCOME */
+	$sections_list[] = array(
+		'id' => 'cyberchimps_welcome_section',
+		'label' => apply_filters( 'cyberchimps_sanitize_info_heading', 'CyberChimps.com' ),
+		'heading' => 'cyberchimps_welcome_heading'
+	);
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_custom_colors_section',
@@ -286,6 +298,19 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'color',
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading' );
+		
+	/********************************************************************/
+	/* WELCOME */
+	/*******************************************************************/
+	
+	$fields_list[] = array(
+		'name' => __('Welcome Info', 'cyberchimps'),
+		'id' => 'welcome_info_display',
+		'type' => 'info',
+		'desc' => 'This is the description for the CyberChimps Welcome note',
+		'section' => 'cyberchimps_welcome_section',
+		'heading' => 'cyberchimps_welcome_heading');
+	
 	
 	/********************************************************************/
 	/* HEADER */
