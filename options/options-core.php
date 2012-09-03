@@ -215,10 +215,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	// Typography Defaults
 	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
+		'size' => '14px',
+		'face' => 'arial',
+		'style' => 'normal',
+		'color' => '#333333' );
 		
 	// Typography Options
 	$typography_options = array(
