@@ -63,7 +63,7 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
 	wp_enqueue_script('options-custom', get_template_directory_uri().'/core/options/lib/js/options-custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/core/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
-	wp_enqueue_script('google-fonts', get_template_directory_uri().'/core/options/lib/js/google_font_inline_plugin.js', array('jquery'));
+	wp_enqueue_script('google-fonts', get_template_directory_uri().'/core/options/lib/js/font_inline_plugin.js', array('jquery'));
 }
 
 /* Loads the file for option sanitization */

@@ -253,7 +253,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Demo Text', 'cyberchimps'),
 		'id' => 'font_demo_text',
 		'type' => 'info',
-		'desc' => 'CyberChimps thank you for using their theme and hope you enjoy it.',
+		'desc' => 'The quick CyberChimp jumps over the lazy dog',
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
 	);

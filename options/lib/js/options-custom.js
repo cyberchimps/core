@@ -249,5 +249,24 @@ jQuery(document).ready(function($) {
 				.stop()
 				.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
 		});
+		
+/* for the font face preview */
+
+	$('#typography_options_face').change(function(){
+       var font = $(this).val();
+       if (font !== "null")
+          $("#font_demo_text > p").google_fonts({fontname: font});          
+    });	
 	
+	$('#typography_options_size').change(function(){
+			var size = $(this).val();
+			if (size !== "null")
+					$("#font_demo_text > p").css("font-size", size);
+	});
+	
+	$('#typography_options_style').change(function(){
+			var style = $(this).val();
+			if (style !== "null")
+					$("#font_demo_text > p").css("font-weight", style);
+	});
 });
