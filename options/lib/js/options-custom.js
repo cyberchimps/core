@@ -240,4 +240,14 @@ jQuery(document).ready(function($) {
 	$('#cc-mobile-modal ul.cc-parent > li > a').click(function(){
 		$('#cc-mobile-modal').modal('hide');
 	});
+
+
+// sets up scrolling left menu
+
+		$(window).scroll(function(){			
+			$('.cc-left-menu')
+				.stop()
+				.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
+		});
+	
 });

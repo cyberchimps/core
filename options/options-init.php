@@ -196,29 +196,31 @@ function cyberchimps_options_page() {
 			
 			<!-- start left menu --> 
 			<div class="row-fluid cc-content">
-				<div class="span3 cc-left-menu">
-					<ul class="cc-parent nav-tab-wrapper">
-						<?php
-						foreach ( $headings_list as $heading ) {
-							
-							$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['id']) );
-							
-							echo '<li class="cc-has-children">';
-							echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a><div class="cc-menu-arrow"><div></div></div>';
-							
-							echo '<ul class="cc-child">';
-							foreach( $sections_list as $section ) {
-								if ( in_array( $heading['id'], $section) ) { 
-									$jquery_click_section_hook = '';
-									$jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['id']) );
-									
-									echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
-								}
-							}
-							echo '</ul>';
-							echo '</li>';
-						} ?>
-					</ul>
+				<div class="span3">
+          <div class="cc-left-menu">
+            <ul class="cc-parent nav-tab-wrapper">
+              <?php
+              foreach ( $headings_list as $heading ) {
+                
+                $jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($heading['id']) );
+                
+                echo '<li class="cc-has-children">';
+                echo '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a><div class="cc-menu-arrow"><div></div></div>';
+                
+                echo '<ul class="cc-child">';
+                foreach( $sections_list as $section ) {
+                  if ( in_array( $heading['id'], $section) ) { 
+                    $jquery_click_section_hook = '';
+                    $jquery_click_section_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($section['id']) );
+                    
+                    echo '<li><a id="'.  esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#'.  $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
+                  }
+                }
+                echo '</ul>';
+                echo '</li>';
+              } ?>
+            </ul>
+          </div><!-- cc-left-menu -->
 				</div><!-- span3 -->
 				<!-- end left menu -->
 				
