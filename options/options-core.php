@@ -66,7 +66,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	/* WELCOME */
 	$sections_list[] = array(
 		'id' => 'cyberchimps_welcome_section',
-		'label' => apply_filters( 'cyberchimps_sanitize_info_heading', 'CyberChimps.com' ),
+		'label' => apply_filters( 'cyberchimps_welcome_heading', 'CyberChimps.com' ),
 		'heading' => 'cyberchimps_welcome_heading'
 	);
 	
@@ -231,7 +231,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	// Typography Section
 	$fields_list[] = array(
 		'id' => 'typography_options',
-		'name' => __('Typkit Options', 'cyberchimps'),
+		'name' => __('Typography Options', 'cyberchimps'),
 		'type' => 'typography',
 		'std' => $typography_defaults,
 		'options' => $typography_options,
@@ -239,11 +239,21 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
+	/* FIXME: We are dropping typekit support?
 	$fields_list[] = array(
 		'id' => 'typekit_code',
 		'name' => __('Typkit Code', 'cyberchimps'),
 		'type' => 'textarea',
 		'std' => '',
+		'section' => 'cyberchimps_typography_section',
+		'heading' => 'cyberchimps_design_heading'
+	);*/
+	
+	$fields_list[] = array(
+		'name' => __('Demo Text', 'cyberchimps'),
+		'id' => 'font_demo_text',
+		'type' => 'info',
+		'desc' => 'CyberChimps thank you for using their theme and hope you enjoy it.',
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
@@ -304,9 +314,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/*******************************************************************/
 	
 	$fields_list[] = array(
-		'name' => __('Welcome Info', 'cyberchimps'),
+		'name' => apply_filters( 'cyberchimps_welcome_sub_heading', __('Welcome Info', 'cyberchimps') ),
 		'id' => 'welcome_info_display',
-		'type' => 'info',
+		'type' => 'welcome',
 		'desc' => 'This is the description for the CyberChimps Welcome note',
 		'section' => 'cyberchimps_welcome_section',
 		'heading' => 'cyberchimps_welcome_heading');

@@ -63,6 +63,7 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script('media-uploader', get_template_directory_uri().'/core/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
 	wp_enqueue_script('options-custom', get_template_directory_uri().'/core/options/lib/js/options-custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/core/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
+	wp_enqueue_script('google-fonts', get_template_directory_uri().'/core/options/lib/js/google_font_inline_plugin.js', array('jquery'));
 }
 
 /* Loads the file for option sanitization */
@@ -545,7 +546,7 @@ function cyberchimps_fields_callback( $value ) {
 	$output .= '<div class="field-container">';
 	
 	// Output field name
-	if ($value['name'] && $value['type'] != 'info') {
+	if ($value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome') {
 		$output .= '<label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label>';
 	}
 	
@@ -810,10 +811,34 @@ function cyberchimps_fields_callback( $value ) {
 
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
 			if ( isset($value['name']) ) {
-				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_sanitize_info_sub_heading', $value['name']) ) . '</h4>' . "\n";
+				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
 			}
 			if ( $value['desc'] ) {
 				$output .= apply_filters('cyberchimps_sanitize_info', $value['desc'] ) . "\n";
+			}
+			$output .= '</div>' . "\n";
+			break;
+		
+		// Welcome	
+		case "welcome":
+			$id = '';
+			$class = 'section';
+			if ( isset( $value['id'] ) ) {
+				$id = 'id="' . esc_attr( $value['id'] ) . '" ';
+			}
+			if ( isset( $value['type'] ) ) {
+				$class .= ' section-' . $value['type'];
+			}
+			if ( isset( $value['class'] ) ) {
+				$class .= ' ' . $value['class'];
+			}
+
+			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
+			if ( isset($value['name']) ) {
+				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_welcome_sub_heading', $value['name']) ) . '</h4>' . "\n";
+			}
+			if ( $value['desc'] ) {
+				$output .= apply_filters('cyberchimps_sanitize_info', apply_filters( 'cyberchimps_welcome_description', $value['desc'] ) ) . "\n";
 			}
 			$output .= '</div>' . "\n";
 			break;
