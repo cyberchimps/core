@@ -396,7 +396,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-main-content select, .cc-main-content textarea, .cc-main-content input[type="text"], .cc-main-content input[type="password"], .cc-main-content input[type="datetime"], .cc-main-content input[type="datetime-local"], .cc-main-content input[type="date"], .cc-main-content input[type="month"], .cc-main-content input[type="time"], .cc-main-content input[type="week"], .cc-main-content input[type="number"], .cc-main-content input[type="email"], .cc-main-content input[type="url"], .cc-main-content input[type="search"], .cc-main-content input[type="tel"], .cc-main-content input[type="color"], .cc-main-content .uneditable-input {
   height: auto;
 }
-.cc-main-content input, textarea {
+.cc-main-content input, .cc-main-content textarea {
 	min-width: 240px;
 }
 .cc-main-content select {
@@ -626,6 +626,11 @@ img.action {
 	text-align: right;
 	cursor: pointer;
 	padding: 2px;
+}
+
+/************** Social Layout ****************/
+
+#cyberchimps_header_social_section .field-container {
 }
 
 /************** Responsive *******************/

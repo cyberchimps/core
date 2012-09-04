@@ -383,8 +383,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	/* SOCIAL */
 	$fields_list[] = array(
-		'name' => __('Choose you background image', 'cyberchimps'),
-		'desc' => __('Images for background', 'cyberchimps'),
+		'name' => __('Choose your icon style', 'cyberchimps'),
 		'id' => 'theme_backgrounds',
 		'std' => 'default',
 		'type' => 'images',
@@ -405,7 +404,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Twitter URL', 'cyberchimps'),
-		'id' => 'twitter_url',
+		'id' => 'twitter_url social_twitter_toggle',
 		'std' => 'http://www.twitter.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -421,7 +420,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Facebook URL', 'cyberchimps'),
-		'id' => 'facebook_url',
+		'id' => 'facebook_url social_facebook_toggle',
 		'std' => 'http://www.facebook.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -437,7 +436,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Google+ URL', 'cyberchimps'),
-		'id' => 'google_url',
+		'id' => 'google_url social_google_toggle',
 		'std' => 'http://www.google.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -453,7 +452,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Flickr URL', 'cyberchimps'),
-		'id' => 'flickr_url',
+		'id' => 'flickr_url social_flickr_toggle',
 		'std' => 'http://www.flickr.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -469,7 +468,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('Pinterest URL', 'cyberchimps'),
-		'id' => 'pinterest_url',
+		'id' => 'pinterest_url social_pinterest_toggle',
 		'std' => 'http://www.pinterest.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -485,7 +484,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('LinkedIn URL', 'cyberchimps'),
-		'id' => 'linkedin_url',
+		'id' => 'linkedin_url social_linkedin_toggle',
 		'std' => 'http://www.linkedin.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -501,7 +500,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('YouTube URL', 'cyberchimps'),
-		'id' => 'youtube_url',
+		'id' => 'youtube_url social_youtube_toggle',
 		'std' => 'http://www.youtube.com/',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
@@ -517,7 +516,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	$fields_list[] = array(
 		'name' => __('RSS URL', 'cyberchimps'),
-		'id' => 'rss_url',
+		'id' => 'rss_url social_rss_toggle',
 		'std' => '',
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
