@@ -517,7 +517,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('RSS URL', 'cyberchimps'),
 		'id' => 'rss_url social_rss_toggle',
-		'std' => '',
+		'std' => get_bloginfo_rss( 'rss_url' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading'
