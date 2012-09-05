@@ -20,7 +20,13 @@
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
-
+	$path = get_template_directory_uri() . '/core/lib/js/';
+	
+	// Load JS for swipe functionality in slider
+	wp_enqueue_script( 'event-swipe-move', $path . 'jquery.event.move.js', array('jquery') );
+	wp_enqueue_script( 'event-swipe', $path . 'jquery.event.swipe.js', array('jquery') );
+	wp_enqueue_script( 'swipe', $path . 'swipe.js', array('jquery') );
+	
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/core/lib/bootstrap/css/bootstrap.min.css', false, '2.0.4' );
 	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/core/lib/bootstrap/css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );

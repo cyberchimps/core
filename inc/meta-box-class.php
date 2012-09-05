@@ -856,6 +856,9 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
 	
+	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/core/lib/js/touch-punch-min.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/core/lib/js/touch-sensitive.js', array('jquery') );
+		
 	wp_enqueue_style('metabox-tabs-css');
 	
 	wp_register_script( 'validator' ,$path.'jquery.validate.js');
