@@ -103,7 +103,7 @@ function cyberchimps_init_meta_boxes() {
 					'portfolio_element' => 'Portfolio',
 					'product_element' => 'Product',
 					'page_section' => 'Page',
-					'box_section' => 'Boxes',
+					'widgets_section' => 'Widgets',
 					'carousel_section' => 'Carousel',	
 				),
 				))
