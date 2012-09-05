@@ -101,7 +101,7 @@ add_action( 'widgets_init', 'cyberchimps_widgets_init' );
 // FIXME: Fix documentation
 // Load elements
 function cyberchimps_load_elements() {
-	require_once( get_template_directory() . '/core/elements/widgets.php' );
+	require_once( get_template_directory() . '/core/elements/boxes.php' );
 	require_once( get_template_directory() . '/core/elements/breadcrumbs.php' );
 	require_once( get_template_directory() . '/core/elements/callout.php' );
 	require_once( get_template_directory() . '/core/elements/carousel.php' );
