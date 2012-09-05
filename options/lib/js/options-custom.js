@@ -130,8 +130,9 @@ jQuery(document).ready(function($) {
 			} else {
 				height_min = 50;
 			}
-			total_height = height_min + content_height + 'px';
+			total_height = (height_min + content_height) + 'px';
 		}
+		$('.cc-left-menu').height(total_height);
 	}
 	
 	// Color Picker
@@ -244,10 +245,18 @@ jQuery(document).ready(function($) {
 
 // sets up scrolling left menu
 
-		$(window).scroll(function(){			
-			$('.cc-left-menu')
+		$(window).scroll(function(){
+			var off_set = $('.cc-header').offset();
+			var top_height = '';	
+		if($(window).scrollTop() < (80 + off_set.top)){
+			top_height = 0;
+		}
+		else {
+			top_height = $(window).scrollTop() - (80 + off_set.top);
+		}
+			$('.nav-tab-wrapper')
 				.stop()
-				.animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );			
+				.animate({"paddingTop": (top_height) + "px"}, 1 );		
 		});
 		
 /* for the font face preview */
