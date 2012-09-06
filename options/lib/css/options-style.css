@@ -515,13 +515,20 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   border: 5px solid #5DA7F2;
 }
 .cc-main-content .toggle {
+  float: left;
 	background:url("../images/toggle.png") bottom left;
 	display:block;
 	width:70px;
 	height:22px;
+  margin-bottom: 20px;
 }
 .cc-main-content .toggle.checked {
 	background-position:top left;
+}
+.cc-main-content .toggle-label {
+  float: left;
+  margin-top: 2px;
+  margin-left: 20px;
 }
 
 /***************** Section Order *********************/

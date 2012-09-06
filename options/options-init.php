@@ -546,7 +546,7 @@ function cyberchimps_fields_callback( $value ) {
 	$output .= '<div class="field-container">';
 	
 	// Output field name
-	if ($value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome') {
+	if ($value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome' && $value['type'] != 'toggle' ) {
 		$output .= '<label for="' . esc_attr( $value['id'] ) . '">'. $value['name'] . '</label>';
 	}
 	
@@ -642,7 +642,7 @@ function cyberchimps_fields_callback( $value ) {
 	
 		// Toggle Switch
 		case "toggle":
-			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /></div>';
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="toggle-label">'. $value['name'] . '</label></div>';
 			break;
 
 		// Color picker
