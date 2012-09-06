@@ -619,7 +619,7 @@ function cyberchimps_fields_callback( $value ) {
 		// Checkbox
 		case "checkbox":
 			$output .= '<div class="checkbox-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
-			$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
+			$output .= '<label class="right-label" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
 			break;
 
 		// Multicheck
@@ -636,13 +636,13 @@ function cyberchimps_fields_callback( $value ) {
 					$checked = checked($val[$option], 1, false);
 				}
 
-				$output .= '<input id="' . esc_attr( $id ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $name ) . '" ' . $checked . ' /><label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>';
+				$output .= '<div class="checkbox-container"><input id="' . esc_attr( $id ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $name ) . '" ' . $checked . ' /><label for="' . esc_attr( $id ) . '" class="right-label">' . esc_html( $label ) . '</label></div>';
 			}
 			break;
 	
 		// Toggle Switch
 		case "toggle":
-			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="toggle-label">'. $value['name'] . '</label></div>';
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="right-label">'. $value['name'] . '</label></div>';
 			break;
 
 		// Color picker
