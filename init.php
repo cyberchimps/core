@@ -110,6 +110,7 @@ function cyberchimps_load_elements() {
 	require_once( get_template_directory() . '/core/elements/product.php' );
 	require_once( get_template_directory() . '/core/elements/slider.php' );
 	require_once( get_template_directory() . '/core/elements/twitter-bar.php' );
+	require_once( get_template_directory() . '/core/elements/portfolio-lite.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_elements');
 

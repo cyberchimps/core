@@ -104,7 +104,8 @@ function cyberchimps_init_meta_boxes() {
 					'product_element' => 'Product',
 					'page_section' => 'Page',
 					'widgets_section' => 'Widgets',
-					'carousel_section' => 'Carousel',	
+					'carousel_section' => 'Carousel',
+					'portfolio_lite' => 'Portfolio Lite'
 				),
 				))
 			->pagehelp('', 'Need Help?', '')
@@ -151,6 +152,17 @@ function cyberchimps_init_meta_boxes() {
 			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfolio_options) )
 			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
 			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
+		->tab("Portfolio Lite Options")
+			->single_image('cyberchimps_portfolio_lite_image_one', 'First Portfolio Image', '', array('std' =>  get_template_directory_uri() . '/core/lib/images/portfolio.jpg'))
+			->text('cyberchimps_portfolio_lite_image_one_caption', 'First Portfolio Image Caption', '', array('std' => 'Image 1'))
+			->single_image('cyberchimps_portfolio_lite_image_two', 'Second Portfolio Image', '', array('std' =>  get_template_directory_uri() . '/core/lib/images/portfolio.jpg'))
+			->text('cyberchimps_portfolio_lite_image_two_caption', 'Second Portfolio Image Caption', '', array('std' => 'Image 2'))
+			->single_image('cyberchimps_portfolio_lite_image_three', 'Third Portfolio Image', '', array('std' =>  get_template_directory_uri() . '/core/lib/images/portfolio.jpg'))
+			->text('cyberchimps_portfolio_lite_image_three_caption', 'Third Portfolio Image Caption', '', array('std' => 'Image 3'))
+			->single_image('cyberchimps_portfolio_lite_image_four', 'Fourth Portfolio Image', '', array('std' =>  get_template_directory_uri() . '/core/lib/images/portfolio.jpg'))
+			->text('cyberchimps_portfolio_lite_image_four_caption', 'Fourth Portfolio Image Caption', '', array('std' => 'Image 4'))
+			->checkbox('cyberchimps_portfolio_title_toggle', 'Portfolio Title', '')
+			->text('cyberchimps_portfolio_title', 'Title', '', array('std' => 'Portfolio'))
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carousel_options) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
