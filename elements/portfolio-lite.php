@@ -64,7 +64,7 @@ function portfolio_lite_content() {
 	}
 
 	$title = ($title != '') ? $title : 'Portfolio';	
-	$title_output = ($title_enable == 'on' OR $title_enable == '1') ? "<h1 class='portfolio_title'>$title</h1>" : '';
+	$title_output = ($title_enable == 'on' OR $title_enable == '1') ? "<h2 class='entry-title'>$title</h1>" : '';
 	
 	/* Post-specific variables */	
 		$image = get_post_meta($post->ID, 'portfolio_image' , true);
@@ -76,7 +76,7 @@ function portfolio_lite_content() {
 		<div id="gallery">
 			
 			<!-- Display the title -->
-			<h3><?php echo $title_output; ?></h3>
+			<h2 class="entry-title"><?php echo $title_output; ?></h2>
 			
 			<ul class="row-fluid">
 				<li id="portfolio_wrap" class="span3">
