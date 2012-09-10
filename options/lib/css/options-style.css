@@ -396,9 +396,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-main-content select, .cc-main-content textarea, .cc-main-content input[type="text"], .cc-main-content input[type="password"], .cc-main-content input[type="datetime"], .cc-main-content input[type="datetime-local"], .cc-main-content input[type="date"], .cc-main-content input[type="month"], .cc-main-content input[type="time"], .cc-main-content input[type="week"], .cc-main-content input[type="number"], .cc-main-content input[type="email"], .cc-main-content input[type="url"], .cc-main-content input[type="search"], .cc-main-content input[type="tel"], .cc-main-content input[type="color"], .cc-main-content .uneditable-input {
   height: auto;
 }
-.cc-main-content input, .cc-main-content textarea {
-	min-width: 240px;
-}
 .cc-main-content select {
   padding: 4px;
 }
@@ -474,13 +471,19 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   clear: left;
   margin-bottom: 15px;
 }
+.cc-main-content .toggle-container {
+  width: 250px;
+  float: left;
+  clear: left;
+}
 .cc-main-content .radio-container, .cc-main-content .checkbox-container {
+  width: 250px;
   float: left;
   clear: left;
   margin-bottom: 10px;
 }
-.cc-main-content .radio-container input, .cc-main-content .checkbox-container input {
-  float: left;
+.cc-main-content .radio-container input, .cc-main-content .checkbox-container input, .cc-main-content .toggle-container .toggle {
+  float: right;
   margin-right: 10px;
 }
 .cc-main-content label {
@@ -515,13 +518,20 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   border: 5px solid #5DA7F2;
 }
 .cc-main-content .toggle {
+  float: left;
 	background:url("../images/toggle.png") bottom left;
 	display:block;
 	width:70px;
 	height:22px;
+  margin-bottom: 20px;
 }
 .cc-main-content .toggle.checked {
 	background-position:top left;
+}
+.cc-main-content .left-label {
+  float: left;
+  margin-top: 2px;
+  margin-right: 20px;
 }
 
 /***************** Section Order *********************/
