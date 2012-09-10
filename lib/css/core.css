@@ -7,3 +7,18 @@
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
+
+/* For recent post image */
+
+.recent-posts-image img {
+	height: auto;
+}
+
+.clear-both {
+	clear:both;
+}
+
+#recent_posts {
+	border: 1px solid #DDDDDD;
+	padding : 5px;
+}

@@ -105,7 +105,8 @@ function cyberchimps_init_meta_boxes() {
 					'page_section' => 'Page',
 					'widgets_section' => 'Widgets',
 					'carousel_section' => 'Carousel',
-					'portfolio_lite' => 'Portfolio Lite'
+					'portfolio_lite' => 'Portfolio Lite',
+					'recent_posts' => 'Recent Posts'
 				),
 				))
 			->pagehelp('', 'Need Help?', '')
@@ -163,6 +164,11 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_portfolio_lite_image_four_caption', 'Fourth Portfolio Image Caption', '', array('std' => 'Image 4'))
 			->checkbox('cyberchimps_portfolio_title_toggle', 'Portfolio Title', '')
 			->text('cyberchimps_portfolio_title', 'Title', '', array('std' => 'Portfolio'))
+		->tab("Recent Posts Options")
+			->checkbox('cyberchimps_recent_posts_title_toggle', 'Title', '')
+			->text('cyberchimps_recent_posts_title', '', '')
+			->select('cyberchimps_recent_posts_category', 'Post Category', '', array('options' => $blog_options, 'all') )
+			->checkbox('cyberchimps_recent_posts_images_toggle', 'Images', '')
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carousel_options) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))

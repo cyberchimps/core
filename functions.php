@@ -206,3 +206,23 @@ function cyberchimps_detect_plugin( $plugins ) {
 	/** No class, function or constant found to exist */
 	return false;
 }
+
+
+// Set read more link for recent post element
+ 
+function recent_post_excerpt_more($more) {
+
+	global $ec_themename, $options, $custom_excerpt, $post;
+    
+   		if ($custom_excerpt == 'recent') {
+    		$linktext = 'Continue Reading';
+    	}
+    	
+	return '&hellip;
+			</p>
+			<div class="more-link">
+				<span class="continue-arrow"><img src="'. get_template_directory_uri() .'/core/lib/images/continue.png"></span><a href="'. get_permalink($post->ID) . '">  '.$linktext.'</a>
+			</div>';
+}
+
+add_filter('excerpt_more', 'recent_post_excerpt_more');
