@@ -9,7 +9,6 @@
 }
 
 /* For recent post image */
-
 .recent-posts-image img {
 	height: auto;
 }
@@ -21,4 +20,10 @@
 #recent_posts {
 	border: 1px solid #DDDDDD;
 	padding : 5px;
+}
+
+/* For Slider Lite */
+#slider-lite img {
+	height: 430px;
+	width: 100% !important;
 }

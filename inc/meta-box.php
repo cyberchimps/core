@@ -31,6 +31,10 @@ add_action('init', 'cyberchimps_init_meta_boxes');
 function cyberchimps_init_meta_boxes() {
 	global $options;
 	
+	// Store URL of the template to a variable
+	define('TEMPLATE_URL', get_template_directory_uri());
+	define('CORE_IMAGE', TEMPLATE_URL . "/core/lib/images/");
+	
 	// Declare variables
 	$portfolio_options = array(); 
 	$carousel_options = array();
@@ -106,10 +110,18 @@ function cyberchimps_init_meta_boxes() {
 					'widgets_section' => 'Widgets',
 					'carousel_section' => 'Carousel',
 					'portfolio_lite' => 'Portfolio Lite',
-					'recent_posts' => 'Recent Posts'
-				),
+					'recent_posts' => 'Recent Posts',
+					'slider_lite' => 'Slider Lite'
+				)
 				))
 			->pagehelp('', 'Need Help?', '')
+		->tab("Slider Lite Options")
+			->single_image('cyberchimps_slider_lite_slide_one_image', 'Slide One Image', '', array('std' =>  CORE_IMAGE . 'sliderdefault.jpg'))
+			->text('cyberchimps_slider_lite_slide_one_url', 'Slide One Link', '', array('std' => 'http://wordpress.org'))
+			->single_image('cyberchimps_slider_lite_slide_two_image', 'Slide Two Image', '', array('std' =>  CORE_IMAGE . 'slide2.jpg'))
+			->text('cyberchimps_slider_lite_slide_two_url', 'Slide Two Link', '', array('std' => 'http://wordpress.org'))
+			->single_image('cyberchimps_slider_lite_slide_three_image', 'Slide Three Image', '', array('std' =>  CORE_IMAGE . 'slide3.jpg'))
+			->text('cyberchimps_slider_lite_slide_three_url', 'Slide Three Link', '', array('std' => 'http://wordpress.org'))
 		->tab("Slider Options")
 			->select('page_slider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
 			->select('page_slider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
