@@ -22,6 +22,9 @@ function cyberchimps_core_scripts() {
 	global $post;
 	$path = get_template_directory_uri() . '/core/lib/js/';
 	
+	// Load JS for slimbox
+	wp_enqueue_script( 'slimbox', get_template_directory_uri() . '/core/lib/js/jquery.slimbox.js', array( 'jquery' ), true );
+
 	// Load JS for swipe functionality in slider
 	wp_enqueue_script( 'event-swipe-move', $path . 'jquery.event.move.js', array('jquery') );
 	wp_enqueue_script( 'event-swipe', $path . 'jquery.event.swipe.js', array('jquery') );
