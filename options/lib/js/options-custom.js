@@ -284,7 +284,7 @@ jQuery(document).ready(function($) {
 	$('.field-container').children('.toggle-container').each(function(){
 		var toggle = $(this).children(':input');
 		var toggle_id = $(this).children(':input').attr('id');
-		var text_id = $(this).parent('.field-container').next().children(':input').attr('id');
+		var text_id = $(this).parent('.field-container').next().find(':input').attr('id');
 		
 		if (text_id != null) {
 			var toggle_test = text_id.indexOf(toggle_id + "_toggle");
