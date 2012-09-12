@@ -59,15 +59,33 @@ function cyberchimps_add_core_headings( $headings_list ) {
 }
 add_filter('cyberchimps_heading_list', 'cyberchimps_add_core_headings');
 
+/**************************************************************************************/	
+/*************************** SUBSECTIONS **********************************************/
+/**************************************************************************************/
 function cyberchimps_add_core_sections( $sections_list ) {
 	
 	$sections_list = array();
 	
-	/* WELCOME */
+/*************************** WELCOME **************************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_welcome_section',
 		'label' => apply_filters( 'cyberchimps_welcome_heading', 'CyberChimps.com' ),
 		'heading' => 'cyberchimps_welcome_heading'
+	);
+	
+/**************************** DESIGN **************************************************/
+	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_custom_layout_section',
+		'label' => __('Layout Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_custom_background_section',
+		'label' => __('Background Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_design_heading'
 	);
 	
 	$sections_list[] = array(
@@ -82,7 +100,14 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
-	/* HEADER */
+	$sections_list[] = array(
+		'id' => 'cyberchimps_custom_css_section',
+		'label' => __('Custom CSS', 'cyberchimps'),
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+/**************************** HEADER **************************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_drag_drop_section',
 		'label' => __('Header Drag/Drop', 'cyberchimps'),
@@ -101,7 +126,8 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
-	/* BLOG */
+/***************************** BLOG **************************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_drag_and_drop_section',
 		'label' => __('Drag & Drop', 'cyberchimps'),
@@ -120,7 +146,8 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	/* TEMPLATE */
+/*************************** TEMPLATE ************************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_single_post_section',
 		'label' => __('Single Post', 'cyberchimps'),
@@ -145,14 +172,16 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
-	/* FOOTER */
+/**************************** FOOTER **************************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_footer_section',
 		'label' => __('Footer Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_footer_heading'
 	);
 	
-	/* IMPORT/EXPORT */
+/*************************** IMPORT/EXPORT ********************************************/
+
 	$sections_list[] = array(
 		'id' => 'cyberchimps_import_export_section',
 		'label' => __('Import / Export', 'cyberchimps'),
@@ -163,7 +192,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 }
 add_filter('cyberchimps_section_list', 'cyberchimps_add_core_sections');
 
+/**************************************************************************************/	
+/**************************** FIELDS **************************************************/
+/**************************************************************************************/
+
 function cyberchimps_add_core_fields( $fields_list ) {
+	
+/*************************** LISTS AND DEFAULTS *********************************************/
 	
 	// post byline 
 	$pbe_defaults = array(
@@ -220,45 +255,120 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'style' => 'normal',
 		'color' => '#333333' );
 		
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-	);
+/*************************** WELCOME **************************************************/
 	
-	// Typography Section
 	$fields_list[] = array(
-		'id' => 'typography_options',
-		'name' => __('Typography Options', 'cyberchimps'),
-		'type' => 'typography',
-		'std' => $typography_defaults,
-		'options' => $typography_options,
-		'section' => 'cyberchimps_typography_section',
+		'name' => apply_filters( 'cyberchimps_welcome_sub_heading', __('Welcome Info', 'cyberchimps') ),
+		'id' => 'welcome_info_display',
+		'type' => 'welcome',
+		'desc' => 'Description',
+		'section' => 'cyberchimps_welcome_section',
+		'heading' => 'cyberchimps_welcome_heading');
+		
+/*************************** DESIGN ***************************************************/
+	
+/* LAYOUT OPTIONS */
+	$fields_list[] = array(
+		'name' => __('Responsive Design', 'cyberchimps'),
+		'id' => 'responsive_design',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_custom_layout_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+		
+	$fields_list[] = array(
+		'name' => __('Responsive Videos', 'cyberchimps'),
+		'id' => 'responsive_videos',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_custom_layout_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+		
+	$fields_list[] = array(
+		'name' => __('Max Width', 'cyberchimps'),
+		'id' => 'max_width',
+		'type' => 'text',
+		'section' => 'cyberchimps_custom_layout_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+		
+/* BACKGROUND */
+
+	$fields_list[] = array(
+		'name' => __('Select a background', 'cyberchimps'),
+		'id' => 'select_background',
+		'std' => 'noise',
+		'type' => 'images',
+		'options' => array(
+			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
+			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
+			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
+			'metal' => $imagepath . 'backgrounds/thumbs/metal.png',
+			'space' => $imagepath . 'backgrounds/thumbs/space.png',
+			'wood' => $imagepath . 'backgrounds/thumbs/wood.png'
+		),
+		'section' => 'cyberchimps_custom_background_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+
+	$fields_list[] = array(
+		'name' => __('Use a custom background', 'cyberchimps'),
+		'id' => 'custom_background',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
-	/* FIXME: We are dropping typekit support?
 	$fields_list[] = array(
-		'id' => 'typekit_code',
-		'name' => __('Typkit Code', 'cyberchimps'),
-		'type' => 'textarea',
+		'name' => __('Background Image', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'custom_background_image',
+		'type' => 'upload',
 		'std' => '',
-		'section' => 'cyberchimps_typography_section',
-		'heading' => 'cyberchimps_design_heading'
-	);*/
-	
-	$fields_list[] = array(
-		'name' => __('Demo Text', 'cyberchimps'),
-		'id' => 'font_demo_text',
-		'type' => 'info',
-		'desc' => 'The quick CyberChimp jumps over the lazy dog',
-		'section' => 'cyberchimps_typography_section',
+		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
-	/* CUSTOM COLORS */
+	$fields_list[] = array(
+		'name' => __('Image position', 'cyberchimps'),
+		'id' => 'background_image_position',
+		'type' => 'radio',
+		'options' => array(
+			'Left' => 'top left',
+			'Center' => 'top center',
+			'Right' => 'top right'
+		),
+		'section' => 'cyberchimps_custom_background_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Image repeat', 'cyberchimps'),
+		'id' => 'background_image_repeat',
+		'type' => 'radio',
+		'options' => array(
+			'Tile' => 'repeat',
+			'Tile horizontally' => 'repeat-x',
+			'Tile vertically' => 'repeat-y',
+			'No tile' => 'no-repeat'
+		),
+		'section' => 'cyberchimps_custom_background_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Image attachment', 'cyberchimps'),
+		'id' => 'background_image_attachment',
+		'type' => 'radio',
+		'options' => array(
+			'Scroll' => 'scroll',
+			'Fixed' => 'fixed'
+		),
+		'section' => 'cyberchimps_custom_background_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+/* CUSTOM COLORS */
 	$fields_list[] = array(
 		'id' => 'skin_color',
 		'name' => __('Select a Skin Color', 'cyberchimps'),
@@ -309,22 +419,55 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading' );
 		
-	/********************************************************************/
-	/* WELCOME */
-	/*******************************************************************/
+/* Typography Options */
+	$typography_options = array(
+		'sizes' => array( '6','12','14','16','20' ),
+		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
+		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+		'color' => false
+	);
+	
+/* Typography Section */
+	$fields_list[] = array(
+		'id' => 'typography_options',
+		'name' => __('Typography Options', 'cyberchimps'),
+		'type' => 'typography',
+		'std' => $typography_defaults,
+		'options' => $typography_options,
+		'section' => 'cyberchimps_typography_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+	/* FIXME: We are dropping typekit support?
+	$fields_list[] = array(
+		'id' => 'typekit_code',
+		'name' => __('Typkit Code', 'cyberchimps'),
+		'type' => 'textarea',
+		'std' => '',
+		'section' => 'cyberchimps_typography_section',
+		'heading' => 'cyberchimps_design_heading'
+	);*/
 	
 	$fields_list[] = array(
-		'name' => apply_filters( 'cyberchimps_welcome_sub_heading', __('Welcome Info', 'cyberchimps') ),
-		'id' => 'welcome_info_display',
-		'type' => 'welcome',
-		'desc' => 'This is the description for the CyberChimps Welcome note',
-		'section' => 'cyberchimps_welcome_section',
-		'heading' => 'cyberchimps_welcome_heading');
+		'name' => __('Demo Text', 'cyberchimps'),
+		'id' => 'font_demo_text',
+		'type' => 'info',
+		'desc' => 'The quick CyberChimp jumps over the lazy dog',
+		'section' => 'cyberchimps_typography_section',
+		'heading' => 'cyberchimps_design_heading'
+	);	
 	
+/* CUSTOM CSS */
+		$fields_list[] = array(
+		'name' => __('Custom CSS', 'cyberchimps'),
+		'id' => 'custom_css',
+		'std' => '',
+		'type' => 'textarea',
+		'section' => 'cyberchimps_custom_css_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
 	
-	/********************************************************************/
-	/* HEADER */
-	/*******************************************************************/	
+/*************************** HEADER ***************************************************/
 	
 	$fields_list[] = array(
 		'id' => 'header_section_order',
@@ -347,41 +490,61 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 
-	/********************* HEADER OPTIONS ********************************/
+/* HEADER OPTIONS */
 
 	$fields_list[] = array(
 		'name' => __('Custom Logo', 'cyberchimps'),
 		'id' => 'custom_logo_display',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
+		'heading' => 'cyberchimps_header_heading'
+	);
 	
 	$fields_list[] = array(
 		'name' => __('Logo Image', 'cyberchimps'),
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'custom_logo',
+		'id' => 'custom_logo custom_logo_display_toggle',
 		'type' => 'upload',
 		'std' => get_template_directory_uri() . '/core/lib/images/cyberchimpslogo.png',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
-		
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 	$fields_list[] = array(
 		'name' => __('Custom Favicon', 'cyberchimps'),
-		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'favicon_uploader',
-		'type' => 'upload',
+		'id' => 'custom_favicon_display',
+		'type' => 'toggle',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
+		'heading' => 'cyberchimps_header_heading'
+	);
 		
 	$fields_list[] = array(
-		'name' => __('Apple Touch Icon', 'cyberchimps'),
+		'name' => __('Favicon URL', 'cyberchimps'),
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'apple_touch_uploader',
+		'id' => 'favicon_uploader custom_favicon_display_toggle',
+		'type' => 'upload',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Custom Apple touch icon', 'cyberchimps'),
+		'id' => 'custom_apple_display',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+		
+	$fields_list[] = array(
+		'name' => __('Apple Touch URL', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'apple_touch_uploader custom_apple_display_toggle',
 		'type' => 'upload',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading');
 		
-	/* SOCIAL */
+/* SOCIAL */
+
 	$fields_list[] = array(
 		'name' => __('Choose your icon style', 'cyberchimps'),
 		'id' => 'theme_backgrounds',
@@ -523,9 +686,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 		
-	/**************************************************************************/
-	/* BLOG */
-	/**************************************************************************/
+/*************************** BLOG ***************************************************/
 	
 	$fields_list[] = array(
 		'id' => 'blog_section_order',
@@ -549,7 +710,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	/********* BLOG OPTIONS *******************/
+/* BLOG OPTIONS */
 	
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
@@ -595,7 +756,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 		
-	/*********** BLOG SLIDER ******************************/
+/* BLOG SLIDER */
 	
 	$fields_list[] = array(
 		'name' => __('Slider Size', 'cyberchimps'),
@@ -642,11 +803,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading',
 	);
 	
-	/*************************************************************/
-	/* TEMPLATES */
-	/*************************************************************/
+/*************************** TEMPLATES ***************************************************/
 	
-	/* SINGLE POSTS */
+/* SINGLE POSTS */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
 		'desc' => __('Images for layout.', 'cyberchimps'),
@@ -696,7 +855,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 		);
 
-	/* ARCHIVE */
+/* ARCHIVE */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
 		'desc' => __('Images for layout.', 'cyberchimps'),
@@ -746,7 +905,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 		);
 	
-	/* SEARCH */
+/* SEARCH */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
 		'desc' => __('Images for layout.', 'cyberchimps'),
@@ -770,7 +929,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
-	/* 404 */
+/* 404 */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
 		'desc' => __('Images for layout.', 'cyberchimps'),
@@ -795,9 +954,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
-	/************************************************************************************/
-	/* FOOTER */
-	/************************************************************************************/
+/*************************** FOOTER ***************************************************/
 	
 	$fields_list[] = array(
 		'name' => __('Show Footer Section', 'cyberchimps'),
@@ -826,9 +983,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_footer_heading'
 	);
 	
-	/****************************************************************/
-	/* IMPORT EXPORT */
-	/***************************************************************/
+/*************************** IMPORT/EXPORT ***********************************************/
 	
 	$fields_list[] = array(
 		'name' => __('Export Settings', 'cyberchimps'),
