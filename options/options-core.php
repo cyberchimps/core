@@ -497,29 +497,48 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'custom_logo_display',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
+		'heading' => 'cyberchimps_header_heading'
+	);
 	
 	$fields_list[] = array(
 		'name' => __('Logo Image', 'cyberchimps'),
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'custom_logo',
+		'id' => 'custom_logo custom_logo_display_toggle',
 		'type' => 'upload',
 		'std' => get_template_directory_uri() . '/core/lib/images/cyberchimpslogo.png',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
-		
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 	$fields_list[] = array(
 		'name' => __('Custom Favicon', 'cyberchimps'),
-		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'favicon_uploader',
-		'type' => 'upload',
+		'id' => 'custom_favicon_display',
+		'type' => 'toggle',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
+		'heading' => 'cyberchimps_header_heading'
+	);
 		
 	$fields_list[] = array(
-		'name' => __('Apple Touch Icon', 'cyberchimps'),
+		'name' => __('Favicon URL', 'cyberchimps'),
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
-		'id' => 'apple_touch_uploader',
+		'id' => 'favicon_uploader custom_favicon_display_toggle',
+		'type' => 'upload',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Custom Apple touch icon', 'cyberchimps'),
+		'id' => 'custom_apple_display',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+		
+	$fields_list[] = array(
+		'name' => __('Apple Touch URL', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'apple_touch_uploader custom_apple_display_toggle',
 		'type' => 'upload',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading');
