@@ -287,6 +287,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Max Width', 'cyberchimps'),
 		'id' => 'max_width',
+		'std' => 1020,
+		'desc' => __('enter the width of your site in pixels', 'cyberchimps'),
 		'type' => 'text',
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
