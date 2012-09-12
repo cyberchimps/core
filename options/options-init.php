@@ -592,7 +592,7 @@ function cyberchimps_fields_callback( $value ) {
 			$name = $option_name .'['. $value['id'] .']';
 			foreach ($value['options'] as $key => $option) {
 				$id = $option_name . '-' . $value['id'] .'-'. $key;
-				$output .= '<div class="radio-container"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label></div>';
+				$output .= '<div class="radio-container ' . esc_attr( $value['class'] ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label></div>';
 			}
 			break;
 
@@ -653,7 +653,7 @@ function cyberchimps_fields_callback( $value ) {
 
 		// Uploader
 		case "upload":
-			$output .= cyberchimps_medialibrary_uploader( $value['id'], $val, null );
+			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null );
 			break;
 
 			// Typography
@@ -739,7 +739,7 @@ function cyberchimps_fields_callback( $value ) {
 				$background['image'] = '';
 			}
 
-			$output .= cyberchimps_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
+			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $background['image'], null, '',0,'image');
 			$class = 'of-background-properties';
 			if ( '' == $background['image'] ) {
 				$class .= ' hide';

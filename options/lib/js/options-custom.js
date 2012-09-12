@@ -278,30 +278,20 @@ jQuery(document).ready(function($) {
 			if (style !== "null")
 					$("#font_demo_text > p").css("font-weight", style);
 	});
-	
-/* toggle next sibbling item to hide or show */
-	
+
+/* Hide/Show toggle items */	
 	$('.field-container').children('.toggle-container').each(function(){
 		var toggle = $(this).children(':input');
 		var toggle_id = $(this).children(':input').attr('id');
-		var text_id = $(this).parent('.field-container').next().find(':input').attr('id');
 		
-		if (text_id != null) {
-			var toggle_test = text_id.indexOf(toggle_id + "_toggle");
-			if (toggle_test != -1) {
-				$(this).change(function(){
+		$(this).change(function(){
 					if(toggle.is(":checked")) {
-						$(this).parent('.field-container').next().fadeIn();
+						$('.' + toggle_id + '_toggle').parent('.field-container').fadeIn();
 					}
 					else {
-						$(this).parent('.field-container').next().hide();
+						$('.' + toggle_id + '_toggle').parent('.field-container').hide();
 					}
 				}).change();
-			}
-		}
-		
-		
-		
-					
 	});
+	
 });

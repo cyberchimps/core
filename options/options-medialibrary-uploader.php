@@ -79,7 +79,7 @@ if ( ! function_exists( 'cyberchimps_mlu_js' ) ) {
  * - optionsframework_mlu_get_silentpost()
  */
 if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
-	function cyberchimps_medialibrary_uploader( $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '') {
+	function cyberchimps_medialibrary_uploader( $_class, $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '') {
 	
 		$cyberchimps_settings = get_option('cyberchimps_options');
 		
@@ -89,11 +89,13 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		$output = '';
 		$id = '';
 		$class = '';
+		$container_class = '';
 		$int = '';
 		$value = '';
 		$name = '';
 		
 		$id = strip_tags( strtolower( $_id ) );
+		$container_class = strip_tags( strtolower( $_class ) );
 		// Change for each field, using a "silent" post. If no post is present, one will be created.
 		$int = cyberchimps_mlu_get_silentpost( $id );
 		
@@ -110,7 +112,7 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		}
 		
 		if ( $value ) { $class = ' has-file'; }
-		$output .= '<div class="input-append"><input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
+		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
 		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
