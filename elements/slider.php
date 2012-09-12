@@ -71,8 +71,8 @@ if ( !class_exists( 'CyberChimpsSlider' ) ) {
 				</div>
 				
 				<!-- Carousel nav -->
-				<a class="carousel-control left" href="#slider" data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#slider" data-slide="next">&rsaquo;</a>
+				<a class="carousel-control left slider-left" href="#slider" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right slider-right" href="#slider" data-slide="next">&rsaquo;</a>
 			</div>
 			<!-- /New Slider -->
 			<?php
