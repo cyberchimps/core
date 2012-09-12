@@ -299,9 +299,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Select a background', 'cyberchimps'),
 		'id' => 'select_background',
-		'std' => 'noise',
+		'std' => 'none',
 		'type' => 'images',
 		'options' => array(
+			'none' => $imagepath . 'backgrounds/thumbs/none.png',
 			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
 			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
 			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
