@@ -844,7 +844,7 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 	}
 
-	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
+	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) && ( $value['type'] != "welcome" ) ) {
 		if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
 			$output .= '<div class="desc">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
 		}
