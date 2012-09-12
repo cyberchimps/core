@@ -28,18 +28,34 @@ function portfolio_lite_content() {
 	$image = get_post_meta($post->ID, 'portfolio_image' , true);
 	
 	if (is_page()) {
+	
+		// Geting title option
 		$title_enable = get_post_meta($post->ID, 'cyberchimps_portfolio_title_toggle' , true);
 		$title = get_post_meta($post->ID, 'cyberchimps_portfolio_title' , true);
 	
+		// Getting Image URL for each protfolio
 		$img1 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_one' , true);
 		$img2 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_two' , true);
 		$img3 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_three' , true);
 		$img4 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_four' , true);
 	
+		// Getting caption for each protfolio
 		$caption1 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_one_caption' , true);
 		$caption2 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_two_caption' , true);
 		$caption3 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_three_caption' , true);
 		$caption4 = get_post_meta($post->ID, 'cyberchimps_portfolio_lite_image_four_caption' , true);
+		
+		// Getting Custom URL toggle
+		$url_toggle1 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_toggle_one' , true);
+		$url_toggle2 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_toggle_two' , true);
+		$url_toggle3 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_toggle_three' , true);
+		$url_toggle4 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_toggle_four' , true);
+		
+		// Getting URL of custom link
+		$url1 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_url_one' , true);
+		$url2 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_url_two' , true);
+		$url3 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_url_three' , true);
+		$url4 = get_post_meta($post->ID, 'cyberchimps_portfolio_link_url_four' , true);
 	}
 	else {
 	
@@ -66,9 +82,46 @@ function portfolio_lite_content() {
 	$title = ($title != '') ? $title : 'Portfolio';	
 	$title_output = ($title_enable == 'on' OR $title_enable == '1') ? "<h2 class='entry-title'>$title</h1>" : '';
 	
-	/* Post-specific variables */	
-		$image = get_post_meta($post->ID, 'portfolio_image' , true);
-		$title = get_the_title() ;		
+	// Post-specific variables 	
+	$image = get_post_meta($post->ID, 'portfolio_image' , true);
+	$title = get_the_title() ;	
+
+	// Setting portfolio link and rel
+	if( $url_toggle1 == 1 ) {
+		$portfolio_link1 = $url1;
+		$portfolio_rel1 = "";
+	}
+	else {
+		$portfolio_link1 = $img1;
+		$portfolio_rel1 = "lightbox-portfolio";
+	}
+	
+	if( $url_toggle2 == 1 ) {
+		$portfolio_link2 = $url2;
+		$portfolio_rel2 = "";
+	}	
+	else {
+		$portfolio_link2 = $img2;
+		$portfolio_rel2 = "lightbox-portfolio";
+	}
+	
+	if( $url_toggle3 == 1 ) {
+		$portfolio_link3 = $url3;
+		$portfolio_rel3 = "";
+	}
+	else {
+		$portfolio_link3 = $img3;
+		$portfolio_rel3 = "lightbox-portfolio";
+	}
+	
+	if( $url_toggle4 == 1 ) {
+		$portfolio_link4 = $url4;
+		$portfolio_rel4 = "";
+	}	
+	else {
+		$portfolio_link4 = $img4;
+		$portfolio_rel4 = "lightbox-portfolio";
+	}	
 ?>
 
 <div class="row-fluid">
@@ -80,25 +133,25 @@ function portfolio_lite_content() {
 			
 			<ul class="row-fluid">
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $img1 ;?>' rel="lightbox-portfolio" title='<?php echo $caption1 ;?>'><img src='<?php echo $img1 ;?>'  alt='Image 1'/>
+					<a href='<?php echo $portfolio_link1 ;?>' rel='<?php echo $portfolio_rel1 ;?>' title='<?php echo $caption1 ;?>'><img src='<?php echo $img1 ;?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo $caption1 ;?></div>
 					</a>
 				</li>
 		
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $img2 ;?>' rel="lightbox-portfolio" title='<?php echo $caption2 ;?>'><img src='<?php echo $img2 ;?>'  alt='Image 1'/>
+					<a href='<?php echo $portfolio_link2 ;?>' rel='<?php echo $portfolio_rel2 ;?>' title='<?php echo $caption2 ;?>'><img src='<?php echo $img2 ;?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo $caption2 ;?></div>
 					</a>
 				</li>
 		
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $img3 ;?>' rel="lightbox-portfolio" title='<?php echo $caption3 ;?>'><img src='<?php echo $img3 ;?>'  alt='Image 1'/>
+					<a href='<?php echo $portfolio_link3 ;?>' rel='<?php echo $portfolio_rel3 ;?>' title='<?php echo $caption3 ;?>'><img src='<?php echo $img3 ;?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo $caption3 ;?></div>
 					</a>
 				</li>
 			
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $img4 ;?>' rel="lightbox-portfolio" title='<?php echo $caption4 ;?>'><img src='<?php echo $img4 ;?>'  alt='Image 1'/>
+					<a href='<?php echo $portfolio_link4 ;?>' rel='<?php echo $portfolio_rel4 ;?>' title='<?php echo $caption4 ;?>'><img src='<?php echo $img4 ;?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo $caption4 ;?></div>
 					</a>
 				</li>

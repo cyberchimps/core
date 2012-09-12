@@ -74,8 +74,8 @@ function slider_lite_content() {
 		</div>
 		
 		<!-- Slider nav -->
-		<a class="carousel-control left" href="#slider-lite" data-slide="prev">&lsaquo;</a>
-		<a class="carousel-control right" href="#slider-lite" data-slide="next">&rsaquo;</a>
+		<a class="carousel-control left slider-lite-left" href="#slider-lite" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right slider-lite-right" href="#slider-lite" data-slide="next">&rsaquo;</a>
 				
 	</div>
 <?php
