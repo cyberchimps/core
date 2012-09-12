@@ -18,9 +18,11 @@
 
 // TODO This would be better if we rename the option keys at the form so these functions can automate adding the styles to the header
 
+// adds styles to header created from functions at the bottom
  function cyberchimps_css_styles() {
 	$body_styles = cyberchimps_body_styles(); 
-  $link_styles = cyberchimps_link_styles();?>
+  $link_styles = cyberchimps_link_styles();
+	$container_styles = cyberchimps_layout_styles();?>
   
   <style type="text/css" media="all">
 	<?php if ( !empty( $body_styles ) ) : ?>
@@ -37,12 +39,20 @@
   }
   <?php endforeach; ?>
   <?php endif; ?>
+  <?php if ( !empty( $container_styles ) ) : ?>
+  .container {
+    <?php foreach( $container_styles as $key3 => $container_style ): ?>
+    <?php echo $key3; ?>: <?php echo $container_style; ?>px;
+    <?php endforeach; ?>
+  }
+  <?php endif; ?>
   </style>
 <?php
 	return;
 }
 add_action( 'wp_head', 'cyberchimps_css_styles', 10 );
 
+// creates body_styles array from options
 function cyberchimps_body_styles() {
 	$body_styles = array();
 	if ( cyberchimps_get_option( 'background_colorpicker' ) ) {
@@ -53,6 +63,7 @@ function cyberchimps_body_styles() {
 	}
 	if ( cyberchimps_get_option( 'typography_options' ) ) {
 		$typography_options = cyberchimps_get_option( 'typography_options' );
+		// changes terminology for typography to css elements
 		foreach( $typography_options as $option => $value ) {
 			if( $option == 'size' ) { $option = 'font-size'; }
 			if( $option == 'face' ) { $option = 'font-family'; }
@@ -66,6 +77,7 @@ function cyberchimps_body_styles() {
 	return $body_styles;
 }
 
+// creates link color array for just a tag
 function cyberchimps_link_styles() {
 	$link_styles = array();
 	if ( cyberchimps_get_option( 'link_colorpicker' ) ) {
@@ -76,4 +88,21 @@ function cyberchimps_link_styles() {
 	}
 	
 	return $link_styles;
+}
+
+// creates width for main container of website
+function cyberchimps_layout_styles() {
+	$container_styles = array();
+	if ( cyberchimps_get_option( 'max_width' ) ) {
+		$width = intval( cyberchimps_get_option( 'max_width' ) );
+		$key = ( cyberchimps_get_option( 'responsive_design' ) ) ? 'max-width' : 'width';
+		if ( $width < 400 || empty( $width ) ) { 
+			$container_styles[$key] = 1020;
+		}
+		else {
+			$container_styles[$key] = $width;
+		}
+	}
+	
+	return $container_styles;
 }
