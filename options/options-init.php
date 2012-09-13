@@ -471,7 +471,7 @@ function cyberchimps_sections_callback( $section_passed ) {
 function cyberchimps_section_exists( $heading, $section ) {
 	global $wp_settings_sections;
 
-	if ( $wp_settings_sections[$heading][$section] ) {
+	if ( isset( $wp_settings_sections[$heading][$section] ) ) {
 		return true;
 	}
 	return false;
