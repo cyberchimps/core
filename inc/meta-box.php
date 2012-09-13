@@ -111,7 +111,8 @@ function cyberchimps_init_meta_boxes() {
 					'carousel_section' => 'Carousel',
 					'portfolio_lite' => 'Portfolio Lite',
 					'recent_posts' => 'Recent Posts',
-					'slider_lite' => 'Slider Lite'
+					'slider_lite' => 'Slider Lite',
+					'featured_posts' => 'Featured Posts',
 				)
 				))
 			->pagehelp('', 'Need Help?', '')

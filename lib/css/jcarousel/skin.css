@@ -1,0 +1,122 @@
+.jcarousel-container {
+    position: relative;
+}
+
+.jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-list li,
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    width: 310px;
+    height: 79px;
+}
+
+.jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+
+.jcarousel-prev {
+    z-index: 3;
+    display: none;
+}
+
+/* ==================================================== */
+.jcarousel-skin-response .jcarousel-container {
+}
+
+
+.jcarousel-skin-response .jcarousel-container-vertical {
+    width: 280px;
+    height: 290px;
+    padding: 0px;
+}
+
+.jcarousel-skin-response .jcarousel-clip-vertical {
+    width:  280px;
+    height: 269px;
+}
+
+.jcarousel-skin-response .jcarousel-item {
+    width: 280px;
+    height: 80px;
+}
+
+.jcarousel-skin-response .jcarousel-item-vertical {
+    margin-bottom: 8px;
+}
+
+.jcarousel-skin-response .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-response .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 10px;
+    left: 165px;
+    width: 17px;
+    height: 10px;
+    cursor: pointer;
+    background: transparent url(next-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-response .jcarousel-next-vertical:hover {
+    background-position: 0 -10px;
+}
+
+.jcarousel-skin-response .jcarousel-next-vertical:active {
+    background-position: 0 -20px;
+}
+
+.jcarousel-skin-response .jcarousel-next-disabled-vertical,
+.jcarousel-skin-response .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-response .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -30px;
+}
+
+.jcarousel-skin-response .jcarousel-prev-vertical {
+    position: absolute;
+    bottom: 10px;
+    left: 135px;
+    width: 17px;
+    height: 10px;
+    cursor: pointer;
+    background: transparent url(prev-vertical.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-response .jcarousel-prev-vertical:hover {
+    background-position: 0 -10px;
+}
+
+.jcarousel-skin-response .jcarousel-prev-vertical:active {
+    background-position: 0 -20px;
+}
+
+.jcarousel-skin-response .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-response .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-response .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -30px;
+}

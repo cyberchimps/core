@@ -25,6 +25,13 @@ function cyberchimps_core_scripts() {
 	// Load JS for slimbox
 	wp_enqueue_script( 'slimbox', get_template_directory_uri() . '/core/lib/js/jquery.slimbox.js', array( 'jquery' ), true );
 
+	// Load library for jcarousel
+	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/core/lib/js/jquery.jcarousel.min.js', array( 'jquery' ), true );
+	wp_enqueue_style( 'jcarousel-skin', get_template_directory_uri() . '/core/lib/css/jcarousel/skin.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+
+	// Load Custom JS
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/core/lib/js/custom.js', array( 'jquery' ), true );
+	
 	// Load JS for swipe functionality in slider
 	wp_enqueue_script( 'event-swipe-move', $path . 'jquery.event.move.js', array('jquery') );
 	wp_enqueue_script( 'event-swipe', $path . 'jquery.event.swipe.js', array('jquery') );
@@ -40,6 +47,12 @@ function cyberchimps_core_scripts() {
 	
 	// Load Theme Stylesheet
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	
+	// Add thumbnail size
+	if ( function_exists( 'add_image_size' ) ) { 
+        add_image_size( 'featured-thumb', 100, 80, true);
+        add_image_size( 'headline-thumb', 200, 225, true);
+    } 
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
@@ -210,12 +223,10 @@ function cyberchimps_detect_plugin( $plugins ) {
 	return false;
 }
 
-
 // Set read more link for recent post element
- 
 function recent_post_excerpt_more($more) {
 
-	global $ec_themename, $options, $custom_excerpt, $post;
+	global $custom_excerpt, $post;
     
    		if ($custom_excerpt == 'recent') {
     		$linktext = 'Continue Reading';
@@ -229,3 +240,46 @@ function recent_post_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'recent_post_excerpt_more');
+
+// Set read more link for featured post element
+function featured_post_excerpt_more($more) {
+	global $post;
+	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
+}
+
+add_filter('excerpt_more', 'featured_post_excerpt_more');
+
+function featured_post_length( $length ) {
+	return 70;
+}
+add_filter( 'excerpt_length', 'featured_post_length', 999 );
+
+/*	gets post views */
+function getPostViews($postID){ 
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+
+/*	Sets post views	*/
+function setPostViews($postID) { 
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+/* To correct issue: adjacent_posts_rel_link_wp_head causes meta to be updated multiple times */
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+?>
