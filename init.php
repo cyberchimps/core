@@ -114,6 +114,7 @@ function cyberchimps_load_elements() {
 	require_once( get_template_directory() . '/core/elements/recent-posts.php' );
 	require_once( get_template_directory() . '/core/elements/slider-lite.php' );
 	require_once( get_template_directory() . '/core/elements/featured-posts.php' );
+	require_once( get_template_directory() . '/core/elements/magazine.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_elements');
 

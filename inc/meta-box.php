@@ -113,9 +113,12 @@ function cyberchimps_init_meta_boxes() {
 					'recent_posts' => 'Recent Posts',
 					'slider_lite' => 'Slider Lite',
 					'featured_posts' => 'Featured Posts',
+					'magazine' => 'Magazine'
 				)
 				))
 			->pagehelp('', 'Need Help?', '')
+		->tab("Magazine Layout Options")
+			->select('no_of_box', 'No of box', '', array('options' => array('2', '3')) )
 		->tab("Slider Lite Options")
 			->single_image('cyberchimps_slider_lite_slide_one_image', 'Slide One Image', '', array('std' =>  CORE_IMAGE . 'sliderdefault.jpg'))
 			->text('cyberchimps_slider_lite_slide_one_url', 'Slide One Link', '', array('std' => 'http://wordpress.org'))

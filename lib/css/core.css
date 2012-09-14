@@ -311,3 +311,126 @@ div.featured-info {
 	left:47% !important;
 	bottom:5px !important;
 }
+
+/* ===================================== Magazine Layout ===================================== */
+
+.post_container {
+	padding: 15px;
+	background: #fff;
+	margin-bottom:15px;
+	margin-left: 0px;
+	position:relative;
+	min-height:250px !important;
+	border: 2px solid #DDD;
+	-webkit-border-radius: 6px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wide_post {
+	margin-left: 0px !important;
+}
+
+.post_container  h2.posts_title {
+	font-size:22px;
+	line-height:1.3;
+}
+.post_container  h2.posts_title a {
+	color:#0082d5;
+}
+.post_container  div#comments {
+	position:absolute;
+	right:5px;
+	bottom:2px;
+	z-index:9;
+	padding-right:20px;
+	background:url(../images/magazine/social_11.png) no-repeat right;
+}
+.featured-info {
+  font-size:13px;
+	font-weight:bold;
+}
+.featured-info a {
+  color:#333;
+}
+.post_container ul {
+  list-style: disc;
+  margin-left: 21px;
+  list-style-position: inside;
+}
+.post_container p {
+  font-size:12px;
+  line-height:1.3;
+}
+.post_container img.wp-post-image {
+  width:80px !important;
+  height:80px !important;
+}
+.postformats {
+	float:right;
+	background: #fff;
+	margin: -8px 0 0 0;
+	height: 46px;
+	width: 50px;
+}
+.entry p {
+  clear: none;
+}
+.entry-title{
+  margin-bottom:2px;
+}
+.single .entry-title {
+  text-align:left;
+  line-height:30px;
+  margin-top:12px;
+  margin-bottom:10px;
+}
+.entry-title a {
+  font-size:22px;
+}
+.posts_title a{
+	text-decoration: none;
+	font-weight: 400;
+	color: #222;
+}
+.posts_title a:hover{
+	color: #5ca9d6;
+}
+
+.featured-image {
+  margin-top:4px;
+  margin-right: 12px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.socialbar {
+  height:21px;
+  width:100%;
+  position:absolute;
+  background:url(../images/magazine/socialbg_03.png) repeat-x;
+  left:0px;
+  bottom:0px;
+}
+.social { 
+  background-image: url(../images/magazine/social.png); 
+  background-color: transparent; 
+  background-repeat: no-repeat;
+	width:13px;
+	height:13px;
+	margin:5px 0px 0px 5px;
+	float:left;
+	text-indent:-99999em;
+}
+
+.share-twt {
+	background-position: -13px 0px;
+}
+
+.share-ln {
+	background-position: -26px 0px;
+}
+
+.share-rdt {
+	background-position: -52px 0px;
+}
