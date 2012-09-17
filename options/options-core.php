@@ -287,6 +287,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Max Width', 'cyberchimps'),
 		'id' => 'max_width',
+		'class' => '',
 		'std' => 1020,
 		'desc' => __('enter the width of your site in pixels', 'cyberchimps'),
 		'type' => 'text',
@@ -378,6 +379,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 /* CUSTOM COLORS */
 	$fields_list[] = array(
 		'id' => 'skin_color',
+		'class' => '',
 		'name' => __('Select a Skin Color', 'cyberchimps'),
 		'type' => 'select',
 		'std' => 'blue',

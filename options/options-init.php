@@ -234,7 +234,7 @@ function cyberchimps_options_page() {
 					
 						echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
 						echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
-						if ( $heading['description'] ) {
+						if ( isset( $heading['description'] ) ) {
 							echo '<p>' . esc_html( $heading['description'] ) . '</p>';
 						}
 						cyberchimps_do_settings_sections( $heading['id'] );
@@ -456,8 +456,12 @@ function cyberchimps_sections_callback( $section_passed ) {
 		return false;
 	
 	foreach ( $sections as $section ) {
-		if ($section_passed['id'] == $section['id'] ) {
-			echo '<p>' . $section['description'] . '</p>';
+		if ( $section_passed['id'] == $section['id'] ) {
+			echo '<p>';
+			if( isset( $section['description'] ) ) { 
+				echo $section['description']; 
+			}
+			echo '</p>';
 		}
 	}
 }
@@ -535,7 +539,11 @@ function cyberchimps_fields_callback( $value ) {
 			}
 		}
 	}
-
+	// If there is no class set make it blank
+	if( !isset( $value['class'] ) ) {
+		$value['class'] = '';
+	}
+	
 	// If there is a description save it for labels
 	$explain_value = '';
 	if ( isset( $value['desc'] ) ) {
