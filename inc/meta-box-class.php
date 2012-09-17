@@ -517,7 +517,7 @@ class RW_Meta_Box {
 				el.find('.right_list .action').show();
 				el.find('.left_list .action').hide();
 				
-				
+				/* To hide subsections when element is removed from active list */
 				var hidden = base.find("input[class='section-order-tracker']");
 				var val = [];
 				base.find('.right_list .list_items span').each(function() {
