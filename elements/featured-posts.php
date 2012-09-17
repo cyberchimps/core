@@ -23,6 +23,17 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 add_action ('featured_posts', 'featured_posts_content' );
 
 function featured_posts_content() {
+	global  $post;  // call globals	
+	
+	// Getting featured post option values
+	$post_source = get_post_meta($post->ID, 'cyberchimps_featured_post_category_toggle' , true);
+	$post_category = get_post_meta($post->ID, 'cyberchimps_featured_post_category' , true);
+	
+	// Determine post category of query according to the options
+	if( $post_source == 0 )
+		$query_post_category = "";
+	elseif( $post_source == 1 )
+		$query_post_category = $post_category;
 ?>
 
 	<div class="row-fluid">
@@ -37,7 +48,10 @@ function featured_posts_content() {
 						$exclude_posts = array();
 						
 						$counter = 1;
-						$the_query = new WP_Query(array('showposts' => -1, 'category_name' => 'featured', 'orderby' => 'post_date', 'order' => 'desc', 'post__not_in' => get_option( 'sticky_posts' ) )); 					
+						$the_query = new WP_Query(array('showposts' => -1, 'category_name' => $query_post_category, 
+															'orderby' => 'post_date', 'order' => 'desc', 
+															'post__not_in' => get_option( 'sticky_posts' ) 
+															)); 					
 						if ($the_query -> have_posts()) : while ($the_query -> have_posts()) : $the_query -> the_post();
 						$exclude_posts[] = get_the_ID();
 						
@@ -56,7 +70,7 @@ function featured_posts_content() {
 									</div>
 									<div class="meta">
 										<span><?php echo get_the_time('F j, Y - g:i a '); ?></span> | 
-										<span><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?> &nbsp;|&nbsp;<?php echo getPostViews(get_the_ID()); ?></span>
+										<span><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?></span>
 									</div><!--/.meta-->
 									<?php 
 									add_filter('excerpt_more', 'featured_post_excerpt_more'); 
@@ -86,7 +100,10 @@ function featured_posts_content() {
 					<ul id="mycarousel" class="jcarousel jcarousel-skin-response">
 						<?php 
 						$counter = 1;
-						$featured_query = new WP_Query('category_name=featured &orderby=post_date&order=desc');  
+						$featured_query = new WP_Query(array('showposts' => -1, 'category_name' => $query_post_category, 
+															'orderby' => 'post_date', 'order' => 'desc', 
+															'post__not_in' => get_option( 'sticky_posts' ) 
+															));
 						if ($featured_query -> have_posts()) : 
 							while ($featured_query -> have_posts()) : $featured_query -> the_post();
 							$id = "featured" . $counter;
@@ -103,7 +120,7 @@ function featured_posts_content() {
 								</h5>
 								<div class="featured-meta">
 									<span class="date-n-time"><?php echo get_the_time('F j, Y - g:i a '); ?></span>
-									<span class="comments-n-views"><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?> | <?php echo getPostViews(get_the_ID()); ?></span>
+									<span class="comments-n-views"><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?></span>
 								</div>
 							</div> 
 						</li>
