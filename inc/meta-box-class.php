@@ -496,6 +496,7 @@ class RW_Meta_Box {
 		}
 		echo "</div>";
 		echo "</div>";
+		echo "<input class='section-order-tracker' type='hidden' id={$field['id']} name={$field['id']} />";
 		echo '<div id="values"></div>';
 		echo "</div>";
 ?>
@@ -515,6 +516,17 @@ class RW_Meta_Box {
 			
 				el.find('.right_list .action').show();
 				el.find('.left_list .action').hide();
+				
+				
+				var hidden = base.find("input[class='section-order-tracker']");
+				var val = [];
+				base.find('.right_list .list_items span').each(function() {
+					val.push($(this).data('key'));
+				})
+				hidden.val(val.join(",")).change();
+				$('.right_list .action').show();
+				$('.left_list .action').hide();
+				
 			}
 			el.find(".left_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
