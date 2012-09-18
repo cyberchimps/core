@@ -81,11 +81,6 @@ if ( ! function_exists( 'cyberchimps_mlu_js' ) ) {
 if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 	function cyberchimps_medialibrary_uploader( $_class, $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '') {
 	
-		$cyberchimps_settings = get_option('cyberchimps_options');
-		
-		// Gets the unique option id
-		$option_name = $cyberchimps_settings['id'];
-	
 		$output = '';
 		$id = '';
 		$class = '';
@@ -105,10 +100,10 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		}
 		
 		if ($_name != '') {
-			$name = $option_name.'['.$id.']['.$_name.']';
+			$name = '['.$id.']['.$_name.']';
 		}
 		else {
-			$name = $option_name.'['.$id.']';
+			$name = '['.$id.']';
 		}
 		
 		if ( $value ) { $class = ' has-file'; }

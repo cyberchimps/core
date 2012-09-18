@@ -594,10 +594,10 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '</select>';
 			break;
 
-
 		// Radio Box
 		case "radio":
 			$name = $option_name .'['. $value['id'] .']';
+			$val = ( $val != '' ) ? $val : $value['std'];  
 			foreach ($value['options'] as $key => $option) {
 				$id = $option_name . '-' . $value['id'] .'-'. $key;
 				$output .= '<div class="radio-container ' . esc_attr( $value['class'] ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label></div>';

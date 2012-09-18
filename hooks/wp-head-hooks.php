@@ -80,6 +80,9 @@ function cyberchimps_body_styles() {
 	// Apply custom background image
 	if( cyberchimps_get_option( 'custom_background' ) == 1 && cyberchimps_get_option( 'custom_background_image' ) != "" ) {
 		$body_styles['background-image'] = 'url( "'.cyberchimps_get_option( 'custom_background_image' ).'" )';
+		$body_styles['background-position'] = cyberchimps_get_option( 'background_image_position' );
+		$body_styles['background-repeat'] = cyberchimps_get_option( 'background_image_repeat' );
+		$body_styles['background-attachment'] = cyberchimps_get_option( 'background_image_attachment' );
 	}
 	
 	return $body_styles;

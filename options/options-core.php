@@ -344,11 +344,12 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Image position', 'cyberchimps'),
 		'id' => 'background_image_position',
 		'class' => 'custom_background_toggle',
+		'std' => 'top center',
 		'type' => 'radio',
 		'options' => array(
-			'Left' => 'top left',
-			'Center' => 'top center',
-			'Right' => 'top right'
+			'top left' => 'Left',
+			'top center' => 'Center',
+			'top right' => 'Right'
 		),
 		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
@@ -358,12 +359,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Image repeat', 'cyberchimps'),
 		'id' => 'background_image_repeat',
 		'class' => 'custom_background_toggle',
+		'std' => 'repeat',
 		'type' => 'radio',
 		'options' => array(
-			'Tile' => 'repeat',
-			'Tile horizontally' => 'repeat-x',
-			'Tile vertically' => 'repeat-y',
-			'No tile' => 'no-repeat'
+			'repeat' => 'Tile',
+			'repeat-x' => 'Tile horizontally',
+			'repeat-y' => 'Tile vertically',
+			'no-repeat' => 'No tile'
 		),
 		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
@@ -373,10 +375,11 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Image attachment', 'cyberchimps'),
 		'id' => 'background_image_attachment',
 		'class' => 'custom_background_toggle',
+		'std' => 'scroll',
 		'type' => 'radio',
 		'options' => array(
-			'Scroll' => 'scroll',
-			'Fixed' => 'fixed'
+			'scroll' => 'Scroll',
+			'fixed' => 'Fixed'
 		),
 		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
