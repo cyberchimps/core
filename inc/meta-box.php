@@ -118,7 +118,7 @@ function cyberchimps_init_meta_boxes() {
 				))
 			->pagehelp('', 'Need Help?', '')
 		->tab("Magazine Layout Options")
-			->select('no_of_box', 'No of box', '', array('options' => array('2', '3')) )
+			->select('no_of_box', 'Number of Columns', '', array('options' => array('2', '3')) )
 		->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', 'Select post source', '', array('options' => array('Latest posts', 'From category')) )
 			->text('cyberchimps_featured_post_category', 'Enter category', '', array('std' => 'featured'))

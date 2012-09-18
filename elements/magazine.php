@@ -92,30 +92,9 @@ function magazine_element_content() {
 								<div id="comments">
 									<span class="comments-n-views"><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?></span>
 								</div>
-							
 								
-								<!-- ************Links to share in social networks*********** -->	
+								<!-- ************bottom bar*********** -->	
 								<div class="socialbar">
-								
-									<!-- Share in Facebook -->
-									<a class="share-fb social"
-										href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>"
-										title="Share on Facebook" target="blank">Facebook</a>
-									
-									<!-- Twitt in Twitter -->
-									<a class="share-twt social" 
-										href="http://twitter.com/home?status=Currently reading <?php the_permalink(); ?>"
-										title="Share on Twitter" target="_blank">Twitter</a>
-									
-									<!-- Share in LikedIn -->
-									<a class="share-ln social" 
-										href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&title=<?php the_title(); ?>&summary=&source=<?php bloginfo('name'); ?>" 
-										target="_new">LinkedIn</a>
-									
-									<!-- Share in Reddit -->
-									<a class="share-rdt social" 
-										href="http://www.reddit.com/submit?url=<?php the_permalink();?>&title=<?php the_title(); ?>"
-										target="blank">Reddit</a>
 								</div>
 														
 							</div><!--end post_class-->
@@ -163,25 +142,9 @@ function magazine_element_content() {
 									<span class="comments-n-views"><?php comments_popup_link('No Comment', '1 Comment', '% Comments');?></span>
 								</div>
 						
-								<!-- ************Links to share in social networks***********-->	
+								<!-- ************bottom bar*********** -->	
 								<div class="socialbar">
-								
-									<!-- Share in Facebook -->
-									<a class="share-fb social"
-										href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>"
-										title="Share on Facebook" target="blank">Facebook</a>
-									
-									<!-- Twitt in Twitter -->
-									<a class="share-twt social" 
-										href="http://twitter.com/home?status=Currently reading <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Twitter</a>
-									
-									<!-- Share in LikedIn -->
-									<a class="share-ln social" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&title=<?php the_title(); ?>&summary=&source=<?php bloginfo('name'); ?>" target="_new">LinkedIn</a>
-									
-									<!-- Share in Reddit -->
-									<a class="share-rdt social" href="http://www.reddit.com/submit?url=<?php the_permalink();?>&title=<?php the_title(); ?>" target="blank">Reddit</a>
 								</div>
-								
 								
 								</div><!--end post_class-->
 						</div><!--end post container-->
