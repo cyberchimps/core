@@ -661,7 +661,7 @@ function cyberchimps_fields_callback( $value ) {
 
 		// Uploader
 		case "upload":
-			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null );
+			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null, $value['desc'] );
 			break;
 
 			// Typography
@@ -852,7 +852,7 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 	}
 
-	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) && ( $value['type'] != "welcome" ) ) {
+	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) && ( $value['type'] != "welcome" ) && ( $value['type'] != "upload" ) ) {
 		if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
 			$output .= '<div class="desc">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
 		}

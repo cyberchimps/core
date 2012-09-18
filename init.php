@@ -131,6 +131,7 @@ add_action('after_setup_theme', 'cyberchimps_load_post_types');
 function cyberchimps_load_hooks() {
 	require_once( get_template_directory() . '/core/hooks/wp-head-hooks.php' );
 	require_once( get_template_directory() . '/core/hooks/header-hooks.php' );
+	require_once( get_template_directory() . '/core/hooks/blog-hooks.php' );
 	require_once( get_template_directory() . '/core/hooks/footer-hooks.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_hooks');

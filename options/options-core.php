@@ -147,6 +147,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	);
 	
 	$sections_list[] = array(
+		'id' => 'cyberchimps_blog_slider_lite_section',
+		'label' => __('Blog Slider Lite', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_slider_section',
 		'label' => __('Blog Slider', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
@@ -737,13 +743,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'section_order',
 		'options' => array(
 			"blog_post_page" => "Post Page",
-			"cyberchimps_slider" => "Slider",
+			"slider_lite" => "Slider",
 			"callout_section" => "Callout Section",
-			"twitter_bar" => "Twitter Bar",
-			"carousel" => "Carousel",
-			"portfolio" => "Portfolio",
-			"product" => "Product",
-			"boxes" => "Boxes"
+			"twitterbar_section" => "Twitter Bar",
+			"carousel_section" => "Carousel",
+			"portfolio_lite" => "Portfolio",
+			"product_element" => "Product",
+			"widgets_section" => "Widgets"
 		),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -839,6 +845,64 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'std' => '',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_slider_section',
+		'heading' => 'cyberchimps_blog_heading',
+	);
+	
+/* BLOG SLIDER LITE */
+	$fields_list[] = array(
+		'name' => __('Slider Image 1', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'image_one_slide',
+		'type' => 'upload',
+		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'section' => 'cyberchimps_blog_slider_lite_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slide 1 URL', 'cyberchimps'),
+		'id' => 'image_one_slide_url',
+		'std' => '',
+		'type' => 'text',
+		'section' => 'cyberchimps_blog_slider_lite_section',
+		'heading' => 'cyberchimps_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Image 2', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'image_two_slide',
+		'type' => 'upload',
+		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'section' => 'cyberchimps_blog_slider_lite_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slide 2 URL', 'cyberchimps'),
+		'id' => 'image_two_slide_url',
+		'std' => '',
+		'type' => 'text',
+		'section' => 'cyberchimps_blog_slider_lite_section',
+		'heading' => 'cyberchimps_blog_heading',
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slider Image 3', 'cyberchimps'),
+		'desc' => __('Enter URL or upload file', 'cyberchimps'),
+		'id' => 'image_three_slide',
+		'type' => 'upload',
+		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'section' => 'cyberchimps_blog_slider_lite_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Slide 3 URL', 'cyberchimps'),
+		'id' => 'image_three_slide_url',
+		'std' => '',
+		'type' => 'text',
+		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading',
 	);
 	

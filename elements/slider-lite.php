@@ -24,7 +24,7 @@ add_action ('slider_lite', 'slider_lite_content' );
 
 function slider_lite_content() {
 
-	global $options, $wp_query, $post, $slider_default;
+	global $wp_query, $post, $slider_default;
 		
 	if (is_page()) {
 		$slide1 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_image' , true);
@@ -37,21 +37,16 @@ function slider_lite_content() {
 	}
 	
 	else {
+		$options = get_option('cyberchimps_options');
 		
-		/* To be modified after integration of element in theme option
-		$slide1source = $options->get('_blog_slide_one_image');
-		$slide2source = $options->get('_blog_slide_two_image');
-		$slide3source = $options->get('_blog_slide_three_image');
-		
-		$slide1 = $slide1source['url'];
-		$slide2 = $slide2source['url'];
-		$slide3 = $slide3source['url'];
+		$slide1 = $options['image_one_slide'];
+		$slide2 = $options['image_two_slide'];
+		$slide3 = $options['image_three_slide'];
 	
-		$link1 = $options->get('_blog_slide_one_url');
-		$link2 = $options->get('_blog_slide_two_url');
-		$link3 = $options->get('_blog_slide_three_url');
+		$link1 = $options['image_one_slide_url'];
+		$link2 = $options['image_two_slide_url'];
+		$link3 = $options['image_three_slide_url'];
 
-		*/
 	}
 ?>
 	<div id="slider-lite" class="carousel slide">

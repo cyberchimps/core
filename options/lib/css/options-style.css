@@ -533,6 +533,12 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin-top: 2px;
   margin-right: 20px;
 }
+/* upload screenshot */
+.screenshot img {
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+}
 
 /***************** Section Order *********************/
 .section_order {
