@@ -61,11 +61,47 @@ function cyberchimps_description_icons() { ?>
 <?php }
 add_action('cyberchimps_description_icons', 'cyberchimps_description_icons');
 
+// Logo and Contact
+function cyberchimps_sitename_contact() {?>
+	<header class="row-fluid">
+		<div class="span7">
+			<?php if (function_exists('cyberchimps_header_logo') ) {
+				cyberchimps_header_logo();
+			} ?>
+		</div>	
+	
+		<div id ="register" class="span5">
+			<?php if (function_exists('cyberchimps_contact_info') ) {
+				echo cyberchimps_contact_info();
+			} ?>
+		</div>
+	</header>
+<?php }
+add_action('cyberchimps_sitename_contact', 'cyberchimps_sitename_contact');
+
+// Logo and Description
+function cyberchimps_logo_description() {?>
+	<header class="row-fluid">
+		<div class="span7">
+			<?php if (function_exists('cyberchimps_header_logo') ) {
+				cyberchimps_header_logo();
+			} ?>
+		</div>	
+	
+		<div id ="description" class="span5">
+			<?php if (function_exists('cyberchimps_description') ) {
+				echo cyberchimps_description();
+			} ?>
+		</div>
+	</header>
+<?php }
+add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
+
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
 	
-	if ( cyberchimps_get_option('custom_logo_display') == '1') {
-		$logo = cyberchimps_get_option('custom_logo');
+	if ( cyberchimps_get_option('custom_logo') == '1') {
+		$logo = cyberchimps_get_option('custom_logo_uploader');
 	?>
 		<div id="logo">
 			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo); ?>" alt="logo"></a>
@@ -195,20 +231,23 @@ function cyberchimps_logo_register_content() {
 global $current_user; ?>
 	<header class="row-fluid">
 		<div class="span7">
-			<?php if (function_exists('cyberchimps_header_sitename') ) {
-				cyberchimps_header_sitename();
+			<?php if (function_exists('cyberchimps_header_logo') ) {
+				cyberchimps_header_logo();
 			} ?>
 		</div>	
 
 		<div id ="register" class="span5">
+    <div class="register">
 			<?php if(!is_user_logged_in()) :?>
-				<li><?php wp_loginout(); ?></li> <?php wp_meta(); ?><li> |<?php wp_register(); ?>  </li>
+				<?php wp_loginout(); ?> <?php wp_meta(); ?> |<?php wp_register(); ?>
 			<?php else :?>
 				Welcome back <strong><?php global $current_user; get_currentuserinfo(); echo ($current_user->user_login); ?></strong> | <?php wp_loginout(); ?>
 			<?php endif;?>
+    </div>
 		</div>
 	</header>
 <?php }
+add_action( 'cyberchimps_sitename_register', 'cyberchimps_logo_register_content' );
 
 // Full-Width Logo
 function cyberchimps_banner_content() {
@@ -236,3 +275,22 @@ $default = "$root/images/pro/banner.jpg";
 	</div>
 <?php
 }
+
+//contact info
+function cyberchimps_contact_info() {
+	$contact = cyberchimps_get_option('contact_details'); ?>
+  
+  <div class="contact_details">
+		<p><?php echo $contact; ?></p>
+  </div>
+<?php } 
+
+//description
+function cyberchimps_description() {
+	$description = get_bloginfo( 'description' );?>
+  <div class="blog_description">
+  	<p><?php echo $description; ?></p>
+  </div>
+<?php 
+}
+?>

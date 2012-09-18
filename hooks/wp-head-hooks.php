@@ -114,3 +114,26 @@ function cyberchimps_layout_styles() {
 	
 	return $container_styles;
 }
+
+// add favicon
+function cyberchimps_favicon() {
+	if( cyberchimps_get_option( 'custom_favicon' ) ) :
+	$favicon = cyberchimps_get_option( 'favicon_uploader' );
+	if( $favicon != '' ):?>		
+		<link rel="shortcut icon" href="<?php echo stripslashes( $favicon ); ?>" type="image/x-icon" />
+  <?php endif;
+	endif;	
+}
+add_action( 'wp_head', 'cyberchimps_favicon', 2 );
+add_action( 'admin_head', 'cyberchimps_favicon', 2  );
+
+// add apple touch icon
+function cyberchimps_apple() {
+	if( cyberchimps_get_option( 'custom_apple' ) ) :
+	$apple = cyberchimps_get_option( 'apple_touch_uploader' );
+	if( $apple != '' ): ?>
+  	<link rel="apple-touch-icon" href="<?php echo stripslashes( $apple ); ?>" />
+  <?php endif;
+	endif;
+}
+add_action( 'wp_head', 'cyberchimps_apple', 2 );
