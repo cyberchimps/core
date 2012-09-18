@@ -643,6 +643,13 @@ img.action {
 #cyberchimps_header_social_section .field-container {
 }
 
+/************ option subsection **********/
+#custom_background_image_image  img{
+	width: 400px;
+	display: block;
+    margin-bottom: 5px;
+}
+
 /************** Responsive *******************/
 
 @media all and (max-width: 1196px) {

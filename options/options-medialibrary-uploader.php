@@ -18,7 +18,7 @@ if ( is_admin() ) {
  */
 if ( ! function_exists( 'cyberchimps_mlu_init' ) ) {
 	function cyberchimps_mlu_init () {
-		register_post_type( 'cyberchimpsthemeoptions', array(
+		register_post_type( 'cybrchmpsthmoption', array(
 			'labels' => array(
 				'name' => __( 'Theme Options Media', 'cyberchimps' ),
 			),
@@ -112,7 +112,8 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		}
 		
 		if ( $value ) { $class = ' has-file'; }
-		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
+	
+		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="cyberchimps_options'.$name.'" value="' . $value . '" />' . "\n";
 		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
@@ -167,7 +168,7 @@ if ( ! function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
 		if ( $_token ) {
 			
 			// Tell the function what to look for in a post.
-			$_args = array( 'post_type' => 'cyberchimpsthemeoptions', 'post_name' => 'of-' . $_token, 'post_status' => 'draft', 'comment_status' => 'closed', 'ping_status' => 'closed' );
+			$_args = array( 'post_type' => 'cybrchmpsthmoption', 'post_name' => 'of-' . $_token, 'post_status' => 'draft', 'comment_status' => 'closed', 'ping_status' => 'closed' );
 			
 			// Look in the database for a "silent" post that meets our criteria.
 			$query = 'SELECT ID FROM ' . $wpdb->posts . ' WHERE post_parent = 0';
@@ -204,7 +205,7 @@ if ( ! function_exists( 'cyberchimps_mlu_insidepopup' ) ) {
 
 	function cyberchimps_mlu_insidepopup () {
 	
-		if ( isset( $_REQUEST['is_cyberchimpsthemeoptions'] ) && $_REQUEST['is_cyberchimpsthemeoptions'] == 'yes' ) {
+		if ( isset( $_REQUEST['is_cybrchmpsthmoption'] ) && $_REQUEST['is_cybrchmpsthmoption'] == 'yes' ) {
 		
 			add_action( 'admin_head', 'cyberchimps_mlu_js_popup' );
 			add_filter( 'media_upload_tabs', 'cyberchimps_mlu_modify_tabs' );
@@ -237,11 +238,11 @@ if ( ! function_exists( 'cyberchimps_mlu_js_popup' ) ) {
 		// Hide the "Insert Gallery" settings box on the "Gallery" tab.
 		$( 'div#gallery-settings' ).hide();
 		
-		// Preserve the "is_cyberchimpsthemeoptions" parameter on the "delete" confirmation button.
+		// Preserve the "is_cybrchmpsthmoption" parameter on the "delete" confirmation button.
 		$( '.savesend a.del-link' ).click ( function () {
 			var continueButton = $( this ).next( '.del-attachment' ).children( 'a.button[id*="del"]' );
 			var continueHref = continueButton.attr( 'href' );
-			continueHref = continueHref + '&is_cyberchimpsthemeoptions=yes';
+			continueHref = continueHref + '&is_cybrchmpsthmoption=yes';
 			continueButton.attr( 'href', continueHref );
 		} );
 		

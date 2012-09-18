@@ -77,6 +77,11 @@ function cyberchimps_body_styles() {
 		$body_styles['background-image'] = 'url( "'.get_template_directory_uri().'/core/lib/images/backgrounds/'.cyberchimps_get_option( 'select_background' ).'.jpg" )';
 	}
 	
+	// Apply custom background image
+	if( cyberchimps_get_option( 'custom_background' ) == 1 && cyberchimps_get_option( 'custom_background_image' ) != "" ) {
+		$body_styles['background-image'] = 'url( "'.cyberchimps_get_option( 'custom_background_image' ).'" )';
+	}
+	
 	return $body_styles;
 }
 
