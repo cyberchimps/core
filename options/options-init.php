@@ -900,7 +900,28 @@ function cyberchimps_options_validate( $input ) {
 			}
 		
 			$id = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $option['id'] ) );
-		
+			
+			//HS TODO Set conflicting $input[$'id] to false where the $id was not recognized as the key. Needs looking at
+			// Set upload to false if it wasn't sent in the $_POST
+			if ( 'info' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+			
+			// Set upload to false if it wasn't sent in the $_POST
+			if ( 'upload' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+			
+			// Set radio to false if it wasn't sent in the $_POST
+			if ( 'radio' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+			
+			// Set toggle to false if it wasn't sent in the $_POST
+			if ( 'toggle' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+			
 			// Set checkbox to false if it wasn't sent in the $_POST
 			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
 				$input[$id] = false;

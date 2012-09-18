@@ -104,8 +104,10 @@ add_filter( 'cyberchimps_sanitize_info', 'cyberchimps_sanitize_allowedposttags' 
 /* Check that the key value sent is valid */
 function cyberchimps_sanitize_enum( $input, $option ) {
 	$output = '';
-	if ( array_key_exists( $input, $option['options'] ) ) {
-		$output = $input;
+	if ( $input != false ) {
+		if ( array_key_exists( $input, $option['options'] ) ) {
+			$output = $input;
+		}
 	}
 	return $output;
 }
