@@ -208,6 +208,7 @@ div.featured-info {
 .headline_post {
 	background: #333;
 	height: 330px !important;
+	border-radius: 4px;
 }
 
 #headline {
