@@ -40,27 +40,64 @@ if ( !class_exists( 'CyberChimpsWidgets' ) ) {
 		 */
 		protected function __construct( ) {
 			add_action( 'widgets_section', array( $this, 'render_display' ) );
+			
+			$options = get_option( 'cyberchimps_options' );
+			
+			if( in_array( 'widgets_section', $options['blog_section_order'], true ) ) {
+			
+			register_sidebar(array(
+				'name' => 'Box Left',
+				'id' => 'box-left',
+				'description' => 'This is the left widget of the three-box section',
+				'before_widget' => '<div id="box1" class="box span4">',
+				'after_widget' => '</p></div>',
+				'before_title' => '<h2 class="box-widget-title">',
+				'after_title' => '</h2><p>',
+			));
+			register_sidebar(array(
+				'name' => 'Box Middle',
+				'id' => 'box-middle',
+				'description' => 'This is the middle widget of the three-box section',
+				'before_widget' => '<div id="box2" class="box span4">',
+				'after_widget' => '</p></div>',
+				'before_title' => '<h2 class="box-widget-title">',
+				'after_title' => '</h2><p>',
+			));
+			register_sidebar(array(
+				'name' => 'Box Right',
+				'id' => 'box-right',
+				'description' => 'This is the right widget of the three-box section',
+				'before_widget' => '<div id="box3" class="box span4">',
+				'after_widget' => '</p></div>',
+				'before_title' => '<h2 class="box-widget-title">',
+				'after_title' => '</h2><p>',
+			));
+			}
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
 			?>
-			<div class="row-fluid">
+			<div id="widget-boxes-container" class="row-fluid">
 				<div class="boxes">
-					<div id="box1" class="box span4">
-						<h2 class="box-widget-title">Box Left</h2>
-						<p>Collaboratively build intuitive outsourcing before high-quality metrics. Interactively scale client-centric architectures through enterprise-wide "outside the box" thinking. Seamlessly benchmark end-to-end collaboration and idea-sharing and clicks-and-mortar.</p>
-					</div><!--end box1-->
-	
-					<div id="box2" class="box span4">
-						<h2 class="box-widget-title">Box Middle</h2>
-						<p>This is the box middle widgetized area.</p>
-					</div><!--end box2-->
-				
-					<div id="box3" class="box span4">
-						<h2 class="box-widget-title">Box Right</h2>
-						<p>This is the box right widgetized area.</p>
-					</div><!--end box3-->
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
+          <div id="box1" class="box span4">
+            <h2 class="box-widget-title">Box Left</h2>
+           	<p>This is the box left widgetized area.</p>
+          </div><!--end box1-->
+				<?php endif; ?>
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
+          <div id="box2" class="box span4">
+            <h2 class="box-widget-title">Box Middle</h2>
+            <p>This is the box middle widgetized area.</p>
+        	</div><!--end box2-->
+        <?php endif; ?>
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
+          <div id="box3" class="box span4">
+            <h2 class="box-widget-title">Box Right</h2>
+            <p>This is the box right widgetized area.</p>
+          </div><!--end box3-->
+      <?php endif; ?>
 				</div><!-- boxes -->
 			</div><!-- row-fluid -->
 		<?php
