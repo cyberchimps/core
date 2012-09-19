@@ -21,35 +21,34 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
 add_action( 'magazine', 'magazine_element_content' );
 
-
+// Defining contents of the magazine post element
 function magazine_element_content() {
 	global  $post;  // call globals	
 
-	$box_no = get_post_meta($post->ID, 'no_of_box' , true);
-	if( $box_no == 0 )
-		$box_no = 2;
-	elseif( $box_no == 1 )
-		$box_no = 3;
+	// Getting metabox options
+	$column_no = get_post_meta($post->ID, 'cyberchimps_magazine_no_of_columns' , true);
+	$column_no += 2;
 	
-	?>
+	$row_no = get_post_meta($post->ID, 'cyberchimps_magazine_no_of_rows' , true);
+	$row_no += 1;
+	
+	$wide_post =  get_post_meta($post->ID, 'cyberchimps_magazine_wide_post_toggle' , true);
+	$wide_post_no = get_post_meta($post->ID, 'cyberchimps_magazine_no_of_wide_posts' , true);
+	$wide_post_no += 1;
+	
+	$meta_toggle = get_post_meta($post->ID, 'cyberchimps_magazine_meta_data_toggle' , true);
+?>
 	<div class="row-fluid">
 		<?php
-				$page_number = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$magazine = new WP_Query(
-									array(
-										'paged'         => $page_number,
-										'post_type'     => 'post',
-										'orderby'       => 'post_date',
-										'order'         => 'desc',
-										'posts_per_page'=> 9,
-										'post__not_in'  => $exclude_posts
+		$magazine = new WP_Query(
+								array(
+									'paged'         => $page_number,
+									'post_type'     => 'post',
+									'orderby'       => 'post_date',
+									'order'         => 'desc',
+									'post__not_in'  => $exclude_posts
 									)
 								);
-			if($magazine ->post_count <= 6 && $box_no == 3)
-			{
-				$box_no = 2;
-			}
-		
 		?>
 		
 		<div id="content">
@@ -59,9 +58,10 @@ function magazine_element_content() {
 					/* Initializing counters. */
 					$counter_post = 0; 
 					$counter_box = 0;
+					$counter_wide = 0;
 					
 				if ($magazine -> have_posts()) : while ($magazine -> have_posts()) : $magazine -> the_post();
-					if( $counter_post < 2*$box_no )
+					if( $counter_post < ( $row_no * $column_no ) )
 					{ ?>
 						<div class="post_container box_post span4">            
 							<div <?php post_class() ?> id="post-<?php the_ID(); ?>">                
@@ -73,8 +73,10 @@ function magazine_element_content() {
 									$format = get_post_format();
 								} ?>
 							
+								<!-- Display Title -->
 								<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-									
+								
+								<!-- Display Thumbnail -->
 								<?php
 								if ( has_post_thumbnail() ) {
 									echo '<div class="featured-image">';
@@ -85,8 +87,25 @@ function magazine_element_content() {
 								}
 								?>	
 								
+								<!-- Display Metadata -->
+								<?php
+								if( $meta_toggle == 1 )
+								{
+									echo "Published on "; ?> <a href="<?php the_permalink() ?>"><?php echo get_the_date(); ?></a>
+									<?php
+									echo " by "; the_author_posts_link();
+									echo " in "; the_category(', ');
+								}
+								?>
+		
 								<div class="entry" <?php if ( has_post_thumbnail() ) { echo 'style="min-height: 115px;" '; }?>>
-									<?php the_excerpt();    ?>
+									<?php 
+									add_filter('excerpt_more', 'featured_post_excerpt_more');
+									add_filter( 'excerpt_length', 'featured_post_length', 999 );
+									the_excerpt();
+									remove_filter('excerpt_more', 'featured_post_excerpt_more');
+									remove_filter( 'excerpt_length', 'featured_post_length', 999);
+									?>
 								</div><!--end entry-->  
 							
 								<div id="comments">
@@ -102,12 +121,12 @@ function magazine_element_content() {
 						<?php 
 						$counter_box++;
 						$counter_post++;
-						if($box_no == $counter_box) {
+						if($column_no == $counter_box) {
 							echo '</div><div class="row-fluid">';
 							$counter_box = 0;
 						}
 						
-						if( $counter_post == 6 && $box_no == 3 )
+						if( $counter_post == 6 && $column_no == 3 )
 						{ ?>
 							</div> </div> </div>	<!-- Ending "row-fluid" and "content" div -->
 							
@@ -119,23 +138,46 @@ function magazine_element_content() {
 						}
 					}
 					else
-					{ ?>
+					{ 
+						if( ( $wide_post == 1 ) && ( $counter_wide < $wide_post_no ) )
+						{
+					?>
 						<div class="post_container wide_post span8">
 							<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+							
+								<!-- Display Title -->
 								<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+								
+								<!-- Display Thumbnail -->
 								<?php
-								if ( has_post_thumbnail() && $featured_images == '1') {
+								if ( has_post_thumbnail() ) {
 									echo '<div class="featured-image">';
 									echo '<a href="' . get_permalink($post->ID) . '" >';
 										the_post_thumbnail('thumbnail');
 									echo '</a>';
 									echo '</div>';
 								}
-								?>	
+								?>
+								
+								<!-- Display Metadata -->
+								<?php
+								if( $meta_toggle == 1 )
+								{
+									echo "Published on "; ?> <a href="<?php the_permalink() ?>"><?php echo get_the_date(); ?></a>
+									<?php
+									echo " by "; the_author_posts_link();
+									echo " in "; the_category(', ');
+								}
+								?>
+								
 								<div class="entry" <?php if ( has_post_thumbnail() && $featured_images == '1' ) { echo 'style="min-height: 115px;" '; }?>>
 									<?php 
-										the_excerpt();
-									 ?>
+									add_filter('excerpt_more', 'featured_post_excerpt_more');
+									add_filter( 'excerpt_length', 'magazine_post_wide', 999 );
+									the_excerpt();
+									remove_filter('excerpt_more', 'featured_post_excerpt_more');
+									remove_filter( 'excerpt_length', 'magazine_post_wide', 999 );
+									?>
 								</div><!--end entry-->  
 								
 								<div id="comments">
@@ -148,9 +190,11 @@ function magazine_element_content() {
 								
 								</div><!--end post_class-->
 						</div><!--end post container-->
-					<?php }	?>
-					
-					<?php endwhile;
+					<?php 
+						$counter_wide++;
+						}
+					}
+						endwhile;
 					else : ?>
 						<h2>Not Found</h2>
 				<?php endif; ?>

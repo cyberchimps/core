@@ -118,7 +118,13 @@ function cyberchimps_init_meta_boxes() {
 				))
 			->pagehelp('', 'Need Help?', '')
 		->tab("Magazine Layout Options")
-			->select('no_of_box', 'Number of Columns', '', array('options' => array('2', '3')) )
+			->checkbox('cyberchimps_magazine_meta_data_toggle', 'Meta Data', '', array('std' => 'on'))
+			->select('cyberchimps_magazine_no_of_columns', 'Number of Columns', '', array('options' => array('2', '3')) )
+			->select('cyberchimps_magazine_no_of_rows', 'Number of Rows', '', array('options' => array('1', '2', '3', '4')) )
+			->checkbox('cyberchimps_magazine_wide_post_toggle', 'Wide Posts Below Magazine', '', array('std' => 'on'))
+			->select('cyberchimps_magazine_no_of_wide_posts', 'Number of Wide Posts ', '',
+						array('options' => array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
+												 '15', '16', '17', '18', '19', '20')))
 		->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', 'Select post source', '', array('options' => array('Latest posts', 'From category')) )
 			->text('cyberchimps_featured_post_category', 'Enter category', '', array('std' => 'featured'))

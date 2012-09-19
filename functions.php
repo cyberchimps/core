@@ -249,10 +249,17 @@ function featured_post_excerpt_more($more) {
 
 add_filter('excerpt_more', 'featured_post_excerpt_more');
 
+// Set length of the excerpt
 function featured_post_length( $length ) {
 	return 70;
 }
 add_filter( 'excerpt_length', 'featured_post_length', 999 );
+
+// For magazine wide post
+function magazine_post_wide( $length ) {
+	return 130;
+}
+add_filter( 'excerpt_length', 'magazine_post_wide', 999 );
 
 /*	gets post views */
 function getPostViews($postID){ 
