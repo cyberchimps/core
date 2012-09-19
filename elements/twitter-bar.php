@@ -45,20 +45,29 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 		// TODO: Fix documentation
 		public function render_display() {
 			global $post;
+			$options = get_option( 'cyberchimps_options' );
 			
-			$user_details = array();
-			$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
-			$user_details['count'] = '1';
-			$user_details['published_when'] = '1';
-			$user_details['exclude_replies'] =  !get_post_meta($post->ID, 'cyberchimps_twitter_reply', true);
-			
+			if( is_page() ) {
+				$user_details = array();
+				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
+				$user_details['count'] = '1';
+				$user_details['published_when'] = '1';
+				$user_details['exclude_replies'] =  !get_post_meta($post->ID, 'cyberchimps_twitter_reply', true);
+			}
+			else {
+				$user_details = array();
+				$user_details['screen_name'] = ( $options['twitter_handle'] != '' ) ? $options['twitter_handle'] : 'CyberChimps';
+				$user_details['count'] = '1';
+				$user_details['published_when'] = '1';
+				$user_details['exclude_replies'] = ( $options['twitter_replies'] == 1 ) ? false : 1;				
+			}
 			$latest_tweet = self::get_tweets( $user_details );
 			
 			if ( is_wp_error( $latest_tweet ) ) {
 				echo $latest_tweet->get_error_code() . ' - ' . $latest_tweet->get_error_message();
 			} else {
 			?>
-			<div class="row-fluid">
+			<div id="twitter-container" class="row-fluid">
       	<div id="twitter-bar" class="span12">
 					<div id="twitter-text">
 						<?php

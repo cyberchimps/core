@@ -164,6 +164,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_twitterbar_section',
+		'label' => __('Callout Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
 /*************************** TEMPLATE ************************************************/
 
 	$sections_list[] = array(
@@ -1030,6 +1036,27 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	
+/* TWITTERBAR OPTIONS */
+	
+	$fields_list[] = array(
+		'name' => __('Twitter Handle', 'cyberchimps'),
+		'id' => 'twitter_handle',
+		'std' => 'CyberChimps',
+		'type' => 'text',
+		'section' => 'cyberchimps_twitterbar_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Show Replies', 'cyberchimps'),
+		'id' => 'twitter_replies',
+		'std' => 'CyberChimps',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_twitterbar_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
 		
 /*************************** TEMPLATES ***************************************************/
 	
