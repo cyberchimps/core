@@ -655,13 +655,13 @@ function cyberchimps_fields_callback( $value ) {
 
 		// Color picker
 		case "color":
-			$output .= '<div class="input-prepend"><div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
+			$output .= '<div class="input-prepend '.$value['class'].'"><div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
 			$output .= '<input class="of-color" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" type="text" value="' . esc_attr( $val ) . '" /></div>';
 			break;
 
 		// Uploader
 		case "upload":
-			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null, $value['desc'] );
+			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null, $explain_value );
 			break;
 
 			// Typography

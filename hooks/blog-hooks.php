@@ -30,7 +30,10 @@ function blog_section_order_action() {
 add_action('cyberchimps_blog_content', 'blog_section_order_action');
 
 function cyberchimps_post(){ ?>
-	<div class="row-fluid">
+<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+
+	<?php do_action( 'cyberchimps_before_content_container'); ?>
+  
 	<div id="content" <?php cyberchimps_filter_content_class(); ?>>
 		
 		<?php do_action( 'cyberchimps_before_content'); ?>
@@ -52,5 +55,8 @@ function cyberchimps_post(){ ?>
 		<?php do_action( 'cyberchimps_after_content'); ?>
 		
 	</div><!-- #content -->
+<?php do_action( 'cyberchimps_after_content_container'); ?>
+	
+</div><!-- #container -->
 <?php }
 add_action( 'blog_post_page', 'cyberchimps_post' );

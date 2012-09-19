@@ -45,19 +45,57 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 		// TODO: Fix documentation
 		public function render_display() {
 			global $post;
+			$options = get_option('cyberchimps_options');
 			
+		if( is_page() ){	
 			$callout_title = (get_post_meta($post->ID, 'callout_title', true)) ? get_post_meta($post->ID, 'callout_title', true) : '';
 			$callout_text = (get_post_meta($post->ID, 'callout_text', true)) ? get_post_meta($post->ID, 'callout_text', true) : '';
-		?>
-			<div class="row-fluid">
-				<div class="callout span12">
+		}
+		else {
+			$callout_title = esc_html( $options['callout_title'] );
+			$callout_text = esc_html( $options['callout_text'] );
+			$callout_button = $options['callout_button'];
+			$callout_button_text = ( $options['callout_button_text'] != '' ) ? esc_html( $options['callout_button_text'] ) : 'Click Here';
+			$callout_button_url = $options['callout_button_url'];
+			$custom_callout_options = $options['custom_callout_options'];
+			$custom_callout_button = ( $custom_callout_options && $options['custom_callout_button'] != '' ) ? $options['custom_callout_button'] : ''; 
+			$custom_callout_background = ( $options['custom_callout_background_color'] != '' ) ? 'background-color:'.$options['custom_callout_background_color'] : '';
+			$custom_callout_title_color = ( $options['custom_callout_title_color'] != '' ) ? 'color:'.$options['custom_callout_title_color'] : '';
+			$custom_callout_text_color = ( $options['custom_callout_text_color'] != '' ) ? 'color:'.$options['custom_callout_text_color'] : '';
+			$custom_callout_button_color = ( $options['custom_callout_button_color'] != '' ) ? 'background:'.$options['custom_callout_button_color'] : '';
+			$custom_callout_button_text_color = ( $options['custom_callout_button_text_color'] != '' ) ? 'color:'.$options['custom_callout_button_text_color'] : '';
+		}
+		if( ! $callout_button ): ?>
+			<div id="callout-container" class="row-fluid">
+				<div id="callout" class="span12">
 					<div class="callout-text">
-						<h2 class="callout-title"><?php echo esc_html($callout_title); ?></h2>
+						<h2 class="callout-title"><?php echo $callout_title; ?></h2>
 						<p><?php echo esc_html($callout_text); ?></p>
 					</div><!-- #callout-text -->
 				</div><!-- .row-fluid .span12 -->
-			</div><!-- .callout-->
-		<?php
+			</div><!-- row-fluid -->
+    <?php else: ?>
+    	<div id="callout-container" class="row-fluid">
+				<div id="callout" class="span12" style="<?php echo $custom_callout_background; ?>">
+        	<div class="row-fluid">
+          <div class="span9">
+					<div class="callout-text">
+						<h2 class="callout-title" style="<?php echo $custom_callout_title_color; ?>"><?php echo $callout_title; ?></h2>
+						<p style="<?php echo $custom_callout_text_color; ?>"><?php echo esc_html($callout_text); ?></p>
+					</div><!-- #callout-text -->
+          </div><!-- span9 -->
+          <div id="callout_button" class="span3">
+          <?php if( $custom_callout_button == '' ): ?>
+          	<a href="<?php echo $callout_button_url; ?>" title="<?php echo $callout_button_text; ?>"><button style="<?php echo $custom_callout_button_color; ?>" class="btn btn-large btn-primary" type="button"><p style="<?php echo $custom_callout_button_text_color; ?>"><?php echo $callout_button_text; ?></p></button></a>
+          <?php else: ?>
+          	<a href="<?php echo $callout_button_url; ?>" title="<?php echo $callout_button_text; ?>"><img src="<?php echo $custom_callout_button; ?>" alt="<?php echo $custom_callout_text; ?>" /></a>
+          <?php endif; ?>
+          </div><!-- span3 -->
+        	</div><!-- row-fluid -->
+				</div><!-- .row-fluid .span12 -->
+			</div><!-- row-fluid -->
+		<?php endif; ?>
+<?php			
 		}
 	}
 }

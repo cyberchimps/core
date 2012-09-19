@@ -49,6 +49,7 @@ function slider_lite_content() {
 
 	}
 ?>
+<div class="row-fluid">
 	<div id="slider-lite" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="active item">
@@ -73,6 +74,7 @@ function slider_lite_content() {
 		<a class="carousel-control right slider-lite-right" href="#slider-lite" data-slide="next">&rsaquo;</a>
 				
 	</div>
+</div><!-- row-fluid -->
 <?php
 }
 ?>

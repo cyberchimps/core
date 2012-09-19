@@ -20,7 +20,7 @@
      
      $('.mlu_remove').live('click', function(event) { 
         $(this).hide();
-        $(this).parents().parents().children('.upload').attr('value', '');
+        $(this).parents().prev().children('.upload').attr('value', '');
         $(this).parents('.screenshot').slideUp();
         $(this).parents('.screenshot').siblings('.of-background-properties').hide(); //remove background properties
         return false;
