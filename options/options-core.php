@@ -284,6 +284,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Responsive Design', 'cyberchimps'),
 		'id' => 'responsive_design',
 		'type' => 'toggle',
+		'std' => 'checked',
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
