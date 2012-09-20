@@ -15,3 +15,36 @@
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     http://www.cyberchimps.com/
  */
+
+function cyberchimps_init_boxes_post_type() {
+	register_post_type( 'boxes',
+		array(
+			'labels' => array(
+				'name' => __('Boxes', 'cyberchimps'),
+				'singular_name' => __('Boxes', 'cyberchimps'),
+			),
+			'public' => true,
+			'show_ui' => true, 
+			'supports' => array('title'),
+			'taxonomies' => array( 'boxes_categories'),
+			'has_archive' => true,
+			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/boxes.png',
+			'rewrite' => array('slug' => 'boxes')
+		)
+	);
+	
+	$meta_boxes = array();
+	
+	$mb = new Chimps_Metabox('boxes', 'Boxes Element', array('pages' => array('boxes')));
+	$mb
+		->tab("Boxes Element")
+			->single_image('cyberchimps_box_image', 'Box Image', '')
+			->textarea('cyberchimps_box_text', 'Box Text', '')
+		->end();
+		
+	foreach ($meta_boxes as $meta_box) {
+		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
+	}
+}
+add_action( 'init', 'cyberchimps_init_boxes_post_type' );
+?>
