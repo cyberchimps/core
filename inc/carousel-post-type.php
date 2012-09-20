@@ -33,6 +33,27 @@ function cyberchimps_init_carousel_post_type() {
 		)
 	);
 	
+		$labels = array(
+    'name' => _x( 'Carousel Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Carousel Catergory', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Carousel' ),
+    'all_items' => __( 'All Carousels' ),
+    'parent_item' => __( 'Carousel Category' ),
+    'parent_item_colon' => __( 'Carousel Category:' ),
+    'edit_item' => __( 'Edit Carousel Category' ), 
+    'update_item' => __( 'Update Carousel Category' ),
+    'add_new_item' => __( 'Add New Carousel Category' ),
+    'new_item_name' => __( 'New Carousel Category Name' ),
+    'menu_name' => __( 'Carousel Category' ),
+  ); 	
+	register_taxonomy( 'carousel_categories',array('featured_posts'), array(
+		'public' => true,
+		'show_in_nav_menus' => false,
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true
+  ));
+	
 	$meta_boxes = array();
 		
 	$mb = new Chimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array('featured_posts')));

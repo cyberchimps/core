@@ -166,7 +166,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_twitterbar_section',
-		'label' => __('Callout Options', 'cyberchimps'),
+		'label' => __('Twitterbar Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_carousel_section',
+		'label' => __('Carousel Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
@@ -249,6 +255,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	foreach ($options_categories_obj as $category) {
 		$options_categories['cyberchimps_all'] = 'All';
 		$options_categories[$category->cat_ID] = $category->cat_name;
+	}
+	
+	// Pull all carousel categories
+	$options_carousel_cats = array();
+	$carousel_categories = get_terms( 'carousel_categories' );
+	foreach( $carousel_categories as $carousel_cat ) {
+		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
 	}
 	
 	// Pull all tags into an array
@@ -1056,7 +1069,19 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_twitterbar_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
-	
+
+/* CAROUSEL OPTIONS */
+
+	//$options_carousel_cats = array( 0 => 'You have no categories' );
+	$fields_list[] = array(
+		'name' => __('Select a Category', 'cyberchimps'),
+		'id' => 'carousel_categories',
+		'type' => 'select',
+		'options' => $options_carousel_cats,
+		'section' => 'cyberchimps_carousel_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+		
 		
 /*************************** TEMPLATES ***************************************************/
 	

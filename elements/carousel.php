@@ -23,6 +23,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 	class CyberChimpsCarousel {
 		
 		protected static $instance;
+		public $options;
 		
 		/* Static Singleton Factory Method */
 		public static function instance() {
@@ -31,7 +32,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 				self::$instance = new $className;
 			}
 			return self::$instance;
-		}	
+		}
 		
 		/**
 		 * Initializes plugin variables and sets up WordPress hooks/actions.
@@ -40,11 +41,11 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 		 */
 		protected function __construct( ) {
 			add_action( 'carousel_section', array( $this, 'render_display' ) );
+			$this->options = get_option( 'cyberchimps_options' );
 		}
 		
 		// TODO: Fix documentation
-		public function render_display() {
-			$tmp_query = $wp_query; 
+		public function render_display() { 
 			$default = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
 			$out = '';
 			
@@ -55,21 +56,31 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 			if ( is_page() ) {
 				$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
 			}
+			else {
+				$customcategory_obj = get_term( $this->options['carousel_categories'], 'carousel_categories' );
+				$customcategory = $customcategory_obj->name;
+			}
 			?>
 			<div class="row-fluid">
 				<div class="carousel slide" id="cc-carousel" data-pause="">
         	<div class="carousel-inner">
 						<?php
-						// TODO: Convert to get_posts()
-						query_posts( array ('post_type' => 'cyberchimps_carousel', 'showposts' => 50, true, 'carousel_categories' => $customcategory ));
+						
+						$args = array(
+							'numberposts'     => 50,
+							'offset'          => 0,
+							'carousel_categories'        => $customcategory,
+							'orderby'         => 'post_date',
+							'order'           => 'DESC',
+							'post_type'       => 'featured_posts',
+							'post_status'     => 'publish');
 						
 						// HS set total posts so the loop can be finished correctly, this needs to be changed when we use get_posts()
-    				$total_posts = $wp_query->found_posts;
+    				$carousel_posts = get_posts( $args );
 		
-						if (have_posts()) :
+						if ( $carousel_posts ) :
 							
-							while ( have_posts() ) : 
-								the_post();
+							foreach( $carousel_posts as $post ):
 								
 								// HS on the first loop through we add the active class
 								if( $i == 1 && $x == 0 ) {
@@ -86,26 +97,20 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 								
 								/* Post-specific variables */
 								$image = get_post_meta($post->ID, 'post_image', true);
-								$realtitle = get_the_title();
 								$link = get_post_meta($post->ID, 'post_url', true);
-								
-								if ( $realtitle != 'Untitled' ) {
-									$title = get_the_title();
-								} else {
-									$title =  '';
-								}
+								$title = $post->post_title;
 								
 								if ($image == '') {
 									$image = $default;
 								}
 								
 								$out .= '<li class="span2">';
-								$out .= '<a href="'.$link.'"><img src='.$image.'" alt="'.$title.'"/></a>';
+								$out .= '<a href="'.$link.'"><img src="'.$image.'" alt="'.$title.'" /></a>';
 								$out .= '<div class="carousel_caption">'.$title.'</div>';
 								$out .= '</li>';
 							
 							// HS after 6 loops through or after all items have been listed we close the ul and div tags
-							if( $i == 6 || ( $x * 6 + $i )  == $total_posts ) {
+							if( $i == 6 || ( $x * 6 + $i )  == 20 ) {
 								$out .= '</ul>';
 								$out .= '</div>';
 								$i = 1;
@@ -115,7 +120,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 								$i++;
 							}							
 							
-							endwhile;	
+							endforeach;	
 							
 						else :
 							$out .= '<div class="active item">';
@@ -158,9 +163,6 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 							$out .= '</li>';
 							$out .= '</ul>';
 						endif;
-						
-						$wp_query = $tmp_query;
-						wp_reset_query(); /* Reset post query */
 						
 						echo $out;
 						?>
