@@ -113,7 +113,8 @@ function cyberchimps_init_meta_boxes() {
 					'recent_posts' => 'Recent Posts',
 					'slider_lite' => 'Slider Lite',
 					'featured_posts' => 'Featured Posts',
-					'magazine' => 'Magazine'
+					'magazine' => 'Magazine',
+					'boxes' => 'Boxes'
 				)
 				))
 			->pagehelp('', 'Need Help?', '')

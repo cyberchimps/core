@@ -435,3 +435,9 @@ div.featured-info {
 .share-rdt {
 	background-position: -52px 0px;
 }
+
+/*************** For Boxes element *****************/
+
+.box-image {
+	max-height: 200px;
+}
