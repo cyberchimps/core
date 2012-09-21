@@ -215,6 +215,8 @@ div.featured-info {
 	display: inline;
 	float: left;
 	width: 95%;
+	height: 330px;
+	margin-bottom: 20px;
 }
 
 #headline  h1.title {
@@ -434,10 +436,4 @@ div.featured-info {
 
 .share-rdt {
 	background-position: -52px 0px;
-}
-
-/*************** For Boxes element *****************/
-
-.box-image {
-	max-height: 200px;
 }
