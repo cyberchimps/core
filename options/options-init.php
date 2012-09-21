@@ -440,6 +440,7 @@ function cyberchimps_drag_drop_field( $value ) {
 		}
 	}
 	$output .=  "</div>";
+	$output .= "<input class='blog-section-order-tracker' type='hidden'  name='cyberchimps_options[blog_section_order_tracker]' />";
 	$output .=  "</div>";
 	$output .= '<div id="values" data-key="'.$option_name.'"></div>';
 	$output .= '<div class="clear"></div>';

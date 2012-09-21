@@ -4,6 +4,40 @@
  */
 jQuery(document).ready(function($) {
 	
+	// Hide/show onclick over subsection
+	jQuery(".section-group > h3").click(function() {
+		var $this = $(this);
+		if($this.siblings('div').is(":visible")) {
+			$this.siblings('div').fadeOut();
+		} else {
+			$this.siblings('div').fadeIn();
+			$this.find("span").addClass('minus');
+		}
+	});
+	
+	// Hide/show of subsections onchange of drop & down
+	jQuery(".field-container").hide();
+	jQuery("#cyberchimps_blog_slider_section").hide();
+	
+	var page_subsection_map = {
+		blog_post_page: "cyberchimps_blog_options_section",
+		slider_lite: "cyberchimps_blog_slider_lite_section",
+		callout_section: "cyberchimps_blog_callout_section",
+		twitterbar_section: "cyberchimps_twitterbar_section",
+		carousel_section: "cyberchimps_carousel_section",
+	};
+	
+	$(".blog-section-order-tracker").change(function(){
+		var array = $(this).val().split(",");
+		$.each(page_subsection_map, function(key, value) {
+			if($.inArray(key, array) != -1) {
+				$("#" + value).show();
+			} else {
+				$("#" + value).hide();
+			}
+		});
+	}).change();
+	
 	// Open/Close all tabs
 	$('.cc-collapse').show();
 	$('ul.cc-child').hide();
@@ -206,6 +240,16 @@ jQuery(document).ready(function($) {
 			
 			el.find('.right_list .action').show();
 			el.find('.left_list .action').hide();
+			
+			/* To hide subsections when element is removed from active list */
+			var hidden = base.find("input[class='blog-section-order-tracker']");
+			var val = [];
+			base.find('.right_list .list_items span').each(function() {
+				val.push($(this).data('key'));
+			})
+			hidden.val(val.join(",")).change();
+			$('.right_list .action').show();
+			$('.left_list .action').hide();
 		}
 		el.find(".left_list .list_items").delegate(".action", "click", function() {
 			var item = $(this).closest('.list_item');
