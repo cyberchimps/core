@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 	// Hide/show onclick over subsection
 	jQuery(".section-group > h3").click(function() {
 		var $this = $(this);
+		$this.find("span.minus").removeClass('minus');
 		if($this.siblings('div').is(":visible")) {
 			$this.siblings('div').fadeOut();
 		} else {
@@ -18,9 +19,11 @@ jQuery(document).ready(function($) {
 	// Hide/show of subsections onchange of drop & down
 	jQuery(".field-container").hide();
 	jQuery("#cyberchimps_blog_slider_section").hide();
+	jQuery("#cyberchimps_blog_options_section .field-container").show();
+	jQuery("#cyberchimps_blog_options_section h3 span").addClass('minus');
+	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');
 	
 	var page_subsection_map = {
-		blog_post_page: "cyberchimps_blog_options_section",
 		slider_lite: "cyberchimps_blog_slider_lite_section",
 		callout_section: "cyberchimps_blog_callout_section",
 		twitterbar_section: "cyberchimps_twitterbar_section",

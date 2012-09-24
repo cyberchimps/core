@@ -347,6 +347,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-content-section .section-group h3 {
   color: #666;
   font-weight: 100;
+  cursor: pointer;
 }
 
 /***************** Footer *********************/
@@ -654,6 +655,19 @@ img.action {
 	width: 400px;
 	display: block;
     margin-bottom: 5px;
+}
+
+.section-group h3 span {
+    background: url("../../../lib/images/downarrow.png") repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 16px;
+    width: 16px;
+	margin-top: 5px;
+}
+
+.section-group h3 span.minus {
+    background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
 }
 
 /************** Responsive *******************/

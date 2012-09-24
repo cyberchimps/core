@@ -299,7 +299,7 @@ function cyberchimps_do_settings_sections( $page ) {
 		
 		echo '<div class="section-group" id="' . esc_attr( $jquery_click_section_hook ) . '">';
 		if ( $section['title'] ) {
-			echo "<h3>{$section['title']}</h3>\n";
+			echo "<h3>{$section['title']}<span></span></h3>\n";
 		}
 		call_user_func($section['callback'], $section);
 		
