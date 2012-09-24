@@ -239,27 +239,21 @@ function recent_post_excerpt_more($more) {
 			</div>';
 }
 
-add_filter('excerpt_more', 'recent_post_excerpt_more');
-
 // Set read more link for featured post element
 function featured_post_excerpt_more($more) {
 	global $post;
 	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
 }
 
-add_filter('excerpt_more', 'featured_post_excerpt_more');
-
 // Set length of the excerpt
 function featured_post_length( $length ) {
 	return 70;
 }
-add_filter( 'excerpt_length', 'featured_post_length', 999 );
 
 // For magazine wide post
 function magazine_post_wide( $length ) {
 	return 130;
 }
-add_filter( 'excerpt_length', 'magazine_post_wide', 999 );
 
 /*	gets post views */
 function getPostViews($postID){ 

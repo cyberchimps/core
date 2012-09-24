@@ -79,8 +79,9 @@ function recent_posts_content() {
 								echo '</div>';
 							}
 						?>
-						
+						<?php add_filter('excerpt_more', 'recent_post_excerpt_more'); ?>
 						<?php the_excerpt(); ?>	
+            <?php remove_filter('excerpt_more', 'recent_post_excerpt_more'); ?>
 					</div>
 				<?php endforeach; wp_reset_postdata(); ?>
 				
