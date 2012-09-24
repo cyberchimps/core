@@ -882,6 +882,24 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading');
 		
 	$fields_list[] = array(
+		'name' => __('Read More Text', 'cyberchimps'),
+		'id' => 'blog_read_more_text',
+		'class' => 'post_excerpts_toggle',
+		'type' => 'text',
+		'std' => 'Read More...',
+		'section' => 'cyberchimps_blog_options_section',
+		'heading' => 'cyberchimps_blog_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Excerpt Length', 'cyberchimps'),
+		'id' => 'blog_excerpt_length',
+		'class' => 'post_excerpts_toggle',
+		'type' => 'text',
+		'std' => 55,
+		'section' => 'cyberchimps_blog_options_section',
+		'heading' => 'cyberchimps_blog_heading');
+		
+	$fields_list[] = array(
 		'name' => __('Featured Images', 'cyberchimps'),
 		'id' => 'post_featured_images',
 		'type' => 'toggle',

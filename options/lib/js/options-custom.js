@@ -19,8 +19,8 @@ jQuery(document).ready(function($) {
 	// Hide/show of subsections onchange of drop & down
 	jQuery(".field-container").hide();
 	jQuery("#cyberchimps_blog_slider_section").hide();
-	jQuery("#cyberchimps_blog_options_section .field-container").show();
-	jQuery("#cyberchimps_blog_options_section h3 span").addClass('minus');
+	jQuery("#cyberchimps_welcome_section .field-container").show();
+	jQuery("#cyberchimps_welcome_section h3 span").hide();
 	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');
 	
 	var page_subsection_map = {
