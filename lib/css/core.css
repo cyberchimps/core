@@ -343,6 +343,11 @@ div.featured-info {
 	color:#0082d5;
 }
 
+.magazine-metadata {
+	font-size: 12px;
+	padding-bottom: 10px;
+}
+
 .post_container  div#comments {
 	position:absolute;
 	right:5px;
