@@ -16,6 +16,9 @@
  * @link     http://www.cyberchimps.com/
  */
 
+//set global theme options variable
+$options = get_option('cyberchimps_options');
+
 // FIXME: Fix documentation
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
@@ -253,6 +256,37 @@ function featured_post_length( $length ) {
 // For magazine wide post
 function magazine_post_wide( $length ) {
 	return 130;
+}
+
+//For blog posts
+function cyberchimps_blog_excerpt_more( $more ){
+	global $options, $post;
+	if( $options['blog_read_more_text'] != '' ){
+		$more = '<p><a href="'. get_permalink($post->ID) . '">'.$options['blog_read_more_text'].'</a></p>';
+		return $more;
+	}
+	else {
+		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		return $more;
+	}
+}
+if( isset( $options['post_excerpts'] ) ){
+	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+}
+
+function cyberchimps_blog_excerpt_length( $length ) {
+	global $options, $post;
+	if( $options['blog_excerpt_length'] != '' ) {
+		$length = $options['blog_excerpt_length'];
+		return $length;
+	}
+	else {
+		$length = 55;
+		return $length;
+	}
+}
+if( isset( $options['post_excerpts'] ) ){
+	add_filter( 'excerpt_length', 'cyberchimps_blog_excerpt_length', 999 );
 }
 
 /*	gets post views */
