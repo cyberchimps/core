@@ -1297,6 +1297,26 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
+	$fields_list[] = array(
+		'name' => __('Read More Text', 'cyberchimps'),
+		'id' => 'search_post_read_more',
+		'class' => 'search_post_excerpts_toggle',
+		'type' => 'text',
+		'std' => 'Read More...',
+		'section' => 'cyberchimps_search_section',
+		'heading' => 'cyberchimps_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Excerpt Length', 'cyberchimps'),
+		'id' => 'search_post_excerpt_length',
+		'class' => 'search_post_excerpts_toggle',
+		'type' => 'text',
+		'std' => 55,
+		'section' => 'cyberchimps_search_section',
+		'heading' => 'cyberchimps_templates_heading'
+	);
+	
 /* 404 */
 	$fields_list[] = array(
 		'name' => __('Sidebar Options', 'cyberchimps'),
@@ -1309,6 +1329,14 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'right_sidebar' => $imagepath . '2cr.png',
 			'left_sidebar' => $imagepath . '2cl.png',
 		),
+		'section' => 'cyberchimps_error_section',
+		'heading' => 'cyberchimps_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Custom 404 Title', 'cyberchimps'),
+		'id' => 'error_custom_title',
+		'type' => 'text',
 		'section' => 'cyberchimps_error_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
