@@ -16,6 +16,9 @@
  * @link     http://www.cyberchimps.com/
  */
 
+//set global theme options variable
+$options = get_option('cyberchimps_options');
+
 // FIXME: Fix documentation
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
@@ -60,18 +63,131 @@ if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 // FIXME: Fix documentation
 //Prints HTML with meta information for the current post-date/time and author.
 function cyberchimps_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cyberchimps' ),
+	global $options;
+	
+	if( is_single() ) {
+		$show_date = $options['single_post_byline_elements']['date']; 
+		$show_author = $options['single_post_byline_elements']['author']; 
+	}
+	elseif( is_archive() ) {
+		$show_date = $options['archive_post_byline_elements']['date'];  
+		$show_author = $options['archive_post_byline_elements']['author'];
+	}
+	else {
+		$show_date = $options['post_byline_elements']['date']; 
+		$show_author = $options['post_byline_elements']['author']; 
+	}
+	
+	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline">%9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cyberchimps' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+		( $show_date ) ? esc_html( get_the_date() ) : '',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps' ), get_the_author() ) ),
-		esc_html( get_the_author() )
+		( $show_author ) ? esc_html( get_the_author() ) : '',
+		( $show_date ) ? 'Posted on ' : '',
+		( $show_author ) ? ' by ' : ''
 	);
+	apply_filters( 'cyberchimps_posted_on', $posted_on );
+	echo $posted_on;
 }
 endif;
 
+// share icons at the end of the post
+function cyberchimps_article_share() {
+	global $options;
+	
+	if( is_single() ) {
+		$show = $options['single_post_byline_elements']['share']; 
+	}
+	elseif( is_archive() ) {
+		$show = $options['archive_post_byline_elements']['share'];  
+	}
+	else {
+		$show = $options['post_byline_elements']['share'];  
+	}
+	if( $show ): ?>
+  
+  <div class="cyberchimps_article_share">
+					&nbsp;<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
+					<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
+					<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
+  </div>
+
+<?php endif;
+}
+
+// post category list
+function cyberchimps_posted_in() {
+	global $options, $post;
+
+	if( is_single() ) {
+		$show = $options['single_post_byline_elements']['categories']; 
+	}
+	elseif( is_archive() ) {
+		$show = $options['archive_post_byline_elements']['categories'];  
+	}
+	else {
+		$show = $options['post_byline_elements']['categories'];  
+	}
+	if( $show ):
+				$categories_list = get_the_category_list( __( ', ', 'cyberchimps' ) );
+				if ( $categories_list ) :
+				$cats = sprintf( __( 'Posted in %1$s', 'cyberchimps' ), $categories_list );
+			?>
+			<span class="cat-links">
+				<?php echo apply_filters( 'cyberchimps_post_categories', $cats ); ?>
+			</span>
+      <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
+	<?php endif;
+	endif;
+}
+
+function cyberchimps_post_tags() {
+	global $options, $post;
+	
+	if( is_single() ) {
+		$show = $options['single_post_byline_elements']['tags']; 
+	}
+	elseif( is_archive() ) {
+		$show = $options['archive_post_byline_elements']['tags'];  
+	}
+	else {
+		$show = $options['post_byline_elements']['tags'];  
+	}
+	if( $show ):
+	$tags_list = get_the_tag_list( '', __( ', ', 'cyberchimps' ) );
+				if ( $tags_list ) :
+				$tags = sprintf( __( 'Tags: %1$s', 'cyberchimps' ), $tags_list );
+			?>
+			<span class="tag-links">
+				<?php echo apply_filters( 'cyberchimps_post_tags', $tags ); ?>
+			</span>
+      <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
+			<?php endif; // End if $tags_list
+	endif;
+}
+
+function cyberchimps_post_comments() {
+	global $options, $post;
+	
+	if( is_single() ) {
+		$show = $options['single_post_byline_elements']['comments']; 
+	}
+	elseif( is_archive() ) {
+		$show = $options['archive_post_byline_elements']['comments'];  
+	}
+	else {
+		$show = $options['post_byline_elements']['comments'];  
+	}
+	if( $show ):
+		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'cyberchimps' ), __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
+      <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
+    <?php endif;
+	endif;
+}
 
 // FIXME: Fix documentation
 // Returns true if a blog has more than 1 category
@@ -253,6 +369,37 @@ function featured_post_length( $length ) {
 // For magazine wide post
 function magazine_post_wide( $length ) {
 	return 130;
+}
+
+//For blog posts
+function cyberchimps_blog_excerpt_more( $more ){
+	global $options, $post;
+	if( $options['blog_read_more_text'] != '' ){
+		$more = '<p><a href="'. get_permalink($post->ID) . '">'.$options['blog_read_more_text'].'</a></p>';
+		return $more;
+	}
+	else {
+		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		return $more;
+	}
+}
+if( isset( $options['post_excerpts'] ) ){
+	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+}
+
+function cyberchimps_blog_excerpt_length( $length ) {
+	global $options, $post;
+	if( $options['blog_excerpt_length'] != '' ) {
+		$length = $options['blog_excerpt_length'];
+		return $length;
+	}
+	else {
+		$length = 55;
+		return $length;
+	}
+}
+if( isset( $options['post_excerpts'] ) ){
+	add_filter( 'excerpt_length', 'cyberchimps_blog_excerpt_length', 999 );
 }
 
 /*	gets post views */
