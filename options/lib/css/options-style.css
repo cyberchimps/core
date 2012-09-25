@@ -539,6 +539,8 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   width: 100%;
   max-width: 275px;
   height: auto;
+  display: block;
+  margin-bottom: 10px;
 }
 
 /***************** Section Order *********************/
