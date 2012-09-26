@@ -28,6 +28,12 @@
 	width: 100% !important;
 }
 
+/* ************************* For Slider Pro ************************ */
+#slider img {
+	height: 430px;
+	width: 100% !important;
+}
+
 /* ************************ For Portfolio Lite ********************** */
 .portfolio_caption {
     bottom: 50%;

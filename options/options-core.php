@@ -802,7 +802,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			"product_element" => "Product",
 			"widgets_section" => "Widgets",
 			'magazine' => 'Magazine',
-			'portfolio_pro' => 'Portfolio'
+			'boxes' => 'Boxes',
+			'portfolio_element' => 'Portfolio',
+			'page_slider' => 'Slider'
 		),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
