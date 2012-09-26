@@ -188,6 +188,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_blog_portfolio_pro_section',
+		'label' => __('Portfolio Pro Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
 /*************************** TEMPLATE ************************************************/
 
 	$sections_list[] = array(
@@ -271,9 +277,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	// Pull all carousel categories
 	$options_carousel_cats = array();
-	$carousel_categories = get_terms( 'carousel_categories' );
+	$carousel_categories = get_terms( 'carousel_categories', array( 'hide_empty' => 0 ) );
 	foreach( $carousel_categories as $carousel_cat ) {
 		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
+	}
+	
+	// Pull all portfolio categories
+	$options_portfolio_cats = array();
+	$portfolio_categories = get_terms( 'portfolio_cats', array( 'hide_empty' => 0 ) );
+	foreach( $portfolio_categories as $portfolio_cat ) {
+		$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
 	}
 	
 	// Pull all tags into an array
@@ -788,7 +801,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			"portfolio_lite" => "Portfolio Lite",
 			"product_element" => "Product",
 			"widgets_section" => "Widgets",
-			'magazine' => 'Magazine'
+			'magazine' => 'Magazine',
+			'portfolio_pro' => 'Portfolio'
 		),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -993,6 +1007,49 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	
 	/********* PORTFOLIO LITE ENDS ****************/
+	
+	/********* PORTFOLIO PRO STARTS ***************/
+	
+	$fields_list[] = array(
+		'name' => __('Images per Row', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_per_row',
+		'std' => 'Three',
+		'type' => 'select',
+		'options' => array(
+			3 => 'Three (default)',
+			2 => 'Two',
+			4 => 'Four' ),
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Portfolio Category', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_category',
+		'type' => 'select',
+		'options' => $options_portfolio_cats,
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Portfolio Title', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_title',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Title', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_title_text',
+		'class' => 'cyberchimps_blog_portfolio_pro_title_toggle',
+		'type' => 'text',
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	/********* PORTFOLIO PRO ENDS *****************/
 	
 /* MAGAZINE */
 

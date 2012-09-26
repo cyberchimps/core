@@ -71,7 +71,7 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 							'offset'          => 0,
 							'carousel_categories'        => $customcategory,
 							'orderby'         => 'post_date',
-							'order'           => 'DESC',
+							'order'           => 'ASC',
 							'post_type'       => 'featured_posts',
 							'post_status'     => 'publish');
 						

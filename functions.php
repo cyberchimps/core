@@ -66,16 +66,16 @@ function cyberchimps_posted_on() {
 	global $options;
 	
 	if( is_single() ) {
-		$show_date = $options['single_post_byline_elements']['date']; 
-		$show_author = $options['single_post_byline_elements']['author']; 
+		$show_date = ( isset( $options['single_post_byline_elements']['date'] ) ) ? $options['single_post_byline_elements']['date'] : false; 
+		$show_author = ( isset( $options['single_post_byline_elements']['author'] ) ) ? $options['single_post_byline_elements']['author'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show_date = $options['archive_post_byline_elements']['date'];  
-		$show_author = $options['archive_post_byline_elements']['author'];
+		$show_date = ( isset( $options['archive_post_byline_elements']['date'] ) ) ? $options['archive_post_byline_elements']['date'] : false;  
+		$show_author = ( isset( $options['archive_post_byline_elements']['author'] ) ) ? $options['archive_post_byline_elements']['author'] : false;
 	}
 	else {
-		$show_date = $options['post_byline_elements']['date']; 
-		$show_author = $options['post_byline_elements']['author']; 
+		$show_date = ( isset( $options['post_byline_elements']['date'] ) ) ? $options['post_byline_elements']['date'] : false; 
+		$show_author = ( isset( $options['post_byline_elements']['author'] ) ) ? $options['post_byline_elements']['author'] : false; 
 	}
 	
 	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline">%9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cyberchimps' ),
@@ -99,13 +99,13 @@ function cyberchimps_article_share() {
 	global $options;
 	
 	if( is_single() ) {
-		$show = $options['single_post_byline_elements']['share']; 
+		$show = ( isset( $options['single_post_byline_elements']['share'] ) ) ? $options['single_post_byline_elements']['share'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_post_byline_elements']['share'];  
+		$show = ( isset( $options['archive_post_byline_elements']['share'] ) ) ? $options['archive_post_byline_elements']['share'] : false;   
 	}
 	else {
-		$show = $options['post_byline_elements']['share'];  
+		$show = ( isset( $options['post_byline_elements']['share'] ) ) ? $options['post_byline_elements']['share'] : false;   
 	}
 	if( $show ): ?>
   
@@ -123,13 +123,13 @@ function cyberchimps_posted_in() {
 	global $options, $post;
 
 	if( is_single() ) {
-		$show = $options['single_post_byline_elements']['categories']; 
+		$show = ( isset( $options['single_post_byline_elements']['categories'] ) ) ? $options['single_post_byline_elements']['categories'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_post_byline_elements']['categories'];  
+		$show = ( isset( $options['archive_post_byline_elements']['categories'] ) ) ? $options['archive_post_byline_elements']['categories'] : false;  
 	}
 	else {
-		$show = $options['post_byline_elements']['categories'];  
+		$show = ( isset( $options['post_byline_elements']['categories'] ) ) ? $options['post_byline_elements']['categories'] : false;  
 	}
 	if( $show ):
 				$categories_list = get_the_category_list( __( ', ', 'cyberchimps' ) );
@@ -149,13 +149,13 @@ function cyberchimps_post_tags() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = $options['single_post_byline_elements']['tags']; 
+		$show = ( isset( $options['single_post_byline_elements']['tags'] ) ) ? $options['single_post_byline_elements']['tags'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_post_byline_elements']['tags'];  
+		$show = ( isset( $options['archive_post_byline_elements']['tags'] ) ) ? $options['archive_post_byline_elements']['tags'] : false;  
 	}
 	else {
-		$show = $options['post_byline_elements']['tags'];  
+		$show = ( isset( $options['post_byline_elements']['tags'] ) ) ? $options['post_byline_elements']['tags'] : false;  
 	}
 	if( $show ):
 	$tags_list = get_the_tag_list( '', __( ', ', 'cyberchimps' ) );
@@ -175,13 +175,13 @@ function cyberchimps_post_comments() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = $options['single_post_byline_elements']['comments']; 
+		$show = ( isset( $options['single_post_byline_elements']['comments'] ) ) ? $options['single_post_byline_elements']['comments'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_post_byline_elements']['comments'];  
+		$show = ( isset( $options['archive_post_byline_elements']['comments'] ) ) ? $options['archive_post_byline_elements']['comments'] : false;  
 	}
 	else {
-		$show = $options['post_byline_elements']['comments'];  
+		$show = ( isset( $options['post_byline_elements']['comments'] ) ) ? $options['post_byline_elements']['comments'] : false;  
 	}
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
@@ -196,13 +196,13 @@ function cyberchimps_featured_image() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = $options['single_post_featured_images']; 
+		$show = ( isset( $options['single_post_featured_images'] ) ) ? $options['single_post_featured_images'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_featured_images'];  
+		$show = ( isset( $options['archive_featured_images'] ) ) ? $options['archive_featured_images'] : false;  
 	}
 	else {
-		$show = $options['post_featured_images'];  
+		$show = ( isset( $options['post_featured_images'] ) ) ? $options['post_featured_images'] : false;  
 	}
 	if( $show ):
 		if( has_post_thumbnail() ): ?>
@@ -218,10 +218,10 @@ function cyberchimps_breadcrumbs() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = $options['single_post_breadcrumbs']; 
+		$show = ( isset( $options['single_post_breadcrumbs'] ) ) ? $options['single_post_breadcrumbs'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_breadcrumbs'];  
+		$show = ( isset( $options['archive_breadcrumbs'] ) ) ? $options['archive_breadcrumbs'] : false;  
 	}
 	if( isset( $show ) ):
 		do_action( 'breadcrumbs' );
@@ -238,13 +238,13 @@ function cyberchimps_post_format_icon() {
 	}
 	
 	if( is_single() ) {
-		$show = $options['single_post_format_icons']; 
+		$show = ( isset( $options['single_post_format_icons'] ) ) ? $options['single_post_format_icons'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = $options['archive_format_icons'];  
+		$show = ( isset( $options['archive_format_icons'] ) ) ? $options['archive_format_icons'] : false;  
 	}
 	else {
-		$show = $options['post_format_icons'];  
+		$show = ( isset( $options['post_format_icons'] ) ) ? $options['post_format_icons'] : false;  
 	}
 	if( $show ):
 	?>

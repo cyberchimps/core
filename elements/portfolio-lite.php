@@ -63,9 +63,6 @@ function portfolio_lite_content() {
 	// Getting options of portfolio-lite when added to blog
 	elseif( is_home() ) {
 		
-		// Getting the cyberchmips options
-		$options = get_option('cyberchimps_options');
-		
 		// Geting title option
 		$title_enable = $options['cyberchimps_blog_portfolio_title_toggle'];
 		$title = $options['cyberchimps_blog_portfolio_title'];
@@ -144,9 +141,8 @@ function portfolio_lite_content() {
 ?>
 
 <!-- Start of markup for portfolio element -->
-<div class="row-fluid">
-     <div class="portfolio" class="span12">
-		<div id="gallery">
+<div id="portfolio" class="row-fluid">
+     <div id="gallery" class="span12">
 			
 			<!-- Display the title -->
 			<h2 class="entry-title"><?php echo $title_output; ?></h2>
@@ -182,7 +178,6 @@ function portfolio_lite_content() {
 				</li>
 			</ul>
 		</div>  <!-- End of #gallery -->
-	</div> <!-- End of .portfolio -->
 </div>  <!-- End of .row-fluid -->
 <!-- End of markup for portfolio element -->
 <?php

@@ -25,13 +25,34 @@ function cyberchimps_init_portfolio_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true, 
-			'supports' => array('custom-fields', 'title'),
-			'taxonomies' => array( 'portfolio_categories'),
+			'supports' => array('custom-fields'),
+			'taxonomies' => array( 'portfolio_cats'),
 			'has_archive' => true,
 			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/portfolio.png',
-			'rewrite' => array('slug' => 'portfolio_images')
+			'rewrite' => array('slug' => 'portfolio')
 		)
 	);
+	
+	$labels = array(
+    'name' => _x( 'Portfolio Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Portfolio Catergory', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Portfolio' ),
+    'all_items' => __( 'All Portfolios' ),
+    'parent_item' => __( 'Portfolio Category' ),
+    'parent_item_colon' => __( 'Portfolio Category:' ),
+    'edit_item' => __( 'Edit Portfolio Category' ), 
+    'update_item' => __( 'Update Portfolio Category' ),
+    'add_new_item' => __( 'Add New Portfolio Category' ),
+    'new_item_name' => __( 'New Portfolio Category Name' ),
+    'menu_name' => __( 'Portfolio Category' ),
+  ); 	
+	register_taxonomy( 'portfolio_cats', array('portfolio_images'), array(
+		'public' => true,
+		'show_in_nav_menus' => false,
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true
+  ));
 	
 	$meta_boxes = array();
 	
@@ -39,6 +60,7 @@ function cyberchimps_init_portfolio_post_type() {
 	$mb
 		->tab("Portfolio Element")
 			->single_image('portfolio_image', 'Portfolio Image', '')
+			->text('caption_text', 'Caption', '')
 			->checkbox('custom_portfolio_url_toggle', 'Custom Portfolio URL', '', array('std' => 'off'))
 			->text('custom_portfolio_url', 'URL', '')
 		->end();

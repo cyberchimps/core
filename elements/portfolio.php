@@ -39,54 +39,83 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 		 * @return void
 		 */
 		protected function __construct( ) {
-			add_action( 'portfolio_element', array( $this, 'render_display' ) );
+			add_action( 'portfolio_pro', array( $this, 'render_display' ) );
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
-			//TODO: Remove - temp till functions are finished
-			$img1 = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
-			$img2 = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
-			$img3 = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
-			$img4 = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
-			$caption1 = 'Caption 1';
-			$caption2 = 'Caption 2';
-			$caption3 = 'Caption 3';
-			$caption4 = 'Caption 4';
-			?>
-			<div class="row-fluid">
+			global $options, $post;
+			if( is_page() ) {
+				$images_per_row = get_post_meta( $post->ID, 'portfolio_row_number', true );
+				$portfolio_category = get_post_meta( $post->ID, 'portfolio_category', true );
+				$portfolio_title = get_post_meta( $post->ID, 'portfolio_title', true );
+			}
+			else {
+				$images_per_row = $options['cyberchimps_blog_portfolio_pro_per_row'];
+				$customcategory_obj = get_term( $options['cyberchimps_blog_portfolio_pro_category'], 'portfolio_cats' );
+				$portfolio_category = $customcategory_obj->name;
+				$portfolio_title = $options['cyberchimps_blog_portfolio_pro_title_text'];
+			}
+			$args = array(
+							'numberposts'     => 500,
+							'offset'          => 0,
+							'portfolio_cats'	=> $portfolio_category,
+							'orderby'         => 'post_date',
+							'order'           => 'ASC',
+							'post_type'       => 'portfolio_images',
+							'post_status'     => 'publish'
+							);
+			$portfolio_posts = get_posts( $args );
+			
+			$port_array = array();
+			$i = 1;
+			switch( $images_per_row ) {
+				case 2:
+					$span = 'span6';
+					break;
+				case 3:
+					$span = 'span4';
+					break;
+				case 4:
+					$span = 'span3';
+					break;
+			}?>
+      <div class="row-fluid">
      	 <div class="portfolio" class="span12">
 					<div id="gallery">
 					<h3><?php echo 'Title Placeholder'; ?></h3>
-						<ul class="row-fluid">
-							<li id="portfolio_wrap" class="span3">
-								<a href="<?php echo $img1 ;?>" rel="lightbox-portfolio" title="<?php echo $caption1 ;?>">
-									<img src="<?php echo $img1 ;?>" alt="Image 1"/>
-									<div class="portfolio_caption"><?php echo $caption1 ;?></div>
-								</a>
-							</li><!-- #portfolio_wrap .span3-->
-							<li id="portfolio_wrap" class="span3">
-								<a href="<?php echo $img2 ;?>" rel="lightbox-portfolio" title="<?php echo $caption2 ;?>">
-									<img src="<?php echo $img2 ;?>" alt="Image 2"/>
-									<div class="portfolio_caption"><?php echo $caption2 ;?></div>
-								</a>
-							</li><!-- #portfolio_wrap .span3-->
-							<li id="portfolio_wrap" class="span3">
-								<a href="<?php echo $img3 ;?>" rel="lightbox-portfolio" title="<?php echo $caption3 ;?>">
-									<img src="<?php echo $img3 ;?>" alt="Image 3"/>
-									<div class="portfolio_caption"><?php echo $caption3 ;?></div>
-								</a>
-							</li><!-- #portfolio_wrap .span3-->
-							<li id="portfolio_wrap" class="span3">
-								<a href="<?php echo $img4 ;?>" rel="lightbox-portfolio" title="<?php echo $caption4 ;?>">
-									<img src="<?php echo $img4 ;?>" alt="Image 4"/>
-									<div class="portfolio_caption"><?php echo $caption4 ;?></div>
-								</a>
-							</li><!-- #portfolio_wrap .span3-->
-						</ul>
-					</div><!-- #gallery .span12-->
+			<?php foreach( $portfolio_posts as $port ):
+				$image = get_post_meta( $port->ID, 'portfolio_image', true );
+				$caption = get_post_meta( $port->ID, 'caption_text', true );
+				$link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
+				$link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
+				$url = ( isset( $link_use ) && $link != '' ) ? $link : $image;
+				$rel = ( ! isset( $link_use ) || $link == '' ) ? 'lightbox-portfolio' : '';
+				if( $i == 1 ): ?>
+					<ul class="row-fluid">
+				<?php endif;
+				if( $i <= $images_per_row ): ?>
+        	<li id="portfolio_wrap" class="<?php echo $span; ?>">
+            <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="Caption">
+              <img src="<?php echo $image ;?>" alt="Image 1"/>
+              <div class="portfolio_caption"><?php echo $caption; ?></div>
+            </a>
+					</li><!-- #portfolio_wrap .span3-->
+        <?php endif;
+				if( $i == $images_per_row ) {
+					$i = 1;
+					echo '</ul>';
+				}
+				else {
+					$i++;
+				}
+			
+			endforeach; ?>
+      
+      		</div><!-- #gallery .span12-->
 				</div><!-- .portfolio -->
 			</div><!-- row-fluid -->
+							
 			<?php
 		}
 	}
