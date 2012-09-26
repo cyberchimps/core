@@ -42,7 +42,7 @@ function cyberchimps_init_meta_boxes() {
 	$blog_options = array();
 	
 	// Call taxonomies for select options
-	$portfolio_terms = get_terms('portfolio_cats', array( 'hide_empty' => 0 ) );
+	$portfolio_terms = get_terms('portfolio_cats', 'hide_empty=0');
 	if( ! is_wp_error( $portfolio_terms ) ):
 	foreach($portfolio_terms as $term) {
 		$portfolio_options[$term->slug] = $term->name;

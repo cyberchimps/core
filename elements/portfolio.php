@@ -80,9 +80,8 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 					$span = 'span3';
 					break;
 			}?>
-      <div class="row-fluid">
-     	 <div class="portfolio" class="span12">
-					<div id="gallery">
+      <div id="portfolio" class="row-fluid">
+     	 <div id="gallery" class="span12">
 					<h3><?php echo 'Title Placeholder'; ?></h3>
 			<?php foreach( $portfolio_posts as $port ):
 				$image = get_post_meta( $port->ID, 'portfolio_image', true );
@@ -113,7 +112,6 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			endforeach; ?>
       
       		</div><!-- #gallery .span12-->
-				</div><!-- .portfolio -->
 			</div><!-- row-fluid -->
 							
 			<?php
