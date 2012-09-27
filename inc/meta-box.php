@@ -94,11 +94,8 @@ function cyberchimps_init_meta_boxes() {
 				'content_middle' => get_template_directory_uri() . '/core/lib/images/rightleft.png',
 				'full_width' => get_template_directory_uri() . '/core/lib/images/none.png',
 				'left_sidebar' => get_template_directory_uri() . '/core/lib/images/left.png')
-			))
-			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(
-				'std' => array(
-					'breadcrumbs' => 'Breadcrumbs',
-				),
+			, 'std' => 'right_sidebar') )
+			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(					
 				'options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
 					'page_slider' => 'iFeature Slider',
@@ -115,7 +112,8 @@ function cyberchimps_init_meta_boxes() {
 					'featured_posts' => 'Featured Posts',
 					'magazine' => 'Magazine',
 					'boxes' => 'Boxes'
-				)
+				),
+					'std' => 'breadcrumbs,page_section'
 				))
 			->pagehelp('', 'Need Help?', '')
 		->tab("Magazine Layout Options")
@@ -161,7 +159,7 @@ function cyberchimps_init_meta_boxes() {
 			->color('custom_callout_button_text_color', 'Custom Button Text Color', '')
 			->pagehelp('', 'Need help?', '')
 		->tab("Portfolio Options")
-			->select('portfolio_row_number', 'Images per row', '', array('options' => array( 2 => 'Two', 3 => 'Three', 4 => 'Four')), array('std' => 3) )
+			->select('portfolio_row_number', 'Images per row', '', array('options' => array( 2 => 'Two', 3 => 'Three', 4 => 'Four'), 'std' => 3) )
 			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfolio_options) )
 			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
 			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
