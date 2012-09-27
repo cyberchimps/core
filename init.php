@@ -16,6 +16,16 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// FIXME: Fix documentation
+// Load elements
+function cyberchimps_load_post_types() {
+	require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
+	require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
+}
+add_action('after_setup_theme', 'cyberchimps_load_post_types');
+
 if ( ! function_exists( 'cyberchimps_core_setup_theme' ) ):
 // FIXME: Fix documentation
 function cyberchimps_core_setup_theme() {
@@ -116,16 +126,6 @@ function cyberchimps_load_elements() {
 	require_once( get_template_directory() . '/core/elements/boxes.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_elements');
-
-// FIXME: Fix documentation
-// Load elements
-function cyberchimps_load_post_types() {
-	require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
-}
-add_action('after_setup_theme', 'cyberchimps_load_post_types');
 
 function cyberchimps_load_hooks() {
 	require_once( get_template_directory() . '/core/hooks/wp-head-hooks.php' );
