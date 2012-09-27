@@ -75,13 +75,6 @@ function slider_lite_content() {
 				
 	</div>
 </div><!-- row-fluid -->
-<script>
-  $(document).ready(function(){
-    $('.carousel').carousel({
-			interval: 2000}
-			);
-  });
-</script>
 <?php
 }
 ?>
