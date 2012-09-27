@@ -22,7 +22,7 @@ function cyberchimps_add_core_headings( $headings_list ) {
 	
 	$headings_list[] = array(
 		'id' => 'cyberchimps_welcome_heading',
-		'title' => __('Welcome', 'cyberchimps'),
+		'title' => __('Help', 'cyberchimps'),
 	);
 	
 	$headings_list[] = array(
