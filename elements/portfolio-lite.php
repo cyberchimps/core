@@ -96,7 +96,7 @@ function portfolio_lite_content() {
 	$title = ($title != '') ? $title : 'Portfolio';
 	
 	// Set the markup for title
-	$title_output = ($title_enable == 'on' OR $title_enable == '1') ? "<h2 class='entry-title'>$title</h1>" : '';
+	$title_output = ($title_enable == 'on' OR $title_enable == '1') ? "<h2 class='entry-title'>$title</h2>" : '';
 	
 	// Post-specific variables 	
 	$image = get_post_meta($post->ID, 'portfolio_image' , true);

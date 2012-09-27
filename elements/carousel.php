@@ -45,7 +45,8 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 		}
 		
 		// TODO: Fix documentation
-		public function render_display() { 
+		public function render_display() {
+			global $post;
 			$default = get_template_directory_uri() . '/core/lib/images/carousel.jpg';
 			$out = '';
 			
@@ -85,12 +86,12 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 								// HS on the first loop through we add the active class
 								if( $i == 1 && $x == 0 ) {
 									$out .= '<div class="active item">';
-									$out .= '<ul class="thumbnails>';
+									$out .= '<ul class="thumbnails">';
 								}
 								// HS after 6 loops through this is called to start a new 6 items but without active class
 								elseif ( $i == 1 && $x > 0 ) {
-									$out .= '<div class="active item">';
-									$out .= '<ul class="thumbnails>';
+									$out .= '<div class="item">';
+									$out .= '<ul class="thumbnails">';
 								}									
 							
 								
@@ -105,9 +106,9 @@ if ( !class_exists( 'CyberChimpsCarousel' ) ) {
 								}
 								
 								$out .= '<li class="span2">';
-								$out .= '<a href="'.$link.'"><img src="'.$image.'" alt="'.$title.'" /></a>';
-								$out .= '<div class="carousel_caption">'.$title.'</div>';
-								$out .= '</li>';
+								$out .= '<div class="carousel_item"><a href="'.$link.'"><img src="'.$image.'" alt="'.$title.'" /></a>';
+								$out .= '<div class="carousel_caption"><p>'.$title.'</p></div>';
+								$out .= '</div></li>';
 							
 							// HS after 6 loops through or after all items have been listed we close the ul and div tags
 							if( $i == 6 || ( $x * 6 + $i )  == 20 ) {

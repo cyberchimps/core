@@ -49,7 +49,7 @@ function cyberchimps_init_carousel_post_type() {
 	register_taxonomy( 'carousel_categories',array('featured_posts'), array(
 		'public' => true,
 		'show_in_nav_menus' => false,
-    'hierarchical' => false,
+    'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true
   ));

@@ -24,8 +24,8 @@
 
 /* ************************* For Slider Lite ************************ */
 #slider-lite img {
-	height: 430px;
 	width: 100% !important;
+  height: auto;
 }
 
 /* ************************* For Slider Pro ************************ */

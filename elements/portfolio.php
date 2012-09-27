@@ -48,6 +48,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			if( is_page() ) {
 				$images_per_row = get_post_meta( $post->ID, 'portfolio_row_number', true );
 				$portfolio_category = get_post_meta( $post->ID, 'portfolio_category', true );
+				$portfolio_title_toggle = get_post_meta( $post->ID, 'portfolio_title_toggle', true );
 				$portfolio_title = get_post_meta( $post->ID, 'portfolio_title', true );
 			}
 			else {
@@ -84,7 +85,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
       <div id="portfolio" class="row-fluid">
      	 <div id="gallery" class="span12">
           <?php if( $portfolio_title_toggle && $portfolio_title != '' ): ?>
-          	<h3><?php echo $portfolio_title; ?></h3>
+          	<h2><?php echo $portfolio_title; ?></h2>
           <?php endif; ?>
 			<?php foreach( $portfolio_posts as $port ):
 			
@@ -102,7 +103,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
         	<li id="portfolio_wrap" class="<?php echo $span; ?>">
           	<div class="portfolio_item">
             <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="Caption">
-              <img src="<?php echo $image ;?>" alt="Image 1"/>
+              <img src="<?php echo $image ;?>" alt="<?php echo $caption; ?>"/>
               <div class="portfolio_caption"><?php echo $caption; ?></div>
             </a>
             </div>
