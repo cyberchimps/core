@@ -48,6 +48,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			if( is_page() ) {
 				$images_per_row = get_post_meta( $post->ID, 'portfolio_row_number', true );
 				$portfolio_category = get_post_meta( $post->ID, 'portfolio_category', true );
+				$portfolio_title_toggle = get_post_meta( $post->ID, 'portfolio_title_toggle', true );
 				$portfolio_title = get_post_meta( $post->ID, 'portfolio_title', true );
 			}
 			else {

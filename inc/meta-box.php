@@ -104,7 +104,7 @@ function cyberchimps_init_meta_boxes() {
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
-					'portfolio_element' => 'Portfolio',
+					'portfolio_pro' => 'Portfolio',
 					'product_element' => 'Product',
 					'page_section' => 'Page',
 					'widgets_section' => 'Widgets',
@@ -161,7 +161,7 @@ function cyberchimps_init_meta_boxes() {
 			->color('custom_callout_button_text_color', 'Custom Button Text Color', '')
 			->pagehelp('', 'Need help?', '')
 		->tab("Portfolio Options")
-			->select('portfolio_row_number', 'Images per row', '', array('options' => array('Three (default)', 'Two', 'Four')) )
+			->select('portfolio_row_number', 'Images per row', '', array('options' => array( 2 => 'Two', 3 => 'Three', 4 => 'Four')), array('std' => 3) )
 			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfolio_options) )
 			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
 			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
