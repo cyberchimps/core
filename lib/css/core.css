@@ -330,10 +330,7 @@ div.featured-info {
 	margin-left: 0px;
 	position:relative;
 	min-height:250px !important;
-	border: 2px solid #DDD;
-	-webkit-border-radius: 6px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+	border: 1px solid #DDD;
 }
 
 .wide_post {
@@ -359,8 +356,8 @@ div.featured-info {
 	right:5px;
 	bottom:2px;
 	z-index:9;
-	padding-right:20px;
-	background:url(../images/magazine/social_11.png) no-repeat right;
+	padding-right:5px;
+	font-size: 12px;
 }
 
 .featured-info {
@@ -436,7 +433,6 @@ div.featured-info {
   height:21px;
   width:100%;
   position:absolute;
-  background:url(../images/magazine/socialbg_03.png) repeat-x;
   left:0px;
   bottom:0px;
 }
