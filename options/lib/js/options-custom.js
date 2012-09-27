@@ -5,7 +5,7 @@
 jQuery(document).ready(function($) {
 	
 	// Hide/show onclick over subsection
-	jQuery(".section-group > h3").click(function() {
+	/*jQuery(".section-group > h3").click(function() {
 		var $this = $(this);
 		$this.find("span.minus").removeClass('minus');
 		if($this.siblings('div').is(":visible")) {
@@ -14,14 +14,14 @@ jQuery(document).ready(function($) {
 			$this.siblings('div').fadeIn();
 			$this.find("span").addClass('minus');
 		}
-	});
+	});*/
 	
 	// Hide/show of subsections onchange of drop & down
-	jQuery(".field-container").hide();
+	/*jQuery(".field-container").hide();
 	jQuery("#cyberchimps_blog_slider_section").hide();
 	jQuery("#cyberchimps_welcome_section .field-container").show();
 	jQuery("#cyberchimps_welcome_section h3 span").hide();
-	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');
+	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');*/
 	
 	var page_subsection_map = {
 		slider_lite: "cyberchimps_blog_slider_lite_section",
