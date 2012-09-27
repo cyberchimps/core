@@ -851,6 +851,14 @@ function cyberchimps_fields_callback( $value ) {
 			}
 			$output .= '</div>' . "\n";
 			break;
+			
+		case "export":
+			$output .= "<textarea rows='10'>" . esc_html(serialize($settings)) . "</textarea>";
+			break;
+			
+		case "import":
+			$output .= "<textarea name='import' rows='10'></textarea>";
+			break;
 	}
 
 	if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) && ( $value['type'] != "welcome" ) && ( $value['type'] != "upload" ) ) {
@@ -871,6 +879,22 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
+	// Theme option import functionality
+	if( isset( $_POST['import' ] ) ) {
+		if( trim( $_POST['import' ] ) ) {
+			$string = stripslashes( trim( $_POST['import'] ) );
+			
+			$try = unserialize( $string );
+			
+			if($try) {
+				add_settings_error( 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
+				return $try;
+			} else {
+				add_settings_error( 'import', __( 'Invalid Data for Import', 'optionsframework' ), 'updated fade' );
+			}
+		}
+	}
+	
 	/*
 	 * Restore Defaults.
 	 *
