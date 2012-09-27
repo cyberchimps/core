@@ -22,7 +22,7 @@ function cyberchimps_add_core_headings( $headings_list ) {
 	
 	$headings_list[] = array(
 		'id' => 'cyberchimps_welcome_heading',
-		'title' => __('Welcome', 'cyberchimps'),
+		'title' => __('Help', 'cyberchimps'),
 	);
 	
 	$headings_list[] = array(
@@ -1647,8 +1647,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Export Settings', 'cyberchimps'),
 		'id' => 'export_textarea',
-		'std' => '',
-		'type' => 'textarea',
+		'type' => 'export',
 		'section' => 'cyberchimps_import_export_section',
 		'heading' => 'cyberchimps_import_export_heading'
 	);
@@ -1656,8 +1655,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Import Settings', 'cyberchimps'),
 		'id' => 'import_textarea',
-		'std' => '',
-		'type' => 'textarea',
+		'type' => 'import',
 		'section' => 'cyberchimps_import_export_section',
 		'heading' => 'cyberchimps_import_export_heading'
 	);
