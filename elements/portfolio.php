@@ -54,6 +54,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 				$images_per_row = $options['cyberchimps_blog_portfolio_pro_per_row'];
 				$customcategory_obj = get_term( $options['cyberchimps_blog_portfolio_pro_category'], 'portfolio_cats' );
 				$portfolio_category = $customcategory_obj->name;
+				$portfolio_title_toggle = $options['cyberchimps_blog_portfolio_pro_title'];
 				$portfolio_title = $options['cyberchimps_blog_portfolio_pro_title_text'];
 			}
 			$args = array(
@@ -82,23 +83,29 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			}?>
       <div id="portfolio" class="row-fluid">
      	 <div id="gallery" class="span12">
-					<h3><?php echo 'Title Placeholder'; ?></h3>
+          <?php if( $portfolio_title_toggle && $portfolio_title != '' ): ?>
+          	<h3><?php echo $portfolio_title; ?></h3>
+          <?php endif; ?>
 			<?php foreach( $portfolio_posts as $port ):
+			
 				$image = get_post_meta( $port->ID, 'portfolio_image', true );
 				$caption = get_post_meta( $port->ID, 'caption_text', true );
 				$link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
 				$link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
 				$url = ( isset( $link_use ) && $link != '' ) ? $link : $image;
 				$rel = ( ! isset( $link_use ) || $link == '' ) ? 'lightbox-portfolio' : '';
+				
 				if( $i == 1 ): ?>
 					<ul class="row-fluid">
 				<?php endif;
 				if( $i <= $images_per_row ): ?>
         	<li id="portfolio_wrap" class="<?php echo $span; ?>">
+          	<div class="portfolio_item">
             <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="Caption">
               <img src="<?php echo $image ;?>" alt="Image 1"/>
               <div class="portfolio_caption"><?php echo $caption; ?></div>
             </a>
+            </div>
 					</li><!-- #portfolio_wrap .span3-->
         <?php endif;
 				if( $i == $images_per_row ) {
