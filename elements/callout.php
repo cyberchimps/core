@@ -50,6 +50,17 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 		if( is_page() ){	
 			$callout_title = (get_post_meta($post->ID, 'callout_title', true)) ? get_post_meta($post->ID, 'callout_title', true) : '';
 			$callout_text = (get_post_meta($post->ID, 'callout_text', true)) ? get_post_meta($post->ID, 'callout_text', true) : '';
+			
+			$callout_button = (get_post_meta($post->ID, 'disable_callout_button', true)) ? get_post_meta($post->ID, 'disable_callout_button', true) : '';
+			$callout_button_text = (get_post_meta($post->ID, 'callout_button_text', true)) ? get_post_meta($post->ID, 'callout_button_text', true) : '';
+			$callout_button_url = (get_post_meta($post->ID, 'callout_url', true)) ? get_post_meta($post->ID, 'callout_url', true) : '';
+			$custom_callout_options = (get_post_meta($post->ID, 'extra_callout_options', true)) ? get_post_meta($post->ID, 'extra_callout_options', true) : '';
+			$custom_callout_button = (get_post_meta($post->ID, 'callout_image', true)) ? get_post_meta($post->ID, 'callout_image', true) : ''; 
+			$custom_callout_background = (get_post_meta($post->ID, 'custom_callout_color', true)) ? 'background-color:'.get_post_meta($post->ID, 'custom_callout_color', true) : '';
+			$custom_callout_title_color = (get_post_meta($post->ID, 'custom_callout_title_color', true)) ? 'color:'.get_post_meta($post->ID, 'custom_callout_title_color', true) : '';
+			$custom_callout_text_color = (get_post_meta($post->ID, 'custom_callout_text_color', true)) ? 'color:'.get_post_meta($post->ID, 'custom_callout_text_color', true) : '';
+			$custom_callout_button_color = (get_post_meta($post->ID, 'custom_callout_button_color', true)) ? 'background:'.get_post_meta($post->ID, 'custom_callout_button_color', true) : '';
+			$custom_callout_button_text_color = (get_post_meta($post->ID, 'custom_callout_button_text_color', true)) ? 'color:'.get_post_meta($post->ID, 'custom_callout_button_text_color', true) : '';
 		}
 		else {
 			$callout_title = esc_html( $options['callout_title'] );
@@ -65,7 +76,7 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 			$custom_callout_button_color = ( $options['custom_callout_button_color'] != '' ) ? 'background:'.$options['custom_callout_button_color'] : '';
 			$custom_callout_button_text_color = ( $options['custom_callout_button_text_color'] != '' ) ? 'color:'.$options['custom_callout_button_text_color'] : '';
 		}
-		if( ! $callout_button ): ?>
+		if( empty( $callout_button ) ): ?>
 			<div id="callout-container" class="row-fluid">
 				<div id="callout" class="span12">
 					<div class="callout-text">
@@ -76,17 +87,17 @@ if ( !class_exists( 'CyberChimpsCallout' ) ) {
 			</div><!-- row-fluid -->
     <?php else: ?>
     	<div id="callout-container" class="row-fluid">
-				<div id="callout" class="span12" style="<?php echo $custom_callout_background; ?>">
+				<div id="callout" class="span12" style="<?php echo( !empty( $custom_callout_options ) ) ? $custom_callout_background : ''; ?>">
         	<div class="row-fluid">
           <div class="span9">
 					<div class="callout-text">
-						<h2 class="callout-title" style="<?php echo $custom_callout_title_color; ?>"><?php echo $callout_title; ?></h2>
-						<p style="<?php echo $custom_callout_text_color; ?>"><?php echo esc_html($callout_text); ?></p>
+						<h2 class="callout-title" style="<?php echo( !empty( $custom_callout_options ) ) ? $custom_callout_title_color : ''; ?>"><?php echo $callout_title; ?></h2>
+						<p style="<?php echo( !empty( $custom_callout_options ) ) ? $custom_callout_text_color : ''; ?>"><?php echo esc_html($callout_text); ?></p>
 					</div><!-- #callout-text -->
           </div><!-- span9 -->
           <div id="callout_button" class="span3">
           <?php if( $custom_callout_button == '' ): ?>
-          	<a href="<?php echo $callout_button_url; ?>" title="<?php echo $callout_button_text; ?>"><button style="<?php echo $custom_callout_button_color; ?>" class="btn btn-large btn-primary" type="button"><p style="<?php echo $custom_callout_button_text_color; ?>"><?php echo $callout_button_text; ?></p></button></a>
+          	<a href="<?php echo $callout_button_url; ?>" title="<?php echo $callout_button_text; ?>"><button style="<?php echo( !empty( $custom_callout_options ) ) ?  $custom_callout_button_color : ''; ?>" class="btn btn-large btn-primary" type="button"><p style="<?php echo( !empty( $custom_callout_options ) ) ? $custom_callout_button_text_color : ''; ?>"><?php echo $callout_button_text; ?></p></button></a>
           <?php else: ?>
           	<a href="<?php echo $callout_button_url; ?>" title="<?php echo $callout_button_text; ?>"><img src="<?php echo $custom_callout_button; ?>" alt="<?php echo $custom_callout_text; ?>" /></a>
           <?php endif; ?>
