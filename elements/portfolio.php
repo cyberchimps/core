@@ -85,7 +85,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
       <div id="portfolio" class="row-fluid">
      	 <div id="gallery" class="span12">
           <?php if( $portfolio_title_toggle && $portfolio_title != '' ): ?>
-          	<h3><?php echo $portfolio_title; ?></h3>
+          	<h2><?php echo $portfolio_title; ?></h2>
           <?php endif; ?>
 			<?php foreach( $portfolio_posts as $port ):
 			
