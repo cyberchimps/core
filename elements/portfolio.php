@@ -103,7 +103,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
         	<li id="portfolio_wrap" class="<?php echo $span; ?>">
           	<div class="portfolio_item">
             <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="Caption">
-              <img src="<?php echo $image ;?>" alt="Image 1"/>
+              <img src="<?php echo $image ;?>" alt="<?php echo $caption; ?>"/>
               <div class="portfolio_caption"><?php echo $caption; ?></div>
             </a>
             </div>
