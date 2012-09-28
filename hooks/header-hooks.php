@@ -255,6 +255,7 @@ function cyberchimps_banner_content() {
 
 	// Getting banner options
 	$banner = $options['header_banner_image'];
+	$default = get_template_directory_uri().'/core/lib/images/banner.jpg';
 	$url = $options['header_banner_url'];
 ?>	
 	<div class="twelve columns">
@@ -262,7 +263,6 @@ function cyberchimps_banner_content() {
 			<?php if ($banner != ""):?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="logo"></a>
 			<?php endif; ?>
-			
 			<?php if ($banner == ""):?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>
 			<?php endif; ?>
@@ -271,7 +271,7 @@ function cyberchimps_banner_content() {
 <?php
 }
 
-add_action( 'cyberchimps_header_content', 'cyberchimps_banner_content' );
+add_action( 'cyberchimps_banner', 'cyberchimps_banner_content' );
 
 //contact info
 function cyberchimps_contact_info() {
