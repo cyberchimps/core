@@ -66,16 +66,16 @@ function cyberchimps_posted_on() {
 	global $options;
 	
 	if( is_single() ) {
-		$show_date = ( isset( $options['single_post_byline_elements']['date'] ) ) ? $options['single_post_byline_elements']['date'] : false; 
-		$show_author = ( isset( $options['single_post_byline_elements']['author'] ) ) ? $options['single_post_byline_elements']['author'] : false; 
+		$show_date = ( isset( $options['single_post_byline_date'] ) ) ? $options['single_post_byline_date'] : false; 
+		$show_author = ( isset( $options['single_post_byline_author']['author'] ) ) ? $options['single_post_byline_author'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show_date = ( isset( $options['archive_post_byline_elements']['date'] ) ) ? $options['archive_post_byline_elements']['date'] : false;  
-		$show_author = ( isset( $options['archive_post_byline_elements']['author'] ) ) ? $options['archive_post_byline_elements']['author'] : false;
+		$show_date = ( isset( $options['archive_post_byline_date'] ) ) ? $options['archive_post_byline_date'] : false;  
+		$show_author = ( isset( $options['archive_post_byline_author'] ) ) ? $options['archive_post_byline_author'] : false;
 	}
 	else {
-		$show_date = ( isset( $options['post_byline_elements']['date'] ) ) ? $options['post_byline_elements']['date'] : false; 
-		$show_author = ( isset( $options['post_byline_elements']['author'] ) ) ? $options['post_byline_elements']['author'] : false; 
+		$show_date = ( isset( $options['post_byline_date'] ) ) ? $options['post_byline_date'] : false; 
+		$show_author = ( isset( $options['post_byline_author'] ) ) ? $options['post_byline_author'] : false; 
 	}
 	
 	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline">%9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cyberchimps' ),
@@ -99,13 +99,13 @@ function cyberchimps_posted_in() {
 	global $options, $post;
 
 	if( is_single() ) {
-		$show = ( isset( $options['single_post_byline_elements']['categories'] ) ) ? $options['single_post_byline_elements']['categories'] : false; 
+		$show = ( isset( $options['single_post_byline_categories'] ) ) ? $options['single_post_byline_categories'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( isset( $options['archive_post_byline_elements']['categories'] ) ) ? $options['archive_post_byline_elements']['categories'] : false;  
+		$show = ( isset( $options['archive_post_byline_categories'] ) ) ? $options['archive_post_byline_elements'] : false;  
 	}
 	else {
-		$show = ( isset( $options['post_byline_elements']['categories'] ) ) ? $options['post_byline_elements']['categories'] : false;  
+		$show = ( isset( $options['post_byline_categories'] ) ) ? $options['post_byline_categories'] : false;  
 	}
 	if( $show ):
 				$categories_list = get_the_category_list( __( ', ', 'cyberchimps' ) );
@@ -125,13 +125,13 @@ function cyberchimps_post_tags() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = ( isset( $options['single_post_byline_elements']['tags'] ) ) ? $options['single_post_byline_elements']['tags'] : false; 
+		$show = ( isset( $options['single_post_byline_tags'] ) ) ? $options['single_post_byline_tags'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( isset( $options['archive_post_byline_elements']['tags'] ) ) ? $options['archive_post_byline_elements']['tags'] : false;  
+		$show = ( isset( $options['archive_post_byline_tags'] ) ) ? $options['archive_post_byline_tags'] : false;  
 	}
 	else {
-		$show = ( isset( $options['post_byline_elements']['tags'] ) ) ? $options['post_byline_elements']['tags'] : false;  
+		$show = ( isset( $options['post_byline_tags'] ) ) ? $options['post_byline_tags'] : false;  
 	}
 	if( $show ):
 	$tags_list = get_the_tag_list( '', __( ', ', 'cyberchimps' ) );
@@ -151,13 +151,13 @@ function cyberchimps_post_comments() {
 	global $options, $post;
 	
 	if( is_single() ) {
-		$show = ( isset( $options['single_post_byline_elements']['comments'] ) ) ? $options['single_post_byline_elements']['comments'] : false; 
+		$show = ( isset( $options['single_post_byline_comments'] ) ) ? $options['single_post_byline_comments'] : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( isset( $options['archive_post_byline_elements']['comments'] ) ) ? $options['archive_post_byline_elements']['comments'] : false;  
+		$show = ( isset( $options['archive_post_byline_comments'] ) ) ? $options['archive_post_byline_comments'] : false;  
 	}
 	else {
-		$show = ( isset( $options['post_byline_elements']['comments'] ) ) ? $options['post_byline_elements']['comments'] : false;  
+		$show = ( isset( $options['post_byline_comments'] ) ) ? $options['post_byline_comments'] : false;  
 	}
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
