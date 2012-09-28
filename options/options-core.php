@@ -639,6 +639,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Twitter', 'cyberchimps'),
 		'id' => 'social_twitter',
+		'std' => 'checked',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading');
@@ -656,6 +657,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Facebook', 'cyberchimps'),
 		'id' => 'social_facebook',
+		'std' => 'checked',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading');
@@ -673,6 +675,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Google+', 'cyberchimps'),
 		'id' => 'social_google',
+		'std' => 'checked',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading');
