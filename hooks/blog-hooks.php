@@ -20,9 +20,11 @@ function blog_section_order_action() {
 	global $post;
 	
 	$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
-	
+	$slider_size = cyberchimps_get_option( 'blog_slider_size' );
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
+			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
+			$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
 			do_action($func);
 		}
 	}

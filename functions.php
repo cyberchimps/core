@@ -499,4 +499,19 @@ function setPostViews($postID) {
 
 /* To correct issue: adjacent_posts_rel_link_wp_head causes meta to be updated multiple times */
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+// Set up half slide for iFeature pro slider, adds it before post/page content
+function cyberchimps_half_slider() {
+	global $post;
+	if( is_page() ) {
+		$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
+	}
+	else {
+		$slider_size = cyberchimps_get_option( 'blog_slider_size' );
+	}
+	if( $slider_size == 'half' ) {
+		do_action( 'page_slider' );
+	}
+}
+add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 ?>
