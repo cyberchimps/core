@@ -30,6 +30,7 @@ jQuery(document).ready(function($) {
 		carousel_section: "cyberchimps_carousel_section",
 		magazine: "cyberchimps_blog_magazine_section",
 		portfolio_lite: "cyberchimps_blog_portfolio_lite_section",
+		portfolio_pro: "cyberchimps_blog_portfolio_pro_section"
 	};
 	
 	$(".blog-section-order-tracker").change(function(){
