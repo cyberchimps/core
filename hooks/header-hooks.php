@@ -251,30 +251,29 @@ add_action( 'cyberchimps_sitename_register', 'cyberchimps_logo_register_content'
 
 // Full-Width Logo
 function cyberchimps_banner_content() {
-global $themeslug, $options; //Call global variables
+	
+	// Call global variables
+	global $options;
 
-$banner = $options->get($themeslug.'_banner'); //Calls the logo URL from the theme options
-$url = $options->get($themeslug.'_banner_url');
-$default = "$root/images/pro/banner.jpg";
-
-?>
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns">
-				<div id="banner">
-					<?php if ($banner != ""):?>
-						<a href="<?php echo $url; ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>
-					<?php endif; ?>
-					
-					<?php if ($banner == ""):?>
-						<a href="<?php echo $url; ?>/"><img src="<?php echo $default; ?>" alt="logo"></a>
-					<?php endif; ?>
-				</div>		
-			</div>	
-		</div>
+	// Getting banner options
+	$banner = $options['header_banner_image'];
+	$url = $options['header_banner_url'];
+?>	
+	<div class="twelve columns">
+		<div id="banner">
+			<?php if ($banner != ""):?>
+				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="logo"></a>
+			<?php endif; ?>
+			
+			<?php if ($banner == ""):?>
+				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>
+			<?php endif; ?>
+		</div>		
 	</div>
 <?php
 }
+
+add_action( 'cyberchimps_header_content', 'cyberchimps_banner_content' );
 
 //contact info
 function cyberchimps_contact_info() {
