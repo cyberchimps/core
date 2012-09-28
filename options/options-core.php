@@ -254,7 +254,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'categories' => 1,
 		'date' => 1,
 		'comments' => 1,
-		'share' => 1,
 		'tags' => 1
 	);
 	$pbe_array = array (
@@ -262,7 +261,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'categories' => __('Categories', 'cyberchimps'),
 		'date' => __('Date', 'cyberchimps'),
 		'comments' => __('Comments', 'cyberchimps'),
-		'share' => __('Share', 'cyberchimps'),
 		'tags' => __('Tags', 'cyberchimps')
 	);
 	

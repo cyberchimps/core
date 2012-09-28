@@ -94,30 +94,6 @@ function cyberchimps_posted_on() {
 }
 endif;
 
-// share icons at the end of the post
-function cyberchimps_article_share() {
-	global $options;
-	
-	if( is_single() ) {
-		$show = ( isset( $options['single_post_byline_elements']['share'] ) ) ? $options['single_post_byline_elements']['share'] : false; 
-	}
-	elseif( is_archive() ) {
-		$show = ( isset( $options['archive_post_byline_elements']['share'] ) ) ? $options['archive_post_byline_elements']['share'] : false;   
-	}
-	else {
-		$show = ( isset( $options['post_byline_elements']['share'] ) ) ? $options['post_byline_elements']['share'] : false;   
-	}
-	if( $show ): ?>
-  
-  <div class="cyberchimps_article_share">
-					&nbsp;<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
-					<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
-					<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
-  </div>
-
-<?php endif;
-}
-
 //add meta entry category to single post, archive and blog list if set in options
 function cyberchimps_posted_in() {
 	global $options, $post;
