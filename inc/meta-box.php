@@ -71,6 +71,15 @@ function cyberchimps_init_meta_boxes() {
 	}
 	endif;
 	
+	// get cat ids for portfolio
+	$cat_terms = get_terms('category', 'hide_empty=0');
+	if( ! is_wp_error( $cat_terms ) ):
+	$blog_id_options['all'] = "All";
+	foreach($cat_terms as $term) {
+		$blog_id_options[$term->term_id] = $term->name;
+	}
+	endif;
+	
 	// End taxonomy call
 	
 	$meta_boxes = array();
@@ -134,6 +143,14 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_slider_lite_slide_two_url', 'Slide Two Link', '', array('std' => 'http://wordpress.org'))
 			->single_image('cyberchimps_slider_lite_slide_three_image', 'Slide Three Image', '', array('std' =>  CORE_IMAGE . 'slide3.jpg'))
 			->text('cyberchimps_slider_lite_slide_three_url', 'Slide Three Link', '', array('std' => 'http://wordpress.org'))
+		->tab("iFeature Slider Options")
+			->select('cyberchimps_slider_size', 'Slider Size', '', array( 'options' => array('full' => 'Full', 'half' => 'Half')) )
+			->select('cyberchimps_slider_type', 'Slider Type', '', array( 'options' => array('post' => 'Posts', 'custom_slides' => 'Custom')) )
+			->select('cyberchimps_slider_post_categories', 'Post Categories', '', array( 'options' => $blog_id_options, 'All') )
+			->select('cyberchimps_slider_custom_categories', 'Custom Categories', '', array( 'options' => $slider_options, 'All') )
+			->text('cyberchimps_number_featured_posts', 'Number of Featured Posts', '', array('default' => 5) )
+			->text('cyberchimps_slider_height', 'Slider Height', '' )
+			->checkbox('cyberchimps_slider_arrows', 'Slider Arrows', '', array('std' => 1) )
 		->tab("Product Options")
 			->select('cyberchimps_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
 			->text('cyberchimps_product_title', 'Product Title', '', array('std' => 'Product'))

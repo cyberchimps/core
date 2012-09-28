@@ -44,45 +44,103 @@ if ( !class_exists( 'CyberChimpsSlider' ) ) {
 		
 		// TODO: Fix documentation
 		public function render_display() {
+			// set globals
+			global $post, $options;
+			//set variables if it's a page
+			if( is_page() ){
+				$slider_type = get_post_meta( $post->ID, 'cyberchimps_slider_type', true );
+				$post_categories = get_post_meta( $post->ID, 'cyberchimps_slider_post_categories', true );
+				$custom_categories = get_post_meta( $post->ID, 'cyberchimps_slider_custom_categories', true );
+				$blog_post_num = get_post_meta( $post->ID, 'cyberchimps_number_featured_posts', true );
+				$slider_height = get_post_meta( $post->ID, 'cyberchimps_slider_height', true );
+				$slider_arrows = get_post_meta( $post->ID, 'cyberchimps_slider_arrows', true );
+			}
+			// set variables if it's blog page
+			else {
+				$slider_type = $options['blog_slider_type'];
+				$post_categories = $options['blog_slider_post_cats'];
+				$custom_categories = $options['custom_slider_post_cats'];
+				$blog_post_num = $options['blog_no_featured_posts'];
+				$slider_height = $options['slider_height'];
+				$slider_arrows = 	$options['slider_arrows'];
+			}
 		?>
 			<!-- New Slider -->
+      <?php
+			// If the slider is post based set the variables for the get_posts arguments
+			if( $slider_type == 'post' ) {
+				$cat = 'category';
+				$cat_type = ( $post_categories != 'all' ) ? $post_categories : '';
+				$blog_post_num = ( $blog_post_num != '' ) ? $blog_post_num : 5;
+				$order = 'DESC';
+				$height = ( $slider_height != '' ) ? 'style="height:'.intval( $slider_height ).'px!important"' : 'style="height:300px!important"';
+			}
+			// else if the slider is slider post type based
+			else {
+				$cat = 'slide_categories';
+				//if it's not on a page then set categories
+				if( ! is_page() ){
+					$cat_obj = get_term( $custom_categories, 'slide_categories' );
+					$cat_type = $cat_obj->name;
+				}
+				// if it is on a page then set the categories
+				else {
+					$cat_type = $custom_categories;
+				}
+				//set more variables for custom slider
+				$blog_post_num = 500;
+				$order = 'ASC';
+				$height = ( $slider_height != '' ) ? 'style="height:'.intval( $slider_height ).'px!important"' : 'style="height:300px!important"';
+			}
+			// set args for slider
+			$args = array(
+							'numberposts'     => $blog_post_num,
+							'offset'          => 0,
+							$cat							=> $cat_type,
+							'orderby'         => 'post_date',
+							'order'           => $order,
+							'post_type'       => $slider_type,
+							'post_status'     => 'publish'
+							);
+			
+			//get posts				
+			$slider = get_posts( $args );
+			if( !empty( $slider ) ):
+			
+      // set out display ?>
 			<div id="slider" class="carousel slide">
 			
 				<!-- Carousel items -->
 				<div class="carousel-inner">
-					<?php
-					// Making the query to bring post from custom post type "custom_slides"
-					$slider = new WP_Query(
-											array(
-												'post_type' => 'custom_slides',
-												'orderby'   => 'post_date',
-												'order'     => 'desc'
-												)
-											);
 					
+					<?php
 					//	Setting slide counter					
 					$slide_counter = 1;
 					
 					// Setting the loop to get all slides
-					if ($slider -> have_posts()) {
-						while ($slider -> have_posts()) {
-							$slider -> the_post();
+					foreach( $slider as $slide ) {
 							
 							// Getting ID of the current post
-							$post_id = get_the_ID();
+							$post_id = $slide->ID;
 							
-							// Getting metabox options for each slides
-							$img_src = get_post_meta($post_id, 'cyberchimps_slider_image' , true);
-							$slide_url = get_post_meta($post_id, 'slider_url' , true);
-							$caption = get_post_meta($post_id, 'slider_caption' , true);
-							
+							// Get post data
+							if( $slider_type == 'post' ) {
+								$img_src = wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) );
+								$slide_url = get_permalink( $slide->ID );
+								$caption = $slide->post_title;
+							}
+							//Getting metabox options for each slides
+							else {
+								$img_src = get_post_meta($post_id, 'cyberchimps_slider_image' , true);
+								$slide_url = get_post_meta($post_id, 'slider_url' , true);
+								$caption = get_post_meta($post_id, 'slider_caption' , true);
+							}
 					?>
 						<!-- Marup for each slides starts -->
 						<!-- Adding class="active" for the first slide -->
 						<div class="item <?php echo ( $slide_counter == 1 ) ? "active" : "" ; ?>">
-						
 							<!-- Slide image -->
-							<a href="<?php echo $slide_url; ?>"><img src="<?php echo $img_src; ?>" /></a>
+							<a href="<?php echo $slide_url; ?>"><img src="<?php echo $img_src; ?>" <?php echo $height; ?> /></a>
 							
 							<!-- Display Caption -->
 							<div class="carousel-caption">
@@ -93,18 +151,22 @@ if ( !class_exists( 'CyberChimpsSlider' ) ) {
 					
 					<?php
 						$slide_counter++; 
-						}
-					}	
+				
+					}
 					?>
 					
 				</div>
 				
 				<!-- Carousel nav -->
+        <?php // turn off arrows if set ?>
+        <?php if( !empty( $slider_arrows ) ): ?>
 				<a class="carousel-control left slider-left" href="#slider" data-slide="prev">&lsaquo;</a>
 				<a class="carousel-control right slider-right" href="#slider" data-slide="next">&rsaquo;</a>
+        <?php endif; ?>
 			</div>
 			<!-- /New Slider -->
 			<?php
+			endif;
 		}
 	}
 }

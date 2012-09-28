@@ -33,6 +33,27 @@ function cyberchimps_init_slides_post_type() {
 			'rewrite' => array('slug' => 'slides')
 		)
 	);
+	
+	$labels = array(
+    'name' => _x( 'Slide Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Slide Catergory', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Slides' ),
+    'all_items' => __( 'All Slides' ),
+    'parent_item' => __( 'Slide Category' ),
+    'parent_item_colon' => __( 'Slide Category:' ),
+    'edit_item' => __( 'Edit Slide Category' ), 
+    'update_item' => __( 'Update Slide Category' ),
+    'add_new_item' => __( 'Add New Slide Category' ),
+    'new_item_name' => __( 'New Slide Category Name' ),
+    'menu_name' => __( 'Slide Category' ),
+  ); 	
+	register_taxonomy( 'slide_categories', array('custom_slides'), array(
+		'public' => true,
+		'show_in_nav_menus' => false,
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true
+  ));
 		
 	$meta_boxes = array();
 	

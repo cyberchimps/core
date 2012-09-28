@@ -30,8 +30,8 @@
 
 /* ************************* For Slider Pro ************************ */
 #slider img {
-	height: 430px;
 	width: 100% !important;
+  height: auto;
 }
 
 /* ************************ For Portfolio Lite ********************** */
