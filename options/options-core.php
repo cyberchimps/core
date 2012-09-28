@@ -370,9 +370,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
 			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
 			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
-			'metal' => $imagepath . 'backgrounds/thumbs/metal.png',
-			'space' => $imagepath . 'backgrounds/thumbs/space.png',
-			'wood' => $imagepath . 'backgrounds/thumbs/wood.png'
+			'space' => $imagepath . 'backgrounds/thumbs/space.png'
 		),
 		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
