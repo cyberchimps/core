@@ -192,7 +192,6 @@ function cyberchimps_init_meta_boxes() {
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
-			->checkbox('cyberchimps_twitter_reply', 'Show @ Replies', '')
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {

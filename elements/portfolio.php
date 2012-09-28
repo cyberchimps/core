@@ -84,40 +84,86 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 			}?>
       <div id="portfolio" class="row-fluid">
      	 <div id="gallery" class="span12">
+       <?php
+			 	// check if there are any posts retrieved and if not display default images
+				if( !empty( $portfolio_posts ) ): ?>
           <?php if( $portfolio_title_toggle && $portfolio_title != '' ): ?>
           	<h2><?php echo $portfolio_title; ?></h2>
           <?php endif; ?>
-			<?php foreach( $portfolio_posts as $port ):
-			
-				$image = get_post_meta( $port->ID, 'portfolio_image', true );
-				$caption = get_post_meta( $port->ID, 'caption_text', true );
-				$link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
-				$link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
-				$url = ( isset( $link_use ) && $link != '' ) ? $link : $image;
-				$rel = ( ! isset( $link_use ) || $link == '' ) ? 'lightbox-portfolio' : '';
-				
-				if( $i == 1 ): ?>
-					<ul class="row-fluid">
-				<?php endif;
-				if( $i <= $images_per_row ): ?>
-        	<li id="portfolio_wrap" class="<?php echo $span; ?>">
-          	<div class="portfolio_item">
-            <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="Caption">
-              <img src="<?php echo $image ;?>" alt="<?php echo $caption; ?>"/>
-              <div class="portfolio_caption"><?php echo $caption; ?></div>
-            </a>
-            </div>
-					</li><!-- #portfolio_wrap .span3-->
-        <?php endif;
-				if( $i == $images_per_row ) {
-					$i = 1;
-					echo '</ul>';
-				}
-				else {
-					$i++;
-				}
-			
-			endforeach; ?>
+					<?php foreach( $portfolio_posts as $port ):
+          
+            $image = get_post_meta( $port->ID, 'portfolio_image', true );
+            $caption = get_post_meta( $port->ID, 'caption_text', true );
+            $link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
+            $link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
+            $url = ( isset( $link_use ) && $link != '' ) ? $link : $image;
+            $rel = ( ! isset( $link_use ) || $link == '' ) ? 'lightbox-portfolio' : '';
+            
+            if( $i == 1 ): ?>
+              <ul class="row-fluid">
+            <?php endif;
+            if( $i <= $images_per_row ): ?>
+              <li id="portfolio_wrap" class="<?php echo $span; ?>">
+                <div class="portfolio_item">
+                <a href="<?php echo $url; ?>" rel="<?php echo $rel; ?>" title="<?php echo $caption; ?>">
+                  <img src="<?php echo $image ;?>" alt="<?php echo $caption; ?>"/>
+                  <div class="portfolio_caption"><?php echo $caption; ?></div>
+                </a>
+                </div>
+              </li><!-- #portfolio_wrap -->
+            <?php endif;
+            if( $i == $images_per_row ) {
+              $i = 1;
+              echo '</ul>';
+            }
+            else {
+              $i++;
+            }
+          
+          endforeach; 
+					
+					// if there are no posts then display defaults
+					else:?>
+          <h2>Portfolio</h2>
+          
+          <ul class="row-fluid">
+          	<li id="portfolio_wrap" class="span3">
+              <div class="portfolio_item">
+                <a href="#" rel="lightbox-portfolio" title="Caption">
+                <img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/portfolio.jpg" alt="CyberChimps"/>
+                <div class="portfolio_caption">CyberChimps Portfolio</div>
+              </a>
+              </div>
+            </li><!-- #portfolio_wrap -->
+            
+            <li id="portfolio_wrap" class="span3">
+              <div class="portfolio_item">
+                <a href="#" rel="lightbox-portfolio" title="Caption">
+                <img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/portfolio.jpg" alt="CyberChimps"/>
+                <div class="portfolio_caption">CyberChimps Portfolio</div>
+              </a>
+              </div>
+            </li><!-- #portfolio_wrap -->
+            
+            <li id="portfolio_wrap" class="span3">
+              <div class="portfolio_item">
+                <a href="#" rel="lightbox-portfolio" title="Caption">
+                <img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/portfolio.jpg" alt="CyberChimps"/>
+                <div class="portfolio_caption">CyberChimps Portfolio</div>
+              </a>
+              </div>
+            </li><!-- #portfolio_wrap -->
+            
+            <li id="portfolio_wrap" class="span3">
+              <div class="portfolio_item">
+                <a href="#" rel="lightbox-portfolio" title="Caption">
+                <img src="<?php echo get_template_directory_uri(); ?>/core/lib/images/portfolio.jpg" alt="CyberChimps"/>
+                <div class="portfolio_caption">CyberChimps Portfolio</div>
+              </a>
+              </div>
+            </li><!-- #portfolio_wrap -->
+          </ul>
+          <?php endif; ?>
       
       		</div><!-- #gallery .span12-->
 			</div><!-- row-fluid -->
