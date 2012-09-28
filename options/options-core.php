@@ -838,7 +838,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('First Porfolio Link', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_toggle_one',
 		'type' => 'toggle',
-		'std' => 'checked',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -847,7 +846,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_one',
-		'std' => home_url(),
+		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -882,7 +881,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Second Porfolio Link', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_toggle_two',
 		'type' => 'toggle',
-		'std' => 'checked',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -891,7 +889,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_two',
-		'std' => home_url(),
+		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -926,7 +924,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Third Porfolio Link', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_toggle_three',
 		'type' => 'toggle',
-		'std' => 'checked',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -935,7 +932,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_three',
-		'std' => home_url(),
+		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -970,7 +967,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Fourth Porfolio Link', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_toggle_four',
 		'type' => 'toggle',
-		'std' => 'checked',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -979,7 +975,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_four',
-		'std' => home_url(),
+		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
