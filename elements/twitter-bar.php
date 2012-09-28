@@ -52,14 +52,14 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
-				$user_details['exclude_replies'] =  !get_post_meta($post->ID, 'cyberchimps_twitter_reply', true);
+				$user_details['exclude_replies'] =  '1';
 			}
 			else {
 				$user_details = array();
 				$user_details['screen_name'] = ( $options['twitter_handle'] != '' ) ? $options['twitter_handle'] : 'CyberChimps';
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
-				$user_details['exclude_replies'] = ( $options['twitter_replies'] == 1 ) ? false : 1;				
+				$user_details['exclude_replies'] = '1';				
 			}
 			$latest_tweet = self::get_tweets( $user_details );
 			

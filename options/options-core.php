@@ -1403,15 +1403,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_twitterbar_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
-	
-	$fields_list[] = array(
-		'name' => __('Show Replies', 'cyberchimps'),
-		'id' => 'twitter_replies',
-		'std' => 'CyberChimps',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_twitterbar_section',
-		'heading' => 'cyberchimps_blog_heading'
-	);
 
 /* CAROUSEL OPTIONS */
 
