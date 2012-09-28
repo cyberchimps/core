@@ -47,9 +47,7 @@ add_action('cyberchimps_header_content', 'cyberchimps_logo_icons');
 function cyberchimps_description_icons() { ?>
 	<header class="row-fluid">
 		<div class="span7">
-			<?php if (function_exists('cyberchimps_header_site_title') ) {
-				cyberchimps_header_site_title();
-			} ?>
+			<h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
 		</div>	
 	
 		<div id ="register" class="span5">
