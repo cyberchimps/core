@@ -24,6 +24,9 @@ jQuery(document).ready(function($) {
 	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');*/
 	
 	var page_subsection_map = {
+		cyberchimps_sitename_contact: "cyberchimps_header_details_section",
+		cyberchimps_header_content: "cyberchimps_header_social_section",
+		cyberchimps_banner: "cyberchimps_header_banner_section",
 		slider_lite: "cyberchimps_blog_slider_lite_section",
 		page_slider: "cyberchimps_blog_slider_section",
 		callout_section: "cyberchimps_blog_callout_section",
@@ -34,7 +37,7 @@ jQuery(document).ready(function($) {
 		portfolio_pro: "cyberchimps_blog_portfolio_pro_section"
 	};
 	
-	$(".blog-section-order-tracker").change(function(){
+	jQuery(".blog-section-order-tracker").change(function(){
 		var array = $(this).val().split(",");
 		$.each(page_subsection_map, function(key, value) {
 			if($.inArray(key, array) != -1) {
@@ -346,5 +349,11 @@ jQuery(document).ready(function($) {
 					}
 				}).change();
 	});
+	
+	var tracker_value = jQuery(".blog-section-order-tracker").val();
+	alert(tracker_value);
+	jQuery(".blog-section-order-tracker").val("temp");
+	alert(jQuery(".blog-section-order-tracker").val());
+	//jQuery(".blog-section-order-tracker").val("tracker_value");
 	
 });
