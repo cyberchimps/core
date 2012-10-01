@@ -16,8 +16,17 @@
  * @link     http://www.cyberchimps.com/
  */
 
-//set global theme options variable
+//TODO remove global $options as it will be replaced by cyberchimps_option function set global theme options variable
 $options = get_option('cyberchimps_options');
+
+// Set options function
+function cyberchimps_option( $name = false, $subname = false ){
+	$options = get_option( 'cyberchimps_options' );
+	if( $name ) {
+		$value = $options[$name];
+		return $value;
+	}
+}
 
 // FIXME: Fix documentation
 // Enqueue core scripts and core styles

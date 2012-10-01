@@ -24,49 +24,51 @@ add_action ('slider_lite', 'slider_lite_content' );
 
 function slider_lite_content() {
 
-	global $wp_query, $post, $slider_default;
+	global $wp_query, $post;
+	
+	$slide = array();
+	$link = array();
 		
 	if (is_page()) {
-		$slide1 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_image' , true);
-		$slide2 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_image' , true);
-		$slide3 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_image' , true);
+		$slides[0]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_image' , true);
+		$slides[1]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_image' , true);
+		$slides[2]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_image' , true);
 	
-		$link1 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_url' , true);
-		$link2 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_url' , true);
-		$link3 = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_url' , true);
+		$slides[0]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_url' , true);
+		$slides[1]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_url' , true);
+		$slides[2]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_url' , true);
 	}
 	
 	else {
-		$options = get_option('cyberchimps_options');
 		
-		$slide1 = $options['image_one_slide'];
-		$slide2 = $options['image_two_slide'];
-		$slide3 = $options['image_three_slide'];
+		$slides[0]['img'] = cyberchimps_option( 'image_one_slide' );
+		$slides[1]['img'] = cyberchimps_option( 'image_two_slide' );
+		$slides[2]['img'] = cyberchimps_option( 'image_three_slide' );
 	
-		$link1 = $options['image_one_slide_url'];
-		$link2 = $options['image_two_slide_url'];
-		$link3 = $options['image_three_slide_url'];
+		$slides[0]['link'] = cyberchimps_option( 'image_one_slide_url' );
+		$slides[1]['link'] = cyberchimps_option( 'image_two_slide_url' );
+		$slides[2]['link'] = cyberchimps_option( 'image_three_slide_url' );
 
 	}
+	$i = 0;
 ?>
 <div class="row-fluid">
 	<div id="slider-lite" class="carousel slide">
 		<div class="carousel-inner">
+      <?php foreach( $slides as $slide ): ?>
+      <?php if( $slide['img'] != '' ): ?>
+      <?php if( $i == 0 ): ?>
 			<div class="active item">
-				<a href="<?php echo $link1; ?>">
-					<img src="<?php echo $slide1 ;?>" alt="Slider" />
+      <?php else: ?>
+      <div class="item">
+      <?php endif; ?>
+				<a href="<?php echo $slide['link']; ?>">
+					<img src="<?php echo $slide['img'];?>" alt="Slider" />
 				</a>
 			</div>
-			<div class="item">
-				<a href="<?php echo $link2; ?>">
-					<img src="<?php echo $slide2 ;?>" alt="Slider" />
-				</a>
-			</div>
-			<div class="item">
-				<a href="<?php echo $link3; ?>">
-					<img src="<?php echo $slide3 ;?>" alt="Slider" />
-				</a>
-			</div>
+			<?php endif; ?>
+      <?php $i++;
+			endforeach; ?>
 		</div>
 		
 		<!-- Slider nav -->
