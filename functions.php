@@ -747,21 +747,41 @@ function cyberchimps_upgrade_bar() { ?>
 add_action( 'cyberchimps_options_before_container', 'cyberchimps_upgrade_bar' );
 
 // Modal welcome note
-function cyberchimps_modal_welcome_note() { ?>
-	<!-- Modal -->
+function cyberchimps_modal_welcome_note() { 
+	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">Modal header</h3>
+      <h3 id="myModalLabel"><?php echo apply_filters( 'cyberchimps_current_theme_name', __( 'Cyberchimps' ) ); ?></h3>
     </div>
     <div class="modal-body">
-      <p>One fine body…</p>
+      	<?php printf( __( '%1$s WordPress Theme
+
+					<p>%1$s offers the same advanced functionality as CyberChimps&#39; other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android. %1$s also includes Drag and Drop Elements such as the Portfolio Element, Responsive Feature Slider, Page Content, Twitter bar and Widgetized boxes. All of which can be used on a per-page basis using Drag and Drop Page Options that also include sidebar and layout options giving you the power to control the look and feel of every page of your website.</p>
+					
+					<p>To get started simply work your way through the menus to the left, select your options, add your content, and always remember to hit save after making any changes.</p>
+					
+					<p>If you want even more amazing new features <a href="%2$s" title="upgrade to %3$s">upgrade to %3$s</a> which includes a Custom Feature Slides, Product Element, Image Carousel, Widgetized Boxes, Callout section, expanded typography including TypeKit support, and many more powerful new features. Please visit CyberChimps.com to learn more!</p>
+					
+					<p>We tried to make %1$s as easy to use as possible, but if you still need help please read the <a href="%4$s" target="_blank">documentation</a>, and visit our <a href="%5$s" target="_blank">support forum</a>.</p>
+					
+					<p>Thank you for using %1$s.</p>
+					
+					<p>A Professional WordPress Theme</p>', 'cyberchimps' ),
+					apply_filters( 'cyberchimps_current_theme_name', __( 'Cyberchimps' ) ),
+					apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
+					apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps' ) ),
+					apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com' ),
+					apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com' )
+					);					
+		?>
     </div>
     <div class="modal-footer">
       <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Close', 'cyberchimps' ); ?>" />
     </div>
   </div>
 <?php
+	endif;
 }
 add_action( 'cyberchimps_options_form_start', 'cyberchimps_modal_welcome_note' );
 ?>

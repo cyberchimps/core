@@ -567,12 +567,7 @@ function cyberchimps_fields_callback( $value ) {
 		case 'text':
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
 			break;
-			
-		// Hidden field
-		case 'hidden':
-			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="hidden" value="' . $val . '" />';
-			
-			break; 
+			 
 		// Textarea
 		case 'textarea':
 			$rows = '8';

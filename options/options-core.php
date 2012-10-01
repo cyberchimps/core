@@ -341,10 +341,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 	//hidden field to set whether to show modal window or not
 	$fields_list[] = array(
-		'name' => 'Modal Welcome Note',
+		'name' => __( 'Modal Welcome Note', 'cyberchimps' ),
 		'id' => 'modal_welcome_note_display',
-		'type' => 'hidden',
-		'std' => 0,
+		'type' => 'toggle',
+		'std' => 'checked',
 		'section' => 'cyberchimps_welcome_section',
 		'heading' => 'cyberchimps_welcome_heading'); 
 		

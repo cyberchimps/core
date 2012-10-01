@@ -350,6 +350,7 @@ jQuery(document).ready(function($) {
 				}).change();
 	});
 
+/*
 	var tracker_value = jQuery(".blog-section-order-tracker").val();
 	alert(tracker_value);
 	jQuery(".blog-section-order-tracker").val("temp");
@@ -360,7 +361,6 @@ jQuery(document).ready(function($) {
 	$('#welcomeModal').modal()
 	
 	$('#welcomeModalSave').click(function(e){
-		e.preventDefault();
-			$('#modal_welcome_note_display').val(1);
+			$('#modal_welcome_note_display').attr('checked', false);
 		})
 });
