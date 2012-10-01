@@ -578,7 +578,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********** BANNER OPTIONS STARTS ************/
 	// Banner image
 	$fields_list[] = array(
-		'name'     => __('Bnner Image', 'cyberchimps'),
+		'name'     => __('Banner Image', 'cyberchimps'),
 		'desc'     => __('Enter URL or upload file', 'cyberchimps'),
 		'id'       => 'header_banner_image',
 		'type'	   => 'upload',
