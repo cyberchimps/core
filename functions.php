@@ -16,8 +16,17 @@
  * @link     http://www.cyberchimps.com/
  */
 
-//set global theme options variable
+//TODO remove global $options as it will be replaced by cyberchimps_option function set global theme options variable
 $options = get_option('cyberchimps_options');
+
+// Set options function
+function cyberchimps_option( $name = false, $subname = false ){
+	$options = get_option( 'cyberchimps_options' );
+	if( $name ) {
+		$value = $options[$name];
+		return $value;
+	}
+}
 
 // FIXME: Fix documentation
 // Enqueue core scripts and core styles
@@ -58,6 +67,204 @@ function cyberchimps_core_scripts() {
     } 
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
+
+function cyberchimps_create_layout() {
+	global $post;
+	
+	if ( is_single() ) {
+		$layout_type = cyberchimps_get_option('single_post_sidebar_options');
+		
+	} elseif ( is_home() ) {
+		$layout_type = cyberchimps_get_option('sidebar_images');
+	
+	} elseif ( is_page() ) {
+		// TODO: Change so that option is not saved as an array
+		$page_sidebar = get_post_meta($post->ID, 'cyberchimps_page_sidebar');
+		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
+		
+	} elseif ( is_archive() ) {
+		$layout_type = cyberchimps_get_option('archive_sidebar_options');
+			
+	} elseif ( is_search() ) {
+		$layout_type = cyberchimps_get_option('search_sidebar_options');	
+	
+	} elseif ( is_404() ) {
+		$layout_type = cyberchimps_get_option('error_sidebar_options');
+	
+	} else {
+		$layout_type = apply_filters('cyberchimps_default_layout', 'right_sidebar');
+	}
+	
+	cyberchimps_get_layout($layout_type);
+}
+add_action('wp', 'cyberchimps_create_layout');
+
+function cyberchimps_get_layout( $layout_type ) {
+	if ( $layout_type ) {
+		switch($layout_type) {
+			case 'full_width' :
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span12');
+			break;
+			case 'right_sidebar' :
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+			case 'left_sidebar' :
+				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+			break;
+			case 'content_middle' :
+				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+			case 'left_right_sidebar' :
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_left');
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+		}
+	}	
+}
+
+// FIXME: Fix documentation
+class cyberchimps_Walker extends Walker_Nav_Menu {
+	
+	// FIXME: Fix documentation
+    function start_lvl( &$output, $depth ) {
+		//In a child UL, add the 'dropdown-menu' class
+		if( $depth == 0 ) {
+			$indent = str_repeat( "\t", $depth );
+			$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+		} else {
+			$indent = str_repeat( "\t", $depth );
+			$output .= "\n$indent<ul>\n";
+		}
+	}
+	
+	// FIXME: Fix documentation
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		$li_attributes = '';
+		$class_names = $value = '';
+
+		$classes = empty( $item->classes ) ? array() : ( array ) $item->classes;
+
+		//Add class and attribute to LI element that contains a submenu UL.
+		if ( $args->has_children && $depth < 1 ){
+			$classes[] 		= 'dropdown';
+			$li_attributes .= 'data-dropdown="dropdown"';
+		}
+		$classes[] = 'menu-item-' . $item->ID;
+		//If we are on the current page, add the active class to that menu item.
+		$classes[] = ($item->current) ? 'active' : '';
+
+		//Make sure you still add all of the WordPress classes.
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+		$class_names = ' class="' . esc_attr( $class_names ) . '"';
+
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		$output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . '>';
+		//Add attributes to link element.
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn ) ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url ) ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		$attributes .= ($args->has_children && $depth < 1) ? ' class="dropdown-toggle"' : '';
+
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= ($args->has_children && $depth < 1) ? ' <b class="caret"></b> ' : ''; 
+		$item_output .= '</a>';
+		$item_output .= $args->after;
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+	
+	// FIXME: Fix documentation
+	//Overwrite display_element function to add has_children attribute. Not needed in >= Wordpress 3.4
+	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+
+		if ( !$element )
+			return;
+
+		$id_field = $this->db_fields['id'];
+		
+		//display this element
+		if ( is_array( $args[0] ) ) 
+			$args[0]['has_children'] = ! empty( $children_elements[$element->$id_field] );
+		else if ( is_object( $args[0] ) ) 
+			$args[0]->has_children = ! empty( $children_elements[$element->$id_field] ); 
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
+		call_user_func_array(array(&$this, 'start_el'), $cb_args);
+
+		$id = $element->$id_field;
+
+		// descend only when the depth is right and there are childrens for this element
+		if ( ($max_depth == 0 || $max_depth > $depth+1 ) && isset( $children_elements[$id]) ) {
+
+			foreach( $children_elements[ $id ] as $child ){
+
+				if ( !isset($newlevel) ) {
+					$newlevel = true;
+					//start the child delimiter
+					$cb_args = array_merge( array(&$output, $depth), $args);
+					call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
+				}
+				$this->display_element( $child, $children_elements, $max_depth, $depth + 1, $args, $output );
+			}
+				unset( $children_elements[ $id ] );
+		}
+
+		if ( isset($newlevel) && $newlevel ){
+			//end the child delimiter
+			$cb_args = array_merge( array(&$output, $depth), $args);
+			call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
+		}
+
+		//end this element
+		$cb_args = array_merge( array(&$output, $element, $depth), $args);
+		call_user_func_array(array(&$this, 'end_el'), $cb_args);
+	}
+}
+
+// FIXME: Fix documentation	
+// Sets fallback menu for 1 level. Could use preg_split to have children displayed too
+function cyberchimps_fallback_menu() {
+	$args = array(
+		'depth'        => 1,
+		'show_date'    => '',
+		'date_format'  => '',
+		'child_of'     => 0,
+		'exclude'      => '',
+		'include'      => '',
+		'title_li'     => '',
+		'echo'         => 0,
+		'authors'      => '',
+		'sort_column'  => 'menu_order, post_title',
+		'link_before'  => '',
+		'link_after'   => '',
+		'walker'       => '',
+		'post_type'    => 'page',
+		'post_status'  => 'publish' 
+	);
+	$pages = wp_list_pages( $args );
+	$prepend = '<ul id="menu-menu" class="nav">';
+	$append = '</ul>';
+	echo $prepend.$pages.$append;
+}
+
 
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 // FIXME: Fix documentation
