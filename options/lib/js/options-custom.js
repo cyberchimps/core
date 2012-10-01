@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
 	
 	var page_subsection_map = {
 		slider_lite: "cyberchimps_blog_slider_lite_section",
+		page_slider: "cyberchimps_blog_slider_section",
 		callout_section: "cyberchimps_blog_callout_section",
 		twitterbar_section: "cyberchimps_twitterbar_section",
 		carousel_section: "cyberchimps_carousel_section",
@@ -38,8 +39,10 @@ jQuery(document).ready(function($) {
 		$.each(page_subsection_map, function(key, value) {
 			if($.inArray(key, array) != -1) {
 				$("#" + value).show();
+				$("#" + value + "-tab").show();
 			} else {
 				$("#" + value).hide();
+				$("#" + value + "-tab").hide();
 			}
 		});
 	}).change();
