@@ -122,8 +122,9 @@ function cyberchimps_options_page() {
 			settings_fields('cyberchimps_options');
 			$headings_list = cyberchimps_get_headings();
 			$sections_list = cyberchimps_get_sections();
+			
+			do_action( 'cyberchimps_options_form_start' )
 			?>
-
 			<!-- header -->
 			<div class="row-fluid cc-header">
 				<div class="span3">
@@ -566,7 +567,12 @@ function cyberchimps_fields_callback( $value ) {
 		case 'text':
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
 			break;
-
+			
+		// Hidden field
+		case 'hidden':
+			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="hidden" value="' . $val . '" />';
+			
+			break; 
 		// Textarea
 		case 'textarea':
 			$rows = '8';
@@ -842,7 +848,6 @@ function cyberchimps_fields_callback( $value ) {
 			if ( isset( $value['class'] ) ) {
 				$class .= ' ' . $value['class'];
 			}
-
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
 			if ( isset($value['name']) ) {
 				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_welcome_sub_heading', $value['name']) ) . '</h4>' . "\n";

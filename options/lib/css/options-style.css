@@ -68,7 +68,7 @@ form {
   background-size: auto!important;
 }
 
-/*************** Header **********************/
+/*************** Upgrade bar ****************/
 
 .upgrade-callout {
   background: #81c7ef;
@@ -719,6 +719,12 @@ img.action {
 
 .section-group h3 span.minus {
     background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
+}
+
+/************** Welcome Page *****************/
+
+#modal_welcome_note {
+  display: none; 
 }
 
 /************** Responsive *******************/

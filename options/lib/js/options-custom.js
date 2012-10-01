@@ -347,4 +347,12 @@ jQuery(document).ready(function($) {
 				}).change();
 	});
 	
+/* add controls for modal welcome note */
+	$('#welcomeModal').modal()
+	
+	$('#welcomeModalSave').click(function(e){
+		e.preventDefault();
+			$('#modal_welcome_note_display').val(1);
+		})
+	
 });

@@ -745,4 +745,23 @@ function cyberchimps_upgrade_bar() { ?>
 <?php
 }
 add_action( 'cyberchimps_options_before_container', 'cyberchimps_upgrade_bar' );
+
+// Modal welcome note
+function cyberchimps_modal_welcome_note() { ?>
+	<!-- Modal -->
+  <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+      <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Close', 'cyberchimps' ); ?>" />
+    </div>
+  </div>
+<?php
+}
+add_action( 'cyberchimps_options_form_start', 'cyberchimps_modal_welcome_note' );
 ?>
