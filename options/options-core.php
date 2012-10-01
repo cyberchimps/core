@@ -1154,8 +1154,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'full_width' => $imagepath . '1col.png',
 			'right_sidebar' => $imagepath . '2cr.png',
 			'left_sidebar' => $imagepath . '2cl.png',
-			'left_right_sidebar' => get_template_directory_uri() . '/core/lib/images/tworight.png',
-			'content_middle' => get_template_directory_uri() . '/core/lib/images/rightleft.png'
+			'left_right_sidebar' => $imagepath . '3cr.png',
+			'content_middle' => $imagepath . '3col.png'
 		),
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading'
