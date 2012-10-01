@@ -68,6 +68,71 @@ function cyberchimps_core_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
+function cyberchimps_create_layout() {
+	global $post;
+	
+	if ( is_single() ) {
+		$layout_type = cyberchimps_get_option('single_post_sidebar_options');
+		
+	} elseif ( is_home() ) {
+		$layout_type = cyberchimps_get_option('sidebar_images');
+	
+	} elseif ( is_page() ) {
+		// TODO: Change so that option is not saved as an array
+		$page_sidebar = get_post_meta($post->ID, 'cyberchimps_page_sidebar');
+		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
+		
+	} elseif ( is_archive() ) {
+		$layout_type = cyberchimps_get_option('archive_sidebar_options');
+			
+	} elseif ( is_search() ) {
+		$layout_type = cyberchimps_get_option('search_sidebar_options');	
+	
+	} elseif ( is_404() ) {
+		$layout_type = cyberchimps_get_option('error_sidebar_options');
+	
+	} else {
+		$layout_type = apply_filters('cyberchimps_default_layout', 'right_sidebar');
+	}
+	
+	cyberchimps_get_layout($layout_type);
+}
+add_action('wp', 'cyberchimps_create_layout');
+
+function cyberchimps_get_layout( $layout_type ) {
+	if ( $layout_type ) {
+		switch($layout_type) {
+			case 'full_width' :
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span12');
+			break;
+			case 'right_sidebar' :
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+			case 'left_sidebar' :
+				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+			break;
+			case 'content_middle' :
+				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+			case 'left_right_sidebar' :
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_left');
+				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+			break;
+		}
+	}	
+}
+
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 // FIXME: Fix documentation
 //Prints HTML with meta information for the current post-date/time and author.
