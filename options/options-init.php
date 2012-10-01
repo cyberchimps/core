@@ -114,6 +114,7 @@ function cyberchimps_options_page() {
 ?>
 
 	<div class="wrap">
+    <?php do_action( 'cyberchimps_options_before_container' ); ?>
 		<div class="container-fluid cc-options">
 
 			<form action="options.php" method="post">
