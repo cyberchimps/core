@@ -350,6 +350,7 @@ jQuery(document).ready(function($) {
 				}).change();
 	});
 	
+<<<<<<< HEAD
 	var tracker_value = jQuery(".blog-section-order-tracker").val();
 	alert(tracker_value);
 	jQuery(".blog-section-order-tracker").val("temp");
@@ -364,4 +365,6 @@ jQuery(document).ready(function($) {
 			$('#modal_welcome_note_display').val(1);
 		})
 	
+=======
+>>>>>>> 29ebe8087bfcddcded76b762d3079115588886e7
 });
