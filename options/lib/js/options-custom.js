@@ -349,12 +349,6 @@ jQuery(document).ready(function($) {
 					}
 				}).change();
 	});
-
-	var tracker_value = jQuery(".blog-section-order-tracker").val();
-	alert(tracker_value);
-	jQuery(".blog-section-order-tracker").val("temp");
-	alert(jQuery(".blog-section-order-tracker").val());
-	//jQuery(".blog-section-order-tracker").val("tracker_value");
 	
 /* add controls for modal welcome note */
 	$('#welcomeModal').modal()
