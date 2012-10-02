@@ -93,7 +93,7 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
 					<?php foreach( $portfolio_posts as $port ):
           
             $image = get_post_meta( $port->ID, 'portfolio_image', true );
-            $caption = get_post_meta( $port->ID, 'caption_text', true );
+            $caption = ( get_post_meta( $port->ID, 'caption_text', true ) != '' ) ? get_post_meta( $port->ID, 'caption_text', true ) : get_the_title( $port->ID );
             $link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
             $link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
             $url = ( isset( $link_use ) && $link != '' ) ? $link : $image;

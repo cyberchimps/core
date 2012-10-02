@@ -25,7 +25,7 @@ function cyberchimps_init_portfolio_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true, 
-			'supports' => array('custom-fields'),
+			'supports' => array('custom-fields', 'title'),
 			'taxonomies' => array( 'portfolio_cats'),
 			'has_archive' => true,
 			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/portfolio.png',
