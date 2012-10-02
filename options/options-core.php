@@ -1281,7 +1281,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Slider Type', 'cyberchimps'),
 		'id' => 'blog_slider_type',
 		'type' => 'select',
-		'std' => 'posts',
+		'std' => 'custom_slides',
 		'options' => array(
 			'post' => __('Posts', 'cyberchimps'),
 			'custom_slides' => __('Custom', 'cyberchimps'),
