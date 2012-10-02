@@ -34,7 +34,7 @@ function cyberchimps_logo_icons() { ?>
 			} ?>
 		</div>	
 	
-		<div id ="register" class="span5">
+		<div id="register" class="span5">
 			<?php if (function_exists('cyberchimps_header_social_icons') ) {
 				cyberchimps_header_social_icons();
 			} ?>
@@ -42,6 +42,24 @@ function cyberchimps_logo_icons() { ?>
 	</header>
 <?php }
 add_action('cyberchimps_header_content', 'cyberchimps_logo_icons');
+
+// Logo/Search header element.
+function cyberchimps_logo_searchform() { ?>
+	<header class="row-fluid">
+		<div class="span7">
+			<?php if (function_exists('cyberchimps_header_logo') ) {
+				cyberchimps_header_logo();
+			} ?>
+		</div>	
+	
+		<div id="search" class="span5">
+			<?php 
+				get_search_form( true );
+			 ?>
+		</div>
+	</header>
+<?php }
+add_action('cyberchimps_logo_search', 'cyberchimps_logo_searchform');
 
 // Description/Icons header element.
 function cyberchimps_description_icons() { ?>

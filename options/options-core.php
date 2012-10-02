@@ -576,6 +576,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'cyberchimps_sitename_contact'  => 'Logo + Contact',
 			'cyberchimps_sitename_register' => 'Logo + Login',
 			'cyberchimps_logo_description'  => 'Logo + Description',
+			'cyberchimps_logo_search'				=> 'Logo + Search',
 			'cyberchimps_description_icons' => 'Description + Icons',
 			'cyberchimps_banner'            => 'Banner',
 			
