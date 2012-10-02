@@ -42,10 +42,10 @@ jQuery(document).ready(function($) {
 		$.each(page_subsection_map, function(key, value) {
 			if($.inArray(key, array) != -1) {
 				$("#" + value).show();
-				$("#" + value + "-tab").show();
+				$("#" + value + "-tab").parent('li').show();
 			} else {
 				$("#" + value).hide();
-				$("#" + value + "-tab").hide();
+				$("#" + value + "-tab").parent('li').hide();
 			}
 		});
 	}).change();

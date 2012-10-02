@@ -345,11 +345,8 @@ ul.cc-parent > li.cc-has-children > ul.cc-child > li:last-child {
 ul.cc-parent > li.cc-active:last-child > ul.cc-child > li:last-child {
   border-bottom:  1px solid #ddd;
 }
-ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(odd) {
+ul.cc-parent > li.cc-has-children > ul.cc-child > li {
   background: #ffffff;
-}
-ul.cc-parent > li.cc-has-children > ul.cc-child > li:nth-child(even) {
-  background: #f7f7f7;
 }
 ul.cc-parent > li.cc-has-children > ul.cc-child > li > a {
   margin: 10px 5px 10px 20px;
