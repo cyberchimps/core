@@ -24,9 +24,6 @@ jQuery(document).ready(function($) {
 	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');*/
 	
 	var page_subsection_map = {
-		cyberchimps_sitename_contact: "cyberchimps_header_details_section",
-		cyberchimps_header_content: "cyberchimps_header_social_section",
-		cyberchimps_banner: "cyberchimps_header_banner_section",
 		slider_lite: "cyberchimps_blog_slider_lite_section",
 		page_slider: "cyberchimps_blog_slider_section",
 		callout_section: "cyberchimps_blog_callout_section",
