@@ -812,7 +812,7 @@ function cyberchimps_options_help_text() {
 							</a>
 						</div>
 						</div>
-						<div class="span7">
+						<div class="span6">
 						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</div>
 						</div>
