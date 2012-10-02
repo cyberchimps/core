@@ -845,10 +845,10 @@ function cyberchimps_fields_callback( $value ) {
 			}
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
 			if ( isset($value['name']) ) {
-				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_welcome_sub_heading', $value['name']) ) . '</h4>' . "\n";
+				$output .= '<h4 class="heading">' . esc_html( apply_filters('cyberchimps_help_sub_heading', $value['name']) ) . '</h4>' . "\n";
 			}
 			if ( $value['desc'] ) {
-				$output .= apply_filters('cyberchimps_sanitize_info', apply_filters( 'cyberchimps_welcome_description', $value['desc'] ) ) . "\n";
+				$output .= apply_filters('cyberchimps_sanitize_info', apply_filters( 'cyberchimps_help_description', $value['desc'] ) ) . "\n";
 			}
 			$output .= '</div>' . "\n";
 			break;

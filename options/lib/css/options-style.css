@@ -727,6 +727,24 @@ img.action {
   display: none; 
 }
 
+/************** Help Page ********************/
+
+.cc_help_section .span3 {
+ 	text-align: center; 
+}
+
+.cc_help_upgrade_bar {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  background-color: #08c;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
 /************** Responsive *******************/
 
 @media all and (max-width: 1196px) {

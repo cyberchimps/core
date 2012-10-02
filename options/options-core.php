@@ -21,7 +21,7 @@ function cyberchimps_add_core_headings( $headings_list ) {
 	$headings_list = array();
 	
 	$headings_list[] = array(
-		'id' => 'cyberchimps_welcome_heading',
+		'id' => 'cyberchimps_help_heading',
 		'title' => __('Help', 'cyberchimps'),
 	);
 	
@@ -69,9 +69,9 @@ function cyberchimps_add_core_sections( $sections_list ) {
 /*************************** WELCOME **************************************************/
 
 	$sections_list[] = array(
-		'id' => 'cyberchimps_welcome_section',
-		'label' => apply_filters( 'cyberchimps_welcome_heading', 'CyberChimps.com' ),
-		'heading' => 'cyberchimps_welcome_heading'
+		'id' => 'cyberchimps_help_section',
+		'label' => apply_filters( 'cyberchimps_help_heading', 'CyberChimps.com' ),
+		'heading' => 'cyberchimps_help_heading'
 	);
 	
 /**************************** DESIGN **************************************************/
@@ -329,15 +329,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'style' => 'normal',
 		'color' => '#333333' );
 		
-/*************************** WELCOME **************************************************/
+/*************************** HELP *****************************************************/
 	
 	$fields_list[] = array(
-		'name' => apply_filters( 'cyberchimps_welcome_sub_heading', __('Welcome Info', 'cyberchimps') ),
-		'id' => 'welcome_info_display',
+		'name' => apply_filters( 'cyberchimps_help_sub_heading', __( 'Cyberchimps Help', 'cyberchimps' ) ),
+		'id' => 'help_info_display',
 		'type' => 'welcome',
-		'desc' => 'Description',
-		'section' => 'cyberchimps_welcome_section',
-		'heading' => 'cyberchimps_welcome_heading');
+		'desc' => 'test',
+		'section' => 'cyberchimps_help_section',
+		'heading' => 'cyberchimps_help_heading');
 		
 	//hidden field to set whether to show modal window or not
 	$fields_list[] = array(
@@ -345,8 +345,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'modal_welcome_note_display',
 		'type' => 'toggle',
 		'std' => 'checked',
-		'section' => 'cyberchimps_welcome_section',
-		'heading' => 'cyberchimps_welcome_heading'); 
+		'section' => 'cyberchimps_help_section',
+		'heading' => 'cyberchimps_help_heading'); 
 		
 /*************************** DESIGN ***************************************************/
 	
