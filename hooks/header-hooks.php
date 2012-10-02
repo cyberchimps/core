@@ -115,12 +115,13 @@ add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
 
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
-	
+	 
+	$url = ( cyberchimps_get_option( 'custom_logo_url_link' ) != '' ) ? cyberchimps_get_option( 'custom_logo_url_link' ) : home_url();
 	if ( cyberchimps_get_option('custom_logo') == '1') {
 		$logo = cyberchimps_get_option('custom_logo_uploader');
 	?>
 		<div id="logo">
-			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo); ?>" alt="logo"></a>
+			<a href="<?php echo $url; ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img src="<?php echo stripslashes($logo); ?>" alt="logo"></a>
 		</div>
 	<?php } else {
 		if ( function_exists('cyberchimps_header_site_title') ) {

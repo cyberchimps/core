@@ -609,6 +609,25 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	/********** HEADER OPTIONS STARTS ************/
 	$fields_list[] = array(
+		'name' => __('Custom Logo URL', 'cyberchimps'),
+		'id' => 'custom_logo_url',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('URL', 'cyberchimps'),
+		'desc' => __('Enter URL', 'cyberchimps'),
+		'id' => 'custom_logo_url_link',
+		'class' => 'custom_logo_url_toggle',
+		'type' => 'text',
+		'std' => home_url(),
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[] = array(
 		'name' => __('Custom Logo', 'cyberchimps'),
 		'id' => 'custom_logo',
 		'type' => 'toggle',
