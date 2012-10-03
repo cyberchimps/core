@@ -110,7 +110,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_drag_drop_section',
-		'label' => __('Header Drag/Drop', 'cyberchimps'),
+		'label' => __('Header Drag &#38; Drop', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
@@ -122,13 +122,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_social_section',
-		'label' => __('Social', 'cyberchimps'),
+		'label' => __('Social Icons', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_details_section',
-		'label' => __('Contact', 'cyberchimps'),
+		'label' => __('Contact Element', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
@@ -463,16 +463,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 /* CUSTOM COLORS */
 	$fields_list[] = array(
-		'id' => 'skin_color',
+		'id' => 'cyberchimps_skin_color',
 		'class' => '',
 		'name' => __('Select a Skin Color', 'cyberchimps'),
 		'type' => 'select',
-		'std' => 'blue',
-		'options' => array(
+		'std' => 'default',
+		'options' => apply_filters( 'cyberchimps_skin_color', array( 
 			'default' => __('Default', 'cyberchimps'),
 			'blue' => __('Blue', 'cyberchimps'),
-			'green' => __('Green', 'cyberchimps'),
-		),
+			'green' => __('Green', 'cyberchimps')
+		) ),
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading',
 	);
