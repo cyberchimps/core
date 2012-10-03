@@ -463,16 +463,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 /* CUSTOM COLORS */
 	$fields_list[] = array(
-		'id' => 'skin_color',
+		'id' => 'cyberchimps_skin_color',
 		'class' => '',
 		'name' => __('Select a Skin Color', 'cyberchimps'),
 		'type' => 'select',
-		'std' => 'blue',
-		'options' => array(
+		'std' => 'default',
+		'options' => apply_filters( 'cyberchimps_skin_color', array( 
 			'default' => __('Default', 'cyberchimps'),
 			'blue' => __('Blue', 'cyberchimps'),
-			'green' => __('Green', 'cyberchimps'),
-		),
+			'green' => __('Green', 'cyberchimps')
+		) ),
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading',
 	);
