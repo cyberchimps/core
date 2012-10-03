@@ -96,8 +96,8 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
             $caption = ( get_post_meta( $port->ID, 'caption_text', true ) != '' ) ? get_post_meta( $port->ID, 'caption_text', true ) : get_the_title( $port->ID );
             $link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
             $link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
-            $url = ( isset( $link_use ) && $link != '' ) ? $link : $image;
-            $rel = ( ! isset( $link_use ) || $link == '' ) ? 'lightbox-portfolio' : '';
+            $url = ( ( $link_use == 1 ) && $link != '' ) ? $link : $image;
+            $rel = ( ( $link_use == 0 ) || $link == '' ) ? 'lightbox-portfolio' : '';
             
             if( $i == 1 ): ?>
               <ul class="row-fluid">
