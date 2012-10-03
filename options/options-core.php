@@ -110,7 +110,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_drag_drop_section',
-		'label' => __('Header Drag/Drop', 'cyberchimps'),
+		'label' => __('Header Drag &#38; Drop', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
@@ -122,13 +122,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_social_section',
-		'label' => __('Social', 'cyberchimps'),
+		'label' => __('Social Icons', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_header_details_section',
-		'label' => __('Contact', 'cyberchimps'),
+		'label' => __('Contact Element', 'cyberchimps'),
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
