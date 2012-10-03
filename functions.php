@@ -763,7 +763,7 @@ function cyberchimps_modal_welcome_note() {
 					
 					<p>If you want even more amazing new features <a href="%2$s" title="upgrade to %3$s">upgrade to %3$s</a> which includes a Custom Feature Slides, Product Element, Image Carousel, Widgetized Boxes, Callout section, expanded typography including TypeKit support, and many more powerful new features. Please visit CyberChimps.com to learn more!</p>
 					
-					<p>We tried to make %1$s as easy to use as possible, but if you still need help please read the <a href="%4$s" target="_blank">documentation</a>, and visit our <a href="%5$s" target="_blank">support forum</a>.</p>
+					<p>We tried to make %1$s as easy to use as possible, but if you still need help please read the <a href="%4$s" target="_blank">Instructions</a>, and visit our <a href="%5$s" target="_blank">support forum</a>.</p>
 					
 					<p>Thank you for using %1$s.</p>
 					
