@@ -61,6 +61,7 @@ function cyberchimps_init_portfolio_post_type() {
 		->tab("Portfolio Element")
 			->single_image('portfolio_image', 'Portfolio Image', '')
 			->text('caption_text', 'Caption', '')
+			->checkbox('portfolio_lightbox_toggle', 'Lightbox', '', array('std' => 'on'))
 			->checkbox('custom_portfolio_url_toggle', 'Custom Portfolio URL', '', array('std' => 'off'))
 			->text('custom_portfolio_url', 'URL', '')
 		->end();

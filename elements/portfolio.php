@@ -92,12 +92,16 @@ if ( !class_exists( 'CyberChimpsPortfolio' ) ) {
           <?php endif; ?>
 					<?php foreach( $portfolio_posts as $port ):
           
-            $image = get_post_meta( $port->ID, 'portfolio_image', true );
-            $caption = ( get_post_meta( $port->ID, 'caption_text', true ) != '' ) ? get_post_meta( $port->ID, 'caption_text', true ) : get_the_title( $port->ID );
-            $link = get_post_meta( $port->ID, 'custom_portfolio_url', true );
-            $link_use = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
-            $url = ( ( $link_use == 1 ) && $link != '' ) ? $link : $image;
-            $rel = ( ( $link_use == 0 ) || $link == '' ) ? 'lightbox-portfolio' : '';
+			// Getting portfolio options
+            $image			 = get_post_meta( $port->ID, 'portfolio_image', true );
+            $caption		 = ( get_post_meta( $port->ID, 'caption_text', true ) != '' ) ? get_post_meta( $port->ID, 'caption_text', true ) : get_the_title( $port->ID );
+            $link			 = get_post_meta( $port->ID, 'custom_portfolio_url', true );
+            $link_use		 = get_post_meta( $port->ID, 'custom_portfolio_url_toggle', true );
+			$lightbox_toggle = get_post_meta( $port->ID, 'portfolio_lightbox_toggle', true );
+			
+			// Setting link for custom URL and rel for lightbox
+            $url = ( ( $lightbox_toggle == 0 ) && ( $link_use == 1 ) && ( $link != '' ) ) ? $link : $image;
+            $rel = ( $lightbox_toggle == 1 ) ? 'lightbox-portfolio' : '';
             
             if( $i == 1 ): ?>
               <ul class="row-fluid">
