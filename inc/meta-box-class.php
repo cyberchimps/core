@@ -855,13 +855,13 @@ add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
 add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
 
 function metabox_enqueue() {
-	$path =  get_template_directory_uri()."/core/library/js/";
-	$path2 = get_template_directory_uri()."/core/lib/css/";
+	$path_js =  get_template_directory_uri()."/core/lib/js/";
+	$path_css = get_template_directory_uri()."/core/lib/css/";
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
 
-	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
+	wp_register_style(  'metabox-tabs-css', $path_css. 'metabox-tabs.css');
 
-	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
+	wp_register_script ( 'jf-metabox-tabs', $path_js. 'metabox-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');
 	
@@ -872,9 +872,6 @@ function metabox_enqueue() {
 	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/core/lib/js/touch-sensitive.js', array('jquery') );
 		
 	wp_enqueue_style('metabox-tabs-css');
-	
-	wp_register_script( 'validator' ,$path.'jquery.validate.js');
-	wp_enqueue_script ('validator');
 }
 
 /********************* END DEFINITION OF META BOXES ***********************/
