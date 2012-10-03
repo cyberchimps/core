@@ -25,65 +25,202 @@ function cyberchimps_admin_add_customizer_page() {
 
 add_action('customize_register', 'cyberchimps_customize');
 function cyberchimps_customize($wp_customize) {
+	class Cyberchimps_Typography_Size extends WP_Customize_Control {
+		public $type = 'select';
 
-	$wp_customize->add_section( 'themedemo_demo_settings', array(
-		'title'          => 'Demonstration Stuff',
+    public function render_content() {?>
+    	<label>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<select <?php $this->link(); ?>>
+						<?php
+						foreach ( $this->choices as $value => $label )
+							echo '<option value="' . esc_attr( $label ) . 'px"' . selected( $this->value(), $value, false ) . '>' . $label . 'px</option>';
+						?>
+					</select>
+				</label>
+    <?php
+		}
+	}
+	class Cyberchimps_Background_Image extends WP_Customize_Control {
+		public $type = 'radio';
+
+    public function render_content() {?>
+    	<style>
+      	.images-radio-subcontainer img {
+          border: 5px solid #eee;
+          padding: 2px;
+        }
+        .images-radio-subcontainer img.of-radio-img-selected {
+          border: 5px solid #5DA7F2;
+        }
+        .images-radio-subcontainer img:hover {
+          cursor: pointer;
+          border: 5px solid #5DA7F2;
+        }
+      </style>
+        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <?php
+				foreach( $this->choices as $value => $label ) : 
+				$selected = ( $this->value() == $value ) ? 'of-radio-img-selected' : '';
+				$name = '_customize-radio-' . $this->id;
+				?>
+        <div class="images-radio-subcontainer">
+        <label>
+						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> style="display:none;" />
+						<img src="<?php echo esc_html( $label ); ?>" class="of-radio-img-img <?php echo esc_attr( $selected ); ?>" /><br>
+				</label> 
+        </div>
+        <?php
+				endforeach;
+    }
+
+		
+	}
+
+
+	$wp_customize->add_section( 'cyberchimps_design_section', array(
+		'title'          => 'Design',
 		'priority'       => 35,
 	) );
 
-	$wp_customize->add_setting( 'cyberchimps_options[core_text]', array(
-		'default'        => 'default_value',
+// website width
+	$wp_customize->add_setting( 'cyberchimps_options[max_width]', array(
+		'default'        => 1020,
 		'type'           => 'option',
 	) );
 
-	$wp_customize->add_control( 'core_text', array(
-		'label'   => 'Text Setting',
-		'section' => 'themedemo_demo_settings',
+	$wp_customize->add_control( 'max_width', array(
+		'label'   => __( 'Max Width', 'cyberchimps' ),
+		'section' => 'cyberchimps_design_section',
 		'type'    => 'text',
-		'settings'   => 'cyberchimps_options[core_text]',
+		'settings'   => 'cyberchimps_options[max_width]',
 	) );
-}
-
-/* TODO: Merge this with above
-
-// TODO: Rename and Restructure Code for Theme Options
-add_action( 'customize_register', 'themename_customize_register' );
-function themename_customize_register($wp_customize) {
-
-$wp_customize->add_section( 'themename_color_scheme', array(
-	'title'          => __( 'Color Scheme', 'themename' ),
-	'priority'       => 35,
-) );
-
-
-$wp_customize->add_setting( 'plugin_options[core_color]', array(
-	'default'        => '#000000',
-	'type'           => 'option',
-	'capability'     => 'edit_theme_options',
-	'transport'		=> 'postMessage',
-) );
-
-
-$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'core_color', array(
-	'label'   => __( 'Link Color', 'themename' ),
-	'section' => 'themename_color_scheme',
-	'settings'   => 'plugin_options[core_color]',
-) ) );
-
-if ( $wp_customize->is_preview() && ! is_admin() )
-	add_action( 'wp_footer', 'themename_customize_preview', 21);
 	
+// theme skin
+	$wp_customize->add_setting( 'cyberchimps_options[cyberchimps_skin_color]', array(
+			'default'        => 'default',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( 'skin_color', array(
+		'label'   => __( 'Skin Color', 'cyberchimps' ),
+    'section' => 'cyberchimps_design_section',
+    'type'    => 'select',
+		'settings'   => 'cyberchimps_options[cyberchimps_skin_color]',
+    'choices'    => apply_filters( 'cyberchimps_skin_color', '' )
+	) );
+	
+// text color
+	$wp_customize->add_setting( 'cyberchimps_options[text_colorpicker]', array(
+			'default'        => '',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_colorpicker', array(
+    'label'   => __( 'Text Color', 'cyberchimps' ),
+    'section' => 'cyberchimps_design_section',
+    'settings'   => 'cyberchimps_options[text_colorpicker]',
+	) ) );
+	
+// link color
+	$wp_customize->add_setting( 'cyberchimps_options[link_colorpicker]', array(
+			'default'        => '',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_colorpicker', array(
+    'label'   => __( 'Link Color', 'cyberchimps' ),
+    'section' => 'cyberchimps_design_section',
+    'settings'   => 'cyberchimps_options[link_colorpicker]',
+	) ) );
+	
+// link hover color
+	$wp_customize->add_setting( 'cyberchimps_options[link_hover_colorpicker]', array(
+			'default'        => '',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_colorpicker', array(
+    'label'   => __( 'Link Hover Color', 'cyberchimps' ),
+    'section' => 'cyberchimps_design_section',
+    'settings'   => 'cyberchimps_options[link_hover_colorpicker]',
+	) ) );
+	
+// new typography section
+	$wp_customize->add_section( 'cyberchimps_typography_section', array(
+		'title'          => 'Typography',
+		'priority'       => 40,
+	) );
+	
+	// typography sizes
+	$wp_customize->add_setting( 'cyberchimps_options[typography_options][size]', array(
+			'default'        => '14px',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size', array(
+		'label'   => __( 'Typography Size', 'cyberchimps' ),
+    'section' => 'cyberchimps_typography_section',
+    'type'    => 'select',
+		'settings'   => 'cyberchimps_options[typography_options][size]',
+    'choices'    => apply_filters( 'cyberchimps_typography_sizes', '' )
+  ) ) );
+	
+ 	// typography face
+	$wp_customize->add_setting( 'cyberchimps_options[typography_options][face]', array(
+			'default'        => 'Arial',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( 'typography_face', array(
+		'label'   => __( 'Typography Face', 'cyberchimps' ),
+    'section' => 'cyberchimps_typography_section',
+    'type'    => 'select',
+		'settings'   => 'cyberchimps_options[typography_options][face]',
+    'choices'    => apply_filters( 'cyberchimps_typography_faces', '' )
+  ) );
+	// typography style
+	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
+			'default'        => 'normal',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( 'typography_style', array(
+		'label'   => __( 'Typography Style', 'cyberchimps' ),
+    'section' => 'cyberchimps_typography_section',
+    'type'    => 'select',
+		'settings'   => 'cyberchimps_options[typography_options][style]',
+    'choices'    => apply_filters( 'cyberchimps_typography_styles', '' )
+  ) );
+	
+	// new background section
+	$wp_customize->add_section( 'cyberchimps_background_section', array(
+		'title'          => 'Background',
+		'priority'       => 45,
+	) );
+	
+	// background color
+	$wp_customize->add_setting( 'cyberchimps_options[background_colorpicker]', array(
+			'default'        => '',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_colorpicker', array(
+    'label'   => __( 'Background Color', 'cyberchimps' ),
+    'section' => 'cyberchimps_background_section',
+    'settings'   => 'cyberchimps_options[background_colorpicker]',
+	) ) );
+	
+	// background image
+	$wp_customize->add_setting( 'cyberchimps_options[select_background]', array(
+			'default'        => 'none',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'select_background', array(
+    'label'   => __( 'Background Image', 'cyberchimps' ),
+    'section' => 'cyberchimps_background_section',
+    'settings'   => 'cyberchimps_options[select_background]',
+		'choices' => apply_filters( 'cyberchimps_background_image', '' ),
+	) ) );
 }
-
-function themename_customize_preview() {
-	?>
-	<script type="text/javascript">
-	wp.customize('plugin_options[core_color]',function( value ) {
-		value.bind(function(to) {
-			jQuery('body').css('background', to );
-		});
-	});
-	</script>
-	<?php 
-}
-*/
