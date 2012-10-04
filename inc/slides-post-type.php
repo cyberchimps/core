@@ -25,7 +25,7 @@ function cyberchimps_init_slides_post_type() {
 				// TODO: Fix Labels
 			),
 			'public' => true,
-			'show_ui' => true, 
+			'show_ui' => true,
 			'supports' => array('custom-fields', 'title'),
 			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,

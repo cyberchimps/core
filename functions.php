@@ -835,4 +835,13 @@ function cyberchimps_options_help_text() {
 add_filter( 'cyberchimps_help_heading', 'cyberchimps_options_help_header' );
 add_filter( 'cyberchimps_help_sub_heading', 'cyberchimps_options_help_sub_header' );
 add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
+
+// Hide preview and view on custom post types
+function posttype_admin_css() {
+    global $post_type;
+    if($post_type == 'custom_slides' || $post_type == 'boxes' || $post_type == 'featured_posts' || $post_type == 'portfolio_images') {
+    echo '<style type="text/css">#view-post-btn,#post-preview{display: none;}</style>';
+    }
+}
+add_action('admin_head', 'posttype_admin_css');
 ?>
