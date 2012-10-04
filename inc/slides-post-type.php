@@ -29,7 +29,7 @@ function cyberchimps_init_slides_post_type() {
 			'supports' => array('custom-fields', 'title'),
 			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,
-			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/slider.png',
+			'menu_icon' => get_template_directory_uri() . '/cyberchimps/lib/images/custom-types/slider.png',
 			'rewrite' => array('slug' => 'slides')
 		)
 	);

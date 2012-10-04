@@ -28,7 +28,7 @@ function cyberchimps_init_carousel_post_type() {
 			'supports' => array('custom-fields'),
 			'taxonomies' => array( 'carousel_categories'),
 			'has_archive' => true,
-			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/carousel.png',
+			'menu_icon' => get_template_directory_uri() . '/cyberchimps/lib/images/custom-types/carousel.png',
 			'rewrite' => array('slug' => 'slides')
 		)
 	);

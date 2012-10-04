@@ -74,7 +74,7 @@ function cyberchimps_body_styles() {
 		}
 	}
 	if ( cyberchimps_get_option( 'select_background' ) && cyberchimps_get_option( 'select_background' ) != 'none' ) {
-		$body_styles['background-image'] = 'url( "'.get_template_directory_uri().'/core/lib/images/backgrounds/'.cyberchimps_get_option( 'select_background' ).'.jpg" )';
+		$body_styles['background-image'] = 'url( "'.get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.cyberchimps_get_option( 'select_background' ).'.jpg" )';
 	}
 	
 	// Apply custom background image

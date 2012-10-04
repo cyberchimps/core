@@ -32,17 +32,17 @@ function cyberchimps_option( $name = false, $subname = false ){
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
-	$path = get_template_directory_uri() . '/core/lib/js/';
+	$path = get_template_directory_uri() . '/cyberchimps/lib/js/';
 	
 	// Load JS for slimbox
-	wp_enqueue_script( 'slimbox', get_template_directory_uri() . '/core/lib/js/jquery.slimbox.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'slimbox', get_template_directory_uri() . '/cyberchimps/lib/js/jquery.slimbox.js', array( 'jquery' ), true );
 
 	// Load library for jcarousel
-	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/core/lib/js/jquery.jcarousel.min.js', array( 'jquery' ), true );
-	wp_enqueue_style( 'jcarousel-skin', get_template_directory_uri() . '/core/lib/css/jcarousel/skin.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/cyberchimps/lib/js/jquery.jcarousel.min.js', array( 'jquery' ), true );
+	wp_enqueue_style( 'jcarousel-skin', get_template_directory_uri() . '/cyberchimps/lib/css/jcarousel/skin.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 
 	// Load Custom JS
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/core/lib/js/custom.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/cyberchimps/lib/js/custom.js', array( 'jquery' ), true );
 	
 	// Load JS for swipe functionality in slider
 	wp_enqueue_script( 'event-swipe-move', $path . 'jquery.event.move.js', array('jquery') );
@@ -50,12 +50,12 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_script( 'swipe', $path . 'swipe.js', array('jquery') );
 	
 	// Load Bootstrap Library Items
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/core/lib/bootstrap/css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/core/lib/bootstrap/css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/core/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
+	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap.min.css', false, '2.0.4' );
+	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', get_template_directory_uri() . '/core/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'core-style', get_template_directory_uri() . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 	
 	// Load Theme Stylesheet
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
@@ -601,7 +601,7 @@ function recent_post_excerpt_more($more) {
 	return '&hellip;
 			</p>
 			<div class="more-link">
-				<span class="continue-arrow"><img src="'. get_template_directory_uri() .'/core/lib/images/continue.png"></span><a href="'. get_permalink($post->ID) . '">  '.$linktext.'</a>
+				<span class="continue-arrow"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/continue.png"></span><a href="'. get_permalink($post->ID) . '">  '.$linktext.'</a>
 			</div>';
 }
 
@@ -734,7 +734,7 @@ add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 // upgrade bar for free themes
 function cyberchimps_upgrade_bar() { ?>
 	<div class="upgrade-callout">
-		<p><img src="<?php echo get_template_directory_uri() ;?>/core/options/lib/images/chimp.png" alt="CyberChimps" />
+		<p><img src="<?php echo get_template_directory_uri() ;?>/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps" />
     <?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to <a href="%2$s" target="_blank" title="%3$s">%3$s</a> today.', 'cyberchimps' ),
 		apply_filters( 'cyberchimps_upgrade_theme_name', 'CyberChimps' ),
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
@@ -805,8 +805,8 @@ function cyberchimps_options_help_sub_header(){
 }
 function cyberchimps_options_help_text() {
 	$text = '';
-	$instruction_img = get_template_directory_uri().'/core/options/lib/images/document.png';
-	$support_img = get_template_directory_uri().'/core/options/lib/images/questionsupport.png';
+	$instruction_img = get_template_directory_uri().'/cyberchimps/options/lib/images/document.png';
+	$support_img = get_template_directory_uri().'/cyberchimps/options/lib/images/questionsupport.png';
 	$text .= '<div class="cc_help_section">
 						<div class="row-fluid"><div class="span3">
 							<a href="'.apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com' ).'" title="CyberChimps Instructions">

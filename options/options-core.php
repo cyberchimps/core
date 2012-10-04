@@ -318,7 +318,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	}
 	
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/core/lib/images/';
+	$imagepath =  get_template_directory_uri() . '/cyberchimps/lib/images/';
 	
 	$fields_list = array();
 	
@@ -640,7 +640,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'custom_logo_uploader',
 		'class' => 'custom_logo_toggle',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/cyberchimpslogo.png',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/cyberchimpslogo.png',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
@@ -885,7 +885,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_one',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/portfolio.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -928,7 +928,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_two',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/portfolio.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -971,7 +971,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_three',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/portfolio.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1014,7 +1014,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_four',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/portfolio.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1363,7 +1363,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_one_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1382,7 +1382,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_two_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1401,7 +1401,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_three_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/core/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);

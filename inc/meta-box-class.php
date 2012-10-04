@@ -476,13 +476,13 @@ class RW_Meta_Box {
 				if ( in_array( $key, $meta ) ) continue;
 			}
 			echo "<div class='list_item'>";
-				echo '<img src="'.get_template_directory_uri().'/core/lib/images/minus.png" class="action" title="Remove"/>';
+				echo '<img src="'.get_template_directory_uri().'/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 				echo "<span data-key='{$key}'>{$option}</span>";
 			echo "</div>";
 		}
 		echo "</div>";
 		echo "</div>";
-		echo '<div id="arrow"><img src="'.get_template_directory_uri().'/core/lib/images/arrowdrag.png" /></div>';
+		echo '<div id="arrow"><img src="'.get_template_directory_uri().'/cyberchimps/lib/images/arrowdrag.png" /></div>';
 		echo "<div class='right_list'>";
 		echo "<div id='active'>Active Elements</div>";
 		echo "<div id='drag'>Drag & Drop Elements</div>";
@@ -491,7 +491,7 @@ class RW_Meta_Box {
 			foreach ($meta as $key => $option) {
 				if(!$option) continue;
 				echo "<div class='list_item'>";
-					echo '<img src="'. get_template_directory_uri(). '/core/lib/images/minus.png" class="action" title="Remove"/>';
+					echo '<img src="'. get_template_directory_uri(). '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 					echo '<span data-key="'.$option.'">'.$field['options'][$option].'</span>';
 				echo "</div>";
 			}
@@ -857,8 +857,8 @@ add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
 add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
 
 function metabox_enqueue() {
-	$path_js =  get_template_directory_uri()."/core/lib/js/";
-	$path_css = get_template_directory_uri()."/core/lib/css/";
+	$path_js =  get_template_directory_uri()."/cyberchimps/lib/js/";
+	$path_css = get_template_directory_uri()."/cyberchimps/lib/css/";
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
 
 	wp_register_style(  'metabox-tabs-css', $path_css. 'metabox-tabs.css');
@@ -868,10 +868,10 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	
 	wp_enqueue_script('jf-metabox-tabs');
-	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
+	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/cyberchimps/library/js/jquery-custom.js', array('jquery') );
 	
-	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/core/lib/js/touch-punch-min.js', array('jquery') );
-	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/core/lib/js/touch-sensitive.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
 		
 	wp_enqueue_style('metabox-tabs-css');
 }

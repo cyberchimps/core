@@ -19,10 +19,10 @@
 // FIXME: Fix documentation
 // Load elements
 function cyberchimps_load_post_types() {
-	require_once( get_template_directory() . '/core/inc/slides-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/portfolio-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/carousel-post-type.php' );
-	require_once( get_template_directory() . '/core/inc/boxes-post-type.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/slides-post-type.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/portfolio-post-type.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/carousel-post-type.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/boxes-post-type.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_post_types');
 
@@ -32,27 +32,27 @@ function cyberchimps_core_setup_theme() {
 	
 	// FIXME: Fix documentation	
 	// Load core functions file
-	require_once( get_template_directory() . '/core/functions.php' );
+	require_once( get_template_directory() . '/cyberchimps/functions.php' );
 	
 	// FIXME: Fix documentation	
 	// Load core hooks file
-	require_once( get_template_directory() . '/core/inc/hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/hooks.php' );
 	
 	// FIXME: Fix documentation
 	// Load core options file
-	require_once( get_template_directory() . '/core/options/options-init.php' );
+	require_once( get_template_directory() . '/cyberchimps/options/options-init.php' );
 
 	// FIXME: Fix documentation	
 	// Load default core settings
-	require_once( get_template_directory() . '/core/options/options-core.php' );
+	require_once( get_template_directory() . '/cyberchimps/options/options-core.php' );
 	
 	// FIXME: Fix documentation	
 	// Load Meta Box Class
-	require_once( get_template_directory() . '/core/inc/meta-box-class.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/meta-box-class.php' );
 	
 	// FIXME: Fix documentation	
 	// Load Meta Boxes Functions
-	require_once( get_template_directory() . '/core/inc/meta-box.php' );
+	require_once( get_template_directory() . '/cyberchimps/inc/meta-box.php' );
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps', get_template_directory() . '/lib/languages' );
@@ -107,31 +107,11 @@ function cyberchimps_widgets_init() {
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
 
-
-// FIXME: Fix documentation
-// Load elements
-function cyberchimps_load_elements() {
-	require_once( get_template_directory() . '/core/elements/widgets.php' );
-	require_once( get_template_directory() . '/core/elements/breadcrumbs.php' );
-	require_once( get_template_directory() . '/core/elements/callout.php' );
-	require_once( get_template_directory() . '/core/elements/carousel.php' );
-	require_once( get_template_directory() . '/core/elements/pagination.php' );
-	require_once( get_template_directory() . '/core/elements/portfolio.php' );
-	require_once( get_template_directory() . '/core/elements/product.php' );
-	require_once( get_template_directory() . '/core/elements/slider.php' );
-	require_once( get_template_directory() . '/core/elements/twitter-bar.php' );
-	require_once( get_template_directory() . '/core/elements/portfolio-lite.php' );
-	require_once( get_template_directory() . '/core/elements/recent-posts.php' );
-	require_once( get_template_directory() . '/core/elements/slider-lite.php' );
-	require_once( get_template_directory() . '/core/elements/boxes.php' );
-}
-add_action('after_setup_theme', 'cyberchimps_load_elements');
-
 function cyberchimps_load_hooks() {
-	require_once( get_template_directory() . '/core/hooks/wp-head-hooks.php' );
-	require_once( get_template_directory() . '/core/hooks/header-hooks.php' );
-	require_once( get_template_directory() . '/core/hooks/blog-hooks.php' );
-	require_once( get_template_directory() . '/core/hooks/page-hooks.php' );
-	require_once( get_template_directory() . '/core/hooks/footer-hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/hooks/wp-head-hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/hooks/header-hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/hooks/blog-hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/hooks/page-hooks.php' );
+	require_once( get_template_directory() . '/cyberchimps/hooks/footer-hooks.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_hooks');

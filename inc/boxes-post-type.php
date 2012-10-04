@@ -28,7 +28,7 @@ function cyberchimps_init_boxes_post_type() {
 			'supports' => array('title'),
 			'taxonomies' => array( 'boxes_categories'),
 			'has_archive' => true,
-			'menu_icon' => get_template_directory_uri() . '/core/lib/images/custom-types/boxes.png',
+			'menu_icon' => get_template_directory_uri() . '/cyberchimps/lib/images/custom-types/boxes.png',
 			'rewrite' => array('slug' => 'boxes')
 		)
 	);

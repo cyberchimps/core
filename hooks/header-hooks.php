@@ -158,53 +158,53 @@ function cyberchimps_header_social_icons() {
 	
 	if ( !empty($twitter_display) ) {
 		$twitter_url = cyberchimps_get_option('twitter_url');
-		$output .= '<a href="'.esc_attr($twitter_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/twitter.png" alt="Twitter" /></a>';
+		$output .= '<a href="'.esc_attr($twitter_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/twitter.png" alt="Twitter" /></a>';
 	}
 	
 	if ( !empty($facebook_display) ) {
 		$facebook_url = cyberchimps_get_option('facebook_url');
-		$output .= '<a href="'.esc_attr($facebook_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/facebook.png" alt="Facebook" /></a>';
+		$output .= '<a href="'.esc_attr($facebook_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/facebook.png" alt="Facebook" /></a>';
 	}
 	
 	if ( !empty($google_display) ) {
 		$google_url = cyberchimps_get_option('google_url');
-		$output .= '<a href="'.esc_attr($google_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/gplus.png" alt="Google" /></a>';
+		$output .= '<a href="'.esc_attr($google_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/gplus.png" alt="Google" /></a>';
 	}
 	
 	if ( !empty($flickr_display) ) {
 		$flickr_url = cyberchimps_get_option('flickr_url');
-		$output .= '<a href="'.esc_attr($flickr_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/flickr.png" alt="Flickr" /></a>';
+		$output .= '<a href="'.esc_attr($flickr_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/flickr.png" alt="Flickr" /></a>';
 	}
 	
 	if ( !empty($pinterest_display) ) {
 		$pinterest_url = cyberchimps_get_option('pinterest_url');
-		$output .= '<a href="'.esc_attr($pinterest_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/pinterest.png" alt="Pinterest" /></a>';
+		$output .= '<a href="'.esc_attr($pinterest_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/pinterest.png" alt="Pinterest" /></a>';
 	}
 	
 	if ( !empty($linkedin_display) ) {
 		$linkedin_url = cyberchimps_get_option('linkedin_url');
-		$output .= '<a href="'.esc_attr($linkedin_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/linkedin.png" alt="LinkedIn" /></a>';
+		$output .= '<a href="'.esc_attr($linkedin_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/linkedin.png" alt="LinkedIn" /></a>';
 	}
 	
 	if ( !empty($youtube_display) ) {
 		$youtube_url = cyberchimps_get_option('youtube_url');
-		$output .= '<a href="'.esc_attr($youtube_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/youtube.png" alt="YouTube" /></a>';
+		$output .= '<a href="'.esc_attr($youtube_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/youtube.png" alt="YouTube" /></a>';
 	}
 	
 	if ( !empty($googlemaps_display) ) {
 		$googlemaps_url = cyberchimps_get_option('googlemaps_url');
-		$output .= '<a href="'.esc_attr($googlemaps_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/googlemaps.png" alt="Google Maps" /></a>';
+		$output .= '<a href="'.esc_attr($googlemaps_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/googlemaps.png" alt="Google Maps" /></a>';
 	}
 	
 	if ( !empty($email_display) ) {
 		$email_url = cyberchimps_get_option('email_url');
-		$output .= '<a href="'.esc_attr($email_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/email.png" alt="Email" /></a>';
+		$output .= '<a href="'.esc_attr($email_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/email.png" alt="Email" /></a>';
 	}
 	
 	if ( !empty($rss_display) ) {
 		//bloginfo('rss2_url')
 		$rss_url = cyberchimps_get_option('rss_url');
-		$output .= '<a href="'.esc_attr($rss_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/core/lib/images/social/'.$folder.'/rss.png" alt="RSS" /></a>';
+		$output .= '<a href="'.esc_attr($rss_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/rss.png" alt="RSS" /></a>';
 	}
 	?>
 	
@@ -274,7 +274,7 @@ function cyberchimps_banner_content() {
 
 	// Getting banner options
 	$banner = $options['header_banner_image'];
-	$default = get_template_directory_uri().'/core/lib/images/banner.jpg';
+	$default = get_template_directory_uri().'/cyberchimps/lib/images/banner.jpg';
 	$url = $options['header_banner_url'];
 ?>	
 	<div class="twelve columns">
