@@ -857,20 +857,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			"blog_post_page" => "Post Page",
 		),
 		'type' => 'section_order',
-		'options' => array(
-			'boxes'				 => 'Boxes',
-			"callout_section"	 => "Callout Section",
-			"carousel_section"	 => "Carousel",
-			'page_slider'		 => 'iFeature Slider',
-			'magazine'			 => 'Magazine',
-			'portfolio_pro'		 => 'Portfolio',
-			"portfolio_lite"	 => "Portfolio Lite",	
-			"blog_post_page"	 => "Post Page",
-			"product_element"	 => "Product",
-			"slider_lite"		 => "Slider Lite",
-			"twitterbar_section" => "Twitter Bar",
-			"widgets_section"	 => "Widgets",	
-		),
+		'options' => apply_filters( 'cyberchimps_elements_draganddrop_options', array(
+			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
+			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			"blog_post_page"	 => __( 'Post Page', 'cyberchimps' ),
+			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
+			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )	
+		) ),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
