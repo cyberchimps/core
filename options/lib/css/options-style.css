@@ -793,6 +793,14 @@ img.action {
   .cc-mobile-menu .btn {
     margin-left: 10px;
   }
+  .modal {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    left: 20px;
+    width: auto;
+    margin: 0;
+  }
   .cc-left-menu {
     display: none!important;
   }
@@ -815,16 +823,5 @@ img.action {
 @media all and (max-width: 533px) {
    .cc-header-links a {
     font-size: 0.5em;
-  }
-}
-@media all and (min-width: 481px) and (max-width: 560px) {
-  .modal {
-    width: 480px;
-    margin-left: -240px;
-  }
-}
-@media all and (max-width: 480px) {
-  .modal {
-    left: -43px;
   }
 }
