@@ -28,38 +28,43 @@ function boxes_render_display() {
 	$box_counter = 1;
 	
 	// Custom box query
-	$boxes = new WP_Query( array( 'post_type'  => 'boxes', 'orderby' => 'post_date', 'order' => 'desc' ) );
+	$args = array(
+						'numberposts'     => 3,
+						'offset'          => 0,
+						'orderby'         => 'post_date',
+						'order'           => 'ASC',
+						'post_type'       => 'boxes',
+						'post_status'     => 'publish'
+					);
+	$boxes = get_posts( $args );
 ?>
 	<div id="widget-boxes-container" class="row-fluid">
 		<div class="boxes">
 		<?php	
-		if ($boxes -> have_posts()) {
-			while ($boxes -> have_posts()) {
-				$boxes -> the_post();
-				
-				$post_id = get_the_id();
+		foreach( $boxes as $box ):
 				
 				// Break after desired number of boxes displayed
 				if( $box_counter > 3 )
 					break;
 				
 				// Get the image of the box
-				$box_image = get_post_meta($post_id, 'cyberchimps_box_image' , true);
+				$box_image = get_post_meta( $box->ID, 'cyberchimps_box_image', true );
 				
+				// Get the URL of the box
+				$box_url = get_post_meta( $box->ID, 'cyberchimps_box_url', true );
 				// Get the text of the box
-				$box_text = get_post_meta($post_id, 'cyberchimps_box_text' , true);
+				$box_text = get_post_meta( $box->ID, 'cyberchimps_box_text', true );
 		?>	
 				<div id="box<?php echo $box_counter?>" class="box span4">
-					<a href="<?php echo get_permalink(); ?>">
+					<a href="<?php echo $box_url; ?>">
 						<img class="box-image" src="<?php echo $box_image; ?>" />
-					</a>
-					<h2 class="box-widget-title"><?php the_title(); ?></h2>
+          </a>
+					<h2 class="box-widget-title"><?php echo $box->post_title; ?></h2>
 					<p><?php echo $box_text; ?></p>
 				</div><!--end box1-->
 		<?php   
 			$box_counter++;
-			}
-		}
+			endforeach;
 		?>
 		</div><!-- end boxes -->
 	</div><!-- end row-fluid -->

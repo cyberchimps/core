@@ -39,6 +39,7 @@ function cyberchimps_init_boxes_post_type() {
 	$mb
 		->tab("Boxes Element")
 			->single_image('cyberchimps_box_image', 'Box Image', '')
+			->text('cyberchimps_box_url', 'Box URL', '')
 			->textarea('cyberchimps_box_text', 'Box Text', '')
 		->end();
 		
