@@ -43,8 +43,6 @@ if ( !class_exists( 'CyberChimpsWidgets' ) ) {
 			
 			$options = get_option( 'cyberchimps_options' );
 			
-			if( in_array( 'widgets_section', $options['blog_section_order'], true ) ) {
-			
 			register_sidebar(array(
 				'name' => 'Box Left',
 				'id' => 'box-left',
@@ -72,7 +70,7 @@ if ( !class_exists( 'CyberChimpsWidgets' ) ) {
 				'before_title' => '<h2 class="box-widget-title">',
 				'after_title' => '</h2><p>',
 			));
-			}
+			
 		}
 		
 		// TODO: Fix documentation
