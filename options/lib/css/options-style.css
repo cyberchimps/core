@@ -462,7 +462,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   position: relative;
   left: 1px;
   cursor: pointer;
-  height: 26px;
+  height: 28px;
   width: 24px;
   padding: 0;
   background: none;
@@ -473,7 +473,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	top: 0;
 	left: 0;
 	width: 24px;
-	height: 26px;
+	height: 28px;
   -webkit-border-radius: 2px 0px 0px 2px;
   border-radius: 2px 0px 0px 2px;
   background-color: #fff;
