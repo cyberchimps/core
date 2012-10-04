@@ -21,9 +21,13 @@ function cyberchimps_load_meta_boxes_scripts() {
 	global $post_type;
 
 	//TODO HS Will need to add more post types as they are created
-	if ( $post_type == 'page' ) :		
+	if ( $post_type == 'page' ) :
 		wp_enqueue_style( 'meta-boxes-css', get_template_directory_uri().'/core/lib/css/metabox-tabs.css' );
-		wp_enqueue_script('meta-boxes-js', get_template_directory_uri().'/core/lib/js/metabox-tabs.js', array('jquery'));	
+	
+		// Enqueue only if it is not done before
+		if( !wp_script_is('jf-metabox-tabs') ) :
+			wp_enqueue_script('meta-boxes-js', get_template_directory_uri().'/core/lib/js/metabox-tabs.js', array('jquery'));	
+		endif;	
 	endif;
 }
 
