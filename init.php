@@ -107,6 +107,11 @@ function cyberchimps_widgets_init() {
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
 
+function cyberchimps_load_elements() {
+	require_once( get_template_directory() . '/elements/init.php' );
+}
+add_action('after_setup_theme', 'cyberchimps_load_elements');
+
 function cyberchimps_load_hooks() {
 	require_once( get_template_directory() . '/cyberchimps/hooks/wp-head-hooks.php' );
 	require_once( get_template_directory() . '/cyberchimps/hooks/header-hooks.php' );
