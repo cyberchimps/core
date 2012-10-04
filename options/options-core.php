@@ -572,14 +572,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		),
 		'type' => 'section_order',
 		'options' => array(
-			'cyberchimps_header_content'    => 'Logo + Icons',
-			'cyberchimps_sitename_contact'  => 'Logo + Contact',
-			'cyberchimps_sitename_register' => 'Logo + Login',
-			'cyberchimps_logo_description'  => 'Logo + Description',
-			'cyberchimps_logo_search'				=> 'Logo + Search',
-			'cyberchimps_description_icons' => 'Description + Icons',
 			'cyberchimps_banner'            => 'Banner',
-			
+			'cyberchimps_description_icons' => 'Description + Icons',
+			'cyberchimps_sitename_contact'  => 'Logo + Contact',
+			'cyberchimps_logo_description'  => 'Logo + Description',
+			'cyberchimps_header_content'    => 'Logo + Icons',
+			'cyberchimps_sitename_register' => 'Logo + Login',
+			'cyberchimps_logo_search'		=> 'Logo + Search',
 		),
 		'section' => 'cyberchimps_header_drag_drop_section',
 		'heading' => 'cyberchimps_header_heading'
@@ -859,23 +858,23 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		),
 		'type' => 'section_order',
 		'options' => array(
-			"blog_post_page" => "Post Page",
-			"slider_lite" => "Slider Lite",
-			"callout_section" => "Callout Section",
+			'boxes'				 => 'Boxes',
+			"callout_section"	 => "Callout Section",
+			"carousel_section"	 => "Carousel",
+			'page_slider'		 => 'iFeature Slider',
+			'magazine'			 => 'Magazine',
+			'portfolio_pro'		 => 'Portfolio',
+			"portfolio_lite"	 => "Portfolio Lite",	
+			"blog_post_page"	 => "Post Page",
+			"product_element"	 => "Product",
+			"slider_lite"		 => "Slider Lite",
 			"twitterbar_section" => "Twitter Bar",
-			"carousel_section" => "Carousel",
-			"portfolio_lite" => "Portfolio Lite",
-			"product_element" => "Product",
-			"widgets_section" => "Widgets",
-			'magazine' => 'Magazine',
-			'boxes' => 'Boxes',
-			'portfolio_pro' => 'Portfolio',
-			'page_slider' => 'iFeature Slider'
+			"widgets_section"	 => "Widgets",	
 		),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
-	
+
 	/********* PORTFOLIO LITE STARTS ****************/
 
 	/* Options for portfolio 1 starts */
