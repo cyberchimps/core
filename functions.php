@@ -711,13 +711,22 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 function cyberchimps_half_slider() {
 	global $post;
 	if( is_page() ) {
-		$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
+		$page_section_order = get_post_meta($post->ID, 'cyberchimps_page_section_order' , true);
+		if( in_array( 'page_slider', $page_section_order, true ) ) {
+			$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
+			if( $slider_size == 'half' ) {
+				do_action( 'page_slider' );
+			}
+		}
 	}
 	else {
-		$slider_size = cyberchimps_get_option( 'blog_slider_size' );
-	}
-	if( $slider_size == 'half' ) {
-		do_action( 'page_slider' );
+		$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
+		if( in_array( 'page_slider', $blog_section_order, true ) ) {
+			$slider_size = cyberchimps_get_option( 'blog_slider_size' );
+			if( $slider_size == 'half' ) {
+				do_action( 'page_slider' );
+			}
+		}
 	}
 }
 add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
