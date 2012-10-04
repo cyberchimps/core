@@ -404,7 +404,15 @@ function cyberchimps_drag_drop_field( $value ) {
 	// If the option is already saved, ovveride $val
 	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
 		if ( isset( $settings[($value['id'])]) ) {
-			$val = $settings[($value['id'])];
+			
+			// Assign empty array if the array returns null
+			if( $settings[($value['id'])] != "" ) {
+				$val = $settings[($value['id'])];
+			}
+			else {
+				$val = array("");
+			}
+			
 			// Striping slashes of non-array options
 			if ( !is_array($val) ) {
 				$val = stripslashes( $val );
