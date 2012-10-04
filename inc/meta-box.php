@@ -106,21 +106,21 @@ function cyberchimps_init_meta_boxes() {
 			, 'std' => 'right_sidebar') )
 			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(					
 				'options' => array(
-					'breadcrumbs' => 'Breadcrumbs',
-					'page_slider' => 'iFeature Slider',
-					'callout_section' => 'Callout',
+					'boxes'				 => 'Boxes',
+					'breadcrumbs'		 => 'Breadcrumbs',
+					'callout_section'	 => 'Callout',
+					'carousel_section'	 => 'Carousel',
+					'featured_posts'	 => 'Featured Posts',
+					'page_slider'		 => 'iFeature Slider',
+					'magazine'			 => 'Magazine',
+					'page_section'		 => 'Page',
+					'portfolio_pro'		 => 'Portfolio',
+					'portfolio_lite'	 => 'Portfolio Lite',
+					'product_element'	 => 'Product',
+					'recent_posts'		 => 'Recent Posts',
+					'slider_lite'		 => 'Slider Lite',
 					'twitterbar_section' => 'Twitter Bar',
-					'portfolio_pro' => 'Portfolio',
-					'product_element' => 'Product',
-					'page_section' => 'Page',
-					'widgets_section' => 'Widgets',
-					'carousel_section' => 'Carousel',
-					'portfolio_lite' => 'Portfolio Lite',
-					'recent_posts' => 'Recent Posts',
-					'slider_lite' => 'Slider Lite',
-					'featured_posts' => 'Featured Posts',
-					'magazine' => 'Magazine',
-					'boxes' => 'Boxes'
+					'widgets_section'	 => 'Widgets'
 				),
 					'std' => 'breadcrumbs,page_section'
 				))
