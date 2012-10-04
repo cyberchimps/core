@@ -117,7 +117,7 @@ function cyberchimps_options_page() {
     <?php do_action( 'cyberchimps_options_before_container' ); ?>
 		<div class="container-fluid cc-options">
 
-			<form action="options.php" method="post">
+			<form action="options.php" method="post" id="cyberchimps_options_page">
 			<?php
 			settings_fields('cyberchimps_options');
 			$headings_list = cyberchimps_get_headings();
@@ -162,7 +162,7 @@ function cyberchimps_options_page() {
 					
             <div class="cc-submenu-links">
 				<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'cyberchimps' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'cyberchimps' ) ); ?>' );" />
-            	<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" />
+            	<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" />
 						</div><!-- cc-submenu-links -->
           <div class="clear"></div>
         </div><!-- cc-submenu -->
@@ -267,7 +267,7 @@ function cyberchimps_options_page() {
          </div><!-- cc-social-container -->
         <div class="footer-links">
 			<input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'cyberchimps' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'cyberchimps' ) ); ?>' );" />
-			<input type="submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" />
+			<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" />
         </div><!-- footer-links -->
 				</div><!-- span 9 -->
        <div class="clear"></div>

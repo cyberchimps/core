@@ -4,6 +4,22 @@
  */
 jQuery(document).ready(function($) {
 	
+	//options submit check to make sure that the drag and drop element is not empty
+	$('#cyberchimps_options_page').submit(function(){
+		var header = $('#header_section_order').find('.blog-section-order-tracker').val();
+		var blog = $('#blog_section_order').find('.blog-section-order-tracker').val();
+		if( header == '' ) {
+			$('.right_list').siblings('#values').append('<input type="hidden" name="cyberchimps_options[header_section_order][cyberchimps_header_content]" value="true">');
+			$('.right_list').children('.blog-section-order-tracker').val('cyberchimps_header_content');
+			return true;
+		}
+		if( blog == '' ) {
+			$('.right_list').siblings('#values').append('<input type="hidden" name="cyberchimps_options[blog_section_order][blog_post_page]" value="true">');
+			$('.right_list').children('.blog-section-order-tracker').val('blog_post_page');
+			return true;
+		}
+	});
+	
 	// Hide/show onclick over subsection
 	/*jQuery(".section-group > h3").click(function() {
 		var $this = $(this);
