@@ -386,13 +386,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'select_background',
 		'std' => 'none',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'cyberchimps_background_image', array(
 			'none' => $imagepath . 'backgrounds/thumbs/none.png',
 			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
 			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
 			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
 			'space' => $imagepath . 'backgrounds/thumbs/space.png'
-		),
+		) ),
 		'section' => 'cyberchimps_custom_background_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
@@ -515,9 +515,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		
 /* Typography Options */
 	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+		'sizes' => apply_filters( 'cyberchimps_typography_sizes', array( '8','10','12','14','16','20' ) ),
+		'faces' => apply_filters( 'cyberchimps_typography_faces', array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ) ),
+		'styles' => apply_filters( 'cyberchimps_typography_styles', array( 'normal' => 'Normal','bold' => 'Bold' ) ),
 		'color' => false
 	);
 	
