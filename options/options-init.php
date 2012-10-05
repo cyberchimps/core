@@ -84,7 +84,8 @@ function cyberchimps_load_sanitization() {
 }
 
 // Load options customizer file
-add_action('init', 'cyberchimps_load_customizer' );
+// TODO REMOVED CUSTOMIZER UNTIL BUGS CAN BE FIXED
+//add_action('init', 'cyberchimps_load_customizer' );
 function cyberchimps_load_customizer() {
 	require_once dirname( __FILE__ ) . '/options-customizer.php';
 }
