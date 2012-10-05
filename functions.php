@@ -712,6 +712,8 @@ function cyberchimps_half_slider() {
 	global $post;
 	if( is_page() ) {
 		$page_section_order = get_post_meta($post->ID, 'cyberchimps_page_section_order' , true);
+		//if page_section_order is empty sets page as default
+		$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
 		if( in_array( 'page_slider', $page_section_order, true ) ) {
 			$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
 			if( $slider_size == 'half' ) {
@@ -721,6 +723,8 @@ function cyberchimps_half_slider() {
 	}
 	else {
 		$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
+		//select default in case options are empty
+		$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
 		if( in_array( 'page_slider', $blog_section_order, true ) ) {
 			$slider_size = cyberchimps_get_option( 'blog_slider_size' );
 			if( $slider_size == 'half' ) {
