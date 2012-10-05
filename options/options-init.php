@@ -16,6 +16,17 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// Trigger restore default if no option is set yet.
+if( !get_option('cyberchimps_options') ) {
+?>
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('restore-option').click();
+		};
+		
+	</script>
+<?php
+}
 
 /* If the user can't edit theme options, no use running this plugin */
 add_action('init', 'cyberchimps_edit_themes_role_check' );
