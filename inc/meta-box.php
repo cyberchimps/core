@@ -109,24 +109,14 @@ function cyberchimps_init_meta_boxes() {
 				'left_sidebar' => get_template_directory_uri() . '/cyberchimps/lib/images/left.png')
 			, 'std' => 'right_sidebar') )
 			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(					
-				'options' => array(
-					'boxes'				 => 'Boxes',
-					'breadcrumbs'		 => 'Breadcrumbs',
-					'callout_section'	 => 'Callout',
-					'carousel_section'	 => 'Carousel',
-					'featured_posts'	 => 'Featured Posts',
-					'page_slider'		 => 'iFeature Slider',
-					'magazine'			 => 'Magazine',
+				'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
+					'boxes'				 => 'Boxes',					
 					'page_section'		 => 'Page',
-					'portfolio_pro'		 => 'Portfolio',
 					'portfolio_lite'	 => 'Portfolio Lite',
-					'product_element'	 => 'Product',
-					'recent_posts'		 => 'Recent Posts',
 					'slider_lite'		 => 'Slider Lite',
-					'twitterbar_section' => 'Twitter Bar',
-					'widgets_section'	 => 'Widgets'
-				),
-					'std' => 'breadcrumbs,page_section'
+					'twitterbar_section' => 'Twitter Bar'
+				) ),
+					'std' => array( 'page_section' )
 				))
 			->pagehelp('', 'Need Help?', '')
 		->tab("Magazine Layout Options")
