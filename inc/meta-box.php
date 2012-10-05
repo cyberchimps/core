@@ -35,10 +35,6 @@ add_action('init', 'cyberchimps_init_meta_boxes');
 function cyberchimps_init_meta_boxes() {
 	global $options;
 	
-	// Store URL of the template to a variable
-	define('TEMPLATE_URL', get_template_directory_uri());
-	define('CORE_IMAGE', TEMPLATE_URL . "/cyberchimps/lib/images/");
-	
 	// Declare variables
 	$portfolio_options = array(); 
 	$carousel_options = array();
@@ -131,11 +127,11 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_featured_post_category_toggle', 'Select post source', '', array('options' => array('Latest posts', 'From category')) )
 			->text('cyberchimps_featured_post_category', 'Enter category', '', array('std' => 'featured'))
 		->tab("Slider Lite Options")
-			->single_image('cyberchimps_slider_lite_slide_one_image', 'Slide One Image', '', array('std' =>  CORE_IMAGE . 'sliderdefault.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_one_image', 'Slide One Image', '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/slider/sliderdefault.jpg'))
 			->text('cyberchimps_slider_lite_slide_one_url', 'Slide One Link', '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_two_image', 'Slide Two Image', '', array('std' =>  CORE_IMAGE . 'slide2.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_two_image', 'Slide Two Image', '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/slider/slide2.jpg'))
 			->text('cyberchimps_slider_lite_slide_two_url', 'Slide Two Link', '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_three_image', 'Slide Three Image', '', array('std' =>  CORE_IMAGE . 'slide3.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_three_image', 'Slide Three Image', '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/slider/slide3.jpg'))
 			->text('cyberchimps_slider_lite_slide_three_url', 'Slide Three Link', '', array('std' => 'http://wordpress.org'))
 		->tab("iFeature Slider Options")
 			->select('cyberchimps_slider_size', 'Slider Size', '', array( 'options' => array('full' => 'Full', 'half' => 'Half') ) )

@@ -17,8 +17,10 @@
  */
 
 function cyberchimps_header_section_order() {
-	if ( is_array( cyberchimps_get_option('header_section_order') ) ) {
-		foreach(cyberchimps_get_option('header_section_order') as $func) {
+	$header_section = cyberchimps_get_option('header_section_order');
+	$header_section = ( $header_section == '' ) ? array( 'cyberchimps_logo_icons' ) : $header_section;
+	if ( is_array( $header_section ) ) {
+		foreach( $header_section as $func ) {
 			do_action($func);
 		}
 	}
