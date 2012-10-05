@@ -20,6 +20,8 @@ function blog_section_order_action() {
 	global $post;
 	
 	$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
+	//select default in case options are empty
+	$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
 	$slider_size = cyberchimps_get_option( 'blog_slider_size' );
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
