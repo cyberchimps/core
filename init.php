@@ -17,6 +17,7 @@
  */
 
 // FIXME: Fix documentation
+<<<<<<< HEAD
 // Load elements
 function cyberchimps_load_post_types() {
 	require_once( get_template_directory() . '/cyberchimps/inc/slides-post-type.php' );
@@ -24,6 +25,8 @@ function cyberchimps_load_post_types() {
 	require_once( get_template_directory() . '/cyberchimps/inc/carousel-post-type.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_post_types');
+=======
+>>>>>>> 1be44c894630a23514a8a9f854bc016e56eb7f16
 
 if ( ! function_exists( 'cyberchimps_core_setup_theme' ) ):
 // FIXME: Fix documentation
