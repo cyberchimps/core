@@ -16,6 +16,17 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// Trigger restore default if no option is set yet.
+if( !get_option('cyberchimps_options') ) {
+?>
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('restore-option').click();
+		};
+		
+	</script>
+<?php
+}
 
 /* If the user can't edit theme options, no use running this plugin */
 add_action('init', 'cyberchimps_edit_themes_role_check' );
@@ -73,7 +84,8 @@ function cyberchimps_load_sanitization() {
 }
 
 // Load options customizer file
-add_action('init', 'cyberchimps_load_customizer' );
+// TODO REMOVED CUSTOMIZER UNTIL BUGS CAN BE FIXED
+//add_action('init', 'cyberchimps_load_customizer' );
 function cyberchimps_load_customizer() {
 	require_once dirname( __FILE__ ) . '/options-customizer.php';
 }
