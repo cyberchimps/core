@@ -22,7 +22,6 @@ function cyberchimps_load_post_types() {
 	require_once( get_template_directory() . '/cyberchimps/inc/slides-post-type.php' );
 	require_once( get_template_directory() . '/cyberchimps/inc/portfolio-post-type.php' );
 	require_once( get_template_directory() . '/cyberchimps/inc/carousel-post-type.php' );
-	require_once( get_template_directory() . '/cyberchimps/inc/boxes-post-type.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_post_types');
 
