@@ -761,20 +761,19 @@ function cyberchimps_modal_welcome_note() {
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel"><?php echo apply_filters( 'cyberchimps_current_theme_name', __( 'Cyberchimps' ) ); ?></h3>
+      <h3 id="myModalLabel">Welcome</h3>
     </div>
     <div class="modal-body">
-      	<?php printf( __( '%1$s WordPress Theme
-
-					<p>%1$s offers the same advanced functionality as CyberChimps&#39; other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android. %1$s also includes Drag and Drop Elements such as the Portfolio Element, Responsive Feature Slider, Page Content, Twitter bar and Widgetized boxes. All of which can be used on a per-page basis using Drag and Drop Page Options that also include sidebar and layout options giving you the power to control the look and feel of every page of your website.</p>
+      	<?php printf( __( '
+					<p>This is the first public beta of the CyberChimps WordPress Theme Framework.</p>
 					
-					<p>To get started simply work your way through the menus to the left, select your options, add your content, and always remember to hit save after making any changes.</p>
+					<p><b>This WordPress Theme is not for use on a live production website!</b></p>
 					
-					<p>If you want even more amazing new features <a href="%2$s" title="upgrade to %3$s">upgrade to %3$s</a> which includes a Custom Feature Slides, Product Element, Image Carousel, Widgetized Boxes, Callout section, expanded typography including TypeKit support, and many more powerful new features. Please visit CyberChimps.com to learn more!</p>
+					<p>We are still actively developing this framework, and this release is simply for testing purposes. If you would like to get involved we have opened sourced this framework at <a href="https://github.com/cyberchimps/cyberchimpslite" target="_blank">https://github.com/cyberchimps/cyberchimpslite</a>.</p>
 					
-					<p>We tried to make %1$s as easy to use as possible, but if you still need help please read the <a href="%4$s" target="_blank">Instructions</a>, and visit our <a href="%5$s" target="_blank">support forum</a>.</p>
+					<p>If you find something that is not working as you think it should, please <a href="https://github.com/cyberchimps/cyberchimpslite/issues/new" target="_blank">report the issue to us</a>.
 					
-					<p>Thank you for using %1$s.</p>
+					<p>Thank you for trying the new CyberChimps Theme Framework.</p>
 					
 					<p>A Professional WordPress Theme</p>', 'cyberchimps' ),
 					apply_filters( 'cyberchimps_current_theme_name', __( 'Cyberchimps' ) ),
