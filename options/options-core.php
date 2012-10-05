@@ -283,22 +283,28 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	// Pull all carousel categories
 	$options_carousel_cats = array();
 	$carousel_categories = get_terms( 'carousel_categories', array( 'hide_empty' => 0 ) );
+	if( ! is_wp_error( $carousel_categories ) ) {
 	foreach( $carousel_categories as $carousel_cat ) {
 		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
+	}
 	}
 	
 	// Pull all portfolio categories
 	$options_portfolio_cats = array();
 	$portfolio_categories = get_terms( 'portfolio_cats', array( 'hide_empty' => 0 ) );
+	if( ! is_wp_error( $portfolio_categories ) ) {
 	foreach( $portfolio_categories as $portfolio_cat ) {
 		$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
+	}
 	}
 	
 	//Pull all slider categories
 	$options_slide_cats = array();
 	$slide_categories = get_terms( 'slide_categories', array( 'hide_empty' => 0 ) );
+	if( ! is_wp_error( $portfolio_categories ) ) {
 	foreach( $slide_categories as $slide_cat ) {
 		$options_slide_cats[$slide_cat->term_id] = $slide_cat->name;
+	}
 	}
 	
 	// Pull all tags into an array
