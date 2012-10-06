@@ -16,14 +16,15 @@
  * @link     http://www.cyberchimps.com/
  */
 
+
 /* If the user can't edit theme options, no use running this plugin */
 add_action('init', 'cyberchimps_edit_themes_role_check' );
 function cyberchimps_edit_themes_role_check() {
 	if ( current_user_can( 'edit_theme_options' ) ) {
 		// If the user can edit theme options, let the fun begin!
-		add_action( 'admin_menu', 'cyberchimps_admin_add_page');
 		add_action( 'admin_init', 'cyberchimps_admin_init' );
 		add_action( 'admin_init', 'cyberchimps_mlu_init' );
+		add_action( 'admin_menu', 'cyberchimps_admin_add_page');
 		add_action( 'wp_before_admin_bar_render', 'cyberchimps_admin_bar' );
 	}
 }
@@ -395,16 +396,16 @@ function cyberchimps_drag_drop_field( $value ) {
 	// Set default value to $val
 	if ( isset( $value['std'] ) ) {
 		if (is_array($value['std'])) {
-			$val = implode(',', array_keys($value['std']));
+			$val[] = implode(',', array_keys($value['std']));
 		} else {
-			$val = $value['std'];	
+			$val[] = $value['std'];	
 		}
 	}
-	
+
 	// If the option is already saved, ovveride $val
 	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
 		if ( isset( $settings[($value['id'])]) ) {
-			
+		
 			// Assign empty array if the array returns null
 			if( $settings[($value['id'])] != "" ) {
 				$val = $settings[($value['id'])];
@@ -640,7 +641,7 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '<div class="checkbox-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
 			$output .= '<label class="right-label" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label></div>';
 			break;
-
+	
 		// Multicheck
 		case "multicheck":
 			foreach ($value['options'] as $key => $option) {
@@ -658,12 +659,15 @@ function cyberchimps_fields_callback( $value ) {
 				$output .= '<div class="checkbox-container"><input id="' . esc_attr( $id ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $name ) . '" ' . $checked . ' /><label for="' . esc_attr( $id ) . '" class="right-label">' . esc_html( $label ) . '</label></div>';
 			}
 			break;
-	
+			
 		// Toggle Switch
 		case "toggle":
-			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="right-label">'. $value['name'] . '</label></div>';
+			$checked = "";
+			if( $val ) 
+				$checked = 'checked="checked"';
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="right-label">'. $value['name'] . '</label></div>';
 			break;
-
+			
 		// Color picker
 		case "color":
 			$output .= '<div class="input-prepend '.$value['class'].'"><div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
