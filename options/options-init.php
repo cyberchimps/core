@@ -101,10 +101,10 @@ function cyberchimps_admin_init(){
 
 function cyberchimps_options_links() {
 	
-	$output = apply_filters('cyberchimps_options_support_link', '<li><a href="http://cyberchimps.com/support/" target="_blank">Support</a></li>' );
-	$output .= apply_filters('cyberchimps_options_documentation_link', '<li><a href="http://cyberchimps.com/docs/" target="_blank">Instructions</a></li>' );
-	$output .= apply_filters('cyberchimps_options_buy_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Buy Themes</a></li>' );
-	$output .= apply_filters('cyberchimps_options_upgrade_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Upgrade to Pro</a></li>' );
+	$output = apply_filters('cyberchimps_options_support_link', '<li><a href="http://cyberchimps.com/support/" target="_blank">'.__( 'Support', 'cyberchimps' ).'</a></li>' );
+	$output .= apply_filters('cyberchimps_options_documentation_link', '<li><a href="http://cyberchimps.com/docs/" target="_blank">'.__( 'Instructions', 'cyberchimps' ).'</a></li>' );
+	$output .= apply_filters('cyberchimps_options_buy_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">'.__( 'Buy Themes', 'cyberchimps' ).'</a></li>' );
+	$output .= apply_filters('cyberchimps_options_upgrade_link', '' );
 	
 	return apply_filters('cyberchimps_options_links', $output);
 }
