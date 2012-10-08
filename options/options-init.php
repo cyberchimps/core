@@ -665,7 +665,7 @@ function cyberchimps_fields_callback( $value ) {
 			$checked = "";
 			if( $val ) 
 				$checked = 'checked="checked"';
-			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><label for="' . esc_attr( $value['id'] ) . '" class="right-label">'. $value['name'] . '</label></div>';
+			$output .= '<div class="toggle-container"><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' value="'. $val .'" /><label for="' . esc_attr( $value['id'] ) . '" class="right-label">'. $value['name'] . '</label></div>';
 			break;
 			
 		// Color picker
