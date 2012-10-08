@@ -1083,6 +1083,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	if( $options_portfolio_cats ) {
 	$fields_list[] = array(
 		'name' => __('Portfolio Category', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_pro_category',
@@ -1091,6 +1092,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_portfolio_pro_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	}
 	
 	$fields_list[] = array(
 		'name' => __('Portfolio Title', 'cyberchimps'),
@@ -1318,6 +1320,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	if( $options_slide_cats ) {
 	$fields_list[] = array(
 		'name' => __('Custom Categories', 'cyberchimps'),
 		'id' => 'custom_slider_post_cats',
@@ -1327,6 +1330,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_slider_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	}
 	
 	$fields_list[] = array(
 		'name' => __('Number of Featured Blog Posts', 'cyberchimps'),
@@ -1362,7 +1366,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_one_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/elements/images/slider/sliderdefault.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1381,7 +1385,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_two_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/elements/images/slider/slide2.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1400,7 +1404,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_three_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/slider/slider-980.jpg',
+		'std' => get_template_directory_uri() . '/elements/images/slider/slide3.jpg',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1545,7 +1549,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********* TWITTERBAR OPTIONS ENDS ***********/
 
 	/********* CAROUSEL OPTIONS STARTS ***********/
-	//$options_carousel_cats = array( 0 => 'You have no categories' );
+	if( $options_carousel_cats ){
 	$fields_list[] = array(
 		'name' => __('Select a Category', 'cyberchimps'),
 		'id' => 'carousel_categories',
@@ -1554,6 +1558,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_carousel_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	}
 	/********* CAROUSEL OPTIONS ENDS ***********/
 		
 /*************************** TEMPLATES ***************************************************/
@@ -1636,6 +1641,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'std'      => 'checked',
 		'type'     => 'toggle',
 		'section'  => 'cyberchimps_single_post_section',
+
 		'heading'  => 'cyberchimps_templates_heading'
 	);
 	

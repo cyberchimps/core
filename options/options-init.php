@@ -99,16 +99,6 @@ function cyberchimps_admin_init(){
 	cyberchimps_create_fields( $fields_list );
 }
 
-function cyberchimps_options_links() {
-	
-	$output = apply_filters('cyberchimps_options_support_link', '<li><a href="http://cyberchimps.com/support/" target="_blank">Support</a></li>' );
-	$output .= apply_filters('cyberchimps_options_documentation_link', '<li><a href="http://cyberchimps.com/docs/" target="_blank">Instructions</a></li>' );
-	$output .= apply_filters('cyberchimps_options_buy_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Buy Themes</a></li>' );
-	$output .= apply_filters('cyberchimps_options_upgrade_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">Upgrade to Pro</a></li>' );
-	
-	return apply_filters('cyberchimps_options_links', $output);
-}
-
 // create and display theme options page
 function cyberchimps_options_page() {
 	settings_errors();
@@ -136,7 +126,10 @@ function cyberchimps_options_page() {
 				</div><!-- span3 -->
 				<div class="span9">
 					<ul class="cc-header-links">
-						<?php  echo cyberchimps_options_links(); ?>
+          	<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/support/' ); ?>" target="_blank"><?php _e( 'Support', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/docs/' ); ?>" target="_blank"><?php _e( 'Instructions', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters('cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>" target="_blank"><?php _e( 'Buy Themes', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters('cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?> <?php _e( 'Upgrade', 'cyberchimps' ); ?></a></li>
 					</ul>
 				</div><!-- span9 -->
 			</div><!-- row-fluid -->
@@ -223,6 +216,8 @@ function cyberchimps_options_page() {
                 echo '</ul>';
                 echo '</li>';
               } ?>
+              <li id="left-menu-save"><input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'cyberchimps' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'cyberchimps' ) ); ?>' );" />
+			<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" /></li>
             </ul>
           </div><!-- cc-left-menu -->
 				</div><!-- span3 -->

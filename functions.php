@@ -72,27 +72,27 @@ function cyberchimps_create_layout() {
 	global $post;
 	
 	if ( is_single() ) {
-		$layout_type = cyberchimps_get_option('single_post_sidebar_options');
+		$layout_type = cyberchimps_get_option( 'single_post_sidebar_options', 'right_sidebar' );
 		
 	} elseif ( is_home() ) {
-		$layout_type = cyberchimps_get_option('sidebar_images');
+		$layout_type = cyberchimps_get_option( 'sidebar_images', 'right_sidebar' );
 	
 	} elseif ( is_page() ) {
 		// TODO: Change so that option is not saved as an array
-		$page_sidebar = get_post_meta($post->ID, 'cyberchimps_page_sidebar');
+		$page_sidebar = get_post_meta( $post->ID, 'cyberchimps_page_sidebar' );
 		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
-		
+				
 	} elseif ( is_archive() ) {
-		$layout_type = cyberchimps_get_option('archive_sidebar_options');
+		$layout_type = cyberchimps_get_option( 'archive_sidebar_options', 'right_sidebar' );
 			
 	} elseif ( is_search() ) {
-		$layout_type = cyberchimps_get_option('search_sidebar_options');	
+		$layout_type = cyberchimps_get_option( 'search_sidebar_options', 'right_sidebar' );	
 	
 	} elseif ( is_404() ) {
-		$layout_type = cyberchimps_get_option('error_sidebar_options');
+		$layout_type = cyberchimps_get_option( 'error_sidebar_options', 'right_sidebar' );
 	
 	} else {
-		$layout_type = apply_filters('cyberchimps_default_layout', 'right_sidebar');
+		$layout_type = apply_filters( 'cyberchimps_default_layout', 'right_sidebar' );
 	}
 	
 	cyberchimps_get_layout($layout_type);
@@ -100,7 +100,9 @@ function cyberchimps_create_layout() {
 add_action('wp', 'cyberchimps_create_layout');
 
 function cyberchimps_get_layout( $layout_type ) {
-	if ( $layout_type ) {
+	
+	$layout_type = ( $layout_type ) ? $layout_type : 'right_sidebar';
+	
 		switch($layout_type) {
 			case 'full_width' :
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span12');
@@ -130,7 +132,6 @@ function cyberchimps_get_layout( $layout_type ) {
 				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
 			break;
 		}
-	}	
 }
 
 // FIXME: Fix documentation

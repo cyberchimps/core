@@ -18,7 +18,7 @@
 
 function cyberchimps_header_section_order() {
 	$header_section = cyberchimps_get_option('header_section_order');
-	$header_section = ( $header_section == '' ) ? array( 'cyberchimps_logo_icons' ) : $header_section;
+	$header_section = ( $header_section == '' ) ? array( 'cyberchimps_header_content' ) : $header_section;
 	if ( is_array( $header_section ) ) {
 		foreach( $header_section as $func ) {
 			do_action($func);
@@ -145,9 +145,9 @@ function cyberchimps_header_social_icons() {
 	
 	$folder = ( cyberchimps_get_option('theme_backgrounds') ) ? cyberchimps_get_option('theme_backgrounds') : 'default';
 	
-	$twitter_display = cyberchimps_get_option('social_twitter');
-	$facebook_display = cyberchimps_get_option('social_facebook');
-	$google_display = cyberchimps_get_option('social_google');
+	$twitter_display = cyberchimps_get_option( 'social_twitter', 'checked' );
+	$facebook_display = cyberchimps_get_option( 'social_facebook', 'checked' );
+	$google_display = cyberchimps_get_option( 'social_google', 'checked' );
 	$flickr_display = cyberchimps_get_option('social_flickr');
 	$pinterest_display = cyberchimps_get_option('social_pinterest');
 	$linkedin_display = cyberchimps_get_option('social_linkedin');
