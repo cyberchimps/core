@@ -223,6 +223,8 @@ function cyberchimps_options_page() {
                 echo '</ul>';
                 echo '</li>';
               } ?>
+              <li id="left-menu-save"><input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'cyberchimps' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'cyberchimps' ) ); ?>' );" />
+			<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" /></li>
             </ul>
           </div><!-- cc-left-menu -->
 				</div><!-- span3 -->

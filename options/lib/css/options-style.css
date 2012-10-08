@@ -59,6 +59,7 @@ form {
 /************** Container ********************/
 
 .cc-options {
+  position: relative;
   margin: 10px 0;
   border: 1px solid #c8c8c8;
 }
@@ -365,6 +366,13 @@ ul.cc-parent li .cc-menu-arrow {
 }
 ul.cc-parent > li.cc-active > .cc-menu-arrow {
   display: block;
+}
+#left-menu-save {
+  border-top: 1px solid #cacaca;
+  border-bottom:1px solid #333;
+  padding: 5px 0;
+  text-align: center;
+  background: #666;
 }
 
 /**************** Main Content ******************/
