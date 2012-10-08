@@ -129,7 +129,7 @@ function cyberchimps_options_page() {
           	<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/support/' ); ?>" target="_blank"><?php _e( 'Support', 'cyberchimps' ); ?></a></li>
             <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/docs/' ); ?>" target="_blank"><?php _e( 'Instructions', 'cyberchimps' ); ?></a></li>
             <li><a href="<?php echo apply_filters('cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>" target="_blank"><?php _e( 'Buy Themes', 'cyberchimps' ); ?></a></li>
-            <li><a href="<?php echo apply_filters('cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a></li>
+            <li><a href="<?php echo apply_filters('cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?> <?php _e( 'Upgrade', 'cyberchimps' ); ?></a></li>
 					</ul>
 				</div><!-- span9 -->
 			</div><!-- row-fluid -->
