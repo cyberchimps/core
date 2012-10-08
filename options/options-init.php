@@ -99,16 +99,6 @@ function cyberchimps_admin_init(){
 	cyberchimps_create_fields( $fields_list );
 }
 
-function cyberchimps_options_links() {
-	
-	$output = apply_filters('cyberchimps_options_support_link', '<li><a href="http://cyberchimps.com/support/" target="_blank">'.__( 'Support', 'cyberchimps' ).'</a></li>' );
-	$output .= apply_filters('cyberchimps_options_documentation_link', '<li><a href="http://cyberchimps.com/docs/" target="_blank">'.__( 'Instructions', 'cyberchimps' ).'</a></li>' );
-	$output .= apply_filters('cyberchimps_options_buy_link', '<li><a href="http://cyberchimps.com/store/" target="_blank">'.__( 'Buy Themes', 'cyberchimps' ).'</a></li>' );
-	$output .= apply_filters('cyberchimps_options_upgrade_link', '' );
-	
-	return apply_filters('cyberchimps_options_links', $output);
-}
-
 // create and display theme options page
 function cyberchimps_options_page() {
 	settings_errors();
@@ -136,7 +126,10 @@ function cyberchimps_options_page() {
 				</div><!-- span3 -->
 				<div class="span9">
 					<ul class="cc-header-links">
-						<?php  echo cyberchimps_options_links(); ?>
+          	<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/support/' ); ?>" target="_blank"><?php _e( 'Support', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/docs/' ); ?>" target="_blank"><?php _e( 'Instructions', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters('cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>" target="_blank"><?php _e( 'Buy Themes', 'cyberchimps' ); ?></a></li>
+            <li><a href="<?php echo apply_filters('cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a></li>
 					</ul>
 				</div><!-- span9 -->
 			</div><!-- row-fluid -->
