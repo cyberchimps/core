@@ -824,4 +824,13 @@ function posttype_admin_css() {
     }
 }
 add_action('admin_head', 'posttype_admin_css');
+
+// funationality for responsive toggle
+function cyberchimps_row_fluid() {
+echo cyberchimps_get_option( 'responsive_design' );
+	if( cyberchimps_get_option( 'responsive_design' ) )
+		echo "row-fluid"; 
+	else
+		echo "row";
+}
 ?>
