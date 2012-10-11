@@ -47,7 +47,7 @@ function cyberchimps_load_styles() {
 	// TODO: Find better way to enqueque these scripts
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/bootstrap.css' );
 	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	
+	wp_enqueue_style( 'cyberchimps-responsive', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
 	wp_enqueue_style( 'plugin_option_styles', get_template_directory_uri().'/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
 	
 	wp_enqueue_style('color-picker', get_template_directory_uri().'/cyberchimps/options/lib/css/colorpicker.css');
