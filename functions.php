@@ -65,6 +65,9 @@ function cyberchimps_core_scripts() {
         add_image_size( 'featured-thumb', 100, 80, true);
         add_image_size( 'headline-thumb', 200, 225, true);
     } 
+	
+	// add javascript for comments
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
@@ -756,7 +759,7 @@ function cyberchimps_modal_welcome_note() {
 	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
       <h3 id="myModalLabel">Welcome</h3>
     </div>
     <div class="modal-body">
@@ -772,7 +775,7 @@ function cyberchimps_modal_welcome_note() {
 					<p>Thank you for trying the new CyberChimps Theme Framework.</p>
 					
 					<p>A Professional WordPress Theme</p>', 'cyberchimps' ),
-					apply_filters( 'cyberchimps_current_theme_name', __( 'Cyberchimps' ) ),
+					apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ),
 					apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 					apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps' ) ),
 					apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com' ),

@@ -164,7 +164,7 @@ function cyberchimps_options_page() {
         <!-- hidden mobile menu -->
         <div class="modal hide" id="cc-mobile-modal">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
+            <button type="button" class="close" data-dismiss="modal">&#215;</button>
             <div class="cc-mobile-title"></div>
             <h3>Navigation</h3>
           </div>
