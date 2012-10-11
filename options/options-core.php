@@ -912,6 +912,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_one',
+		'class' => 'cyberchimps_blog_portfolio_link_toggle_one_toggle',
 		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
@@ -955,6 +956,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_two',
+		'class' => 'cyberchimps_blog_portfolio_link_toggle_two_toggle',
 		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
@@ -998,6 +1000,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_three',
+		'class' => 'cyberchimps_blog_portfolio_link_toggle_three_toggle',
 		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
@@ -1041,6 +1044,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Link URL', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_link_url_four',
+		'class' => 'cyberchimps_blog_portfolio_link_toggle_four_toggle',
 		'std' => 'http://cyberchimps.com',
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
