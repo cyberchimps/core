@@ -1204,6 +1204,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Post Excerpts', 'cyberchimps'),
 		'id' => 'post_excerpts',
+		'std' => '1',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
@@ -1427,7 +1428,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Callout Title', 'cyberchimps'),
 		'id' => 'callout_title',
-		'std' => '',
+		'std' => apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1436,7 +1437,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Callout Text', 'cyberchimps'),
 		'id' => 'callout_text',
-		'std' => '',
+		'std' => __( 'Response Pro is a Professional WordPress Theme Framework that enables WordPress to be used as an advanced content management system featuring Drag and Drop Header, Page and Blog Elements.'. 'cyberchimps' ),
 		'type' => 'editor',
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1455,7 +1456,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Callout Button Text', 'cyberchimps'),
 		'id' => 'callout_button_text',
 		'class' => 'callout_button_toggle',
-		'std' => '',
+		'std' => __( 'Click Here', 'cyberchimps' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
