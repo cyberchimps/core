@@ -1206,6 +1206,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'post_excerpts',
 		'std' => '1',
 		'type' => 'toggle',
+		'std' => '1',
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 		
