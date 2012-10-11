@@ -751,6 +751,16 @@ img.action {
   border-radius: 4px;
 }
 
+/************** Media ************************/
+
+/* sets the media upload pop up window size */
+#TB_window {
+  width: 665px!important;
+}
+#TB_iframeContent {
+  width: 665px!important;
+}
+
 /************** Responsive *******************/
 
 @media all and (max-width: 1196px) {
