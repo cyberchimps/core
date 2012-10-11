@@ -1205,6 +1205,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Post Excerpts', 'cyberchimps'),
 		'id' => 'post_excerpts',
 		'type' => 'toggle',
+		'std' => '1',
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 		
