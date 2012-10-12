@@ -1429,7 +1429,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Callout Title', 'cyberchimps'),
 		'id' => 'callout_title',
-		'std' => apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ),
+		'std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1438,7 +1438,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Callout Text', 'cyberchimps'),
 		'id' => 'callout_text',
-		'std' => __( 'Response Pro is a Professional WordPress Theme Framework that enables WordPress to be used as an advanced content management system featuring Drag and Drop Header, Page and Blog Elements.'. 'cyberchimps' ),
+		'std' => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ), 
 		'type' => 'editor',
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
