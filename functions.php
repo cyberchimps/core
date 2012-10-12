@@ -475,24 +475,6 @@ function cyberchimps_category_transient_flusher() {
 add_action( 'edit_category', 'cyberchimps_category_transient_flusher' );
 add_action( 'save_post', 'cyberchimps_category_transient_flusher' );
 
-// set up next and previous post links
-function cyberchimps_next_previous_posts() {
-	if( get_next_posts_link() || get_previous_posts_link() ): ?>
-	<div class="more-content">
-		<div class="row-fluid">
-			<div class="span6 previous-post">
-				<?php previous_posts_link(); ?>
-			</div>
-			<div class="span6 next-post">
-				<?php next_posts_link(); ?>
-			</div>
-		</div>
-	</div>
-<?php
-	endif;
-}
-add_action( 'cyberchimps_after_content', 'cyberchimps_next_previous_posts' );
-
 // FIXME: Fix documentation
 function cyberchimps_default_site_title() {
 	global $page, $paged;
