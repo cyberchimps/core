@@ -213,6 +213,9 @@ form {
   float: right;
   margin-right: 20px;
 }
+.cc-social-container-subheader {
+  margin-left: 20px;
+}
 
 /*************** Mobile Menu **********************/
 
@@ -374,13 +377,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   text-align: center;
   background: #666;
 }
-#left-menu-save input {
-  font-size: 0.8em;
-  margin: 5px 0;
-}
-#left-menu-save input.btn {
-  padding: 4px 8px;
-}
+
 /**************** Main Content ******************/
 
 .cc-main-content {

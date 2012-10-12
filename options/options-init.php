@@ -118,20 +118,20 @@ function cyberchimps_options_page() {
 			?>
 			<!-- header -->
 			<div class="row-fluid cc-header">
-				<div class="span3">
+				<div class="span4">
         	<div class="cc-title">
             <div class="icon32" id="icon-tools"> <br /> </div>
-            	<h2><?php echo esc_html_e( 'Theme Options', 'cyberchimps' ); ?></h2>
+              <h2><?php printf( __( '%1s Options', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
             </div><!-- cc-title -->
-				</div><!-- span3 -->
-				<div class="span9">
+				</div><!-- span4 -->
+				<div class="span8">
 					<ul class="cc-header-links">
           	<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/support/' ); ?>" target="_blank"><?php _e( 'Support', 'cyberchimps' ); ?></a></li>
             <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/docs/' ); ?>" target="_blank"><?php _e( 'Instructions', 'cyberchimps' ); ?></a></li>
             <li><a href="<?php echo apply_filters('cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>" target="_blank"><?php _e( 'Buy Themes', 'cyberchimps' ); ?></a></li>
             <li><a href="<?php echo apply_filters('cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?> <?php _e( 'Upgrade', 'cyberchimps' ); ?></a></li>
 					</ul>
-				</div><!-- span9 -->
+				</div><!-- span8 -->
 			</div><!-- row-fluid -->
 			<!-- end header -->
 			
@@ -147,10 +147,21 @@ function cyberchimps_options_page() {
                   </a>
                 </div><!-- cc-mobil-menu -->
                 
+                <div class="cc-social-container-subheader">
+                  <div class="cc-social twitter">
+                  <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                  </div><!-- cc-scoial -->
+                  <div class="cc-social facebook">
+                  <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+                  </div><!-- cc-scoial -->
+                 </div><!-- cc-social-container -->
+             		<!--
                 <div class="btn-group">
                   <button class="btn" id="open-all-tabs"><?php _e('Open All', 'cyberchimps'); ?></button>
                   <button class="btn" id="close-all-tabs"><?php _e('Collapse All', 'cyberchimps'); ?></button>
                 </div>
+                -->
         		</div><!-- cc-collapse -->
 				
 					
@@ -216,8 +227,9 @@ function cyberchimps_options_page() {
                 echo '</ul>';
                 echo '</li>';
               } ?>
-              <li id="left-menu-save"><input type="submit" class="reset-button btn" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'cyberchimps' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'cyberchimps' ) ); ?>' );" />
-			<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" /></li>
+              <li id="left-menu-save">
+								<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps' ); ?>" />
+              </li>
             </ul>
           </div><!-- cc-left-menu -->
 				</div><!-- span3 -->
