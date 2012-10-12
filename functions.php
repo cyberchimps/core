@@ -51,7 +51,7 @@ function cyberchimps_core_scripts() {
 	
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', array('bootstrap-style'), '2.0.4' );
+	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
 	// Load Core Stylesheet
@@ -846,7 +846,7 @@ add_action('admin_head', 'posttype_admin_css');
 // funationality for responsive toggle
 function cyberchimps_responsive_stylesheet() {
 	if( cyberchimps_get_option( 'responsive_design' ) ){
-		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 	}
 	else {
 		wp_dequeue_style( 'cyberchimps_responsive' );
