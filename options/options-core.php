@@ -1372,7 +1372,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_one_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/elements/lib/images/slider/slide1.jpg',
+		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1380,7 +1380,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Slide 1 URL', 'cyberchimps'),
 		'id' => 'image_one_slide_url',
-		'std' => '',
+		'std' => apply_filters( 'cyberchimps_slider_lite_url1', 'http://cyberchimps.com' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1391,7 +1391,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_two_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/elements/lib/images/slider/slide2.jpg',
+		'std' => get_template_directory_uri() .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1399,7 +1399,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Slide 2 URL', 'cyberchimps'),
 		'id' => 'image_two_slide_url',
-		'std' => '',
+		'std' => apply_filters( 'cyberchimps_slider_lite_url2', 'http://cyberchimps.com' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1410,7 +1410,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_three_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/elements/lib/images/slider/slide3.jpg',
+		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1418,7 +1418,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Slide 3 URL', 'cyberchimps'),
 		'id' => 'image_three_slide_url',
-		'std' => '',
+		'std' => apply_filters( 'cyberchimps_slider_lite_url3', 'http://cyberchimps.com' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
