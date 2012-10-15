@@ -152,8 +152,12 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_product_link_url', 'Link URL', '', array('std' => home_url()))
 			->text('cyberchimps_product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
-			->text('callout_title', 'Callout Title', '')
-			->textarea('callout_text', 'Callout Text', '')
+			->text('callout_title', 'Callout Title', '',
+				array('std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps' ),
+					apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ) ) )
+			->textarea('callout_text', 'Callout Text', '',
+				array('std' => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps' ),
+					apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ) ) )
 			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'on'))
 			->text('callout_button_text', 'Callout Button Text', '')
 			->text('callout_url', 'Callout Button URL', '')
