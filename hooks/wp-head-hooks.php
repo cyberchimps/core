@@ -149,3 +149,17 @@ function cyberchimps_skin_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 21 );
+
+/* Seeting custom css according to the supplied css from theme option */
+function custom_css() {
+
+	global $themename, $themeslug, $options;
+	
+	$custom = cyberchimps_get_option( 'custom_css' );
+	echo '<style type="text/css">' . "\n";
+	echo  $custom  . "\n";
+	echo '</style>' . "\n";
+}
+
+add_action ( 'wp_head', 'custom_css' );
+?>
