@@ -221,11 +221,13 @@ form {
 
 .cc-mobile-menu {
   display: none;
+  margin-left: 2px;
 }
 .cc-mobile-menu .btn {
   float: left;
   padding: 4px;
   margin-right: 5px;
+  margin-bottom: 10px;
   margin-left: 20px;
   border: 1px solid #2C2C2C;
   -webkit-border-radius: 3px;
