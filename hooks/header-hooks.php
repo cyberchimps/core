@@ -276,7 +276,7 @@ function cyberchimps_banner_content() {
 
 	// Getting banner options
 	$banner = $options['header_banner_image'];
-	$default = get_template_directory_uri().'/cyberchimps/lib/images/banner.jpg';
+	$default = get_template_directory_uri() . apply_filters( 'cyberchimps_banner_img', '/cyberchimps/lib/images/banner.jpg' );
 	$url = $options['header_banner_url'];
 ?>	
 	<div class="twelve columns">
