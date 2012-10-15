@@ -1882,7 +1882,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 /*************************** FOOTER ***************************************************/
 	
 	$fields_list[] = array(
-		'name' => __('Show Footer Section', 'cyberchimps'),
+		'name' => __('Footer Widgets', 'cyberchimps'),
 		'id' => 'footer_show_toggle',
 		'std' => 1,
 		'type' => 'toggle',
