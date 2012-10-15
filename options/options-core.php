@@ -201,6 +201,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	$sections_list[] = array(
+		'id' => 'cyberchimps_blog_recent_posts_section',
+		'label' => __('Recent Posts Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
 /*************************** TEMPLATE ************************************************/
 
 	$sections_list[] = array(
@@ -1541,8 +1547,50 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_callout_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
-	/********* CALLOUT OPTIONS ENDS ***********/
-
+	/*********** CALLOUT OPTIONS ENDS **************/
+	
+	/************ RECENT POSTS STARTS **************/
+	
+	$fields_list[] = array(
+		'name' => __('Title', 'cyberchimps'),
+		'id' => 'recent_posts_title',
+		'std' => '',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_blog_recent_posts_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Custom Title', 'cyberchimps'),
+		'id' => 'recent_posts_custom_title',
+		'class' => 'recent_posts_title_toggle',
+		'std' => '',
+		'type' => 'text',
+		'section' => 'cyberchimps_blog_recent_posts_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Categories', 'cyberchimps'),
+		'id' => 'recent_posts_post_cats',
+		'type' => 'select',
+		'std' => 'all',
+		'options' => $options_categories,
+		'section' => 'cyberchimps_blog_recent_posts_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Images', 'cyberchimps'),
+		'id' => 'recent_posts_images',
+		'std' => '',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_blog_recent_posts_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	/************ RECENT POSTS ENDS ****************/
+	
 	/********* TWITTERBAR OPTIONS STARTS ***********/
 	$fields_list[] = array(
 		'name' => __('Twitter Handle', 'cyberchimps'),
