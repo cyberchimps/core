@@ -746,13 +746,13 @@ function cyberchimps_modal_welcome_note() {
     </div>
     <div class="modal-body">
       	<?php printf( __( '
-					<p>This is the first public beta of the CyberChimps WordPress Theme Framework.</p>
+					<p>This is the beta of the CyberChimps WordPress Theme Framework.</p>
 					
 					<p><b>This WordPress Theme is not for use on a live production website!</b></p>
 					
-					<p>We are still actively developing this framework, and this release is simply for testing purposes. If you would like to get involved we have opened sourced this framework at <a href="https://github.com/cyberchimps/cyberchimpslite" target="_blank">https://github.com/cyberchimps/cyberchimpslite</a>.</p>
+					<p>We are still actively developing this framework, and this release is simply for testing purposes. If you would like to get involved we have opened sourced the free version of our framework at <a href="https://github.com/cyberchimps/cyberchimpslite" target="_blank">https://github.com/cyberchimps/cyberchimpslite</a>.</p>
 					
-					<p>If you find something that is not working as you think it should, please <a href="https://github.com/cyberchimps/cyberchimpslite/issues/new" target="_blank">report the issue to us</a>.
+					<p>If you find something that is not working as you think it should, please <a href="https://github.com/cyberchimps/cyberchimpslite/issues/new" target="_blank">report the issue to us</a>, or if you are beta testing the Pro version please post your bugs on Basecamp.
 					
 					<p>Thank you for trying the new CyberChimps Theme Framework.</p>
 					
