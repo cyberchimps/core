@@ -1237,6 +1237,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Featured Images', 'cyberchimps'),
 		'id' => 'post_featured_images',
+		'std'      => 'checked',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading'
