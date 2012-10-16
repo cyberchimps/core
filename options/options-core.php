@@ -1899,14 +1899,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_footer_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Cyberchimps Link', 'cyberchimps'),
-		'id' => 'footer_cyberchimps_link',
-		'std' => 1,
-		'type' => 'toggle',
-		'section' => 'cyberchimps_footer_section',
-		'heading' => 'cyberchimps_footer_heading'
-	);
+	$fields_list[] = apply_filters( 'footer_cyberchimps_link', '' );
 	
 /*************************** IMPORT/EXPORT ***********************************************/
 	
