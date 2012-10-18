@@ -200,7 +200,7 @@ function cyberchimps_header_social_icons() {
 	
 	if ( !empty($email_display) ) {
 		$email_url = cyberchimps_get_option('email_url');
-		$output .= '<a href="'.esc_attr($email_url).'" target="_blank"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/email.png" alt="Email" /></a>';
+		$output .= '<a href="mailto:'.esc_attr($email_url).'"><img src="'. get_template_directory_uri() .'/cyberchimps/lib/images/social/'.$folder.'/email.png" alt="Email" /></a>';
 	}
 	
 	if ( !empty($rss_display) ) {
