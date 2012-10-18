@@ -78,6 +78,7 @@ form {
   border: 1px solid #5ba9d3;
   -webkit-border-radius: 3px;
 	border-radius: 3px;
+  overflow: hidden;
 }
 .upgrade-callout p {
   color: #FFFFFF;
