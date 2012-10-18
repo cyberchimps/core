@@ -268,8 +268,8 @@ class RW_Meta_Box {
 		echo '<table class="form-table">';
 		foreach($fields as $field) {
 			$meta = get_post_meta($post->ID, $field['id'], !(isset($field['multiple']) && $field['multiple']));
-			$meta = !empty($meta) ? $meta : (isset($field['std']) ? $field['std'] : '');
-			
+			$meta = (!empty($meta) || $meta === "0" ) ? $meta : (isset($field['std']) ? $field['std'] : '');
+
 			echo '<tr class="'.$field['id'].'">';
 			// call separated methods for displaying each type of field
 			call_user_func(array(&$this, 'show_field_' . $field['type']), $field, $meta);
@@ -729,7 +729,7 @@ class RW_Meta_Box {
 	}
 
 	function save_field_checkbox($post_id, $field, $old, $new) {
-		$new = $new ? 1 : 0;
+		$new = $new ? "1" : "0";
 		update_post_meta($post_id, $field['id'], $new);
 	}
 
