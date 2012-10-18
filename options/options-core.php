@@ -845,6 +845,23 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
+	
+	$fields_list[] = array(
+		'name' => __('Email', 'cyberchimps'),
+		'id' => 'social_email',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_header_social_section',
+		'heading' => 'cyberchimps_header_heading');
+		
+	$fields_list[] = array(
+		'name' => __('Email Address', 'cyberchimps'),
+		'id' => 'email_url',
+		'class' => 'social_email_toggle',
+		'type' => 'text',
+		'section' => 'cyberchimps_header_social_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 	/********** SOCIAL ENDS ************/
 	
 	/******* CONTACT DETAILS STARTS *****/
