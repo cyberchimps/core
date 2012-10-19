@@ -1632,6 +1632,17 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	}
 	/********* CAROUSEL OPTIONS ENDS ***********/
+	
+	/********* FEATURED POSTS START ************/
+	/*$fields_list[] = array(
+		'name' => __('Post Categories', 'cyberchimps'),
+		'id' => 'featured_posts_categories',
+		'type' => 'select',
+		'std' => 'all',
+		'options' => $options_categories,
+		'section' => 'cyberchimps_featured_posts_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
 		
 /*************************** TEMPLATES ***************************************************/
 	
