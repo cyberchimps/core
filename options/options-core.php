@@ -207,6 +207,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	/*$sections_list[] = array(
+		'id' => 'cyberchimps_featured_posts_section',
+		'label' => __('Featured Posts Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
 /*************************** TEMPLATE ************************************************/
 
 	$sections_list[] = array(
@@ -1634,7 +1640,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********* CAROUSEL OPTIONS ENDS ***********/
 	
 	/********* FEATURED POSTS START ************/
-	$fields_list[] = array(
+	/*$fields_list[] = array(
 		'name' => __('Post Categories', 'cyberchimps'),
 		'id' => 'featured_posts_categories',
 		'type' => 'select',

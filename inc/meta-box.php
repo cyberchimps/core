@@ -122,9 +122,9 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_magazine_no_of_wide_posts', 'Number of Wide Posts ', '',
 						array('options' => array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
 												 '15', '16', '17', '18', '19', '20')))
-		->tab("Featured Posts Options")
+		/*->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', 'Select post source', '', array('options' => array('Latest posts', 'From category')) )
-			->text('cyberchimps_featured_post_category', 'Enter category', '', array('std' => 'featured'))
+			->text('cyberchimps_featured_post_category', 'Enter category', '', array('std' => 'featured'))*/
 		->tab("Slider Lite Options")
 			->single_image('cyberchimps_slider_lite_slide_one_image', 'Slide One Image', '', array('std' =>  get_template_directory_uri() . '/elements/lib/images/slider/slide1.jpg'))
 			->text('cyberchimps_slider_lite_slide_one_url', 'Slide One Link', '', array('std' => 'http://wordpress.org'))
