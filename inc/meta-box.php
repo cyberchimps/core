@@ -33,7 +33,6 @@ function cyberchimps_load_meta_boxes_scripts() {
 
 add_action('init', 'cyberchimps_init_meta_boxes');
 function cyberchimps_init_meta_boxes() {
-	global $options;
 	
 	// Declare variables
 	$portfolio_options = array(); 

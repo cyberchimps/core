@@ -16,9 +16,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-//TODO remove global $options as it will be replaced by cyberchimps_option function set global theme options variable
-$options = get_option('cyberchimps_options');
-
 // Set options function
 function cyberchimps_option( $name = false, $subname = false ){
 	$options = get_option( 'cyberchimps_options' );

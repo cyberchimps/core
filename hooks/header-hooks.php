@@ -240,7 +240,7 @@ function cyberchimps_navigation() { ?>
 function cyberchimps_custom_header_element_content() { ?>
 	<header class="row-fluid">
 		<div class="span7">
-			<?php echo stripslashes ($options->get($themeslug.'_custom_header_element')); ?>
+			<?php echo stripslashes( cyberchimps_get_option( 'custom_header_element' ) ); ?>
 		</div>
 	</header>
 <?php }
@@ -270,14 +270,11 @@ add_action( 'cyberchimps_sitename_register', 'cyberchimps_logo_register_content'
 
 // Full-Width Logo
 function cyberchimps_banner_content() {
-	
-	// Call global variables
-	global $options;
 
 	// Getting banner options
-	$banner = $options['header_banner_image'];
+	$banner = cyberchimps_get_option( 'header_banner_image' );
 	$default = get_template_directory_uri() . apply_filters( 'cyberchimps_banner_img', '/cyberchimps/lib/images/banner.jpg' );
-	$url = $options['header_banner_url'];
+	$url = cyberchimps_get_option( 'header_banner_url' );
 ?>	
 	<div class="twelve columns">
 		<div id="banner">
