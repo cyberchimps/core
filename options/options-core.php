@@ -1634,7 +1634,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********* CAROUSEL OPTIONS ENDS ***********/
 	
 	/********* FEATURED POSTS START ************/
-	/*$fields_list[] = array(
+	$fields_list[] = array(
 		'name' => __('Post Categories', 'cyberchimps'),
 		'id' => 'featured_posts_categories',
 		'type' => 'select',

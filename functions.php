@@ -36,7 +36,6 @@ function cyberchimps_core_scripts() {
 
 	// Load library for jcarousel
 	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/cyberchimps/lib/js/jquery.jcarousel.min.js', array( 'jquery' ), true );
-	wp_enqueue_style( 'jcarousel-skin', get_template_directory_uri() . '/cyberchimps/lib/css/jcarousel/skin.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 
 	// Load Custom JS
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/cyberchimps/lib/js/custom.js', array( 'jquery' ), true );
