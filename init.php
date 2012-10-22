@@ -29,6 +29,10 @@ function cyberchimps_core_setup_theme() {
 	require_once( get_template_directory() . '/cyberchimps/inc/hooks.php' );
 	
 	// FIXME: Fix documentation
+	// Load element files before meta and options
+	require_once( get_template_directory() . '/elements/init.php' );
+	
+	// FIXME: Fix documentation
 	// Load core options file
 	require_once( get_template_directory() . '/cyberchimps/options/options-init.php' );
 
@@ -96,11 +100,6 @@ function cyberchimps_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
-
-function cyberchimps_load_elements() {
-	require_once( get_template_directory() . '/elements/init.php' );
-}
-add_action('after_setup_theme', 'cyberchimps_load_elements');
 
 function cyberchimps_load_hooks() {
 	require_once( get_template_directory() . '/cyberchimps/hooks/wp-head-hooks.php' );

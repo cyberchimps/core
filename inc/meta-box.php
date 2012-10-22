@@ -199,7 +199,6 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('cyberchimps_recent_posts_images_toggle', 'Images', '')
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carousel_options) )
-			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
 		->end();
