@@ -560,6 +560,25 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);*/
 	
+	// Toggle for google font
+	$fields_list[] = array(
+		'name'		 => __('Google fonts', 'cyberchimps'),
+		'id'		 => 'google_font',
+		'type'		 => 'toggle',
+		'section'	 => 'cyberchimps_typography_section',
+		'heading'	 => 'cyberchimps_design_heading'
+	);
+		
+	// Entry field for google font
+	$fields_list[] = array(
+		'name'		 => __('Enter Google font', 'cyberchimps'),
+		'id'		 => 'google_font_field',
+		'type'		 => 'text',
+		'class'		 => 'google_font_toggle',
+		'section'	 => 'cyberchimps_typography_section',
+		'heading'	 => 'cyberchimps_design_heading'
+	);
+	
 	$fields_list[] = array(
 		'name' => __('Demo Text', 'cyberchimps'),
 		'id' => 'font_demo_text',
