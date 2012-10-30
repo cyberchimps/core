@@ -1695,6 +1695,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
+	// Toggle for post title
+	$fields_list[] = array(
+		'name'		 => __('Post title', 'cyberchimps'),
+		'id'		 => 'single_post_title',
+		'type'		 => 'toggle',
+		'std'		 => 'checked',
+		'section'	 => 'cyberchimps_single_post_section',
+		'heading'	 => 'cyberchimps_templates_heading'
+	);
+	
 	$fields_list[] = array(
 		'name' => __('Featured Images', 'cyberchimps'),
 		'id' => 'single_post_featured_images',
