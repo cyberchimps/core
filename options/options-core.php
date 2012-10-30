@@ -139,6 +139,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
+	// Menu options subsection
+	$sections_list[] = array(
+		'id' => 'cyberchimps_header_menu_section',
+		'label' => __('Menu Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 /***************************** BLOG **************************************************/
 
 	$sections_list[] = array(
@@ -621,6 +628,18 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 
+	/********** MENU OPTIONS STARTS ************/
+	// Search bar toggle
+	$fields_list[] = array(
+		'name' => __('Searchbar', 'cyberchimps'),
+		'id' => 'searchbar',
+		'type' => 'toggle',
+		'std' => 'checked',
+		'section' => 'cyberchimps_header_menu_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	/********** MENU OPTIONS Ends ************/
+	
 	/********** BANNER OPTIONS STARTS ************/
 	// Banner image
 	$fields_list[] = array(
