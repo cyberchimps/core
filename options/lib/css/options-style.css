@@ -602,6 +602,13 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   display: block;
   margin-bottom: 10px;
 }
+/* custom css textarea */
+#cyberchimps_custom_css_section div.field-container {
+	width: 100%;
+}
+textarea#custom_css {
+	width: 100%;
+}
 
 /***************** Section Order *********************/
 .section_order {
