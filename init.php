@@ -82,7 +82,7 @@ function cyberchimps_widgets_init() {
 	));
 	
 	register_sidebar( array(
-		'name' => __( 'Sidebar-Right', 'cyberchimps' ),
+		'name' => __( 'Sidebar Right', 'cyberchimps' ),
 		'id' => 'sidebar-right',
 		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</aside>",
@@ -92,7 +92,7 @@ function cyberchimps_widgets_init() {
 	
 	register_sidebar( array(
 		'name' => __( 'Footer Widgets', 'cyberchimps' ),
-		'id' => 'footer-widgets',
+		'id' => 'cyberchimps-footer-widgets',
 		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
