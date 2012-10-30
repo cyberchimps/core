@@ -73,6 +73,17 @@ function cyberchimps_body_styles() {
 			}
 		}
 	}
+	
+	// Set font-family if google font is on
+	$google_font_toggle = cyberchimps_get_option( 'google_font' );
+	$google_font = cyberchimps_get_option( 'google_font_field' );
+	
+	if( $google_font_toggle == "1" && $google_font != "" ) {
+		$body_styles['font-family'] = $google_font;
+		wp_register_style( 'google-font', 'http://fonts.googleapis.com/css?family='.$google_font );
+		wp_enqueue_style( 'google-font' );
+	}	
+		
 	if ( cyberchimps_get_option( 'select_background' ) && cyberchimps_get_option( 'select_background' ) != 'none' ) {
 		$body_styles['background-image'] = 'url( "'.get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.cyberchimps_get_option( 'select_background' ).'.jpg" )';
 	}

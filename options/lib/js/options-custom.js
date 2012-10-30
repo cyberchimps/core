@@ -330,8 +330,16 @@ jQuery(document).ready(function($) {
 		});
 		
 /* for the font face preview */
-
+	
+	// Change demo text font on change of font selector dropdown
 	$('#typography_options_face').change(function(){
+       var font = $(this).val();
+       if (font !== "null")
+          $("#font_demo_text > p").css("font-family",font);          
+    });
+	
+	// Change demo text font on change of google font input field
+	$('#google_font_field').change(function(){
        var font = $(this).val();
        if (font !== "null")
           $("#font_demo_text > p").google_fonts({fontname: font});          

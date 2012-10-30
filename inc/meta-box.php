@@ -103,6 +103,7 @@ function cyberchimps_init_meta_boxes() {
 				'full_width' => get_template_directory_uri() . '/cyberchimps/lib/images/none.png',
 				'left_sidebar' => get_template_directory_uri() . '/cyberchimps/lib/images/left.png')
 			, 'std' => 'right_sidebar') )
+			->checkbox('cyberchimps_page_title_toggle', __('Page Title', 'cyberchimps'), '', array('std' => '1'))
 			->section_order('cyberchimps_page_section_order', 'Page Elements', '', array(					
 				'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
 					'boxes'				 => 'Boxes',					

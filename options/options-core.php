@@ -139,6 +139,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
+	// Menu options subsection
+	$sections_list[] = array(
+		'id' => 'cyberchimps_header_menu_section',
+		'label' => __('Menu Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 /***************************** BLOG **************************************************/
 
 	$sections_list[] = array(
@@ -560,6 +567,25 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);*/
 	
+	// Toggle for google font
+	$fields_list[] = array(
+		'name'		 => __('Google fonts', 'cyberchimps'),
+		'id'		 => 'google_font',
+		'type'		 => 'toggle',
+		'section'	 => 'cyberchimps_typography_section',
+		'heading'	 => 'cyberchimps_design_heading'
+	);
+		
+	// Entry field for google font
+	$fields_list[] = array(
+		'name'		 => __('Enter Google font', 'cyberchimps'),
+		'id'		 => 'google_font_field',
+		'type'		 => 'text',
+		'class'		 => 'google_font_toggle',
+		'section'	 => 'cyberchimps_typography_section',
+		'heading'	 => 'cyberchimps_design_heading'
+	);
+	
 	$fields_list[] = array(
 		'name' => __('Demo Text', 'cyberchimps'),
 		'id' => 'font_demo_text',
@@ -602,6 +628,18 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 
+	/********** MENU OPTIONS STARTS ************/
+	// Search bar toggle
+	$fields_list[] = array(
+		'name' => __('Searchbar', 'cyberchimps'),
+		'id' => 'searchbar',
+		'type' => 'toggle',
+		'std' => 'checked',
+		'section' => 'cyberchimps_header_menu_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	/********** MENU OPTIONS Ends ************/
+	
 	/********** BANNER OPTIONS STARTS ************/
 	// Banner image
 	$fields_list[] = array(
@@ -1674,6 +1712,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'toggle',
 		'section' => 'cyberchimps_single_post_section',
 		'heading' => 'cyberchimps_templates_heading'
+	);
+	
+	// Toggle for post title
+	$fields_list[] = array(
+		'name'		 => __('Post title', 'cyberchimps'),
+		'id'		 => 'single_post_title',
+		'type'		 => 'toggle',
+		'std'		 => 'checked',
+		'section'	 => 'cyberchimps_single_post_section',
+		'heading'	 => 'cyberchimps_templates_heading'
 	);
 	
 	$fields_list[] = array(
