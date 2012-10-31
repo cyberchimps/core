@@ -16,20 +16,33 @@
  * @link     http://www.cyberchimps.com/
  */
 
+/** 
+ * Checks for all elements added in the page section order drag and drop.
+ * Calls do_action for each active elements.
+**/ 
 function page_section_order_action() {
 	global $post;
 	
-	$page_section_order = get_post_meta($post->ID, 'cyberchimps_page_section_order' , true);
-	// set page default if nothing is selected
-	$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
-	$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
-	if ( is_array($page_section_order) ) {
-		foreach ( $page_section_order as $func) {
-			// checks if slider is selected at half size, if it is it removes it so we can display it above page content
-			$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
-			do_action($func);
+	// Checking for password protection.
+	if( ! post_password_required() ) {
+		$page_section_order = get_post_meta($post->ID, 'cyberchimps_page_section_order' , true);
+		
+		// set page default if nothing is selected
+		$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
+		$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
+		if ( is_array($page_section_order) ) {
+			foreach ( $page_section_order as $func) {
+			
+				// checks if slider is selected at half size, if it is it removes it so we can display it above page content
+				$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
+				do_action($func);
+			}
 		}
 	}
+	else {
+		// Get the form to submit password
+		echo get_the_password_form();
+	}	
 }
 add_action('cyberchimps_page_content', 'page_section_order_action');
 
