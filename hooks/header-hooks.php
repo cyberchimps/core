@@ -230,24 +230,6 @@ function cyberchimps_header_social_icons() {
 	
 <?php }
 
-// Navigation
-function cyberchimps_navigation() { ?>
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns" id="menu">
-				<div id="nav" class="twelve columns">
-					<?php wp_nav_menu( array( 
-						'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
-						'fallback_cb' => 'cyberchimps_menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
-						'items_wrap' => '<ul id="nav_menu">%3$s</ul>',
-					)); ?>
-				</div>
-			</div>
-		</div>
-	</div>
- <?php
-}
-
 // Custom HTML header element.
 function cyberchimps_custom_header_element_content() { ?>
 	<header class="row-fluid">
@@ -288,7 +270,7 @@ function cyberchimps_banner_content() {
 	$default = get_template_directory_uri() . apply_filters( 'cyberchimps_banner_img', '/cyberchimps/lib/images/banner.jpg' );
 	$url = cyberchimps_get_option( 'header_banner_url' );
 ?>	
-	<div class="twelve columns">
+	<header class="row-fluid">
 		<div id="banner">
 			<?php if ($banner != ""):?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="logo"></a>
@@ -297,7 +279,7 @@ function cyberchimps_banner_content() {
 				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>
 			<?php endif; ?>
 		</div>		
-	</div>
+	</header>
 <?php
 }
 

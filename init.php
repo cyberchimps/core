@@ -93,7 +93,7 @@ function cyberchimps_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Footer Widgets', 'cyberchimps' ),
 		'id' => 'cyberchimps-footer-widgets',
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget-container span3 %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',

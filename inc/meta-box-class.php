@@ -336,14 +336,15 @@ class RW_Meta_Box {
 	function show_field_pagehelp($field, $meta) {
 		$themenamefull = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
 		$pagedocs = apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com' ); 
-		$sliderdocs = apply_filters( 'cyberchimps_slider_options_help', 'http://cyberchimps.com' );
 		
 		$this->show_field_begin($field, $meta);
 		echo "Visit our $themenamefull Page Options help page here: <a href='$pagedocs' target='_blank'>Page Options Instructions</a></td>";
 	}
 		
 	function show_field_sliderhelp($field, $meta) {
-		global $themenamefull, $sliderdocs;
+		
+		$themenamefull = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
+		$sliderdocs = apply_filters( 'cyberchimps_slider_options_help', 'http://cyberchimps.com' );
 		
 		$this->show_field_begin($field, $meta);
 		echo "Visit our $themenamefull Slider help page here: <a href='$sliderdocs' target='_blank'>Slider Instructions</a></td>";

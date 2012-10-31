@@ -141,6 +141,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_number_featured_posts', 'Number of Featured Posts', '', array('default' => 5) )
 			->text('cyberchimps_slider_height', 'Slider Height', '' )
 			->checkbox('cyberchimps_slider_arrows', 'Slider Arrows', '', array('std' => "1") )
+			->sliderhelp('', 'Need Help?', '')
 		->tab("Product Options")
 			->select('cyberchimps_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
 			->text('cyberchimps_product_title', 'Product Title', '', array('std' => 'Product'))
