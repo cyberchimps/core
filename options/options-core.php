@@ -623,6 +623,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'cyberchimps_header_content'    => 'Logo + Icons',
 			'cyberchimps_sitename_register' => 'Logo + Login',
 			'cyberchimps_logo_search'		=> 'Logo + Search',
+			'cyberchimps_logo'				=> 'Logo'
 		),
 		'section' => 'cyberchimps_header_drag_drop_section',
 		'heading' => 'cyberchimps_header_heading'
