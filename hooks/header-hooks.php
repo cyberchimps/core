@@ -270,7 +270,7 @@ function cyberchimps_banner_content() {
 	$default = get_template_directory_uri() . apply_filters( 'cyberchimps_banner_img', '/cyberchimps/lib/images/banner.jpg' );
 	$url = cyberchimps_get_option( 'header_banner_url' );
 ?>	
-	<div class="twelve columns">
+	<header class="row-fluid">
 		<div id="banner">
 			<?php if ($banner != ""):?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="logo"></a>
@@ -279,7 +279,7 @@ function cyberchimps_banner_content() {
 				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>
 			<?php endif; ?>
 		</div>		
-	</div>
+	</header>
 <?php
 }
 
