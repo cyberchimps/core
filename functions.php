@@ -587,7 +587,7 @@ function cyberchimps_detect_plugin( $plugins ) {
 }
 
 // Set read more link for recent post element
-function recent_post_excerpt_more($more) {
+function cyberchimps_recent_post_excerpt_more($more) {
 
 	global $custom_excerpt, $post;
     
@@ -603,18 +603,18 @@ function recent_post_excerpt_more($more) {
 }
 
 // Set read more link for featured post element
-function featured_post_excerpt_more($more) {
+function cyberchimps_featured_post_excerpt_more($more) {
 	global $post;
 	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
 }
 
 // Set length of the excerpt
-function featured_post_length( $length ) {
+function cyberchimps_featured_post_length( $length ) {
 	return 70;
 }
 
 // For magazine wide post
-function magazine_post_wide( $length ) {
+function cyberchimps_magazine_post_wide( $length ) {
 	return 130;
 }
 
@@ -676,7 +676,7 @@ if( cyberchimps_option( 'post_excerpts' ) ){
 }
 
 /*	gets post views */
-function getPostViews($postID){ 
+function cyberchimps_getPostViews($postID){ 
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -688,7 +688,7 @@ function getPostViews($postID){
 }
 
 /*	Sets post views	*/
-function setPostViews($postID) { 
+function cyberchimps_setPostViews($postID) { 
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -813,13 +813,13 @@ add_filter( 'cyberchimps_help_sub_heading', 'cyberchimps_options_help_sub_header
 add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
 
 // Hide preview and view on custom post types
-function posttype_admin_css() {
+function cyberchimps_posttype_admin_css() {
     global $post_type;
     if($post_type == 'custom_slides' || $post_type == 'boxes' || $post_type == 'featured_posts' || $post_type == 'portfolio_images') {
     echo '<style type="text/css">#view-post-btn,#post-preview{display: none;}</style>';
     }
 }
-add_action('admin_head', 'posttype_admin_css');
+add_action('admin_head', 'cyberchimps_posttype_admin_css');
 
 // funationality for responsive toggle
 function cyberchimps_responsive_stylesheet() {

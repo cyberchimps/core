@@ -20,7 +20,7 @@
  * Checks for all elements added in the page section order drag and drop.
  * Calls do_action for each active elements.
 **/ 
-function page_section_order_action() {
+function cyberchimps_page_section_order_action() {
 	global $post;
 	
 	// Checking for password protection.
@@ -44,7 +44,7 @@ function page_section_order_action() {
 		echo get_the_password_form();
 	}	
 }
-add_action('cyberchimps_page_content', 'page_section_order_action');
+add_action('cyberchimps_page_content', 'cyberchimps_page_section_order_action');
 
 function cyberchimps_page(){ ?>
 <div id="container" <?php cyberchimps_filter_container_class(); ?>>

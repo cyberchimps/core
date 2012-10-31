@@ -16,7 +16,7 @@
  * @link     http://www.cyberchimps.com/
  */
 
-function blog_section_order_action() {
+function cyberchimps_blog_section_order_action() {
 	global $post;
 	
 	$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
@@ -31,7 +31,7 @@ function blog_section_order_action() {
 		}
 	}
 }
-add_action('cyberchimps_blog_content', 'blog_section_order_action');
+add_action('cyberchimps_blog_content', 'cyberchimps_blog_section_order_action');
 
 function cyberchimps_post(){ ?>
 <div id="container" <?php cyberchimps_filter_container_class(); ?>>
