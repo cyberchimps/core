@@ -115,6 +115,18 @@ function cyberchimps_logo_description() {?>
 <?php }
 add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
 
+// Defines action for header elelment "Logo"
+function cyberchimps_logo() {?>
+	<header class="row-fluid">
+		<div class="span7">
+			<?php if (function_exists('cyberchimps_header_logo') ) {
+				cyberchimps_header_logo();
+			} ?>
+		</div>	
+	</header>
+<?php }
+add_action( 'cyberchimps_logo', 'cyberchimps_logo' );
+
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
 	 
