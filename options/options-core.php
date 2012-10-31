@@ -570,7 +570,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	// Toggle for google font
 	$fields_list[] = array(
 		'name'		 => __('Google fonts', 'cyberchimps'),
-		'id'		 => 'google_font',
+		'id'		   => 'google_font',
 		'type'		 => 'toggle',
 		'section'	 => 'cyberchimps_typography_section',
 		'heading'	 => 'cyberchimps_design_heading'
@@ -579,9 +579,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	// Entry field for google font
 	$fields_list[] = array(
 		'name'		 => __('Enter Google font', 'cyberchimps'),
-		'id'		 => 'google_font_field',
-		'type'		 => 'text',
+		'id'		   => 'google_font_field',
 		'class'		 => 'google_font_toggle',
+		'type'		 => 'text',
+		'desc'		 => 'Google font names are case sensitive',
 		'section'	 => 'cyberchimps_typography_section',
 		'heading'	 => 'cyberchimps_design_heading'
 	);
