@@ -173,7 +173,7 @@ add_action ( 'wp_head', 'cyberchimps_custom_css' );
 /**
 * Add link to theme options in Admin bar.
 */ 
-function admin_link() {
+function cyberchimps_admin_link() {
 	global $wp_admin_bar;
 
 	$wp_admin_bar->add_menu( array( 
@@ -182,5 +182,5 @@ function admin_link() {
 								'href'	 => admin_url('themes.php?page=cyberchimps-theme-options')  
 								  ) ); 
 }
-add_action( 'admin_bar_menu', 'admin_link', 113 );
+add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
 ?>
