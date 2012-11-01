@@ -365,12 +365,20 @@ function cyberchimps_post_comments() {
 	else {
 		$show = ( cyberchimps_option( 'post_byline_comments' ) ) ? cyberchimps_option( 'post_byline_comments' ) : false;  
 	}
+	$leave_comment = ( is_single() || is_page() ) ? '' : __( 'Leave a comment', 'cyberchimps' );
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'cyberchimps' ), __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
-      <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
+			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
+      <span class="sep"> <?php echo ( $leave_comment != '' ) ? apply_filters( 'cyberchimps_entry_meta_sep', '|' ) : ''; ?> </span>
     <?php endif;
 	endif;
+}
+
+// change default comments labels and form
+add_filter( 'comment_form_defaults', 'cyberchimps_comment_form_filter' );
+function cyberchimps_comment_form_filter( $defaults ) {
+	$defaults['title_reply'] = __( 'Leave a comment', 'cyberchimps' );
+	return $defaults;
 }
 
 // add featured image to single post, archive and blog page if set in options
@@ -587,7 +595,7 @@ function cyberchimps_detect_plugin( $plugins ) {
 }
 
 // Set read more link for recent post element
-function recent_post_excerpt_more($more) {
+function cyberchimps_recent_post_excerpt_more($more) {
 
 	global $custom_excerpt, $post;
     
@@ -603,18 +611,18 @@ function recent_post_excerpt_more($more) {
 }
 
 // Set read more link for featured post element
-function featured_post_excerpt_more($more) {
+function cyberchimps_featured_post_excerpt_more($more) {
 	global $post;
 	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
 }
 
 // Set length of the excerpt
-function featured_post_length( $length ) {
+function cyberchimps_featured_post_length( $length ) {
 	return 70;
 }
 
 // For magazine wide post
-function magazine_post_wide( $length ) {
+function cyberchimps_magazine_post_wide( $length ) {
 	return 130;
 }
 
@@ -676,7 +684,7 @@ if( cyberchimps_option( 'post_excerpts' ) ){
 }
 
 /*	gets post views */
-function getPostViews($postID){ 
+function cyberchimps_getPostViews($postID){ 
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -688,7 +696,7 @@ function getPostViews($postID){
 }
 
 /*	Sets post views	*/
-function setPostViews($postID) { 
+function cyberchimps_setPostViews($postID) { 
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -813,13 +821,13 @@ add_filter( 'cyberchimps_help_sub_heading', 'cyberchimps_options_help_sub_header
 add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
 
 // Hide preview and view on custom post types
-function posttype_admin_css() {
+function cyberchimps_posttype_admin_css() {
     global $post_type;
     if($post_type == 'custom_slides' || $post_type == 'boxes' || $post_type == 'featured_posts' || $post_type == 'portfolio_images') {
     echo '<style type="text/css">#view-post-btn,#post-preview{display: none;}</style>';
     }
 }
-add_action('admin_head', 'posttype_admin_css');
+add_action('admin_head', 'cyberchimps_posttype_admin_css');
 
 // funationality for responsive toggle
 function cyberchimps_responsive_stylesheet() {
