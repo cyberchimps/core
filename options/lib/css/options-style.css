@@ -134,13 +134,9 @@ form {
   background: linear-gradient(to bottom,  #fefefe 0%,#ededed 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );
 }
-.cc-header .span3 {
-  position: relative;
-}
 .cc-header .cc-title { 
-	position: absolute;
-	left: 20px;
-  width: 300px; 
+	margin-left: 20px;
+	width: 100%;
 }
 .cc-options ul.cc-header-links {
   margin: 15px 20px 0 0;
@@ -408,6 +404,9 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   color: #666;
   font-weight: 100;
   cursor: pointer;
+}
+.cc-content-section h4.heading {
+	width: 90%;
 }
 
 /***************** Footer *********************/
@@ -852,7 +851,24 @@ img.action {
   }
 }
 @media all and (max-width: 533px) {
-   .cc-header-links a {
+  .cc-header-links a {
     font-size: 0.5em;
   }
+	.cc_help_upgrade_bar {
+		font-size: 1.2em;
+	}
+	/* organise inputs to fit on mobile screen */
+	.cc-main-content .radio-container input, .cc-main-content .checkbox-container input, .cc-main-content .toggle-container .toggle {
+		float: left;
+		clear: left;
+		margin-right: 0;
+	}
+	/* move facebook to clear left content */
+	.cc-social  {
+		clear: left;
+	}
+	/* create more padding at bottom in mobile to allow for WP footer text */
+	#wpbody-content {
+		padding-bottom: 150px;
+	}
 }
