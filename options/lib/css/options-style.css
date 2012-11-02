@@ -532,9 +532,12 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   margin-bottom: 15px;
 }
 .cc-main-content .toggle-container {
-  width: 250px;
+  width: 300px;
   float: left;
   clear: left;
+}
+.cc-main-content .toggle-container label {
+	float: left;
 }
 .cc-main-content .radio-container, .cc-main-content .checkbox-container {
   width: 250px;
@@ -565,6 +568,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-main-content .images-radio-container > .images-radio-subcontainer {
   float: left;
   margin-right: 20px;
+	margin-bottom: 5px;
 }
 .cc-main-content .images-radio-container > .images-radio-subcontainer img {
   border: 5px solid #eee;
@@ -583,7 +587,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	display:block;
 	width:70px;
 	height:22px;
-  margin-bottom: 20px;
 }
 .cc-main-content .toggle.checked {
 	background-position:top left;
@@ -857,11 +860,23 @@ img.action {
 	.cc_help_upgrade_bar {
 		font-size: 1.2em;
 	}
+	/* reduce padding on sections */
+	.cc-content-section .section-group {
+		padding: 10px;
+	}
 	/* organise inputs to fit on mobile screen */
 	.cc-main-content .radio-container input, .cc-main-content .checkbox-container input, .cc-main-content .toggle-container .toggle {
 		float: left;
 		clear: left;
-		margin-right: 0;
+	}
+	input, textarea, .uneditable-input {
+		width: 100%;
+	}
+	.cc-main-content select {
+		width: 100%;
+	}
+	.cc-main-content .toggle-container {
+		width: 100%;
 	}
 	/* move facebook to clear left content */
 	.cc-social  {
@@ -870,5 +885,10 @@ img.action {
 	/* create more padding at bottom in mobile to allow for WP footer text */
 	#wpbody-content {
 		padding-bottom: 150px;
+	}
+}
+@media all and (max-width: 350px) {
+	.cc-main-content .upload_button {
+		font-size: 0.8em;
 	}
 }
