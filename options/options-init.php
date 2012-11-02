@@ -58,12 +58,19 @@ function cyberchimps_load_scripts() {
 	// Enqueued scripts
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('jquery-ui-sortable');
+	
+	// Adding JS to support drag and drop in theme options
+	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
+	
 	wp_enqueue_script('thickbox');
 	wp_enqueue_script('color-picker', get_template_directory_uri().'/cyberchimps/options/lib/js/colorpicker.js', array('jquery'));
 	wp_enqueue_script('media-uploader', get_template_directory_uri().'/cyberchimps/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
 	wp_enqueue_script('options-custom', get_template_directory_uri().'/cyberchimps/options/lib/js/options-custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('google-fonts', get_template_directory_uri().'/cyberchimps/options/lib/js/font_inline_plugin.js', array('jquery'));
+
+	
 }
 
 /* Loads the file for option sanitization */
