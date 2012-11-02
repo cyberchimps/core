@@ -365,12 +365,20 @@ function cyberchimps_post_comments() {
 	else {
 		$show = ( cyberchimps_option( 'post_byline_comments' ) ) ? cyberchimps_option( 'post_byline_comments' ) : false;  
 	}
+	$leave_comment = ( is_single() || is_page() ) ? '' : __( 'Leave a comment', 'cyberchimps' );
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'cyberchimps' ), __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
-      <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
+			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
+      <span class="sep"> <?php echo ( $leave_comment != '' ) ? apply_filters( 'cyberchimps_entry_meta_sep', '|' ) : ''; ?> </span>
     <?php endif;
 	endif;
+}
+
+// change default comments labels and form
+add_filter( 'comment_form_defaults', 'cyberchimps_comment_form_filter' );
+function cyberchimps_comment_form_filter( $defaults ) {
+	$defaults['title_reply'] = __( 'Leave a comment', 'cyberchimps' );
+	return $defaults;
 }
 
 // add featured image to single post, archive and blog page if set in options
@@ -797,8 +805,10 @@ function cyberchimps_options_help_text() {
 							</a>
 						</div>
 						</div>
+						<div class="row-fluid">
 						<div class="span6">
 						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
