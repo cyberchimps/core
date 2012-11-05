@@ -139,13 +139,6 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
-	// Menu options subsection
-	$sections_list[] = array(
-		'id' => 'cyberchimps_header_menu_section',
-		'label' => __('Menu Options', 'cyberchimps'),
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
 /***************************** BLOG **************************************************/
 
 	$sections_list[] = array(
@@ -629,18 +622,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_header_drag_drop_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
-
-	/********** MENU OPTIONS STARTS ************/
-	// Search bar toggle
-	$fields_list[] = array(
-		'name' => __('Searchbar', 'cyberchimps'),
-		'id' => 'searchbar',
-		'type' => 'toggle',
-		'std' => 'checked',
-		'section' => 'cyberchimps_header_menu_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
-	/********** MENU OPTIONS Ends ************/
 	
 	/********** BANNER OPTIONS STARTS ************/
 	// Banner image
@@ -736,7 +717,18 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'class' => 'custom_apple_toggle',
 		'type' => 'upload',
 		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading');
+		'heading' => 'cyberchimps_header_heading'
+	);
+		
+	// Search bar toggle
+	$fields_list[] = array(
+		'name' => __('Searchbar', 'cyberchimps'),
+		'id' => 'searchbar',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+	
 	/********** HEADER OPTIONS ENDS ************/	
 
 	/********** SOCIAL STARTS ************/
