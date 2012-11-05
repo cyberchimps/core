@@ -170,6 +170,8 @@ function cyberchimps_init_meta_boxes() {
 			->color('custom_callout_button_color', 'Custom Button Color', '')
 			->color('custom_callout_button_text_color', 'Custom Button Text Color', '')
 			->pagehelp('', 'Need help?', '')
+		->tab("HTML Box Options")
+			->textarea('html_box', __( 'Custom HTML', 'cyberchimps' ), __( 'Enter your custom html here', 'cyberchimps' ) )
 		->tab("Portfolio Options")
 			->select('portfolio_row_number', 'Images per row', '', array('options' => array( 2 => 'Two', 3 => 'Three', 4 => 'Four'), 'std' => 3) )
 			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfolio_options) )

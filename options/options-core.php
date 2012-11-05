@@ -172,6 +172,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	);
 	
 	$sections_list[] = array(
+		'id' => 'cyberchimps_html_box_section',
+		'label' => __('HTML Box Options', 'cyberchimps'),
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$sections_list[] = array(
 		'id' => 'cyberchimps_twitterbar_section',
 		'label' => __('Twitterbar Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
@@ -1604,6 +1610,20 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	/*********** CALLOUT OPTIONS ENDS **************/
+	
+	/********* HTML BOX OPTIONS STARTS ***********/
+	
+	$fields_list[] = array(
+		'name' => __('HTML Box', 'cyberchimps'),
+		'id' => 'html_box',
+		'std' => '',
+		'desc' => __( 'Enter your custom HTML code here', 'cyberchimps' ),
+		'type' => 'textarea',
+		'section' => 'cyberchimps_html_box_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	/********* HTML BOX OPTIONS ENDS *************/
 	
 	/************ RECENT POSTS STARTS **************/
 	
