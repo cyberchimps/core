@@ -47,6 +47,10 @@ function cyberchimps_core_setup_theme() {
 	// FIXME: Fix documentation	
 	// Load Meta Boxes Functions
 	require_once( get_template_directory() . '/cyberchimps/inc/meta-box.php' );
+	
+	// FIXME: Fix documentation	
+	// Load core hooks file
+	require_once( get_template_directory() . '/cyberchimps/inc/cc-custom-background.php' );
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps', get_template_directory() . '/lib/languages' );
@@ -59,6 +63,9 @@ function cyberchimps_core_setup_theme() {
 
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
+	
+	// add theme support for backgrounds
+	add_theme_support( 'custom-background' );
 	
 	// FIXME: Fix documentation	
 	// This theme uses wp_nav_menu() in one location.
