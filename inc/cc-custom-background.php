@@ -2,43 +2,25 @@
 
 add_action(
     'load-appearance_page_custom-background',
-    array ( 'cc_Background_Origin', 'get_instance' )
+    array ( 'CC_Custom_Background', 'get_instance' )
 );
 
-/**
- * Add a new row to the background options table for 'background-origin'.
- *
- * @author  Thomas Scholz http://toscho.de
- * @version 2012.09.10
- */
-class cc_Background_Origin
+class CC_Custom_Background
 {
-    /**
-     * Main instance.
-     * @type object|NULL
-     */
     protected static $instance = NULL;
 
     /**
      * The name for the option. Will be saved as theme option.
-     *
-     * @link http://www.w3.org/TR/css3-background/#the-background-origin
-     * @type string
      */
     protected $option = 'cyberchimps_background';
 
     /**
      * Label on the left side of our new option.
-     *
-     * @type string
      */
     protected $table_header = 'CyberChimps Background';
 
     /**
      * Return an instance.
-     *
-     * @wp-hook load-appearance_page_custom-background
-     * @return object
      */
     public static function get_instance()
     {
@@ -48,8 +30,6 @@ class cc_Background_Origin
 
     /**
      * Save our option and register the form.
-     *
-     * @wp-hook load-appearance_page_custom-background
      */
     public function __construct()
     {
@@ -57,6 +37,8 @@ class cc_Background_Origin
             'admin_footer-appearance_page_custom-background',
             array ( $this, 'form' )
         );
+				
+				add_action( 'admin_head', array( $this, 'cc_background_styles' ) );
 
         if ( empty ( $_POST[ $this->option ] ) )
         {
@@ -69,9 +51,6 @@ class cc_Background_Origin
 
     /**
      * Create the form elements.
-     *
-     * @wp-hook admin_footer-appearance_page_custom-background
-     * @return void
      */
     public function form()
     {
@@ -104,29 +83,6 @@ class cc_Background_Origin
 		$(this).siblings('.of-radio-img-radio').attr('checked', 'checked');		
 	});
 });</script>
-<style>
-.images-radio-container {
-  float: left;
-  clear: left;
-  margin-bottom: 10px;
-}
-.images-radio-container > .images-radio-subcontainer {
-  float: left;
-  margin-right: 20px;
-	margin-bottom: 5px;
-}
-.images-radio-container > .images-radio-subcontainer img {
-  border: 5px solid #eee;
-  padding: 2px;
-}
-.images-radio-container > .images-radio-subcontainer img.of-radio-img-selected {
-  border: 5px solid #5DA7F2;
-}
-.images-radio-container > .images-radio-subcontainer img:hover {
-  cursor: pointer;
-  border: 5px solid #5DA7F2;
-}
-</style>
 <?php
     }
 
@@ -159,4 +115,32 @@ class cc_Background_Origin
 
         return "$html</div>";
     }
+		
+		public function cc_background_styles() {
+			$style = '<style type="text/css">
+			.images-radio-container {
+				float: left;
+				clear: left;
+				margin-bottom: 10px;
+			}
+			.images-radio-container > .images-radio-subcontainer {
+				float: left;
+				margin-right: 20px;
+				margin-bottom: 5px;
+			}
+			.images-radio-container > .images-radio-subcontainer img {
+				border: 5px solid #eee;
+				padding: 2px;
+			}
+			.images-radio-container > .images-radio-subcontainer img.of-radio-img-selected {
+				border: 5px solid #5DA7F2;
+			}
+			.images-radio-container > .images-radio-subcontainer img:hover {
+				cursor: pointer;
+				border: 5px solid #5DA7F2;
+			}
+			</style>';
+			
+			echo $style;
+		}
 }
