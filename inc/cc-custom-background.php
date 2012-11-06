@@ -2,7 +2,7 @@
 
 add_action(
     'load-appearance_page_custom-background',
-    array ( 'Cyberchimps_Custom_Background', 'get_instance' )
+    array ( 'cc_Background_Origin', 'get_instance' )
 );
 
 /**
@@ -11,7 +11,7 @@ add_action(
  * @author  Thomas Scholz http://toscho.de
  * @version 2012.09.10
  */
-class Cyberchimps_Custom_Background
+class cc_Background_Origin
 {
     /**
      * Main instance.
@@ -25,14 +25,14 @@ class Cyberchimps_Custom_Background
      * @link http://www.w3.org/TR/css3-background/#the-background-origin
      * @type string
      */
-    protected $option = 'background_image';
+    protected $option = 'cyberchimps_background';
 
     /**
      * Label on the left side of our new option.
      *
      * @type string
      */
-    protected $table_header = 'CyberChimps Backgrounds';
+    protected $table_header = 'CyberChimps Background';
 
     /**
      * Return an instance.
@@ -93,21 +93,17 @@ class Cyberchimps_Custom_Background
      */
     protected function print_script( $html )
     {
-        $row = "'<p>$html</p>'";
+        $row = "'<tr><th>$this->table_header</th><td>$html</td></tr>'";
         ?>
 <script>jQuery( function <?php echo $this->option; ?>($) {
-    $('#upload-form').append(<?php echo $row; ?>);
-// Image Options
-	$('.of-radio-img-img').click(function(){
-		$(this).parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
-		$(this).addClass('of-radio-img-selected');		
-	});
+    $('.form-table:last').append(<?php echo $row; ?>);
 		
-	$('.of-radio-img-label').hide();
-	$('.of-radio-img-img').show();
-	$('.of-radio-img-radio').hide();
-});
-</script>
+		$('.of-radio-img-img').click(function(){
+		$(this).parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
+		$(this).addClass('of-radio-img-selected');
+		$(this).siblings('.of-radio-img-radio').attr('checked', 'checked');		
+	});
+});</script>
 <style>
 .images-radio-container {
   float: left;
@@ -141,23 +137,24 @@ class Cyberchimps_Custom_Background
      */
     protected function get_radio_fields()
     {
-        $value  = get_theme_mod( $this->option, 'background_image' );
-        $radios = array ( 'noise', 'blue', 'dark', 'space' );
-        $html   = '<div class="images-radio-container"><label for="choose-from-library-link">Or choose one of CyberChimps background images:</label><br>';
+        $value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
+        $radios = array ( 'none', 'noise', 'blue', 'dark', 'space' );
+        $html   = '<div class="images-radio-container"><label for="choose-from-library-link">'.__( 'Or choose one of CyberChimps background images', 'cyberchimps' ).'</label><br>';
 
         foreach ( $radios as $radio )
         {
-					$html .= '<div class="images-radio-subcontainer">';
-					$html .= sprintf(
-							' <input type="radio" class="of-radio-img-radio" name="%1$s" value="%2$s" style="display:none;" id="%3$s"%4$s>',
-							$this->option,
-							$radio,
-							"$this->option-$radio",
-							// returns ' as value delimiters and has to be escaped
-							addslashes( checked( $value, $radio, FALSE ) )
-					);
-					$html .= '<img src="'.get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/thumbs/'.$radio.'.png" class="of-radio-img-img" alt="'.$radio.'" title="'.$radio.'" />';
-					$html .= '</div>';
+						$html .= '<div class="images-radio-subcontainer">';
+            $html .= sprintf(
+                ' <input type="radio" class="of-radio-img-radio" name="%1$s" style="display:none;" value="%2$s" id="%3$s"%4$s>',
+                $this->option,
+                $radio,
+                "$this->option-$radio",
+                // returns ' as value delimiters and has to be escaped
+                addslashes( checked( $value, $radio, FALSE ) )
+            );
+						$selected = ( $value == $radio ) ? ' of-radio-img-selected' : '';
+						$html .= '<img src="'.get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/thumbs/'.$radio.'.png" class="of-radio-img-img'.$selected.'" alt="'.$radio.'" title="'.$radio.'" />';
+						$html .= '</div>';
         }
 
         return "$html</div>";
