@@ -94,7 +94,7 @@ add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
 	$style = $color ? "background-color: #$color;" : '';
 
-	if ( $background && $cc_background == 'none' ) {
+	if ( $background ) {
 		$image = " background-image: url('$background');";
 
 		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
@@ -115,17 +115,22 @@ add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 		$style .= $image . $repeat . $position . $attachment;
 	}
 	
-	if ( ! $background && $cc_background != 'none' ) {
+	if ( ! $background && ! $color && $cc_background != 'none' ) {
 		$img_url = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.$cc_background.'.jpg';
 		$image = "background-image: url( '$img_url' );";
-		$style .= $image;
+		$style .= $image; ?>
+		<style type="text/css">
+			body { <?php echo trim( $style ); ?> }
+		</style>
+<?php
 	}
+	else {
 ?>
 <style type="text/css" id="custom-background-css">
 body.custom-background { <?php echo trim( $style ); ?> }
 </style>
 <?php
-
+	}
 	}
 
 // FIXME: Fix documentation
