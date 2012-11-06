@@ -841,4 +841,18 @@ function cyberchimps_responsive_stylesheet() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_responsive_stylesheet', 25 );
+
+/**
+* Add link to theme options in Admin bar.
+*/ 
+function cyberchimps_admin_link() {
+	global $wp_admin_bar;
+
+	$wp_admin_bar->add_menu( array( 
+								'id'	 => 'cyberchimps',
+								'title'	 => 'CyberChimps Options',
+								'href'	 => admin_url('themes.php?page=cyberchimps-theme-options')  
+								  ) ); 
+}
+add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
 ?>
