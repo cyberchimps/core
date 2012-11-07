@@ -70,7 +70,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 
 	$sections_list[] = array(
 		'id' => 'cyberchimps_help_section',
-		'label' => apply_filters( 'cyberchimps_help_heading', 'CyberChimps.com' ),
+		'label' => apply_filters( 'cyberchimps_help_heading', 'CyberChimps' ),
 		'heading' => 'cyberchimps_help_heading'
 	);
 	
@@ -359,7 +359,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => apply_filters( 'cyberchimps_help_sub_heading', __( 'Cyberchimps Help', 'cyberchimps' ) ),
 		'id' => 'help_info_display',
 		'type' => 'welcome',
-		'desc' => 'test',
 		'section' => 'cyberchimps_help_section',
 		'heading' => 'cyberchimps_help_heading');
 		
