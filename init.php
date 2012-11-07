@@ -47,6 +47,10 @@ function cyberchimps_core_setup_theme() {
 	// FIXME: Fix documentation	
 	// Load Meta Boxes Functions
 	require_once( get_template_directory() . '/cyberchimps/inc/meta-box.php' );
+	
+	// FIXME: Fix documentation	
+	// Load core hooks file
+	require_once( get_template_directory() . '/cyberchimps/inc/cc-custom-background.php' );
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps', get_template_directory() . '/lib/languages' );
@@ -60,6 +64,12 @@ function cyberchimps_core_setup_theme() {
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
 	
+	// add theme support for backgrounds
+	$defaults = array(
+	'wp-head-callback'       => 'cyberchimps_custom_background_cb'
+);
+	add_theme_support( 'custom-background', $defaults );
+	
 	// FIXME: Fix documentation	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -68,6 +78,60 @@ function cyberchimps_core_setup_theme() {
 }
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
+	function cyberchimps_custom_background_cb() {
+		// $background is the saved custom image, or the default image.
+	$background = get_background_image();
+
+	// $color is the saved custom color.
+	// A default has to be specified in style.css. It will not be printed here.
+	$color = get_theme_mod( 'background_color' );
+	
+	// CyberChimps background image
+	$cc_background = get_theme_mod( 'cyberchimps_background' );
+
+	if ( ! $background && ! $color && ! $cc_background )
+		return;
+
+	$style = $color ? "background-color: #$color;" : '';
+
+	if ( $background ) {
+		$image = " background-image: url('$background');";
+
+		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
+		if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+			$repeat = 'repeat';
+		$repeat = " background-repeat: $repeat;";
+
+		$position = get_theme_mod( 'background_position_x', 'left' );
+		if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+			$position = 'left';
+		$position = " background-position: top $position;";
+
+		$attachment = get_theme_mod( 'background_attachment', 'scroll' );
+		if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+			$attachment = 'scroll';
+		$attachment = " background-attachment: $attachment;";
+
+		$style .= $image . $repeat . $position . $attachment;
+	}
+	
+	if ( ! $background && ! $color && $cc_background != 'none' ) {
+		$img_url = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.$cc_background.'.jpg';
+		$image = "background-image: url( '$img_url' );";
+		$style .= $image; ?>
+		<style type="text/css">
+			body { <?php echo trim( $style ); ?> }
+		</style>
+<?php
+	}
+	else {
+?>
+<style type="text/css" id="custom-background-css">
+body.custom-background { <?php echo trim( $style ); ?> }
+</style>
+<?php
+	}
+	}
 
 // FIXME: Fix documentation
 // Register our sidebars and widgetized areas.

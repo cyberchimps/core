@@ -82,11 +82,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
+	/** COMMENTED OUT - Using WP background customization
 	$sections_list[] = array(
 		'id' => 'cyberchimps_custom_background_section',
 		'label' => __('Background Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_design_heading'
 	);
+	*/
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_custom_colors_section',
@@ -401,8 +403,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
-		
-/* BACKGROUND */
+
+/** COMMENTED OUT - we are using WP background options instead. When deleting remove relevant functions from wp-head-hooks.php		
+/* BACKGROUND
 
 	$fields_list[] = array(
 		'name' => __('Select a background', 'cyberchimps'),
@@ -500,6 +503,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading',
 	);
 	
+	/** COMMENTED OUT - Using WP background customization
 	$fields_list[] = array(
 		'name' => __('Background Color', 'cyberchimps'),
 		'desc' => __('Select background color', 'cyberchimps'),
@@ -508,6 +512,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'color',
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading' );
+	*/
 	
 	$fields_list[] = array(
 		'name' => __('Text Color', 'cyberchimps'),
