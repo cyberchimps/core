@@ -317,6 +317,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	}
 	
 	// Get custom categories of boxes element
+	$options_boxes_cats = array();
 	$boxes_terms = get_terms('boxes_categories', 'hide_empty=0');
 	if( ! is_wp_error( $boxes_terms ) ):
 		foreach($boxes_terms as $term) {
@@ -1183,6 +1184,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	}
+	else {
+		$fields_list[] = array(
+		'name' => __('Portfolio Category', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_category_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
 	
 	$fields_list[] = array(
 		'name' => __('Portfolio Title', 'cyberchimps'),
@@ -1420,6 +1431,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'select',
 		'std' => 'cyberchimps_all',
 		'options' => $options_slide_cats,
+		'section' => 'cyberchimps_blog_slider_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
+	else{
+	$fields_list[] = array(
+		'name' => __('Custom Categories', 'cyberchimps'),
+		'id' => 'custom_slider_post_cats_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
 		'section' => 'cyberchimps_blog_slider_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1708,6 +1729,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	}
+	else {
+		$fields_list[] = array(
+		'name' => __('Select a Category', 'cyberchimps'),
+		'id' => 'carousel_categories_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
+		'section' => 'cyberchimps_carousel_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
 	/********* CAROUSEL OPTIONS ENDS ***********/
 	
 	/********* BOXES OPTIONS STARTS ***********/
@@ -1717,6 +1748,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id' => 'boxes_category',
 			'type' => 'select',
 			'options' => $options_boxes_cats,
+			'section' => 'cyberchimps_boxes_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+	}
+	else{
+		$fields_list[] = array(
+			'name' => __('Select a Category', 'cyberchimps'),
+			'id' => 'boxes_category_help',
+			'type' => 'help',
+			'desc' => __( 'You need to create a Category', 'cyberchimps' ),
 			'section' => 'cyberchimps_boxes_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
