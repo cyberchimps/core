@@ -62,6 +62,14 @@ function cyberchimps_init_meta_boxes() {
 	}
 	endif;
 	
+	// Get custom categories of boxes element
+	$boxes_terms = get_terms('boxes_categories', 'hide_empty=0');
+	if( ! is_wp_error( $boxes_terms ) ):
+		foreach($boxes_terms as $term) {
+			$boxes_options[$term->slug] = $term->name;
+		}
+	endif;
+	
 	$category_terms = get_terms('category', 'hide_empty=0');
 	if( ! is_wp_error( $category_terms ) ):
 	$blog_options['all'] = "All";
@@ -205,6 +213,8 @@ function cyberchimps_init_meta_boxes() {
 			->select('carousel_category', __( 'Carousel Category', 'cyberchimps' ), '', array('options' => $carousel_options) )
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
+		->tab("Boxes Options")
+			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => $boxes_options) )
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {
