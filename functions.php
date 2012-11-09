@@ -811,4 +811,12 @@ function cyberchimps_admin_link() {
 								  ) ); 
 }
 add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
+
+function cyberchimps_google_analytics() {
+	$code = cyberchimps_option( 'google_analytics' );
+	if( $code != '' ) {
+		echo '<script type="text/javascript">'.$code.'</script>';
+	}
+}
+add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
 ?>

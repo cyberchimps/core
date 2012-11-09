@@ -2000,6 +2000,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_footer_heading'
 	);
 	
+	$fields_list[] = array(
+		'id' => 'google_analytics',
+		'name' => __('Google Analytics', 'cyberchimps'),
+		'type' => 'textarea',
+		'desc' => __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
+		'section' => 'cyberchimps_footer_section',
+		'heading' => 'cyberchimps_footer_heading'
+	);
+	
 	$fields_list[] = apply_filters( 'footer_cyberchimps_link', '' );
 	
 /*************************** IMPORT/EXPORT ***********************************************/
