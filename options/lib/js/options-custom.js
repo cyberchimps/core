@@ -40,16 +40,17 @@ jQuery(document).ready(function($) {
 	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');*/
 	
 	var page_subsection_map = {
-		slider_lite: "cyberchimps_blog_slider_lite_section",
-		page_slider: "cyberchimps_blog_slider_section",
-		callout_section: "cyberchimps_blog_callout_section",
-		twitterbar_section: "cyberchimps_twitterbar_section",
-		carousel_section: "cyberchimps_carousel_section",
-		magazine: "cyberchimps_blog_magazine_section",
-		portfolio_lite: "cyberchimps_blog_portfolio_lite_section",
-		portfolio_pro: "cyberchimps_blog_portfolio_pro_section",
-		recent_posts: "cyberchimps_blog_recent_posts_section",
-		html_box: "cyberchimps_html_box_section"
+		slider_lite			: "cyberchimps_blog_slider_lite_section",
+		page_slider			: "cyberchimps_blog_slider_section",
+		callout_section		: "cyberchimps_blog_callout_section",
+		twitterbar_section	: "cyberchimps_twitterbar_section",
+		carousel_section	: "cyberchimps_carousel_section",
+		magazine			: "cyberchimps_blog_magazine_section",
+		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
+		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
+		recent_posts		: "cyberchimps_blog_recent_posts_section",
+		html_box			: "cyberchimps_html_box_section",
+		boxes				: "cyberchimps_boxes_section"
 	};
 	
 	jQuery(".blog-section-order-tracker").change(function(){

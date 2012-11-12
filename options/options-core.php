@@ -191,6 +191,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
+	// Add section for boxes element options
+	$sections_list[] = array(
+		'id'		=> 'cyberchimps_boxes_section',
+		'label'		=> __('Boxes Options', 'cyberchimps'),
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
@@ -308,6 +315,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
 	}
 	}
+	
+	// Get custom categories of boxes element
+	$options_boxes_cats = array();
+	$boxes_terms = get_terms('boxes_categories', 'hide_empty=0');
+	if( ! is_wp_error( $boxes_terms ) ):
+		foreach($boxes_terms as $term) {
+			$options_boxes_cats[$term->slug] = $term->name;
+		}
+	endif;
 	
 	// Pull all portfolio categories
 	$options_portfolio_cats = array();
@@ -1168,6 +1184,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	}
+	else {
+		$fields_list[] = array(
+		'name' => __('Portfolio Category', 'cyberchimps'),
+		'id' => 'cyberchimps_blog_portfolio_pro_category_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
+		'section' => 'cyberchimps_blog_portfolio_pro_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
 	
 	$fields_list[] = array(
 		'name' => __('Portfolio Title', 'cyberchimps'),
@@ -1405,6 +1431,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'select',
 		'std' => 'cyberchimps_all',
 		'options' => $options_slide_cats,
+		'section' => 'cyberchimps_blog_slider_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
+	else{
+	$fields_list[] = array(
+		'name' => __('Custom Categories', 'cyberchimps'),
+		'id' => 'custom_slider_post_cats_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
 		'section' => 'cyberchimps_blog_slider_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1693,7 +1729,40 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	}
+	else {
+		$fields_list[] = array(
+		'name' => __('Select a Category', 'cyberchimps'),
+		'id' => 'carousel_categories_help',
+		'type' => 'help',
+		'desc' => __( 'You need to create a Category', 'cyberchimps' ),
+		'section' => 'cyberchimps_carousel_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	}
 	/********* CAROUSEL OPTIONS ENDS ***********/
+	
+	/********* BOXES OPTIONS STARTS ***********/
+	if( $options_boxes_cats ){
+		$fields_list[] = array(
+			'name' => __('Select a Category', 'cyberchimps'),
+			'id' => 'boxes_category',
+			'type' => 'select',
+			'options' => $options_boxes_cats,
+			'section' => 'cyberchimps_boxes_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+	}
+	else{
+		$fields_list[] = array(
+			'name' => __('Select a Category', 'cyberchimps'),
+			'id' => 'boxes_category_help',
+			'type' => 'help',
+			'desc' => __( 'You need to create a Category', 'cyberchimps' ),
+			'section' => 'cyberchimps_boxes_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+	}
+	/********* BOXES OPTIONS ENDS ***********/
 	
 	/********* FEATURED POSTS START ************/
 	/*$fields_list[] = array(
@@ -1996,6 +2065,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Footer Copyright Text', 'cyberchimps'),
 		'std' => '&copy; ' . get_bloginfo('name'),
 		'type' => 'text',
+		'section' => 'cyberchimps_footer_section',
+		'heading' => 'cyberchimps_footer_heading'
+	);
+	
+	$fields_list[] = array(
+		'id' => 'google_analytics',
+		'name' => __('Google Analytics', 'cyberchimps'),
+		'type' => 'textarea',
+		'desc' => __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
 		'section' => 'cyberchimps_footer_section',
 		'heading' => 'cyberchimps_footer_heading'
 	);

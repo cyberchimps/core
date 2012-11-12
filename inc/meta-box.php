@@ -38,6 +38,7 @@ function cyberchimps_init_meta_boxes() {
 	$portfolio_options = array(); 
 	$carousel_options = array();
 	$slider_options = array();
+	$boxes_options = array();
 	$blog_options = array();
 	
 	// Call taxonomies for select options
@@ -62,6 +63,13 @@ function cyberchimps_init_meta_boxes() {
 	}
 	endif;
 	
+	// Get custom categories of boxes element
+	$boxes_terms = get_terms('boxes_categories', 'hide_empty=0');
+	if( ! is_wp_error( $boxes_terms ) ):
+		foreach($boxes_terms as $term) {
+			$boxes_options[$term->slug] = $term->name;
+		}
+	endif;
 	$category_terms = get_terms('category', 'hide_empty=0');
 	if( ! is_wp_error( $category_terms ) ):
 	$blog_options['all'] = "All";
@@ -137,7 +145,7 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_slider_size', __( 'Slider Size', 'cyberchimps' ), '', array( 'options' => array('full' => __( 'Full', 'cyberchimps' ), 'half' => __( 'Half', 'cyberchimps' )) ) )
 			->select('cyberchimps_slider_type', __( 'Slider Type', 'cyberchimps' ), '', array( 'options' => array( 'custom_slides' => __( 'Custom', 'cyberchimps' ), 'post' => __( 'Posts', 'cyberchimps' ) ) ) )
 			->select('cyberchimps_slider_post_categories', __( 'Post Categories', 'cyberchimps' ), '', array( 'options' => $blog_id_options, __( 'All', 'cyberchimps' ) ) )
-			->select('cyberchimps_slider_custom_categories', __( 'Custom Categories', 'cyberchimps' ), '', array( 'options' => $slider_options, __( 'All', 'cyberchimps' ) ) )
+			->select('cyberchimps_slider_custom_categories', __( 'Custom Categories', 'cyberchimps' ), '', array( 'options' => ( $slider_options ? $slider_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 			->text('cyberchimps_number_featured_posts', __( 'Number of Featured Posts', 'cyberchimps' ), '', array('default' => 5) )
 			->text('cyberchimps_slider_height', __( 'Slider Height', 'cyberchimps' ), '' )
 			->checkbox('cyberchimps_slider_arrows', __( 'Slider Arrows', 'cyberchimps' ), '', array('std' => "1") )
@@ -174,7 +182,7 @@ function cyberchimps_init_meta_boxes() {
 			->textarea('html_box', __( 'Custom HTML', 'cyberchimps' ), __( 'Enter your custom html here', 'cyberchimps' ) )
 		->tab("Portfolio Options")
 			->select('portfolio_row_number', __( 'Images per row', 'cyberchimps' ), '', array('options' => array( 2 => __( 'Two', 'cyberchimps' ), 3 => __( 'Three', 'cyberchimps' ), 4 => __( 'Four', 'cyberchimps' ) ), 'std' => 3) )
-			->select('portfolio_category', __( 'Portfolio Category', 'cyberchimps' ), '', array('options' => $portfolio_options) )
+			->select('portfolio_category', __( 'Portfolio Category', 'cyberchimps' ), '', array('options' => ( $portfolio_options ? $portfolio_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 			->checkbox('portfolio_title_toggle', __( 'Portfolio Title', 'cyberchimps' ), '')
 			->text('portfolio_title', __( 'Title', 'cyberchimps' ), '', array('std' => __( 'Portfolio', 'cyberchimps' ) ) )
 		->tab("Portfolio Lite Options")
@@ -202,9 +210,11 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_recent_posts_category', __( 'Post Category', 'cyberchimps' ), '', array('options' => $blog_options, __( 'All', 'cyberchimps' ) ) )
 			->checkbox('cyberchimps_recent_posts_images_toggle', __( 'Images', 'cyberchimps' ), '')
 		->tab("Carousel Options")
-			->select('carousel_category', __( 'Carousel Category', 'cyberchimps' ), '', array('options' => $carousel_options) )
+			->select('carousel_category', __( 'Carousel Category', 'cyberchimps' ), '', array('options' => ( $carousel_options ? $carousel_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
+		->tab("Boxes Options")
+			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {
