@@ -42,7 +42,7 @@ add_action ( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
 function cyberchimps_footer_copyright() {
 	echo '<div class="span6">';
 	$copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;'. date( 'Y' );
-	echo '<div id="copyright">' . $copyright . '</div>';
+	echo '<div id="copyright">' . wp_kses( $copyright, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) ) . '</div>';
 	echo '</div>';
 }
 add_action ( 'cyberchimps_footer', 'cyberchimps_footer_copyright' );
