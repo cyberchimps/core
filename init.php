@@ -56,7 +56,7 @@ function cyberchimps_core_setup_theme() {
 	load_theme_textdomain( 'cyberchimps', get_template_directory() . '/lib/languages' );
 	
 	// Add support for the Aside Post Formats
-	add_theme_support( 'post-formats', array( 'aside' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
