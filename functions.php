@@ -773,18 +773,21 @@ function cyberchimps_options_help_text() {
 								<div class="cc_help_caption"><p>'.__( 'Support', 'cyberchimps' ).'</p></div>
 							</a>
 						</div>
-						</div>
-						<div class="row-fluid">
+						</div>';
+	// Upgrade Button
+	if( cyberchimps_theme_check() == 'free' ) {
+	$text .= 	'<div class="row-fluid">
 						<div class="span6">
 						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
-	$text .= sprintf( __( '<p>If you want even more amazing new features <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Product Element, Image Carousel, Widgetized Boxes, Callout Section, expanded typography and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
-	apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-	apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
-	);
+		$text .= sprintf( __( '<p>If you want even more amazing new features <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Product Element, Image Carousel, Widgetized Boxes, Callout Section, expanded typography and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
+		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
+		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
+		);
+	}
 	return $text;
 }
 add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
