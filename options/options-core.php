@@ -511,9 +511,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'type' => 'select',
 		'std' => 'default',
 		'options' => apply_filters( 'cyberchimps_skin_color', array( 
-			'default' => __('Default', 'cyberchimps'),
-			'blue' => __('Blue', 'cyberchimps'),
-			'green' => __('Green', 'cyberchimps')
+			'default' => __('Default', 'cyberchimps')
 		) ),
 		'section' => 'cyberchimps_custom_colors_section',
 		'heading' => 'cyberchimps_design_heading',
