@@ -774,7 +774,7 @@ function cyberchimps_options_help_text() {
 							</a>
 						</div>
 						</div>';
-	// Upgrade Button
+	// Upgrade Button and text for free themes
 	if( cyberchimps_theme_check() == 'free' ) {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
@@ -788,6 +788,7 @@ function cyberchimps_options_help_text() {
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
 	}
+	//text for pro themes
 	else {
 		$text .= '</div><div class="clear"></div>';
 	}
