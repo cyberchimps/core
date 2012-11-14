@@ -788,6 +788,9 @@ function cyberchimps_options_help_text() {
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
 	}
+	else {
+		$text .= '</div><div class="clear"></div>';
+	}
 	return $text;
 }
 add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
