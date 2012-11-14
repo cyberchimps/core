@@ -22,7 +22,6 @@ function cyberchimps_option( $name = false, $subname = false ){
 	}
 }
 
-// FIXME: Fix documentation
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
@@ -74,7 +73,6 @@ function cyberchimps_create_layout() {
 		$layout_type = cyberchimps_get_option( 'sidebar_images', 'right_sidebar' );
 	
 	} elseif ( is_page() ) {
-		// TODO: Change so that option is not saved as an array
 		$page_sidebar = get_post_meta( $post->ID, 'cyberchimps_page_sidebar' );
 		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 				
@@ -130,10 +128,8 @@ function cyberchimps_get_layout( $layout_type ) {
 		}
 }
 
-// FIXME: Fix documentation
 class cyberchimps_Walker extends Walker_Nav_Menu {
 	
-	// FIXME: Fix documentation
     function start_lvl( &$output, $depth ) {
 		//In a child UL, add the 'dropdown-menu' class
 		if( $depth == 0 ) {
@@ -145,7 +141,6 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		}
 	}
 	
-	// FIXME: Fix documentation
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -189,7 +184,6 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 	
-	// FIXME: Fix documentation
 	//Overwrite display_element function to add has_children attribute. Not needed in >= Wordpress 3.4
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 
@@ -236,7 +230,6 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// FIXME: Fix documentation	
 // Sets fallback menu for 1 level. Could use preg_split to have children displayed too
 function cyberchimps_fallback_menu() {
 	$args = array(
@@ -264,7 +257,7 @@ function cyberchimps_fallback_menu() {
 
 
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
-// FIXME: Fix documentation
+
 //Prints HTML with meta information for the current post-date/time and author.
 function cyberchimps_posted_on() {
 	
@@ -443,7 +436,6 @@ function cyberchimps_post_format_icon() {
 	endif;
 }
 
-// FIXME: Fix documentation
 // Returns true if a blog has more than 1 category
 function cyberchimps_categorized_blog() {
 	if ( false === ( $cyberchimps_categorized_transient = get_transient( 'cyberchimps_categorized_transient' ) ) ) {
@@ -467,7 +459,6 @@ function cyberchimps_categorized_blog() {
 	}
 }
 
-// FIXME: Fix documentation
 // Flush out the transients used in cyberchimps_categorized_blog
 function cyberchimps_category_transient_flusher() {
 	// Remove transient
@@ -476,7 +467,7 @@ function cyberchimps_category_transient_flusher() {
 add_action( 'edit_category', 'cyberchimps_category_transient_flusher' );
 add_action( 'save_post', 'cyberchimps_category_transient_flusher' );
 
-// FIXME: Fix documentation
+// Prints out default title of the site.
 function cyberchimps_default_site_title() {
 	global $page, $paged;
 
@@ -495,7 +486,7 @@ function cyberchimps_default_site_title() {
 add_filter('wp_title', 'cyberchimps_default_site_title');
 
 
-// FIXME: Fix documentation
+// Remove default site title if seo plugin is active
 function cyberchimps_seo_compatibility_check() {
 	if ( cyberchimps_detect_seo_plugins() ) {
 		remove_filter( 'wp_title', 'cyberchimps_default_site_title', 10, 3 );
@@ -503,9 +494,6 @@ function cyberchimps_seo_compatibility_check() {
 }
 add_action( 'after_setup_theme', 'cyberchimps_seo_compatibility_check', 5 );
 
-
-// FIXME: Fix documentation
-// TODO: Give Genesis/StudioPress Credit
 // Detect some SEO Plugin that add constants, classes or functions.
 function cyberchimps_detect_seo_plugins() {
 
@@ -534,8 +522,7 @@ function cyberchimps_detect_seo_plugins() {
 	);
 }
 
-// TODO: Give Genesis/StudioPress Credit
-// FIXME: Fix documentation
+// Detect event plugins
 function cyberchimps_detect_event_plugins() {
 	return cyberchimps_detect_plugin(
 		// Use this filter to adjust plugin tests.
@@ -557,9 +544,6 @@ function cyberchimps_detect_event_plugins() {
 	);
 }
 
-
-// FIXME: Fix documentation
-// TODO: Give Genesis/StudioPress Credit
 // Detect plugin by constant, class or function existence.
 function cyberchimps_detect_plugin( $plugins ) {
 
