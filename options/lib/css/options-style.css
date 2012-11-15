@@ -612,6 +612,30 @@ textarea#custom_css, textarea#html_box {
 	width: 100%;
 }
 
+/************** Upgrade to Pro ***************/
+
+.cyberchimps_pro_upgrade {
+	color: #fff;
+	background: #81c7ef;
+  padding: 0 10px 10px 10px;
+  border: 1px solid #5ba9d3;
+  -webkit-border-radius: 3px;
+	border-radius: 3px;
+  overflow: hidden;
+}
+.cyberchimps_pro_upgrade p {
+	color: #fff;
+}
+.cyberchimps_pro_upgrade a:link {
+	color: #006da8;
+}
+.cyberchimps_pro_upgrade a:visited {
+	color: #006da8;
+}
+.cyberchimps_pro_upgrade a:hover {
+	color: #0085cf;
+}
+
 /***************** Section Order *********************/
 .section_order {
 	text-align: left;
