@@ -69,8 +69,9 @@ function cyberchimps_core_setup_theme() {
 }
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
-	function cyberchimps_custom_background_cb() {
-		// $background is the saved custom image, or the default image.
+
+function cyberchimps_custom_background_cb() {
+	// $background is the saved custom image, or the default image.
 	$background = get_background_image();
 
 	// $color is the saved custom color.
@@ -163,6 +164,15 @@ function cyberchimps_load_hooks() {
 	require_once( get_template_directory() . '/cyberchimps/hooks/footer-hooks.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_hooks');
+
+//Clear blog drag and drop elements so that when upgrading from free you don't get errors of the lite elements that do not exist
+function cyberchimps_remove_lite_elements(){
+	$option_new = get_option( 'cyberchimps_options' );
+	$option_new['blog_section_order'] = array( 0 => 'blog_post_page' );
+	update_option( 'cyberchimps_options', $option_new );
+}
+add_action('after_switch_theme', 'cyberchimps_remove_lite_elements');
+
 
 //after install redirect user to options page
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
