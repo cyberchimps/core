@@ -596,9 +596,9 @@ class RW_Meta_Box {
 			echo "<img class='image_preview' src='{$meta}' /><br/>";
 		}
 
-		echo "<input type='file' name='{$field['id']}' />";
+		echo "<input type='button' id='upload_image_button' value='upload' />";
 		echo "<br/>or enter URL<br/>";
-		echo "<input type='text' size='50' name='{$field['id']}_url' value='{$meta}'/>";
+		echo "<input id='upload_image_field' type='text' size='50' name='{$field['id']}_url' value='{$meta}'/>";
 		$this->show_field_end($field, $meta);
 	}
 
@@ -872,13 +872,19 @@ function metabox_enqueue() {
 
 	wp_enqueue_script('jf-metabox-tabs');
 	
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_enqueue_style('thickbox');
+	
 	wp_enqueue_script('jf-metabox-tabs');
-	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/cyberchimps/library/js/jquery-custom.js', array('jquery') );
+	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/cyberchimps/lib/js/custom.js', array('jquery') );
 	
 	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
 	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
 		
 	wp_enqueue_style('metabox-tabs-css');
+	
+	
 }
 
 /********************* END DEFINITION OF META BOXES ***********************/
