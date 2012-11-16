@@ -19,18 +19,27 @@ add_action('admin_head', 'cyberchimps_load_meta_boxes_scripts');
 function cyberchimps_load_meta_boxes_scripts() {
 	global $post_type;
 
+	// Set library path.
+	$lib_path = get_template_directory_uri() . "/cyberchimps/lib/";
+	
 	if ( $post_type == 'page' ) :
-		wp_enqueue_style( 'meta-boxes-css', get_template_directory_uri().'/cyberchimps/lib/css/metabox-tabs.css' );
+		wp_enqueue_style( 'meta-boxes-css', $lib_path . 'css/metabox-tabs.css' );
 	
 		// Enqueue only if it is not done before
 		if( !wp_script_is('jf-metabox-tabs') ) :
-			wp_enqueue_script('meta-boxes-js', get_template_directory_uri().'/cyberchimps/lib/js/metabox-tabs.js', array('jquery'));	
+			wp_enqueue_script('meta-boxes-js', $lib_path . 'js/metabox-tabs.js', array('jquery'));	
 		endif;	
 	endif;
 }
 
 add_action('init', 'cyberchimps_init_meta_boxes');
 function cyberchimps_init_meta_boxes() {
+	
+	// Set image path
+	$directory_uri	 = get_template_directory_uri();
+	$image_path		 = $directory_uri . "/cyberchimps/lib/images/";
+	$portfolio_image = $image_path . "portfolio.jpg";
+	$slider_image	 = $directory_uri . "/elements/lib/images/slider/slide1.jpg";
 	
 	// Declare variables
 	$portfolio_options = array(); 
@@ -102,13 +111,14 @@ function cyberchimps_init_meta_boxes() {
 	$mb = new Chimps_Metabox('pages', 'Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select('cyberchimps_page_sidebar', __( 'Select Page Layout', 'cyberchimps' ), '',  array('options' => array(
-				'right_sidebar' => get_template_directory_uri() . '/cyberchimps/lib/images/right.png',
-				'left_right_sidebar' => get_template_directory_uri() . '/cyberchimps/lib/images/tworight.png',
-				'content_middle' => get_template_directory_uri() . '/cyberchimps/lib/images/rightleft.png',
-				'full_width' => get_template_directory_uri() . '/cyberchimps/lib/images/none.png',
-				'left_sidebar' => get_template_directory_uri() . '/cyberchimps/lib/images/left.png')
-			, 'std' => 'right_sidebar') )
+			->image_select('cyberchimps_page_sidebar', __( 'Select Page Layout', 'cyberchimps' ), '',
+				array('options' => array(
+					'right_sidebar'		 => $image_path . 'right.png',
+					'left_right_sidebar' => $image_path . 'tworight.png',
+					'content_middle'	 => $image_path . 'rightleft.png',
+					'full_width'		 => $image_path . 'none.png',
+					'left_sidebar'		 => $image_path . 'left.png'
+					), 'std' => 'right_sidebar') )
 			->checkbox('cyberchimps_page_title_toggle', __('Page Title', 'cyberchimps'), '', array('std' => '1'))
 			->section_order('cyberchimps_page_section_order', __( 'Page Elements', 'cyberchimps' ), '', array(					
 				'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
@@ -133,11 +143,11 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps' ), __( 'From category', 'cyberchimps' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps' ), '', array('std' => __( 'featured', 'cyberchimps' )))*/
 		->tab("Slider Lite Options")
-			->single_image('cyberchimps_slider_lite_slide_one_image', __( 'Slide One Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/elements/lib/images/slider/slide1.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_one_image', __( 'Slide One Image', 'cyberchimps' ), '', array('std' => $slider_image ))
 			->text('cyberchimps_slider_lite_slide_one_url', __( 'Slide One Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_two_image', __( 'Slide Two Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/elements/lib/images/slider/slide1.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_two_image', __( 'Slide Two Image', 'cyberchimps' ), '', array('std' => $slider_image))
 			->text('cyberchimps_slider_lite_slide_two_url', __( 'Slide Two Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_three_image', __( 'Slide Three Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/elements/lib/images/slider/slide1.jpg'))
+			->single_image('cyberchimps_slider_lite_slide_three_image', __( 'Slide Three Image', 'cyberchimps' ), '', array('std' => $slider_image))
 			->text('cyberchimps_slider_lite_slide_three_url', __( 'Slide Three Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
 		->tab("iFeature Slider Options")
 			->select('cyberchimps_slider_size', __( 'Slider Size', 'cyberchimps' ), '', array( 'options' => array('full' => __( 'Full', 'cyberchimps' ), 'half' => __( 'Half', 'cyberchimps' )) ) )
@@ -153,7 +163,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_product_title', __( 'Product Title', 'cyberchimps' ), '', array('std' => __( 'Product', 'cyberchimps' ) ) )
 			->textarea('cyberchimps_product_text', __( 'Product Text', 'cyberchimps' ), '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
 			->select('cyberchimps_product_type', __( 'Media Type', 'cyberchimps' ), '', array('options' => array('Image', 'Video')) )
-			->single_image('cyberchimps_product_image', __( 'Product Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/images/pro/product.jpg'))
+			->single_image('cyberchimps_product_image', __( 'Product Image', 'cyberchimps' ), '', array('std' =>  $directory_uri . '/images/pro/product.jpg'))
 			->textarea('cyberchimps_product_video', __( 'Video Embed', 'cyberchimps' ), '')
 			->checkbox('cyberchimps_product_link_toggle', __( 'Product Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_product_link_url', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
@@ -184,19 +194,19 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('portfolio_title_toggle', __( 'Portfolio Title', 'cyberchimps' ), '')
 			->text('portfolio_title', __( 'Title', 'cyberchimps' ), '', array('std' => __( 'Portfolio', 'cyberchimps' ) ) )
 		->tab("Portfolio Lite Options")
-			->single_image('cyberchimps_portfolio_lite_image_one', __( 'First Portfolio Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg'))
+			->single_image('cyberchimps_portfolio_lite_image_one', __( 'First Portfolio Image', 'cyberchimps' ), '', array('std' => $portfolio_image ) )
 			->text('cyberchimps_portfolio_lite_image_one_caption', __( 'First Portfolio Image Caption', 'cyberchimps' ), '', array('std' => __( 'Image 1', 'cyberchimps' ) ) )
 			->checkbox('cyberchimps_portfolio_link_toggle_one', __( 'First Porfolio Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_portfolio_link_url_one', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
-			->single_image('cyberchimps_portfolio_lite_image_two', __( 'Second Portfolio Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg'))
+			->single_image('cyberchimps_portfolio_lite_image_two', __( 'Second Portfolio Image', 'cyberchimps' ), '', array('std' => $portfolio_image ) )
 			->text('cyberchimps_portfolio_lite_image_two_caption', __( 'Second Portfolio Image Caption', 'cyberchimps' ), '', array('std' => __( 'Image 2', 'cyberchimps' ) ) )
 			->checkbox('cyberchimps_portfolio_link_toggle_two', __( 'Second Porfolio Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_portfolio_link_url_two', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
-			->single_image('cyberchimps_portfolio_lite_image_three', __( 'Third Portfolio Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg'))
+			->single_image('cyberchimps_portfolio_lite_image_three', __( 'Third Portfolio Image', 'cyberchimps' ), '', array('std' => $portfolio_image ) )
 			->text('cyberchimps_portfolio_lite_image_three_caption', __( 'Third Portfolio Image Caption', 'cyberchimps' ), '', array('std' => __( 'Image 3', 'cyberchimps' ) ) )
 			->checkbox('cyberchimps_portfolio_link_toggle_three', __( 'Third Porfolio Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_portfolio_link_url_three', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
-			->single_image('cyberchimps_portfolio_lite_image_four', __( 'Fourth Portfolio Image', 'cyberchimps' ), '', array('std' =>  get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg'))
+			->single_image('cyberchimps_portfolio_lite_image_four', __( 'Fourth Portfolio Image', 'cyberchimps' ), '', array('std' => $portfolio_image ) )
 			->text('cyberchimps_portfolio_lite_image_four_caption', __( 'Fourth Portfolio Image Caption', 'cyberchimps' ), '', array('std' => __( 'Image 4', 'cyberchimps' ) ) )
 			->checkbox('cyberchimps_portfolio_link_toggle_four', __( 'Fourth Porfolio Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_portfolio_link_url_four', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))

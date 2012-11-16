@@ -466,6 +466,10 @@ class RW_Meta_Box {
 	}
 
 	function show_field_section_order($field, $meta) {
+	
+		//Define image path
+		$image_path = get_template_directory_uri() . "/cyberchimps/lib/images/";
+		
 		$this->show_field_begin($field, $meta);
 		
 		echo "<div class='section_order' id=" . esc_attr($field['id']) . ">";
@@ -477,13 +481,13 @@ class RW_Meta_Box {
 				if ( in_array( $key, $meta ) ) continue;
 			}
 			echo "<div class='list_item'>";
-				echo '<img src="'.get_template_directory_uri().'/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+				echo '<img src="' . $image_path . 'minus.png" class="action" title="Remove"/>';
 				echo "<span data-key='{$key}'>{$option}</span>";
 			echo "</div>";
 		}
 		echo "</div>";
 		echo "</div>";
-		echo '<div id="arrow"><img src="'.get_template_directory_uri().'/cyberchimps/lib/images/arrowdrag.png" /></div>';
+		echo '<div id="arrow"><img src="' . $image_path . 'arrowdrag.png" /></div>';
 		echo "<div class='right_list'>";
 		echo "<div id='active'>Active Elements</div>";
 		echo "<div id='drag'>Drag & Drop Elements</div>";
@@ -492,7 +496,7 @@ class RW_Meta_Box {
 			foreach ($meta as $key => $option) {
 				if(!$option) continue;
 				echo "<div class='list_item'>";
-					echo '<img src="'. get_template_directory_uri(). '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+					echo '<img src="' . $image_path . 'minus.png" class="action" title="Remove"/>';
 					echo '<span data-key="'.$option.'">'.$field['options'][$option].'</span>';
 				echo "</div>";
 			}
@@ -877,14 +881,12 @@ function metabox_enqueue() {
 	wp_enqueue_style('thickbox');
 	
 	wp_enqueue_script('jf-metabox-tabs');
-	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/cyberchimps/lib/js/custom.js', array('jquery') );
+	wp_enqueue_script('jquerycustom', $path_js . 'custom.js', array('jquery') );
 	
-	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
-	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-punch-min', $path_js . 'touch-punch-min.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-sense', $path_js . 'touch-sensitive.js', array('jquery') );
 		
 	wp_enqueue_style('metabox-tabs-css');
-	
-	
 }
 
 /********************* END DEFINITION OF META BOXES ***********************/

@@ -43,32 +43,38 @@ function cyberchimps_admin_add_page() {
 }
 
 function cyberchimps_load_styles() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'cyberchimps-responsive', get_template_directory_uri().'/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-	wp_enqueue_style( 'plugin_option_styles', get_template_directory_uri().'/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+
+	// Set template directory uri
+	$directory_uri = get_template_directory_uri();
 	
-	wp_enqueue_style('color-picker', get_template_directory_uri().'/cyberchimps/options/lib/css/colorpicker.css');
+	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
+	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'plugin_option_styles', $directory_uri . '/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	
+	wp_enqueue_style('color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css');
 	wp_enqueue_style('thickbox');
 }
 
 function cyberchimps_load_scripts() {
+
+	// Set template directory uri
+	$directory_uri = get_template_directory_uri();
+	
 	// Enqueued scripts
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('jquery-ui-sortable');
 	
 	// Adding JS to support drag and drop in theme options
-	wp_enqueue_script('jquery-touch-punch-min', get_template_directory_uri().'/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
-	wp_enqueue_script('jquery-touch-sense', get_template_directory_uri().'/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-punch-min', $directory_uri . '/cyberchimps/lib/js/touch-punch-min.js', array('jquery') );
+	wp_enqueue_script('jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.js', array('jquery') );
 	
 	wp_enqueue_script('thickbox');
-	wp_enqueue_script('color-picker', get_template_directory_uri().'/cyberchimps/options/lib/js/colorpicker.js', array('jquery'));
-	wp_enqueue_script('media-uploader', get_template_directory_uri().'/cyberchimps/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
-	wp_enqueue_script('options-custom', get_template_directory_uri().'/cyberchimps/options/lib/js/options-custom.js', array('jquery'));
-	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
-	wp_enqueue_script('google-fonts', get_template_directory_uri().'/cyberchimps/options/lib/js/font_inline_plugin.js', array('jquery'));
-
-	
+	wp_enqueue_script('color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.js', array('jquery'));
+	wp_enqueue_script('media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.js', array('jquery'));
+	wp_enqueue_script('options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.js', array('jquery'));
+	wp_enqueue_script('bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array('jquery'));
+	wp_enqueue_script('google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.js', array('jquery'));
 }
 
 /* Loads the file for option sanitization */
@@ -394,6 +400,9 @@ function cyberchimps_custom_events_callback( $value ) {
 
 function cyberchimps_drag_drop_field( $value ) {
 	
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	
 	$option_name = 'cyberchimps_options';
 	$settings = get_option($option_name);
 
@@ -436,14 +445,14 @@ function cyberchimps_drag_drop_field( $value ) {
 		foreach ($value['options'] as $key => $option) {
 			if ( in_array( $key, $val ) ) continue;
 			$output .=  "<div class='list_item'>";
-			$output .=  '<img src="'. get_template_directory_uri(). '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .=  '<img src="'. $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 			$output .=  "<span data-key='{$key}'>{$option}</span>";
 			$output .=  "</div>";
 		}
 	}
 	$output .=  "</div>";
 	$output .=  "</div>";
-	$output .=  '<div class="arrow span1 hidden-phone"><img src="'. get_template_directory_uri(). '/cyberchimps/lib/images/arrowdrag.png" /></div>';
+	$output .=  '<div class="arrow span1 hidden-phone"><img src="'. $directory_uri . '/cyberchimps/lib/images/arrowdrag.png" /></div>';
 	$output .=  "<div class='right_list span5'>";
 	$output .=  "<div class='active'>Active Elements</div>";
 	$output .=  "<div class='drag'>Drag & Drop Elements</div>";
@@ -452,7 +461,7 @@ function cyberchimps_drag_drop_field( $value ) {
 		foreach ($val as $key) {
 			if(!$key) continue;
 			$output .=  "<div class='list_item'>";
-			$output .=  '<img src="'. get_template_directory_uri(). '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .=  '<img src="'. $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 			$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";
 			$output .=  "</div>";
 		}

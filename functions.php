@@ -25,29 +25,33 @@ function cyberchimps_option( $name = false, $subname = false ){
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
-	$path = get_template_directory_uri() . '/cyberchimps/lib/js/';
+	
+	// Define paths
+	$directory_uri = get_template_directory_uri();
+	$js_path = $directory_uri . '/cyberchimps/lib/js/';
+	$bootstrap_path = $directory_uri . '/cyberchimps/lib/bootstrap/';
 	
 	// Load JS for slimbox
-	wp_enqueue_script( 'slimbox', get_template_directory_uri() . '/cyberchimps/lib/js/jquery.slimbox.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.js', array( 'jquery' ), true );
 
 	// Load library for jcarousel
-	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/cyberchimps/lib/js/jquery.jcarousel.min.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), true );
 
 	// Load Custom JS
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/cyberchimps/lib/js/custom.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'custom', $js_path . 'custom.js', array( 'jquery' ), true );
 	
 	// Load JS for swipe functionality in slider
-	wp_enqueue_script( 'event-swipe-move', $path . 'jquery.event.move.js', array('jquery') );
-	wp_enqueue_script( 'event-swipe', $path . 'jquery.event.swipe.js', array('jquery') );
-	wp_enqueue_script( 'swipe', $path . 'swipe.js', array('jquery') );
+	wp_enqueue_script( 'event-swipe-move', $js_path . 'jquery.event.move.js', array('jquery') );
+	wp_enqueue_script( 'event-swipe', $js_path . 'jquery.event.swipe.js', array('jquery') );
+	wp_enqueue_script( 'swipe', $js_path . 'swipe.js', array('jquery') );
 	
 	// Load Bootstrap Library Items
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-responsive-style', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
+	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
+	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
+	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', get_template_directory_uri() . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 	
 	// Load Theme Stylesheet
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );

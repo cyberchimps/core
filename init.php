@@ -20,32 +20,35 @@ if ( ! function_exists( 'cyberchimps_core_setup_theme' ) ):
 // Setup the theme
 function cyberchimps_core_setup_theme() {
 
+	// Set directory path
+	$directory	 = get_template_directory();
+
 	// Load core functions file
-	require_once( get_template_directory() . '/cyberchimps/functions.php' );
+	require_once( $directory . '/cyberchimps/functions.php' );
 	
 	// Load core hooks file
-	require_once( get_template_directory() . '/cyberchimps/inc/hooks.php' );
+	require_once( $directory . '/cyberchimps/inc/hooks.php' );
 	
 	// Load element files before meta and options
-	require_once( get_template_directory() . '/elements/init.php' );
+	require_once( $directory . '/elements/init.php' );
 	
 	// Load core options file
-	require_once( get_template_directory() . '/cyberchimps/options/options-init.php' );
+	require_once( $directory . '/cyberchimps/options/options-init.php' );
 
 	// Load default core settings
-	require_once( get_template_directory() . '/cyberchimps/options/options-core.php' );
+	require_once( $directory . '/cyberchimps/options/options-core.php' );
 	
 	// Load Meta Box Class
-	require_once( get_template_directory() . '/cyberchimps/inc/meta-box-class.php' );
+	require_once( $directory . '/cyberchimps/inc/meta-box-class.php' );
 	
 	// Load Meta Boxes Functions
-	require_once( get_template_directory() . '/cyberchimps/inc/meta-box.php' );
+	require_once( $directory . '/cyberchimps/inc/meta-box.php' );
 	
 	// Load core hooks file
-	require_once( get_template_directory() . '/cyberchimps/inc/cc-custom-background.php' );
+	require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 
 	// Core Translations can be filed in the /inc/languages/ directory
-	load_theme_textdomain( 'cyberchimps', get_template_directory() . '/lib/languages' );
+	load_theme_textdomain( 'cyberchimps', $directory . '/lib/languages' );
 	
 	// Add support for the Aside Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
@@ -157,11 +160,15 @@ function cyberchimps_widgets_init() {
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
 
 function cyberchimps_load_hooks() {
-	require_once( get_template_directory() . '/cyberchimps/hooks/wp-head-hooks.php' );
-	require_once( get_template_directory() . '/cyberchimps/hooks/header-hooks.php' );
-	require_once( get_template_directory() . '/cyberchimps/hooks/blog-hooks.php' );
-	require_once( get_template_directory() . '/cyberchimps/hooks/page-hooks.php' );
-	require_once( get_template_directory() . '/cyberchimps/hooks/footer-hooks.php' );
+
+	// Set the path to hooks directory.
+	$hooks_path = get_template_directory() . "/cyberchimps/hooks/";
+	
+	require_once( $hooks_path . 'wp-head-hooks.php' );
+	require_once( $hooks_path . 'header-hooks.php' );
+	require_once( $hooks_path . 'blog-hooks.php' );
+	require_once( $hooks_path . 'page-hooks.php' );
+	require_once( $hooks_path . 'footer-hooks.php' );
 }
 add_action('after_setup_theme', 'cyberchimps_load_hooks');
 

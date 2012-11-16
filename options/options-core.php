@@ -297,6 +297,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	//theme check
 	$theme_check = cyberchimps_theme_check();
 	
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	
 /*************************** LISTS AND DEFAULTS *********************************************/
 	
 	// post byline 
@@ -377,7 +380,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	}
 	
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$imagepath =  $directory_uri . '/cyberchimps/lib/images/';
 	
 	$fields_list = array();
 	
@@ -710,7 +713,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'custom_logo_uploader',
 		'class' => 'custom_logo_toggle',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . '/cyberchimps/lib/images/cyberchimpslogo.png',
+		'std' => $directory_uri . '/cyberchimps/lib/images/cyberchimpslogo.png',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
@@ -1118,7 +1121,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_one',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ),
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1162,7 +1165,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_two',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ),
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1206,7 +1209,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_three',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ),
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1250,7 +1253,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_lite_image_four',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img4', '/cyberchimps/lib/images/portfolio.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_portfolio_lite_img4', '/cyberchimps/lib/images/portfolio.jpg' ),
 		'section' => 'cyberchimps_blog_portfolio_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);	
@@ -1326,7 +1329,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_one_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1345,7 +1348,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_two_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' ),
+		'std' => $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1364,7 +1367,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_three_slide',
 		'type' => 'upload',
-		'std' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
