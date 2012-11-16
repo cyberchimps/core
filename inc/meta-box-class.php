@@ -596,8 +596,8 @@ class RW_Meta_Box {
 			echo "<img class='image_preview' src='{$meta}' /><br/>";
 		}
 
-		echo "<input type='button' id='upload_image_button' value='upload' />";
-		echo "<br/>or enter URL<br/>";
+		echo "<input type='button' id='upload_image_button' value='".__( 'Upload', 'cyberchimps' )."' style='font-size: 14px;padding: 5px 10px;' />";
+		echo "<br/>".__( 'or enter URL', 'cyberchimps' )."<br/>";
 		echo "<input id='upload_image_field' type='text' size='50' name='{$field['id']}_url' value='{$meta}'/>";
 		$this->show_field_end($field, $meta);
 	}
