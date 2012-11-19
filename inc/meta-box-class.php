@@ -494,7 +494,7 @@ class RW_Meta_Box {
 		echo "<div class='list_items'>";
 		if ( is_array($meta) ) {
 			foreach ($meta as $key => $option) {
-				if(!$option) continue;
+				if( !array_key_exists( $option, $field['options'] ) ) continue;
 				echo "<div class='list_item'>";
 					echo '<img src="' . $image_path . 'minus.png" class="action" title="Remove"/>';
 					echo '<span data-key="'.$option.'">'.$field['options'][$option].'</span>';
