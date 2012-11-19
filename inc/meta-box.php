@@ -158,7 +158,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_slider_height', __( 'Slider Height', 'cyberchimps' ), '' )
 			->checkbox('cyberchimps_slider_arrows', __( 'Slider Arrows', 'cyberchimps' ), '', array('std' => "1") )
 			->sliderhelp('', __( 'Need Help?', 'cyberchimps' ), '')
-		->tab("Product Options")
+		/*->tab("Product Options")
 			->select('cyberchimps_product_text_align', __( 'Text Align', 'cyberchimps' ), '', array('options' => array('Left', 'Right' ) ) )
 			->text('cyberchimps_product_title', __( 'Product Title', 'cyberchimps' ), '', array('std' => __( 'Product', 'cyberchimps' ) ) )
 			->textarea('cyberchimps_product_text', __( 'Product Text', 'cyberchimps' ), '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
@@ -167,7 +167,7 @@ function cyberchimps_init_meta_boxes() {
 			->textarea('cyberchimps_product_video', __( 'Video Embed', 'cyberchimps' ), '')
 			->checkbox('cyberchimps_product_link_toggle', __( 'Product Link', 'cyberchimps' ), '', array('std' => '1'))
 			->text('cyberchimps_product_link_url', __( 'Link URL', 'cyberchimps' ), '', array('std' => home_url()))
-			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps' ), '', array('std' => 'Buy Now'))
+			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps' ), '', array('std' => 'Buy Now'))*/
 		->tab("Callout Options")
 			->text('callout_title', __( 'Callout Title', 'cyberchimps' ), '',
 				array('std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps' ),

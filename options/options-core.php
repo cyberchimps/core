@@ -713,7 +713,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'custom_logo_uploader',
 		'class' => 'custom_logo_toggle',
 		'type' => 'upload',
-		'std' => $directory_uri . '/cyberchimps/lib/images/cyberchimpslogo.png',
+		'std' => $directory_uri . '/cyberchimps/lib/images/achimps.png',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
