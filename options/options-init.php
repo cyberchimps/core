@@ -459,7 +459,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	$output .=  "<div class='list_items'>";
 	if ( is_array( $val ) ) {
 		foreach ($val as $key) {
-			if(!$key) continue;
+			if( !array_key_exists( $key, $value['options'] ) ) continue;
 			$output .=  "<div class='list_item'>";
 			$output .=  '<img src="'. $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
 			$output .=  "<span data-key='{$key}'>{$value['options'][$key]}</span>";

@@ -173,12 +173,12 @@ function cyberchimps_load_hooks() {
 add_action('after_setup_theme', 'cyberchimps_load_hooks');
 
 //Clear blog drag and drop elements so that when upgrading from free you don't get errors of the lite elements that do not exist
-function cyberchimps_remove_lite_elements(){
+/*function cyberchimps_remove_lite_elements(){
 	$option_new = get_option( 'cyberchimps_options' );
 	$option_new['blog_section_order'] = array( 0 => 'blog_post_page' );
 	update_option( 'cyberchimps_options', $option_new );
 }
-add_action('after_switch_theme', 'cyberchimps_remove_lite_elements');
+add_action('after_switch_theme', 'cyberchimps_remove_lite_elements');*/
 
 
 //after install redirect user to options page
