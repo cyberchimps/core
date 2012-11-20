@@ -954,9 +954,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'blog_section_order',
 		'name' => __('Drag & Drop Blog Elements', 'cyberchimps'),
 		'callback' => 'cyberchimps_drag_drop_field',
-		'std' => array(
-			"blog_post_page" => "Post Page",
-		),
+		'std' => apply_filters( 'cyberchimps_elements_draganddrop_defaults', array(
+			"blog_post_page" => "Post Page"
+		) ),
 		'type' => 'section_order',
 		'options' => apply_filters( 'cyberchimps_elements_draganddrop_options', array(
 			'boxes_lite'				 => __( 'Boxes', 'cyberchimps' ),
