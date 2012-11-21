@@ -870,7 +870,7 @@ function cyberchimps_admin_link() {
 
 	$wp_admin_bar->add_menu( array( 
 								'id'	 => 'cyberchimps',
-								'title'	 => 'CyberChimps Options',
+								'title'	 => apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps '. __( 'Options', 'cyberchimps' ) ) . __( ' Options', 'cyberchimps' ),
 								'href'	 => admin_url('themes.php?page=cyberchimps-theme-options')  
 								  ) ); 
 }
