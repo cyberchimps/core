@@ -637,6 +637,22 @@ function cyberchimps_search_excerpt_length( $length ){
 	}
 }
 
+//For archive posts
+function cyberchimps_archive_excerpt_more( $more ){
+	global $post;
+	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
+		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+		return $more;
+	}
+	else {
+		$more = '<p><a href="'. get_permalink($post->ID) . '">Read More...</a></p>';
+		return $more;
+	}
+}
+if( cyberchimps_option( 'archive_post_excerpts' ) ){
+	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+}
+
 //For blog posts
 function cyberchimps_blog_excerpt_more( $more ){
 	global $post;

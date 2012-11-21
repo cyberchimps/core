@@ -1961,20 +1961,28 @@ endif;// end pro option fields
 	);
 	
 	$fields_list[] = array(
-		'name' => __('Featured Images', 'cyberchimps'),
-		'id' => 'archive_featured_images',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_archive_section',
-		'heading' => 'cyberchimps_templates_heading'
-	);
-	
-	$fields_list[] = array(
 		'name' => __('Post Format Icons', 'cyberchimps'),
 		'id' => 'archive_format_icons',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_archive_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
+	
+	$fields_list[] = array(
+		'name' => __('Post Excerpts', 'cyberchimps'),
+		'id' => 'archive_post_excerpts',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_archive_section',
+		'heading' => 'cyberchimps_templates_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Featured Images', 'cyberchimps'),
+		'id' => 'archive_featured_images',
+		'type' => 'toggle',
+		'section' => 'cyberchimps_archive_section',
+		'heading' => 'cyberchimps_templates_heading'
+	);	
 		
 	/********* Post Byline Starts***********/
 	// Author
