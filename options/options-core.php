@@ -680,6 +680,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********** BANNER OPTIONS ENDS ************/	
 	
 	/********** HEADER OPTIONS STARTS ************/
+	
+	/* set up header options filter */
+	
+	$field_array = apply_filters( 'header_options_fields', '' );
+	if( is_array( $field_array ) ):
+		foreach( $field_array as $field ):
+			$fields_list[] = $field;
+		endforeach;
+	endif;
+		
 	$fields_list[] = array(
 		'name' => __('Custom Logo URL', 'cyberchimps'),
 		'id' => 'custom_logo_url',
