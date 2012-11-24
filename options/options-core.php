@@ -1008,6 +1008,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Post Excerpts', 'cyberchimps'),
 		'id' => 'post_excerpts',
 		'type' => 'toggle',
+		'std' => 0,
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 		
@@ -1981,6 +1982,7 @@ endif;// end pro option fields
 		'name' => __('Post Excerpts', 'cyberchimps'),
 		'id' => 'archive_post_excerpts',
 		'type' => 'toggle',
+		'std' => 0,
 		'section' => 'cyberchimps_archive_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
