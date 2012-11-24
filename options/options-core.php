@@ -683,9 +683,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	/* set up header options filter */
 	
-	$field_array = apply_filters( 'header_options_fields', '' );
-	if( is_array( $field_array ) ):
-		foreach( $field_array as $field ):
+	$field_array_header = apply_filters( 'header_options_fields', '' );
+	if( is_array( $field_array_header ) ):
+		foreach( $field_array_header as $field ):
 			$fields_list[] = $field;
 		endforeach;
 	endif;
@@ -948,14 +948,22 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********** SOCIAL ENDS ************/
 	
 	/******* CONTACT DETAILS STARTS *****/
-	$fields_list[] = array(
-		'name' => __('Contact Details', 'cyberchimps'),
-		'id' => 'contact_details',
-		'std' => '',
-		'type' => 'textarea',
-		'section' => 'cyberchimps_header_details_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
+	
+	$field_array_header_contact = apply_filters( 'options_header_contact', 
+																	array( array(
+																		'name' => __('Details', 'cyberchimps'),
+																		'id' => 'contact_details',
+																		'std' => '',
+																		'type' => 'textarea',
+																		'section' => 'cyberchimps_header_details_section',
+																		'heading' => 'cyberchimps_header_heading'
+																	) ) );															
+	if( is_array( $field_array_header_contact ) ):															
+		foreach( $field_array_header_contact as $field ):
+			$fields_list[] = $field;
+		endforeach;
+	endif;
+															
 	/******* CONTACT DETAILS ENDS ******/
 /*************************** HEADER ENDS ***************************************************/
 		

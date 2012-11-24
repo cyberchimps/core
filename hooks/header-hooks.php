@@ -288,10 +288,10 @@ add_action( 'cyberchimps_banner', 'cyberchimps_banner_content' );
 
 //contact info
 function cyberchimps_contact_info() {
-	$contact = cyberchimps_get_option('contact_details'); ?>
+	$contact = apply_filters( 'cyberchimps_header_contact', cyberchimps_get_option( 'contact_details' ) ); ?>
   
   <div class="contact_details">
-		<p><?php echo $contact; ?></p>
+		<?php echo $contact; ?>
   </div>
 <?php } 
 
