@@ -639,9 +639,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'header_section_order',
 		'name' => __('Header Drag/Drop', 'cyberchimps'),
 		'callback' => 'cyberchimps_drag_drop_field',
-		'std' => array(
+		'std' => apply_filters( 'header_drag_and_drop_default', array(
 			'cyberchimps_header_content' => 'Logo + Icons',
-		),
+		) ),
 		'type' => 'section_order',
 		'options' => array(
 			'cyberchimps_banner'            => 'Banner',
@@ -769,6 +769,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Searchbar', 'cyberchimps'),
 		'id' => 'searchbar',
 		'type' => 'toggle',
+		'std' => apply_filters( 'searchbar_default', '' ),
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
@@ -1006,9 +1007,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name' => __('Post Excerpts', 'cyberchimps'),
 		'id' => 'post_excerpts',
-		'std' => '1',
 		'type' => 'toggle',
-		'std' => '1',
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 		

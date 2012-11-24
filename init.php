@@ -61,7 +61,7 @@ function cyberchimps_core_setup_theme() {
 	
 	// add theme support for backgrounds
 	$defaults = array(
-	'default-color'		=> 'f7f7f7',
+	'default-color'		=> apply_filters( 'default_background_color', '' ),
 	'wp-head-callback'  => 'cyberchimps_custom_background_cb'
 );
 	add_theme_support( 'custom-background', $defaults );
