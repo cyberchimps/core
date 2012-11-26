@@ -680,15 +680,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********** BANNER OPTIONS ENDS ************/	
 	
 	/********** HEADER OPTIONS STARTS ************/
-	
-	/* set up header options filter */
-	
-	$field_array_header = apply_filters( 'header_options_fields', '' );
-	if( is_array( $field_array_header ) ):
-		foreach( $field_array_header as $field ):
-			$fields_list[] = $field;
-		endforeach;
-	endif;
 		
 	$fields_list[] = array(
 		'name' => __('Custom Logo URL', 'cyberchimps'),
@@ -949,20 +940,14 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	/******* CONTACT DETAILS STARTS *****/
 	
-	$field_array_header_contact = apply_filters( 'options_header_contact', 
-																	array( array(
-																		'name' => __('Details', 'cyberchimps'),
-																		'id' => 'contact_details',
-																		'std' => '',
-																		'type' => 'textarea',
-																		'section' => 'cyberchimps_header_details_section',
-																		'heading' => 'cyberchimps_header_heading'
-																	) ) );															
-	if( is_array( $field_array_header_contact ) ):															
-		foreach( $field_array_header_contact as $field ):
-			$fields_list[] = $field;
-		endforeach;
-	endif;
+	$fields_list[] = array(
+												'name' => __('Details', 'cyberchimps'),
+												'id' => 'contact_details',
+												'std' => '',
+												'type' => 'textarea',
+												'section' => 'cyberchimps_header_details_section',
+												'heading' => 'cyberchimps_header_heading'
+											 );															
 															
 	/******* CONTACT DETAILS ENDS ******/
 /*************************** HEADER ENDS ***************************************************/
@@ -2181,6 +2166,6 @@ endif;// end pro option fields
 		'heading' => 'cyberchimps_import_export_heading'
 	);
 	
-	return $fields_list;
+	return apply_filters( 'cyberchimps_field_filter', $fields_list );
 }
 add_filter('cyberchimps_field_list', 'cyberchimps_add_core_fields');
