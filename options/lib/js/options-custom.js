@@ -223,9 +223,9 @@ jQuery(document).ready(function($) {
 	$('.checkbox-toggle').hide();
 	$('.checkbox-toggle').after(function() {
 		if ($(this).is(":checked")) {
-			return "<a href='#' class='toggle checked' ref='"+$(this).attr("id")+"'></a>";
+			return "<a href='#' class='toggle checked' id='"+$(this).attr("id")+"' ref='"+$(this).attr("id")+"'></a>";
 		} else {
-			return "<a href='#' class='toggle' ref='"+$(this).attr("id")+"'></a>";
+			return "<a href='#' class='toggle' id='"+$(this).attr("id")+"' ref='"+$(this).attr("id")+"'></a>";
 		}
 	});
 	

@@ -177,3 +177,11 @@ add_action('after_setup_theme', 'cyberchimps_load_hooks');
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
 	wp_redirect( 'themes.php?page=cyberchimps-theme-options' );	
 }
+
+// force save after theme switch so that any new options get saved to the database
+function cyberchimps_save_new_options() {
+	$options = get_option( 'cyberchimps_options' );
+	$options['modal_welcome_note_display'] = 1;
+	update_option( 'cyberchimps_options', $options );
+}
+add_action('switch_theme', 'cyberchimps_save_new_options');

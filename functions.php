@@ -746,7 +746,6 @@ function cyberchimps_modal_welcome_note() {
 	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
       <h3 id="myModalLabel">Welcome</h3>
     </div>
     <div class="modal-body">
@@ -767,7 +766,7 @@ function cyberchimps_modal_welcome_note() {
 		?>
     </div>
     <div class="modal-footer">
-      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Close', 'cyberchimps' ); ?>" />
+      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Complete Installation', 'cyberchimps' ); ?>" />
     </div>
   </div>
 <?php
