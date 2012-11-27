@@ -120,6 +120,9 @@ function cyberchimps_sanitize_section_order( $input, $option ) {
 			if ( array_key_exists( $key, $option['options'] ) && $key ) {
 				$output[] = $key;
 			}
+			elseif ( array_key_exists( $value, $option['options'] ) && $value ) {
+				$output[] = $value;
+			}
 		}
 	}
 	return $output;
