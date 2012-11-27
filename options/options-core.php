@@ -628,7 +628,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Custom CSS', 'cyberchimps'),
 		'id' => 'custom_css',
 		'std' => '',
-		'type' => 'textarea',
+		'type' => 'csstextarea',
 		'section' => 'cyberchimps_custom_css_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
@@ -644,14 +644,14 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		) ),
 		'type' => 'section_order',
 		'options' => array(
-			'cyberchimps_banner'            => 'Banner',
-			'cyberchimps_description_icons' => 'Description + Icons',
-			'cyberchimps_sitename_contact'  => 'Logo + Contact',
-			'cyberchimps_logo_description'  => 'Logo + Description',
-			'cyberchimps_header_content'    => 'Logo + Icons',
-			'cyberchimps_sitename_register' => 'Logo + Login',
-			'cyberchimps_logo_search'		=> 'Logo + Search',
-			'cyberchimps_logo'				=> 'Logo'
+			'cyberchimps_banner'            => __( 'Banner', 'cyberchimps' ),
+			'cyberchimps_description_icons' => __( 'Description + Icons', 'cyberchimps' ),
+			'cyberchimps_sitename_contact'  => __( 'Logo + Contact', 'cyberchimps' ),
+			'cyberchimps_logo_description'  => __( 'Logo + Description', 'cyberchimps' ),
+			'cyberchimps_header_content'    => __( 'Logo + Icons', 'cyberchimps' ),
+			'cyberchimps_sitename_register' => __( 'Logo + Login', 'cyberchimps' ),
+			'cyberchimps_logo_search'		=> __( 'Logo + Search', 'cyberchimps' ),
+			'cyberchimps_logo'				=> __( 'Logo', 'cyberchimps' )
 		),
 		'section' => 'cyberchimps_header_drag_drop_section',
 		'heading' => 'cyberchimps_header_heading'
@@ -959,15 +959,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Drag & Drop Blog Elements', 'cyberchimps'),
 		'callback' => 'cyberchimps_drag_drop_field',
 		'std' => apply_filters( 'cyberchimps_elements_draganddrop_defaults', array(
-			"blog_post_page" => "Post Page"
+			'blog_post_page' => 'Post Page'
 		) ),
 		'type' => 'section_order',
 		'options' => apply_filters( 'cyberchimps_elements_draganddrop_options', array(
 			'boxes_lite'				 => __( 'Boxes', 'cyberchimps' ),
-			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
-			"blog_post_page"	 => __( 'Post Page', 'cyberchimps' ),
-			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
-			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )	
+			'portfolio_lite'	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			'blog_post_page'	 => __( 'Post Page', 'cyberchimps' ),
+			'slider_lite'		 => __( 'Slider Lite', 'cyberchimps' ),
+			'twitterbar_section' => __( 'Twitter Bar', 'cyberchimps' )	
 		) ),
 		'section' => 'cyberchimps_blog_drag_and_drop_section',
 		'heading' => 'cyberchimps_blog_heading'
