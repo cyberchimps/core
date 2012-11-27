@@ -284,7 +284,7 @@ endif;
 		'heading' => 'cyberchimps_import_export_heading'
 	);
 
-	return $sections_list;
+	return apply_filters( 'cyberchimps_sections_filter', $sections_list );
 }
 add_filter('cyberchimps_section_list', 'cyberchimps_add_core_sections');
 
