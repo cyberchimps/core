@@ -3,6 +3,20 @@
 /* Text */
 add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
+/* CSS Textarea */
+function cyberchimps_sanitize_csstextarea( $input ) {
+	$allowed = '/[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/';
+	$test = preg_match( $allowed, $input );
+	if( $test == 1 ){
+		$output = $input;
+	}
+	else {
+		$output = false;
+	}
+	return $output;
+}
+add_filter( 'cyberchimps_sanitize_csstextarea', 'cyberchimps_sanitize_csstextarea' );
+
 /* Textarea */
 function cyberchimps_sanitize_textarea($input) {
 	global $allowedposttags;
