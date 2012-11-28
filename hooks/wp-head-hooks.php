@@ -52,9 +52,6 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 10 );
 // creates body_styles array from options
 function cyberchimps_body_styles() {
 	$body_styles = array();
-	if ( cyberchimps_get_option( 'background_colorpicker' ) ) {
-		$body_styles['background-color'] = cyberchimps_get_option( 'background_colorpicker' );
-	}
 	if ( cyberchimps_get_option( 'text_colorpicker' ) ) {
 		$body_styles['color'] = cyberchimps_get_option( 'text_colorpicker' );
 	}
@@ -81,16 +78,8 @@ function cyberchimps_body_styles() {
 		wp_enqueue_style( 'google-font' );
 	}	
 		
-	if ( cyberchimps_get_option( 'select_background' ) && cyberchimps_get_option( 'select_background' ) != 'none' ) {
-		$body_styles['background-image'] = 'url( "'.get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.cyberchimps_get_option( 'select_background' ).'.jpg" )';
-	}
-	
-	// Apply custom background image
-	if( cyberchimps_get_option( 'custom_background' ) == 1 && cyberchimps_get_option( 'custom_background_image' ) != "" ) {
-		$body_styles['background-image'] = 'url( "'.cyberchimps_get_option( 'custom_background_image' ).'" )';
-		$body_styles['background-position'] = cyberchimps_get_option( 'background_image_position' );
-		$body_styles['background-repeat'] = cyberchimps_get_option( 'background_image_repeat' );
-		$body_styles['background-attachment'] = cyberchimps_get_option( 'background_image_attachment' );
+	if( !get_theme_mod( 'background_image' ) && !get_theme_mod( 'background_color' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' ) {
+		$body_styles['background-image'] = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.get_theme_mod( 'cyberchimps_background' ).'.jpg';
 	}
 	
 	return $body_styles;
