@@ -23,7 +23,7 @@ function cyberchimps_admin_add_customizer_page() {
 }
 
 add_action('customize_register', 'cyberchimps_customize');
-function cyberchimps_customize($wp_customize) {
+function cyberchimps_customize( $wp_customize ) {
 	class Cyberchimps_Typography_Size extends WP_Customize_Control {
 		public $type = 'select';
 
@@ -75,7 +75,9 @@ function cyberchimps_customize($wp_customize) {
 
 		
 	}
-
+	//remove unwanted sections
+	$wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'background_image' );
 
 	$wp_customize->add_section( 'cyberchimps_design_section', array(
 		'title'          => 'Design',
@@ -193,22 +195,10 @@ function cyberchimps_customize($wp_customize) {
   ) );
 	
 	// new background section
-	$wp_customize->add_section( 'cyberchimps_background_section', array(
+	/*$wp_customize->add_section( 'cyberchimps_background_section', array(
 		'title'          => 'Background',
 		'priority'       => 45,
 	) );
-	
-	// background color
-	$wp_customize->add_setting( 'cyberchimps_options[background_colorpicker]', array(
-			'default'        => '',
-			'type'           => 'option',
-		) );
-	
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_colorpicker', array(
-    'label'   => __( 'Background Color', 'cyberchimps' ),
-    'section' => 'cyberchimps_background_section',
-    'settings'   => 'cyberchimps_options[background_colorpicker]',
-	) ) );
 	
 	// background image
 	$wp_customize->add_setting( 'cyberchimps_options[select_background]', array(
@@ -221,5 +211,5 @@ function cyberchimps_customize($wp_customize) {
     'section' => 'cyberchimps_background_section',
     'settings'   => 'cyberchimps_options[select_background]',
 		'choices' => apply_filters( 'cyberchimps_background_image', '' ),
-	) ) );
+	) ) );*/
 }
