@@ -102,9 +102,9 @@ function cyberchimps_init_meta_boxes() {
 	$mb
 		->tab("Slider Options")
 			->single_image('cyberchimps_slider_image', __('Slider Image', 'cyberchimps'), '')
-			->text('cyberchimps_slider_text', __('Slider Text', 'cyberchimps'), __('Enter your slider text here', 'cyberchimps'))			
-			->checkbox('slider_hidetitle', __('Title Bar', 'cyberchimps'), '', array('std' => '1'))
-			->single_image('slider_custom_thumb', __('Custom Thumbnail', 'cyberchimps'), __('Use the image uploader to upload a custom navigation thumbnail', 'cyberchimps'))
+			->text('cyberchimps_slider_caption', __('Slider Caption', 'cyberchimps'), '')			
+			->text('cyberchimps_slider_url', __( 'Custom Slide Link', 'cyberchimps' ), '')
+			->checkbox('cyberchimps_slider_hidetitle', __('Title Bar', 'cyberchimps'), '', array('std' => '1'))
 			->sliderhelp('', __('Need Help?', 'cyberchimps'), '')
 		->end();
 
