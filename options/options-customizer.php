@@ -75,9 +75,6 @@ function cyberchimps_customize( $wp_customize ) {
 
 		
 	}
-	//remove unwanted sections
-	$wp_customize->remove_section( 'colors' );
-	$wp_customize->remove_section( 'background_image' );
 
 	$wp_customize->add_section( 'cyberchimps_design_section', array(
 		'title'          => 'Design',
@@ -194,21 +191,15 @@ function cyberchimps_customize( $wp_customize ) {
     'choices'    => apply_filters( 'cyberchimps_typography_styles', '' )
   ) );
 	
-	// new background section
-	/*$wp_customize->add_section( 'cyberchimps_background_section', array(
-		'title'          => 'Background',
-		'priority'       => 45,
-	) );
-	
 	// background image
-	$wp_customize->add_setting( 'cyberchimps_options[select_background]', array(
+	/*$wp_customize->add_setting( 'cyberchimps_options[select_background]', array(
 			'default'        => 'none',
 			'type'           => 'option',
 		) );
 	
 	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'select_background', array(
-    'label'   => __( 'Background Image', 'cyberchimps' ),
-    'section' => 'cyberchimps_background_section',
+    'label'   => 'CyberChimps '. __( 'Background Image', 'cyberchimps' ),
+    'section' => 'background_image',
     'settings'   => 'cyberchimps_options[select_background]',
 		'choices' => apply_filters( 'cyberchimps_background_image', '' ),
 	) ) );*/

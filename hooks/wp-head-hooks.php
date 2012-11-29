@@ -47,7 +47,7 @@
 <?php
 	return;
 }
-add_action( 'wp_head', 'cyberchimps_css_styles', 10 );
+add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
 
 // creates body_styles array from options
 function cyberchimps_body_styles() {
@@ -77,9 +77,10 @@ function cyberchimps_body_styles() {
 		wp_register_style( 'google-font', 'http://fonts.googleapis.com/css?family='.$google_font );
 		wp_enqueue_style( 'google-font' );
 	}	
-		
-	if( !get_theme_mod( 'background_image' ) && !get_theme_mod( 'background_color' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' ) {
-		$body_styles['background-image'] = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.get_theme_mod( 'cyberchimps_background' ).'.jpg';
+	
+	//Set background image/color	
+	if( !get_theme_mod( 'background_image' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' ) {
+		$body_styles['background-image'] = 'url('. get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.get_theme_mod( 'cyberchimps_background' ).'.jpg )';
 	}
 	
 	return $body_styles;
