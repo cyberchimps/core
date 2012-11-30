@@ -104,7 +104,8 @@ function cyberchimps_init_meta_boxes() {
 			->single_image('cyberchimps_slider_image', __('Slider Image', 'cyberchimps'), '')
 			->text('cyberchimps_slider_caption', __('Slider Caption', 'cyberchimps'), '')			
 			->text('cyberchimps_slider_url', __( 'Custom Slide Link', 'cyberchimps' ), '')
-			->checkbox('cyberchimps_slider_hidetitle', __('Title Bar', 'cyberchimps'), '', array('std' => '1'))
+			->checkbox('cyberchimps_slider_hidetitle', __('Title', 'cyberchimps'), '', array('std' => '1'))
+			->checkbox('cyberchimps_slider_hidecaption', __('Caption', 'cyberchimps'), '', array('std' => '1'))
 			->sliderhelp('', __('Need Help?', 'cyberchimps'), '')
 		->end();
 

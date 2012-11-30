@@ -13,3 +13,21 @@
 .lte9 .nav-collapse.collapse {
   overflow: visible;
 }
+
+/* CSS to make the video responsive starts */
+.flex-video {
+    height: 0;
+    margin-bottom: 16px;
+    overflow: hidden;
+    padding-bottom: 67.5%;
+    position: relative;
+}
+
+.flex-video iframe, .flex-video object, .flex-video embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+/* CSS to make the video responsive ends */

@@ -64,6 +64,11 @@ function cyberchimps_core_scripts() {
 	
 	// add javascript for comments
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	
+	if (cyberchimps_get_option( 'responsive_videos' ) == '1' ) {
+		wp_register_script( 'video' , $js_path . 'video.js');
+		wp_enqueue_script ('video');	
+	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
