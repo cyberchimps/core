@@ -24,9 +24,9 @@ function cyberchimps_footer_credit() {
 	?>
 	<div class="span6">
 		<div id="credit">
-			<?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1') {  ?>
+			<?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1'):  ?>
 			<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps" /></a>
-			<?php } ?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<?php
