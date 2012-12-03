@@ -750,186 +750,203 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********** HEADER OPTIONS ENDS ************/	
 
 	/********** SOCIAL STARTS ************/
-	$fields_list[] = array(
-		'name' => __('Choose your icon style', 'cyberchimps'),
-		'id' => 'theme_backgrounds',
-		'std' => 'default',
-		'type' => 'images',
-		'options' => array(
-			'default' => $imagepath . 'social/thumbs/icons-default.png',
-			'legacy' => $imagepath . 'social/thumbs/icons-classic.png',
-			'round' => $imagepath . 'social/thumbs/icons-round.png'),
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Choose your icon style', 'cyberchimps'),
+		'id'		=> 'theme_backgrounds',
+		'std'		=> 'default',
+		'type'		=> 'images',
+		'options'	=> array(
+			'default'	=> $imagepath . 'social/thumbs/icons-default.png',
+			'legacy'	=> $imagepath . 'social/thumbs/icons-classic.png',
+			'round'		=> $imagepath . 'social/thumbs/icons-round.png'),
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Twitter', 'cyberchimps'),
-		'id' => 'social_twitter',
-		'std' => 'checked',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
+	$fields_list[]	= array(
+		'name'		=> __('Twitter', 'cyberchimps'),
+		'id' 		=> 'social_twitter',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Twitter URL', 'cyberchimps'),
+		'id'		=> 'twitter_url',
+		'class'		=> 'social_twitter_toggle',
+		'std'		=> 'http://www.twitter.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Facebook', 'cyberchimps'),
+		'id'		=> 'social_facebook',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Facebook URL', 'cyberchimps'),
+		'id'		=> 'facebook_url',
+		'class'		=> 'social_facebook_toggle',
+		'std'		=> 'http://www.facebook.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google+', 'cyberchimps'),
+		'id'		=> 'social_google',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Google+ URL', 'cyberchimps'),
+		'id'		=> 'google_url',
+		'class'		=> 'social_google_toggle',
+		'std'		=> 'http://www.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Flickr', 'cyberchimps'),
+		'id'		=> 'social_flickr',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Flickr URL', 'cyberchimps'),
+		'id'		=> 'flickr_url',
+		'class'		=> 'social_flickr_toggle',
+		'std'		=> 'http://www.flickr.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest', 'cyberchimps'),
+		'id'		=> 'social_pinterest',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest URL', 'cyberchimps'),
+		'id'		=> 'pinterest_url',
+		'class'		=> 'social_pinterest_toggle',
+		'std'		=> 'http://www.pinterest.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('LinkedIn', 'cyberchimps'),
+		'id'		=> 'social_linkedin',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
 		
 	$fields_list[] = array(
-		'name' => __('Twitter URL', 'cyberchimps'),
-		'id' => 'twitter_url',
-		'class' => 'social_twitter_toggle',
-		'std' => 'http://www.twitter.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+		'name'		=> __('LinkedIn URL', 'cyberchimps'),
+		'id'		=> 'linkedin_url',
+		'class'		=> 'social_linkedin_toggle',
+		'std'		=> 'http://www.linkedin.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Facebook', 'cyberchimps'),
-		'id' => 'social_facebook',
-		'std' => 'checked',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
+	$fields_list[]	= array(
+		'name'		=> __('YouTube', 'cyberchimps'),
+		'id'		=> 'social_youtube',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
 		
-	$fields_list[] = array(
-		'name' => __('Facebook URL', 'cyberchimps'),
-		'id' => 'facebook_url',
-		'class' => 'social_facebook_toggle',
-		'std' => 'http://www.facebook.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+	$fields_list[]	= array(
+		'name'		=> __('YouTube URL', 'cyberchimps'),
+		'id'		=> 'youtube_url',
+		'class'		=> 'social_youtube_toggle',
+		'std'		=> 'http://www.youtube.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Google+', 'cyberchimps'),
-		'id' => 'social_google',
-		'std' => 'checked',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
+	$fields_list[]	= array(
+		'name'		=> __('RSS', 'cyberchimps'),
+		'id'		=> 'social_rss',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
 		
-	$fields_list[] = array(
-		'name' => __('Google+ URL', 'cyberchimps'),
-		'id' => 'google_url',
-		'class' => 'social_google_toggle',
-		'std' => 'http://www.google.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+	$fields_list[]	= array(
+		'name'		=> __('RSS URL', 'cyberchimps'),
+		'id'		=> 'rss_url',
+		'class'		=> 'social_rss_toggle',
+		'std'		=> get_bloginfo_rss( 'rss_url' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Flickr', 'cyberchimps'),
-		'id' => 'social_flickr',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
+	$fields_list[]	= array(
+		'name'		=> __('Email', 'cyberchimps'),
+		'id'		=> 'social_email',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
 		
-	$fields_list[] = array(
-		'name' => __('Flickr URL', 'cyberchimps'),
-		'id' => 'flickr_url',
-		'class' => 'social_flickr_toggle',
-		'std' => 'http://www.flickr.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Email Address', 'cyberchimps'),
+		'id'		=> 'email_url',
+		'class'		=> 'social_email_toggle',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Pinterest', 'cyberchimps'),
-		'id' => 'social_pinterest',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps', 'cyberchimps'),
+		'id'		=> 'social_googlemaps',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading');
 		
-	$fields_list[] = array(
-		'name' => __('Pinterest URL', 'cyberchimps'),
-		'id' => 'pinterest_url',
-		'class' => 'social_pinterest_toggle',
-		'std' => 'http://www.pinterest.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps URL', 'cyberchimps'),
+		'id'		=> 'googlemaps_url',
+		'class'		=> 'social_googlemaps_toggle',
+		'std'		=> 'http://www.maps.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_header_social_section',
+		'heading'	=> 'cyberchimps_header_heading'
 	);
-	
-	$fields_list[] = array(
-		'name' => __('LinkedIn', 'cyberchimps'),
-		'id' => 'social_linkedin',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
-		
-	$fields_list[] = array(
-		'name' => __('LinkedIn URL', 'cyberchimps'),
-		'id' => 'linkedin_url',
-		'class' => 'social_linkedin_toggle',
-		'std' => 'http://www.linkedin.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('YouTube', 'cyberchimps'),
-		'id' => 'social_youtube',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
-		
-	$fields_list[] = array(
-		'name' => __('YouTube URL', 'cyberchimps'),
-		'id' => 'youtube_url',
-		'class' => 'social_youtube_toggle',
-		'std' => 'http://www.youtube.com/',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('RSS', 'cyberchimps'),
-		'id' => 'social_rss',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
-		
-	$fields_list[] = array(
-		'name' => __('RSS URL', 'cyberchimps'),
-		'id' => 'rss_url',
-		'class' => 'social_rss_toggle',
-		'std' => get_bloginfo_rss( 'rss_url' ),
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Email', 'cyberchimps'),
-		'id' => 'social_email',
-		'type' => 'toggle',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading');
-		
-	$fields_list[] = array(
-		'name' => __('Email Address', 'cyberchimps'),
-		'id' => 'email_url',
-		'class' => 'social_email_toggle',
-		'type' => 'text',
-		'section' => 'cyberchimps_header_social_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
+
 	/********** SOCIAL ENDS ************/
 	
 	/******* CONTACT DETAILS STARTS *****/
 	
 	$fields_list[] = array(
-												'name' => __('Details', 'cyberchimps'),
-												'id' => 'contact_details',
-												'std' => '',
-												'type' => 'textarea',
-												'section' => 'cyberchimps_header_details_section',
-												'heading' => 'cyberchimps_header_heading'
-											 );															
+		'name' => __('Details', 'cyberchimps'),
+		'id' => 'contact_details',
+		'std' => '',
+		'type' => 'textarea',
+		'section' => 'cyberchimps_header_details_section',
+		'heading' => 'cyberchimps_header_heading'
+	 );															
 															
 	/******* CONTACT DETAILS ENDS ******/
 /*************************** HEADER ENDS ***************************************************/
