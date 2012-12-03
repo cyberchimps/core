@@ -47,8 +47,10 @@ function cyberchimps_core_setup_theme() {
 	// Load core hooks file
 	require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 	
-	//Load pro features
-	require_once( $directory . '/elements/setup/features.php' );
+	//Load pro features if a pro theme
+	if( cyberchimps_theme_check() == 'pro' ){
+		require_once( $directory . '/elements/setup/features.php' );
+	}
 
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps', $directory . '/lib/languages' );
