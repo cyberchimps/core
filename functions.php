@@ -21,6 +21,13 @@ function cyberchimps_option( $name = false, $subname = false ){
 		return $value;
 	}
 }
+// Add an array to an existing array in a certain position, used by options
+function cyberchimps_array_filter( $orig, $new ) {	
+	foreach( $new as $key => $value ){
+		array_splice( $orig, $key, 0, $value );
+	}
+	return $orig;
+}
 
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {

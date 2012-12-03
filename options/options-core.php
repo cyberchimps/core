@@ -49,12 +49,7 @@ function cyberchimps_add_core_headings( $headings_list ) {
 		'title' => __('Footer', 'cyberchimps'),
 	);
 	
-	$headings_list[] = array(
-		'id' => 'cyberchimps_import_export_heading',
-		'title' => __('Import/Export', 'cyberchimps'),
-	);
-	
-	return $headings_list;
+	return apply_filters( 'cyberchimps_headings_filter', $headings_list );
 }
 add_filter('cyberchimps_heading_list', 'cyberchimps_add_core_headings');
 
@@ -104,7 +99,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id' => 'cyberchimps_custom_css_section',
 		'label' => __('Custom CSS', 'cyberchimps'),
 		'heading' => 'cyberchimps_design_heading'
@@ -274,14 +269,6 @@ endif;
 		'id' => 'cyberchimps_footer_section',
 		'label' => __('Footer Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_footer_heading'
-	);
-	
-/*************************** IMPORT/EXPORT ********************************************/
-
-	$sections_list[] = array(
-		'id' => 'cyberchimps_import_export_section',
-		'label' => __('Import / Export', 'cyberchimps'),
-		'heading' => 'cyberchimps_import_export_heading'
 	);
 
 	return apply_filters( 'cyberchimps_sections_filter', $sections_list );
@@ -643,16 +630,11 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'cyberchimps_header_content' => 'Logo + Icons',
 		) ),
 		'type' => 'section_order',
-		'options' => array(
-			'cyberchimps_banner'            => __( 'Banner', 'cyberchimps' ),
-			'cyberchimps_description_icons' => __( 'Description + Icons', 'cyberchimps' ),
-			'cyberchimps_sitename_contact'  => __( 'Logo + Contact', 'cyberchimps' ),
-			'cyberchimps_logo_description'  => __( 'Logo + Description', 'cyberchimps' ),
+		'options' => apply_filters( 'header_drag_and_drop_options', array(
 			'cyberchimps_header_content'    => __( 'Logo + Icons', 'cyberchimps' ),
-			'cyberchimps_sitename_register' => __( 'Logo + Login', 'cyberchimps' ),
 			'cyberchimps_logo_search'		=> __( 'Logo + Search', 'cyberchimps' ),
 			'cyberchimps_logo'				=> __( 'Logo', 'cyberchimps' )
-		),
+		) ),
 		'section' => 'cyberchimps_header_drag_drop_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
@@ -979,13 +961,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id' => 'sidebar_images',
 		'std' => 'right_sidebar',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width' => $imagepath . '1col.png',
-			'right_sidebar' => $imagepath . '2cr.png',
-			'left_sidebar' => $imagepath . '2cl.png',
-			'left_right_sidebar' => $imagepath . '3cr.png',
-			'content_middle' => $imagepath . '3col.png'
-		),
+			'right_sidebar' => $imagepath . '2cr.png'
+		) ),
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -1853,19 +1832,10 @@ endif;// end pro option fields
 		'id' => 'single_post_sidebar_options',
 		'std' => 'right_sidebar',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width' => $imagepath . '1col.png',
-			'right_sidebar' => $imagepath . '2cr.png',
-			'left_sidebar' => $imagepath . '2cl.png',
-		),
-		'section' => 'cyberchimps_single_post_section',
-		'heading' => 'cyberchimps_templates_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Breadcrumbs', 'cyberchimps'),
-		'id' => 'single_post_breadcrumbs',
-		'type' => 'toggle',
+			'right_sidebar' => $imagepath . '2cr.png'
+		) ),
 		'section' => 'cyberchimps_single_post_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
@@ -1956,19 +1926,10 @@ endif;// end pro option fields
 		'id' => 'archive_sidebar_options',
 		'std' => 'right_sidebar',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width' => $imagepath . '1col.png',
-			'right_sidebar' => $imagepath . '2cr.png',
-			'left_sidebar' => $imagepath . '2cl.png',
-		),
-		'section' => 'cyberchimps_archive_section',
-		'heading' => 'cyberchimps_templates_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Breadcrumbs', 'cyberchimps'),
-		'id' => 'archive_breadcrumbs',
-		'type' => 'toggle',
+			'right_sidebar' => $imagepath . '2cr.png'
+		) ),
 		'section' => 'cyberchimps_archive_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
@@ -2057,11 +2018,10 @@ endif;// end pro option fields
 		'id' => 'search_sidebar_options',
 		'std' => 'right_sidebar',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width' => $imagepath . '1col.png',
-			'right_sidebar' => $imagepath . '2cr.png',
-			'left_sidebar' => $imagepath . '2cl.png',
-		),
+			'right_sidebar' => $imagepath . '2cr.png'
+		) ),
 		'section' => 'cyberchimps_search_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
@@ -2101,11 +2061,10 @@ endif;// end pro option fields
 		'id' => 'error_sidebar_options',
 		'std' => 'full_width',
 		'type' => 'images',
-		'options' => array(
+		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width' => $imagepath . '1col.png',
-			'right_sidebar' => $imagepath . '2cr.png',
-			'left_sidebar' => $imagepath . '2cl.png',
-		),
+			'right_sidebar' => $imagepath . '2cr.png'
+		) ),
 		'section' => 'cyberchimps_error_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
@@ -2154,26 +2113,6 @@ endif;// end pro option fields
 		'desc' => __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
 		'section' => 'cyberchimps_footer_section',
 		'heading' => 'cyberchimps_footer_heading'
-	);
-	
-	$fields_list[] = apply_filters( 'footer_cyberchimps_link', '' );
-	
-/*************************** IMPORT/EXPORT ***********************************************/
-	
-	$fields_list[] = array(
-		'name' => __('Export Settings', 'cyberchimps'),
-		'id' => 'export_textarea',
-		'type' => 'export',
-		'section' => 'cyberchimps_import_export_section',
-		'heading' => 'cyberchimps_import_export_heading'
-	);
-	
-	$fields_list[] = array(
-		'name' => __('Import Settings', 'cyberchimps'),
-		'id' => 'import_textarea',
-		'type' => 'import',
-		'section' => 'cyberchimps_import_export_section',
-		'heading' => 'cyberchimps_import_export_heading'
 	);
 	
 	return apply_filters( 'cyberchimps_field_filter', $fields_list );
