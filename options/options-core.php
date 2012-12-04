@@ -125,19 +125,6 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
-	$sections_list[] = array(
-		'id' => 'cyberchimps_header_details_section',
-		'label' => __('Contact Element', 'cyberchimps'),
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
-	// Banner options subsection
-	$sections_list[] = array(
-		'id' => 'cyberchimps_header_banner_section',
-		'label' => __('Banner Options', 'cyberchimps'),
-		'heading' => 'cyberchimps_header_heading'
-	);
-	
 /***************************** BLOG **************************************************/
 
 	$sections_list[] = array(
@@ -639,28 +626,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 	
-	/********** BANNER OPTIONS STARTS ************/
-	// Banner image
-	$fields_list[] = array(
-		'name'     => __('Banner Image', 'cyberchimps'),
-		'desc'     => __('Enter URL or upload file', 'cyberchimps'),
-		'id'       => 'header_banner_image',
-		'type'	   => 'upload',
-		'section'  => 'cyberchimps_header_banner_section',
-		'heading'  => 'cyberchimps_header_heading'
-	);
-	
-	// Banner URL
-	$fields_list[] = array(
-		'name'     => __('Banner URL', 'cyberchimps'),
-		'id'       => 'header_banner_url',
-		'std'      => home_url(),
-		'type'     => 'text',
-		'section'  => 'cyberchimps_header_banner_section',
-		'heading'  => 'cyberchimps_header_heading'
-	);
-	/********** BANNER OPTIONS ENDS ************/	
-	
 	/********** HEADER OPTIONS STARTS ************/
 		
 	$fields_list[] = array(
@@ -936,19 +901,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 
 	/********** SOCIAL ENDS ************/
-	
-	/******* CONTACT DETAILS STARTS *****/
-	
-	$fields_list[] = array(
-		'name' => __('Details', 'cyberchimps'),
-		'id' => 'contact_details',
-		'std' => '',
-		'type' => 'textarea',
-		'section' => 'cyberchimps_header_details_section',
-		'heading' => 'cyberchimps_header_heading'
-	 );															
-															
-	/******* CONTACT DETAILS ENDS ******/
+
 /*************************** HEADER ENDS ***************************************************/
 		
 /*************************** BLOG STARTS ***************************************************/
