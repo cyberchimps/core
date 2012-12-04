@@ -627,7 +627,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Header Drag/Drop', 'cyberchimps'),
 		'callback' => 'cyberchimps_drag_drop_field',
 		'std' => apply_filters( 'header_drag_and_drop_default', array(
-			'cyberchimps_logo' => __( 'Logo', 'cyberchimps' ),
+			'cyberchimps_logo' => __( 'Logo', 'cyberchimps' )
 		) ),
 		'type' => 'section_order',
 		'options' => apply_filters( 'header_drag_and_drop_options', array(

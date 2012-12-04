@@ -113,13 +113,10 @@ function cyberchimps_init_meta_boxes() {
 	$mb
 		->tab("Page Options")
 			->image_select('cyberchimps_page_sidebar', __( 'Select Page Layout', 'cyberchimps' ), '',
-				array('options' => array(
-					'right_sidebar'		 => $image_path . 'right.png',
-					'left_right_sidebar' => $image_path . 'tworight.png',
-					'content_middle'	 => $image_path . 'rightleft.png',
-					'full_width'		 => $image_path . 'none.png',
-					'left_sidebar'		 => $image_path . 'left.png'
-					), 'std' => 'right_sidebar') )
+				array('options' => apply_filters( 'sidebar_layout_options', array(
+					'full_width'		 => $image_path . '1col.png',
+					'right_sidebar'		 => $image_path . '2cr.png'
+					) ), 'std' => 'right_sidebar') )
 			->checkbox('cyberchimps_page_title_toggle', __('Page Title', 'cyberchimps'), '', array('std' => '1'))
 			->section_order('cyberchimps_page_section_order', __( 'Page Elements', 'cyberchimps' ), '', array(					
 				'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
