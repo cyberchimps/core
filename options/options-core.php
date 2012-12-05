@@ -1283,7 +1283,7 @@ if( $theme_check == 'free' ):
 		'desc' => __('Enter URL or upload file', 'cyberchimps'),
 		'id' => 'image_one_slide',
 		'type' => 'upload',
-		'std' => $directory_uri . apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' ),
+		'std' => $directory_uri . apply_filters( 'cyberchimps_slider_lite_img1' ,'/images/branding/slide1.jpg' ),
 		'section' => 'cyberchimps_blog_slider_lite_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
