@@ -920,19 +920,17 @@ function cyberchimps_fields_callback( $value ) {
  * Validate theme options before updating to database.
  */
 function cyberchimps_options_validate( $input ) {
-
 	// Theme option import functionality
 	if( isset( $_POST['import' ] ) ) {
 		if( trim( $_POST['import' ] ) ) {
 			$string = stripslashes( trim( $_POST['import'] ) );
 			
 			$try = unserialize( $string );
-			
 			if($try) {
-				add_settings_error( 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps' ), 'updated fade' );
 				return $try;
 			} else {
-				add_settings_error( 'import', __( 'Invalid Data for Import', 'optionsframework' ), 'updated fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps' ), 'error fade' );
 			}
 		}
 	}
