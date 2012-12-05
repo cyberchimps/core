@@ -819,7 +819,7 @@ function cyberchimps_options_help_text() {
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( __( '<p>If you want even more amazing new features <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Product Element, Image Carousel, Widgetized Boxes, Callout Section, expanded typography and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
+		$text .= sprintf( __( '<p>If you want even more amazing new features upgrade to <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
