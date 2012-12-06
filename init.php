@@ -115,23 +115,6 @@ function cyberchimps_custom_background_cb() {
 
 		$style .= $image . $repeat . $position . $attachment;
 	}
-	
-	if ( ! $background && ! $color && $cc_background != 'none' ) {
-		$img_url = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.$cc_background.'.jpg';
-		$image = "background-image: url( '$img_url' );";
-		$style .= $image; ?>
-		<style type="text/css">
-			body { <?php echo trim( $style ); ?> }
-		</style>
-<?php
-	}
-	else {
-?>
-<style type="text/css" id="custom-background-css">
-body.custom-background { <?php echo trim( $style ); ?> }
-</style>
-<?php
-	}
 	}
 
 // Register our sidebars and widgetized areas.
