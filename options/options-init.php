@@ -407,17 +407,8 @@ function cyberchimps_drag_drop_field( $value ) {
 	$settings = get_option($option_name);
 
 	$val = '';
-	$output = '';
+	$output = '';	
 	
-	// Set default value to $val
-	if ( isset( $value['std'] ) ) {
-		if (is_array($value['std'])) {
-			$val[] = implode(',', array_keys($value['std']));
-		} else {
-			$val[] = $value['std'];	
-		}
-	}
-
 	// If the option is already saved, ovveride $val
 	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info') ) {
 		if ( isset( $settings[($value['id'])]) ) {
@@ -427,12 +418,21 @@ function cyberchimps_drag_drop_field( $value ) {
 				$val = $settings[($value['id'])];
 			}
 			else {
-				$val = array("");
+				$val = NULL;
 			}
-			
 			// Striping slashes of non-array options
 			if ( !is_array($val) ) {
 				$val = stripslashes( $val );
+			}
+		}
+	}
+	// Set default value to $val
+	if( empty( $val ) ){
+		if ( isset( $value['std'] ) ) {
+			if (is_array($value['std'])) {
+				$val = array_keys( $value['std'] );
+			} else {
+				$val = array_keys( explode( $value['std'] ) );	
 			}
 		}
 	}

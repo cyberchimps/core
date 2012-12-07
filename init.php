@@ -77,7 +77,7 @@ function cyberchimps_core_setup_theme() {
 	) );
 	
 	//set up defaults
-	$option_defaults = array( 'modal_welcome_note_display' => true );
+	$option_defaults['modal_welcome_note_display'] = true;
 	if( ! get_option( 'cyberchimps_options' ) ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
