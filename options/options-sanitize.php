@@ -15,7 +15,7 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 	}
 	return $output;
 }
-add_filter( 'cyberchimps_sanitize_csstextarea', 'cyberchimps_sanitize_csstextarea' );
+add_filter( 'cyberchimps_sanitize_custom_css', 'cyberchimps_sanitize_csstextarea' );
 
 /* Textarea */
 function cyberchimps_sanitize_textarea($input) {

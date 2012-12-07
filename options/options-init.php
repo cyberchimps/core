@@ -945,14 +945,15 @@ function cyberchimps_options_validate( $input ) {
 	if ( isset( $_POST['reset'] ) ) {
 		add_settings_error( 'cyberchimps_options', 'restore_defaults', __( 'Default options restored.', 'cyberchimps' ), 'updated fade' );
 		return cyberchimps_get_default_values();
-		
+	}
+	
 	/*
 	 * Update Settings
 	 *
 	 * This used to check for $_POST['update'], but has been updated
 	 * to be compatible with the theme customizer introduced in WordPress 3.4
 	 */
-	} else {
+	 else {
 		$clean = array();
 		$options = cyberchimps_get_fields();
 		foreach ( $options as $option ) {
@@ -1008,7 +1009,6 @@ function cyberchimps_options_validate( $input ) {
 		return $clean;
 	}
 }
-
 /**
  * Format Configuration Array.
  *
@@ -1054,25 +1054,4 @@ function cyberchimps_admin_bar() {
 		'title' => __( 'Theme Options', 'cyberchimps' ),
 		'href' => admin_url( 'themes.php?page=cyberchimps-theme-options' )
 	));
-}
-
-if ( ! function_exists( 'cyberchimps_get_option' ) ) {
-
-	/**
-	 * Get Option.
-	 *
-	 * Helper function to return the theme option value.
-	 * If no value has been saved, it returns $default.
-	 * Needed because options are saved as serialized strings.
-	 */
-	 
-	function cyberchimps_get_option( $name, $default = false ) {
-		$options = get_option( 'cyberchimps_options' );
-		
-		if ( isset( $options[$name] ) ) {
-			return $options[$name];
-		}
-
-		return $default;
-	}
 }

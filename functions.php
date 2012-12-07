@@ -21,14 +21,26 @@ function cyberchimps_option( $name = false, $subname = false ){
 		return $value;
 	}
 }
-// Add an array to an existing array in a certain position, used by options
-function cyberchimps_array_filter( $orig, $new ) {	
-	foreach( $new as $key => $value ){
-		array_splice( $orig, $key, 0, $value );
-	}
-	return $orig;
-}
+if ( ! function_exists( 'cyberchimps_get_option' ) ) {
 
+	/**
+	 * Get Option.
+	 *
+	 * Helper function to return the theme option value.
+	 * If no value has been saved, it returns $default.
+	 * Needed because options are saved as serialized strings.
+	 */
+	 
+	function cyberchimps_get_option( $name, $default = false ) {
+		$options = get_option( 'cyberchimps_options' );
+		
+		if ( isset( $options[$name] ) ) {
+			return $options[$name];
+		}
+
+		return $default;
+	}
+}
 // Enqueue core scripts and core styles
 function cyberchimps_core_scripts() {
 	global $post;
@@ -665,7 +677,7 @@ function cyberchimps_archive_excerpt_more( $more ){
 		return $more;
 	}
 }
-if( cyberchimps_option( 'archive_post_excerpts' ) ){
+if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
 }
 
@@ -681,7 +693,7 @@ function cyberchimps_blog_excerpt_more( $more ){
 		return $more;
 	}
 }
-if( cyberchimps_option( 'post_excerpts' ) ){
+if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
 }
 
@@ -696,7 +708,7 @@ function cyberchimps_blog_excerpt_length( $length ) {
 		return $length;
 	}
 }
-if( cyberchimps_option( 'post_excerpts' ) ){
+if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_length', 'cyberchimps_blog_excerpt_length', 999 );
 }
 
