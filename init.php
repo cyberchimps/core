@@ -81,6 +81,12 @@ function cyberchimps_core_setup_theme() {
 	if( ! get_option( 'cyberchimps_options' ) ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
+	//if not then theme switch reset modal to true so that new values can be saved in the database
+	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+		$options = get_option( 'cyberchimps_options' );
+		$options['modal_welcome_note_display'] = true;
+		update_option( 'cyberchimps_options', $options );
+	}
 }
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
