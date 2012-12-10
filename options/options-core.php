@@ -218,6 +218,12 @@ endif;
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
+	$sections_list[] = array(
+		'id'		=> 'cyberchimps_three_box_featured_posts_section',
+		'label'		=> __('3Box Featured Posts Options', 'cyberchimps'),
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
 	/*$sections_list[] = array(
 		'id' => 'cyberchimps_featured_posts_section',
 		'label' => __('Featured Posts Options', 'cyberchimps'),
@@ -305,9 +311,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$options_carousel_cats = array();
 	$carousel_categories = get_terms( 'carousel_categories', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $carousel_categories ) ) {
-	foreach( $carousel_categories as $carousel_cat ) {
-		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
-	}
+		foreach( $carousel_categories as $carousel_cat ) {
+			$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
+		}
 	}
 	
 	// Get custom categories of boxes element
@@ -323,18 +329,27 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$options_portfolio_cats = array();
 	$portfolio_categories = get_terms( 'portfolio_cats', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $portfolio_categories ) ) {
-	foreach( $portfolio_categories as $portfolio_cat ) {
-		$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
-	}
+		foreach( $portfolio_categories as $portfolio_cat ) {
+			$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
+		}
 	}
 	
-	//Pull all slider categories
+	// Pull all slider categories
 	$options_slide_cats = array();
 	$slide_categories = get_terms( 'slide_categories', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $portfolio_categories ) ) {
-	foreach( $slide_categories as $slide_cat ) {
-		$options_slide_cats[$slide_cat->term_id] = $slide_cat->name;
+		foreach( $slide_categories as $slide_cat ) {
+			$options_slide_cats[$slide_cat->term_id] = $slide_cat->name;
+		}
 	}
+	
+	// Get all post categories
+	$all_cats = array();
+	$all_categories = get_terms( 'category');
+	if( ! is_wp_error( $all_categories ) ) {
+		foreach( $all_categories as $all_cat ) {
+			$all_cats[$all_cat->term_id] = $all_cat->name;
+		}
 	}
 	
 	// Pull all tags into an array
@@ -343,7 +358,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	foreach ( $options_tags_obj as $tag ) {
 		$options_tags[$tag->term_id] = $tag->name;
 	}
-
 
 	// Pull all the pages into an array
 	$options_pages = array();
@@ -1771,6 +1785,61 @@ if( $theme_check == 'pro' ):
 		);
 	}
 	/********* BOXES OPTIONS ENDS ***********/
+
+	/***** 3BOX FEATURED POSTS OPTIONS STARTS ****/
+	// Option to select category.
+	if( $all_cats ){
+		$fields_list[]	= array(
+			'name'		=> __('Select a Category', 'cyberchimps'),
+			'id'		=> 'three_box_featured_posts_category',
+			'type'		=> 'select',
+			'options'	=> $all_cats,
+			'section'	=> 'cyberchimps_three_box_featured_posts_section',
+			'heading'	=> 'cyberchimps_blog_heading'
+		);
+	}
+	else{
+		$fields_list[]	= array(
+			'name'		=> __('Select a Category', 'cyberchimps'),
+			'id'		=> 'three_box_featured_posts_category_help',
+			'type'		=> 'help',
+			'desc'		=> __( 'You need to create a Category', 'cyberchimps' ),
+			'section'	=> 'cyberchimps_three_box_featured_posts_section',
+			'heading'	=> 'cyberchimps_blog_heading'
+		);
+	}
+	
+	// Upload background for box1
+	$fields_list[] = array(
+		'name'		=> __('Background for box1', 'cyberchimps'),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
+		'id'		=> 'three_box_featured_posts_background1',
+		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_three_box_featured_posts_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Upload background for box2
+	$fields_list[] = array(
+		'name'		=> __('Background for box2', 'cyberchimps'),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
+		'id'		=> 'three_box_featured_posts_background2',
+		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_three_box_featured_posts_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Upload background for box3
+	$fields_list[] = array(
+		'name'		=> __('Background for box3', 'cyberchimps'),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
+		'id'		=> 'three_box_featured_posts_background3',
+		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_three_box_featured_posts_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	/***** 3BOX FEATURED POSTS OPTIONS ENDS ****/
+	
 endif;// end pro option fields
 
 	/********* TWITTERBAR OPTIONS STARTS ***********/
