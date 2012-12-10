@@ -425,22 +425,6 @@ function cyberchimps_featured_image() {
 		endif;
 }
 
-// add breadcrumbs to single posts and archive pages if set in options
-function cyberchimps_breadcrumbs() {
-	global $post;
-	
-	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_breadcrumbs' ) ) ? cyberchimps_option( 'single_post_breadcrumbs' ) : false; 
-	}
-	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_breadcrumbs' ) ) ? cyberchimps_option( 'archive_breadcrumbs' ) : false;  
-	}
-	if( isset( $show ) ):
-		do_action( 'breadcrumbs' );
-	endif;
-}
-add_action( 'cyberchimps_before_container', 'cyberchimps_breadcrumbs' );
-
 function cyberchimps_post_format_icon() {
 	global $post;
 	
