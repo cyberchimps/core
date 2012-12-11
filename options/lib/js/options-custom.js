@@ -51,8 +51,7 @@ jQuery(document).ready(function($) {
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
-		boxes_lite 			:	"cyberchimps_blog_boxes_lite_section",
-		three_box_featured_posts	: "cyberchimps_three_box_featured_posts_section"
+		boxes_lite 			:	"cyberchimps_blog_boxes_lite_section"
 	};
 	
 	jQuery(".blog-section-order-tracker").change(function(){

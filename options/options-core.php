@@ -218,12 +218,6 @@ endif;
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$sections_list[] = array(
-		'id'		=> 'cyberchimps_three_box_featured_posts_section',
-		'label'		=> __('3Box Featured Posts Options', 'cyberchimps'),
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
 	/*$sections_list[] = array(
 		'id' => 'cyberchimps_featured_posts_section',
 		'label' => __('Featured Posts Options', 'cyberchimps'),
@@ -1775,60 +1769,6 @@ if( $theme_check == 'pro' ):
 		);
 	}
 	/********* BOXES OPTIONS ENDS ***********/
-
-	/***** 3BOX FEATURED POSTS OPTIONS STARTS ****/
-	// Option to select category.
-	if( $all_cats ){
-		$fields_list[]	= array(
-			'name'		=> __('Select a Category', 'cyberchimps'),
-			'id'		=> 'three_box_featured_posts_category',
-			'type'		=> 'select',
-			'options'	=> $all_cats,
-			'section'	=> 'cyberchimps_three_box_featured_posts_section',
-			'heading'	=> 'cyberchimps_blog_heading'
-		);
-	}
-	else{
-		$fields_list[]	= array(
-			'name'		=> __('Select a Category', 'cyberchimps'),
-			'id'		=> 'three_box_featured_posts_category_help',
-			'type'		=> 'help',
-			'desc'		=> __( 'You need to create a Category', 'cyberchimps' ),
-			'section'	=> 'cyberchimps_three_box_featured_posts_section',
-			'heading'	=> 'cyberchimps_blog_heading'
-		);
-	}
-	
-	// Upload background for box1
-	$fields_list[] = array(
-		'name'		=> __('Background for box1', 'cyberchimps'),
-		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
-		'id'		=> 'three_box_featured_posts_background1',
-		'type'		=> 'upload',
-		'section'	=> 'cyberchimps_three_box_featured_posts_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
-	// Upload background for box2
-	$fields_list[] = array(
-		'name'		=> __('Background for box2', 'cyberchimps'),
-		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
-		'id'		=> 'three_box_featured_posts_background2',
-		'type'		=> 'upload',
-		'section'	=> 'cyberchimps_three_box_featured_posts_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
-	// Upload background for box3
-	$fields_list[] = array(
-		'name'		=> __('Background for box3', 'cyberchimps'),
-		'desc'		=> __('Enter URL or upload file', 'cyberchimps'),
-		'id'		=> 'three_box_featured_posts_background3',
-		'type'		=> 'upload',
-		'section'	=> 'cyberchimps_three_box_featured_posts_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	/***** 3BOX FEATURED POSTS OPTIONS ENDS ****/
 	
 endif;// end pro option fields
 
