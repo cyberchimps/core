@@ -32,6 +32,9 @@ function cyberchimps_core_setup_theme() {
 	// Load element files before meta and options
 	require_once( $directory . '/elements/init.php' );
 	
+	// Load santize before options-init and options core
+	require_once ( $directory . '/cyberchimps/options/options-sanitize.php' );
+	
 	// Load core options file
 	require_once( $directory . '/cyberchimps/options/options-init.php' );
 
@@ -77,8 +80,8 @@ function cyberchimps_core_setup_theme() {
 	) );
 	
 	//set up defaults
-	$option_defaults['modal_welcome_note_display'] = true;
-	if( ! get_option( 'cyberchimps_options' ) ) {
+	$option_defaults = cyberchimps_get_default_values();
+	if( ! get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
 	//if not then theme switch reset modal to true so that new values can be saved in the database

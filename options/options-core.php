@@ -597,16 +597,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);	
 	
-/* CUSTOM CSS */
-		$fields_list[] = array(
-		'name' => __('Custom CSS', 'cyberchimps'),
-		'id' => 'custom_css',
-		'std' => '',
-		'type' => 'csstextarea',
-		'section' => 'cyberchimps_custom_css_section',
-		'heading' => 'cyberchimps_design_heading'
-	);
-	
 /*************************** HEADER STARTS ***************************************************/
 	
 	$fields_list[] = array(

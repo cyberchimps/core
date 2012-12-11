@@ -755,7 +755,7 @@ add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 
 // Modal welcome note
 function cyberchimps_modal_welcome_note() { 
-	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
+	if( cyberchimps_get_option( 'modal_welcome_note_display', 0 ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <h3 id="myModalLabel">Welcome</h3>

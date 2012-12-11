@@ -77,12 +77,6 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script('google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.js', array('jquery'));
 }
 
-/* Loads the file for option sanitization */
-add_action('init', 'cyberchimps_load_sanitization' );
-function cyberchimps_load_sanitization() {
-	require_once dirname( __FILE__ ) . '/options-sanitize.php';
-}
-
 // Load options customizer file
 add_action('init', 'cyberchimps_load_customizer' );
 function cyberchimps_load_customizer() {
@@ -1034,8 +1028,8 @@ function cyberchimps_get_default_values() {
 		}
 		if ( ! isset( $option['type'] ) ) {
 			continue;
-		}
-		if ( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
+		}	
+		if ( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {	
 			$output[$option['id']] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $option['std'], $option );
 		}
 	}
