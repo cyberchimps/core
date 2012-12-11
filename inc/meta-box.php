@@ -231,12 +231,6 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
-		->tab("3Box Featured Posts Options")
-			->select('three_box_featured_posts_category', __( '3Box Featured Posts Options', 'cyberchimps' ), '',
-				array('options' => ( $all_cats ? $all_cats : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
-			->single_image('three_box_featured_posts_background1', __( 'Background for box1', 'cyberchimps' ), '' )
-			->single_image('three_box_featured_posts_background2', __( 'Background for box2', 'cyberchimps' ), '' )
-			->single_image('three_box_featured_posts_background3', __( 'Background for box3', 'cyberchimps' ), '' )
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {
