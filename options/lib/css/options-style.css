@@ -322,7 +322,7 @@ ul.cc-parent > li > a i {
   margin-right: 5%;
 }
 ul.cc-parent > li.cc-active > a i {
-  background-image: url("../bootstrap/img/glyphicons-halflings-white.png");
+  background-image: url("../../../lib/bootstrap/img/glyphicons-halflings-white.png");
   background-position: -313px -119px;
 }
 ul.cc-parent > li.cc-active > a {

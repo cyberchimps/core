@@ -21,8 +21,10 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Hide/show onclick over subsection
-	/*jQuery(".section-group > h3").click(function() {
+	jQuery(".section-group>h3").click(function() {
 		var $this = $(this);
+		
+		$this.parent().find('div.clear').css("display", "none");
 		$this.find("span.minus").removeClass('minus');
 		if($this.siblings('div').is(":visible")) {
 			$this.siblings('div').fadeOut();
@@ -30,14 +32,18 @@ jQuery(document).ready(function($) {
 			$this.siblings('div').fadeIn();
 			$this.find("span").addClass('minus');
 		}
-	});*/
+	});
 	
-	// Hide/show of subsections onchange of drop & down
-	/*jQuery(".field-container").hide();
-	jQuery("#cyberchimps_blog_slider_section").hide();
-	jQuery("#cyberchimps_welcome_section .field-container").show();
-	jQuery("#cyberchimps_welcome_section h3 span").hide();
-	jQuery("#cyberchimps_blog_drag_and_drop_section h3 span").addClass('minus');*/
+	// Hide all subsections at the beginging.
+	jQuery(".field-container").hide();
+	
+	// Show default subsections
+	jQuery("#cyberchimps_blog_options_section h3").click();
+	jQuery("#cyberchimps_help_section h3").click();
+	jQuery("#cyberchimps_footer_section h3").click();
+	jQuery("#cyberchimps_import_export_section h3").click();
+	jQuery("#cyberchimps_custom_layout_section h3").click();
+	jQuery("#cyberchimps_single_post_section h3").click();
 	
 	var page_subsection_map = {
 		slider_lite			: "cyberchimps_blog_slider_lite_section",
@@ -51,7 +57,7 @@ jQuery(document).ready(function($) {
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
-		boxes_lite 			:	"cyberchimps_blog_boxes_lite_section"
+		boxes_lite 			: "cyberchimps_blog_boxes_lite_section"
 	};
 	
 	jQuery(".blog-section-order-tracker").change(function(){
@@ -375,13 +381,6 @@ jQuery(document).ready(function($) {
 				}).change();
 	});
 
-/*
-	var tracker_value = jQuery(".blog-section-order-tracker").val();
-	alert(tracker_value);
-	jQuery(".blog-section-order-tracker").val("temp");
-	alert(jQuery(".blog-section-order-tracker").val());
-	//jQuery(".blog-section-order-tracker").val("tracker_value");
-	
 /* add controls for modal welcome note */
 	$('#welcomeModal').modal()
 	
