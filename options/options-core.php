@@ -246,7 +246,7 @@ endif;
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_error_section',
-		'label' => __('404', 'cyberchimps'),
+		'label' => '404',
 		'heading' => 'cyberchimps_templates_heading'
 	);
 	
@@ -1416,8 +1416,8 @@ if( $theme_check == 'pro' ):
 		'id' => 'blog_magazine_no_of_columns',
 		'type' => 'select',
 		'options' => array(
-			'2' => __('2', 'cyberchimps'),
-			'3' => __('3', 'cyberchimps')
+			'2' => '2',
+			'3' => '3'
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1428,10 +1428,10 @@ if( $theme_check == 'pro' ):
 		'id' => 'blog_magazine_no_of_rows',
 		'type' => 'select',
 		'options' => array(
-			'1' => __('1', 'cyberchimps'),
-			'2' => __('2', 'cyberchimps'),
-			'3' => __('3', 'cyberchimps'),
-			'4' => __('4', 'cyberchimps')
+			'1' => '1',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4'
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1451,11 +1451,11 @@ if( $theme_check == 'pro' ):
 		'id' => 'blog_magazine_no_of_wide_posts',
 		'type' => 'select',
 		'options' => array(
-			'1'  => __('1', 'cyberchimps'),  '2'  => __('2', 'cyberchimps'),  '3'  => __('3', 'cyberchimps'),  '4'  => __('4', 'cyberchimps'),
-			'5'  => __('5', 'cyberchimps'),  '6'  => __('6', 'cyberchimps'),  '7'  => __('7', 'cyberchimps'),  '8'  => __('8', 'cyberchimps'),
-			'9'  => __('9', 'cyberchimps'),  '10' => __('10', 'cyberchimps'), '11' => __('11', 'cyberchimps'),  '12' => __('12', 'cyberchimps'),
-			'13' => __('13', 'cyberchimps'), '14' => __('14', 'cyberchimps'), '15' => __('15', 'cyberchimps'), '16' => __('16', 'cyberchimps'),
-			'17' => __('17', 'cyberchimps'), '18' => __('18', 'cyberchimps'), '19' => __('19', 'cyberchimps'), '20' => __('20', 'cyberchimps'),
+			'1'  => '1',  '2'  => '2',  '3'  => '3',  '4'  => '4',
+			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
+			'9'  => '9',  '10' => '10', '11' => '11',  '12' => '12',
+			'13' => '13', '14' => '14', '15' => '15', '16' => '16',
+			'17' => '17', '18' => '18', '19' => '19', '20' => '20'
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'

@@ -56,7 +56,7 @@ function cyberchimps_core_setup_theme() {
 	}
 
 	// Core Translations can be filed in the /inc/languages/ directory
-	load_theme_textdomain( 'cyberchimps', $directory . '/lib/languages' );
+	load_theme_textdomain( 'cyberchimps', $directory . '/inc/languages' );
 	
 	// Add support for the Aside Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );

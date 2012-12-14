@@ -125,7 +125,7 @@ function cyberchimps_options_page() {
 				<div class="span4">
         	<div class="cc-title">
             <div class="icon32" id="icon-tools"> <br /> </div>
-              <h2><?php printf( __( '%1s Options', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
+              <h2><?php printf( '%1s ' .  __( 'Options', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
             </div><!-- cc-title -->
 				</div><!-- span4 -->
 				<div class="span8">

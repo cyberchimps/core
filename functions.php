@@ -304,16 +304,16 @@ function cyberchimps_posted_on() {
 		$show_categories = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false; 
 	}
 	
-	$posted_on = sprintf( __( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s', 'cyberchimps' ),
+	$posted_on = sprintf( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		( $show_date ) ? esc_html( get_the_date() ) : '',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by', 'cyberchimps' ) . ' %s', get_the_author() ) ),
 		( $show_author ) ? esc_html( get_the_author() ) : '',
-		( $show_date ) ? 'Posted on ' : '',
-		( $show_author ) ? ' by ' : '',
+		( $show_date ) ? __( 'Posted on ', 'cyberchimps' ) : '',
+		( $show_author ) ? __( ' by ', 'cyberchimps' ) : '',
 		( $show_author || $show_categories ) ? '<span class="byline">' : '',
 		( $show_author || $show_categories ) ? '</span>' : ''
 	);
@@ -336,9 +336,9 @@ function cyberchimps_posted_in() {
 		$show = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false;  
 	}
 	if( $show ):
-				$categories_list = get_the_category_list( __( ', ', 'cyberchimps' ) );
+				$categories_list = get_the_category_list( ', ' );
 				if ( $categories_list ) :
-				$cats = sprintf( __( 'Posted in %1$s', 'cyberchimps' ), $categories_list );
+				$cats = sprintf( __( 'Posted in', 'cyberchimps' ) . ' %1$s', $categories_list );
 			?>
 			<span class="cat-links">
 				<?php echo apply_filters( 'cyberchimps_post_categories', $cats ); ?>
@@ -362,9 +362,9 @@ function cyberchimps_post_tags() {
 		$show = ( cyberchimps_option( 'post_byline_tags' ) ) ? cyberchimps_option( 'post_byline_tags' ) : false;  
 	}
 	if( $show ):
-	$tags_list = get_the_tag_list( '', __( ', ', 'cyberchimps' ) );
+	$tags_list = get_the_tag_list( '', ', ' );
 				if ( $tags_list ) :
-				$tags = sprintf( __( 'Tags: %1$s', 'cyberchimps' ), $tags_list );
+				$tags = sprintf( __( 'Tags:', 'cyberchimps' ) . ' %1$s', $tags_list );
 			?>
 			<span class="tag-links">
 				<?php echo apply_filters( 'cyberchimps_post_tags', $tags ); ?>
@@ -390,7 +390,7 @@ function cyberchimps_post_comments() {
 	$leave_comment = ( is_single() || is_page() ) ? '' : __( 'Leave a comment', 'cyberchimps' );
 	if( $show ):
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), __( '% Comments', 'cyberchimps' ) ); ?></span>
+			<span class="comments-link"><?php comments_popup_link( $leave_comment, __( '1 Comment', 'cyberchimps' ), '% ' . __( 'Comments', 'cyberchimps' ) ); ?></span>
       <span class="sep"> <?php echo ( $leave_comment != '' ) ? apply_filters( 'cyberchimps_entry_meta_sep', '|' ) : ''; ?> </span>
     <?php endif;
 	endif;
@@ -497,7 +497,7 @@ function cyberchimps_default_site_title() {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'cyberchimps' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page', 'cyberchimps' ) . ' %s', max( $paged, $page ) );
 }
 add_filter('wp_title', 'cyberchimps_default_site_title');
 
@@ -597,7 +597,7 @@ function cyberchimps_recent_post_excerpt_more($more) {
 	global $custom_excerpt, $post;
     
    		if ($custom_excerpt == 'recent') {
-    		$linktext = 'Continue Reading';
+    		$linktext = __( 'Continue Reading', 'cyberchimps' );
     	}
     	
 	return '&hellip;
@@ -758,17 +758,17 @@ function cyberchimps_modal_welcome_note() {
 	if( cyberchimps_get_option( 'modal_welcome_note_display', 0 ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <h3 id="myModalLabel">Welcome</h3>
+      <h3 id="myModalLabel"><?php _e( 'Welcome', 'cyberchimps' ); ?></h3>
     </div>
     <div class="modal-body">
-      	<?php printf( __( '
-					<p>Congratulations you have successfully installed %1$s!</p>
+      	<?php printf( '
+					<p>' . __( 'Congratulations you have successfully installed', 'cyberchimps' ) . ' %1$s!</p>
 										
-					<p>Your website is important to us, so please read the <a href="%3$s" target="_blank">instructions</a> to learn how to use %1$s.</p>
+					<p>' . __( 'Your website is important to us, so please read the', 'cyberchimps' ) . ' <a href="%3$s" target="_blank">' . __( 'instructions', 'cyberchimps' ) . '</a> ' . __( 'to learn how to use', 'cyberchimps' ) . ' %1$s.</p>
 					
-					<p>If you have any questions please post in our <a href="%4$s" target="_blank">support forum</a>, and we will get back to you as soon as we can.</p>
+					<p>' . __( 'If you have any questions please post in our', 'cyberchimps' ) . ' <a href="%4$s" target="_blank">' . __( 'support forum', 'cyberchimps' ) . '</a>, ' . __( 'and we will get back to you as soon as we can', 'cyberchimps' ) . '.</p>
 										
-					<p>Thank you for choosing CyberChimps Professional WordPress Themes!</p>', 'cyberchimps' ),
+					<p>' . __( 'Thank you for choosing CyberChimps Professional WordPress Themes', 'cyberchimps' ) . '!</p>',
 					apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
 					apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com/store/' ),
 					apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps' ) ),
@@ -810,13 +810,13 @@ function cyberchimps_options_help_text() {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
 						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
-						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to', 'cyberchimps' ) . ' %1$s', apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</a>
 						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( __( '<p>If you want even more amazing new features upgrade to <a href="%1$s" title="%2$s">%2$s</a> which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> to learn more!</p>', 'cyberchimps' ),
+		$text .= sprintf( '<p>' . __( 'If you want even more amazing new features upgrade to', 'cyberchimps' ) . ' <a href="%1$s" title="%2$s">%2$s</a> ' . __( 'which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit', 'cyberchimps' ) . ' <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> ' . __( 'to learn more!', 'cyberchimps' ) . '</p>',
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
@@ -833,7 +833,7 @@ add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
 function cyberchimps_upgrade_bar() { ?>
 	<div class="upgrade-callout">
 		<p><img src="<?php echo get_template_directory_uri() ;?>/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps" />
-    <?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to <a href="%2$s" target="_blank" title="%3$s">%3$s</a> today.', 'cyberchimps' ),
+    <?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to', 'cyberchimps' ) . ' <a href="%2$s" target="_blank" title="%3$s">%3$s</a> ' . __( 'today.', 'cyberchimps' ),
 		apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
 		apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
 		apply_filters( 'cyberchimps_upgrade_pro_title', 'Pro' )
