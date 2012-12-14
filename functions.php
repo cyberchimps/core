@@ -896,4 +896,3 @@ function cyberchimps_google_analytics() {
 	}
 }
 add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
-?>

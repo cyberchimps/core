@@ -413,7 +413,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	
 	// Toggle for responsive menu
 	$fields_list[] = array(
-		'name' => __('Responsive Menu', 'cyberchimps'),
+		'name' => __('Tablet Responsive Menu', 'cyberchimps'),
 		'id' => 'responsive_menu',
 		'type' => 'toggle',
 		'section' => 'cyberchimps_custom_layout_section',
