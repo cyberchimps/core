@@ -35,15 +35,16 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Hide all subsections at the beginging.
-	jQuery(".field-container").hide();
+	jQuery(".field-container-wrapper").hide();
 	
 	// Show default subsections
-	jQuery("#cyberchimps_blog_options_section h3").click();
+	jQuery("#cyberchimps_blog_drag_and_drop_section h3").click();
 	jQuery("#cyberchimps_help_section h3").click();
 	jQuery("#cyberchimps_footer_section h3").click();
 	jQuery("#cyberchimps_import_export_section h3").click();
 	jQuery("#cyberchimps_custom_layout_section h3").click();
-	jQuery("#cyberchimps_single_post_section h3").click();*/
+	jQuery("#cyberchimps_single_post_section h3").click();
+	jQuery("#cyberchimps_header_drag_drop_section h3").click();*/
 	
 	var page_subsection_map = {
 		slider_lite			: "cyberchimps_blog_slider_lite_section",

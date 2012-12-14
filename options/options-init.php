@@ -315,11 +315,17 @@ function cyberchimps_do_settings_sections( $page ) {
 		if ( $section['title'] ) {
 			echo "<h3>{$section['title']}<span></span></h3>\n";
 		}
+		
+		// wrapper div of all field-container divs
+		echo '<div class="field-container-wrapper">';
+		
 		call_user_func($section['callback'], $section);
 		
 		if ( isset($wp_settings_fields) && isset($wp_settings_fields[$page]) && isset($wp_settings_fields[$page][$section['id']]) ) {
 			cyberchimps_do_settings_fields($page, $section['id']);
 		}
+		
+		echo '</div>'; // .field-container ends
 		echo '<div class="clear"></div></div>';
 	}
 }
