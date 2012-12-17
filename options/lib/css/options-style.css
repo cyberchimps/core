@@ -214,6 +214,10 @@ form {
   margin-left: 20px;
 }
 
+#custom-css-msg {
+	color : red;
+}
+
 /*************** Mobile Menu **********************/
 
 .cc-mobile-menu {

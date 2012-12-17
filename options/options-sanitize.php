@@ -9,6 +9,10 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 	// Remove unwanted white spaces from start and end.
 	$input = trim($input);
 	
+	if( !strlen($input) ) {
+		return $input;
+	}
+	
 	// Check for allowed set of characters.
 	$allowed = '/[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/';
 	$test = preg_match( $allowed, $input );
@@ -16,7 +20,8 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 		$output = $input;
 	}
 	else {
-		$output = false;
+		$options = get_option( 'cyberchimps_options' );
+		$output = $options['custom_css'];
 	}
 	return $output;
 }
