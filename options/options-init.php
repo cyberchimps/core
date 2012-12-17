@@ -619,6 +619,7 @@ function cyberchimps_fields_callback( $value ) {
 
 			$val = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . strip_tags( $val ) . '</textarea>';
+			$output .= '<div id="custom-css-msg"></div>';
 			break;
 		
 		// Select Box
