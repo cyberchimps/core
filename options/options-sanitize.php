@@ -5,6 +5,11 @@ add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
 /* CSS Textarea */
 function cyberchimps_sanitize_csstextarea( $input ) {
+
+	// Remove unwanted white spaces from start and end.
+	$input = trim($input);
+	
+	// Check for allowed set of characters.
 	$allowed = '/[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/';
 	$test = preg_match( $allowed, $input );
 	if( $test == 1 ){
