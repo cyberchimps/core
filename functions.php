@@ -78,17 +78,17 @@ function cyberchimps_core_scripts() {
 	
 	//responsive menu at tablet level
 	if( cyberchimps_get_option( 'responsive_menu', 1 ) == 1 ) {
-		wp_enqueue_style( 'tablet-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-tablet.css' );
+		wp_enqueue_style( 'tablet-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-tablet.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 	}
 	else {
-		wp_enqueue_style( 'phone-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-phone.css' );
+		wp_enqueue_style( 'phone-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-phone.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 	}
 	
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style', 'tablet-responsive-menu', 'phone-responsive-menu' ), '1.0' );
 	
 	// Load Theme Stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 	
 	// Add thumbnail size
 	if ( function_exists( 'add_image_size' ) ) { 
