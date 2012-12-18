@@ -410,16 +410,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
-	
-	// Toggle for responsive menu
-	$fields_list[] = array(
-		'name' => __('Tablet Responsive Menu', 'cyberchimps'),
-		'id' => 'responsive_menu',
-		'std' => 1,
-		'type' => 'toggle',
-		'section' => 'cyberchimps_custom_layout_section',
-		'heading' => 'cyberchimps_design_heading'
-	);
 		
 	$fields_list[] = array(
 		'name' => __('Max Width', 'cyberchimps'),
