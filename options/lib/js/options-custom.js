@@ -9,6 +9,9 @@ jQuery(document).ready(function($) {
 		var custom_css = jQuery('#custom_css').val();
 		var allowed = /[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/;
 
+		if( custom_css.length == 0 ) {
+			return true;
+		}
 		if( !allowed.test(custom_css)) {
 			jQuery('#custom-css-msg').html("Please enter only valid custom CSS");
 			return false;
