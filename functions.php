@@ -62,18 +62,36 @@ function cyberchimps_core_scripts() {
 	//touch swipe gestures
 	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
 	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.js', array('jquery', 'jquery-mobile-touch') );
-	
-	
+		
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
 	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array('bootstrap-style'), '2.0.4' );
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
+	//responsive design
+	if( cyberchimps_get_option( 'responsive_design' ) ){
+		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	}
+	else {
+		wp_dequeue_style( 'cyberchimps_responsive' );
+	}
+	
+	//responsive menu at tablet level
+	if( cyberchimps_get_option( 'responsive_menu', 1 ) == 1 ) {
+		//use this variable to load the core-style after whichever of the following is loaded
+		$responsive = 'tablet-responsive-menu';
+		wp_enqueue_style( 'tablet-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-tablet.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
+	}
+	else {
+		$responsive = 'phone-responsive-menu';
+		wp_enqueue_style( 'phone-responsive-menu', $bootstrap_path . 'css/cyberchimps-menu-phone.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
+	}
+	
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style', $responsive ), '1.0' );
 	
 	// Load Theme Stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array('core-style', 'bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 	
 	// Add thumbnail size
 	if ( function_exists( 'add_image_size' ) ) { 
@@ -865,17 +883,6 @@ function cyberchimps_posttype_admin_css() {
     }
 }
 add_action('admin_head', 'cyberchimps_posttype_admin_css');
-
-// funationality for responsive toggle
-function cyberchimps_responsive_stylesheet() {
-	if( cyberchimps_get_option( 'responsive_design' ) ){
-		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
-	}
-	else {
-		wp_dequeue_style( 'cyberchimps_responsive' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'cyberchimps_responsive_stylesheet', 25 );
 
 /**
 * Add link to theme options in Admin bar.

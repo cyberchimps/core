@@ -147,16 +147,3 @@ function cyberchimps_skin_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 21 );
-
-
-//responsive menu toggle
-function cyberchimps_responsive_menu(){
-	$directory_uri = get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/';
-	if( cyberchimps_get_option( 'responsive_menu', 1 ) == 1 ) {
-		wp_enqueue_style( 'tablet-responsive-menu', $directory_uri . 'cyberchimps-menu-tablet.css' );
-	}
-	else {
-		wp_enqueue_style( 'phone-responsive-menu', $directory_uri . 'cyberchimps-menu-phone.css' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'cyberchimps_responsive_menu', 50 );
