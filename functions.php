@@ -894,3 +894,70 @@ function cyberchimps_google_analytics() {
 	}
 }
 add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
+
+// Add an array to an existing array in a certain position, used by options
+function cyberchimps_heading_filter( $orig, $new ) {	
+	foreach( $new as $key => $value ){
+		array_splice( $orig, $key, 0, $value );
+	}
+	return $orig;
+}
+
+// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading. 
+
+//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.	
+function cyberchimps_section_start_no( $heading, $orig ) {
+	foreach( $orig as $key => $value ) {
+			if( $value['heading'] == $heading ) {
+				$first_key_value = $key;
+				break;
+			}
+			else {
+				end( $orig );
+				$first_key_value = key( $orig ) + 1; //this counter acts the minus 1 from the organizer so the last element doesn't get built in front of
+		}
+	}
+	return $first_key_value;
+}
+//this function takes the new and old array and combines them adding the new array elements in the position indicated by their key
+function cyberchimps_array_section_organizer( $orig, $new ) {
+	foreach( $new as $value ) {
+		foreach( $value as $key => $val ) {
+			$section_start_no = cyberchimps_section_start_no( $val['heading'], $orig );
+			$position = $section_start_no + ( $key - 1 );
+			$position = intval( $position );
+			array_splice( $orig, $position, 0, $value );
+		}
+	}
+	return $orig;
+}
+
+// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section. 
+
+//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.																	
+function cyberchimps_field_start_no( $section, $orig ) {
+	foreach( $orig as $key => $value ) {
+			if( $value['section'] == $section ) {
+				$first_key_value = $key;
+				break;
+			}
+			else {
+				end( $orig );
+				$first_key_value = key( $orig ) + 1;
+		}
+	}
+	return $first_key_value;
+}
+
+//this function takes the new and old array and combines them adding the new array elements in the position indicated by their key
+function cyberchimps_array_field_organizer( $orig, $new ) {
+	foreach( $new as $value ) {
+		foreach( $value as $key => $val ) {
+			$section_start_no = cyberchimps_field_start_no( $val['section'], $orig );
+			$position = $section_start_no + ( $key - 1 );
+			$position = intval( $position );
+			array_splice( $orig, $position, 0, $value );
+		}
+	}
+	return $orig;
+}
