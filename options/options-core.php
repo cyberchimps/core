@@ -1393,6 +1393,7 @@ if( $theme_check == 'pro' ):
 	/********* PORTFOLIO PRO ENDS *****************/
 
 	/********* MAGAZINE STARTS *****************/
+	
 	$fields_list[] = array(
 		'name' => __('Meta Data', 'cyberchimps'),
 		'id' => 'blog_magazine_metadata',

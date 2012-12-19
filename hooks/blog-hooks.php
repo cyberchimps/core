@@ -21,11 +21,12 @@ function cyberchimps_blog_section_order_action() {
 	$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
 	//select default in case options are empty
 	$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
-	$slider_size = cyberchimps_get_option( 'blog_slider_size' );
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
 			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
-			$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
+			if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
+				$func = '';
+			}
 			do_action($func);
 		}
 	}
