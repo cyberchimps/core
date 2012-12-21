@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Hide/show onclick over subsection
-	/*jQuery(".section-group>h3").click(function() {
+	jQuery(".section-group>h3").click(function() {
 		var $this = $(this);
 		
 		$this.parent().find('div.clear').css("display", "none");
@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 	jQuery("#cyberchimps_import_export_section h3").click();
 	jQuery("#cyberchimps_custom_layout_section h3").click();
 	jQuery("#cyberchimps_single_post_section h3").click();
-	jQuery("#cyberchimps_header_drag_drop_section h3").click();*/
+	jQuery("#cyberchimps_header_drag_drop_section h3").click();
 	
 	var page_subsection_map = {
 		slider_lite			: "cyberchimps_blog_slider_lite_section",

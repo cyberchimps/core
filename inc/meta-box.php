@@ -140,12 +140,11 @@ function cyberchimps_init_meta_boxes() {
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
 		->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
-			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array('2', '3')) )
-			->select('cyberchimps_magazine_no_of_rows', __( 'Number of Rows', 'cyberchimps' ), '', array('options' => array('1', '2', '3', '4')) )
+			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array( 2 => '2', 3 => '3')) )
+			->select('cyberchimps_magazine_no_of_posts', __( 'Number of Posts', 'cyberchimps' ), '', array('options' => array( 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')) )
 			->checkbox('cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps' ), '', array('std' => '1'))
 			->select('cyberchimps_magazine_no_of_wide_posts', __( 'Number of Wide Posts ', 'cyberchimps' ), '',
-						array('options' => array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14',
-												 '15', '16', '17', '18', '19', '20')))
+						array('options' => array(1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')))
 		/*->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps' ), __( 'From category', 'cyberchimps' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps' ), '', array('std' => __( 'featured', 'cyberchimps' )))*/
