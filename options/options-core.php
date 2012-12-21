@@ -1343,7 +1343,7 @@ if( $theme_check == 'pro' ):
 	$fields_list[] = array(
 		'name' => __('Images per Row', 'cyberchimps'),
 		'id' => 'cyberchimps_blog_portfolio_pro_per_row',
-		'std' => 'Three',
+		'std' => 3,
 		'type' => 'select',
 		'options' => array(
 			3 => 'Three (default)',
@@ -1404,26 +1404,37 @@ if( $theme_check == 'pro' ):
 	);
 	
 	$fields_list[] = array(
+		'name' => __('Featured Excerpt Length', 'cyberchimps'),
+		'id' => 'blog_magazine_excerpt_length',
+		'type' => 'text',
+		'std' => '70',
+		'section' => 'cyberchimps_blog_magazine_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
 		'name' => __('Number of Columns', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_columns',
 		'type' => 'select',
+		'std' => 2,
 		'options' => array(
-			'2' => '2',
-			'3' => '3'
+			2 => '2',
+			3 => '3'
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
 	$fields_list[] = array(
-		'name' => __('Number of Rows', 'cyberchimps'),
-		'id' => 'blog_magazine_no_of_rows',
+		'name' => __('Number of Featured Posts', 'cyberchimps'),
+		'id' => 'blog_magazine_no_of_posts',
 		'type' => 'select',
 		'options' => array(
-			'1' => '1',
-			'2' => '2',
-			'3' => '3',
-			'4' => '4'
+			'4'  => '4',
+			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
+			'9'  => '9',  '10' => '10', '11' => '11',  '12' => '12',
+			'13' => '13', '14' => '14', '15' => '15', '16' => '16',
+			'17' => '17', '18' => '18', '19' => '19', '20' => '20'
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
@@ -1434,6 +1445,15 @@ if( $theme_check == 'pro' ):
 		'id' => 'blog_magazine_wide_post',
 		'type' => 'toggle',
 		'std' => 'checked',
+		'section' => 'cyberchimps_blog_magazine_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Wide Post Excerpt Length', 'cyberchimps'),
+		'id' => 'blog_magazine_wide_excerpt_length',
+		'type' => 'text',
+		'std' => '130',
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);

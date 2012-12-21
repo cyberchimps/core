@@ -627,9 +627,22 @@ function cyberchimps_featured_post_length( $length ) {
 	return 70;
 }
 
+// Set read more link for magazine featured post element
+function cyberchimps_magazine_featured_post_excerpt_more($more) {
+	global $post;
+	return '&hellip;</p></span><a href="'. get_permalink($post->ID) . '">Read More...</a>';
+}
+
+// Set length of the magazine featured post excerpt
+function cyberchimps_magazine_featured_post_length( $length ) {
+	$new_length = cyberchimps_get_option( 'blog_magazine_excerpt_length', 70 );
+	return $new_length;
+}
+
 // For magazine wide post
 function cyberchimps_magazine_post_wide( $length ) {
-	return 130;
+	$new_length = cyberchimps_get_option( 'blog_magazine_wide_excerpt_length', 130 );
+	return $new_length;
 }
 
 // more text for search results excerpt
