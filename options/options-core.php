@@ -1405,6 +1405,15 @@ if( $theme_check == 'pro' ):
 	);
 	
 	$fields_list[] = array(
+		'name' => __('Featured Image', 'cyberchimps'),
+		'id' => 'blog_magazine_featured_image',
+		'type' => 'toggle',
+		'std' => 'checked',
+		'section' => 'cyberchimps_blog_magazine_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
 		'name' => __('Featured Excerpt Length', 'cyberchimps'),
 		'id' => 'blog_magazine_excerpt_length',
 		'type' => 'text',
@@ -1430,6 +1439,7 @@ if( $theme_check == 'pro' ):
 		'name' => __('Number of Featured Posts', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_posts',
 		'type' => 'select',
+		'std' => '4',
 		'options' => array(
 			'4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
@@ -1463,6 +1473,7 @@ if( $theme_check == 'pro' ):
 		'name' => __('Number of Wide Posts', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_wide_posts',
 		'type' => 'select',
+		'std' => '3',
 		'options' => array(
 			'1'  => '1',  '2'  => '2',  '3'  => '3',  '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
