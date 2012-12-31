@@ -74,7 +74,11 @@ function cyberchimps_body_styles() {
 	
 	if( $google_font_toggle == "1" && $google_font != "" ) {
 		$body_styles['font-family'] = $google_font;
-		wp_register_style( 'google-font', 'http://fonts.googleapis.com/css?family='.$google_font );
+		
+		// Check if SSL is present, if so then use https othereise use http
+		$protocol = is_ssl() ? 'https' : 'http';
+		
+		wp_register_style( 'google-font', $protocol . '://fonts.googleapis.com/css?family=' . $google_font );		
 		wp_enqueue_style( 'google-font' );
 	}	
 	
