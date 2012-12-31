@@ -992,6 +992,11 @@ function cyberchimps_options_validate( $input ) {
 			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
 				$input[$id] = false;
 			}
+			
+			// Set checkbox to false if it wasn't sent in the $_POST
+			if ( 'images' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
 		
 			// Set each item in the multicheck to false if it wasn't sent in the $_POST
 			if ( 'multicheck' == $option['type'] && ! isset( $input[$id] ) ) {

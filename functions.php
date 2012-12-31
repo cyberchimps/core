@@ -69,7 +69,7 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 	
 	//responsive design
-	if( cyberchimps_get_option( 'responsive_design' ) ){
+	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ){
 		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 	}
 	else {
@@ -296,19 +296,19 @@ if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 function cyberchimps_posted_on() {
 	
 	if( is_single() ) {
-		$show_date = ( cyberchimps_option( 'single_post_byline_date' ) ) ? cyberchimps_option( 'single_post_byline_date' ) : false;
-		$show_author = ( cyberchimps_option( 'single_post_byline_author' ) ) ? cyberchimps_option( 'single_post_byline_author' ) : false; 
-		$show_categories = ( cyberchimps_option( 'single_post_byline_categories' ) ) ? cyberchimps_option( 'single_post_byline_categories' ) : false; 
+		$show_date = ( cyberchimps_get_option( 'single_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_date', 1 ) : false;
+		$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
+		$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_option( 'single_post_byline_categories', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show_date = ( cyberchimps_option( 'archive_post_byline_date' ) ) ? cyberchimps_option( 'archive_post_byline_date' ) : false;  
-		$show_author = ( cyberchimps_option( 'archive_post_byline_author' ) ) ? cyberchimps_option( 'archive_post_byline_author' ) : false;
-		$show_categories = ( cyberchimps_option( 'archive_post_byline_categories' ) ) ? cyberchimps_option( 'archive_post_byline_categories' ) : false; 
+		$show_date = ( cyberchimps_get_option( 'archive_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_date', 1 ) : false;  
+		$show_author = ( cyberchimps_get_option( 'archive_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_author', 1 ) : false;
+		$show_categories = ( cyberchimps_get_option( 'archive_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_categories', 1 ) : false; 
 	}
 	else {
-		$show_date = ( cyberchimps_option( 'post_byline_date' ) ) ? cyberchimps_option( 'post_byline_date' ) : false; 
-		$show_author = ( cyberchimps_option( 'post_byline_author' ) ) ? cyberchimps_option( 'post_byline_author' ) : false; 
-		$show_categories = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false; 
+		$show_date = ( cyberchimps_get_option( 'post_byline_date', 1 ) ) ? cyberchimps_get_option( 'post_byline_date', 1 ) : false; 
+		$show_author = ( cyberchimps_get_option( 'post_byline_author', 1 ) ) ? cyberchimps_get_option( 'post_byline_author', 1 ) : false; 
+		$show_categories = ( cyberchimps_get_option( 'post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'post_byline_categories', 1 ) : false; 
 	}
 	
 	$posted_on = sprintf( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s',
@@ -334,13 +334,13 @@ function cyberchimps_posted_in() {
 	global $post;
 
 	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_byline_categories' ) ) ? cyberchimps_option( 'single_post_byline_categories' ) : false; 
+		$show = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_categories', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_post_byline_categories' ) ) ? cyberchimps_option( 'archive_post_byline_categories' ) : false;  
+		$show = ( cyberchimps_get_option( 'archive_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_categories', 1 ) : false;  
 	}
 	else {
-		$show = ( cyberchimps_option( 'post_byline_categories' ) ) ? cyberchimps_option( 'post_byline_categories' ) : false;  
+		$show = ( cyberchimps_get_option( 'post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'post_byline_categories', 1 ) : false;  
 	}
 	if( $show ):
 				$categories_list = get_the_category_list( ', ' );
@@ -360,13 +360,13 @@ function cyberchimps_post_tags() {
 	global $post;
 	
 	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_byline_tags' ) ) ? cyberchimps_option( 'single_post_byline_tags' ) : false; 
+		$show = ( cyberchimps_get_option( 'single_post_byline_tags', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_tags', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_post_byline_tags' ) ) ? cyberchimps_option( 'archive_post_byline_tags' ) : false;  
+		$show = ( cyberchimps_get_option( 'archive_post_byline_tags', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_tags', 1 ) : false;  
 	}
 	else {
-		$show = ( cyberchimps_option( 'post_byline_tags' ) ) ? cyberchimps_option( 'post_byline_tags' ) : false;  
+		$show = ( cyberchimps_get_option( 'post_byline_tags', 1 ) ) ? cyberchimps_get_option( 'post_byline_tags', 1 ) : false;  
 	}
 	if( $show ):
 	$tags_list = get_the_tag_list( '', ', ' );
@@ -386,13 +386,13 @@ function cyberchimps_post_comments() {
 	global $post;
 	
 	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_byline_comments' ) ) ? cyberchimps_option( 'single_post_byline_comments' ) : false; 
+		$show = ( cyberchimps_get_option( 'single_post_byline_comments', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_comments', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_post_byline_comments' ) ) ? cyberchimps_option( 'archive_post_byline_comments' ) : false;  
+		$show = ( cyberchimps_get_option( 'archive_post_byline_comments', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_comments', 1 ) : false;  
 	}
 	else {
-		$show = ( cyberchimps_option( 'post_byline_comments' ) ) ? cyberchimps_option( 'post_byline_comments' ) : false;  
+		$show = ( cyberchimps_get_option( 'post_byline_comments', 1 ) ) ? cyberchimps_get_option( 'post_byline_comments', 1 ) : false;  
 	}
 	$leave_comment = ( is_single() || is_page() ) ? '' : __( 'Leave a comment', 'cyberchimps' );
 	if( $show ):
@@ -415,13 +415,13 @@ function cyberchimps_featured_image() {
 	global $post;
 	
 	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_featured_images' ) ) ? cyberchimps_option( 'single_post_featured_images' ) : false; 
+		$show = ( cyberchimps_get_option( 'single_post_featured_images', 1 ) ) ? cyberchimps_get_option( 'single_post_featured_images', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_featured_images' ) ) ? cyberchimps_option( 'archive_featured_images' ) : false;  
+		$show = ( cyberchimps_get_option( 'archive_featured_images', 1 ) ) ? cyberchimps_get_option( 'archive_featured_images', 1 ) : false;  
 	}
 	else {
-		$show = ( cyberchimps_option( 'post_featured_images' ) ) ? cyberchimps_option( 'post_featured_images' ) : false;  
+		$show = ( cyberchimps_get_option( 'post_featured_images', 1 ) ) ? cyberchimps_get_option( 'post_featured_images', 1 ) : false;  
 	}
 	if( $show ):
 		if( has_post_thumbnail() ): ?>
@@ -443,13 +443,13 @@ function cyberchimps_post_format_icon() {
 	}
 	
 	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_format_icons' ) ) ? cyberchimps_option( 'single_post_format_icons' ) : false; 
+		$show = ( cyberchimps_get_option( 'single_post_format_icons', 1 ) ) ? cyberchimps_get_option( 'single_post_format_icons', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_format_icons' ) ) ? cyberchimps_option( 'archive_format_icons' ) : false;  
+		$show = ( cyberchimps_get_option( 'archive_format_icons', 1 ) ) ? cyberchimps_get_option( 'archive_format_icons', 1 ) : false;  
 	}
 	else {
-		$show = ( cyberchimps_option( 'post_format_icons' ) ) ? cyberchimps_option( 'post_format_icons' ) : false;  
+		$show = ( cyberchimps_get_option( 'post_format_icons', 1 ) ) ? cyberchimps_get_option( 'post_format_icons', 1 ) : false;  
 	}
 	if( $show ):
 	?>
@@ -901,7 +901,7 @@ function cyberchimps_admin_link() {
 add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
 
 function cyberchimps_google_analytics() {
-	$code = cyberchimps_option( 'google_analytics' );
+	$code = cyberchimps_get_option( 'google_analytics', '' );
 	if( $code != '' ) {
 		echo '<script type="text/javascript">'.$code.'</script>';
 	}

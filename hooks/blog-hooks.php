@@ -18,9 +18,20 @@
 function cyberchimps_blog_section_order_action() {
 	global $post;
 	
-	$blog_section_order = cyberchimps_get_option( 'blog_section_order' );
+	$defaults = array();
+	$default = apply_filters( 'cyberchimps_elements_draganddrop_defaults', array(
+																																								'slider_lite'		 => __( 'Slider Lite', 'cyberchimps' ),
+																																								'boxes_lite'				 => __( 'Boxes', 'cyberchimps' ),
+																																								'blog_post_page' => __( 'Post Page', 'cyberchimps' )
+																																							) );
+	foreach( $default as $key => $val ) {
+		$defaults[] = $key;
+	}
+	
+	$blog_section_order = cyberchimps_get_option( 'blog_section_order', $defaults );
 	//select default in case options are empty
 	$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
+	$slider_size = cyberchimps_get_option( 'blog_slider_size', 'full' );
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
 			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content

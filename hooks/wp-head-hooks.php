@@ -108,7 +108,7 @@ function cyberchimps_layout_styles() {
 	$container_styles = array();
 	if ( cyberchimps_get_option( 'max_width' ) ) {
 		$width = intval( cyberchimps_get_option( 'max_width' ) );
-		$key = ( cyberchimps_get_option( 'responsive_design' ) ) ? 'max-width' : 'width';
+		$key = ( cyberchimps_get_option( 'responsive_design', 'checked' ) ) ? 'max-width' : 'width';
 		if ( $width < 400 || empty( $width ) ) { 
 			$container_styles[$key] = 1020;
 		}
