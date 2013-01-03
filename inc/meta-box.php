@@ -140,6 +140,7 @@ function cyberchimps_init_meta_boxes() {
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
 		->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
+			->checkbox('cyberchimps_magazine_featured_image', __( 'Featured Image', 'cyberchimps' ), '', array( 'std' => 1 ) )
 			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array( 2 => '2', 3 => '3')) )
 			->select('cyberchimps_magazine_no_of_posts', __( 'Number of Posts', 'cyberchimps' ), '', array('options' => array( 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')) )
 			->checkbox('cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps' ), '', array('std' => '1'))
