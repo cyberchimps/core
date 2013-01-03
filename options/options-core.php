@@ -1709,7 +1709,7 @@ if( $theme_check == 'pro' ):
 		'id' => 'html_box',
 		'std' => '',
 		'desc' => __( 'Enter your custom HTML code here', 'cyberchimps' ),
-		'type' => 'textarea',
+		'type' => 'unfiltered_textarea',
 		'section' => 'cyberchimps_html_box_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);

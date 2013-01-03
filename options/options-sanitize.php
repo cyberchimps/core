@@ -3,6 +3,19 @@
 /* Text */
 add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
+/* Unfiltered Textarea */
+function cyberchimps_sanitize_unfiltered_textarea( $input ) {
+	$output = '';
+	if ( current_user_can( 'unfiltered_html' ) ) {
+		$output = $input;
+		return $output;
+	}
+	else {
+		return $output;
+	}
+}
+add_filter( 'cyberchimps_sanitize_unfiltered_textarea', 'cyberchimps_sanitize_unfiltered_textarea' );
+
 /* CSS Textarea */
 function cyberchimps_sanitize_csstextarea( $input ) {
 
