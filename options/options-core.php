@@ -1474,7 +1474,7 @@ if( $theme_check == 'pro' ):
 		'name' => __('Number of Wide Posts', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_wide_posts',
 		'type' => 'select',
-		'std' => '3',
+		'std' => '6',
 		'options' => array(
 			'1'  => '1',  '2'  => '2',  '3'  => '3',  '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
