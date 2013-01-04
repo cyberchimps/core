@@ -138,7 +138,7 @@ function cyberchimps_init_meta_boxes() {
 					'std' => array( 'page_section' )
 				))
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
-		->tab("Magazine Layout Options")
+		/*->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
 			->checkbox('cyberchimps_magazine_featured_image', __( 'Featured Image', 'cyberchimps' ), '', array( 'std' => 1 ) )
 			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array( 2 => '2', 3 => '3')) )
