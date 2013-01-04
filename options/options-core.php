@@ -187,11 +187,11 @@ if( $theme_check == 'pro' ):
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_portfolio_pro_section',
@@ -1396,7 +1396,7 @@ if( $theme_check == 'pro' ):
 
 	/********* MAGAZINE STARTS *****************/
 	
-	$fields_list[] = array(
+	/*$fields_list[] = array(
 		'name' => __('Meta Data', 'cyberchimps'),
 		'id' => 'blog_magazine_metadata',
 		'type' => 'toggle',
@@ -1484,7 +1484,7 @@ if( $theme_check == 'pro' ):
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	/********* MAGAZINE ENDS *****************/
 
 	/********* BLOG SLIDER STARTS ***********/
