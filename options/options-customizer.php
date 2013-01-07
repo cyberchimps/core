@@ -24,6 +24,13 @@ function cyberchimps_admin_add_customizer_page() {
 
 add_action('customize_register', 'cyberchimps_customize');
 function cyberchimps_customize( $wp_customize ) {
+	
+	//set up defaults if they don't exist. Useful if theme is set up through live preview
+	$option_defaults = cyberchimps_get_default_values();
+	if( ! get_option( 'cyberchimps_options' ) ) {
+		update_option( 'cyberchimps_options', $option_defaults );
+	}
+	
 	class Cyberchimps_Typography_Size extends WP_Customize_Control {
 		public $type = 'select';
 
