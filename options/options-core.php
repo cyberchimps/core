@@ -506,19 +506,20 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	
 /* CUSTOM COLORS */
-	$fields_list[] = array(
-		'id' => 'cyberchimps_skin_color',
-		'class' => '',
-		'name' => __('Select a Skin Color', 'cyberchimps'),
-		'type' => 'select',
-		'std' => 'default',
-		'options' => apply_filters( 'cyberchimps_skin_color', array( 
-			'default' => __('Default', 'cyberchimps')
+	$fields_list[]	= array(
+		'name'		=> __('Select a Skin Color', 'cyberchimps'),
+		'id'		=> 'cyberchimps_skin_color',
+		'std'		=> 'default',
+		'type'		=> 'images',
+		'options'	=> apply_filters( 'cyberchimps_skin_color', array(
+			'default'	=> $imagepath . 'skins/default.png',
+			'black'		=> $imagepath . 'skins/black.png',
+			'blue'		=> $imagepath . 'skins/blue.png'
 		) ),
-		'section' => 'cyberchimps_custom_colors_section',
-		'heading' => 'cyberchimps_design_heading',
+		'section'	=> 'cyberchimps_custom_colors_section',
+		'heading'	=> 'cyberchimps_design_heading'
 	);
-	
+
 	/** COMMENTED OUT - Using WP background customization
 	$fields_list[] = array(
 		'name' => __('Background Color', 'cyberchimps'),
