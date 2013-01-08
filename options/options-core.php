@@ -512,9 +512,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'std'		=> 'default',
 		'type'		=> 'images',
 		'options'	=> apply_filters( 'cyberchimps_skin_color', array(
-			'default'	=> $imagepath . 'skins/default.png',
-			'black'		=> $imagepath . 'skins/black.png',
-			'blue'		=> $imagepath . 'skins/blue.png'
+			'default'	=> $directory_uri . '/inc/css/skins/images/default.png'
 		) ),
 		'section'	=> 'cyberchimps_custom_colors_section',
 		'heading'	=> 'cyberchimps_design_heading'
