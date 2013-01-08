@@ -47,53 +47,110 @@ function cyberchimps_customize( $wp_customize ) {
     <?php
 		}
 	}
+	
+	/********** Class for background image option starts *************/
 	class Cyberchimps_Background_Image extends WP_Customize_Control {
 		public $type = 'radio';
 
-    public function render_content() {?>
-    	<style>
-      	.images-radio-subcontainer img {
-					margin-top: 5px;
-					padding: 2px;
-          border: 5px solid #eee;
-        }
-        .images-radio-subcontainer img.of-radio-img-selected {
-          border: 5px solid #5DA7F2;
-        }
-        .images-radio-subcontainer img:hover {
-          cursor: pointer;
-          border: 5px solid #5DA7F2;
-        }
-      </style>
-      <script>jQuery( function($) {							
-							$('.of-radio-img-img').click(function(){
-							$(this).parent().parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
-							$(this).addClass('of-radio-img-selected');
-							});
-			});
+		public function render_content() {?>
+			<style>
+				.images-radio-subcontainer img {
+							margin-top: 5px;
+							padding: 2px;
+				  border: 5px solid #eee;
+				}
+				.images-radio-subcontainer img.of-radio-img-selected {
+				  border: 5px solid #5DA7F2;
+				}
+				.images-radio-subcontainer img:hover {
+				  cursor: pointer;
+				  border: 5px solid #5DA7F2;
+				}
+			</style>
+			<script>
+			  jQuery( function($) {							
+					$('.of-radio-img-img').click(function(){
+						$(this).parent().parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
+						$(this).addClass('of-radio-img-selected');
+					});
+				});
 			</script>
-        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-        <em><small><?php _e( 'make sure you have removed the image above before selecting one of these', 'cyberchimps' ); ?></small></em>
-				<?php
-				foreach( $this->choices as $value => $label ) : 
+			
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<em><small><?php _e( 'make sure you have removed the image above before selecting one of these', 'cyberchimps' ); ?></small></em>
+			<?php
+			foreach( $this->choices as $value => $label ) :
+			
 				//if get theme mod background image has a value then we need to set cyberchimps bg to none
 				$test_bg = $this->value();
 				$test_bg = ( get_theme_mod( 'background_image' ) ) ? 'none' : $test_bg;
 				$name = '_customize-radio-' . $this->id;
 				$selected = ( $test_bg == $value ) ? 'of-radio-img-selected' : '';
 				?>
-        <div class="images-radio-subcontainer">
-        <label>
+				<div class="images-radio-subcontainer">
+					<label>
 						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $test_bg, $value ); ?> style="display:none;" />
-						<img src="<?php echo esc_html( $label ); ?>" class="of-radio-img-img <?php echo esc_attr( $selected ); ?>" /><br>
-				</label> 
-        </div>
-        <?php
-				endforeach;
-    }
-
-		
+						<img src="<?php echo esc_html( $label ); ?>" class="of-radio-img-img <?php echo esc_attr( $selected ); ?>" /><br/>
+					</label> 
+				</div>
+			<?php
+			endforeach;
+		}
 	}
+	/********** Class for background image option ends *************/
+
+	/********** Class for skin color selection option starts *************/
+	class Cyberchimps_skin_selector extends WP_Customize_Control {
+		public $type = 'radio';
+
+		public function render_content() {?>
+			<style>
+				.images-skin-subcontainer {
+					display: inline;
+				}
+				.images-skin-subcontainer img {
+					margin-top: 5px;
+					padding: 2px;
+					border: 5px solid #eee;
+					height: 44px;
+				}
+				.images-skin-subcontainer img.of-radio-img-selected {
+					border: 5px solid #5DA7F2;
+				}
+				.images-skin-subcontainer img:hover {
+					cursor: pointer;
+					border: 5px solid #5DA7F2;
+				}
+			</style>
+			<script>
+			  jQuery( function($) {							
+					$('.of-radio-img-img').click(function(){
+						$(this).parent().parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
+						$(this).addClass('of-radio-img-selected');
+					});
+				});
+			</script>
+			
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php
+			foreach( $this->choices as $value => $label ) :
+			
+				//if get theme mod background image has a value then we need to set cyberchimps bg to none
+				$test_skin = $this->value();
+				$name = '_customize-radio-' . $this->id;
+				$selected = ( $test_skin == $value ) ? 'of-radio-img-selected' : '';
+				?>
+				<div class="images-skin-subcontainer">
+					<label>
+						<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $test_skin, $value ); ?> style="display:none;" />
+						<img src="<?php echo esc_html( $label ); ?>" class="of-radio-img-img <?php echo esc_attr( $selected ); ?>" />
+					</label> 
+				</div>
+			<?php
+			endforeach;
+		}
+	}
+	/********** Class for skin color selection option ends *************/
 
 	$wp_customize->add_section( 'cyberchimps_design_section', array(
 		'title'          => 'Design',
@@ -119,13 +176,13 @@ function cyberchimps_customize( $wp_customize ) {
 			'type'           => 'option',
 		) );
 	
-	$wp_customize->add_control( 'skin_color', array(
-		'label'   => __( 'Skin Color', 'cyberchimps' ),
-    'section' => 'cyberchimps_design_section',
-    'type'    => 'select',
-		'settings'   => 'cyberchimps_options[cyberchimps_skin_color]',
-    'choices'    => apply_filters( 'cyberchimps_skin_color', '' )
-	) );
+	$wp_customize	-> add_control( new Cyberchimps_skin_selector( $wp_customize, 'skin_color', array(
+		'label'		=>  __( 'Skin Color', 'cyberchimps' ),
+		'section'	=> 'cyberchimps_design_section',
+		'settings'	=> 'cyberchimps_options[cyberchimps_skin_color]',
+		'choices'	=> apply_filters( 'cyberchimps_skin_color', '' ),
+	) ) );
+	
 	
 // text color
 	$wp_customize->add_setting( 'cyberchimps_options[text_colorpicker]', array(
