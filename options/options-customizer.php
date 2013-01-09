@@ -172,7 +172,7 @@ function cyberchimps_customize( $wp_customize ) {
 	
 // theme skin
 	$wp_customize->add_setting( 'cyberchimps_options[cyberchimps_skin_color]', array(
-			'default'        => 'default',
+			'default'        => array( 'default' => get_template_directory_uri(). '/inc/css/skins/images/default.png' ),
 			'type'           => 'option',
 		) );
 	
@@ -180,7 +180,7 @@ function cyberchimps_customize( $wp_customize ) {
 		'label'		=>  __( 'Skin Color', 'cyberchimps' ),
 		'section'	=> 'cyberchimps_design_section',
 		'settings'	=> 'cyberchimps_options[cyberchimps_skin_color]',
-		'choices'	=> apply_filters( 'cyberchimps_skin_color', '' ),
+		'choices'	=> apply_filters( 'cyberchimps_skin_color', array( 'default' => get_template_directory_uri(). '/inc/css/skins/images/default.png' ) ),
 	) ) );
 	
 	
