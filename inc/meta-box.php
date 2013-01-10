@@ -146,6 +146,7 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps' ), '', array('std' => '1'))
 			->select('cyberchimps_magazine_no_of_wide_posts', __( 'Number of Wide Posts ', 'cyberchimps' ), '',
 						array('options' => array(1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')))
+			->select('cyberchimps_magazine_category', __( 'Category', 'cyberchimps' ), '', array('options' => ( $all_cats ? $all_cats : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 		/*->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps' ), __( 'From category', 'cyberchimps' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps' ), '', array('std' => __( 'featured', 'cyberchimps' )))*/
