@@ -974,3 +974,17 @@ function cyberchimps_array_field_organizer( $orig, $new ) {
 	}
 	return $orig;
 }
+
+/**** Remove sections/fields from core theme options *****/
+function cyberchimps_remove_options( $orig, $removes ) {
+	foreach( $removes as $remove ) {
+		foreach( $orig as $key => $value) {
+			if( $value['id'] == $remove ) {
+				unset( $orig[$key] );
+			}
+		}
+	}
+	
+	return $orig;
+}
+?>
