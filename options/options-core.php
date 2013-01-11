@@ -222,6 +222,12 @@ endif;
 		'id' => 'cyberchimps_featured_posts_section',
 		'label' => __('Featured Posts Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
+	);*/
+	
+	$sections_list[] = array(
+		'id'		=> 'cyberchimps_profile_section',
+		'label'		=> __('Profile Options', 'cyberchimps'),
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
 /*************************** TEMPLATE ************************************************/
@@ -1836,7 +1842,76 @@ endif;// end pro option fields
 		'section' => 'cyberchimps_featured_posts_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
-		
+	/********* FEATURED POSTS ENDS ************/
+	
+	/********* PROFILE OPTIONS STARTS **********/
+	$fields_list[]	= array(
+		'name'		=> __('Profile Name', 'cyberchimps'),
+		'id'		=> 'profile_name',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Profile Picture', 'cyberchimps'),
+		'desc'		=> __('Enter URL or upload picture', 'cyberchimps'),
+		'id'		=> 'profile_picture',
+		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Profession', 'cyberchimps'),
+		'id'		=> 'profile_profession',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('About', 'cyberchimps'),
+		'id'		=> 'profile_about',
+		'std'		=> '',
+		'type'		=> 'textarea',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Location', 'cyberchimps'),
+		'id'		=> 'profile_location',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Phone Number', 'cyberchimps'),
+		'id'		=> 'profile_phone',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Email Address', 'cyberchimps'),
+		'id'		=> 'profile_email',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Website Address', 'cyberchimps'),
+		'id'		=> 'profile_website',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	/********* PROFILE OPTIONS ENDS ************/
+	
 /*************************** TEMPLATES ***************************************************/
 	
 /* SINGLE POSTS */
