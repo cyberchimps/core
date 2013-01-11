@@ -1909,6 +1909,181 @@ endif;// end pro option fields
 		'section'	=> 'cyberchimps_profile_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
+	
+	/* Social options for profile starts */
+	$fields_list[]	= array(
+		'name'		=> __('Twitter', 'cyberchimps'),
+		'id' 		=> 'profile_twitter',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Twitter URL', 'cyberchimps'),
+		'id'		=> 'profile_twitter_url',
+		'class'		=> 'profile_twitter_toggle',
+		'std'		=> 'http://www.twitter.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+
+	$fields_list[]	= array(
+		'name'		=> __('Facebook', 'cyberchimps'),
+		'id'		=> 'profile_facebook',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+
+	$fields_list[]	= array(
+		'name'		=> __('Facebook URL', 'cyberchimps'),
+		'id'		=> 'profile_facebook_url',
+		'class'		=> 'profile_facebook_toggle',
+		'std'		=> 'http://www.facebook.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google+', 'cyberchimps'),
+		'id'		=> 'profile_google',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Google+ URL', 'cyberchimps'),
+		'id'		=> 'profile_google_url',
+		'class'		=> 'profile_google_toggle',
+		'std'		=> 'http://www.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Flickr', 'cyberchimps'),
+		'id'		=> 'profile_flickr',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Flickr URL', 'cyberchimps'),
+		'id'		=> 'profile_flickr_url',
+		'class'		=> 'profile_flickr_toggle',
+		'std'		=> 'http://www.flickr.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest', 'cyberchimps'),
+		'id'		=> 'profile_pinterest',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest URL', 'cyberchimps'),
+		'id'		=> 'profile_pinterest_url',
+		'class'		=> 'profile_pinterest_toggle',
+		'std'		=> 'http://www.pinterest.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('LinkedIn', 'cyberchimps'),
+		'id'		=> 'profile_linkedin',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[] = array(
+		'name'		=> __('LinkedIn URL', 'cyberchimps'),
+		'id'		=> 'profile_linkedin_url',
+		'class'		=> 'profile_linkedin_toggle',
+		'std'		=> 'http://www.linkedin.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('YouTube', 'cyberchimps'),
+		'id'		=> 'profile_youtube',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('YouTube URL', 'cyberchimps'),
+		'id'		=> 'profile_youtube_url',
+		'class'		=> 'profile_youtube_toggle',
+		'std'		=> 'http://www.youtube.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('RSS', 'cyberchimps'),
+		'id'		=> 'profile_rss',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('RSS URL', 'cyberchimps'),
+		'id'		=> 'profile_rss_url',
+		'class'		=> 'profile_rss_toggle',
+		'std'		=> get_bloginfo_rss( 'rss_url' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Email', 'cyberchimps'),
+		'id'		=> 'profile_email_id',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Email Address', 'cyberchimps'),
+		'id'		=> 'profile_email_id_url',
+		'class'		=> 'profile_email_id_toggle',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps', 'cyberchimps'),
+		'id'		=> 'profile_googlemaps',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps URL', 'cyberchimps'),
+		'id'		=> 'profile_googlemaps_url',
+		'class'		=> 'profile_googlemaps_toggle',
+		'std'		=> 'http://www.maps.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	/* Social options for profile ends */
+	
 	/********* PROFILE OPTIONS ENDS ************/
 	
 /*************************** TEMPLATES ***************************************************/
