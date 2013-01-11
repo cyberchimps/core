@@ -1420,6 +1420,15 @@ if( $theme_check == 'pro' ):
 	);
 	
 	$fields_list[]	= array(
+		'name'		=> __('Category', 'cyberchimps'),
+		'id'		=> 'blog_magazine_category',
+		'type'		=> 'select',
+		'options'	=> $options_categories,
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
 		'name'		=> __('Featured Excerpt Length', 'cyberchimps'),
 		'id'		=> 'blog_magazine_excerpt_length',
 		'type'		=> 'text',
@@ -1442,12 +1451,12 @@ if( $theme_check == 'pro' ):
 	);
 	
 	$fields_list[]	= array(
-		'name'		=> __('Number of Featured Posts', 'cyberchimps'),
-		'id'		=> 'blog_magazine_no_of_posts',
+		'name'		=> __('Number of Rows', 'cyberchimps'),
+		'id'		=> 'blog_magazine_no_of_rows',
 		'type'		=> 'select',
-		'std'		=> '4',
+		'std'		=> '2',
 		'options'	=> array(
-			'4'  => '4',
+			'1' => '1', '2' => '2', '3' => '3', '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
 			'9'  => '9',  '10' => '10', '11' => '11', '12' => '12',
 			'13' => '13', '14' => '14', '15' => '15', '16' => '16',
@@ -1491,14 +1500,6 @@ if( $theme_check == 'pro' ):
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[]	= array(
-		'name'		=> __('Category', 'cyberchimps'),
-		'id'		=> 'blog_magazine_category',
-		'type'		=> 'select',
-		'options'	=> $options_categories,
-		'section'	=> 'cyberchimps_blog_magazine_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
 	/********* MAGAZINE ENDS *****************/
 
 	/********* BLOG SLIDER STARTS ***********/
