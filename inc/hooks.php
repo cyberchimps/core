@@ -29,6 +29,23 @@ function cyberchimps_add_sidebar_left() {
 function cyberchimps_add_sidebar_right() {
 	get_sidebar( 'right' );
 }
+//Setting content classes for different sidebars
+function cyberchimps_content_sbr_class( $classes ) {
+	$classes[] = 'content-sidebar-right';
+	return $classes;
+}
+function cyberchimps_content_sbl_class( $classes ) {
+	$classes[] = 'content-sidebar-left';
+	return $classes;
+}
+function cyberchimps_content_sb2_class( $classes ) {
+	$classes[] = 'content-sidebar-2';
+	return $classes;
+}
+function cyberchimps_content_sb2r_class( $classes ) {
+	$classes[] = 'content-sidebar-2-right';
+	return $classes;
+}
 
 /* Start of functions to add different classes for html elements to $classes[] */
 function cyberchimps_class_container_fluid( $classes ) {

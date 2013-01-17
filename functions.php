@@ -138,17 +138,20 @@ function cyberchimps_get_layout( $layout_type ) {
 			case 'right_sidebar' :
 				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sbr_class' );
 				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
 			break;
 			case 'left_sidebar' :
 				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sbl_class' );
 				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
 			break;
 			case 'content_middle' :
 				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
 				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sb2_class' );
 				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
 				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
 			break;
@@ -156,6 +159,7 @@ function cyberchimps_get_layout( $layout_type ) {
 				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_left');
 				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span6');
+				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sb2r_class' );
 				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
 				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
 			break;
