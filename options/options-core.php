@@ -721,12 +721,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[]	= array(
 		'name'		=> __('Choose your icon style', 'cyberchimps'),
 		'id'		=> 'theme_backgrounds',
-		'std'		=> 'default',
+		'std'		=> apply_filters( 'cyberchimps_social_icon_default', 'default' ),
 		'type'		=> 'images',
-		'options'	=> array(
-			'default'	=> $imagepath . 'social/thumbs/icons-default.png',
-			'legacy'	=> $imagepath . 'social/thumbs/icons-classic.png',
-			'round'		=> $imagepath . 'social/thumbs/icons-round.png'),
+		'options'	=> apply_filters( 'cyberchimps_social_icon_options', array(
+									'default'	=> $imagepath . 'social/thumbs/icons-default.png',
+									'legacy'	=> $imagepath . 'social/thumbs/icons-classic.png',
+									'round'		=> $imagepath . 'social/thumbs/icons-round.png' 
+									) ),
 		'section'	=> 'cyberchimps_header_social_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
