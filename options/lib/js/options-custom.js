@@ -56,9 +56,13 @@ jQuery(document).ready(function($) {
 		$this.parent().find('div.clear').css("display", "none");
 		$this.find("span.minus").removeClass('minus');
 		if($this.siblings('div').is(":visible")) {
-			$this.siblings('div').fadeOut();
+			$this.siblings('div').fadeOut(function(){
+								cc_height($('.cc-content').height() - $this.siblings('div').height());
+							});
 		} else {
-			$this.siblings('div').fadeIn();
+			$this.siblings('div').fadeIn(function(){
+								cc_height($('.cc-content').height() + $this.siblings('div').height());
+							});
 			$this.find("span").addClass('minus');
 		}
 	});
@@ -69,10 +73,9 @@ jQuery(document).ready(function($) {
 		callout_section		: "cyberchimps_blog_callout_section",
 		twitterbar_section	: "cyberchimps_twitterbar_section",
 		carousel_section	: "cyberchimps_carousel_section",
-		magazine			: "cyberchimps_blog_magazine_section",
+		//magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
-		profile					: "cyberchimps_profile_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
@@ -213,13 +216,14 @@ jQuery(document).ready(function($) {
 		var height_min = '';
 		var total_height = '';
 		var content_height = height;
+		var menu_height = $('.cc-left-menu ul.cc-parent').height();
 		if($('body').width() > 767) {
-			if ( height < 207 ){
-				height_min = $('.cc-left-menu').height();
+			if ( height < menu_height ){
+				content_height = menu_height + 50;
 			} else {
-				height_min = 50;
+				content_height = content_height + 50;
 			}
-			total_height = (height_min + content_height) + 'px';
+			total_height = (content_height) + 'px';
 		}
 		$('.cc-left-menu').height(total_height);
 	}
@@ -402,9 +406,65 @@ jQuery(document).ready(function($) {
 	});
 
 /* add controls for modal welcome note */
-	$('#welcomeModal').modal()
+	$('#welcomeModal').modal();
 	
 	$('#welcomeModalSave').click(function(e){
-			$('#modal_welcome_note_display').attr('checked', false);
-		})
+		$('#modal_welcome_note_display').attr('checked', false);
+	});
+
+	/* **************** JS for slider customization starts ****************** */
+
+	// Hide empty slider options 
+	$('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container').each(function(){
+		if( $(this).children('.input-append').children('.upload').val() == '' ){
+			$(this).hide();
+			$(this).next().hide();
+			$(this).next().next().hide();
+		}
+	});
+
+	// Check whetehr total number of slider is less than maximum possible number of sliders.
+	if($('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:last').prev().is(':hidden')){
+
+		// Add button to add new slider.
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper').append('<div class="field-container"><button id="add_new_slide" class="btn btn-primary"><i class="icon-plus icon-white"></i></button></div>');
+
+		// Print remaining number of slider that can be added.
+		$('#cyberchimps_blog_slider_lite_section .field-container:last').append('<div class="slider-countdown">' + slider_countdown() + ' more sliders remaining</div>');
+	}
+	else {
+		$('#cyberchimps_blog_slider_lite_section .field-container:last').append('Maximum possible number of sliders are already added');
+	}
+
+	// Things to be done when add new slider button is clicked.
+	$('#cyberchimps_blog_slider_lite_section #add_new_slide').click(function(e){
+		e.preventDefault();
+
+		// running the show thrice call both the slide and link inputs
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:hidden:first').show();
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:hidden:first').show();
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:hidden:first').show();
+		
+		// Hide "Add new slider" button if maximum possible number of sliders are already added.
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:last').each(function(){
+			if($(this).prev().is(':visible')){
+				$('#cyberchimps_blog_slider_lite_section #add_new_slide').hide();
+			};
+		});
+		
+		// Modify slider countdown.
+		$('.slider-countdown').text( slider_countdown() + ' more sliders remaining' );	
+	});
+
+	// Calculates and returns remaining number of sliders
+	function slider_countdown() {
+		var countdown = 0;
+		$('#cyberchimps_blog_slider_lite_section .field-container').each(function(){
+			if( $(this).css('display') == 'none' ) {
+				countdown++;
+			}
+		});
+		return countdown/3;
+	}
+	/* **************** JS for slider customization ends ****************** */
 });
