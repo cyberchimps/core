@@ -377,7 +377,7 @@ function cyberchimps_post_tags() {
 				if ( $tags_list ) :
 				$tags = sprintf( __( 'Tags:', 'cyberchimps' ) . ' %1$s', $tags_list );
 			?>
-			<span class="tag-links">
+			<span class="taglinks">
 				<?php echo apply_filters( 'cyberchimps_post_tags', $tags ); ?>
 			</span>
       <span class="sep"> <?php echo apply_filters( 'cyberchimps_entry_meta_sep', '|' ); ?> </span>
