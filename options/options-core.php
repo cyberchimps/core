@@ -187,11 +187,11 @@ if( $theme_check == 'pro' ):
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_portfolio_pro_section',
@@ -224,11 +224,11 @@ endif;
 		'heading' => 'cyberchimps_blog_heading'
 	);*/
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id'		=> 'cyberchimps_profile_section',
 		'label'		=> __('Profile Options', 'cyberchimps'),
 		'heading'	=> 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 /*************************** TEMPLATE ************************************************/
 
@@ -1400,7 +1400,7 @@ if( $theme_check == 'pro' ):
 	);
 	/********* PORTFOLIO PRO ENDS *****************/
 
-	/********* MAGAZINE STARTS *****************/
+	/********* MAGAZINE STARTS *****************
 	
 	$fields_list[]	= array(
 		'name'		=> __('Meta Data', 'cyberchimps'),
@@ -1845,7 +1845,7 @@ endif;// end pro option fields
 	);
 	/********* FEATURED POSTS ENDS ************/
 	
-	/********* PROFILE OPTIONS STARTS **********/
+	/********* PROFILE OPTIONS STARTS **********
 	$fields_list[]	= array(
 		'name'		=> __('Profile Name', 'cyberchimps'),
 		'id'		=> 'profile_name',
@@ -1912,7 +1912,7 @@ endif;// end pro option fields
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	/* Social options for profile starts */
+	/* Social options for profile starts 
 	$fields_list[]	= array(
 		'name'		=> __('Twitter', 'cyberchimps'),
 		'id' 		=> 'profile_twitter',

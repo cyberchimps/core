@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
 		boxes_lite 			: "cyberchimps_blog_boxes_lite_section",
-		profile				: "cyberchimps_profile_section"
+		//profile				: "cyberchimps_profile_section"
 	};
 	
 	jQuery(".blog-section-order-tracker").change(function(){

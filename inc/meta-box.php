@@ -140,7 +140,7 @@ function cyberchimps_init_meta_boxes() {
 					'std' => array( 'page_section' )
 				))
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
-		->tab("Magazine Layout Options")
+		/*->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
 			->checkbox('cyberchimps_magazine_featured_image', __( 'Featured Image', 'cyberchimps' ), '', array( 'std' => 1 ) )
 			->select('cyberchimps_magazine_category', __( 'Category', 'cyberchimps' ), '', array('options' => ( $all_cats ? $all_cats : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
@@ -234,7 +234,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
-		->tab("Profile Options")
+		/*->tab("Profile Options")
 			->text('profile_name', __( 'Profile Name', 'cyberchimps' ), "" )
 			->single_image('profile_picture', __( 'Profile Picture', 'cyberchimps' ), '', array('std' => $default_profile))
 			->text('profile_profession', __( 'Profession', 'cyberchimps' ), "" )
@@ -262,7 +262,7 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('profile_email_id', __( 'Email', 'cyberchimps' ), '')
 			->text('profile_email_id_url', __( 'Email URL', 'cyberchimps' ), "" )
 			->checkbox('profile_googlemaps', __( 'Google Map', 'cyberchimps' ), '' )
-			->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps' ), "", array('std' => 'http://www.maps.google.com/' ) )
+			->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps' ), "", array('std' => 'http://www.maps.google.com/' ) )*/
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {
