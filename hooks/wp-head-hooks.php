@@ -147,7 +147,7 @@ add_action( 'wp_head', 'cyberchimps_apple', 2 );
 function cyberchimps_skin_styles() {
 	$skin = cyberchimps_get_option( 'cyberchimps_skin_color' );
 	if( $skin != 'default' ) {
-			wp_enqueue_style( 'skin-style', get_stylesheet_directory_uri() . '/inc/css/skins/'.$skin.'.css', array('style'), '1.0' );	
+			wp_enqueue_style( 'skin-style', get_template_directory_uri() . '/inc/css/skins/'.$skin.'.css', array('style'), '1.0' );	
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 21 );
