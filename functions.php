@@ -913,7 +913,7 @@ function cyberchimps_google_analytics() {
 		echo '<script type="text/javascript">'.$code.'</script>';
 	}
 }
-add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
+add_action( 'wp_head', 'cyberchimps_google_analytics', 9999 );
 
 // Add an array to an existing array in a certain position, used by options
 function cyberchimps_heading_filter( $orig, $new ) {	

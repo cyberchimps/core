@@ -714,6 +714,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section'	=> 'cyberchimps_header_options_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
+	
+	$fields_list[]	= array(
+		'id'		=> 'google_analytics',
+		'name'		=> __('Google Analytics', 'cyberchimps'),
+		'type'		=> 'textarea',
+		'desc'		=> __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
+		'section'	=> 'cyberchimps_header_options_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
 		
 	// Search bar toggle
 	$fields_list[]	= array(
@@ -2377,15 +2386,6 @@ endif;// end pro option fields
 		'name'		=> __('Footer Copyright Text', 'cyberchimps'),
 		'std'		=> '&copy; ' . get_bloginfo('name'),
 		'type'		=> 'text',
-		'section'	=> 'cyberchimps_footer_section',
-		'heading'	=> 'cyberchimps_footer_heading'
-	);
-	
-	$fields_list[]	= array(
-		'id'		=> 'google_analytics',
-		'name'		=> __('Google Analytics', 'cyberchimps'),
-		'type'		=> 'textarea',
-		'desc'		=> __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
 		'section'	=> 'cyberchimps_footer_section',
 		'heading'	=> 'cyberchimps_footer_heading'
 	);
