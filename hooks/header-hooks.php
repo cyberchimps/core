@@ -261,7 +261,7 @@ global $current_user; ?>
 		<div id ="register" class="span5">
     <div class="register">
 			<?php if(!is_user_logged_in()) :?>
-				<?php wp_loginout(); ?> <?php wp_meta(); ?> |<?php wp_register(); ?>
+				<?php wp_loginout(); ?> <?php wp_meta(); ?> | <?php wp_register( '', '', true ); ?>
 			<?php else :?>
 				Welcome back <strong><?php global $current_user; get_currentuserinfo(); echo ($current_user->user_login); ?></strong> | <?php wp_loginout(); ?>
 			<?php endif;?>
