@@ -129,7 +129,7 @@ add_action('wp', 'cyberchimps_create_layout');
 
 function cyberchimps_get_layout( $layout_type ) {
 	
-	$wide_sidebar = cyberchimps_get_option( 'wide_sidebar', 1 );
+	$wide_sidebar = cyberchimps_get_option( 'wide_sidebar', 0 );
 	$layout_type = ( $layout_type ) ? $layout_type : 'right_sidebar';
 	$content_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span8' : 'cyberchimps_class_span9';
 	$sidebar_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span4' : 'cyberchimps_class_span3';

@@ -421,7 +421,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Wide Sidebar', 'cyberchimps'),
 		'id' => 'wide_sidebar',
 		'type' => 'toggle',
-		'std' => 1,
+		'std' => 0,
 		'desc' => __( 'Only works on layouts with 1 sidebar', 'cyberchimps' ),
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
