@@ -129,7 +129,10 @@ add_action('wp', 'cyberchimps_create_layout');
 
 function cyberchimps_get_layout( $layout_type ) {
 	
+	$wide_sidebar = cyberchimps_get_option( 'wide_sidebar', 0 );
 	$layout_type = ( $layout_type ) ? $layout_type : 'right_sidebar';
+	$content_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span8' : 'cyberchimps_class_span9';
+	$sidebar_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span4' : 'cyberchimps_class_span3';
 	
 		switch($layout_type) {
 			case 'full_width' :
@@ -137,15 +140,15 @@ function cyberchimps_get_layout( $layout_type ) {
 			break;
 			case 'right_sidebar' :
 				add_action( 'cyberchimps_after_content_container', 'cyberchimps_add_sidebar_right');
-				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_content_class', $content_span );
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sbr_class' );
-				add_filter( 'cyberchimps_sidebar_right_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_right_class', $sidebar_span );
 			break;
 			case 'left_sidebar' :
 				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
-				add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span9');
+				add_filter( 'cyberchimps_content_class', $content_span );
 				add_filter( 'cyberchimps_content_class', 'cyberchimps_content_sbl_class' );
-				add_filter( 'cyberchimps_sidebar_left_class', 'cyberchimps_class_span3');
+				add_filter( 'cyberchimps_sidebar_left_class', $sidebar_span );
 			break;
 			case 'content_middle' :
 				add_action( 'cyberchimps_before_content_container', 'cyberchimps_add_sidebar_left');
@@ -910,7 +913,7 @@ function cyberchimps_google_analytics() {
 		echo '<script type="text/javascript">'.$code.'</script>';
 	}
 }
-add_action( 'cyberchimps_after_wrapper', 'cyberchimps_google_analytics' );
+add_action( 'wp_head', 'cyberchimps_google_analytics', 9999 );
 
 // Add an array to an existing array in a certain position, used by options
 function cyberchimps_heading_filter( $orig, $new ) {	

@@ -416,6 +416,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_custom_layout_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
+	
+	$fields_list[] = array(
+		'name' => __('Wide Sidebar', 'cyberchimps'),
+		'id' => 'wide_sidebar',
+		'type' => 'toggle',
+		'std' => 0,
+		'desc' => __( 'Only works on layouts with 1 sidebar', 'cyberchimps' ),
+		'section' => 'cyberchimps_custom_layout_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
 		
 	$fields_list[] = array(
 		'name' => __('Max Width', 'cyberchimps'),
@@ -701,6 +711,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'		=> 'apple_touch_uploader',
 		'class'		=> 'custom_apple_toggle',
 		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_header_options_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
+	$fields_list[]	= array(
+		'id'		=> 'google_analytics',
+		'name'		=> __('Google Analytics', 'cyberchimps'),
+		'type'		=> 'textarea',
+		'desc'		=> __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
 		'section'	=> 'cyberchimps_header_options_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
@@ -2367,15 +2386,6 @@ endif;// end pro option fields
 		'name'		=> __('Footer Copyright Text', 'cyberchimps'),
 		'std'		=> '&copy; ' . get_bloginfo('name'),
 		'type'		=> 'text',
-		'section'	=> 'cyberchimps_footer_section',
-		'heading'	=> 'cyberchimps_footer_heading'
-	);
-	
-	$fields_list[]	= array(
-		'id'		=> 'google_analytics',
-		'name'		=> __('Google Analytics', 'cyberchimps'),
-		'type'		=> 'textarea',
-		'desc'		=> __( 'Copy and paste your Google Analytics code here', 'cyberchimps' ),
 		'section'	=> 'cyberchimps_footer_section',
 		'heading'	=> 'cyberchimps_footer_heading'
 	);
