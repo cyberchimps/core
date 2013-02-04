@@ -710,6 +710,23 @@ if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
 }
 
+/**
+* Set custom post excerpt link if excerpt is supplied manually.
+*/ 
+function manual_excerpt_read_more_link($output) {
+
+	global $post;
+
+	$linktext = cyberchimps_option( 'blog_read_more_text' );
+	$linktext = $linktext == '' ? 'Read More' : $linktext;
+	
+	if(!empty($post->post_excerpt))
+		return $output . '<p><a class="excerpt-more" href="'. get_permalink($post->ID) . '">'. $linktext. '</a></p>';
+	else
+		return $output;
+}
+add_filter('the_excerpt', 'manual_excerpt_read_more_link');
+
 function cyberchimps_blog_excerpt_length( $length ) {
 	global $post;
 	if( cyberchimps_option( 'blog_excerpt_length' ) != '' ) {
