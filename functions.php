@@ -504,7 +504,8 @@ function cyberchimps_default_site_title() {
 	global $page, $paged;
 
 	// Add the blog name.
-	bloginfo( 'name' );
+	if( !is_feed() )
+		bloginfo( 'name' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
