@@ -1012,4 +1012,10 @@ function cyberchimps_remove_options( $orig, $removes ) {
 	
 	return $orig;
 }
+
+/* Container width fix for IE8 */
+function cyberchimps_ie8_responsive(){
+	echo '<style type="text/css">.ie8 .container {max-width: '. cyberchimps_get_option('max_width') . 'px;width:auto;}</style>';
+}
+add_action( 'wp_head', 'cyberchimps_ie8_responsive');
 ?>
