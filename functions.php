@@ -271,10 +271,54 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 	}
 }
 
+class Cyberchimps_Fallback_Walker extends Walker_Page {
+    function start_lvl(&$output, $depth) {
+        if( $depth == 0 ) {
+			$indent = str_repeat( "\t", $depth );
+			$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+		} else {
+			$indent = str_repeat( "\t", $depth );
+			$output .= "\n$indent<ul>\n";
+		}
+    }
+    function start_el(&$output, $page, $depth, $args, $current_page) {
+        if ( $depth )
+            $indent = str_repeat("\t", $depth);
+        else
+            $indent = '';
+				
+        extract($args, EXTR_SKIP);
+        $class_attr = '';
+				$data = '';
+				$link_class_attr = '';
+				$caret = '';
+				if ( $depth == 0 && !empty($args['has_children']) ) {
+					$class_attr .= 'dropdown ';
+					$data = 'data-dropdown="dropdown"'; 
+					$link_class_attr = 'dropdown-toggle';
+					$caret = '<b class="caret"></b>';
+				}
+        if ( !empty($current_page) ) {
+            $_current_page = get_page( $current_page );
+            if ( (isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors)) || ( $page->ID == $current_page ) || ( $_current_page && $page->ID == $_current_page->post_parent ) ) {
+                $class_attr .= 'current-menu-item current_page_item active';
+            }
+        } 
+				elseif ( (is_single() || is_archive()) && ($page->ID == get_option('page_for_posts')) ) {
+            $class_attr = '';
+        }
+        if ( $class_attr != '' ) {
+            $class_attr = ' class="' . $class_attr . '"';
+        }
+        $output .= $indent . '<li' . $class_attr . $data . '><a href="' . get_page_link($page->ID) . '"' . $link_class_attr . '>' . apply_filters( 'the_title', $page->post_title, $page->ID ) . $caret . '</a>';
+    }
+}
+
 // Sets fallback menu for 1 level. Could use preg_split to have children displayed too
 function cyberchimps_fallback_menu() {
+	$walker = new cyberchimps_fallback_walker();
 	$args = array(
-		'depth'        => 1,
+		'depth'        => 0,
 		'show_date'    => '',
 		'date_format'  => '',
 		'child_of'     => 0,
@@ -286,16 +330,23 @@ function cyberchimps_fallback_menu() {
 		'sort_column'  => 'menu_order, post_title',
 		'link_before'  => '',
 		'link_after'   => '',
-		'walker'       => '',
+		'walker'       => $walker,
 		'post_type'    => 'page',
 		'post_status'  => 'publish' 
 	);
 	$pages = wp_list_pages( $args );
 	$prepend = '<ul id="menu-menu" class="nav">';
+	
+	//check if the toggle is set. And if it is, then add the home button to the start of the primary menu.
+	if( cyberchimps_get_option( 'menu_home_button', 1 ) ) {
+		$home = '<li id="menu-item-ifeature-home"><a href="'. home_url() .
+				'"><img src="'. get_template_directory_uri() .'/images/home.png" alt="Home" /></a></li>';
+	$prepend .= $home;
+	}
+	
 	$append = '</ul>';
 	echo $prepend.$pages.$append;
 }
-
 
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
 
