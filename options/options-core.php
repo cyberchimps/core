@@ -1633,7 +1633,7 @@ if( $theme_check == 'pro' ):
 		'name'		=> __('Callout Text', 'cyberchimps'),
 		'id'		=> 'callout_text',
 		'std'		=> sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ), 
-		'type'		=> 'editor',
+		'type'		=> 'textarea',
 		'section'	=> 'cyberchimps_blog_callout_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
