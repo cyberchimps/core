@@ -336,16 +336,10 @@ function cyberchimps_fallback_menu() {
 	);
 	$pages = wp_list_pages( $args );
 	$prepend = '<ul id="menu-menu" class="nav">';
-	
-	//check if the toggle is set. And if it is, then add the home button to the start of the primary menu.
-	if( cyberchimps_get_option( 'menu_home_button', 1 ) ) {
-		$home = '<li id="menu-item-ifeature-home"><a href="'. home_url() .
-				'"><img src="'. get_template_directory_uri() .'/images/home.png" alt="Home" /></a></li>';
-	$prepend .= $home;
-	}
-	
+	$pages = apply_filters( 'cyberchimps_fallback_menu_filter', $pages, $args );
 	$append = '</ul>';
-	echo $prepend.$pages.$append;
+	$output = $prepend.$pages.$append;
+	echo $output;
 }
 
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
