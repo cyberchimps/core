@@ -231,7 +231,7 @@ function cyberchimps_init_meta_boxes() {
 		->tab("Carousel Options")
 			->select('carousel_category', __( 'Carousel Category', 'cyberchimps' ), '', array('options' => ( $carousel_options ? $carousel_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 		->tab("Twitter Options")
-			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
+			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ), array('std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 		/*->tab("Profile Options")

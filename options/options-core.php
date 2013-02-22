@@ -1845,7 +1845,7 @@ endif;// end pro option fields
 	$fields_list[] = array(
 		'name' => __('Twitter Handle', 'cyberchimps'),
 		'id' => 'twitter_handle',
-		'std' => 'CyberChimps',
+		'std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ),
 		'type' => 'text',
 		'section' => 'cyberchimps_twitterbar_section',
 		'heading' => 'cyberchimps_blog_heading'
