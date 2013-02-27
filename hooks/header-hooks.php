@@ -24,7 +24,7 @@ function cyberchimps_header_section_order() {
 	}
 	// call the database results and if they don't exist then call the defaults from above
 	$header_section = cyberchimps_get_option( 'header_section_order', $defaults );
-	$header_section = ( $header_section == '' ) ? array( 'cyberchimps_header_content' ) : $header_section;
+	$header_section = ( $header_section == '' ) ? $defaults : $header_section;
 	
 	if ( is_array( $header_section ) ) {
 		foreach( $header_section as $func ) {
