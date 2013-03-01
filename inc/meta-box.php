@@ -234,7 +234,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ), array('std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
-		/*->tab("Profile Options")
+		->tab("Profile Options")
 			->text('profile_name', __( 'Profile Name', 'cyberchimps' ), "" )
 			->single_image('profile_picture', __( 'Profile Picture', 'cyberchimps' ), '', array('std' => $default_profile))
 			->text('profile_profession', __( 'Profession', 'cyberchimps' ), "" )
@@ -262,7 +262,7 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('profile_email_id', __( 'Email', 'cyberchimps' ), '')
 			->text('profile_email_id_url', __( 'Email URL', 'cyberchimps' ), "" )
 			->checkbox('profile_googlemaps', __( 'Google Map', 'cyberchimps' ), '' )
-			->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps' ), "", array('std' => 'http://www.maps.google.com/' ) )*/
+			->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps' ), "", array('std' => 'http://www.maps.google.com/' ) )
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {

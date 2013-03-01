@@ -119,7 +119,7 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		
 		if ( $value != '' ) { 
 			$remove = '<a href="javascript:(void);" class="mlu_remove button">Remove</a>';
-			$image = preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value );
+			$image = ( strpos( $value, 'gravatar' ) ) ? $value : preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value );
 			if ( $image ) {
 				$output .= '<img src="' . $value . '" alt="" />'.$remove.'';
 			} else {

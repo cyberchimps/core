@@ -103,7 +103,12 @@ add_filter( 'cyberchimps_sanitize_color', 'cyberchimps_sanitize_hex' );
 function cyberchimps_sanitize_upload( $input ) {
 	$output = '';
 	$filetype = wp_check_filetype($input);
-	if ( $filetype["ext"] ) {
+	
+	// check if gravatar has been set as an image
+	if( strpos( $input, 'gravatar' ) ) {
+		$output = $input;
+	}
+	elseif ( $filetype["ext"] ) {
 		$output = $input;
 	}
 	return $output;
