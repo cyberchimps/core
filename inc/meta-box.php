@@ -40,7 +40,16 @@ function cyberchimps_init_meta_boxes() {
 	$image_path		 = $directory_uri . "/cyberchimps/lib/images/";
 	$portfolio_image = $image_path . "portfolio.jpg";
 	$slider_image	 = $directory_uri . "/elements/lib/images/slider/slide1.jpg";
-	$default_profile = $image_path . "default_profile_pic.png";
+	
+	// add gravatar image as default
+	$email = get_option( 'admin_email' );
+	if( $email ) {
+		$hash = md5( strtolower( trim ( $email ) ) );
+		$default_profile =  'http://gravatar.com/avatar/' . $hash . '.jpg?s=250&r=g';
+	}
+	else {
+		$default_profile = $directory_uri . '/elements/lib/images/profile/profile.jpg';
+	}
 	
 	// Declare variables
 	$portfolio_options = array(); 
