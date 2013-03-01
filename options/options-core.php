@@ -224,11 +224,11 @@ endif;
 		'heading' => 'cyberchimps_blog_heading'
 	);*/
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id'		=> 'cyberchimps_profile_section',
 		'label'		=> __('Profile Options', 'cyberchimps'),
 		'heading'	=> 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 /*************************** TEMPLATE ************************************************/
 
@@ -1864,7 +1864,7 @@ endif;// end pro option fields
 	);
 	/********* FEATURED POSTS ENDS ************/
 	
-	/********* PROFILE OPTIONS STARTS **********/
+	/********* PROFILE OPTIONS STARTS **********
 	
 	// add gravatar image as default
 	$email = get_option( 'admin_email' );
@@ -1943,7 +1943,7 @@ endif;// end pro option fields
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	/* Social options for profile starts */
+	/* Social options for profile starts *
 	$fields_list[]	= array(
 		'name'		=> __('Twitter', 'cyberchimps'),
 		'id' 		=> 'profile_twitter',
