@@ -547,15 +547,46 @@ add_action( 'save_post', 'cyberchimps_category_transient_flusher' );
 // Prints out default title of the site.
 function cyberchimps_default_site_title() {
 	global $page, $paged;
-
+		
 	// Add the blog name.
 	if( !is_feed() )
 		bloginfo( 'name' );
-
+		
+	//Title for page/post
+	if( is_page() || is_single() )
+		echo ' | ' . get_the_title();
+	
+	//Title for archives 	
+	if( is_archive() ) {
+		if ( is_category() ) {
+			printf( __( ' | Category Archives: ', 'cyberchimps' ) . '%s', single_cat_title( '', false ) );
+		} elseif ( is_tag() ) {
+			printf( __( ' | Tag Archives: ', 'cyberchimps' ) . '%s', single_tag_title( '', false ) );
+		} elseif ( is_author() ) {
+			_e( ' | Author Archives ', 'cyberchimps' );
+		} elseif ( is_day() ) {
+			printf( __( ' | Daily Archives: ', 'cyberchimps' ) . '%s', get_the_date() );
+		} elseif ( is_month() ) {
+			printf( __( ' | Monthly Archives: ', 'cyberchimps' ) . '%s', get_the_date( 'F Y' ) );
+		} elseif ( is_year() ) {
+			printf( __( ' | Yearly Archives: ', 'cyberchimps' ) . '%s', get_the_date( 'Y' ) );
+		} else {
+			_e( ' | Archives', 'cyberchimps' );
+		}
+	}
+	
+	//Title for search 
+	if( is_search() )
+		echo ' | Search for &quot;' . get_search_query() . '&quot;';
+	
+	//Title for 404 
+	if ( is_404() )
+		echo ' | Not Found '; 
+		
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+		echo ' | ' . $site_description;
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
