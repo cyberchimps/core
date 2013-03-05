@@ -558,20 +558,21 @@ function cyberchimps_default_site_title() {
 	
 	//Title for archives 	
 	if( is_archive() ) {
+		echo ' | ';
 		if ( is_category() ) {
-			printf( __( ' | Category Archives: ', 'cyberchimps' ) . '%s', single_cat_title( '', false ) );
+			printf( __( 'Category Archives:', 'cyberchimps' ) . ' %s', single_cat_title( '', false ) );
 		} elseif ( is_tag() ) {
-			printf( __( ' | Tag Archives: ', 'cyberchimps' ) . '%s', single_tag_title( '', false ) );
+			printf( __( 'Tag Archives:', 'cyberchimps' ) . ' %s', single_tag_title( '', false ) );
 		} elseif ( is_author() ) {
-			_e( ' | Author Archives ', 'cyberchimps' );
+			_e( 'Author Archives', 'cyberchimps' );
 		} elseif ( is_day() ) {
-			printf( __( ' | Daily Archives: ', 'cyberchimps' ) . '%s', get_the_date() );
+			printf( __( 'Daily Archives:', 'cyberchimps' ) . ' %s', get_the_date() );
 		} elseif ( is_month() ) {
-			printf( __( ' | Monthly Archives: ', 'cyberchimps' ) . '%s', get_the_date( 'F Y' ) );
+			printf( __( 'Monthly Archives:', 'cyberchimps' ) . ' %s', get_the_date( 'F Y' ) );
 		} elseif ( is_year() ) {
-			printf( __( ' | Yearly Archives: ', 'cyberchimps' ) . '%s', get_the_date( 'Y' ) );
+			printf( __( 'Yearly Archives:', 'cyberchimps' ) . ' %s', get_the_date( 'Y' ) );
 		} else {
-			_e( ' | Archives', 'cyberchimps' );
+			_e( 'Archives', 'cyberchimps' );
 		}
 	}
 	
