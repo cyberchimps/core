@@ -342,8 +342,7 @@ function cyberchimps_fallback_menu() {
 	echo $output;
 }
 
-if ( ! function_exists( 'cyberchimps_posted_on' ) ) :
-
+if ( ! function_exists( 'cyberchimps_posted_on' ) ) {
 //Prints HTML with meta information for the current post-date/time and author.
 function cyberchimps_posted_on() {
 	
@@ -379,8 +378,9 @@ function cyberchimps_posted_on() {
 	apply_filters( 'cyberchimps_posted_on', $posted_on );
 	echo $posted_on;
 }
-endif;
+}
 
+if( ! function_exists( 'cyberchimps_posted_in' ) ) {
 //add meta entry category to single post, archive and blog list if set in options
 function cyberchimps_posted_in() {
 	global $post;
@@ -406,7 +406,9 @@ function cyberchimps_posted_in() {
 	<?php endif;
 	endif;
 }
+}
 
+if( ! function_exists( 'cyberchimps_post_tags' ) ) {
 //add meta entry tags to single post, archive and blog list if set in options
 function cyberchimps_post_tags() {
 	global $post;
@@ -432,7 +434,9 @@ function cyberchimps_post_tags() {
 			<?php endif; // End if $tags_list
 	endif;
 }
+}
 
+if( ! function_exists( 'cyberchimps_post_comments' ) ) {
 //add meta entry comments to single post, archive and blog list if set in options
 function cyberchimps_post_comments() {
 	global $post;
@@ -453,6 +457,7 @@ function cyberchimps_post_comments() {
       <span class="sep"> <?php echo ( $leave_comment != '' ) ? apply_filters( 'cyberchimps_entry_meta_sep', '|' ) : ''; ?> </span>
     <?php endif;
 	endif;
+}
 }
 
 // change default comments labels and form
