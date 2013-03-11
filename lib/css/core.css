@@ -31,3 +31,7 @@
     width: 100%;
 }
 /* CSS to make the video responsive ends */
+/* CSS for woocommerce compatibility */
+#content-woocommerce {
+	max-width: 650px;
+}
