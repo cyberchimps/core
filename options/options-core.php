@@ -968,7 +968,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Post Formats Icons', 'cyberchimps'),
 		'id' => 'post_format_icons',
 		'type' => 'toggle',
-		'std' => 0,
+		'std' => apply_filters( 'cyberchimps_post_format_icons_default', 0 ),
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 	
