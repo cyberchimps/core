@@ -136,6 +136,8 @@ add_theme_support( 'woocommerce' );
 
 function cyberchimps_create_layout() {
 	global $post;
+	// include plugin.php to use is_plugin_active() condition
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	
 	if ( is_single() ) {
 		$layout_type = cyberchimps_get_option( 'single_post_sidebar_options', 'right_sidebar' );
@@ -147,10 +149,11 @@ function cyberchimps_create_layout() {
 		$page_sidebar = get_post_meta( $post->ID, 'cyberchimps_page_sidebar' );
 		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 	
-	} elseif ( is_woocommerce() && is_shop() ) {
-		$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
-		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
-		
+	} elseif ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+		if ( is_woocommerce() && is_shop() ) {
+			$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
+			$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
+		}
 	} elseif ( is_archive() ) {
 		$layout_type = cyberchimps_get_option( 'archive_sidebar_options', 'right_sidebar' );
 			
