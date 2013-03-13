@@ -1144,16 +1144,18 @@ function cyberchimps_remove_options( $orig, $removes ) {
 }
 
 /* Container width fix for IE8 */
-function cyberchimps_ie8_responsive(){
+function cyberchimps_ie8_responsive() {
 	echo '<style type="text/css">.ie8 .container {max-width: '. cyberchimps_get_option('max_width') . 'px;width:auto;}</style>';
 }
 add_action( 'wp_head', 'cyberchimps_ie8_responsive');
 
 /* Removing the unused page option from the woocommerce shop edit page */
-if( is_plugin_active( 'woocommerce/woocommerce.php') ) {
-	global $pagenow;
-	if( $pagenow == 'post.php' && $_GET['post'] == woocommerce_get_page_id( 'shop' ) ){
-		echo '<style type="text/css">.cyberchimps_page_title_toggle, .cyberchimps_page_section_order{display:none}</style>';
+function cyberchimps_woocommerce_shop_style() {
+	if( is_plugin_active( 'woocommerce/woocommerce.php') ) {
+		global $pagenow;
+		if( $pagenow == 'post.php' && $_GET['post'] == woocommerce_get_page_id( 'shop' ) ){
+			echo '<style type="text/css">.cyberchimps_page_title_toggle, .cyberchimps_page_section_order{display:none}</style>';
+		}
 	}
 }
-?>
+add_action( 'admin_head', 'cyberchimps_woocommerce_shop_style' );
