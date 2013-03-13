@@ -13,6 +13,9 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// include plugin.php to use is_plugin_active() condition
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 // Set options function
 function cyberchimps_option( $name = false, $subname = false ){
 	$options = get_option( 'cyberchimps_options' );
@@ -136,8 +139,6 @@ add_theme_support( 'woocommerce' );
 
 function cyberchimps_create_layout() {
 	global $post;
-	// include plugin.php to use is_plugin_active() condition
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	
 	if ( is_single() ) {
 		$layout_type = cyberchimps_get_option( 'single_post_sidebar_options', 'right_sidebar' );
@@ -1147,3 +1148,12 @@ function cyberchimps_ie8_responsive(){
 	echo '<style type="text/css">.ie8 .container {max-width: '. cyberchimps_get_option('max_width') . 'px;width:auto;}</style>';
 }
 add_action( 'wp_head', 'cyberchimps_ie8_responsive');
+
+/* Removing the unused page option from the woocommerce shop edit page */
+if( is_plugin_active( 'woocommerce/woocommerce.php') ) {
+	global $pagenow;
+	if( $pagenow == 'post.php' && $_GET['post'] == woocommerce_get_page_id( 'shop' ) ){
+		echo '<style type="text/css">.cyberchimps_page_title_toggle, .cyberchimps_page_section_order{display:none}</style>';
+	}
+}
+?>
