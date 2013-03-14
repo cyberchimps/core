@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 		callout_section		: "cyberchimps_blog_callout_section",
 		twitterbar_section	: "cyberchimps_twitterbar_section",
 		carousel_section	: "cyberchimps_carousel_section",
-		//magazine			: "cyberchimps_blog_magazine_section",
+		magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
