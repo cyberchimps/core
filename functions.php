@@ -150,14 +150,9 @@ function cyberchimps_create_layout() {
 		$page_sidebar = get_post_meta( $post->ID, 'cyberchimps_page_sidebar' );
 		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 	
-	} elseif ( is_archive() && is_plugin_active( 'woocommerce/woocommerce.php' ) ) {	
-			if ( is_woocommerce() && is_shop() ) {
-				$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
-				$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
-			}
-			else {
-				$layout_type = cyberchimps_get_option( 'archive_sidebar_options', 'right_sidebar' );
-			}
+	} elseif ( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {	
+		$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
+		$layout_type = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 		
 	} elseif ( is_archive() ) {
 		$layout_type = cyberchimps_get_option( 'archive_sidebar_options', 'right_sidebar' );
