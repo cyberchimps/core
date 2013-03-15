@@ -61,6 +61,12 @@ function cyberchimps_load_scripts() {
 	// Set template directory uri
 	$directory_uri = get_template_directory_uri();
 	
+	// Include media uploader for WP version >= 3.5
+	if(function_exists( 'wp_enqueue_media' )){
+		wp_enqueue_media();
+		wp_enqueue_script('theme-option-media-uploader-3.5', $directory_uri . '/cyberchimps/options/lib/js/media-uploader-new.js', array('jquery'));
+	}
+	
 	// Enqueued scripts
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('jquery-ui-sortable');

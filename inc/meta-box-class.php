@@ -883,13 +883,13 @@ function metabox_enqueue() {
 	// Load different css/js for different version of WP to support respective media uploader
 	if(function_exists( 'wp_enqueue_media' )){
 		wp_enqueue_media();
-		wp_enqueue_script('jquerycustom', $path_js . 'media-uploader-new.js', array('jquery') );
+		wp_enqueue_script('metabox-media-uploader-3.5', $path_js . 'media-uploader-new.js', array('jquery') );
 	}
 	else{
 		wp_enqueue_style('thickbox');
 		wp_enqueue_script('media-upload');
 		wp_enqueue_script('thickbox');
-		wp_enqueue_script('jquerycustom', $path_js . 'media-uploader-old.js', array('jquery') );
+		wp_enqueue_script('metabox-media-uploader-below-3.5', $path_js . 'media-uploader-old.js', array('jquery') );
 	}
 	
 	wp_enqueue_script('jf-metabox-tabs');
