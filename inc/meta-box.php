@@ -39,8 +39,12 @@ function cyberchimps_init_meta_boxes() {
 	$directory_uri	 = get_template_directory_uri();
 	$image_path		 = $directory_uri . "/cyberchimps/lib/images/";
 	$portfolio_image = $image_path . "portfolio.jpg";
-	$slider_image	 = $directory_uri . "/elements/lib/images/slider/slide1.jpg";
 	
+	// get default image for slider lite.
+	$slider_image1	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image2	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image3	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' );
+
 	// add gravatar image as default
 	$email = get_option( 'admin_email' );
 	if( $email ) {
@@ -162,11 +166,11 @@ function cyberchimps_init_meta_boxes() {
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps' ), __( 'From category', 'cyberchimps' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps' ), '', array('std' => __( 'featured', 'cyberchimps' )))*/
 		->tab("Slider Lite Options")
-			->single_image('cyberchimps_slider_lite_slide_one_image', __( 'Slide One Image', 'cyberchimps' ), '', array('std' => $slider_image ))
+			->single_image('cyberchimps_slider_lite_slide_one_image', __( 'Slide One Image', 'cyberchimps' ), '', array('std' => $slider_image1 ))
 			->text('cyberchimps_slider_lite_slide_one_url', __( 'Slide One Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_two_image', __( 'Slide Two Image', 'cyberchimps' ), '', array('std' => $slider_image))
+			->single_image('cyberchimps_slider_lite_slide_two_image', __( 'Slide Two Image', 'cyberchimps' ), '', array('std' => $slider_image2 ))
 			->text('cyberchimps_slider_lite_slide_two_url', __( 'Slide Two Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
-			->single_image('cyberchimps_slider_lite_slide_three_image', __( 'Slide Three Image', 'cyberchimps' ), '', array('std' => $slider_image))
+			->single_image('cyberchimps_slider_lite_slide_three_image', __( 'Slide Three Image', 'cyberchimps' ), '', array('std' => $slider_image3 ))
 			->text('cyberchimps_slider_lite_slide_three_url', __( 'Slide Three Link', 'cyberchimps' ), '', array('std' => 'http://wordpress.org'))
 		->tab("iFeature Slider Options")
 			->select('cyberchimps_slider_size', __( 'Slider Size', 'cyberchimps' ), '', array( 'options' => array('full' => __( 'Full', 'cyberchimps' ), 'half' => __( 'Half', 'cyberchimps' )) ) )
