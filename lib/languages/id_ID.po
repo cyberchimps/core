@@ -1,0 +1,1353 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CyberChimps Core\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
+"PO-Revision-Date: 2013-03-19 13:52-0000\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian, Indonesia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../functions.php
+msgid "View all posts by"
+msgstr "Lihat semua posting"
+
+#: ../../functions.php
+msgid "Posted on "
+msgstr "Dikirim pada "
+
+#: ../../functions.php
+msgid " by "
+msgstr "oleh"
+
+#: ../../functions.php
+msgid "Posted in"
+msgstr "Posted in"
+
+#: ../../functions.php
+msgid "Tags:"
+msgstr "Tag:"
+
+#: ../../functions.php
+msgid "Leave a comment"
+msgstr "Tinggalkan komentar"
+
+#: ../../functions.php
+msgid "1 Comment"
+msgstr "1 Komentar"
+
+#: ../../options/options-core.php ../../functions.php
+msgid "Comments"
+msgstr "Komentar"
+
+#: ../../functions.php
+msgid "Permalink to %s"
+msgstr "Tautkan ke %s"
+
+#: ../../functions.php
+msgid "Category Archives:"
+msgstr "Kategori Arsip:"
+
+#: ../../functions.php
+msgid "Tag Archives:"
+msgstr "Tag Archives:"
+
+#: ../../functions.php
+msgid "Author Archives"
+msgstr "Penulis Arsip"
+
+#: ../../functions.php
+msgid "Daily Archives:"
+msgstr "Harian Arsip:"
+
+#: ../../functions.php
+msgid "Monthly Archives:"
+msgstr "Arsip Bulanan:"
+
+#: ../../functions.php
+msgid "Yearly Archives:"
+msgstr "Tahunan Archives:"
+
+#: ../../functions.php
+msgid "Archives"
+msgstr "Arsip"
+
+#: ../../inc/meta-box.php ../../functions.php
+msgid "Page"
+msgstr "Dance"
+
+#: ../../functions.php
+msgid "Continue Reading"
+msgstr "Lanjutkan Membaca"
+
+#: ../../functions.php
+msgid "Welcome"
+msgstr "Selamat Datang"
+
+#: ../../functions.php
+msgid "Congratulations you have successfully installed"
+msgstr "Selamat Anda telah berhasil menginstal"
+
+#: ../../functions.php
+msgid "Your website is important to us, so please read the"
+msgstr "Website Anda adalah penting bagi kami, jadi silakan baca"
+
+#: ../../functions.php
+msgid "instructions"
+msgstr "Instruksi"
+
+#: ../../functions.php
+msgid "to learn how to use"
+msgstr "untuk belajar bagaimana menggunakan"
+
+#: ../../functions.php
+msgid "If you have any questions please post in our"
+msgstr "Jika Anda memiliki pertanyaan silahkan posting di kami"
+
+#: ../../functions.php
+msgid "support forum"
+msgstr "dukungan forum"
+
+#: ../../functions.php
+msgid "and we will get back to you as soon as we can"
+msgstr "dan kami akan kembali kepada Anda secepat kami bisa"
+
+#: ../../functions.php
+msgid "Thank you for choosing CyberChimps Professional WordPress Themes"
+msgstr "Terima kasih telah memilih CyberChimps profesional Wordpress Themes"
+
+#: ../../options/options-core.php ../../functions.php
+msgid "Pro"
+msgstr "Amsal"
+
+#: ../../functions.php
+msgid "Complete Installation"
+msgstr "Lengkap Instalasi"
+
+#: ../../options/options-init.php ../../functions.php
+msgid "Instructions"
+msgstr "Instruksi"
+
+#: ../../options/options-init.php ../../functions.php
+msgid "Support"
+msgstr "Dukungan"
+
+#: ../../functions.php
+msgid "Upgrade to"
+msgstr "Upgrade ke"
+
+#: ../../functions.php
+msgid "If you want even more amazing new features upgrade to"
+msgstr "Jika Anda ingin fitur baru bahkan lebih menakjubkan upgrade ke"
+
+#: ../../functions.php
+msgid ""
+"which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, "
+"Callout Section, expanded typography including Google Fonts, more color "
+"skins, and many more powerful new features. Please visit"
+msgstr ""
+"yang mencakup Slider Fitur Custom, Carousel Gambar, box widgetized, Callout "
+"Bagian, tipografi diperluas termasuk Font Google, kulit warna yang lebih, "
+"dan banyak fitur baru yang lebih kuat. Silahkan kunjungi"
+
+#: ../../functions.php
+msgid "to learn more!"
+msgstr "untuk mempelajari lebih lanjut!"
+
+#: ../../functions.php
+msgid "Welcome to %1$s! Learn more now about upgrading to"
+msgstr "Selamat Datang di %1$s ! Pelajari lebih sekarang tentang upgrade ke"
+
+#: ../../functions.php
+msgid "today."
+msgstr "hari ini."
+
+#: ../../options/options-init.php ../../functions.php
+msgid "Options"
+msgstr "Opsi"
+
+#: ../../functions.php
+msgid " Options"
+msgstr "Opsi"
+
+#: ../../init.php
+msgid "Primary Menu"
+msgstr "Primer menu"
+
+#: ../../init.php
+msgid "Sidebar Left"
+msgstr "Sidebar Kiri"
+
+#: ../../init.php
+msgid "Sidebar Right"
+msgstr "Sidebar Kanan"
+
+#: ../../options/options-core.php ../../init.php
+msgid "Footer Widgets"
+msgstr "Footer widget"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../hooks/blog-hooks.php
+msgid "Slider Lite"
+msgstr "Slider Lite"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../hooks/blog-hooks.php
+msgid "Boxes"
+msgstr "Kotak"
+
+#: ../../options/options-core.php ../../hooks/blog-hooks.php
+msgid "Post Page"
+msgstr "Posting Halaman"
+
+#: ../../options/options-core.php ../../hooks/header-hooks.php
+msgid "Logo + Icons"
+msgstr "Logo + Ikon"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Atau pilih salah satu gambar latar belakang CyberChimps"
+
+#: ../../inc/meta-box-class.php
+msgid "Uploaded files"
+msgstr "Upload file"
+
+#: ../../inc/meta-box-class.php
+msgid "Upload new files"
+msgstr "Upload file baru"
+
+#: ../../inc/meta-box-class.php
+msgid "Add more file"
+msgstr "Tambahkan file lebih"
+
+#: ../../inc/meta-box-class.php
+msgid "Uploaded images"
+msgstr "Upload gambar"
+
+#: ../../inc/meta-box-class.php
+msgid "Upload new images (Make sure to publish the post to save)"
+msgstr ""
+"Upload gambar baru (Pastikan untuk mempublikasikan posting untuk menyimpan)"
+
+#: ../../inc/meta-box-class.php
+msgid "Select a color"
+msgstr "Pilih warna"
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../inc/meta-box-class.php
+msgid "Upload"
+msgstr "Unggah"
+
+#: ../../inc/meta-box-class.php
+msgid "or enter URL"
+msgstr "atau masukkan URL"
+
+#: ../../inc/meta-box.php
+msgid "Slider Options"
+msgstr "Slider Pilihan"
+
+#: ../../inc/meta-box.php
+msgid "Slider Image"
+msgstr "Slider Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Slider Caption"
+msgstr "Slider Keterangan"
+
+#: ../../inc/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Kustom Slide Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Title"
+msgstr "Judul"
+
+#: ../../inc/meta-box.php
+msgid "Caption"
+msgstr "Judul"
+
+#: ../../inc/meta-box.php
+msgid "Need Help?"
+msgstr "Butuh Bantuan?"
+
+#: ../../inc/meta-box.php
+msgid "Select Page Layout"
+msgstr "Pilih Page Layout"
+
+#: ../../inc/meta-box.php
+msgid "Page Title"
+msgstr "Judul halaman"
+
+#: ../../inc/meta-box.php
+msgid "Page Elements"
+msgstr "Elemen Halaman"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Portofolio Lite"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Bar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Meta Data"
+msgstr "Meta Data"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Featured Image"
+msgstr "Menampilkan gambar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Category"
+msgstr "Kategori"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "You need to create a Category"
+msgstr "Anda perlu menciptakan Kategori"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Number of Columns"
+msgstr "Jumlah kolom"
+
+#: ../../inc/meta-box.php
+msgid "Number of Posts"
+msgstr "Jumlah posting"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Wide Posts Below Magazine"
+msgstr "Berbagai posting di bawah ini majalah"
+
+#: ../../inc/meta-box.php
+msgid "Number of Wide Posts "
+msgstr "Jumlah posting lebar "
+
+#: ../../inc/meta-box.php
+msgid "Slide One Image"
+msgstr "Geser Satu Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Slide One Link"
+msgstr "Geser Satu Tautan"
+
+#: ../../inc/meta-box.php
+msgid "Slide Two Image"
+msgstr "Slide Dua Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Slide Two Link"
+msgstr "Geser Dua Tautan"
+
+#: ../../inc/meta-box.php
+msgid "Slide Three Image"
+msgstr "Geser Tiga Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Slide Three Link"
+msgstr "Geser Tiga Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Size"
+msgstr "Slider Ukuran"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Full"
+msgstr "penuh"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Half"
+msgstr "Setengah"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Type"
+msgstr "Jenis slider"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom"
+msgstr "Personalisasi:"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Posts"
+msgstr "tulisan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Post Categories"
+msgstr "Posting Kategori"
+
+#: ../../inc/meta-box.php
+msgid "All"
+msgstr "semua"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom Categories"
+msgstr "Kustom Kategori"
+
+#: ../../inc/meta-box.php
+msgid "Number of Featured Posts"
+msgstr "Jumlah Feature Posts"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Height"
+msgstr "Slider Tinggi"
+
+#: ../../inc/meta-box.php
+msgid "Slider Speed"
+msgstr "Slider Kecepatan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Arrows"
+msgstr "Panah slider"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Title"
+msgstr "Callout Judul"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "%1$s's Call Out Element"
+msgstr "%1$s 's Panggilan Out Elemen"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Text"
+msgstr "Callout Teks"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Gunakan %1$s 's Panggilan Out bagian pada setiap halaman di mana Anda ingin "
+"menyampaikan pesan penting kepada pelanggan atau klien."
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button"
+msgstr "Callout Tombol"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button Text"
+msgstr "Callout Teks Tombol"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button URL"
+msgstr "Callout URL Tombol"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom Callout Options"
+msgstr "Kustom Seranta Pilihan"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Image"
+msgstr "Tombol kustom Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Custom Background Color"
+msgstr "Kustom Warna Latar Belakang"
+
+#: ../../inc/meta-box.php
+msgid "Custom Title Color"
+msgstr "Kustom Warna Judul"
+
+#: ../../inc/meta-box.php
+msgid "Custom Text Color"
+msgstr "Kustom Warna Teks"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Color"
+msgstr "Tombol kustom Warna"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Text Color"
+msgstr "Tombol kustom Warna Teks"
+
+#: ../../inc/meta-box.php
+msgid "Need help?"
+msgstr "Butuh Bantuan?"
+
+#: ../../inc/meta-box.php
+msgid "Custom HTML"
+msgstr "Custom HTML"
+
+#: ../../inc/meta-box.php
+msgid "Enter your custom html here"
+msgstr "Masukkan html kustom Anda di sini"
+
+#: ../../inc/meta-box.php
+msgid "Images per row"
+msgstr "Gambar per Row"
+
+#: ../../inc/meta-box.php
+msgid "Two"
+msgstr "Dua"
+
+#: ../../inc/meta-box.php
+msgid "Three"
+msgstr "Tiga"
+
+#: ../../inc/meta-box.php
+msgid "Four"
+msgstr "Empat."
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Portfolio Category"
+msgstr "Portofolio Kategori"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Portfolio Title"
+msgstr "Portofolio Judul"
+
+#: ../../inc/meta-box.php
+msgid "Portfolio"
+msgstr "port"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Portfolio Image"
+msgstr "Pertama Portofolio Gambar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Portfolio Image Caption"
+msgstr "Portofolio Pertama Gambar Caption"
+
+#: ../../inc/meta-box.php
+msgid "Image 1"
+msgstr "Gambar 1"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Porfolio Link"
+msgstr "Pertama porfolio Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Link URL"
+msgstr "URL Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Portfolio Image"
+msgstr "Kedua Portofolio Gambar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Portfolio Image Caption"
+msgstr "Portofolio kedua Gambar Caption"
+
+#: ../../inc/meta-box.php
+msgid "Image 2"
+msgstr "Gambar 2"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Porfolio Link"
+msgstr "Kedua porfolio Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Portfolio Image"
+msgstr "Ketiga Portofolio Gambar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Portfolio Image Caption"
+msgstr "Portofolio Ketiga Gambar Caption"
+
+#: ../../inc/meta-box.php
+msgid "Image 3"
+msgstr "Gambar 3"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Porfolio Link"
+msgstr "Ketiga porfolio Tautan"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Portfolio Image"
+msgstr "Keempat Portofolio Gambar"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Portofolio Keempat Gambar Caption"
+
+#: ../../inc/meta-box.php
+msgid "Image 4"
+msgstr "Gambar 4"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Porfolio Link"
+msgstr "Keempat porfolio Tautan"
+
+#: ../../inc/meta-box.php
+msgid "Post Category"
+msgstr "Posting Kategori"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Images"
+msgstr "Gambar"
+
+#: ../../inc/meta-box.php
+msgid "Carousel Category"
+msgstr "Carousel Kategori"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Twitter Handle"
+msgstr "Twitter Menangani"
+
+#: ../../inc/meta-box.php
+msgid "Enter your Twitter handle if using the Twitter bar"
+msgstr "Masukkan menangani Twitter Anda jika menggunakan bar Twitter"
+
+#: ../../inc/meta-box.php
+msgid "Boxes Category"
+msgstr "Kotak Kategori"
+
+#: ../../options/options-core.php
+msgid "Help"
+msgstr "Bantuan"
+
+#: ../../options/options-core.php
+msgid "Design"
+msgstr "Rancangan"
+
+#: ../../options/options-core.php
+msgid "Header"
+msgstr "Kepala Halaman"
+
+#: ../../options/options-core.php
+msgid "Blog"
+msgstr "Blog"
+
+#: ../../options/options-core.php
+msgid "Templates"
+msgstr "Templat"
+
+#: ../../options/options-core.php
+msgid "Footer"
+msgstr "Kaki Halaman"
+
+#: ../../options/options-core.php
+msgid "Layout Options"
+msgstr "Layout pilihan"
+
+#: ../../options/options-core.php
+msgid "Custom Colors"
+msgstr "Warna kustom"
+
+#: ../../options/options-core.php
+msgid "Typography"
+msgstr "Tipografi"
+
+#: ../../options/options-core.php
+msgid "Header Drag &#38; Drop"
+msgstr "Header Drag & Drop"
+
+#: ../../options/options-core.php
+msgid "Header Options"
+msgstr "Header pilihan"
+
+#: ../../options/options-core.php
+msgid "Social Icons"
+msgstr "Sosial Ikon"
+
+#: ../../options/options-core.php
+msgid "Drag & Drop"
+msgstr "Drag & Drop"
+
+#: ../../options/options-core.php
+msgid "Blog Options"
+msgstr "Blog Pilihan"
+
+#: ../../options/options-core.php
+msgid "Blog Slider Lite"
+msgstr "Blog geser Lite"
+
+#: ../../options/options-core.php
+msgid "Portfolio Lite Options"
+msgstr "Portofolio Lite Pilihan"
+
+#: ../../options/options-core.php
+msgid "Boxes Lite"
+msgstr "Kotak Lite"
+
+#: ../../options/options-core.php
+msgid "Blog Slider"
+msgstr "Blog geser"
+
+#: ../../options/options-core.php
+msgid "Callout Options"
+msgstr "Seranta Pilihan"
+
+#: ../../options/options-core.php
+msgid "HTML Box Options"
+msgstr "HTML Kotak Pilihan"
+
+#: ../../options/options-core.php
+msgid "Carousel Options"
+msgstr "Carousel Pilihan"
+
+#: ../../options/options-core.php
+msgid "Magazine Options"
+msgstr "Majalah pilihan"
+
+#: ../../options/options-core.php
+msgid "Portfolio Pro Options"
+msgstr "Portofolio Pro Pilihan"
+
+#: ../../options/options-core.php
+msgid "Recent Posts Options"
+msgstr "Posting terbaru Options"
+
+#: ../../options/options-core.php
+msgid "Twitterbar Options"
+msgstr "TwitterBar Pilihan"
+
+#: ../../options/options-core.php
+msgid "Boxes Options"
+msgstr "Box Options"
+
+#: ../../options/options-core.php
+msgid "Single Post"
+msgstr "Tulisan Tunggal"
+
+#: ../../options/options-core.php
+msgid "Archive"
+msgstr "Arsip"
+
+#: ../../options/options-core.php
+msgid "Search"
+msgstr "Cari"
+
+#: ../../options/options-core.php
+msgid "Footer Options"
+msgstr "Footer Pilihan"
+
+#: ../../options/options-core.php
+msgid "Author"
+msgstr "Penulis"
+
+#: ../../options/options-core.php
+msgid "Categories"
+msgstr "Kategori"
+
+#: ../../options/options-core.php
+msgid "Date"
+msgstr "Tanggal"
+
+#: ../../options/options-core.php
+msgid "Tags"
+msgstr "Tag"
+
+#: ../../options/options-core.php
+msgid "Cyberchimps Help"
+msgstr "Cyberchimps Bantuan"
+
+#: ../../options/options-core.php
+msgid "Welcome Note"
+msgstr "Selamat Datang Perhatikan"
+
+#: ../../options/options-core.php
+msgid "Responsive Design"
+msgstr "Responsif Desain"
+
+#: ../../options/options-core.php
+msgid "Responsive Videos"
+msgstr "Responsif Video"
+
+#: ../../options/options-core.php
+msgid "Wide Sidebar"
+msgstr "Lebar Sidebar"
+
+#: ../../options/options-core.php
+msgid "Only works on layouts with 1 sidebar"
+msgstr "Hanya bekerja pada layout dengan 1 sidebar"
+
+#: ../../options/options-customizer.php ../../options/options-core.php
+msgid "Max Width"
+msgstr "Max Lebar"
+
+#: ../../options/options-core.php
+msgid "enter the width of your site in pixels"
+msgstr "masukkan lebar dari situs Anda dalam piksel"
+
+#: ../../options/options-core.php
+msgid "Select a Skin Color"
+msgstr "Pilih Warna Kulit"
+
+#: ../../options/options-customizer.php ../../options/options-core.php
+msgid "Text Color"
+msgstr "Warna Teks"
+
+#: ../../options/options-core.php
+msgid "Select text color"
+msgstr "Pilih warna teks"
+
+#: ../../options/options-customizer.php ../../options/options-core.php
+msgid "Link Color"
+msgstr "Warna link"
+
+#: ../../options/options-core.php
+msgid "Select link color"
+msgstr "Pilih warna link"
+
+#: ../../options/options-customizer.php ../../options/options-core.php
+msgid "Link Hover Color"
+msgstr "Link Hover Warna"
+
+#: ../../options/options-core.php
+msgid "Select link hover color"
+msgstr "Pilih link warna melayang-layang"
+
+#: ../../options/options-core.php
+msgid "Typography Options"
+msgstr "Tipografi Pilihan"
+
+#: ../../options/options-core.php
+msgid "Google fonts"
+msgstr "Google font"
+
+#: ../../options/options-core.php
+msgid "Enter Google font"
+msgstr "Masukkan huruf Google"
+
+#: ../../options/options-core.php
+msgid "Demo Text"
+msgstr "Demo Teks"
+
+#: ../../options/options-core.php
+msgid "Header Drag/Drop"
+msgstr "Header Drag / Drop"
+
+#: ../../options/options-core.php
+msgid "Logo + Search"
+msgstr "Logo + Pencarian"
+
+#: ../../options/options-core.php
+msgid "Logo"
+msgstr "Logo"
+
+#: ../../options/options-core.php
+msgid "Custom Logo URL"
+msgstr "Logo kustom URL"
+
+#: ../../options/options-core.php
+msgid "URL"
+msgstr "URL:"
+
+#: ../../options/options-core.php
+msgid "Enter URL"
+msgstr "Masukkan URL"
+
+#: ../../options/options-core.php
+msgid "Custom Logo"
+msgstr "Logo kustom"
+
+#: ../../options/options-core.php
+msgid "Logo Image"
+msgstr "Logo Gambar"
+
+#: ../../options/options-core.php
+msgid "Enter URL or upload file"
+msgstr "Masukkan URL atau upload file"
+
+#: ../../options/options-core.php
+msgid "Custom Favicon"
+msgstr "Kustom Favicon"
+
+#: ../../options/options-core.php
+msgid "Favicon URL"
+msgstr "Favicon URL"
+
+#: ../../options/options-core.php
+msgid "Custom Apple touch icon"
+msgstr "Kustom Apple sentuh ikon"
+
+#: ../../options/options-core.php
+msgid "Apple Touch URL"
+msgstr "Apple Sentuh URL"
+
+#: ../../options/options-core.php
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: ../../options/options-core.php
+msgid "Copy and paste your Google Analytics code here"
+msgstr "Copy dan paste kode Google Analytics Anda di sini"
+
+#: ../../options/options-core.php
+msgid "Searchbar"
+msgstr "SearchBar"
+
+#: ../../options/options-core.php
+msgid "Choose your icon style"
+msgstr "Pilih gaya ikon Anda"
+
+#: ../../options/options-core.php
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../../options/options-core.php
+msgid "Twitter URL"
+msgstr "Kericau URL"
+
+#: ../../options/options-core.php
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../../options/options-core.php
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: ../../options/options-core.php
+msgid "Google+"
+msgstr "Google +"
+
+#: ../../options/options-core.php
+msgid "Google+ URL"
+msgstr "Google + URL"
+
+#: ../../options/options-core.php
+msgid "Flickr"
+msgstr "Flickr"
+
+#: ../../options/options-core.php
+msgid "Flickr URL"
+msgstr "Flickr URL"
+
+#: ../../options/options-core.php
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: ../../options/options-core.php
+msgid "Pinterest URL"
+msgstr "Pinterest URL"
+
+#: ../../options/options-core.php
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: ../../options/options-core.php
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+#: ../../options/options-core.php
+msgid "YouTube"
+msgstr "YouTube"
+
+#: ../../options/options-core.php
+msgid "YouTube URL"
+msgstr "YouTube URL"
+
+#: ../../options/options-core.php
+msgid "RSS"
+msgstr "RSS"
+
+#: ../../options/options-core.php
+msgid "RSS URL"
+msgstr "RSS URL"
+
+#: ../../options/options-core.php
+msgid "Email"
+msgstr "E-mail"
+
+#: ../../options/options-core.php
+msgid "Email Address"
+msgstr "Alamat email"
+
+#: ../../options/options-core.php
+msgid "Google Maps"
+msgstr "Google Maps"
+
+#: ../../options/options-core.php
+msgid "Google Maps URL"
+msgstr "Google Maps URL"
+
+#: ../../options/options-core.php
+msgid "Drag & Drop Blog Elements"
+msgstr "Drag & Drop Elemen Blog"
+
+#: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Sidebar Pilihan"
+
+#: ../../options/options-core.php
+msgid "Post Formats Icons"
+msgstr "Pasang Ikon Format"
+
+#: ../../options/options-core.php
+msgid "Post Excerpts"
+msgstr "Posting Kutipan"
+
+#: ../../options/options-core.php
+msgid "Read More Text"
+msgstr "Baca Teks Lebih"
+
+#: ../../options/options-core.php
+msgid "Excerpt Length"
+msgstr "Kutipan Panjang"
+
+#: ../../options/options-core.php
+msgid "Featured Images"
+msgstr "Potret Menarik"
+
+#: ../../options/options-core.php
+msgid "Post Byline Author"
+msgstr "Posting Penulis Byline"
+
+#: ../../options/options-core.php
+msgid "Post Byline Categories"
+msgstr "Posting Kategori Byline"
+
+#: ../../options/options-core.php
+msgid "Post Byline Date"
+msgstr "Posting Tanggal Byline"
+
+#: ../../options/options-core.php
+msgid "Post Byline Comments"
+msgstr "Poskan Komentar Byline"
+
+#: ../../options/options-core.php
+msgid "Post Byline Tags"
+msgstr "Posting Tag Byline"
+
+#: ../../options/options-core.php
+msgid "Boxes Upgrade"
+msgstr "Tingkatkan kotak"
+
+#: ../../options/options-core.php
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"Kotak Lite membatasi Anda untuk total 3 kotak seluruh seluruh situs Anda. "
+"Upgrade ke %1$s untuk dapat membuat kotak sebanyak yang Anda suka. "
+"Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang "
+"berbeda."
+
+#: ../../options/options-core.php
+msgid "Portfolio Upgrade"
+msgstr "Peningkatan portofolio"
+
+#: ../../options/options-core.php
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Portofolio Lite membatasi Anda untuk total 4 item seluruh seluruh situs "
+"Anda. Upgrade ke %1$s untuk dapat membuat sebagai item portofolio yang Anda "
+"inginkan. Mengkategorikan mereka dan menampilkan setiap kategori pada "
+"halaman yang berbeda."
+
+#: ../../options/options-core.php
+msgid "Slider Upgrade"
+msgstr "Slider Tingkatkan"
+
+#: ../../options/options-core.php
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"Slider Lite membatasi Anda untuk total 3 gambar seluruh seluruh situs Anda. "
+"Upgrade ke %1$s untuk dapat membuat gambar lebih. Mengkategorikan mereka dan "
+"menampilkan setiap kategori pada halaman yang berbeda."
+
+#: ../../options/options-core.php
+msgid "Slider Image 1"
+msgstr "Slider Gambar 1"
+
+#: ../../options/options-core.php
+msgid "Slide 1 URL"
+msgstr "Slide 1 URL"
+
+#: ../../options/options-core.php
+msgid "Slider Image 2"
+msgstr "Slider Gambar 2"
+
+#: ../../options/options-core.php
+msgid "Slide 2 URL"
+msgstr "Slide 2 URL"
+
+#: ../../options/options-core.php
+msgid "Slider Image 3"
+msgstr "Slider Gambar 3"
+
+#: ../../options/options-core.php
+msgid "Slide 3 URL"
+msgstr "Geser 3 URL"
+
+#: ../../options/options-core.php
+msgid "Images per Row"
+msgstr "Gambar per Row"
+
+#: ../../options/options-core.php
+msgid "Featured Excerpt Length"
+msgstr "Terpilih kutipan panjang"
+
+#: ../../options/options-core.php
+msgid "Number of Rows"
+msgstr "Jumlah baris"
+
+#: ../../options/options-core.php
+msgid "Wide Post Excerpt Length"
+msgstr "Berbagai posting kutipan panjang"
+
+#: ../../options/options-core.php
+msgid "Number of Wide Posts"
+msgstr "Jumlah posting lebar"
+
+#: ../../options/options-core.php
+msgid "Number of Featured Blog Posts"
+msgstr "Jumlah Posting Blog Feature"
+
+#: ../../options/options-core.php
+msgid "Slider Speed "
+msgstr "Slider Kecepatan"
+
+#: ../../options/options-core.php
+msgid "Click Here"
+msgstr "Klik Disini"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Button"
+msgstr "Kustom Seranta Tombol"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Background Color"
+msgstr "Kustom Seranta Warna Latar Belakang"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Title Color"
+msgstr "Kustom Seranta Warna Judul"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Text Color"
+msgstr "Kustom Seranta Warna Teks"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Button Color"
+msgstr "Kustom Seranta Warna Tombol"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Button Text Color"
+msgstr "Kustom Seranta Warna Teks Tombol"
+
+#: ../../options/options-core.php
+msgid "HTML Box"
+msgstr "HTML kotak"
+
+#: ../../options/options-core.php
+msgid "Enter your custom HTML code here"
+msgstr "Masukkan kode HTML kustom Anda di sini"
+
+#: ../../options/options-core.php
+msgid "Custom Title"
+msgstr "Judul Buatan"
+
+#: ../../options/options-core.php
+msgid "Select a Category"
+msgstr "Pilih Kategori"
+
+#: ../../options/options-core.php
+msgid "Images for layout."
+msgstr "Gambar untuk tata letak."
+
+#: ../../options/options-core.php
+msgid "Post title"
+msgstr "Posting judul"
+
+#: ../../options/options-core.php
+msgid "Post Format Icons"
+msgstr "Pasang Ikon Format"
+
+#: ../../options/options-core.php
+msgid "Custom 404 Title"
+msgstr "Kustom 404 Judul"
+
+#: ../../options/options-core.php
+msgid "Custom 404 Content"
+msgstr "Kustom 404 Konten"
+
+#: ../../options/options-core.php
+msgid "Footer Copyright Text"
+msgstr "Hak cipta teks footer"
+
+#: ../../options/options-customizer.php
+msgid "Customize"
+msgstr "Sesuaikan"
+
+#: ../../options/options-customizer.php
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"pastikan Anda telah menghapus gambar di atas sebelum memilih salah satu"
+
+#: ../../options/options-customizer.php
+msgid "Skin Color"
+msgstr "Warna kulit"
+
+#: ../../options/options-customizer.php
+msgid "Typography Size"
+msgstr "Tipografi Ukuran"
+
+#: ../../options/options-customizer.php
+msgid "Typography Face"
+msgstr "Tipografi Wajah"
+
+#: ../../options/options-customizer.php
+msgid "Typography Style"
+msgstr "Gaya tipografi"
+
+#: ../../options/options-customizer.php
+msgid "Background Image"
+msgstr "Gambar Latar Belakang"
+
+#: ../../options/options-init.php
+msgid "Theme Options Page"
+msgstr "Tema Pilihan Halaman"
+
+#: ../../options/options-init.php
+msgid "Theme Options"
+msgstr "Opsi Tema"
+
+#: ../../options/options-init.php
+msgid "Buy Themes"
+msgstr "Beli Tema"
+
+#: ../../options/options-init.php
+msgid "Open All"
+msgstr "Buka Semua"
+
+#: ../../options/options-init.php
+msgid "Collapse All"
+msgstr "Tutup Semua"
+
+#: ../../options/options-init.php
+msgid "Restore Defaults"
+msgstr "Pulihkan Default"
+
+#: ../../options/options-init.php
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Klik OK untuk me-reset. Setiap setting theme akan hilang!"
+
+#: ../../options/options-init.php
+msgid "Save Options"
+msgstr "Simpan opsi"
+
+#: ../../options/options-init.php
+msgid "CyberChimps Wordpress Themes"
+msgstr "CyberChimps Wordpress tema"
+
+#: ../../options/options-init.php
+msgid "Link to Events plugin settings"
+msgstr "Link ke pengaturan plugin Acara"
+
+#: ../../options/options-init.php
+msgid "Insert custom events info and insert install link"
+msgstr "Masukkan informasi peristiwa kustom dan memasukkan link install"
+
+#: ../../options/options-init.php
+msgid "Default Field"
+msgstr "Standar Lapangan"
+
+#: ../../options/options-init.php
+msgid "Options Imported"
+msgstr "Pilihan Impor"
+
+#: ../../options/options-init.php
+msgid "Invalid Data for Import"
+msgstr "Valid Data Impor"
+
+#: ../../options/options-init.php
+msgid "Default options restored."
+msgstr "Pilihan default dipulihkan."
+
+#: ../../options/options-init.php
+msgid "Options saved."
+msgstr "Opsi disimpan"
+
+#: ../../options/options-medialibrary-uploader.php
+msgid "Theme Options Media"
+msgstr "Tema Pilihan Media"
+
+#: ../../options/options-medialibrary-uploader.php
+msgid "View File"
+msgstr "Lihat Berkas"
+
+#: ../../options/options-medialibrary-uploader.php
+msgid "Gallery"
+msgstr "Galeri"
+
+#: ../../options/options-medialibrary-uploader.php
+msgid "Previously Uploaded"
+msgstr "Sebelumnya Uploaded"
+
+#: ../../options/options-sanitize.php
+msgid "No Repeat"
+msgstr "Ulangi ada"
+
+#: ../../options/options-sanitize.php
+msgid "Repeat Horizontally"
+msgstr "Ulangi Horizontal"
+
+#: ../../options/options-sanitize.php
+msgid "Repeat Vertically"
+msgstr "Ulangi Vertikal"
+
+#: ../../options/options-sanitize.php
+msgid "Repeat All"
+msgstr "Ulang semua"
+
+#: ../../options/options-sanitize.php
+msgid "Top Left"
+msgstr "Top Kiri"
+
+#: ../../options/options-sanitize.php
+msgid "Top Center"
+msgstr "Top Pusat"
+
+#: ../../options/options-sanitize.php
+msgid "Top Right"
+msgstr "Top Kanan"
+
+#: ../../options/options-sanitize.php
+msgid "Middle Left"
+msgstr "Tengah Kiri"
+
+#: ../../options/options-sanitize.php
+msgid "Middle Center"
+msgstr "Tengah Pusat"
+
+#: ../../options/options-sanitize.php
+msgid "Middle Right"
+msgstr "Tengah Kanan"
+
+#: ../../options/options-sanitize.php
+msgid "Bottom Left"
+msgstr "Dasar kiri"
+
+#: ../../options/options-sanitize.php
+msgid "Bottom Center"
+msgstr "Bawah Pusat"
+
+#: ../../options/options-sanitize.php
+msgid "Bottom Right"
+msgstr "Bawah Kanan"
+
+#: ../../options/options-sanitize.php
+msgid "Scroll Normally"
+msgstr "Gulir Biasanya"
+
+#: ../../options/options-sanitize.php
+msgid "Fixed in Place"
+msgstr "Tetap di Tempat"
+
+#: ../../options/options-sanitize.php
+msgid "Normal"
+msgstr "Normal"
+
+#: ../../options/options-sanitize.php
+msgid "Italic"
+msgstr "Miring"
+
+#: ../../options/options-sanitize.php
+msgid "Bold"
+msgstr "Tebal"
+
+#: ../../options/options-sanitize.php
+msgid "Bold Italic"
+msgstr "Bold miring"

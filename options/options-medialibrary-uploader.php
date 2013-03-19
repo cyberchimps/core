@@ -20,7 +20,7 @@ if ( ! function_exists( 'cyberchimps_mlu_init' ) ) {
 	function cyberchimps_mlu_init () {
 		register_post_type( 'cybrchmpsthmoption', array(
 			'labels' => array(
-				'name' => __( 'Theme Options Media', 'cyberchimps' ),
+				'name' => __( 'Theme Options Media', 'cyberchimps_core' ),
 			),
 			'public' => true,
 			'show_ui' => false,
@@ -109,7 +109,7 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		if ( $value ) { $class = ' has-file'; }
 	
 		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="cyberchimps_options'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps' ) . '" rel="' . $int . '" /></div>' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps_core' ) . '" rel="' . $int . '" /></div>' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="cyberchimps_metabox_desc">' . $_desc . '</span>' . "\n";
@@ -132,7 +132,7 @@ if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 				$output .= '';
 			
 				// Standard generic output if it's not an image.	
-				$title = __( 'View File', 'cyberchimps' );
+				$title = __( 'View File', 'cyberchimps_core' );
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span>' . $remove . '</div>';
 			}	
 		}
@@ -253,7 +253,7 @@ if ( ! function_exists( 'cyberchimps_mlu_js_popup' ) ) {
  */
 if ( ! function_exists( 'cyberchimps_mlu_modify_tabs' ) ) {
 	function cyberchimps_mlu_modify_tabs ( $tabs ) {
-		$tabs['gallery'] = str_replace( __( 'Gallery', 'cyberchimps' ), __( 'Previously Uploaded', 'cyberchimps' ), $tabs['gallery'] );
+		$tabs['gallery'] = str_replace( __( 'Gallery', 'cyberchimps_core' ), __( 'Previously Uploaded', 'cyberchimps_core' ), $tabs['gallery'] );
 		return $tabs;
 	}
 }

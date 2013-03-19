@@ -95,7 +95,7 @@ class CC_Custom_Background
     {
         $value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
         $radios = array ( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light' );
-        $html   = '<div class="images-radio-container"><label for="choose-from-library-link">'.__( 'Or choose one of CyberChimps background images', 'cyberchimps' ).'</label><br>';
+        $html   = '<div class="images-radio-container"><label for="choose-from-library-link">'.__( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ).'</label><br>';
 
         foreach ( $radios as $radio )
         {
