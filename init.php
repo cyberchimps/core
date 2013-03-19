@@ -88,6 +88,8 @@ function cyberchimps_core_setup_theme() {
 	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		$options = get_option( 'cyberchimps_options' );
 		$options['modal_welcome_note_display'] = true;
+		$options['header_section_order'] = $option_defaults['header_section_order'];
+		$options['theme_backgrounds'] = $option_defaults['theme_backgrounds'];
 		update_option( 'cyberchimps_options', $options );
 	}
 }
