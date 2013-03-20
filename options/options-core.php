@@ -418,6 +418,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	
 	$fields_list[] = array(
+		'name' => __('Gallery Lightbox', 'cyberchimps_core' ),
+		'id' => 'gallery_lightbox',
+		'type' => 'toggle',
+		'std' => 'checked',
+		'section' => 'cyberchimps_custom_layout_section',
+		'heading' => 'cyberchimps_design_heading'
+	);
+	
+	$fields_list[] = array(
 		'name' => __('Wide Sidebar', 'cyberchimps_core' ),
 		'id' => 'wide_sidebar',
 		'type' => 'toggle',

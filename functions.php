@@ -58,9 +58,6 @@ function cyberchimps_core_scripts() {
 
 	// Load library for jcarousel
 	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), true );
-
-	// Load Custom JS
-	wp_enqueue_script( 'custom', $js_path . 'custom.js', array( 'jquery' ), true );
 	
 	//touch swipe gestures
 	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
@@ -86,17 +83,21 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 	
 	// Add thumbnail size
-	if ( function_exists( 'add_image_size' ) ) { 
+	if( function_exists( 'add_image_size' ) ) { 
         add_image_size( 'featured-thumb', 100, 80, true);
         add_image_size( 'headline-thumb', 200, 225, true);
     } 
 	
 	// add javascript for comments
-	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	if( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	
-	if (cyberchimps_get_option( 'responsive_videos' ) == '1' ) {
+	if(cyberchimps_get_option( 'responsive_videos' ) == '1' ) {
 		wp_register_script( 'video' , $js_path . 'video.js');
 		wp_enqueue_script ('video');	
+	}
+	
+	if( cyberchimps_get_option( 'gallery_lightbox' ) == '1' ) {
+		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.js' , array('jquery', 'slimbox'), '1.0', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
