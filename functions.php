@@ -53,6 +53,11 @@ function cyberchimps_core_scripts() {
 	$js_path = $directory_uri . '/cyberchimps/lib/js/';
 	$bootstrap_path = $directory_uri . '/cyberchimps/lib/bootstrap/';
 	
+	// set up slimbox for gallery images
+	if( cyberchimps_get_option( 'gallery_lightbox' ) == '1' ) {
+		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.js' , array( 'jquery' ), '1.0' );
+	}
+	
 	// Load JS for slimbox
 	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.js', array( 'jquery' ), true );
 
@@ -96,9 +101,6 @@ function cyberchimps_core_scripts() {
 		wp_enqueue_script ('video');	
 	}
 	
-	if( cyberchimps_get_option( 'gallery_lightbox' ) == '1' ) {
-		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.js' , array('jquery', 'slimbox'), '1.0', true );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
 
