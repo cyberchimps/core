@@ -54,7 +54,7 @@ function cyberchimps_core_scripts() {
 	$bootstrap_path = $directory_uri . '/cyberchimps/lib/bootstrap/';
 	
 	// set up slimbox for gallery images
-	if( cyberchimps_get_option( 'gallery_lightbox', 'checked' ) ) {
+	if( cyberchimps_get_option( 'gallery_lightbox', 1 ) ) {
 		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.js' , array( 'jquery' ), '1.0' );
 	}
 	
