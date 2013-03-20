@@ -59,10 +59,10 @@ function cyberchimps_core_scripts() {
 	}
 	
 	// Load JS for slimbox
-	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.js', array( 'jquery' ), '1.0' );
 
 	// Load library for jcarousel
-	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), '1.0' );
 	
 	//touch swipe gestures
 	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
