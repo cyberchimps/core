@@ -389,21 +389,6 @@ function cyberchimps_create_sections( $sections ) {
 	}
 }
 
-function cyberchimps_custom_events_callback( $value ) {
-	
-	$output = '';
-	
-	$events_installed = false;
-	
-	if ( $events_installed ) {
-		$output .= __('Link to Events plugin settings', 'cyberchimps_core' );
-	} else {
-		$output .= __('Insert custom events info and insert install link', 'cyberchimps_core' );
-	}
-	
-	echo $output;	
-}
-
 function cyberchimps_drag_drop_field( $value ) {
 	
 	// Set directory uri
