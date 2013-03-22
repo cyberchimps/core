@@ -1157,3 +1157,76 @@ function cyberchimps_woocommerce_shop_style() {
 	}
 }
 add_action( 'admin_head', 'cyberchimps_woocommerce_shop_style' );
+
+/**
+ * The Events Calendar Add On
+ */
+
+// Add Ons Heading for Theme Options
+function cyberchimps_addons_headings( $headings_list ) {
+	$headings_list[] = array(
+		'id' => 'cyberchimps_addons_heading',
+		'title' => __('Add Ons', 'cyberchimps'),
+	);
+
+	return $headings_list;
+}
+add_filter( 'cyberchimps_headings_filter', 'cyberchimps_addons_headings', 20, 1);
+
+// The Events Calendar Section
+function cyberchimps_eventcal_add_sections( $sections_list ) {
+	$sections_list[] = array(
+		'id' => 'cyberchimps_eventcal_options',
+		'label' => __('The Events Calendar', 'cyberchimps'),
+		'heading' => 'cyberchimps_addons_heading'
+	);
+
+	return $sections_list;
+}
+add_filter('cyberchimps_section_list', 'cyberchimps_eventcal_add_sections', 20, 1);
+
+// The Events Calendar Fields
+function cyberchimps_eventcal_add_fields( $fields_list ) {
+	$fields_list[] = array(
+		'name' => __('Events', 'cyberchimps'),
+		'id' => 'events_info',
+		'type' => 'info',
+		'callback' => 'cyberchimps_custom_events_callback',
+		'section' => 'cyberchimps_eventcal_options',
+		'heading' => 'cyberchimps_addons_heading'
+	);
+
+	return $fields_list;
+}
+add_filter('cyberchimps_field_list', 'cyberchimps_eventcal_add_fields', 20, 1);
+
+// The Events Calendar Text
+function cyberchimps_custom_events_callback( $value ) {
+	$output = '';
+	$plugin = 'the-events-calendar/the-events-calendar.php';
+
+	if ( !validate_plugin( $plugin ) ) {
+		if ( is_plugin_active( $plugin ) ) {
+			$output .= '<a href="'. admin_url('edit.php?post_type=tribe_events&page=tribe-events-calendar') .'">'.__('Events Plugin Options', 'cyberchimps').'</a>';
+		} else {
+			$output .= __('Please activate The Events Calendar plugin', 'cyberchimps');
+		}
+	} else {
+		$output .= '<a href="'. cyberchimps_eventcal_install_link() .'">' . __('Install Events Calendar Plugin', 'cyberchimps') . '</a>';
+	}
+	
+	echo $output;	
+}
+
+// return a nonced installation link for the plugin. checks wordpress.org to make sure it's there first.
+function cyberchimps_eventcal_install_link() {
+	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+	$slug = 'the-events-calendar';
+	$info = plugins_api('plugin_information', array('slug' => $slug ));
+
+	if ( is_wp_error( $info ) )
+		return false; // plugin not available from wordpress.org
+	
+	return wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
+}
