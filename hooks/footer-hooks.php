@@ -22,26 +22,23 @@
 */
 function cyberchimps_footer_credit() { 
 	?>
-	<div class="span6">
-		<div id="credit">
-			<?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1'):  ?>
-			<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps" /></a>
-			<?php endif; ?>
-		</div>
-	</div>
+  <footer class="site-footer row-fluid">
+    <div class="span6">
+      <div id="credit">
+        <?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1'):  ?>
+        <a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps" /></a>
+        <?php endif; ?>
+      </div>
+    </div>
+<?php  
+  //Adds the afterfooter copyright area. ?>
+    <div class="span6">
+    <?php $copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;'. date( 'Y' ); ?>
+      <div id="copyright">
+        <?php echo wp_kses( $copyright, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) ); ?>
+      </div>
+    </div>
+  </div><!-- row-fluid -->
 	<?php
 }
 add_action ( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
-
-/**
-* Adds the afterfooter copyright area. 
-*
-* @since 1.0
-*/
-function cyberchimps_footer_copyright() {
-	echo '<div class="span6">';
-	$copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;'. date( 'Y' );
-	echo '<div id="copyright">' . wp_kses( $copyright, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) ) . '</div>';
-	echo '</div>';
-}
-add_action ( 'cyberchimps_footer', 'cyberchimps_footer_copyright' );
