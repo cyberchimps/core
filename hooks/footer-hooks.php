@@ -38,7 +38,7 @@ function cyberchimps_footer_credit() {
         <?php echo wp_kses( $copyright, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) ); ?>
       </div>
     </div>
-  </div><!-- row-fluid -->
+  </footer><!-- row-fluid -->
 	<?php
 }
 add_action ( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
