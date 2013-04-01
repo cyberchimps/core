@@ -1827,25 +1827,39 @@ if( $theme_check == 'pro' ):
 	
 	/********* BOXES OPTIONS STARTS ***********/
 	if( $options_boxes_cats ){
-		$fields_list[] = array(
-			'name' => __('Select a Category', 'cyberchimps_core' ),
-			'id' => 'boxes_category',
-			'type' => 'select',
-			'options' => $options_boxes_cats,
-			'section' => 'cyberchimps_boxes_section',
-			'heading' => 'cyberchimps_blog_heading'
+		$fields_list[]	= array(
+			'name'		=> __('Select a Category', 'cyberchimps_core' ),
+			'id'		=> 'boxes_category',
+			'type'		=> 'select',
+			'options'	=> $options_boxes_cats,
+			'section'	=> 'cyberchimps_boxes_section',
+			'heading'	=> 'cyberchimps_blog_heading'
 		);
 	}
 	else{
-		$fields_list[] = array(
-			'name' => __('Select a Category', 'cyberchimps_core' ),
-			'id' => 'boxes_category_help',
-			'type' => 'help',
-			'desc' => __( 'You need to create a Category', 'cyberchimps_core' ),
-			'section' => 'cyberchimps_boxes_section',
-			'heading' => 'cyberchimps_blog_heading'
+		$fields_list[]	= array(
+			'name'		=> __('Select a Category', 'cyberchimps_core' ),
+			'id'		=> 'boxes_category_help',
+			'type'		=> 'help',
+			'desc'		=> __( 'You need to create a Category', 'cyberchimps_core' ),
+			'section'	=> 'cyberchimps_boxes_section',
+			'heading'	=> 'cyberchimps_blog_heading'
 		);
 	}
+	
+	$fields_list[]	= array(
+		'name'		=> __('Number of boxes per row', 'cyberchimps_core' ),
+		'id'		=> 'boxes_per_row',
+		'type'		=> 'select',
+		'options'	=> array(
+							2 => '2',
+							3 => '3',
+							4 => '4'
+						),
+		'std'		=> '3',
+		'section'	=> 'cyberchimps_boxes_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
 	/********* BOXES OPTIONS ENDS ***********/
 	
 endif;// end pro option fields
