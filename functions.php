@@ -116,7 +116,7 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 add_action('woocommerce_before_main_content', 'cyberchimps_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'cyberchimps_wrapper_end', 10);
 
-if( ! functions_exists( 'cyberchimps_wrapper_start' ) ) {
+if( ! function_exists( 'cyberchimps_wrapper_start' ) ) {
  
 	function cyberchimps_wrapper_start() { ?>
 	  <div id="container" <?php cyberchimps_filter_container_class(); ?>>
