@@ -241,18 +241,43 @@ function cyberchimps_customize( $wp_customize ) {
   ) ) );
 	
  	// typography face
+	/* Default font faces */
+	$faces = array(
+				'Arial, Helvetica, sans-serif'							=> 'Arial',
+				'Arial Black, Gadget, sans-serif'					 	=> 'Arial Black',
+				'Comic Sans MS, cursive'							 	=> 'Comic Sans MS',
+				'Courier New, monospace'							 	=> 'Courier New',
+				'Georgia, serif'									 	=> 'Georgia',
+				'"HelveticaNeue-Light", "Helvetica Neue Light",
+				"Helvetica Neue",Helvetica, Arial, "Lucida Grande",
+				sans-serif' 											=> 'Helvetica Neue',
+				'Impact, Charcoal, sans-serif'						 	=> 'Impact',
+				'Lucida Console, Monaco, monospace'					 	=> 'Lucida Console',
+				'Lucida Sans Unicode, Lucida Grande, sans-serif'	 	=> 'Lucida Sans Unicode',
+				'"Open Sans", sans-serif'								=> 'Open Sans',
+				'Palatino Linotype, Book Antiqua, Palatino, serif'	 	=> 'Palatino Linotype',
+				'Tahoma, Geneva, sans-serif'						 	=> 'Tahoma',
+				'Times New Roman, Times, serif'						 	=> 'Times New Roman',
+				'Trebuchet MS, sans-serif'							 	=> 'Trebuchet MS',
+				'Verdana, Geneva, sans-serif'						 	=> 'Verdana',
+				'Symbol'											 	=> 'Symbol',
+				'Webdings'											 	=> 'Webdings',
+				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
+				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
+				'MS Serif, New York, serif'							 	=> 'MS Serif',
+			);
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][face]', array(
 			'default'        => 'Arial',
 			'type'           => 'option',
 		) );
 	
 	$wp_customize->add_control( 'typography_face', array(
-		'label'   => __( 'Typography Face', 'cyberchimps_core' ),
-    'section' => 'cyberchimps_typography_section',
-    'type'    => 'select',
-		'settings'   => 'cyberchimps_options[typography_options][face]',
-    'choices'    => apply_filters( 'cyberchimps_typography_faces', '' )
-  ) );
+		'label'		=> __( 'Typography Face', 'cyberchimps_core' ),
+		'section' 	=> 'cyberchimps_typography_section',
+		'type'		=> 'select',
+		'settings'	=> 'cyberchimps_options[typography_options][face]',
+		'choices'	=> apply_filters( 'cyberchimps_typography_faces', $faces )
+	  ) );
 	// typography style
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
 			'default'        => 'normal',
