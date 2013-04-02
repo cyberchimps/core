@@ -115,26 +115,32 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 add_action('woocommerce_before_main_content', 'cyberchimps_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'cyberchimps_wrapper_end', 10);
+
+if( ! functions_exists( 'cyberchimps_wrapper_start' ) ) {
  
-function cyberchimps_wrapper_start() { ?>
-  <div id="container" <?php cyberchimps_filter_container_class(); ?>>
-	
-		<?php do_action( 'cyberchimps_before_content_container'); ?>
-	
-			<div id="content" <?php cyberchimps_filter_content_class(); ?>>
+	function cyberchimps_wrapper_start() { ?>
+	  <div id="container" <?php cyberchimps_filter_container_class(); ?>>
 		
-				<?php do_action( 'cyberchimps_before_content');
+			<?php do_action( 'cyberchimps_before_content_container'); ?>
+		
+				<div id="content" <?php cyberchimps_filter_content_class(); ?>>
+			
+					<?php do_action( 'cyberchimps_before_content');
+	}
 }
+
+if( ! function_exists( 'cyberchimps_wrapper_end' ) ) {
  
-function cyberchimps_wrapper_end() { ?>
-  			<?php do_action( 'cyberchimps_after_content'); ?>
+	function cyberchimps_wrapper_end() { ?>
+	  			<?php do_action( 'cyberchimps_after_content'); ?>
+			
+				</div><!-- #content -->
 		
-			</div><!-- #content -->
-	
-		<?php do_action( 'cyberchimps_after_content_container'); ?>
-		
-	</div><!-- #container .row-fluid-->
-<?php
+			<?php do_action( 'cyberchimps_after_content_container'); ?>
+			
+		</div><!-- #container .row-fluid-->
+	<?php
+	}
 }
 
 //Enables woocommerce support for the theme.
