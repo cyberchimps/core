@@ -628,7 +628,9 @@ function cyberchimps_default_site_title() {
 			printf( __( 'Monthly Archives:', 'cyberchimps_core' ) . ' %s', get_the_date( 'F Y' ) );
 		} elseif ( is_year() ) {
 			printf( __( 'Yearly Archives:', 'cyberchimps_core' ) . ' %s', get_the_date( 'Y' ) );
-		} else {
+		} elseif( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {
+			_e( 'Shop', 'cyberchimps_core_scripts' );
+		}else {
 			_e( 'Archives', 'cyberchimps_core' );
 		}
 	}
