@@ -1,6 +1,18 @@
 /* Core Stylesheet
 ----------------------------------------------- */
 
+/* Container Full Width that everything is wrapped in */
+.container-full-width {
+	width: 100%;
+}
+.container-full-width:before, .container-full-width:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.container-full-width:after {
+	clear: both;
+}
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
