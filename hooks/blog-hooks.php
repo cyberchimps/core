@@ -40,7 +40,7 @@ function cyberchimps_blog_section_order_action() {
 			}
 			else {
 			?>
-				<div class="container-full-width" id="<?php echo $func; ?>">
+				<div class="container-full-width" id="<?php echo $func; ?>_section">
 					<div class="container">	
 						<div class="container-fluid">
 							<?php
