@@ -38,18 +38,19 @@ function cyberchimps_blog_section_order_action() {
 			if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
 				$func = '';
 			}
+			else {
 			?>
-			
-			<div class="container-full-width" id="<?php echo $func; ?>">
-				<div class="container">	
-					<div class="container-fluid">
-						<?php
-						do_action($func);
-						?>
-					</div> 	<!-- .container-fluid-->
-				</div> 	<!-- .container -->
-			</div> 	<!-- .container-full-width -->
-		<?php
+				<div class="container-full-width" id="<?php echo $func; ?>">
+					<div class="container">	
+						<div class="container-fluid">
+							<?php
+							do_action($func);
+							?>
+						</div> 	<!-- .container-fluid-->
+					</div> 	<!-- .container -->
+				</div> 	<!-- .container-full-width -->
+			<?php
+			}
 		}
 	}
 }

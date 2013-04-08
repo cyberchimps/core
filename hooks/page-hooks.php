@@ -33,18 +33,22 @@ function cyberchimps_page_section_order_action() {
 			foreach ( $page_section_order as $func) {
 			
 				// checks if slider is selected at half size, if it is it removes it so we can display it above page content
-				$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
+				if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
+					$func = '';
+				}
+				else {
 				?>
-				<div class="container-full-width" id="<?php echo $func; ?>">
-					<div class="container">	
-						<div class="container-fluid">
-							<?php
-							do_action($func);
-							?>
-						</div> 	<!-- .container-fluid-->
-					</div> 	<!-- .container -->
-				</div> 	<!-- .container-full-width -->
-			<?php
+					<div class="container-full-width" id="<?php echo $func; ?>">
+						<div class="container">	
+							<div class="container-fluid">
+								<?php
+								do_action($func);
+								?>
+							</div> 	<!-- .container-fluid-->
+						</div> 	<!-- .container -->
+					</div> 	<!-- .container-full-width -->
+				<?php
+				}
 			}
 		}
 	}
