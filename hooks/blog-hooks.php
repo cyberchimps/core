@@ -20,10 +20,10 @@ function cyberchimps_blog_section_order_action() {
 	
 	$defaults = array();
 	$default = apply_filters( 'cyberchimps_elements_draganddrop_defaults', array(
-																																								'slider_lite'		 => __( 'Slider Lite', 'cyberchimps_core' ),
-																																								'boxes_lite'				 => __( 'Boxes', 'cyberchimps_core' ),
-																																								'blog_post_page' => __( 'Post Page', 'cyberchimps_core' )
-																																							) );
+								'slider_lite'		 => __( 'Slider Lite', 'cyberchimps_core' ),
+								'boxes_lite'				 => __( 'Boxes', 'cyberchimps_core' ),
+								'blog_post_page' => __( 'Post Page', 'cyberchimps_core' )
+							) );
 	foreach( $default as $key => $val ) {
 		$defaults[] = $key;
 	}
@@ -38,7 +38,18 @@ function cyberchimps_blog_section_order_action() {
 			if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
 				$func = '';
 			}
-			do_action($func);
+			?>
+			
+			<div class="container-full-width" id="<?php echo $func; ?>">
+				<div class="container">	
+					<div class="container-fluid">
+						<?php
+						do_action($func);
+						?>
+					</div> 	<!-- .container-fluid-->
+				</div> 	<!-- .container -->
+			</div> 	<!-- .container-full-width -->
+		<?php
 		}
 	}
 }
