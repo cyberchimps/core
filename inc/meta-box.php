@@ -247,7 +247,7 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps_core' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps_core' ), array('std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps_core' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
-			->select('boxes_per_row', __( 'Boxes Category', 'Number of boxes per row' ), '',
+			->select('boxes_per_row', __( 'Number of boxes per row', 'cyberchimps_core' ), '',
 				array( 'options' => array( 2 => '2', 3 => '3', 4 => '4' ), 'std' => '3' ) )
 		/*->tab("Profile Options")
 			->text('profile_name', __( 'Profile Name', 'cyberchimps_core' ), "" )
