@@ -244,9 +244,12 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		$classes = empty( $item->classes ) ? array() : ( array ) $item->classes;
 
 		//Add class and attribute to LI element that contains a submenu UL.
-		if ( $args->has_children && $depth < 1 ){
+		if ( $args->has_children && $depth < 1 ) {
 			$classes[] 		= 'dropdown';
 			$li_attributes .= 'data-dropdown="dropdown"';
+		}
+		if ( $args->has_children && $depth == 1 ) {
+			$classes[]	= 'grandchild';
 		}
 		$classes[] = 'menu-item-' . $item->ID;
 		//If we are on the current page, add the active class to that menu item.
@@ -270,7 +273,8 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= ($args->has_children && $depth < 1) ? ' <b class="caret"></b> ' : ''; 
+		$item_output .= ( $args->has_children && $depth < 1 ) ? ' <b class="caret"></b> ' : '';
+		$item_output .= ( $args->has_children && $depth == 1 ) ? apply_filters( 'cyberchimps_menu_grandchild_caret', '' ) : '';
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
