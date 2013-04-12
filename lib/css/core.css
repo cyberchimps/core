@@ -47,3 +47,7 @@
 #content-woocommerce {
 	max-width: 650px;
 }
+/* CSS for the site title, after removing the hgroup tag */
+.hgroup {
+	display: block;
+}
