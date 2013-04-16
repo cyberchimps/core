@@ -848,7 +848,7 @@ function cyberchimps_blog_excerpt_more( $more ){
 	}
 }
 if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ){
-	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 10 );
 }
 
 /**
