@@ -1110,6 +1110,107 @@ if( $theme_check == 'free' ):
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
+	/* Options for box 1 starts */
+	
+	// Image uploader
+	$fields_list[]	= array(
+		'name'		=> __('First Box Image', 'cyberchimps_core' ),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_one',
+		'type'		=> 'upload',
+		'std'		=> $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img1', '/elements/lib/images/boxes/slidericon.png' ),
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// URL of Box link
+	$fields_list[]	= array(
+		'name'		=> __('Link URL', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_link_url_one',
+		'std'		=> apply_filters( 'cyberchimps_boxes_lite_url1', 'http://wordpress.org' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Box text
+	$fields_list[]	= array(
+		'name'		=> __('First Box Text', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_one_text',
+		'type'		=> 'textarea',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	/* Options for box 1 ends */
+	/* Options for box 2 starts */
+	
+	// Image uploader
+	$fields_list[]	= array(
+		'name'		=> __('Second Box Image', 'cyberchimps_core' ),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_two',
+		'type'		=> 'upload',
+		'std'		=> $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img2', '/elements/lib/images/boxes/blueprint.png' ),
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// URL of Box link
+	$fields_list[]	= array(
+		'name'		=> __('Link URL', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_link_url_two',
+		'std'		=> apply_filters( 'cyberchimps_boxes_lite_url2', 'http://wordpress.org' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Box text
+	$fields_list[]	= array(
+		'name'		=> __('Second Box Text', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_two_text',
+		'type'		=> 'textarea',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	/* Options for box 2 ends */
+	/* Options for box 3 starts */
+	
+	// Image uploader
+	$fields_list[]	= array(
+		'name'		=> __('Third Box Image', 'cyberchimps_core' ),
+		'desc'		=> __('Enter URL or upload file', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_three',
+		'type'		=> 'upload',
+		'std'		=> $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img3', '/elements/lib/images/boxes/docs.png' ),
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// URL of Box link
+	$fields_list[]	= array(
+		'name'		=> __('Link URL', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_link_url_three',
+		'std'		=> apply_filters( 'cyberchimps_boxes_lite_url3', 'http://wordpress.org' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Box text
+	$fields_list[]	= array(
+		'name'		=> __('Third Box Text', 'cyberchimps_core' ),
+		'id'		=> 'cyberchimps_blog_boxes_lite_image_three_text',
+		'type'		=> 'textarea',
+		'section'	=> 'cyberchimps_blog_boxes_lite_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	/* Options for box 3 ends */
+	
+	
 	/********* BOXES LITE ENDS ******************/
 	
 	/********* PORTFOLIO LITE STARTS ****************/

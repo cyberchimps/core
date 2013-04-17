@@ -41,10 +41,15 @@ function cyberchimps_init_meta_boxes() {
 	$portfolio_image = $image_path . "portfolio.jpg";
 	
 	// get default image for slider lite.
-	$slider_image1	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' );
-	$slider_image2	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' );
-	$slider_image3	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' );
-
+	$slider_image1 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image2 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image3 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' );
+	
+	// get default image for Boxes lite.
+	$boxes_lite_image1 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img1', '/elements/lib/images/boxes/slidericon.png' );
+	$boxes_lite_image2 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img2', '/elements/lib/images/boxes/blueprint.png' );
+	$boxes_lite_image3 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img3', '/elements/lib/images/boxes/docs.png' );
+	
 	// add gravatar image as default
 	$email = get_option( 'admin_email' );
 	if( $email ) {
@@ -245,6 +250,16 @@ function cyberchimps_init_meta_boxes() {
 			->select('carousel_category', __( 'Carousel Category', 'cyberchimps_core' ), '', array('options' => ( $carousel_options ? $carousel_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
 		->tab("Twitter Options")
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps_core' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps_core' ), array('std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )
+		->tab("Boxes Lite Options")
+			->single_image('cyberchimps_portfolio_lite_image_one', __( 'First Box Image', 'cyberchimps_core' ), '', array( 'std' => $boxes_lite_image1 ) )
+			->text('cyberchimps_boxes_lite_image_one_url', __( 'Link URL', 'cyberchimps_core' ), '', array( 'std' => 'http://wordpress.org' ) )
+			->textarea('cyberchimps_boxes_lite_image_one_text', __( 'First Box Text', 'cyberchimps_core' ), '', array( 'std' => '' ) )
+			->single_image('cyberchimps_boxes_lite_image_two', __( 'Second Box Image', 'cyberchimps_core' ), '', array( 'std' => $boxes_lite_image2 ) )
+			->text('cyberchimps_boxes_lite_image_two_url', __( 'Link URL', 'cyberchimps_core' ), '', array( 'std' => 'http://wordpress.org' ) )
+			->textarea('cyberchimps_boxes_lite_image_two_text', __( 'Second Box Text', 'cyberchimps_core' ), '', array( 'std' => '' ) )
+			->single_image('cyberchimps_boxes_lite_image_three', __( 'Third Box Image', 'cyberchimps_core' ), '', array( 'std' => $boxes_lite_image3 ) )
+			->text('cyberchimps_boxes_lite_image_three_url', __( 'Link URL', 'cyberchimps_core' ), '', array( 'std' => 'http://wordpress.org' ) )
+			->textarea('cyberchimps_boxes_lite_image_three_text', __( 'Third Box Text', 'cyberchimps_core' ), '', array( 'std' => '' ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps_core' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
 			->select('boxes_per_row', __( 'Number of boxes per row', 'cyberchimps_core' ), '',
