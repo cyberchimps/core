@@ -79,7 +79,6 @@ jQuery(document).ready(function($) {
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
-		boxes_lite 			: "cyberchimps_blog_boxes_lite_section",
 		//profile				: "cyberchimps_profile_section"
 	};
 	
