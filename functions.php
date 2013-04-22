@@ -416,7 +416,7 @@ function cyberchimps_posted_on() {
 		esc_attr( get_the_date( 'c' ) ),
 		( $show_date ) ? esc_html( get_the_date() ) : '',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by', 'cyberchimps_core' ) . ' %s', get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) ),
 		( $show_author ) ? esc_html( get_the_author() ) : '',
 		( $show_date ) ? __( 'Posted on ', 'cyberchimps_core' ) : '',
 		( $show_author ) ? __( ' by ', 'cyberchimps_core' ) : '',
