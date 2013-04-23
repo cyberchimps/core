@@ -989,7 +989,7 @@ function cyberchimps_options_help_text() {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
 						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
-						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to', 'cyberchimps_core' ) . ' %1$s', apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</a>
 						</div>
 						</div>
