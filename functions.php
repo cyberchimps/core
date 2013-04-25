@@ -111,26 +111,38 @@ add_action('woocommerce_after_main_content', 'cyberchimps_wrapper_end', 10);
 if( ! function_exists( 'cyberchimps_wrapper_start' ) ) {
  
 	function cyberchimps_wrapper_start() { ?>
-	  <div id="container" <?php cyberchimps_filter_container_class(); ?>>
+	  <div id="cc_woocommerce" class="container-full-width">
+	    
+	    <div class="container">
+	      
+	      <div class="container-fluid">
+	        
+	         <div id="container" <?php cyberchimps_filter_container_class(); ?>>
 		
-			<?php do_action( 'cyberchimps_before_content_container'); ?>
-		
-				<div id="content" <?php cyberchimps_filter_content_class(); ?>>
-			
-					<?php do_action( 'cyberchimps_before_content');
+      			<?php do_action( 'cyberchimps_before_content_container'); ?>
+      		
+      				<div id="content" <?php cyberchimps_filter_content_class(); ?>>
+      			
+      					<?php do_action( 'cyberchimps_before_content');
 	}
 }
 
 if( ! function_exists( 'cyberchimps_wrapper_end' ) ) {
  
 	function cyberchimps_wrapper_end() { ?>
-	  			<?php do_action( 'cyberchimps_after_content'); ?>
-			
-				</div><!-- #content -->
-		
-			<?php do_action( 'cyberchimps_after_content_container'); ?>
-			
-		</div><!-- #container .row-fluid-->
+      	  			<?php do_action( 'cyberchimps_after_content'); ?>
+      			
+      				</div><!-- #content -->
+      		
+      			<?php do_action( 'cyberchimps_after_content_container'); ?>
+      			
+      		</div><!-- #container .row-fluid-->
+      		
+    		</div><!-- container fluid -->
+    		
+  		</div><!-- conatiner -->
+  		
+		</div><!-- container full width -->
 	<?php
 	}
 }
