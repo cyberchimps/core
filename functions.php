@@ -67,7 +67,7 @@ function cyberchimps_core_scripts() {
 	
 	//responsive design
 	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ){
-		wp_enqueue_style( 'cyberchimps_responsive', get_template_directory_uri() . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
+		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array('bootstrap-responsive-style', 'bootstrap-style'), '1.0' );
 	}
 	else {
 		wp_dequeue_style( 'cyberchimps_responsive' );
