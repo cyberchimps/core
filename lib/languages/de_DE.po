@@ -3,18 +3,18 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-03-19 13:51-0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2013-05-13 11:02-0000\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: German, Germany\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../functions.php
 msgid "View all posts by"
-msgstr "Zeige alle Beiträge von "
+msgstr "Zeige alle Beiträge von"
 
 #: ../../functions.php
 msgid "Posted on "
@@ -22,7 +22,7 @@ msgstr "Geschrieben am "
 
 #: ../../functions.php
 msgid " by "
-msgstr "von"
+msgstr " von "
 
 #: ../../functions.php
 msgid "Posted in"
@@ -30,11 +30,11 @@ msgstr "Veröffentlicht in"
 
 #: ../../functions.php
 msgid "Tags:"
-msgstr "Schlagworte"
+msgstr "Schlagworte:"
 
 #: ../../functions.php
 msgid "Leave a comment"
-msgstr "Hinterlasse einen Kommentar"
+msgstr "Einen Kommentar hinterlassen"
 
 #: ../../functions.php
 msgid "1 Comment"
@@ -42,7 +42,7 @@ msgstr "1 Kommentar"
 
 #: ../../options/options-core.php ../../functions.php
 msgid "Comments"
-msgstr "Kommentar"
+msgstr "Kommentare"
 
 #: ../../functions.php
 msgid "Permalink to %s"
@@ -54,15 +54,15 @@ msgstr "Kategorie-Archiv:"
 
 #: ../../functions.php
 msgid "Tag Archives:"
-msgstr "Tag-Archiv:"
+msgstr "Schlagwort-Archive:"
 
 #: ../../functions.php
 msgid "Author Archives"
-msgstr "Autor Archiv"
+msgstr "Archiv des Autors:"
 
 #: ../../functions.php
 msgid "Daily Archives:"
-msgstr "Tag Archives:"
+msgstr "Tagesarchive:"
 
 #: ../../functions.php
 msgid "Monthly Archives:"
@@ -70,7 +70,7 @@ msgstr "Monatsarchiv:"
 
 #: ../../functions.php
 msgid "Yearly Archives:"
-msgstr "Jährliche Archiv:"
+msgstr "Jahresarchive:"
 
 #: ../../functions.php
 msgid "Archives"
@@ -134,11 +134,11 @@ msgstr "Anleitung"
 
 #: ../../options/options-init.php ../../functions.php
 msgid "Support"
-msgstr "Unterstützung"
+msgstr "Support"
 
 #: ../../functions.php
 msgid "Upgrade to"
-msgstr "Werde"
+msgstr "Upgrade auf"
 
 #: ../../functions.php
 msgid "If you want even more amazing new features upgrade to"
@@ -161,31 +161,31 @@ msgstr "um mehr zu erfahren!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "Willkommen in %1$s ! Erfahren Sie jetzt mehr über das Upgrade auf"
+msgstr "Willkommen in %1$s! Erfahren Sie jetzt mehr über das Upgrade auf"
 
 #: ../../functions.php
 msgid "today."
-msgstr "Heute ist."
+msgstr "heute."
 
 #: ../../options/options-init.php ../../functions.php
 msgid "Options"
-msgstr "Auswahl"
+msgstr "Optionen"
 
 #: ../../functions.php
 msgid " Options"
-msgstr "Auswahl"
+msgstr " Optionen"
 
 #: ../../init.php
 msgid "Primary Menu"
-msgstr "Primäres Menü"
+msgstr "Primär Menü"
 
 #: ../../init.php
 msgid "Sidebar Left"
-msgstr "linker Sidebar"
+msgstr "Linker Sidebar"
 
 #: ../../init.php
 msgid "Sidebar Right"
-msgstr "rechter Sidebar"
+msgstr "Rechter Sidebar"
 
 #: ../../options/options-core.php ../../init.php
 msgid "Footer Widgets"
@@ -194,16 +194,16 @@ msgstr "Fußzeile-Widgets"
 #: ../../options/options-core.php ../../inc/meta-box.php
 #: ../../hooks/blog-hooks.php
 msgid "Slider Lite"
-msgstr "Schieberegler Lite"
+msgstr "Slider Lite"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 #: ../../hooks/blog-hooks.php
 msgid "Boxes"
-msgstr "Box"
+msgstr "Boxen"
 
 #: ../../options/options-core.php ../../hooks/blog-hooks.php
 msgid "Post Page"
-msgstr "Post-Seite"
+msgstr "Beitrag-Seite"
 
 #: ../../options/options-core.php ../../hooks/header-hooks.php
 msgid "Logo + Icons"
@@ -237,12 +237,12 @@ msgstr ""
 
 #: ../../inc/meta-box-class.php
 msgid "Select a color"
-msgstr "Farbe aussuchen"
+msgstr "Textfarbe auswählen"
 
 #: ../../options/options-medialibrary-uploader.php
 #: ../../inc/meta-box-class.php
 msgid "Upload"
-msgstr "Laden"
+msgstr "Hochladen"
 
 #: ../../inc/meta-box-class.php
 msgid "or enter URL"
@@ -262,7 +262,7 @@ msgstr "Slider-Beschriftung"
 
 #: ../../inc/meta-box.php
 msgid "Custom Slide Link"
-msgstr "Benutzerdefinierte Slide Link-"
+msgstr "Benutzerdefinierte Slide Link"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Title"
@@ -270,7 +270,7 @@ msgstr "Titel"
 
 #: ../../inc/meta-box.php
 msgid "Caption"
-msgstr "Titel"
+msgstr "Beschriftung"
 
 #: ../../inc/meta-box.php
 msgid "Need Help?"
@@ -278,11 +278,11 @@ msgstr "Brauchen sie Hilfe?"
 
 #: ../../inc/meta-box.php
 msgid "Select Page Layout"
-msgstr "Wählen Sie Seitenlayout"
+msgstr "Wählen Sie eine Seitenlayout"
 
 #: ../../inc/meta-box.php
 msgid "Page Title"
-msgstr "Courses"
+msgstr "Site Title"
 
 #: ../../inc/meta-box.php
 msgid "Page Elements"
@@ -302,7 +302,7 @@ msgstr "Meta Daten"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Featured Image"
-msgstr "Empfohlene Bild"
+msgstr "Beitragsbild"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Category"
@@ -358,7 +358,7 @@ msgstr "Grösse des Slider"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Full"
-msgstr "voll"
+msgstr "Voll"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Half"
@@ -370,11 +370,11 @@ msgstr "Diashow-Typ"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Custom"
-msgstr "Eigene"
+msgstr "Benutzerdefiniert"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Posts"
-msgstr "Artikel"
+msgstr "Beiträge"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Post Categories"
@@ -486,11 +486,11 @@ msgstr "Zwei"
 
 #: ../../inc/meta-box.php
 msgid "Three"
-msgstr "drei"
+msgstr "Drei"
 
 #: ../../inc/meta-box.php
 msgid "Four"
-msgstr "vier"
+msgstr "Vier"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Portfolio Category"
@@ -506,7 +506,7 @@ msgstr "Portfolio"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "First Portfolio Image"
-msgstr "Erste ansehen"
+msgstr "Erste Portfolio Bild"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "First Portfolio Image Caption"
@@ -518,15 +518,15 @@ msgstr "Bild 1"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "First Porfolio Link"
-msgstr "Erste Porfolio Link-"
+msgstr "Erste Porfolio Link"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Link URL"
-msgstr "URL"
+msgstr "Link URL"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Second Portfolio Image"
-msgstr "Zweitens ansehen"
+msgstr "Zweitens Portfolio Bild"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Second Portfolio Image Caption"
@@ -538,15 +538,15 @@ msgstr "Bild 2"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Second Porfolio Link"
-msgstr "Zweitens Porfolio Link-"
+msgstr "Zweitens Porfolio Link"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Third Portfolio Image"
-msgstr "Third ansehen"
+msgstr "Dritte Portfolio Bild"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Third Portfolio Image Caption"
-msgstr "Third Portfolio Bildunterschrift"
+msgstr "Dritte Portfolio Bildunterschrift"
 
 #: ../../inc/meta-box.php
 msgid "Image 3"
@@ -554,11 +554,11 @@ msgstr "Bild 3"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Third Porfolio Link"
-msgstr "Third Porfolio Link-"
+msgstr "Dritte Porfolio Link"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Fourth Portfolio Image"
-msgstr "Vierte ansehen"
+msgstr "Vierte Portfolio Bild"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Fourth Portfolio Image Caption"
@@ -570,7 +570,7 @@ msgstr "Bild 4"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Fourth Porfolio Link"
-msgstr "Vierte Porfolio Link-"
+msgstr "Vierte Porfolio Link"
 
 #: ../../inc/meta-box.php
 msgid "Post Category"
@@ -646,7 +646,7 @@ msgstr "Soziale Symbole"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr "Drag Drop"
+msgstr "Ziehen & Ablegen"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
@@ -710,7 +710,7 @@ msgstr "Archivieren"
 
 #: ../../options/options-core.php
 msgid "Search"
-msgstr "sch"
+msgstr "Suchen"
 
 #: ../../options/options-core.php
 msgid "Footer Options"
@@ -790,7 +790,7 @@ msgstr "Link-Farbe beim OnHover"
 
 #: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr "Wählen Sie eine Farbe für OnHover"
+msgstr "Wählen Sie eine Farbe für schweben"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
@@ -830,7 +830,7 @@ msgstr "URL:"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
-msgstr "URL hier eingeben..."
+msgstr "URL eingeben"
 
 #: ../../options/options-core.php
 msgid "Custom Logo"
@@ -958,7 +958,7 @@ msgstr "Google Maps URL"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr "Drag &amp; & Drop-Blog-Elemente"
+msgstr "Ziehen und Ablegen Blog-Elemente"
 
 #: ../../options/options-core.php
 msgid "Sidebar Options"
@@ -974,7 +974,7 @@ msgstr "Beitrags-Auszüge"
 
 #: ../../options/options-core.php
 msgid "Read More Text"
-msgstr "Weiterlesen"
+msgstr "Weiterlesen Text"
 
 #: ../../options/options-core.php
 msgid "Excerpt Length"
@@ -1089,7 +1089,7 @@ msgstr "Große Post Auszug Länge"
 
 #: ../../options/options-core.php
 msgid "Number of Wide Posts"
-msgstr "Einige große Posten"
+msgstr "Anzahl breite Beiträge"
 
 #: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
@@ -1273,7 +1273,7 @@ msgstr "Datei anzeigen"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Gallery"
-msgstr "Fotos"
+msgstr "Galerie"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Previously Uploaded"
@@ -1301,7 +1301,7 @@ msgstr "Oben links"
 
 #: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr "Von oben Mitte"
+msgstr "Oben Mitte"
 
 #: ../../options/options-sanitize.php
 msgid "Top Right"
@@ -1341,7 +1341,7 @@ msgstr "Fixiert"
 
 #: ../../options/options-sanitize.php
 msgid "Normal"
-msgstr "&Normal"
+msgstr "Normal"
 
 #: ../../options/options-sanitize.php
 msgid "Italic"
