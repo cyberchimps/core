@@ -155,30 +155,30 @@ function cyberchimps_custom_background_cb() {
 // Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar Left', 'cyberchimps_core' ),
-		'id' => 'sidebar-left',
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			=> __( 'Sidebar Left', 'cyberchimps_core' ),
+		'id'			=> 'sidebar-left',
+		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
+		'after_widget'	=> "</aside>",
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
 	));
 	
 	register_sidebar( array(
-		'name' => __( 'Sidebar Right', 'cyberchimps_core' ),
-		'id' => 'sidebar-right',
-		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			=> __( 'Sidebar Right', 'cyberchimps_core' ),
+		'id'			=> 'sidebar-right',
+		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
+		'after_widget'	=> "</aside>",
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
 	));
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Widgets', 'cyberchimps_core' ),
-		'id' => 'cyberchimps-footer-widgets',
-		'before_widget' => '<aside id="%1$s" class="widget-container span3 %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			=> __( 'Footer Widgets', 'cyberchimps_core' ),
+		'id'			=> 'cyberchimps-footer-widgets',
+		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
+		'after_widget'	=> "</aside>",
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	=> '</h3>',
 	));
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
