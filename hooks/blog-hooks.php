@@ -35,7 +35,7 @@ function cyberchimps_blog_section_order_action() {
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
 			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
-			if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
+			if( $func == 'page_slider' && $slider_size == 'half' ) {
 				$func = '';
 			}
 			else {
