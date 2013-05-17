@@ -158,7 +158,7 @@ function cyberchimps_widgets_init() {
 		'name'			=> __( 'Sidebar Left', 'cyberchimps_core' ),
 		'id'			=> 'sidebar-left',
 		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-		'after_widget'	=> "</aside>",
+		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
 		'before_title'	=> '<h3 class="widget-title">',
 		'after_title'	=> '</h3>',
 	));
@@ -167,7 +167,7 @@ function cyberchimps_widgets_init() {
 		'name'			=> __( 'Sidebar Right', 'cyberchimps_core' ),
 		'id'			=> 'sidebar-right',
 		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-		'after_widget'	=> "</aside>",
+		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
 		'before_title'	=> '<h3 class="widget-title">',
 		'after_title'	=> '</h3>',
 	));
@@ -176,7 +176,7 @@ function cyberchimps_widgets_init() {
 		'name'			=> __( 'Footer Widgets', 'cyberchimps_core' ),
 		'id'			=> 'cyberchimps-footer-widgets',
 		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
-		'after_widget'	=> "</aside>",
+		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
 		'before_title'	=> '<h3 class="widget-title">',
 		'after_title'	=> '</h3>',
 	));
