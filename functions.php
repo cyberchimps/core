@@ -402,43 +402,80 @@ function cyberchimps_fallback_menu() {
 	echo $output;
 }
 
+//Prints HTML with meta information for the current post-date/time.
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) {
-//Prints HTML with meta information for the current post-date/time and author.
-function cyberchimps_posted_on() {
-	
-	if( is_single() ) {
-		$show_date = ( cyberchimps_get_option( 'single_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_date', 1 ) : false;
-		$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
-		$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_categories', 1 ) : false; 
+
+	function cyberchimps_posted_on() {
+		
+		if( is_single() ) {
+			$show_date = ( cyberchimps_get_option( 'single_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_date', 1 ) : false;
+			$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
+			$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_categories', 1 ) : false; 
+		}
+		elseif( is_archive() ) {
+			$show_date = ( cyberchimps_get_option( 'archive_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_date', 1 ) : false;  
+			$show_author = ( cyberchimps_get_option( 'archive_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_author', 1 ) : false;
+			$show_categories = ( cyberchimps_get_option( 'archive_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_categories', 1 ) : false; 
+		}
+		else {
+			$show_date = ( cyberchimps_get_option( 'post_byline_date', 1 ) ) ? cyberchimps_get_option( 'post_byline_date', 1 ) : false; 
+			$show_author = ( cyberchimps_get_option( 'post_byline_author', 1 ) ) ? cyberchimps_get_option( 'post_byline_author', 1 ) : false; 
+			$show_categories = ( cyberchimps_get_option( 'post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'post_byline_categories', 1 ) : false; 
+		}
+		
+		$posted_on = sprintf( '%5$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+			esc_url( get_permalink() ),
+			esc_attr( get_the_time() ),
+			esc_attr( get_the_date( 'c' ) ),
+			( $show_date ) ? esc_html( get_the_date() ) : '',
+			( $show_date ) ? __( 'Posted on ', 'cyberchimps_core' ) : ''
+		);
+		
+		apply_filters( 'cyberchimps_posted_on', $posted_on );
+		echo $posted_on;
 	}
-	elseif( is_archive() ) {
-		$show_date = ( cyberchimps_get_option( 'archive_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_date', 1 ) : false;  
-		$show_author = ( cyberchimps_get_option( 'archive_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_author', 1 ) : false;
-		$show_categories = ( cyberchimps_get_option( 'archive_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_categories', 1 ) : false; 
-	}
-	else {
-		$show_date = ( cyberchimps_get_option( 'post_byline_date', 1 ) ) ? cyberchimps_get_option( 'post_byline_date', 1 ) : false; 
-		$show_author = ( cyberchimps_get_option( 'post_byline_author', 1 ) ) ? cyberchimps_get_option( 'post_byline_author', 1 ) : false; 
-		$show_categories = ( cyberchimps_get_option( 'post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'post_byline_categories', 1 ) : false; 
-	}
-	
-	$posted_on = sprintf( '%8$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>%10$s %9$s<span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span>%11$s',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		( $show_date ) ? esc_html( get_the_date() ) : '',
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) ),
-		( $show_author ) ? esc_html( get_the_author() ) : '',
-		( $show_date ) ? __( 'Posted on ', 'cyberchimps_core' ) : '',
-		( $show_author ) ? __( ' by ', 'cyberchimps_core' ) : '',
-		( $show_author || $show_categories ) ? '<span class="byline">' : '',
-		( $show_author || $show_categories ) ? '</span>' : ''
-	);
-	apply_filters( 'cyberchimps_posted_on', $posted_on );
-	echo $posted_on;
 }
+
+// Prints HTML for author link of the post.
+if ( !function_exists( 'cyberchimps_posted_by' ) ) {
+	function cyberchimps_posted_by() {
+	
+		// Get value of post byline author toggle option from theme option for different pages.
+		if( is_single() ) {
+			$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
+		}
+		elseif( is_archive() ) {
+			$show_author = ( cyberchimps_get_option( 'archive_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_author', 1 ) : false;
+		}
+		else {
+			$show_author = ( cyberchimps_get_option( 'post_byline_author', 1 ) ) ? cyberchimps_get_option( 'post_byline_author', 1 ) : false; 
+		}
+	
+		// Get url of all author archive( the page will contain all posts by the author).
+		$auther_posts_url	= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+		
+		// Set author title text which will appear on hover over the author link.
+		$auther_link_title	= esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) );
+		
+		// Set the HTML for author link.
+		$posted_by = '
+			<span class="byline">
+				' . __( ' by ', 'cyberchimps_core' ) . '
+				<span class="author vcard">
+					<a class="url fn n" href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="author">
+						' .esc_html( get_the_author() ). '
+					</a>
+				</span>
+			</span>';
+		
+		// If post byline author toggle is on then print HTML for author link.
+		if( $show_author ) {
+			apply_filters( 'cyberchimps_posted_by', $posted_by );
+			echo $posted_by;
+		}
+	}
 }
+
 
 if( ! function_exists( 'cyberchimps_posted_in' ) ) {
 //add meta entry category to single post, archive and blog list if set in options
