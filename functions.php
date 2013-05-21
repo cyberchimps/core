@@ -402,37 +402,40 @@ function cyberchimps_fallback_menu() {
 	echo $output;
 }
 
-//Prints HTML with meta information for the current post-date/time.
+//Prints HTML with meta information for the current post date/time.
 if ( ! function_exists( 'cyberchimps_posted_on' ) ) {
 
 	function cyberchimps_posted_on() {
 		
+		// Get value of post byline date toggle option from theme option for different pages
 		if( is_single() ) {
 			$show_date = ( cyberchimps_get_option( 'single_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_date', 1 ) : false;
-			$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
-			$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_categories', 1 ) : false; 
 		}
 		elseif( is_archive() ) {
 			$show_date = ( cyberchimps_get_option( 'archive_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_date', 1 ) : false;  
-			$show_author = ( cyberchimps_get_option( 'archive_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_author', 1 ) : false;
-			$show_categories = ( cyberchimps_get_option( 'archive_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_categories', 1 ) : false; 
 		}
 		else {
 			$show_date = ( cyberchimps_get_option( 'post_byline_date', 1 ) ) ? cyberchimps_get_option( 'post_byline_date', 1 ) : false; 
-			$show_author = ( cyberchimps_get_option( 'post_byline_author', 1 ) ) ? cyberchimps_get_option( 'post_byline_author', 1 ) : false; 
-			$show_categories = ( cyberchimps_get_option( 'post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'post_byline_categories', 1 ) : false; 
 		}
 		
-		$posted_on = sprintf( '%5$s<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			( $show_date ) ? esc_html( get_the_date() ) : '',
-			( $show_date ) ? __( 'Posted on ', 'cyberchimps_core' ) : ''
-		);
+		// Get all data related to date.
+		$date_url	= esc_url( get_permalink() );
+		$date_title	= esc_attr( get_the_time() );
+		$date_time	= esc_attr( get_the_time() );
+		$date_time	= esc_attr( get_the_date( 'c' ) );
+		$date		= esc_html( get_the_date() );
 		
-		apply_filters( 'cyberchimps_posted_on', $posted_on );
-		echo $posted_on;
+		// Set the HTML for date link.
+		$posted_on = __( 'Posted on ', 'cyberchimps_core' ).
+			'<a href="' . $date_url . '" title="' . $date_title . '" rel="bookmark">
+				<time class="entry-date" datetime="' . $date_time . '">' . $date . '</time>
+			</a>';
+
+		// If post byline date toggle is on then print HTML for date link.
+		if( $show_date ) {
+			apply_filters( 'cyberchimps_posted_on', $posted_on );
+			echo $posted_on;
+		}
 	}
 }
 
