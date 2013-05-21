@@ -768,6 +768,17 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
+	// Search bar text
+	$fields_list[]	= array(
+		'name'		=> __('Searchbar text', 'cyberchimps_core' ),
+		'id'		=> 'searchbar_text',
+		'class'		=> 'searchbar_toggle',
+		'type'		=> 'text',
+		'std'		=> apply_filters( 'searchbar_default_text', 'Search &hellip;' ),
+		'section'	=> 'cyberchimps_header_options_section',
+		'heading'	=> 'cyberchimps_header_heading'
+	);
+	
 	/********** HEADER OPTIONS ENDS ************/	
 
 	/********** SOCIAL STARTS ************/
