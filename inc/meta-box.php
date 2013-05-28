@@ -187,16 +187,19 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_slider_speed', __( 'Slider Speed', 'cyberchimps_core' ), '', array( 'std' => 3000 ) )
 			->checkbox('cyberchimps_slider_arrows', __( 'Slider Arrows', 'cyberchimps_core' ), '', array('std' => "1") )
 			->sliderhelp('', __( 'Need Help?', 'cyberchimps_core' ), '')
-		/*->tab("Product Options")
-			->select('cyberchimps_product_text_align', __( 'Text Align', 'cyberchimps_core' ), '', array('options' => array('Left', 'Right' ) ) )
+		->tab("Product Options")
+			->select('cyberchimps_product_text_align', __( 'Text Align', 'cyberchimps_core' ), '', array( 'options' => array('left' => __( 'Left', 'cyberchimps_core' ), 'right' => __( 'Right',
+                                                                                                                                                                                          'cyberchimps_core' ) ) ) )
 			->text('cyberchimps_product_title', __( 'Product Title', 'cyberchimps_core' ), '', array('std' => __( 'Product', 'cyberchimps_core' ) ) )
 			->textarea('cyberchimps_product_text', __( 'Product Text', 'cyberchimps_core' ), '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
-			->select('cyberchimps_product_type', __( 'Media Type', 'cyberchimps_core' ), '', array('options' => array('Image', 'Video')) )
+			->select('cyberchimps_product_type', __( 'Media Type', 'cyberchimps_core' ), '', array( 'options' => array('image' => __( 'Image', 'cyberchimps_core' ), 'video' => __( 'Video',
+                                                                                                                                                                              'cyberchimps_core' ) )
+                                                                                             ) )
 			->single_image('cyberchimps_product_image', __( 'Product Image', 'cyberchimps_core' ), '', array('std' =>  $directory_uri . '/images/pro/product.jpg'))
 			->textarea('cyberchimps_product_video', __( 'Video Embed', 'cyberchimps_core' ), '')
 			->checkbox('cyberchimps_product_link_toggle', __( 'Product Link', 'cyberchimps_core' ), '', array('std' => '1'))
 			->text('cyberchimps_product_link_url', __( 'Link URL', 'cyberchimps_core' ), '', array('std' => home_url()))
-			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps_core' ), '', array('std' => 'Buy Now'))*/
+			->text('cyberchimps_product_link_text', __( 'Link Text', 'cyberchimps_core' ), '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
 			->text('callout_title', __( 'Callout Title', 'cyberchimps_core' ), '',
 				array('std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps_core' ),

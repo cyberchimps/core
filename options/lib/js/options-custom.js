@@ -76,6 +76,7 @@ jQuery(document).ready(function($) {
 		magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
+        product_element     : "cyberchimps_product_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
