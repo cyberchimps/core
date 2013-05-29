@@ -405,6 +405,43 @@ jQuery(document).ready(function($) {
 				}).change();
 	});
 
+    /**
+     * Select toggle function watches select inputs and hides/shows relevant sections
+     *
+     * select option must have class select-toggle
+     *
+     * any elements to hide/show must have a class like option-select-toggle
+     *
+     */
+    function select_toggle() {
+        // Loop through all options
+        $('.select-toggle option').each(function(){
+            // Get option name
+            var value = $(this).val();
+            // Create class name for elements
+            var classes = '.' + value + '-select-toggle';
+            // If the option is selected show that element
+            if(this.selected){
+                $(classes).parent('.field-container').show();
+            }
+            // Otherwise hide it
+            else {
+                $(classes).parent('.field-container').hide();
+            }
+        })
+    }
+    // Run the function once on page load
+    $('.select-toggle').each(function(){
+        select_toggle();
+    })
+    // Run the function on select change
+    $('.select-toggle').change(function(){
+        select_toggle();
+    });
+    /**
+     * End of select hide/show function
+     */
+
 /* add controls for modal welcome note */
 	$('#welcomeModal').modal();
 	

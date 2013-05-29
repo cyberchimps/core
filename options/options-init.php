@@ -609,7 +609,12 @@ function cyberchimps_fields_callback( $value ) {
 			}
 
 			$val = stripslashes( $val );
-			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
+			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="'
+			 .
+                $rows .
+			'">' .
+			esc_textarea(
+                $val ) . '</textarea>';
 			break;
 			
 		// css Textarea
