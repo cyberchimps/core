@@ -1982,7 +1982,7 @@ if( $theme_check == 'pro' ):
 							3 => '3',
 							4 => '4'
 						),
-		'std'		=> '3',
+		'std'		=> apply_filters( 'cyberchimps_boxes_default_number', 3 ),
 		'section'	=> 'cyberchimps_boxes_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
