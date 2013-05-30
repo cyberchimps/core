@@ -984,39 +984,6 @@ function cyberchimps_half_slider() {
 }
 add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 
-// Modal welcome note
-function cyberchimps_modal_welcome_note() { 
-	if( cyberchimps_get_option( 'modal_welcome_note_display', 0 ) == 1 ): ?>
-  <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <h3 id="myModalLabel"><?php _e( 'Welcome', 'cyberchimps_core' ); ?></h3>
-    </div>
-    <div class="modal-body">
-      	<?php printf( '
-					<p>' . __( 'Congratulations you have successfully installed', 'cyberchimps_core' ) . ' %1$s!</p>
-										
-					<p>' . __( 'Your website is important to us, so please read the', 'cyberchimps_core' ) . ' <a href="%3$s" target="_blank">' . __( 'instructions', 'cyberchimps_core' ) . '</a> ' . __( 'to learn how to use', 'cyberchimps_core' ) . ' %1$s.</p>
-					
-					<p>' . __( 'If you have any questions please post in our', 'cyberchimps_core' ) . ' <a href="%4$s" target="_blank">' . __( 'support forum', 'cyberchimps_core' ) . '</a>, ' . __( 'and we will get back to you as soon as we can', 'cyberchimps_core' ) . '.</p>
-										
-					<p>' . __( 'Thank you for choosing CyberChimps Professional WordPress Themes', 'cyberchimps_core' ) . '!</p>',
-					apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
-					apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com/store/' ),
-					apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ),
-					apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/help/' ),
-					apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/pro/' )
-					);					
-		?>
-    </div>
-    <div class="modal-footer">
-      <input type="submit" id="welcomeModalSave" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Complete Installation', 'cyberchimps_core' ); ?>" />
-    </div>
-  </div>
-<?php
-	endif;
-}
-add_action( 'cyberchimps_options_form_start', 'cyberchimps_modal_welcome_note' );
-
 // Help text
 function cyberchimps_options_help_text() {
 	$text = '';

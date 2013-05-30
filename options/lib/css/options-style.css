@@ -769,15 +769,6 @@ img.action {
     background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
 }
 
-/************** Welcome Page *****************/
-
-#modal_welcome_note {
-  display: none; 
-}
-.toggle-container#modal_welcome_note_display_container {
-	display: none;
-}
-
 /************** Help Page ********************/
 
 .cc_help_section .span3 {

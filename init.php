@@ -86,10 +86,9 @@ function cyberchimps_core_setup_theme() {
 	if( ! get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
-	//if not then theme switch reset modal to true so that new values can be saved in the database
+	//if not then set up defaults for this theme
 	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		$options = get_option( 'cyberchimps_options' );
-		$options['modal_welcome_note_display'] = true;
 		$options['header_section_order'] = $option_defaults['header_section_order'];
 		$options['theme_backgrounds'] = $option_defaults['theme_backgrounds'];
 		update_option( 'cyberchimps_options', $options );
