@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-05-13 11:03-0000\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-05-31 10:51-0000\n"
+"Last-Translator: CyberChimps <support@cyberchimps.com>\n"
 "Language-Team: Dutch, Netherlands\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,16 +13,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../functions.php
-msgid "View all posts by"
-msgstr "Bekijk alle berichten van"
-
-#: ../../functions.php
 msgid "Posted on "
 msgstr "Geplaatst op "
 
 #: ../../functions.php
+msgid "View all posts by %s"
+msgstr "Bekijk alle berichten door %s"
+
+#: ../../functions.php
 msgid " by "
-msgstr "door"
+msgstr " door "
 
 #: ../../functions.php
 msgid "Posted in"
@@ -34,15 +34,15 @@ msgstr "Tags:"
 
 #: ../../functions.php
 msgid "Leave a comment"
-msgstr "Geef een reactie"
+msgstr "Verlaat een commentaar"
 
 #: ../../functions.php
 msgid "1 Comment"
-msgstr "1 reactie"
+msgstr "1 Reactie"
 
-#: ../../options/options-core.php ../../functions.php
+#: ../../functions.php ../../options/options-core.php
 msgid "Comments"
-msgstr "Reacties"
+msgstr "Opmerkingen"
 
 #: ../../functions.php
 msgid "Permalink to %s"
@@ -73,10 +73,14 @@ msgid "Yearly Archives:"
 msgstr "Jaarlijkse archieven:"
 
 #: ../../functions.php
-msgid "Archives"
-msgstr "Archief"
+msgid "Shop"
+msgstr "Winkel"
 
-#: ../../inc/meta-box.php ../../functions.php
+#: ../../functions.php
+msgid "Archives"
+msgstr "Archieven"
+
+#: ../../functions.php ../../inc/meta-box.php
 msgid "Page"
 msgstr "Pagina"
 
@@ -84,65 +88,21 @@ msgstr "Pagina"
 msgid "Continue Reading"
 msgstr "Lees verder"
 
-#: ../../functions.php
-msgid "Welcome"
-msgstr "Welkom"
-
-#: ../../functions.php
-msgid "Congratulations you have successfully installed"
-msgstr "Gefeliciteerd, u hebt geïnstalleerd"
-
-#: ../../functions.php
-msgid "Your website is important to us, so please read the"
-msgstr "Uw website is belangrijk voor ons, dus lees de"
-
-#: ../../functions.php
-msgid "instructions"
-msgstr "Instructies"
-
-#: ../../functions.php
-msgid "to learn how to use"
-msgstr "om te leren hoe te gebruiken"
-
-#: ../../functions.php
-msgid "If you have any questions please post in our"
-msgstr "Als u nog vragen heeft kunt u budgethotels in"
-
-#: ../../functions.php
-msgid "support forum"
-msgstr "support forum"
-
-#: ../../functions.php
-msgid "and we will get back to you as soon as we can"
-msgstr "en wij zullen u zo snel als we kunnen"
-
-#: ../../functions.php
-msgid "Thank you for choosing CyberChimps Professional WordPress Themes"
-msgstr "Bedankt voor het kiezen CyberChimps Professional WordPress Themes"
-
-#: ../../options/options-core.php ../../functions.php
-msgid "Pro"
-msgstr "Pro"
-
-#: ../../functions.php
-msgid "Complete Installation"
-msgstr "Compleet Installatie"
-
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Instructions"
 msgstr "Instructies"
 
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Support"
 msgstr "Ondersteuning"
 
 #: ../../functions.php
-msgid "Upgrade to"
-msgstr "Upgrade naar"
+msgid "Upgrade to %1$s"
+msgstr "Een upgrade uitvoeren naar %1$ s"
 
 #: ../../functions.php
 msgid "If you want even more amazing new features upgrade to"
-msgstr "Als u nog meer prachtige nieuwe functies te upgraden naar"
+msgstr "Wilt u nog meer verbazingwekkend upgraden nieuwe functies naar"
 
 #: ../../functions.php
 msgid ""
@@ -150,34 +110,57 @@ msgid ""
 "Callout Section, expanded typography including Google Fonts, more color "
 "skins, and many more powerful new features. Please visit"
 msgstr ""
-"die is voorzien van een aangepaste functies Slider, Image Carousel, "
-"widgetized Dozen, Toelichting sectie, uitgebreide typografie waaronder "
-"Google Fonts, meer kleur skins en nog veel meer krachtige nieuwe functies. "
-"Ga naar"
+"die omvat een aangepaste functies schuifregelaar, Image Carousel, Widgetized "
+"Boxes, toelichting gedeelte uitgebreid typografie met inbegrip van Google "
+"lettertypen, meer kleur skins, en veel meer krachtige nieuwe functies. Bezoek"
 
 #: ../../functions.php
 msgid "to learn more!"
-msgstr "om meer te leren!"
+msgstr "voor meer informatie!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "Welkom bij %1$s ! Meer informatie nu over upgraden naar"
+msgstr "Welkom in %1$ s! Meer informatie nu ongeveer upgraden naar"
 
 #: ../../functions.php
 msgid "today."
 msgstr "vandaag de dag."
 
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Options"
 msgstr "Opties"
 
 #: ../../functions.php
 msgid " Options"
-msgstr "Opties"
+msgstr " Opties"
+
+#: ../../functions.php
+msgid "Add Ons"
+msgstr "Add Ons"
+
+#: ../../functions.php
+msgid "The Events Calendar"
+msgstr "De evenementenkalender"
+
+#: ../../functions.php
+msgid "Events"
+msgstr "Evenementen"
+
+#: ../../functions.php
+msgid "Events Plugin Options"
+msgstr "Gebeurtenissen Plugin opties"
+
+#: ../../functions.php
+msgid "Please activate The Events Calendar plugin"
+msgstr "Activeer de evenementenkalender plugin"
+
+#: ../../functions.php
+msgid "Install Events Calendar Plugin"
+msgstr "Evenementen Kalender Plugin installeren"
 
 #: ../../init.php
 msgid "Primary Menu"
-msgstr "Primair menu"
+msgstr "Primaire Menu"
 
 #: ../../init.php
 msgid "Sidebar Left"
@@ -185,33 +168,33 @@ msgstr "Zijbalk links"
 
 #: ../../init.php
 msgid "Sidebar Right"
-msgstr "Zijbalk rechts"
+msgstr "Zijbalk recht"
 
-#: ../../options/options-core.php ../../init.php
+#: ../../init.php ../../options/options-core.php
 msgid "Footer Widgets"
 msgstr "Voettekst Widgets"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Lite"
 msgstr "Schuifregelaar Lite"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Boxes"
-msgstr "Dozen"
+msgstr "Vakken"
 
-#: ../../options/options-core.php ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../options/options-core.php
 msgid "Post Page"
-msgstr "Bericht Pagina"
+msgstr "Post pagina"
 
-#: ../../options/options-core.php ../../hooks/header-hooks.php
+#: ../../hooks/header-hooks.php ../../options/options-core.php
 msgid "Logo + Icons"
-msgstr "Logo + Pictogrammen"
+msgstr "Logo + pictogrammen"
 
 #: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
-msgstr "Of kies een van CyberChimps achtergrondafbeeldingen"
+msgstr "Of kies een van de CyberChimps achtergrond beelden"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded files"
@@ -219,58 +202,58 @@ msgstr "Geüploade bestanden"
 
 #: ../../inc/meta-box-class.php
 msgid "Upload new files"
-msgstr "Upload nieuwe bestanden"
+msgstr "Nieuwe bestanden uploaden"
 
 #: ../../inc/meta-box-class.php
 msgid "Add more file"
-msgstr "Voeg meer bestanden"
+msgstr "Meer bestand toevoegen"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded images"
-msgstr "Geupload beelden"
+msgstr "Geüploade afbeeldingen"
 
 #: ../../inc/meta-box-class.php
 msgid "Upload new images (Make sure to publish the post to save)"
 msgstr ""
-"Upload nieuwe afbeeldingen (Zorg ervoor dat u de post te publiceren om op te "
+"Nieuwe afbeeldingen uploaden (zorg ervoor om te publiceren van de post op te "
 "slaan)"
 
 #: ../../inc/meta-box-class.php
 msgid "Select a color"
-msgstr "Kleur selecteren"
+msgstr "Selecteer een kleur"
 
-#: ../../options/options-medialibrary-uploader.php
 #: ../../inc/meta-box-class.php
+#: ../../options/options-medialibrary-uploader.php
 msgid "Upload"
-msgstr "Laad"
+msgstr "Uploaden"
 
 #: ../../inc/meta-box-class.php
 msgid "or enter URL"
-msgstr "of voer de URL"
+msgstr "of voer URL"
 
 #: ../../inc/meta-box.php
 msgid "Slider Options"
-msgstr "Slider Opties"
+msgstr "Schuifregelaar opties"
 
 #: ../../inc/meta-box.php
 msgid "Slider Image"
-msgstr "Slider Afbeelding"
+msgstr "Afbeelding van de schuifregelaar"
 
 #: ../../inc/meta-box.php
 msgid "Slider Caption"
-msgstr "Slider Bijschrift"
+msgstr "Schuifregelaar bijschrift"
 
 #: ../../inc/meta-box.php
 msgid "Custom Slide Link"
-msgstr "Aangepaste Schuif Link"
+msgstr "Aangepaste dia Link"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Title"
-msgstr "Naam"
+msgstr "Titel"
 
 #: ../../inc/meta-box.php
 msgid "Caption"
-msgstr "Titel"
+msgstr "Bijschrift"
 
 #: ../../inc/meta-box.php
 msgid "Need Help?"
@@ -278,7 +261,7 @@ msgstr "Hulp nodig?"
 
 #: ../../inc/meta-box.php
 msgid "Select Page Layout"
-msgstr "Selecteer Pagina-indeling"
+msgstr "Selecteer pagina-indeling"
 
 #: ../../inc/meta-box.php
 msgid "Page Title"
@@ -288,31 +271,31 @@ msgstr "Paginatitel"
 msgid "Page Elements"
 msgstr "Pagina-elementen"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Portfolio Lite"
 msgstr "Portefeuille Lite"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Bar"
 msgstr "Twitter Bar"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Meta Data"
 msgstr "Meta-gegevens"
 
-#: ../../inc/meta-box.php ../../options/options-core.php
+#: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Featured Image"
 msgstr "Aanbevolen afbeelding"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Category"
 msgstr "Categorie"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "You need to create a Category"
-msgstr "U moet een categorie te creëren"
+msgstr "U moet een categorie maken"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Number of Columns"
 msgstr "Aantal kolommen"
 
@@ -320,145 +303,209 @@ msgstr "Aantal kolommen"
 msgid "Number of Posts"
 msgstr "Aantal berichten"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Wide Posts Below Magazine"
 msgstr "Brede berichten hieronder Magazine"
 
 #: ../../inc/meta-box.php
 msgid "Number of Wide Posts "
-msgstr "Aantal breed posten "
+msgstr "Aantal berichten dat breed "
 
 #: ../../inc/meta-box.php
 msgid "Slide One Image"
-msgstr "Schuif een afbeelding"
+msgstr "Een dia-afbeelding"
 
 #: ../../inc/meta-box.php
 msgid "Slide One Link"
-msgstr "Schuif One Link"
+msgstr "Dia een koppeling"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Image"
-msgstr "Schuif Twee Afbeelding"
+msgstr "Schuif twee afbeelding"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Link"
-msgstr "Schuif Twee Link"
+msgstr "Schuif twee Link"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Image"
-msgstr "Schuif Drie Afbeelding"
+msgstr "Schuif drie afbeelding"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Link"
-msgstr "Schuif Drie Link"
+msgstr "Schuif drie Link"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Size"
-msgstr "Slider Grootte"
+msgstr "Grootte Slider"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Full"
-msgstr "volledig"
+msgstr "Volledige"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Half"
-msgstr "Helft"
+msgstr "De helft"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Type"
 msgstr "Schuifregelaar Type"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom"
-msgstr "Eigen"
+msgstr "Aangepaste"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Posts"
-msgstr "berichten"
+msgstr "Berichten"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Post Categories"
-msgstr "Bericht Categorieën"
+msgstr "Post Categorieën"
 
 #: ../../inc/meta-box.php
 msgid "All"
-msgstr "al"
+msgstr "Alle"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom Categories"
 msgstr "Aangepaste categorieën"
 
 #: ../../inc/meta-box.php
 msgid "Number of Featured Posts"
-msgstr "Aantal Aanbevolen berichten"
+msgstr "Aantal Featured posten"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Height"
-msgstr "Slider Hoogte"
+msgstr "Schuifregelaar hoogte"
 
 #: ../../inc/meta-box.php
 msgid "Slider Speed"
 msgstr "Schuifregelaar snelheid"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Arrows"
-msgstr "Slider Pijlen"
+msgstr "Pijlen van de schuifregelaar"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+msgid "Product Layout"
+msgstr "Product lay-out"
+
+#: ../../inc/meta-box.php
+msgid "Text Left"
+msgstr "Tekst links"
+
+#: ../../inc/meta-box.php
+msgid "Text Right"
+msgstr "Tekst rechts"
+
+#: ../../inc/meta-box.php
+msgid "Product Title"
+msgstr "Producttitel"
+
+#: ../../inc/meta-box.php
+msgid "Product"
+msgstr "Product"
+
+#: ../../inc/meta-box.php
+msgid "Product Text"
+msgstr "Product tekst"
+
+#: ../../inc/meta-box.php
+msgid "Media Type"
+msgstr "Mediatype"
+
+#: ../../inc/meta-box.php
+msgid "Image"
+msgstr "Afbeelding"
+
+#: ../../inc/meta-box.php
+msgid "Video"
+msgstr "Video"
+
+#: ../../inc/meta-box.php
+msgid "Product Image URL"
+msgstr "Product afbeelding URL"
+
+#: ../../inc/meta-box.php
+msgid "Product Video Embed"
+msgstr "Product Video insluiten"
+
+#: ../../inc/meta-box.php
+msgid "Product Link"
+msgstr "Product Link"
+
+#: ../../inc/meta-box.php
+msgid "Product URL"
+msgstr "Product-URL"
+
+#: ../../inc/meta-box.php
+msgid "Product Link Text"
+msgstr "De tekst van de koppeling van het product"
+
+#: ../../inc/meta-box.php
+msgid "Buy Now"
+msgstr "Koop nu"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Title"
-msgstr "Toelichting Titel"
+msgstr "Toelichting titel"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "%1$s's Call Out Element"
-msgstr "%1$s 's Call Out Element"
+msgstr "%1$ s's oproep Element"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Text"
-msgstr "Toelichting Tekst"
+msgstr "Toelichtingstekst"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid ""
 "Use %1$s's Call Out section on any page where you want to deliver an "
 "important message to your customer or client."
 msgstr ""
-"Gebruik %1$s 's Call Out sectie op elke pagina waar u een belangrijke "
-"boodschap over te brengen aan uw klant of opdrachtgever."
+"Gebruik %1$ s's noemen uit sectie op elke pagina waar u wilt leveren een "
+"belangrijke boodschap aan uw klant of client."
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button"
-msgstr "Toelichting Button"
+msgstr "Toelichting knop"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button Text"
-msgstr "Toelichting Knoptekst"
+msgstr "Toelichting knoptekst"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Click Here"
+msgstr "Klik hier"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button URL"
-msgstr "Toelichting Button URL"
+msgstr "Toelichting knop URL"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom Callout Options"
-msgstr "Aangepaste Toelichting Opties"
+msgstr "Opties voor aangepaste toelichting"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Image"
-msgstr "Programmeerbare knop Image"
+msgstr "Aangepaste knopafbeelding"
 
 #: ../../inc/meta-box.php
 msgid "Custom Background Color"
-msgstr "Aangepaste Achtergrondkleur"
+msgstr "Aangepaste achtergrondkleur"
 
 #: ../../inc/meta-box.php
 msgid "Custom Title Color"
-msgstr "Aangepaste Titelkleur"
+msgstr "Aangepaste titelkleur"
 
 #: ../../inc/meta-box.php
 msgid "Custom Text Color"
-msgstr "Aangepaste tekst Kleur"
+msgstr "Aangepaste tekstkleur"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Color"
-msgstr "Aangepaste knop Kleur"
+msgstr "Aangepaste knopkleur"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Text Color"
@@ -474,11 +521,11 @@ msgstr "Aangepaste HTML"
 
 #: ../../inc/meta-box.php
 msgid "Enter your custom html here"
-msgstr "Geef je aangepaste html hier"
+msgstr "Voer hier uw aangepaste html"
 
 #: ../../inc/meta-box.php
 msgid "Images per row"
-msgstr "Afbeeldingen per rij"
+msgstr "Beelden per rij"
 
 #: ../../inc/meta-box.php
 msgid "Two"
@@ -486,119 +533,123 @@ msgstr "Twee"
 
 #: ../../inc/meta-box.php
 msgid "Three"
-msgstr "drie"
+msgstr "Drie"
 
 #: ../../inc/meta-box.php
 msgid "Four"
-msgstr "vier"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Portfolio Category"
-msgstr "Portefeuille Categorie"
+msgstr "Vier"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Portfolio Category"
+msgstr "Portefeuille categorie"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Portfolio Title"
-msgstr "Portfolio Titel"
+msgstr "Titel van de portefeuille"
 
 #: ../../inc/meta-box.php
 msgid "Portfolio"
 msgstr "Portefeuille"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image"
-msgstr "Eerste Portfolio Afbeelding"
+msgstr "Eerste afbeelding van de portefeuille"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image Caption"
-msgstr "Eerste Portfolio Image Caption"
+msgstr "Eerste Portfolio beeld onderschrift"
 
 #: ../../inc/meta-box.php
 msgid "Image 1"
 msgstr "Afbeelding 1"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Porfolio Link"
 msgstr "Eerste Porfolio Link"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Link URL"
-msgstr "Koppelings-URL"
+msgstr "Link URL"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image"
-msgstr "Tweede Portfolio Afbeelding"
+msgstr "Tweede portefeuille beeld"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image Caption"
-msgstr "Tweede Portfolio Image Caption"
+msgstr "Tweede portefeuille beeld onderschrift"
 
 #: ../../inc/meta-box.php
 msgid "Image 2"
 msgstr "Afbeelding 2"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Porfolio Link"
 msgstr "Tweede Porfolio Link"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image"
-msgstr "Derde Portfolio Afbeelding"
+msgstr "Derde Portfolio beeld"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image Caption"
-msgstr "Derde Portfolio Image Caption"
+msgstr "Derde Portfolio beeld onderschrift"
 
 #: ../../inc/meta-box.php
 msgid "Image 3"
 msgstr "Afbeelding 3"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Porfolio Link"
-msgstr "Derde Porfolio Link"
+msgstr "Derde Porfolio koppeling"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image"
-msgstr "Vierde Portfolio Afbeelding"
+msgstr "Vierde Portfolio afbeelding"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image Caption"
-msgstr "Vierde Portfolio Image Caption"
+msgstr "Vierde Portfolio beeld onderschrift"
 
 #: ../../inc/meta-box.php
 msgid "Image 4"
 msgstr "Afbeelding 4"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Porfolio Link"
 msgstr "Vierde Porfolio Link"
 
 #: ../../inc/meta-box.php
 msgid "Post Category"
-msgstr "Bericht categorie"
+msgstr "Post categorie"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Images"
 msgstr "Afbeeldingen"
 
 #: ../../inc/meta-box.php
 msgid "Carousel Category"
-msgstr "Carrousel Categorie"
+msgstr "Carrousel categorie"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Handle"
-msgstr "Twitter Handvat"
+msgstr "Twitter handvat"
 
 #: ../../inc/meta-box.php
 msgid "Enter your Twitter handle if using the Twitter bar"
-msgstr "Vul uw Twitter handvat als u de Twitter bar"
+msgstr "Voer uw Twitter handvat als met behulp van de Twitter-bar"
 
 #: ../../inc/meta-box.php
 msgid "Boxes Category"
-msgstr "Dozen Categorie"
+msgstr "Vakken categorie"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Number of boxes per row"
+msgstr "Aantal dozen per rij"
 
 #: ../../options/options-core.php
 msgid "Help"
-msgstr "Hulp"
+msgstr "Help"
 
 #: ../../options/options-core.php
 msgid "Design"
@@ -606,11 +657,11 @@ msgstr "Ontwerp"
 
 #: ../../options/options-core.php
 msgid "Header"
-msgstr "Kop"
+msgstr "Koptekst"
 
 #: ../../options/options-core.php
 msgid "Blog"
-msgstr "Weblog"
+msgstr "Blog"
 
 #: ../../options/options-core.php
 msgid "Templates"
@@ -618,11 +669,11 @@ msgstr "Sjablonen"
 
 #: ../../options/options-core.php
 msgid "Footer"
-msgstr "Voetnoot"
+msgstr "Voettekst"
 
 #: ../../options/options-core.php
 msgid "Layout Options"
-msgstr "Layoutopties"
+msgstr "Lay-outopties"
 
 #: ../../options/options-core.php
 msgid "Custom Colors"
@@ -634,15 +685,15 @@ msgstr "Typografie"
 
 #: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr "Header Drag & Drop"
+msgstr "Koptekst slepen & neerzetten"
 
 #: ../../options/options-core.php
 msgid "Header Options"
-msgstr "Header Opties"
+msgstr "Opties voor koptekst"
 
 #: ../../options/options-core.php
 msgid "Social Icons"
-msgstr "Sociale Icons"
+msgstr "Sociale pictogrammen"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
@@ -650,7 +701,7 @@ msgstr "& Slepen"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
-msgstr "Blog Opties"
+msgstr "Blog opties"
 
 #: ../../options/options-core.php
 msgid "Blog Slider Lite"
@@ -658,11 +709,11 @@ msgstr "Blog schuifregelaar Lite"
 
 #: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr "Portfolio Lite Opties"
+msgstr "Lite opties voor portfolio"
 
 #: ../../options/options-core.php
 msgid "Boxes Lite"
-msgstr "Dozen Lite"
+msgstr "Vakken Lite"
 
 #: ../../options/options-core.php
 msgid "Blog Slider"
@@ -670,15 +721,15 @@ msgstr "Blog schuifregelaar"
 
 #: ../../options/options-core.php
 msgid "Callout Options"
-msgstr "Toelichting Opties"
+msgstr "Toelichting opties"
 
 #: ../../options/options-core.php
 msgid "HTML Box Options"
-msgstr "HTML Box Opties"
+msgstr "HTML-opties"
 
 #: ../../options/options-core.php
 msgid "Carousel Options"
-msgstr "Carousel Opties"
+msgstr "Carrousel opties"
 
 #: ../../options/options-core.php
 msgid "Magazine Options"
@@ -686,23 +737,23 @@ msgstr "Tijdschrift opties"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
-msgstr "Portfolio Pro Opties"
+msgstr "Portefeuille Pro opties"
 
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
-msgstr "Recente berichten Opties"
+msgstr "Recente berichten-opties"
 
 #: ../../options/options-core.php
 msgid "Twitterbar Options"
-msgstr "TwitterBar Opties"
+msgstr "Opties voor TwitterBar"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
-msgstr "Dozen Opties"
+msgstr "Vakken opties"
 
 #: ../../options/options-core.php
 msgid "Single Post"
-msgstr "Los bericht"
+msgstr "Enkele Post"
 
 #: ../../options/options-core.php
 msgid "Archive"
@@ -710,15 +761,15 @@ msgstr "Archief"
 
 #: ../../options/options-core.php
 msgid "Search"
-msgstr "Zoeken"
+msgstr "Zoek"
 
 #: ../../options/options-core.php
 msgid "Footer Options"
-msgstr "Footer Opties"
+msgstr "Opties voor voettekst"
 
 #: ../../options/options-core.php
 msgid "Author"
-msgstr "Maker"
+msgstr "Auteur"
 
 #: ../../options/options-core.php
 msgid "Categories"
@@ -737,16 +788,16 @@ msgid "Cyberchimps Help"
 msgstr "Cyberchimps Help"
 
 #: ../../options/options-core.php
-msgid "Welcome Note"
-msgstr "Welkom Opmerking"
-
-#: ../../options/options-core.php
 msgid "Responsive Design"
 msgstr "Responsieve Design"
 
 #: ../../options/options-core.php
 msgid "Responsive Videos"
-msgstr "Responsive Video's"
+msgstr "Responsieve video 's"
+
+#: ../../options/options-core.php
+msgid "Gallery Lightbox"
+msgstr "Galerie Lightbox"
 
 #: ../../options/options-core.php
 msgid "Wide Sidebar"
@@ -756,45 +807,45 @@ msgstr "Breed Sidebar"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Werkt alleen in lay-outs met 1 sidebar"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Max Width"
-msgstr "Max &Breedte:"
+msgstr "Maximale breedte"
 
 #: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
-msgstr "geeft u de breedte van uw site in pixels"
+msgstr "Voer in pixels in de breedte van uw site"
 
 #: ../../options/options-core.php
 msgid "Select a Skin Color"
-msgstr "Een kleur selecteren"
+msgstr "Selecteer een huidskleur"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Text Color"
-msgstr "tekstkleur"
+msgstr "Tekstkleur"
 
 #: ../../options/options-core.php
 msgid "Select text color"
-msgstr "Tekstkleur selecteren"
+msgstr "Selecteer tekstkleur"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Link Color"
-msgstr "Linkkleur"
+msgstr "Kleur van koppeling"
 
 #: ../../options/options-core.php
 msgid "Select link color"
-msgstr "Selecteer link kleur"
+msgstr "Selecteer kleur van koppeling"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Link Hover Color"
-msgstr "Link Hover Kleur"
+msgstr "Linkkleur Hover"
 
 #: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr "Selecteer koppeling hover kleur"
+msgstr "Selecteer koppeling met aanwijseffect kleur"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
-msgstr "Typografie Opties"
+msgstr "Typografische opties"
 
 #: ../../options/options-core.php
 msgid "Google fonts"
@@ -806,15 +857,15 @@ msgstr "Voer Google lettertype"
 
 #: ../../options/options-core.php
 msgid "Demo Text"
-msgstr "Demo Tekst"
+msgstr "Demo tekst"
 
 #: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr "Header drag / drop"
+msgstr "Koptekst Drag/Drop"
 
 #: ../../options/options-core.php
 msgid "Logo + Search"
-msgstr "Logo + Zoeken"
+msgstr "Logo + zoeken"
 
 #: ../../options/options-core.php
 msgid "Logo"
@@ -822,15 +873,15 @@ msgstr "Logo"
 
 #: ../../options/options-core.php
 msgid "Custom Logo URL"
-msgstr "Aangepaste URL van logo"
+msgstr "Aangepaste Logo URL"
 
 #: ../../options/options-core.php
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
-msgstr "URL invoeren"
+msgstr "Voer URL"
 
 #: ../../options/options-core.php
 msgid "Custom Logo"
@@ -838,11 +889,11 @@ msgstr "Aangepast Logo"
 
 #: ../../options/options-core.php
 msgid "Logo Image"
-msgstr "Logo Afbeelding"
+msgstr "Embleembeeld"
 
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr "URL invoeren of upload bestand"
+msgstr "Voer de URL of bestand uploaden"
 
 #: ../../options/options-core.php
 msgid "Custom Favicon"
@@ -854,7 +905,7 @@ msgstr "Favicon URL"
 
 #: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr "Custom Apple aanraking pictogram"
+msgstr "Aangepaste Apple touch-pictogram"
 
 #: ../../options/options-core.php
 msgid "Apple Touch URL"
@@ -866,7 +917,7 @@ msgstr "Google Analytics"
 
 #: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr "Kopieer en plak hier uw Google Analytics-code"
+msgstr "Kopieer en plak uw Google Analytics-code hier"
 
 #: ../../options/options-core.php
 msgid "Searchbar"
@@ -874,7 +925,7 @@ msgstr "Searchbar"
 
 #: ../../options/options-core.php
 msgid "Choose your icon style"
-msgstr "Kies uw pictogram stijl"
+msgstr "Kies uw pictogramstijl"
 
 #: ../../options/options-core.php
 msgid "Twitter"
@@ -962,51 +1013,51 @@ msgstr "Sleep & Drop Blog elementen"
 
 #: ../../options/options-core.php
 msgid "Sidebar Options"
-msgstr "Sidebar Opties"
+msgstr "Zijbalk opties"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr "Bericht Formaten Pictogrammen"
+msgstr "Post formaten pictogrammen"
 
 #: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr "Bericht Fragmenten"
+msgstr "Berichtfragment"
 
 #: ../../options/options-core.php
 msgid "Read More Text"
-msgstr "Lees meer Tekst"
+msgstr "Lees meer tekst"
 
 #: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr "Uittreksel Lengte"
+msgstr "Lengte van het fragment"
 
 #: ../../options/options-core.php
 msgid "Featured Images"
-msgstr "Getoonde afbeeldingen"
+msgstr "Aanbevolen afbeeldingen"
 
 #: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr "Bericht Naamregel Auteur"
+msgstr "Naamregel postauteur"
 
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
-msgstr "Bericht Naamregel Categorieën"
+msgstr "Post naamregel Categorieën"
 
 #: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr "Bericht Naamregel Datum"
+msgstr "Post naamregel Date"
 
 #: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr "Bericht Naamregel Reacties"
+msgstr "Post naamregel reacties"
 
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr "Bericht Naamregel Tags"
+msgstr "Post naamregel Tags"
 
 #: ../../options/options-core.php
 msgid "Boxes Upgrade"
-msgstr "Dozen Upgrade"
+msgstr "Vakken Upgrade"
 
 #: ../../options/options-core.php
 msgid ""
@@ -1014,9 +1065,37 @@ msgid ""
 "Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
 "them and display each category on a different page."
 msgstr ""
-"Boxes Lite beperkt u tot een totaal van 3 dozen in uw hele site. Upgrade "
-"naar %1$s om te kunnen om zo veel kisten te maken als u wilt. Categoriseren "
-"en tevens verschijnt er elke categorie op een andere pagina."
+"Vakken Lite beperkt u tot een totaal van 3 vakken gedurende uw hele site. "
+"Bijwerken naar %1$ s te kunnen maken van zo veel vakken als u nodig hebt. "
+"Categoriseren en elke categorie op een andere pagina laten weergeven."
+
+#: ../../options/options-core.php
+msgid "Pro"
+msgstr "Pro"
+
+#: ../../options/options-core.php
+msgid "First Box Image"
+msgstr "Eerste afbeelding"
+
+#: ../../options/options-core.php
+msgid "First Box Text"
+msgstr "Eerste vak tekst"
+
+#: ../../options/options-core.php
+msgid "Second Box Image"
+msgstr "Tweede Box afbeelding"
+
+#: ../../options/options-core.php
+msgid "Second Box Text"
+msgstr "Tweede vak tekst"
+
+#: ../../options/options-core.php
+msgid "Third Box Image"
+msgstr "Derde Box afbeelding"
+
+#: ../../options/options-core.php
+msgid "Third Box Text"
+msgstr "Derde vak tekst"
 
 #: ../../options/options-core.php
 msgid "Portfolio Upgrade"
@@ -1028,9 +1107,9 @@ msgid ""
 "Upgrade to %1$s to be able to create as many portfolio items as you like. "
 "Categorize them and display each category on a different page."
 msgstr ""
-"Portfolio Lite beperkt u tot een totaal van 4 artikelen in uw hele site. "
-"Upgrade naar %1$s om te kunnen om zo veel portfolio items als u wilt. "
-"Categoriseren en tevens verschijnt er elke categorie op een andere pagina."
+"Portefeuille Lite beperkt u tot totaal 4 artikelen in uw hele site. "
+"Bijwerken naar %1$ s te kunnen zoveel portefeuille items als u wilt maken. "
+"Categoriseren en elke categorie op een andere pagina laten weergeven."
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
@@ -1042,37 +1121,37 @@ msgid ""
 "Upgrade to %1$s to be able to create more images. Categorize them and "
 "display each category on a different page."
 msgstr ""
-"Slider Lite beperkt u tot een totaal van 3 beelden in uw hele site. Upgrade "
-"naar %1$s om te kunnen meer beelden te creëren. Categoriseren en tevens "
-"verschijnt er elke categorie op een andere pagina."
+"Schuifregelaar Lite beperkt u tot een totaal van 3 beelden in uw hele site. "
+"Bijwerken naar %1$ s te kunnen om meer afbeeldingen te maken. Categoriseren "
+"en elke categorie op een andere pagina laten weergeven."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
-msgstr "Slider Afbeelding 1"
+msgstr "Schuifregelaar afbeelding 1"
 
 #: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr "Schuif 1 URL"
+msgstr "Dia 1 URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 2"
-msgstr "Slider Afbeelding 2"
+msgstr "Schuifregelaar afbeelding 2"
 
 #: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr "Schuif 2 URL"
+msgstr "Dia 2 URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 3"
-msgstr "Slider Afbeelding 3"
+msgstr "Schuifregelaar afbeelding 3"
 
 #: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr "Schuif 3 URL"
+msgstr "Dia 3 URL"
 
 #: ../../options/options-core.php
 msgid "Images per Row"
-msgstr "Afbeeldingen per rij"
+msgstr "Beelden per rij"
 
 #: ../../options/options-core.php
 msgid "Featured Excerpt Length"
@@ -1088,43 +1167,39 @@ msgstr "Grote Post fragment lengte"
 
 #: ../../options/options-core.php
 msgid "Number of Wide Posts"
-msgstr "Aantal breed posten"
+msgstr "Aantal berichten dat breed"
 
 #: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
-msgstr "Aantal Aanbevolen blog-berichten"
+msgstr "Aantal aanbevolen blogposten"
 
 #: ../../options/options-core.php
 msgid "Slider Speed "
 msgstr "Schuifregelaar snelheid "
 
 #: ../../options/options-core.php
-msgid "Click Here"
-msgstr "klik hier"
-
-#: ../../options/options-core.php
 msgid "Custom Callout Button"
-msgstr "Aangepaste Toelichting Button"
+msgstr "Aangepaste toelichting knop"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Background Color"
-msgstr "Aangepaste Toelichting Achtergrondkleur"
+msgstr "Aangepaste toelichting achtergrondkleur"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Title Color"
-msgstr "Aangepaste Toelichting Titelkleur"
+msgstr "Aangepaste toelichting titelkleur"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Text Color"
-msgstr "Aangepaste Toelichting Tekstkleur"
+msgstr "Aangepaste toelichting tekstkleur"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button Color"
-msgstr "Aangepaste Toelichting knop Kleur"
+msgstr "Aangepaste toelichting knopkleur"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button Text Color"
-msgstr "Aangepaste Toelichting knop Tekstkleur"
+msgstr "Aangepaste toelichting knop Tekstkleur"
 
 #: ../../options/options-core.php
 msgid "HTML Box"
@@ -1132,7 +1207,7 @@ msgstr "HTML-vak"
 
 #: ../../options/options-core.php
 msgid "Enter your custom HTML code here"
-msgstr "Geef je aangepaste HTML-code hier"
+msgstr "Voer hier uw aangepaste HTML-code"
 
 #: ../../options/options-core.php
 msgid "Custom Title"
@@ -1140,7 +1215,7 @@ msgstr "Aangepaste titel"
 
 #: ../../options/options-core.php
 msgid "Select a Category"
-msgstr "Kies een categorie"
+msgstr "Selecteer een categorie"
 
 #: ../../options/options-core.php
 msgid "Images for layout."
@@ -1148,11 +1223,11 @@ msgstr "Beelden voor lay-out."
 
 #: ../../options/options-core.php
 msgid "Post title"
-msgstr "Posting Title"
+msgstr "Posttitel"
 
 #: ../../options/options-core.php
 msgid "Post Format Icons"
-msgstr "Bericht Format Pictogrammen"
+msgstr "Post formaat pictogrammen"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Title"
@@ -1160,7 +1235,7 @@ msgstr "Aangepaste 404-titel"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Content"
-msgstr "Aangepaste 404-inhoud"
+msgstr "Aangepaste 404 inhoud"
 
 #: ../../options/options-core.php
 msgid "Footer Copyright Text"
@@ -1168,13 +1243,13 @@ msgstr "Copyright voettekst"
 
 #: ../../options/options-customizer.php
 msgid "Customize"
-msgstr "Pas aan"
+msgstr "Aanpassen"
 
 #: ../../options/options-customizer.php
 msgid ""
 "make sure you have removed the image above before selecting one of these"
 msgstr ""
-"zorg ervoor dat je het beeld verwijderd bovenstaande voor het kiezen van een "
+"Zorg ervoor dat u de bovenstaande afbeelding hebt verwijderd voordat u een "
 "van deze"
 
 #: ../../options/options-customizer.php
@@ -1183,15 +1258,15 @@ msgstr "Huidskleur"
 
 #: ../../options/options-customizer.php
 msgid "Typography Size"
-msgstr "Typografie Grootte"
+msgstr "Typografie grootte"
 
 #: ../../options/options-customizer.php
 msgid "Typography Face"
-msgstr "Typografie Gezicht"
+msgstr "Typografie gezicht"
 
 #: ../../options/options-customizer.php
 msgid "Typography Style"
-msgstr "Typografie Style"
+msgstr "Typografie-stijl"
 
 #: ../../options/options-customizer.php
 msgid "Background Image"
@@ -1199,76 +1274,60 @@ msgstr "Achtergrondafbeelding"
 
 #: ../../options/options-init.php
 msgid "Theme Options Page"
-msgstr "Thema Opties Page"
+msgstr "Thema optiespagina"
 
 #: ../../options/options-init.php
 msgid "Theme Options"
-msgstr "Thema opties"
+msgstr "Thema-opties"
 
 #: ../../options/options-init.php
 msgid "Buy Themes"
-msgstr "Koop Thema's"
-
-#: ../../options/options-init.php
-msgid "Open All"
-msgstr "Open alle"
-
-#: ../../options/options-init.php
-msgid "Collapse All"
-msgstr "Alles samenvouwen"
+msgstr "Kopen van thema 's"
 
 #: ../../options/options-init.php
 msgid "Restore Defaults"
-msgstr "Standaardinstellingen"
+msgstr "Standaardinstellingen herstellen"
 
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "Klik op OK om te resetten. Elk thema instellingen gaan verloren!"
+msgstr ""
+"Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
 
 #: ../../options/options-init.php
 msgid "Save Options"
-msgstr "Bewaar Opties"
+msgstr "Opties voor opslaan"
 
 #: ../../options/options-init.php
 msgid "CyberChimps Wordpress Themes"
 msgstr "CyberChimps Wordpress thema 's"
 
 #: ../../options/options-init.php
-msgid "Link to Events plugin settings"
-msgstr "Link naar Evenementen plugin instellingen"
-
-#: ../../options/options-init.php
-msgid "Insert custom events info and insert install link"
-msgstr ""
-"Plaats aangepaste gebeurtenissen info en plaats te installeren koppeling"
-
-#: ../../options/options-init.php
 msgid "Default Field"
-msgstr "Standaard Field"
+msgstr "Standaardveld"
 
 #: ../../options/options-init.php
 msgid "Options Imported"
-msgstr "Geïmporteerde Opties"
+msgstr "Opties geïmporteerd"
 
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
-msgstr "Ongeldige gegevens voor Import"
+msgstr "Ongeldige gegevens voor invoer"
 
 #: ../../options/options-init.php
 msgid "Default options restored."
-msgstr "Standaard opties hersteld."
+msgstr "Standaardopties hersteld."
 
 #: ../../options/options-init.php
 msgid "Options saved."
-msgstr "Opties Bewaard"
+msgstr "Opties opgeslagen."
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
-msgstr "Thema Opties Media"
+msgstr "Thema opties Media"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
-msgstr "Bekijk File"
+msgstr "Bestand weergeven"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Gallery"
@@ -1284,39 +1343,39 @@ msgstr "Geen herhaling"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Horizontally"
-msgstr "Horizontaal wordt herhaald"
+msgstr "Horizontaal herhalen"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Vertically"
-msgstr "Repeat Verticaal"
+msgstr "Verticaal herhalen"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat All"
-msgstr "Herhalen"
+msgstr "Repeat All"
 
 #: ../../options/options-sanitize.php
 msgid "Top Left"
-msgstr "Linksboven"
+msgstr "Links boven"
 
 #: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr "Midden bovenkant"
+msgstr "Top Center"
 
 #: ../../options/options-sanitize.php
 msgid "Top Right"
-msgstr "Rechtsboven"
+msgstr "Rechts bovenaan"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Left"
-msgstr "Midden Links"
+msgstr "Midden links"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Center"
-msgstr "Midden-Center"
+msgstr "Midden Center"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Right"
-msgstr "Midden Rechts"
+msgstr "Midden rechts"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Left"
@@ -1324,7 +1383,7 @@ msgstr "Linksonder"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Center"
-msgstr "Midden onderkant"
+msgstr "Bottom Center"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Right"
@@ -1332,11 +1391,11 @@ msgstr "Rechtsonder"
 
 #: ../../options/options-sanitize.php
 msgid "Scroll Normally"
-msgstr "Scroll Normaal"
+msgstr "Gewoonlijk scrollen"
 
 #: ../../options/options-sanitize.php
 msgid "Fixed in Place"
-msgstr "Vastgezet"
+msgstr "Vaste in plaats"
 
 #: ../../options/options-sanitize.php
 msgid "Normal"

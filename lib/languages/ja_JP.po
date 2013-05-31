@@ -3,50 +3,50 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-03-19 13:51-0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2013-05-31 10:51-0000\n"
+"Last-Translator: CyberChimps <support@cyberchimps.com>\n"
 "Language-Team: Japanese, Japan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: ../../functions.php
-msgid "View all posts by"
-msgstr "による投稿をすべて表示"
 
 #: ../../functions.php
 msgid "Posted on "
 msgstr "掲示されます。"
 
 #: ../../functions.php
+msgid "View all posts by %s"
+msgstr "%S によってすべての記事を表示します。"
+
+#: ../../functions.php
 msgid " by "
-msgstr "送付元"
+msgstr "投稿"
 
 #: ../../functions.php
 msgid "Posted in"
-msgstr "で掲示される"
+msgstr "掲示されます。"
 
 #: ../../functions.php
 msgid "Tags:"
-msgstr "タグ:"
+msgstr "タグ："
 
 #: ../../functions.php
 msgid "Leave a comment"
-msgstr "コメントする"
+msgstr "コメントを残す"
 
 #: ../../functions.php
 msgid "1 Comment"
-msgstr "コメント1件"
+msgstr "1 つのコメント"
 
-#: ../../options/options-core.php ../../functions.php
+#: ../../functions.php ../../options/options-core.php
 msgid "Comments"
 msgstr "コメント"
 
 #: ../../functions.php
 msgid "Permalink to %s"
-msgstr "パーマへ%s"
+msgstr "%S へのパーマリンク"
 
 #: ../../functions.php
 msgid "Category Archives:"
@@ -73,76 +73,36 @@ msgid "Yearly Archives:"
 msgstr "年間アーカイブ："
 
 #: ../../functions.php
-msgid "Archives"
-msgstr "お知らせ"
+msgid "Shop"
+msgstr "ショップ"
 
-#: ../../inc/meta-box.php ../../functions.php
+#: ../../functions.php
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: ../../functions.php ../../inc/meta-box.php
 msgid "Page"
 msgstr "ページ"
 
 #: ../../functions.php
 msgid "Continue Reading"
-msgstr "読み続ける"
+msgstr "続きを読む"
 
-#: ../../functions.php
-msgid "Welcome"
-msgstr "ようこそ"
-
-#: ../../functions.php
-msgid "Congratulations you have successfully installed"
-msgstr "おめでとうございますあなたは正常にインストールされている"
-
-#: ../../functions.php
-msgid "Your website is important to us, so please read the"
-msgstr "あなたのウェブサイトは私達にとって重要であるので、読んでください"
-
-#: ../../functions.php
-msgid "instructions"
-msgstr "手順"
-
-#: ../../functions.php
-msgid "to learn how to use"
-msgstr "使用する方法を学ぶ"
-
-#: ../../functions.php
-msgid "If you have any questions please post in our"
-msgstr "ご不明な点がございましたら、弊社で投稿してください"
-
-#: ../../functions.php
-msgid "support forum"
-msgstr "サポートフォーラム"
-
-#: ../../functions.php
-msgid "and we will get back to you as soon as we can"
-msgstr "私たちは私達ができるとすぐあなたに戻って取得します"
-
-#: ../../functions.php
-msgid "Thank you for choosing CyberChimps Professional WordPress Themes"
-msgstr "Cyber​​ChimpsプロWordPressのテーマをお選びいただき、ありがとうござい"
-
-#: ../../options/options-core.php ../../functions.php
-msgid "Pro"
-msgstr "プロ"
-
-#: ../../functions.php
-msgid "Complete Installation"
-msgstr "インストールの完了"
-
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Instructions"
 msgstr "手順"
 
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Support"
 msgstr "サポート"
 
 #: ../../functions.php
-msgid "Upgrade to"
-msgstr "へのアップグレード"
+msgid "Upgrade to %1$s"
+msgstr "%1$ S をアップグレードします。"
 
 #: ../../functions.php
 msgid "If you want even more amazing new features upgrade to"
-msgstr "あなたも、もっと驚くような新しい機能が必要な場合にアップグレード"
+msgstr "さらに驚くべき場合アップグレードの新機能"
 
 #: ../../functions.php
 msgid ""
@@ -150,106 +110,128 @@ msgid ""
 "Callout Section, expanded typography including Google Fonts, more color "
 "skins, and many more powerful new features. Please visit"
 msgstr ""
-"これは、カスタム機能のスライダー、画像カルーセル、ウィジェット形式ボックス、"
-"吹き出し節、Googleのフォント、より多くの色のスキン、そして、より多くの強力な"
-"新機能を含む拡張されたタイポグラフィを含む。ご覧ください"
+"これが含まれてカスタム スライダー機能、画像カルーセル、ウィジェット ボック"
+"ス、吹き出し] セクションで、Google フォントより多くの色の皮および多くのより強"
+"力な新機能を含むタイポグラフィ拡張。参照してください。"
 
 #: ../../functions.php
 msgid "to learn more!"
-msgstr "さらに詳しく:"
+msgstr "もっと知ろう ！"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "へようこそ%1$s ！へのアップグレードについてもっと調べよう"
+msgstr "%1$ S を歓迎します ！今約へのアップグレードの詳細します。"
 
 #: ../../functions.php
 msgid "today."
 msgstr "今日のです。"
 
-#: ../../options/options-init.php ../../functions.php
+#: ../../functions.php ../../options/options-init.php
 msgid "Options"
-msgstr "設定"
+msgstr "オプション"
 
 #: ../../functions.php
 msgid " Options"
-msgstr "設定"
+msgstr "オプション"
+
+#: ../../functions.php
+msgid "Add Ons"
+msgstr "アドオンを追加します。"
+
+#: ../../functions.php
+msgid "The Events Calendar"
+msgstr "イベント カレンダー"
+
+#: ../../functions.php
+msgid "Events"
+msgstr "イベント"
+
+#: ../../functions.php
+msgid "Events Plugin Options"
+msgstr "イベントのプラグインのオプション"
+
+#: ../../functions.php
+msgid "Please activate The Events Calendar plugin"
+msgstr "ください、イベント カレンダー プラグインをアクティブにします。"
+
+#: ../../functions.php
+msgid "Install Events Calendar Plugin"
+msgstr "イベント カレンダー プラグインをインストールします。"
 
 #: ../../init.php
 msgid "Primary Menu"
-msgstr "メインメニュー"
+msgstr "主なメニュー"
 
 #: ../../init.php
 msgid "Sidebar Left"
-msgstr "サイドバーには、左"
+msgstr "左のサイドバー"
 
 #: ../../init.php
 msgid "Sidebar Right"
-msgstr "右サイドバー"
+msgstr "サイドバーの右"
 
-#: ../../options/options-core.php ../../init.php
+#: ../../init.php ../../options/options-core.php
 msgid "Footer Widgets"
-msgstr "フッターウィジェット"
+msgstr "フッターのウィジェット"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Lite"
-msgstr "スライダーLiteの"
+msgstr "Lite のスライダー"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-#: ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Boxes"
-msgstr "箱"
+msgstr "ボックス"
 
-#: ../../options/options-core.php ../../hooks/blog-hooks.php
+#: ../../hooks/blog-hooks.php ../../options/options-core.php
 msgid "Post Page"
 msgstr "投稿ページ"
 
-#: ../../options/options-core.php ../../hooks/header-hooks.php
+#: ../../hooks/header-hooks.php ../../options/options-core.php
 msgid "Logo + Icons"
-msgstr "ロゴ+アイコン"
+msgstr "ロゴ + アイコン"
 
 #: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
-msgstr "またはCyber​​Chimps背景画像のいずれかを選択します。"
+msgstr "または CyberChimps バック グラウンド イメージの 1 つを選択します"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded files"
-msgstr "アップロードしたファイル"
+msgstr "アップロードされたファイル"
 
 #: ../../inc/meta-box-class.php
 msgid "Upload new files"
-msgstr "新しいファイルをアップロード"
+msgstr "新しいファイルをアップロードします。"
 
 #: ../../inc/meta-box-class.php
 msgid "Add more file"
-msgstr "複数のファイルを追加"
+msgstr "多くのファイルを追加します。"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded images"
-msgstr "アップロードされた画像"
+msgstr "アップロードした画像"
 
 #: ../../inc/meta-box-class.php
 msgid "Upload new images (Make sure to publish the post to save)"
-msgstr ""
-"（保存するために投稿を公開することを確認してください）​​新しい画像をアップロー"
-"ドする"
+msgstr "新しい画像をアップロードする （保存する記事を公開してください）"
 
 #: ../../inc/meta-box-class.php
 msgid "Select a color"
-msgstr "色の選択"
+msgstr "色を選択します。"
 
-#: ../../options/options-medialibrary-uploader.php
 #: ../../inc/meta-box-class.php
+#: ../../options/options-medialibrary-uploader.php
 msgid "Upload"
 msgstr "アップロード"
 
 #: ../../inc/meta-box-class.php
 msgid "or enter URL"
-msgstr "またはURLを入力してください"
+msgstr "または URL を入力します"
 
 #: ../../inc/meta-box.php
 msgid "Slider Options"
-msgstr "スライダーオプション"
+msgstr "スライダー オプション"
 
 #: ../../inc/meta-box.php
 msgid "Slider Image"
@@ -257,69 +239,69 @@ msgstr "スライダーの画像"
 
 #: ../../inc/meta-box.php
 msgid "Slider Caption"
-msgstr "スライダーキャプション"
+msgstr "スライダーのキャプション"
 
 #: ../../inc/meta-box.php
 msgid "Custom Slide Link"
-msgstr "カスタムスライドリンク"
+msgstr "カスタム スライドのリンク"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Title"
-msgstr "役職"
+msgstr "タイトル"
 
 #: ../../inc/meta-box.php
 msgid "Caption"
-msgstr "見出し"
+msgstr "キャプション"
 
 #: ../../inc/meta-box.php
 msgid "Need Help?"
-msgstr "お問い合わせ先"
+msgstr "助けが必要ですか？"
 
 #: ../../inc/meta-box.php
 msgid "Select Page Layout"
-msgstr "ページレイアウトを選択"
+msgstr "ページ レイアウトを選択します。"
 
 #: ../../inc/meta-box.php
 msgid "Page Title"
-msgstr "ページタイトル"
+msgstr "ページのタイトル"
 
 #: ../../inc/meta-box.php
 msgid "Page Elements"
-msgstr "ページの要素"
+msgstr "ページ要素"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Portfolio Lite"
-msgstr "ポートフォリオLiteの"
+msgstr "Lite のポートフォリオ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Bar"
-msgstr "Twitterのバー"
+msgstr "Twitter のバー"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Meta Data"
 msgstr "メタ データ"
 
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Featured Image"
-msgstr "写真"
-
 #: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Featured Image"
+msgstr "特集イメージ"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Category"
 msgstr "カテゴリ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "You need to create a Category"
-msgstr "あなたは、カテゴリを作成する必要があります"
+msgstr "カテゴリを作成する必要があります。"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Number of Columns"
-msgstr "列数"
+msgstr "列の数"
 
 #: ../../inc/meta-box.php
 msgid "Number of Posts"
 msgstr "投稿数"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Wide Posts Below Magazine"
 msgstr "マガジンの下の全体の投稿"
 
@@ -329,159 +311,223 @@ msgstr "全体の投稿の数"
 
 #: ../../inc/meta-box.php
 msgid "Slide One Image"
-msgstr "1枚の画像をスライドさせて"
+msgstr "1 つのイメージをスライドします。"
 
 #: ../../inc/meta-box.php
 msgid "Slide One Link"
-msgstr "1つのリンクをスライドさせて"
+msgstr "スライド 1 つのリンク"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Image"
-msgstr "スライド2イメージ"
+msgstr "2 つのイメージをスライドします。"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Link"
-msgstr "スライド2リンク"
+msgstr "2 つのリンクをスライドします。"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Image"
-msgstr "スリー画像をスライドさせ"
+msgstr "3 つのイメージをスライドします。"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Link"
-msgstr "スライドの3つのリンク"
+msgstr "3 つのリンクをスライドします。"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Size"
 msgstr "スライダーのサイズ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Full"
-msgstr "フル"
+msgstr "完全な"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Half"
 msgstr "半分"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Type"
-msgstr "スライダタイプ"
+msgstr "スライダー タイプ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom"
 msgstr "カスタム"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Posts"
-msgstr "件"
+msgstr "投稿"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Post Categories"
-msgstr "カテゴリーをお選びください"
+msgstr "投稿カテゴリ"
 
 #: ../../inc/meta-box.php
 msgid "All"
-msgstr "全て"
+msgstr "すべて"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom Categories"
-msgstr "カスタムカテゴリ"
+msgstr "ユーザー設定のカテゴリ"
 
 #: ../../inc/meta-box.php
 msgid "Number of Featured Posts"
-msgstr "おすすめの投稿数"
+msgstr "特集記事の数"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Height"
 msgstr "スライダーの高さ"
 
 #: ../../inc/meta-box.php
 msgid "Slider Speed"
-msgstr "スライダ速度"
+msgstr "スライダーの速度"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Arrows"
 msgstr "スライダーの矢印"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+msgid "Product Layout"
+msgstr "製品レイアウト"
+
+#: ../../inc/meta-box.php
+msgid "Text Left"
+msgstr "テキストを左"
+
+#: ../../inc/meta-box.php
+msgid "Text Right"
+msgstr "テキストを右"
+
+#: ../../inc/meta-box.php
+msgid "Product Title"
+msgstr "製品タイトル"
+
+#: ../../inc/meta-box.php
+msgid "Product"
+msgstr "製品"
+
+#: ../../inc/meta-box.php
+msgid "Product Text"
+msgstr "製品のテキスト"
+
+#: ../../inc/meta-box.php
+msgid "Media Type"
+msgstr "メディアの種類"
+
+#: ../../inc/meta-box.php
+msgid "Image"
+msgstr "イメージ"
+
+#: ../../inc/meta-box.php
+msgid "Video"
+msgstr "ビデオ"
+
+#: ../../inc/meta-box.php
+msgid "Product Image URL"
+msgstr "製品の画像の URL"
+
+#: ../../inc/meta-box.php
+msgid "Product Video Embed"
+msgstr "製品のビデオを埋め込む"
+
+#: ../../inc/meta-box.php
+msgid "Product Link"
+msgstr "製品リンク"
+
+#: ../../inc/meta-box.php
+msgid "Product URL"
+msgstr "製品の URL"
+
+#: ../../inc/meta-box.php
+msgid "Product Link Text"
+msgstr "製品リンク テキスト"
+
+#: ../../inc/meta-box.php
+msgid "Buy Now"
+msgstr "今すぐ購入します。"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Title"
-msgstr "タイトルコールアウト"
+msgstr "コールアウト タイトル"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "%1$s's Call Out Element"
-msgstr "%1$s要素のうちのCall"
+msgstr "要素 %1$ の呼び出し"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Text"
-msgstr "テキストの吹き出し"
+msgstr "吹き出しのテキスト"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid ""
 "Use %1$s's Call Out section on any page where you want to deliver an "
 "important message to your customer or client."
 msgstr ""
-"使用%1$sあなたの顧客やクライアントへの重要なメッセージをお届けしたい任意の"
-"ページ上のセクションアウトのコール。"
+"%1$ S を呼び出すアウト セクションは、あなたの顧客やクライアントとの重要なメッ"
+"セージを配信する任意のページでを使用します。"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button"
-msgstr "ボタンを吹き出し"
+msgstr "吹き出しボタン"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button Text"
-msgstr "ボタンテキストを吹き出し"
+msgstr "吹き出しボタンのテキスト"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Click Here"
+msgstr "ここをクリックします。"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button URL"
-msgstr "ボタンのURLを吹き出し"
+msgstr "吹き出しボタンの URL"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom Callout Options"
-msgstr "カスタムは、[オプション]を吹き出し"
+msgstr "カスタム引き出し線オプション"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Image"
-msgstr "カスタムボタンイメージ"
+msgstr "カスタム ボタンのイメージ"
 
 #: ../../inc/meta-box.php
 msgid "Custom Background Color"
-msgstr "背景色のカスタマイズ:"
+msgstr "カスタムの背景色"
 
 #: ../../inc/meta-box.php
 msgid "Custom Title Color"
-msgstr "カスタムタイトルの色"
+msgstr "カスタム タイトルの色"
 
 #: ../../inc/meta-box.php
 msgid "Custom Text Color"
-msgstr "カスタムテキストの色"
+msgstr "テキストのカスタム カラー"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Color"
-msgstr "カスタムボタンの色"
+msgstr "カスタム ボタンの色"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Text Color"
-msgstr "カスタムボタンのテキストの色"
+msgstr "カスタム ボタン テキストの色"
 
 #: ../../inc/meta-box.php
 msgid "Need help?"
-msgstr "お問い合わせ先"
+msgstr "助けが必要ですか？"
 
 #: ../../inc/meta-box.php
 msgid "Custom HTML"
-msgstr "カスタムHTML"
+msgstr "カスタム HTML"
 
 #: ../../inc/meta-box.php
 msgid "Enter your custom html here"
-msgstr "ここにカスタムHTMLを入力してください"
+msgstr "ここにあなたのカスタム html を入力します"
 
 #: ../../inc/meta-box.php
 msgid "Images per row"
-msgstr "行あたりの画像"
+msgstr "行ごとの画像"
 
 #: ../../inc/meta-box.php
 msgid "Two"
-msgstr "2"
+msgstr "2 つ"
 
 #: ../../inc/meta-box.php
 msgid "Three"
@@ -491,110 +537,113 @@ msgstr "3"
 msgid "Four"
 msgstr "4"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Portfolio Category"
-msgstr "ポートフォリオのカテゴリ"
-
 #: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Portfolio Category"
+msgstr "ポートフォリオ カテゴリー"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Portfolio Title"
-msgstr "ポートフォリオタイトル"
+msgstr "ポートフォリオ タイトル"
 
 #: ../../inc/meta-box.php
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image"
-msgstr "最初のポートフォリオのイメージ"
+msgstr "ポートフォリオの最初のイメージ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image Caption"
 msgstr "最初のポートフォリオの画像のキャプション"
 
 #: ../../inc/meta-box.php
 msgid "Image 1"
-msgstr "IMAGE 1:"
+msgstr "画像 1"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Porfolio Link"
-msgstr "まず先にポートフォリオリンク"
+msgstr "ポートフォリオの最初のリンク"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Link URL"
-msgstr "リンク URL"
+msgstr "リンクの URL"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image"
-msgstr "第二制作"
+msgstr "2 番目のポートフォリオの画像"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image Caption"
-msgstr "第二のポートフォリオ画像のキャプション"
+msgstr "2 番目のポートフォリオの画像のキャプション"
 
 #: ../../inc/meta-box.php
 msgid "Image 2"
-msgstr "IMAGE 2:"
+msgstr "画像 2"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Porfolio Link"
-msgstr "第二の先にポートフォリオリンク"
+msgstr "2 番目のポートフォリオのリンク"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image"
-msgstr "サードポートフォリオイメージ"
+msgstr "3 番目のポートフォリオの画像"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image Caption"
-msgstr "第三のポートフォリオ画像のキャプション"
+msgstr "3 番目のポートフォリオの画像のキャプション"
 
 #: ../../inc/meta-box.php
 msgid "Image 3"
-msgstr "IMAGE 3:"
+msgstr "画像 3"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Porfolio Link"
-msgstr "第三の先にポートフォリオリンク"
+msgstr "3 番目のポートフォリオのリンク"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image"
-msgstr "第四のポートフォリオイメージ"
+msgstr "4 番目のポートフォリオの画像"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image Caption"
-msgstr "第四のポートフォリオ画像のキャプション"
+msgstr "4 番目のポートフォリオの画像のキャプション"
 
 #: ../../inc/meta-box.php
 msgid "Image 4"
-msgstr "画像4"
+msgstr "画像 4"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Porfolio Link"
-msgstr "第四の先にポートフォリオリンク"
+msgstr "4 番目のポートフォリオのリンク"
 
 #: ../../inc/meta-box.php
 msgid "Post Category"
-msgstr "カテゴリーの投稿"
+msgstr "記事カテゴリー"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Images"
 msgstr "画像"
 
 #: ../../inc/meta-box.php
 msgid "Carousel Category"
-msgstr "カルーセルカテゴリ"
+msgstr "カルーセル カテゴリ"
 
-#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Handle"
-msgstr "Twitterのハンドル"
+msgstr "Twitter を処理"
 
 #: ../../inc/meta-box.php
 msgid "Enter your Twitter handle if using the Twitter bar"
-msgstr ""
-"Twitterのバーを使用している場合は、あなたのTwitterハンドルを入力してください"
+msgstr "場合は Twitter のバーを使用してあなたの Twitter のハンドルを入力します"
 
 #: ../../inc/meta-box.php
 msgid "Boxes Category"
-msgstr "ボックスカテゴリ"
+msgstr "ボックスのカテゴリ"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Number of boxes per row"
+msgstr "ボックス 1 行あたりの数"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -602,11 +651,11 @@ msgstr "ヘルプ"
 
 #: ../../options/options-core.php
 msgid "Design"
-msgstr "設計"
+msgstr "デザイン"
 
 #: ../../options/options-core.php
 msgid "Header"
-msgstr "ヘッダ"
+msgstr "ヘッダー"
 
 #: ../../options/options-core.php
 msgid "Blog"
@@ -622,11 +671,11 @@ msgstr "フッター"
 
 #: ../../options/options-core.php
 msgid "Layout Options"
-msgstr "レイアウトオプション"
+msgstr "レイアウト オプション"
 
 #: ../../options/options-core.php
 msgid "Custom Colors"
-msgstr "カスタムカラー"
+msgstr "カスタム色"
 
 #: ../../options/options-core.php
 msgid "Typography"
@@ -634,51 +683,51 @@ msgstr "タイポグラフィ"
 
 #: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr "ヘッダのドラッグ＆ドロップ"
+msgstr "ヘッダー ドラッグ & ドロップ"
 
 #: ../../options/options-core.php
 msgid "Header Options"
-msgstr "ヘッダーオプション"
+msgstr "ヘッダー オプション"
 
 #: ../../options/options-core.php
 msgid "Social Icons"
-msgstr "ソーシャルアイコン"
+msgstr "社会のアイコン"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr "ドラッグ＆ドロップ"
+msgstr "ドラッグ & ドロップ"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
-msgstr "ブログオプション"
+msgstr "ブログ オプション"
 
 #: ../../options/options-core.php
 msgid "Blog Slider Lite"
-msgstr "ブログスライダーLiteの"
+msgstr "ブログ スライダー ライト"
 
 #: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr "ポートフォリオLiteのオプション"
+msgstr "ポートフォリオ Lite オプション"
 
 #: ../../options/options-core.php
 msgid "Boxes Lite"
-msgstr "ライトボックス"
+msgstr "ライト ボックス"
 
 #: ../../options/options-core.php
 msgid "Blog Slider"
-msgstr "ブログスライダー"
+msgstr "ブログ スライダー"
 
 #: ../../options/options-core.php
 msgid "Callout Options"
-msgstr "オプションの吹き出し"
+msgstr "引き出し線オプション"
 
 #: ../../options/options-core.php
 msgid "HTML Box Options"
-msgstr "[HTML]ボックスのオプション"
+msgstr "HTML ボックスのオプション"
 
 #: ../../options/options-core.php
 msgid "Carousel Options"
-msgstr "カルーセルオプション"
+msgstr "カルーセル オプション"
 
 #: ../../options/options-core.php
 msgid "Magazine Options"
@@ -686,7 +735,7 @@ msgstr "雑誌のオプション"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
-msgstr "ポートフォリオProのオプション"
+msgstr "ポートフォリオ プロのオプション"
 
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
@@ -694,15 +743,15 @@ msgstr "最近の投稿オプション"
 
 #: ../../options/options-core.php
 msgid "Twitterbar Options"
-msgstr "Twitterbarオプション"
+msgstr "Twitterbar オプション"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
-msgstr "ボックスのオプション"
+msgstr "ボックス オプション"
 
 #: ../../options/options-core.php
 msgid "Single Post"
-msgstr "単一記事の投稿"
+msgstr "1 つのポスト"
 
 #: ../../options/options-core.php
 msgid "Archive"
@@ -714,19 +763,19 @@ msgstr "検索"
 
 #: ../../options/options-core.php
 msgid "Footer Options"
-msgstr "フッターオプション"
+msgstr "フッターのオプション"
 
 #: ../../options/options-core.php
 msgid "Author"
-msgstr "作者"
+msgstr "著者"
 
 #: ../../options/options-core.php
 msgid "Categories"
-msgstr "部類"
+msgstr "カテゴリ"
 
 #: ../../options/options-core.php
 msgid "Date"
-msgstr "日"
+msgstr "日付"
 
 #: ../../options/options-core.php
 msgid "Tags"
@@ -734,19 +783,19 @@ msgstr "タグ"
 
 #: ../../options/options-core.php
 msgid "Cyberchimps Help"
-msgstr "Cyber​​chimpsヘルプ"
-
-#: ../../options/options-core.php
-msgid "Welcome Note"
-msgstr "注意を歓迎"
+msgstr "Cyberchimps ヘルプ"
 
 #: ../../options/options-core.php
 msgid "Responsive Design"
-msgstr "レスポンシブ·デザイン"
+msgstr "応答性のデザイン"
 
 #: ../../options/options-core.php
 msgid "Responsive Videos"
-msgstr "レスポンシブ動画"
+msgstr "応答性の高い動画"
+
+#: ../../options/options-core.php
+msgid "Gallery Lightbox"
+msgstr "ライト ボックス ギャラリー"
 
 #: ../../options/options-core.php
 msgid "Wide Sidebar"
@@ -756,53 +805,53 @@ msgstr "広いサイドバー"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "1 サイドバーのレイアウト上でのみ動作します。"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Max Width"
-msgstr "最大幅"
+msgstr "幅の最大値"
 
 #: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
-msgstr "ピクセル単位であなたのサイトの幅を入力します。"
+msgstr "あなたのサイトの幅をピクセル単位で入力します"
 
 #: ../../options/options-core.php
 msgid "Select a Skin Color"
-msgstr "スキンカラーを選択"
+msgstr "肌の色を選択します"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Text Color"
-msgstr "文字色"
+msgstr "テキストの色"
 
 #: ../../options/options-core.php
 msgid "Select text color"
-msgstr "文字色"
+msgstr "テキストの色を選択します"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Link Color"
 msgstr "リンクの色"
 
 #: ../../options/options-core.php
 msgid "Select link color"
-msgstr "リンクの色を選択"
+msgstr "リンクの色を選択します"
 
-#: ../../options/options-customizer.php ../../options/options-core.php
+#: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Link Hover Color"
-msgstr "リンクホバー色"
+msgstr "リンクをホバー色"
 
 #: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr "リンクホバー色を選択"
+msgstr "ホバーのリンクの色を選択します"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
-msgstr "活版印刷のオプション"
+msgstr "文字体裁オプション"
 
 #: ../../options/options-core.php
 msgid "Google fonts"
-msgstr "Googleのフォント"
+msgstr "Google のフォント"
 
 #: ../../options/options-core.php
 msgid "Enter Google font"
-msgstr "Googleのフォントを入力してください"
+msgstr "Google のフォントを入力してください。"
 
 #: ../../options/options-core.php
 msgid "Demo Text"
@@ -810,11 +859,11 @@ msgstr "デモのテキスト"
 
 #: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr "ヘッダのドラッグ/ドロップ"
+msgstr "ヘッダー ドラッグ/ドロップ"
 
 #: ../../options/options-core.php
 msgid "Logo + Search"
-msgstr "ロゴ+検索"
+msgstr "ロゴ + 検索"
 
 #: ../../options/options-core.php
 msgid "Logo"
@@ -826,23 +875,23 @@ msgstr "カスタム ロゴの URL"
 
 #: ../../options/options-core.php
 msgid "URL"
-msgstr "URL:"
+msgstr "URL"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
-msgstr "URLを入力してください"
+msgstr "URL を入力します"
 
 #: ../../options/options-core.php
 msgid "Custom Logo"
-msgstr "カスタムロゴ"
+msgstr "カスタム ロゴ"
 
 #: ../../options/options-core.php
 msgid "Logo Image"
-msgstr "ロゴ画像"
+msgstr "ロゴのイメージ"
 
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr "URLを入力するか、ファイルをアップロード"
+msgstr "URL を入力するかファイルをアップロード"
 
 #: ../../options/options-core.php
 msgid "Custom Favicon"
@@ -850,15 +899,15 @@ msgstr "カスタムファビコン"
 
 #: ../../options/options-core.php
 msgid "Favicon URL"
-msgstr "ファビコンのURL"
+msgstr "ファビコン URL"
 
 #: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr "カスタムアップルタッチアイコン"
+msgstr "アップル タッチのカスタム アイコン"
 
 #: ../../options/options-core.php
 msgid "Apple Touch URL"
-msgstr "アップルタッチのURL"
+msgstr "アップル タッチの URL"
 
 #: ../../options/options-core.php
 msgid "Google Analytics"
@@ -866,7 +915,7 @@ msgstr "Google アナリティクス"
 
 #: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr "ここでは、Google Analyticsのコードをコピー＆ペースト"
+msgstr "コピーしてここにあなたの Google Analytics のコードを貼り付けます"
 
 #: ../../options/options-core.php
 msgid "Searchbar"
@@ -874,7 +923,7 @@ msgstr "検索バー"
 
 #: ../../options/options-core.php
 msgid "Choose your icon style"
-msgstr "あなたのアイコンのスタイルを選択してください"
+msgstr "あなたのアイコンのスタイルを選択します"
 
 #: ../../options/options-core.php
 msgid "Twitter"
@@ -882,15 +931,15 @@ msgstr "Twitter"
 
 #: ../../options/options-core.php
 msgid "Twitter URL"
-msgstr "TwitterのURLは"
+msgstr "Twitter の URL"
 
 #: ../../options/options-core.php
 msgid "Facebook"
-msgstr "フェースブック"
+msgstr "Facebook"
 
 #: ../../options/options-core.php
 msgid "Facebook URL"
-msgstr "FacebookのURLは"
+msgstr "Facebook の URL"
 
 #: ../../options/options-core.php
 msgid "Google+"
@@ -898,15 +947,15 @@ msgstr "Google +"
 
 #: ../../options/options-core.php
 msgid "Google+ URL"
-msgstr "Google+のURLは"
+msgstr "Google + URL"
 
 #: ../../options/options-core.php
 msgid "Flickr"
-msgstr "Flicker"
+msgstr "Flickr"
 
 #: ../../options/options-core.php
 msgid "Flickr URL"
-msgstr "FlickrのURLが"
+msgstr "Flickr URL"
 
 #: ../../options/options-core.php
 msgid "Pinterest"
@@ -914,7 +963,7 @@ msgstr "Pinterest"
 
 #: ../../options/options-core.php
 msgid "Pinterest URL"
-msgstr "PinterestのURL"
+msgstr "Pinterest URL"
 
 #: ../../options/options-core.php
 msgid "LinkedIn"
@@ -922,7 +971,7 @@ msgstr "LinkedIn"
 
 #: ../../options/options-core.php
 msgid "LinkedIn URL"
-msgstr "LinkedInのURLは"
+msgstr "LinkedIn の URL"
 
 #: ../../options/options-core.php
 msgid "YouTube"
@@ -930,7 +979,7 @@ msgstr "YouTube"
 
 #: ../../options/options-core.php
 msgid "YouTube URL"
-msgstr "YouTubeのURL"
+msgstr "YouTube の URL"
 
 #: ../../options/options-core.php
 msgid "RSS"
@@ -938,15 +987,15 @@ msgstr "RSS"
 
 #: ../../options/options-core.php
 msgid "RSS URL"
-msgstr "RSSのURL"
+msgstr "RSS の URL"
 
 #: ../../options/options-core.php
 msgid "Email"
-msgstr "メール"
+msgstr "電子メール"
 
 #: ../../options/options-core.php
 msgid "Email Address"
-msgstr "メールアドレス"
+msgstr "メール アドレス"
 
 #: ../../options/options-core.php
 msgid "Google Maps"
@@ -954,11 +1003,11 @@ msgstr "Google マップ"
 
 #: ../../options/options-core.php
 msgid "Google Maps URL"
-msgstr "GoogleマップのURL"
+msgstr "Google マップの URL"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr "ブログの要素をドラッグ＆ドロップ"
+msgstr "ドラッグ & ドロップ ブログ要素"
 
 #: ../../options/options-core.php
 msgid "Sidebar Options"
@@ -966,19 +1015,19 @@ msgstr "サイドバーのオプション"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr "フォーマットのアイコンを投稿"
+msgstr "ポストのアイコンを形式します。"
 
 #: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr "ポスト抜粋"
+msgstr "記事の抜粋"
 
 #: ../../options/options-core.php
 msgid "Read More Text"
-msgstr "より多くのテキストを読む"
+msgstr "続きを読む."
 
 #: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr "抜粋の長"
+msgstr "抜粋の長さ"
 
 #: ../../options/options-core.php
 msgid "Featured Images"
@@ -986,23 +1035,23 @@ msgstr "注目の画像"
 
 #: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr "署名欄の著者を投稿"
+msgstr "投稿の署名者"
 
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
-msgstr "署名欄カテゴリーの投稿"
+msgstr "署名欄のカテゴリを記事します。"
 
 #: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr "署名欄の日付を投稿"
+msgstr "ポスト署名日付"
 
 #: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr "署名欄へのコメントを投稿"
+msgstr "署名欄コメントの投稿"
 
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr "署名欄のタグを投稿"
+msgstr "ポスト署名タグ"
 
 #: ../../options/options-core.php
 msgid "Boxes Upgrade"
@@ -1014,9 +1063,37 @@ msgid ""
 "Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
 "them and display each category on a different page."
 msgstr ""
-"ボックスLiteは、サイト全体を通して3箱の合計に制限されます。へのアップグレー"
-"ド%1$s好きなだけ多くのボックスを作成できるようにする。それらを分類し、別の"
-"ページに各カテゴリが表示されます。"
+"ボックス Lite 3 ボックス全体サイト全体の合計を制限します。あなたのような多く"
+"のボックスを作成することができます %1$ s をアップグレードします。それらを分類"
+"し、各カテゴリ別のページに表示します。"
+
+#: ../../options/options-core.php
+msgid "Pro"
+msgstr "プロ"
+
+#: ../../options/options-core.php
+msgid "First Box Image"
+msgstr "最初のボックスの画像"
+
+#: ../../options/options-core.php
+msgid "First Box Text"
+msgstr "最初のボックスのテキスト"
+
+#: ../../options/options-core.php
+msgid "Second Box Image"
+msgstr "2 番目のボックスの画像"
+
+#: ../../options/options-core.php
+msgid "Second Box Text"
+msgstr "2 番目のボックスのテキスト"
+
+#: ../../options/options-core.php
+msgid "Third Box Image"
+msgstr "3 番目のボックスの画像"
+
+#: ../../options/options-core.php
+msgid "Third Box Text"
+msgstr "3 番目のボックスのテキスト"
 
 #: ../../options/options-core.php
 msgid "Portfolio Upgrade"
@@ -1028,9 +1105,9 @@ msgid ""
 "Upgrade to %1$s to be able to create as many portfolio items as you like. "
 "Categorize them and display each category on a different page."
 msgstr ""
-"ポートフォリオLiteは、サイト全体を通して4項目の合計に制限されます。へのアップ"
-"グレード%1$sあなたが好きなように多くのポートフォリオ品目として作成できるよう"
-"にする。それらを分類し、別のページに各カテゴリが表示されます。"
+"ポートフォリオ Lite は、サイト全体を全体の 4 項目の合計に制限されます。あなた"
+"のように多くのポートフォリオ アイテムを作成できるようにする %1$ s をアップグ"
+"レードします。それらを分類し、各カテゴリ別のページに表示します。"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
@@ -1042,37 +1119,37 @@ msgid ""
 "Upgrade to %1$s to be able to create more images. Categorize them and "
 "display each category on a different page."
 msgstr ""
-"スライダーLiteは、サイト全体を通して3つのイメージの合計に制限されます。への"
-"アップグレード%1$s複数の画像を作成できるようにする。それらを分類し、別のペー"
-"ジに各カテゴリが表示されます。"
+"スライダー Lite 3 画像全体サイト全体の合計を制限します。多くの画像を作成でき"
+"るようにする %1$ s をアップグレードします。それらを分類し、各カテゴリ別のペー"
+"ジに表示します。"
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
-msgstr "スライダー画像1"
+msgstr "スライダーの画像 1"
 
 #: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr "スライド1のURL"
+msgstr "スライド 1 の URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 2"
-msgstr "スライダー画像2"
+msgstr "スライダーの画像 2"
 
 #: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr "スライド2のURL"
+msgstr "スライド 2 の URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 3"
-msgstr "スライダー画像3"
+msgstr "スライダーの画像 3"
 
 #: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr "スライド3のURL"
+msgstr "スライド 3 の URL"
 
 #: ../../options/options-core.php
 msgid "Images per Row"
-msgstr "行あたりの画像"
+msgstr "行ごとの画像"
 
 #: ../../options/options-core.php
 msgid "Featured Excerpt Length"
@@ -1080,7 +1157,7 @@ msgstr "注目の抜粋の長さ"
 
 #: ../../options/options-core.php
 msgid "Number of Rows"
-msgstr "行数"
+msgstr "行の数"
 
 #: ../../options/options-core.php
 msgid "Wide Post Excerpt Length"
@@ -1096,51 +1173,47 @@ msgstr "注目のブログ記事の数"
 
 #: ../../options/options-core.php
 msgid "Slider Speed "
-msgstr "スライダ速度"
-
-#: ../../options/options-core.php
-msgid "Click Here"
-msgstr "ここをクリック"
+msgstr "スライダーの速度"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button"
-msgstr "[カスタム]ボタンを吹き出し"
+msgstr "カスタム吹き出しボタン"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Background Color"
-msgstr "カスタム背景色を吹き出し"
+msgstr "カスタム引き出しの背景色"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Title Color"
-msgstr "カスタムは、タイトルの色を吹き出し"
+msgstr "カスタム引き出しタイトルの色"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Text Color"
-msgstr "カスタムは、テキストの色を吹き出し"
+msgstr "カスタム引き出し線テキスト色"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button Color"
-msgstr "カスタムは、ボタンの色を吹き出し"
+msgstr "カスタム吹き出しボタンの色"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button Text Color"
-msgstr "カスタムボタンのテキストの色を吹き出し"
+msgstr "カスタム吹き出しボタン テキストの色"
 
 #: ../../options/options-core.php
 msgid "HTML Box"
-msgstr "HTMLのボックス"
+msgstr "HTML ボックス"
 
 #: ../../options/options-core.php
 msgid "Enter your custom HTML code here"
-msgstr "カスタムHTMLコードをここに入力してください"
+msgstr "ここで、カスタムの HTML コードを入力してください。"
 
 #: ../../options/options-core.php
 msgid "Custom Title"
-msgstr "カスタムタイトル"
+msgstr "カスタム タイトル"
 
 #: ../../options/options-core.php
 msgid "Select a Category"
-msgstr "カテゴリーを選択"
+msgstr "カテゴリを選択します。"
 
 #: ../../options/options-core.php
 msgid "Images for layout."
@@ -1148,23 +1221,23 @@ msgstr "レイアウトの画像。"
 
 #: ../../options/options-core.php
 msgid "Post title"
-msgstr "タイトルを投稿"
+msgstr "記事のタイトル"
 
 #: ../../options/options-core.php
 msgid "Post Format Icons"
-msgstr "フォーマットのアイコンを投稿"
+msgstr "形式の投稿アイコン"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Title"
-msgstr "カスタム404タイトル"
+msgstr "カスタム 404 タイトル"
 
 #: ../../options/options-core.php
 msgid "Custom 404 Content"
-msgstr "カスタム404コンテンツ"
+msgstr "カスタム 404 コンテンツ"
 
 #: ../../options/options-core.php
 msgid "Footer Copyright Text"
-msgstr "フッターの著作権テキスト"
+msgstr "著作権のフッターのテキスト"
 
 #: ../../options/options-customizer.php
 msgid "Customize"
@@ -1174,8 +1247,7 @@ msgstr "カスタマイズ"
 msgid ""
 "make sure you have removed the image above before selecting one of these"
 msgstr ""
-"もしこれらのいずれかを選択する前に、上記の画像を削除していることを確認してく"
-"ださい"
+"これらのいずれかを選択する前に上記の画像を削除していることを確認します。"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -1183,92 +1255,76 @@ msgstr "肌の色"
 
 #: ../../options/options-customizer.php
 msgid "Typography Size"
-msgstr "タイポグラフィサイズ"
+msgstr "タイポグラフィのサイズ"
 
 #: ../../options/options-customizer.php
 msgid "Typography Face"
-msgstr "タイポグラフィフェイス"
+msgstr "タイポグラフィの顔"
 
 #: ../../options/options-customizer.php
 msgid "Typography Style"
-msgstr "タイポグラフィスタイル"
+msgstr "タイポグラフィ スタイル"
 
 #: ../../options/options-customizer.php
 msgid "Background Image"
-msgstr "列を削除"
+msgstr "背景画像"
 
 #: ../../options/options-init.php
 msgid "Theme Options Page"
-msgstr "テーマオプションページ"
+msgstr "テーマ オプションのページ"
 
 #: ../../options/options-init.php
 msgid "Theme Options"
-msgstr "テーマ設定"
+msgstr "テーマのオプション"
 
 #: ../../options/options-init.php
 msgid "Buy Themes"
-msgstr "テーマを購入する"
-
-#: ../../options/options-init.php
-msgid "Open All"
-msgstr "すべてを開く"
-
-#: ../../options/options-init.php
-msgid "Collapse All"
-msgstr "すべてを折りたたむ"
+msgstr "テーマを購入します。"
 
 #: ../../options/options-init.php
 msgid "Restore Defaults"
-msgstr "デフォルトへ戻す"
+msgstr "既定値に戻す"
 
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
-"リセットするには、[OK]をクリックします。どんなテーマの設定は失われます！"
+"リセットするには、[ok] をクリックします。任意のテーマの設定は失われます。"
 
 #: ../../options/options-init.php
 msgid "Save Options"
-msgstr "設定を保存"
+msgstr "オプションを保存します。"
 
 #: ../../options/options-init.php
 msgid "CyberChimps Wordpress Themes"
-msgstr "Cyber​​Chimps Wordpressのテーマ"
-
-#: ../../options/options-init.php
-msgid "Link to Events plugin settings"
-msgstr "イベントプラグインの設定へのリンク"
-
-#: ../../options/options-init.php
-msgid "Insert custom events info and insert install link"
-msgstr "カスタムイベント情報を挿入し、インストールリンクを挿入する"
+msgstr "CyberChimps ワードプレスのテーマ"
 
 #: ../../options/options-init.php
 msgid "Default Field"
-msgstr "Defaultフィールド"
+msgstr "既定のフィールド"
 
 #: ../../options/options-init.php
 msgid "Options Imported"
-msgstr "インポートされたオプション"
+msgstr "インポート オプション"
 
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
-msgstr "インポートの無効なデータ"
+msgstr "無効なデータのインポート"
 
 #: ../../options/options-init.php
 msgid "Default options restored."
-msgstr "デフォルトのオプションは、復元された。"
+msgstr "デフォルトの復元オプション。"
 
 #: ../../options/options-init.php
 msgid "Options saved."
-msgstr "設定を保存しました。"
+msgstr "保存のオプションです。"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
-msgstr "テーマオプションメディア"
+msgstr "テーマ メディアをオプションします。"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
-msgstr "ファイルの表示"
+msgstr "[ファイルの表示"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Gallery"
@@ -1276,23 +1332,23 @@ msgstr "ギャラリー"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Previously Uploaded"
-msgstr "以前にアップロードした"
+msgstr "以前にアップロード"
 
 #: ../../options/options-sanitize.php
 msgid "No Repeat"
-msgstr "リピートなし"
+msgstr "繰り返しなし"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Horizontally"
-msgstr "横に繰り返す"
+msgstr "横方向に繰り返す"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Vertically"
-msgstr "縦に繰り返す"
+msgstr "縦方向に繰り返す"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat All"
-msgstr "リピート"
+msgstr "すべてを繰り返す"
 
 #: ../../options/options-sanitize.php
 msgid "Top Left"
@@ -1300,19 +1356,19 @@ msgstr "左上"
 
 #: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr "中央上"
+msgstr "トップ センター"
 
 #: ../../options/options-sanitize.php
 msgid "Top Right"
-msgstr "右上"
+msgstr "右上にあります。"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Left"
-msgstr "左中央"
+msgstr "中央左"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Center"
-msgstr "中央"
+msgstr "中東センター"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Right"
@@ -1320,7 +1376,7 @@ msgstr "中央右"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Left"
-msgstr "左下"
+msgstr "左下にあります。"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Center"
@@ -1328,27 +1384,27 @@ msgstr "中央下"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Right"
-msgstr "右下"
+msgstr "右下にあります。"
 
 #: ../../options/options-sanitize.php
 msgid "Scroll Normally"
-msgstr "通常スクロール"
+msgstr "通常どおりスクロールします。"
 
 #: ../../options/options-sanitize.php
 msgid "Fixed in Place"
-msgstr "所定の位置に固定"
+msgstr "固定の場所"
 
 #: ../../options/options-sanitize.php
 msgid "Normal"
-msgstr "標準"
+msgstr "通常"
 
 #: ../../options/options-sanitize.php
 msgid "Italic"
-msgstr "イタリック"
+msgstr "斜体"
 
 #: ../../options/options-sanitize.php
 msgid "Bold"
-msgstr "強調"
+msgstr "太字"
 
 #: ../../options/options-sanitize.php
 msgid "Bold Italic"
