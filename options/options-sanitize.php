@@ -27,7 +27,7 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 	}
 	
 	// Check for allowed set of characters.
-	$allowed = '/[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/';
+	$allowed = '/^[a-zA-Z0-9 \s \:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/u';
 	$test = preg_match( $allowed, $input );
 	if( $test == 1 ){
 		$output = $input;
