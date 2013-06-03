@@ -428,7 +428,7 @@ if ( ! function_exists( 'cyberchimps_posted_on' ) ) {
 		// Set the HTML for date link.
 		$posted_on = __( 'Posted on ', 'cyberchimps_core' ).
 			'<a href="' . $date_url . '" title="' . $date_title . '" rel="bookmark">
-				<time class="entry-date" datetime="' . $date_time . '">' . $date . '</time>
+				<time class="entry-date updated" datetime="' . $date_time . '">' . $date . '</time>
 			</a>';
 
 		// If post byline date toggle is on then print HTML for date link.
