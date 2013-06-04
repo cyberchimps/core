@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	// Custom CSS validation
 	function validate_custom_css() {
 		var custom_css = jQuery('#custom_css').val();
-		var allowed = /^[a-zA-Z0-9 \s \:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/i;
+		var allowed = /^[a-zA-Z0-9\s\:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/i;
 
 		if( custom_css.length == 0 ) {
 			return true;
