@@ -580,7 +580,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'Comic Sans MS, cursive'							 	=> 'Comic Sans MS',
 				'Courier New, monospace'							 	=> 'Courier New',
 				'Georgia, serif'									 	=> 'Georgia',
-				'"HelveticaNeue-Light", "Helvetica Neue Light",
+				'"Helvetica Neue-Light", "Helvetica Neue Light",
 				"Helvetica Neue",Helvetica, Arial, "Lucida Grande",
 				sans-serif' 											=> 'Helvetica Neue',
 				'Impact, Charcoal, sans-serif'						 	=> 'Impact',
