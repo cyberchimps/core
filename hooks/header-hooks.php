@@ -74,7 +74,7 @@ add_action('cyberchimps_logo_search', 'cyberchimps_logo_searchform');
 function cyberchimps_description_icons() { ?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>	
 	
 		<div id ="register" class="span5">
