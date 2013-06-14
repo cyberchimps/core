@@ -1228,7 +1228,9 @@ function cyberchimps_custom_events_callback( $value ) {
 	$output = '';
 	$plugin = 'the-events-calendar/the-events-calendar.php';
 
-	if ( !validate_plugin( $plugin ) ) {
+	$installed_plugins = get_plugins();
+
+	if ( isset($installed_plugins[$plugin]) ) {
 		if ( is_plugin_active( $plugin ) ) {
 			$output .= '<a href="'. admin_url('edit.php?post_type=tribe_events&page=tribe-events-calendar') .'">'.__('Events Plugin Options', 'cyberchimps').'</a>';
 		} else {
@@ -1244,12 +1246,6 @@ function cyberchimps_custom_events_callback( $value ) {
 // return a nonced installation link for the plugin. checks wordpress.org to make sure it's there first.
 function cyberchimps_eventcal_install_link() {
 	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-
 	$slug = 'the-events-calendar';
-	$info = plugins_api('plugin_information', array('slug' => $slug ));
-
-	if ( is_wp_error( $info ) )
-		return false; // plugin not available from wordpress.org
-	
 	return wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
 }
