@@ -689,6 +689,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'		=> __('Custom Logo', 'cyberchimps_core' ),
 		'id'		=> 'custom_logo',
 		'type'		=> 'toggle',
+        'std'       => apply_filters( 'cyberchimps_logo_toggle', 0 ),
 		'section'	=> 'cyberchimps_header_options_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
@@ -699,7 +700,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'		=> 'custom_logo_uploader',
 		'class'		=> 'custom_logo_toggle',
 		'type'		=> 'upload',
-		'std'		=> $directory_uri . '/cyberchimps/lib/images/achimps.png',
+		'std'		=> apply_filters( 'cyberchimps_default_logo', $directory_uri . '/cyberchimps/lib/images/achimps.png' ),
 		'section'	=> 'cyberchimps_header_options_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
