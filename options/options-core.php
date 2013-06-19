@@ -1983,13 +1983,45 @@ if( $theme_check == 'pro' ):
 endif;// end pro option fields
 
 	/********* TWITTERBAR OPTIONS STARTS ***********/
-	$fields_list[] = array(
-		'name' => __('Twitter Handle', 'cyberchimps_core' ),
-		'id' => 'twitter_handle',
-		'std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ),
-		'type' => 'text',
-		'section' => 'cyberchimps_twitterbar_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Twitter Handle', 'cyberchimps_core' ),
+		'id'		=> 'twitter_handle',
+		'std'		=> apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitterbar_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Access Token', 'cyberchimps_core' ),
+		'id'		=> 'twitter_access_token',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitterbar_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Access Token Secret', 'cyberchimps_core' ),
+		'id'		=> 'twitter_access_token_secret',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitterbar_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Consumer Key', 'cyberchimps_core' ),
+		'id'		=> 'twitter_consumer_key',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitterbar_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Consumer Secret', 'cyberchimps_core' ),
+		'id'		=> 'twitter_consumer_secret',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitterbar_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	/********* TWITTERBAR OPTIONS ENDS ***********/
 	
