@@ -230,6 +230,12 @@ endif;
 		'heading'	=> 'cyberchimps_blog_heading'
 	);*/
 	
+	$sections_list[] = array(
+		'id'		=> 'cyberchimps_twitter_api_section',
+		'label'		=> __('Twitter Api Options', 'cyberchimps_core' ),
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
 /*************************** TEMPLATE ************************************************/
 
 	$sections_list[] = array(
@@ -1085,7 +1091,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	/********* Post Byline Ends ***********/
 	/********* BLOG OPTIONS ENDS ***********/	
-
 
 if( $theme_check == 'free' ):
 
@@ -1991,38 +1996,6 @@ endif;// end pro option fields
 		'section'	=> 'cyberchimps_twitterbar_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
-	
-	$fields_list[]	= array(
-		'name'		=> __('Access Token', 'cyberchimps_core' ),
-		'id'		=> 'twitter_access_token',
-		'type'		=> 'text',
-		'section'	=> 'cyberchimps_twitterbar_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
-	$fields_list[]	= array(
-		'name'		=> __('Access Token Secret', 'cyberchimps_core' ),
-		'id'		=> 'twitter_access_token_secret',
-		'type'		=> 'text',
-		'section'	=> 'cyberchimps_twitterbar_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
-	$fields_list[]	= array(
-		'name'		=> __('Consumer Key', 'cyberchimps_core' ),
-		'id'		=> 'twitter_consumer_key',
-		'type'		=> 'text',
-		'section'	=> 'cyberchimps_twitterbar_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
-	
-	$fields_list[]	= array(
-		'name'		=> __('Consumer Secret', 'cyberchimps_core' ),
-		'id'		=> 'twitter_consumer_secret',
-		'type'		=> 'text',
-		'section'	=> 'cyberchimps_twitterbar_section',
-		'heading'	=> 'cyberchimps_blog_heading'
-	);
 	/********* TWITTERBAR OPTIONS ENDS ***********/
 	
 	/********* FEATURED POSTS START ************/
@@ -2291,6 +2264,40 @@ endif;// end pro option fields
 	/* Social options for profile ends */
 	
 	/********* PROFILE OPTIONS ENDS ************/
+	
+	/********* TWITTER API STARTS *********/
+	$fields_list[]	= array(
+		'name'		=> __('Access Token', 'cyberchimps_core' ),
+		'id'		=> 'twitter_access_token',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitter_api_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Access Token Secret', 'cyberchimps_core' ),
+		'id'		=> 'twitter_access_token_secret',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitter_api_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Consumer Key', 'cyberchimps_core' ),
+		'id'		=> 'twitter_consumer_key',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitter_api_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Consumer Secret', 'cyberchimps_core' ),
+		'id'		=> 'twitter_consumer_secret',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_twitter_api_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	/********* TWITTER API ENDS *********/
 	
 /*************************** TEMPLATES ***************************************************/
 	
