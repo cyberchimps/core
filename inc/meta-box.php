@@ -252,8 +252,6 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('cyberchimps_recent_posts_images_toggle', __( 'Images', 'cyberchimps_core' ), '')
 		->tab("Carousel Options")
 			->select('carousel_category', __( 'Carousel Category', 'cyberchimps_core' ), '', array('options' => ( $carousel_options ? $carousel_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
-		->tab("Twitter Options")
-			->text( 'cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps_core' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps_core' ), array('std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps_core' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
 			->select('boxes_per_row', __( 'Number of boxes per row', 'cyberchimps_core' ), '',

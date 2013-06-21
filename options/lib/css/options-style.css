@@ -729,7 +729,7 @@ textarea#custom_css, textarea#html_box {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
-.arrow {
+.options-arrow {
 	text-align: center;
 	margin-top: 60px;
 }
@@ -767,6 +767,13 @@ img.action {
 
 .section-group h3 span.minus {
     background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
+}
+
+/* ==================================== Twitter API ================================================== */
+
+#twitter_help li {
+  margin-left: 20px;
+  list-style: decimal;
 }
 
 /************** Help Page ********************/
