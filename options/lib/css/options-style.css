@@ -602,7 +602,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 }
 /* upload screenshot */
 .screenshot img {
-  width: 100%;
   max-width: 275px;
   height: auto;
   display: block;
