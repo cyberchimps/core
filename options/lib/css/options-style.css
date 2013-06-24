@@ -409,9 +409,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   font-weight: 100;
   cursor: pointer;
 }
-.cc-content-section h4.heading {
-	width: 90%;
-}
 
 /***************** Footer *********************/
 
@@ -529,6 +526,11 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 .cc-main-content .of-typography {
   float: left;
   margin-right: 10px;
+}
+.cc-main-content .field-container-wrapper {
+  width: 100%;
+  float: left;
+  clear: left;
 }
 .cc-main-content .field-container {
   float: left;
