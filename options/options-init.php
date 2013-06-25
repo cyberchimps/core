@@ -932,6 +932,7 @@ function cyberchimps_fields_callback( $value ) {
  * Validate theme options before updating to database.
  */
 function cyberchimps_options_validate( $input ) {
+
 	// Theme option import functionality
 	if( isset( $_POST['import' ] ) ) {
 		if( trim( $_POST['import' ] ) ) {
@@ -1021,7 +1022,9 @@ function cyberchimps_options_validate( $input ) {
 				$clean[$id] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $input[$id], $option );
 			}
 		}
-	
+
+        do_action( 'cyberchimps_options_before_save', $input );
+
 		add_settings_error( 'cyberchimps_options', 'save_options', __( 'Options saved.', 'cyberchimps_core' ), 'updated fade' );
 		return $clean;
 	}
