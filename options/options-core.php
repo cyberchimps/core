@@ -367,11 +367,12 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list = array();
 	
 	// Typography Defaults
-	$typography_defaults = array(
+	$typography_defaults = apply_filters( 'cyberchimps_typography_defaults', array(
 		'size' => '14px',
-		'face' => 'arial',
+		'face' => 'Arial, Helvetica, sans-serif',
 		'style' => 'normal',
-		'color' => '#333333' );
+		'color' => '#333333'
+    ) );
 		
 /*************************** HELP *****************************************************/
 	
@@ -590,7 +591,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'Webdings'											 	=> 'Webdings',
 				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
 				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
-				'MS Serif, New York, serif'							 	=> 'MS Serif',
+				'MS Serif, New York, serif'							 	=> 'MS Serif'
 			);
 	$typography_options	= array(
 		'sizes'		=> apply_filters( 'cyberchimps_typography_sizes', array( '8','10','12','14','16','20' ) ),
