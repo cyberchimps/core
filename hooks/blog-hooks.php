@@ -15,6 +15,25 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// Add blog title if toggle is on.
+function cyberchimps_blog_title() {
+
+	$title_toggle = $blog_section_order = cyberchimps_get_option( 'blog_title', false );
+	if( $title_toggle ) {
+		$title_text = cyberchimps_get_option( 'blog_title_text', 'Our Blog' );
+	?>
+		<div class="container-full-width" id="<?php echo $func; ?>_section">
+			<div class="container">	
+				<div class="container-fluid">
+					<h1><?php echo $title_text; ?></h1>
+				</div>
+			</div>
+		</div>
+	<?php
+	}
+}
+add_action('cyberchimps_blog_content', 'cyberchimps_blog_title');
+
 function cyberchimps_blog_section_order_action() {
 	global $post;
 	
