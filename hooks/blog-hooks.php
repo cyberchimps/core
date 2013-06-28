@@ -91,21 +91,25 @@ function cyberchimps_post(){
 }
 add_action( 'blog_post_page', 'cyberchimps_post' );
 
+/**
+ * Create the blog page title and hook it in
+ *
+ * @hook cyberchimps_before_content
+ */
 function cyberchimps_blog_title() {
     if( is_home() ) {
     // Add blog title if toggle is on.
     $title_toggle = cyberchimps_get_option( 'blog_title', false );
     if( $title_toggle ) {
         $title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
-        ?>
+        echo apply_filters( 'cyberchimps_blog_title_html', '
         <div id="cyberchimps_blog_title" class="row-fluid">
             <header class="page-header">
-                <h1 class="page-title"><?php echo $title_text; ?></h1>
+                <h1 class="page-title">' . $title_text . '</h1>
             </header>
-        </div>
-    <?php
+        </div>' );
     }
     }
 }
 
-add_action( 'cyberchimps_before_content', 'cyberchimps_blog_title', 10 );
+add_action( 'cyberchimps_before_content', 'cyberchimps_blog_title' );
