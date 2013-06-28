@@ -58,20 +58,6 @@ add_action('cyberchimps_blog_content', 'cyberchimps_blog_section_order_action');
 
 function cyberchimps_post(){
 
-	// Add blog title if toggle is on.
-	$title_toggle = $blog_section_order = cyberchimps_get_option( 'blog_title', false );
-	if( $title_toggle ) {
-		$title_text = cyberchimps_get_option( 'blog_title_text', 'Our Blog' );
-	?>
-		<div class="container-full-width" id="<?php echo $func; ?>_section">
-			<div class="container">	
-				<div class="container-fluid">
-					<h1><?php echo $title_text; ?></h1>
-				</div>
-			</div>
-		</div>
-	<?php
-	}
 ?>
 	<div id="container" <?php cyberchimps_filter_container_class(); ?>>
 
@@ -104,3 +90,20 @@ function cyberchimps_post(){
 <?php
 }
 add_action( 'blog_post_page', 'cyberchimps_post' );
+
+function cyberchimps_blog_title() {
+    if( is_home() ) {
+    // Add blog title if toggle is on.
+    $title_toggle = cyberchimps_get_option( 'blog_title', false );
+    if( $title_toggle ) {
+        $title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
+        ?>
+        <div id="cyberchimps_blog_title" class="row-fluid">
+            <h1 class="page-title"><?php echo $title_text; ?></h1>
+        </div>
+    <?php
+    }
+    }
+}
+
+add_action( 'cyberchimps_before_content', 'cyberchimps_blog_title', 10 );
