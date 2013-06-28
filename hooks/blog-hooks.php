@@ -99,7 +99,9 @@ function cyberchimps_blog_title() {
         $title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
         ?>
         <div id="cyberchimps_blog_title" class="row-fluid">
-            <h1 class="page-title"><?php echo $title_text; ?></h1>
+            <header class="page-header">
+                <h1 class="page-title"><?php echo $title_text; ?></h1>
+            </header>
         </div>
     <?php
     }
