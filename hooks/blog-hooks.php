@@ -15,25 +15,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// Add blog title if toggle is on.
-function cyberchimps_blog_title() {
-
-	$title_toggle = $blog_section_order = cyberchimps_get_option( 'blog_title', false );
-	if( $title_toggle ) {
-		$title_text = cyberchimps_get_option( 'blog_title_text', 'Our Blog' );
-	?>
-		<div class="container-full-width" id="<?php echo $func; ?>_section">
-			<div class="container">	
-				<div class="container-fluid">
-					<h1><?php echo $title_text; ?></h1>
-				</div>
-			</div>
-		</div>
-	<?php
-	}
-}
-add_action('cyberchimps_blog_content', 'cyberchimps_blog_title');
-
 function cyberchimps_blog_section_order_action() {
 	global $post;
 	
@@ -75,34 +56,51 @@ function cyberchimps_blog_section_order_action() {
 }
 add_action('cyberchimps_blog_content', 'cyberchimps_blog_section_order_action');
 
-function cyberchimps_post(){ ?>
-<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+function cyberchimps_post(){
 
-	<?php do_action( 'cyberchimps_before_content_container'); ?>
-  
-	<div id="content" <?php cyberchimps_filter_content_class(); ?>>
-		
-		<?php do_action( 'cyberchimps_before_content'); ?>
-		
-		<?php if ( have_posts() ) : ?>
+	// Add blog title if toggle is on.
+	$title_toggle = $blog_section_order = cyberchimps_get_option( 'blog_title', false );
+	if( $title_toggle ) {
+		$title_text = cyberchimps_get_option( 'blog_title_text', 'Our Blog' );
+	?>
+		<div class="container-full-width" id="<?php echo $func; ?>_section">
+			<div class="container">	
+				<div class="container-fluid">
+					<h1><?php echo $title_text; ?></h1>
+				</div>
+			</div>
+		</div>
+	<?php
+	}
+?>
+	<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+
+		<?php do_action( 'cyberchimps_before_content_container'); ?>
+	  
+		<div id="content" <?php cyberchimps_filter_content_class(); ?>>
 			
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php do_action( 'cyberchimps_before_content'); ?>
+			
+			<?php if ( have_posts() ) : ?>
 				
-			<?php endwhile; ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', get_post_format() ); ?>
+					
+				<?php endwhile; ?>
+				
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
+
+				<?php get_template_part( 'no-results', 'index' ); ?>
+
+			<?php endif; ?>
 			
-		<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
+			<?php do_action( 'cyberchimps_after_content'); ?>
+			
+		</div><!-- #content -->
+	<?php do_action( 'cyberchimps_after_content_container'); ?>
 		
-		<?php do_action( 'cyberchimps_after_content'); ?>
-		
-	</div><!-- #content -->
-<?php do_action( 'cyberchimps_after_content_container'); ?>
-	
-</div><!-- #container -->
-<?php }
+	</div><!-- #container -->
+<?php
+}
 add_action( 'blog_post_page', 'cyberchimps_post' );
