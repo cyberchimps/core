@@ -4,35 +4,7 @@
  */
 jQuery(document).ready(function($) {
 	
-	// Custom CSS validation
-	function validate_custom_css() {
-		var custom_css = jQuery('#custom_css').val();
-		var allowed = /^[a-zA-Z0-9\s\:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/i;
-
-		if( custom_css.length == 0 ) {
-			return true;
-		}
-		if( !allowed.test(custom_css)) {
-			jQuery('#custom-css-msg').html("Please enter only valid custom CSS");
-			return false;
-		}
-		else {
-			jQuery('#custom-css-msg').html("");
-			return true;
-		}
-	}
-	
-	// Validate custom CSS on blur of the field.
-	jQuery('#custom_css').blur(function() {
-		validate_custom_css();
-	});
-	
 	$('#cyberchimps_options_page').submit(function(){
-	
-		// Check for custom css
-		if( !validate_custom_css() ) {
-			return false;
-		}
 	
 		//options submit check to make sure that the drag and drop element is not empty
 		var header = $('#header_section_order').find('.blog-section-order-tracker').val();
