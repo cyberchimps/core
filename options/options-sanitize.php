@@ -26,10 +26,8 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 		return $input;
 	}
 	
-	// Check for allowed set of characters.
-	$allowed = '/^[a-zA-Z0-9 \s \:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/u';
-	$test = preg_match( $allowed, $input );
-	if( $test == 1 ){
+	$input = wp_kses_post( $input );
+	if( strlen($input) ){
 		$output = $input;
 	}
 	else {
