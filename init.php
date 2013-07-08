@@ -158,8 +158,8 @@ function cyberchimps_widgets_init() {
 		'id'			=> 'sidebar-left',
 		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
 		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+        'before_title'	=> apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
+        'after_title'	=> apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
 	));
 	
 	register_sidebar( array(
@@ -167,8 +167,8 @@ function cyberchimps_widgets_init() {
 		'id'			=> 'sidebar-right',
 		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
 		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+		'before_title'	=> apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
+		'after_title'	=> apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
 	));
 	
 	register_sidebar( array(
@@ -176,8 +176,8 @@ function cyberchimps_widgets_init() {
 		'id'			=> 'cyberchimps-footer-widgets',
 		'before_widget'	=> apply_filters( 'cyberchimps_footer_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
 		'after_widget'	=> apply_filters( 'cyberchimps_footer_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+        'before_title'	=> apply_filters( 'cyberchimps_footer_before_widget_title', '<h3 class="widget-title">' ),
+        'after_title'	=> apply_filters( 'cyberchimps_footer_after_widget_title', '</h3>' )
 	));
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
