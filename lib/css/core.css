@@ -43,10 +43,6 @@
     width: 100%;
 }
 /* CSS to make the video responsive ends */
-/* CSS for woocommerce compatibility */
-#cc_woocommerce {
-	max-width: 650px;
-}
 /* CSS for the site title, after removing the hgroup tag */
 .hgroup {
 	display: block;
