@@ -166,4 +166,4 @@ function cyberchimps_skin_styles() {
     }
 }
 
-add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 21 );
+add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 35 );
