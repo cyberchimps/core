@@ -14,7 +14,7 @@ ul, ol {
 .cc-options a:hover {
   text-decoration: none!important;
 }
-.cc-options input[type="submit"] {
+.cc-options input[type="submit"], .cc-submenu-links .btn {
   border-color: #2c2c2c;
 }
 .clear {
