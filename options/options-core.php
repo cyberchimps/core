@@ -1147,6 +1147,8 @@ if( $theme_check == 'free' ):
 		'name'		=> __('First Box Text', 'cyberchimps_core' ),
 		'id'		=> 'cyberchimps_blog_boxes_lite_image_one_text',
 		'type'		=> 'textarea',
+        'std'       => 'Alto ventos est coeptis utque fecit. Phoebe sine circumfuso arce. Tanto aliis. Matutinis cornua origo formaeque animal mundo. Chaos: fabricator. Natura mundo caesa addidit.
+        Cuncta habendum meis omni ille formaeque emicuit septemque et. Lege fecit aethere porrexerat gentes horrifer formas.',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -1180,6 +1182,8 @@ if( $theme_check == 'free' ):
 		'name'		=> __('Second Box Text', 'cyberchimps_core' ),
 		'id'		=> 'cyberchimps_blog_boxes_lite_image_two_text',
 		'type'		=> 'textarea',
+        'std'       => 'Alto ventos est coeptis utque fecit. Phoebe sine circumfuso arce. Tanto aliis. Matutinis cornua origo formaeque animal mundo. Chaos: fabricator. Natura mundo caesa addidit.
+        Cuncta habendum meis omni ille formaeque emicuit septemque et. Lege fecit aethere porrexerat gentes horrifer formas.',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -1213,6 +1217,8 @@ if( $theme_check == 'free' ):
 		'name'		=> __('Third Box Text', 'cyberchimps_core' ),
 		'id'		=> 'cyberchimps_blog_boxes_lite_image_three_text',
 		'type'		=> 'textarea',
+        'std'       => 'Alto ventos est coeptis utque fecit. Phoebe sine circumfuso arce. Tanto aliis. Matutinis cornua origo formaeque animal mundo. Chaos: fabricator. Natura mundo caesa addidit.
+        Cuncta habendum meis omni ille formaeque emicuit septemque et. Lege fecit aethere porrexerat gentes horrifer formas.',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
