@@ -53,8 +53,23 @@ function cyberchimps_page_section_order_action() {
 		}
 	}
 	else {
-		// Get the form to submit password
-		echo get_the_password_form();
+		// Get the form to submit password ?>
+        <div class="container-full-width" id="<?php echo $func; ?>_section">
+						<div class="container">
+							<div class="container-fluid">
+                                <div id="container" class="row-fluid">
+								    <div id="content">
+                                        <article class="post">
+                                    <?php
+								        echo get_the_password_form();
+								    ?>
+                                        </article>
+                                    </div>
+                                </div>
+							</div> 	<!-- .container-fluid-->
+						</div> 	<!-- .container -->
+					</div> 	<!-- .container-full-width -->
+	<?php
 	}	
 }
 add_action( 'cyberchimps_page_content', 'cyberchimps_page_section_order_action' );
