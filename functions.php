@@ -73,6 +73,9 @@ function cyberchimps_core_scripts() {
 		wp_dequeue_style( 'cyberchimps_responsive' );
 	}
 	
+	// Load core JS
+	wp_enqueue_script( 'core-js', $js_path . 'core.js', array('jquery') );
+	
 	// Load Core Stylesheet
 	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 	
