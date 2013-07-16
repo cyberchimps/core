@@ -20,7 +20,9 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 function cyberchimps_css_styles() {
     $body_styles      = cyberchimps_body_styles();
     $link_styles      = cyberchimps_link_styles();
-    $container_styles = cyberchimps_layout_styles();?>
+    $container_styles = cyberchimps_layout_styles();
+    $headings_styles  = cyberchimps_headings_styles();
+?>
 
     <style type="text/css" media="all">
         <?php if ( !empty( $body_styles ) ) : ?>
@@ -47,6 +49,16 @@ function cyberchimps_css_styles() {
         }
 
         <?php endif; ?>
+		
+		<?php if ( !empty( $headings_styles ) ) { ?>
+			h1, h2, h3, h4, h5, h6 {
+				<?php
+				foreach( $headings_styles as $key => $headings_style ) {
+					echo $key; ?> : <?php echo $headings_style; ?>;
+				<?php } ?>
+			}
+		<?php } ?>
+		
     </style>
     <?php
     return;
@@ -54,6 +66,27 @@ function cyberchimps_css_styles() {
 }
 
 add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
+
+// Creat headings_styles array from options.
+function cyberchimps_headings_styles() {
+	$headings_styles = array();
+	
+	// Set header font family.
+	$headings_styles['font-family'] = cyberchimps_get_option( 'font_family_headings' );
+	$google_font_headings = cyberchimps_get_option( 'google_font_headings' );
+	
+	if( $headings_styles['font-family'] == "Google Fonts" && $google_font_headings != "" ) {
+		$headings_styles['font-family'] = $google_font_headings;
+		
+		// Check if SSL is present, if so then use https othereise use http
+		$protocol = is_ssl() ? 'https' : 'http';
+
+		wp_register_style( 'google-font-headings', $protocol . '://fonts.googleapis.com/css?family=' . $google_font_headings );
+		wp_enqueue_style( 'google-font-headings' );
+	}
+	
+	return $headings_styles;
+}
 
 // creates body_styles array from options
     function cyberchimps_body_styles() {
@@ -81,10 +114,9 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
         }
 
         // Set font-family if google font is on
-        $google_font_toggle = cyberchimps_get_option( 'google_font' );
         $google_font        = cyberchimps_get_option( 'google_font_field' );
-
-        if( $google_font_toggle == "1" && $google_font != "" ) {
+		
+        if( $body_styles['font-family'] == "Google Fonts" && $google_font != "" ) {
             $body_styles['font-family'] = $google_font;
 
             // Check if SSL is present, if so then use https othereise use http
@@ -93,7 +125,7 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
             wp_register_style( 'google-font', $protocol . '://fonts.googleapis.com/css?family=' . $google_font );
             wp_enqueue_style( 'google-font' );
         }
-
+		
         //Set background image/color
         if( !get_theme_mod( 'background_image' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' && get_theme_mod( 'cyberchimps_background' ) != '' ) {
             $body_styles['background-image'] = 'url(' . get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . get_theme_mod( 'cyberchimps_background' ) . '.jpg )';

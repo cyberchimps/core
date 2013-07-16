@@ -591,7 +591,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'Webdings'											 	=> 'Webdings',
 				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
 				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
-				'MS Serif, New York, serif'							 	=> 'MS Serif'
+				'MS Serif, New York, serif'							 	=> 'MS Serif',
+				'Google Fonts'												=> 'Google Fonts'
 			);
 	$typography_options	= array(
 		'sizes'		=> apply_filters( 'cyberchimps_typography_sizes', array( '8','10','12','14','16','20' ) ),
@@ -610,23 +611,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section'	=> 'cyberchimps_typography_section',
 		'heading'	=> 'cyberchimps_design_heading'
 	);
-
-	// Toggle for google font
-	$fields_list[]	= array(
-		'name'		=> __('Google fonts', 'cyberchimps_core' ),
-		'id'		=> 'google_font',
-		'type'		=> 'toggle',
-		'section'	=> 'cyberchimps_typography_section',
-		'heading'	=> 'cyberchimps_design_heading'
-	);
-		
+	
 	// Entry field for google font
 	$fields_list[]	= array(
 		'name'		=> __('Enter Google font', 'cyberchimps_core' ),
 		'id'		=> 'google_font_field',
-		'class'		=> 'google_font_toggle',
 		'type'		=> 'text',
-		'desc'		=> 'Google font names are case sensitive',
+		'desc'		=> __('Google font names are case sensitive', 'cyberchimps_core' ),
 		'section'	=> 'cyberchimps_typography_section',
 		'heading'	=> 'cyberchimps_design_heading'
 	);
@@ -638,7 +629,27 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'desc'		=> 'The quick CyberChimp jumps over the lazy dog',
 		'section'	=> 'cyberchimps_typography_section',
 		'heading'	=> 'cyberchimps_design_heading'
-	);	
+	);
+	
+	// Font Family for headings.
+	$fields_list[]	= array(
+		'name'		=> __('Font Family for headings', 'cyberchimps_core' ),
+		'id'		=> 'font_family_headings',
+		'type'		=> 'select',
+		'options'	=> $faces,
+		'section'	=> 'cyberchimps_typography_section',
+		'heading'	=> 'cyberchimps_design_heading'
+	);
+	
+	// Google Font for headings.
+	$fields_list[]	= array(
+		'name'		=> __('Google font for headings', 'cyberchimps_core' ),
+		'id'		=> 'google_font_headings',
+		'type'		=> 'text',
+		'desc'		=> __('Google font names are case sensitive', 'cyberchimps_core' ),
+		'section'	=> 'cyberchimps_typography_section',
+		'heading'	=> 'cyberchimps_design_heading'
+	);
 	
 /*************************** HEADER STARTS ***************************************************/
 	

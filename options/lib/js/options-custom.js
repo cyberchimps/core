@@ -362,6 +362,43 @@ jQuery(document).ready(function($) {
 					$("#font_demo_text > p").css("font-weight", style);
 	});
 
+	// Script to show hide the Google Text Font input depending on the value of the Text select
+	var text = $('#typography_options_face').val();
+	
+	if(text != 'Google Fonts'){
+		$('#google_font_field').parent().hide();
+	}
+	else{
+		$('#google_font_field').parent().show();
+	}
+	$('#typography_options_face').change(function(){
+		var text_change = $(this).val();
+		if(text_change != 'Google Fonts'){
+			$('#google_font_field').parent().hide();
+		}
+		else{
+			$('#google_font_field').parent().show();
+		}
+	});
+
+	// Script to hide show the Google Heading Font input depending on value of the Heading select
+	var font = $('#font_family_headings').val();
+	if(font != 'Google Fonts'){
+		$('#google_font_headings').parent().hide();
+	}
+	else{
+		$('#google_font_headings').parent().show();
+	}
+	$('#font_family_headings').change(function(){
+		var font_change = $(this).val();
+		if(font_change != 'Google Fonts'){
+			$('#google_font_headings').parent().hide();
+		}
+		else{
+			$('#google_font_headings').parent().show();
+		}
+	});
+	
 /* Hide/Show toggle items */	
 	$('.field-container').children('.toggle-container').each(function(){
 		var toggle = $(this).children(':input');
