@@ -128,6 +128,43 @@ function cyberchimps_customize( $wp_customize ) {
 						$(this).parent().parent().parent().find('.of-radio-img-img').removeClass('of-radio-img-selected');
 						$(this).addClass('of-radio-img-selected');
 					});
+					
+					// Script to show hide the Google Text Font input depending on the value of the Text select
+					var font = $('#customize-control-typography_face select').val();
+					if(font!='Google Fonts'){
+						$('#customize-control-google_font_field').hide();
+					}
+					else{
+						$('#customize-control-google_font_field').show();
+					}
+					$('#customize-control-typography_face select').change(function(){
+						var font_change = $(this).val();
+						if(font_change!='Google Fonts'){
+							$('#customize-control-google_font_field').hide();
+						}
+						else{
+							$('#customize-control-google_font_field').show();
+						}
+					});
+
+					// Script to hide show the Google Heading Font input depending on value of the Heading select
+					var text = $('#customize-control-font_family_headings select').val();
+					if(text!='Google Fonts'){
+						$('#customize-control-google_font_headings').hide();
+					}
+					else{
+						$('#customize-control-google_font_headings').show();
+					}
+					$('#customize-control-font_family_headings select').change(function(){
+						var text_change = $(this).val();
+						if(text_change!='Google Fonts'){
+							$('#customize-control-google_font_headings').hide();
+						}
+						else{
+							$('#customize-control-google_font_headings').show();
+						}
+					});
+				
 				});
 			</script>
 			
@@ -233,13 +270,27 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size', array(
-		'label'   => __( 'Typography Size', 'cyberchimps_core' ),
-    'section' => 'cyberchimps_typography_section',
-    'type'    => 'select',
-		'settings'   => 'cyberchimps_options[typography_options][size]',
-    'choices'    => apply_filters( 'cyberchimps_typography_sizes', '' )
-  ) ) );
+		'label'		=> __( 'Typography Size', 'cyberchimps_core' ),
+		'section'	=> 'cyberchimps_typography_section',
+		'type'		=> 'select',
+		'settings'	=> 'cyberchimps_options[typography_options][size]',
+		'choices'	=> apply_filters( 'cyberchimps_typography_sizes', '' )
+		) ) );
 	
+	// typography style
+	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
+			'default'        => 'normal',
+			'type'           => 'option',
+		) );
+	
+	$wp_customize->add_control( 'typography_style', array(
+		'label'		=> __( 'Typography Style', 'cyberchimps_core' ),
+		'section'	=> 'cyberchimps_typography_section',
+		'type'		=> 'select',
+		'settings'	=> 'cyberchimps_options[typography_options][style]',
+		'choices'	=> apply_filters( 'cyberchimps_typography_styles', '' )
+		) );
+		
  	// typography face
 	/* Default font faces */
 	$faces = array(
@@ -265,7 +316,9 @@ function cyberchimps_customize( $wp_customize ) {
 				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
 				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
 				'MS Serif, New York, serif'							 	=> 'MS Serif',
+				'Google Fonts'											=> 'Google Fonts'
 			);
+	// Font family for text
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][face]', array(
 			'default'        => 'Arial',
 			'type'           => 'option',
@@ -278,19 +331,46 @@ function cyberchimps_customize( $wp_customize ) {
 		'settings'	=> 'cyberchimps_options[typography_options][face]',
 		'choices'	=> apply_filters( 'cyberchimps_typography_faces', $faces )
 	  ) );
-	// typography style
-	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
-			'default'        => 'normal',
+	
+	// Google Font family for text
+	$wp_customize->add_setting( 'cyberchimps_options[google_font_field]', array(
+			'default'	=> 'Arial',
+			'type'		=> 'option',
+		) );
+	
+	$wp_customize->add_control( 'google_font_field', array(
+		'label'		=> __( 'Text google font', 'cyberchimps_core' ),
+		'section'	=> 'cyberchimps_typography_section',
+		'type'		=> 'text',
+		'settings'	=> 'cyberchimps_options[google_font_field]',
+	) );
+	
+	// Font family for headings
+	$wp_customize->add_setting( 'cyberchimps_options[font_family_headings]', array(
+			'default'        => 'Arial',
 			'type'           => 'option',
 		) );
 	
-	$wp_customize->add_control( 'typography_style', array(
-		'label'   => __( 'Typography Style', 'cyberchimps_core' ),
-    'section' => 'cyberchimps_typography_section',
-    'type'    => 'select',
-		'settings'   => 'cyberchimps_options[typography_options][style]',
-    'choices'    => apply_filters( 'cyberchimps_typography_styles', '' )
-  ) );
+	$wp_customize->add_control( 'font_family_headings', array(
+		'label'		=> __( 'Font Family for headings', 'cyberchimps_core' ),
+		'section' 	=> 'cyberchimps_typography_section',
+		'type'		=> 'select',
+		'settings'	=> 'cyberchimps_options[font_family_headings]',
+		'choices'	=> apply_filters( 'cyberchimps_typography_faces', $faces )
+	  ) );
+	
+	// Google Font family for headings
+	$wp_customize->add_setting( 'cyberchimps_options[google_font_headings]', array(
+			'default'	=> 'Arial',
+			'type'		=> 'option',
+		) );
+	
+	$wp_customize->add_control( 'google_font_headings', array(
+		'label'		=> __( 'Google font for headings', 'cyberchimps_core' ),
+		'section'	=> 'cyberchimps_typography_section',
+		'type'		=> 'text',
+		'settings'	=> 'cyberchimps_options[google_font_headings]',
+	) );
 	
 	// background image
 	$wp_customize->add_setting( 'cyberchimps_background', array(

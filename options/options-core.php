@@ -592,7 +592,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
 				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
 				'MS Serif, New York, serif'							 	=> 'MS Serif',
-				'Google Fonts'												=> 'Google Fonts'
+				'Google Fonts'											=> 'Google Fonts'
 			);
 	$typography_options	= array(
 		'sizes'		=> apply_filters( 'cyberchimps_typography_sizes', array( '8','10','12','14','16','20' ) ),
