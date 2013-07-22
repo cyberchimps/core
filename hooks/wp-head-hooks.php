@@ -199,3 +199,11 @@ function cyberchimps_skin_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'cyberchimps_skin_styles', 35 );
+
+// Add custom header scripts.
+function cyberchimps_header_scripts() {
+	$header_scripts = cyberchimps_get_option( 'header_scripts' );
+	echo $header_scripts;
+}
+add_action( 'wp_head', 'cyberchimps_header_scripts' );
+?>

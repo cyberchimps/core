@@ -755,7 +755,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section'	=> 'cyberchimps_header_options_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
-		
+	
 	// Search bar toggle
 	$fields_list[]	= array(
 		'name'		=> __('Searchbar', 'cyberchimps_core' ),
@@ -766,6 +766,17 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading'	=> 'cyberchimps_header_heading'
 	);
 	
+	// Option to enter scripts into header.
+	if( $theme_check == 'pro' ) {
+		$fields_list[]	= array(
+			'id'		=> 'header_scripts',
+			'name'		=> __('Header Scripts', 'cyberchimps_core' ),
+			'type'		=> 'unfiltered_textarea',
+			'desc'		=> __( 'Please add script tags', 'cyberchimps_core' ),
+			'section'	=> 'cyberchimps_header_options_section',
+			'heading'	=> 'cyberchimps_header_heading'
+		);
+	}
 	/********** HEADER OPTIONS ENDS ************/	
 
 	/********** SOCIAL STARTS ************/
