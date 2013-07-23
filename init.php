@@ -55,6 +55,9 @@ function cyberchimps_core_setup_theme() {
 		require_once( $directory . '/elements/setup/features.php' );
 	}
 
+	// Load theme upsell.
+	require_once( $directory . '/cyberchimps/options/theme-upsell.php' );
+	
 	// Core Translations can be filed in the /inc/languages/ directory
 	load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
 	load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );

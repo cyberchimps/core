@@ -1,0 +1,14 @@
+/* Defines styles for upsell page */
+
+#upsell_header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.theme-container {
+  margin: 22px;
+}
+
+#upsell_container a {
+  text-decoration: none;
+}
