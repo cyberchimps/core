@@ -1230,25 +1230,85 @@ add_filter('cyberchimps_field_list', 'cyberchimps_eventcal_add_fields', 20, 1);
 function cyberchimps_custom_events_callback( $value ) {
 	$output = '';
 	$plugin = 'the-events-calendar/the-events-calendar.php';
+	$icon     = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/events.png" />';
+    $icon_neg = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/events-neg.png" />';
 
 	$installed_plugins = get_plugins();
 
 	if ( isset($installed_plugins[$plugin]) ) {
 		if ( is_plugin_active( $plugin ) ) {
-			$output .= '<a href="'. admin_url('edit.php?post_type=tribe_events&page=tribe-events-calendar') .'">'.__('Events Plugin Options', 'cyberchimps').'</a>';
-		} else {
-			$output .= __('Please activate The Events Calendar plugin', 'cyberchimps');
+			$output .= $icon . '<a href="'. admin_url('edit.php?post_type=tribe_events&page=tribe-events-calendar') .'">'.__('Events Plugin Options', 'cyberchimps').'</a>';
+		}
+		else {
+            $output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps' ) . '</a>';
 		}
 	} else {
-		$output .= '<a href="'. cyberchimps_eventcal_install_link() .'">' . __('Install Events Calendar Plugin', 'cyberchimps') . '</a>';
+		$output .= $icon_neg . '<a href="'. cyberchimps_eventcal_install_link() .'">' . __('Install Events Calendar Plugin', 'cyberchimps') . '</a>';
 	}
 	
 	echo $output;	
 }
 
-// return a nonced installation link for the plugin. checks wordpress.org to make sure it's there first.
+// return a nonced installation link for the plugin.
 function cyberchimps_eventcal_install_link() {
 	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 	$slug = 'the-events-calendar';
 	return wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
 }
+
+// Digital Downloads Section
+function cyberchimps_digital_downloads_sections( $sections_list ) {
+	$sections_list[] = array(
+		'id' => 'cyberchimps_digital_downloads_options',
+		'label' => __('Digital Downloads', 'cyberchimps'),
+		'heading' => 'cyberchimps_addons_heading'
+	);
+
+	return $sections_list;
+}
+add_filter('cyberchimps_section_list', 'cyberchimps_digital_downloads_sections', 20, 1);
+
+// Digital Downloads Fields
+function cyberchimps_digital_downloads_fields( $fields_list ) {
+	$fields_list[] = array(
+		'name' => __('Digital Downloads', 'cyberchimps'),
+		'id' => 'digital_downloads',
+		'type' => 'info',
+		'callback' => 'cyberchimps_digital_downloads_callback',
+		'section' => 'cyberchimps_digital_downloads_options',
+		'heading' => 'cyberchimps_addons_heading'
+	);
+
+	return $fields_list;
+}
+add_filter('cyberchimps_field_list', 'cyberchimps_digital_downloads_fields', 20, 1);
+
+// Digital Downloads Text
+function cyberchimps_digital_downloads_callback( $value ) {
+	$output = '';
+	$plugin = 'easy-digital-downloads/easy-digital-downloads.php';
+	$icon     = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/easy.png" />';
+    $icon_neg = '<img class="plugins-icon" src="' . get_template_directory_uri() . '/cyberchimps/options/lib/images/addons/easy-neg.png" />';
+
+	$installed_plugins = get_plugins();
+
+	if ( isset($installed_plugins[$plugin]) ) {
+		if ( is_plugin_active( $plugin ) ) {
+            $output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps' ) . '</a>';
+		} else {
+            $output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps' ) . '</a>';
+		}
+	} else {
+        $output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps' ) . '</a>';
+	}
+	
+	echo $output;	
+}
+
+// return a nonced installation link for the plugin.
+function cyberchimps_digital_downloads_install_link() {
+	include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+	$slug = 'easy-digital-downloads';
+	return wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
+}
+?>

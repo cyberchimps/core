@@ -806,6 +806,11 @@ img.action {
   width: 665px!important;
 }
 
+/************** Add Ons ************************/
+.plugins-icon {
+  margin-right: 10px;
+}
+
 /************** Responsive *******************/
 
 @media all and (max-width: 1196px) {
