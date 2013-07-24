@@ -41,6 +41,11 @@ ul, ol {
   border-bottom: 1px dashed #cccccc;
 }
 
+.theme-container .theme-image img {
+  padding: 3px;
+  border: 5px solid #aaaaaa;
+}
+
 .theme-description {
   margin-bottom: 20px;
 }
