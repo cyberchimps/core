@@ -29,7 +29,10 @@ function cyberchimps_footer_credit() {
 					<div class="span6">
 						<div id="credit">
 							<?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1'):  ?>
-								<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps" /></a>
+								<a href="http://cyberchimps.com/" target="_blank" title="CyberChimps Wordpress themes">
+                                    <img class="cc-credit-logo" src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps" />
+                                    <h4 class="cc-credit-text"><span>Cyber</span>Chimps</h4>
+                                </a>
 							<?php endif; ?>
 						</div>
 					</div>

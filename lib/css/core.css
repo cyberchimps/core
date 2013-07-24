@@ -47,3 +47,24 @@
 .hgroup {
 	display: block;
 }
+
+/* ==================================== FOOTER ================================================== */
+
+@import url('http://fonts.googleapis.com/css?family=Bitter');
+
+#after_footer .cc-credit-logo {
+  float: left;
+}
+
+#after_footer .cc-credit-text {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-family: 'Bitter', serif;
+  float: left;
+  color: #9b9c9b;
+}
+
+#after_footer .cc-credit-text span {
+  color: #22699d;
+  font-weight: 200;
+}
