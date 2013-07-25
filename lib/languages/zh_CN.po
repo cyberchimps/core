@@ -3,18 +3,18 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-05-31 10:51-0000\n"
+"PO-Revision-Date: 2013-07-25 16:28-0000\n"
 "Last-Translator: CyberChimps <support@cyberchimps.com>\n"
 "Language-Team: Chinese, China\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../functions.php
 msgid "Posted on "
-msgstr "张贴在"
+msgstr "发布于："
 
 #: ../../functions.php
 msgid "View all posts by %s"
@@ -26,7 +26,7 @@ msgstr "由"
 
 #: ../../functions.php
 msgid "Posted in"
-msgstr "张贴在"
+msgstr "发布于："
 
 #: ../../functions.php
 msgid "Tags:"
@@ -58,19 +58,19 @@ msgstr "标签存档："
 
 #: ../../functions.php
 msgid "Author Archives"
-msgstr "作者档案"
+msgstr "作者归档"
 
 #: ../../functions.php
 msgid "Daily Archives:"
-msgstr "日常档案："
+msgstr "按日查看："
 
 #: ../../functions.php
 msgid "Monthly Archives:"
-msgstr "每月档案："
+msgstr "按月查看："
 
 #: ../../functions.php
 msgid "Yearly Archives:"
-msgstr "每年的档案："
+msgstr "按年查看："
 
 #: ../../functions.php
 msgid "Shop"
@@ -78,7 +78,7 @@ msgstr "店"
 
 #: ../../functions.php
 msgid "Archives"
-msgstr "档案"
+msgstr "归档"
 
 #: ../../functions.php ../../inc/meta-box.php
 msgid "Page"
@@ -102,7 +102,7 @@ msgstr "升级到 %1$ s"
 
 #: ../../functions.php
 msgid "If you want even more amazing new features upgrade to"
-msgstr "如果你想要更令人惊讶的新功能升级到"
+msgstr "如果你想要更令人惊讶的新功能，升级到"
 
 #: ../../functions.php
 msgid ""
@@ -110,8 +110,8 @@ msgid ""
 "Callout Section, expanded typography including Google Fonts, more color "
 "skins, and many more powerful new features. Please visit"
 msgstr ""
-"其中包括自定义功能滑块，图像的旋转木马，Widgetized 盒、 标注部分，扩大排版包"
-"括谷歌字体、 更多的颜色外观和很多更强大的新功能。请访问"
+"其中包括一个自定义幻灯片，图片轮播，小工具展示柜，特别标注，包括谷歌字体的可"
+"扩展的字体选择，更多颜色的皮肤选择，以及许多更强大的新功能。请访问"
 
 #: ../../functions.php
 msgid "to learn more!"
@@ -119,7 +119,7 @@ msgstr "要了解更多 ！"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "欢迎您访问 %1$ s!了解更多现在大约升级到"
+msgstr "如果想了解更多升级信息，欢迎访问 %1$s！"
 
 #: ../../functions.php
 msgid "today."
@@ -163,29 +163,29 @@ msgstr "主菜单"
 
 #: ../../init.php
 msgid "Sidebar Left"
-msgstr "侧边栏左"
+msgstr "左侧栏"
 
 #: ../../init.php
 msgid "Sidebar Right"
-msgstr "侧边栏的权利"
+msgstr "右侧栏"
 
 #: ../../init.php ../../options/options-core.php
 msgid "Footer Widgets"
-msgstr "页脚窗口小部件"
+msgstr "页脚小工具"
 
 #: ../../hooks/blog-hooks.php ../../inc/meta-box.php
 #: ../../options/options-core.php
 msgid "Slider Lite"
-msgstr "滑块简装"
+msgstr "幻灯片精简版"
 
 #: ../../hooks/blog-hooks.php ../../inc/meta-box.php
 #: ../../options/options-core.php
 msgid "Boxes"
-msgstr "框"
+msgstr "展示柜"
 
 #: ../../hooks/blog-hooks.php ../../options/options-core.php
 msgid "Post Page"
-msgstr "开机自检页"
+msgstr "发表页"
 
 #: ../../hooks/header-hooks.php ../../options/options-core.php
 msgid "Logo + Icons"
@@ -193,7 +193,7 @@ msgstr "徽标 + 图标"
 
 #: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
-msgstr "或者选择一个 CyberChimps 背景图像"
+msgstr "或选择CyberChimps其中一幅背景图片"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded files"
@@ -209,15 +209,15 @@ msgstr "添加更多文件"
 
 #: ../../inc/meta-box-class.php
 msgid "Uploaded images"
-msgstr "上传的图像"
+msgstr "上传的图片"
 
 #: ../../inc/meta-box-class.php
 msgid "Upload new images (Make sure to publish the post to save)"
-msgstr "上传新图片 （请确保以发表帖子保存）"
+msgstr "上传新图片 （发表后保存）"
 
 #: ../../inc/meta-box-class.php
 msgid "Select a color"
-msgstr "选择一种颜色"
+msgstr "选择颜色"
 
 #: ../../inc/meta-box-class.php
 #: ../../options/options-medialibrary-uploader.php
@@ -226,19 +226,19 @@ msgstr "上传"
 
 #: ../../inc/meta-box-class.php
 msgid "or enter URL"
-msgstr "或输入的 URL"
+msgstr "或输入URL"
 
 #: ../../inc/meta-box.php
 msgid "Slider Options"
-msgstr "滑块选项"
+msgstr "幻灯片选项"
 
 #: ../../inc/meta-box.php
 msgid "Slider Image"
-msgstr "滑块图像"
+msgstr "幻灯片图像"
 
 #: ../../inc/meta-box.php
 msgid "Slider Caption"
-msgstr "滑块标题"
+msgstr "幻灯片标题"
 
 #: ../../inc/meta-box.php
 msgid "Custom Slide Link"
@@ -250,7 +250,7 @@ msgstr "标题"
 
 #: ../../inc/meta-box.php
 msgid "Caption"
-msgstr "标题"
+msgstr "标注"
 
 #: ../../inc/meta-box.php
 msgid "Need Help?"
@@ -262,7 +262,7 @@ msgstr "选择页面布局"
 
 #: ../../inc/meta-box.php
 msgid "Page Title"
-msgstr "页标题"
+msgstr "页面标题"
 
 #: ../../inc/meta-box.php
 msgid "Page Elements"
@@ -270,7 +270,7 @@ msgstr "页面元素"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Portfolio Lite"
-msgstr "投资组合简装"
+msgstr "作品集精简版"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Bar"
@@ -282,7 +282,7 @@ msgstr "元数据"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Featured Image"
-msgstr "特色的图像"
+msgstr "封面图片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Category"
@@ -298,11 +298,11 @@ msgstr "列数"
 
 #: ../../inc/meta-box.php
 msgid "Number of Posts"
-msgstr "职位数目"
+msgstr "文章数目"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Wide Posts Below Magazine"
-msgstr "以下杂志广泛职位"
+msgstr "宽杂志文章下面"
 
 #: ../../inc/meta-box.php
 msgid "Number of Wide Posts "
@@ -310,55 +310,55 @@ msgstr "广泛的职位数目"
 
 #: ../../inc/meta-box.php
 msgid "Slide One Image"
-msgstr "幻灯片一个图像"
+msgstr "第一张幻灯片图片"
 
 #: ../../inc/meta-box.php
 msgid "Slide One Link"
-msgstr "幻灯片一个链接"
+msgstr "第一张幻灯片链接"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Image"
-msgstr "幻灯片两个图像"
+msgstr "第二张幻灯片图片"
 
 #: ../../inc/meta-box.php
 msgid "Slide Two Link"
-msgstr "滑动两个链接"
+msgstr "第二张幻灯片链接"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Image"
-msgstr "幻灯片三个图像"
+msgstr "第三张幻灯片图片"
 
 #: ../../inc/meta-box.php
 msgid "Slide Three Link"
-msgstr "幻灯片三个链接"
+msgstr "第三张幻灯片链接"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Size"
-msgstr "滑块尺寸"
+msgstr "幻灯片尺寸"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Full"
-msgstr "完整的"
+msgstr "页面全幅"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Half"
-msgstr "一半"
+msgstr "页面半幅"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Type"
-msgstr "滑块类型"
+msgstr "幻灯片展示形式"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom"
-msgstr "自定义"
+msgstr "自定义幻灯片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Posts"
-msgstr "职位"
+msgstr "文章"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Post Categories"
-msgstr "岗位类别"
+msgstr "日志类别"
 
 #: ../../inc/meta-box.php
 msgid "All"
@@ -370,19 +370,19 @@ msgstr "自定义类别"
 
 #: ../../inc/meta-box.php
 msgid "Number of Featured Posts"
-msgstr "热门职位数目"
+msgstr "精选文章数目"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Height"
-msgstr "滑块高度"
+msgstr "幻灯片高度"
 
 #: ../../inc/meta-box.php
 msgid "Slider Speed"
-msgstr "滑块速度"
+msgstr "幻灯片速度"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Slider Arrows"
-msgstr "滑块箭头"
+msgstr "幻灯片箭头"
 
 #: ../../inc/meta-box.php
 msgid "Product Layout"
@@ -446,30 +446,29 @@ msgstr "现在买"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Title"
-msgstr "标注标题"
+msgstr "特别标注标题"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "%1$s's Call Out Element"
-msgstr "%1$ 的呼叫出元素"
+msgstr "%1$s的特别标注工具"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Text"
-msgstr "标注文本"
+msgstr "特别标注文本"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid ""
 "Use %1$s's Call Out section on any page where you want to deliver an "
 "important message to your customer or client."
-msgstr ""
-"使用 %1$ s 打电话给出节在任何页面上要向您的客户或客户端提供一个重要的信息。"
+msgstr "在任意页面中使用%1$s的特别标注工具，传递一个重要的信息给你的客户。"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button"
-msgstr "标注按钮"
+msgstr "特别标注按钮"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button Text"
-msgstr "标注按钮文本"
+msgstr "特别标注按钮文字"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Click Here"
@@ -477,15 +476,15 @@ msgstr "请单击此处"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Callout Button URL"
-msgstr "标注按钮 URL"
+msgstr "特别标注按钮 URL"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Custom Callout Options"
-msgstr "自定义标注选项"
+msgstr "自定义特别标注选项"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Image"
-msgstr "自定义按钮图像"
+msgstr "自定义按钮图片"
 
 #: ../../inc/meta-box.php
 msgid "Custom Background Color"
@@ -505,7 +504,7 @@ msgstr "自定义按钮的颜色"
 
 #: ../../inc/meta-box.php
 msgid "Custom Button Text Color"
-msgstr "自定义按钮的文本颜色"
+msgstr "自定义按钮文字颜色"
 
 #: ../../inc/meta-box.php
 msgid "Need help?"
@@ -517,11 +516,11 @@ msgstr "自定义 HTML"
 
 #: ../../inc/meta-box.php
 msgid "Enter your custom html here"
-msgstr "请输入您的自定义 html 在这里"
+msgstr "请输入您的自定义HTML"
 
 #: ../../inc/meta-box.php
 msgid "Images per row"
-msgstr "每行的图像"
+msgstr "每行的图片"
 
 #: ../../inc/meta-box.php
 msgid "Two"
@@ -529,39 +528,39 @@ msgstr "两个"
 
 #: ../../inc/meta-box.php
 msgid "Three"
-msgstr "三"
+msgstr "三个"
 
 #: ../../inc/meta-box.php
 msgid "Four"
-msgstr "四"
+msgstr "四个"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Portfolio Category"
-msgstr "投资组合类别"
+msgstr "作品集类别"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Portfolio Title"
-msgstr "投资组合标题"
+msgstr "作品集名称"
 
 #: ../../inc/meta-box.php
 msgid "Portfolio"
-msgstr "投资组合"
+msgstr "作品集"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image"
-msgstr "第一次投资组合图像"
+msgstr "第一个作品集图片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Portfolio Image Caption"
-msgstr "第一次投资组合图像标题"
+msgstr "第一个作品集图片标题"
 
 #: ../../inc/meta-box.php
 msgid "Image 1"
-msgstr "图像 1"
+msgstr "图片 1"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "First Porfolio Link"
-msgstr "第一阵容链接"
+msgstr "第一个作品集链接"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Link URL"
@@ -569,63 +568,63 @@ msgstr "链接 URL"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image"
-msgstr "第二个组合图像"
+msgstr "第二个作品集图片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Portfolio Image Caption"
-msgstr "第二个组合图像标题"
+msgstr "第二个作品集图片标题"
 
 #: ../../inc/meta-box.php
 msgid "Image 2"
-msgstr "图像 2"
+msgstr "图片 2"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Second Porfolio Link"
-msgstr "第二阵容链接"
+msgstr "第二个作品集链接"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image"
-msgstr "第三个组合图像"
+msgstr "第三个作品集图片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Portfolio Image Caption"
-msgstr "第三个组合图像标题"
+msgstr "第三个作品集图片"
 
 #: ../../inc/meta-box.php
 msgid "Image 3"
-msgstr "图像 3"
+msgstr "图片 3"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Third Porfolio Link"
-msgstr "第三阵容链接"
+msgstr "第三个作品集链接"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image"
-msgstr "第四个组合图像"
+msgstr "第四个作品集图片"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Portfolio Image Caption"
-msgstr "第四组合图像标题"
+msgstr "第四个作品集图片标题"
 
 #: ../../inc/meta-box.php
 msgid "Image 4"
-msgstr "图像 4"
+msgstr "图片 4"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Fourth Porfolio Link"
-msgstr "第四个阵容链接"
+msgstr "第四个作品集链接"
 
 #: ../../inc/meta-box.php
 msgid "Post Category"
-msgstr "职位类别"
+msgstr "文章类别"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Images"
-msgstr "图像"
+msgstr "图片"
 
 #: ../../inc/meta-box.php
 msgid "Carousel Category"
-msgstr "旋转木马类别"
+msgstr "图片轮播类别"
 
 #: ../../inc/meta-box.php ../../options/options-core.php
 msgid "Twitter Handle"
@@ -637,7 +636,7 @@ msgstr "如果使用 Twitter 栏，输入您的 Twitter 句柄"
 
 #: ../../inc/meta-box.php
 msgid "Boxes Category"
-msgstr "框类别"
+msgstr "展示柜类别"
 
 #: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Number of boxes per row"
@@ -653,7 +652,7 @@ msgstr "设计"
 
 #: ../../options/options-core.php
 msgid "Header"
-msgstr "标题"
+msgstr "顶部"
 
 #: ../../options/options-core.php
 msgid "Blog"
@@ -677,23 +676,23 @@ msgstr "自定义颜色"
 
 #: ../../options/options-core.php
 msgid "Typography"
-msgstr "版式"
+msgstr "字体选项"
 
 #: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr "标头拖 & 下降"
+msgstr "顶部拖放"
 
 #: ../../options/options-core.php
 msgid "Header Options"
-msgstr "头选项"
+msgstr "顶部选项"
 
 #: ../../options/options-core.php
 msgid "Social Icons"
-msgstr "社会图标"
+msgstr "社交网络图标"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr "拖 & 放"
+msgstr "拖放"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
@@ -701,59 +700,59 @@ msgstr "博客选项"
 
 #: ../../options/options-core.php
 msgid "Blog Slider Lite"
-msgstr "博客滑块简装"
+msgstr "博客幻灯片精简版"
 
 #: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr "投资组合简装选项"
+msgstr "作品集精简版选项"
 
 #: ../../options/options-core.php
 msgid "Boxes Lite"
-msgstr "盒简装"
+msgstr "展示柜精简版"
 
 #: ../../options/options-core.php
 msgid "Blog Slider"
-msgstr "博客滑块"
+msgstr "博客幻灯片"
 
 #: ../../options/options-core.php
 msgid "Callout Options"
-msgstr "标注选项"
+msgstr "特别标注选项"
 
 #: ../../options/options-core.php
 msgid "HTML Box Options"
-msgstr "HTML 框选项"
+msgstr "HTML箱框选项"
 
 #: ../../options/options-core.php
 msgid "Carousel Options"
-msgstr "传送选项"
+msgstr "图片轮播选项"
 
 #: ../../options/options-core.php
 msgid "Magazine Options"
-msgstr "杂志的选项"
+msgstr "杂志选项"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
-msgstr "投资组合临选项"
+msgstr "作品集专业版选项"
 
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
-msgstr "最近的职位选项"
+msgstr "最新文章选项"
 
 #: ../../options/options-core.php
 msgid "Twitterbar Options"
-msgstr "Twitterbar 选项"
+msgstr "Twitter 栏选项"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
-msgstr "框选项"
+msgstr "展示柜选项"
 
 #: ../../options/options-core.php
 msgid "Single Post"
-msgstr "单个职位"
+msgstr "单个文章"
 
 #: ../../options/options-core.php
 msgid "Archive"
-msgstr "存档"
+msgstr "归档"
 
 #: ../../options/options-core.php
 msgid "Search"
@@ -785,11 +784,11 @@ msgstr "Cyberchimps 帮助"
 
 #: ../../options/options-core.php
 msgid "Responsive Design"
-msgstr "响应设计"
+msgstr "响应式设计"
 
 #: ../../options/options-core.php
 msgid "Responsive Videos"
-msgstr "反应迅速的视频"
+msgstr "响应式视频"
 
 #: ../../options/options-core.php
 msgid "Gallery Lightbox"
@@ -797,11 +796,11 @@ msgstr "画廊灯箱"
 
 #: ../../options/options-core.php
 msgid "Wide Sidebar"
-msgstr "宽侧边栏"
+msgstr "宽侧栏"
 
 #: ../../options/options-core.php
 msgid "Only works on layouts with 1 sidebar"
-msgstr "仅适用于具有 1 侧边栏布局"
+msgstr "仅适用于具有一个侧栏的布局"
 
 #: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Max Width"
@@ -809,11 +808,11 @@ msgstr "最大宽度"
 
 #: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
-msgstr "输入您的站点的宽度 （以像素为单位"
+msgstr "输入您的站点的宽度 （以像素为单位）"
 
 #: ../../options/options-core.php
 msgid "Select a Skin Color"
-msgstr "选择一种皮肤颜色"
+msgstr "选择皮肤颜色"
 
 #: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Text Color"
@@ -829,7 +828,7 @@ msgstr "链接的颜色"
 
 #: ../../options/options-core.php
 msgid "Select link color"
-msgstr "选择链接的颜色"
+msgstr "选择链接颜色"
 
 #: ../../options/options-core.php ../../options/options-customizer.php
 msgid "Link Hover Color"
@@ -841,7 +840,7 @@ msgstr "选择链接悬停颜色"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
-msgstr "版式选项"
+msgstr "字体选项"
 
 #: ../../options/options-core.php
 msgid "Google fonts"
@@ -849,7 +848,7 @@ msgstr "谷歌字体"
 
 #: ../../options/options-core.php
 msgid "Enter Google font"
-msgstr "输入谷歌字体"
+msgstr "输入谷歌字体名称"
 
 #: ../../options/options-core.php
 msgid "Demo Text"
@@ -857,7 +856,7 @@ msgstr "演示文本"
 
 #: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr "标头拖放"
+msgstr "顶部拖放"
 
 #: ../../options/options-core.php
 msgid "Logo + Search"
@@ -877,7 +876,7 @@ msgstr "URL"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
-msgstr "输入的 URL"
+msgstr "输入 URL"
 
 #: ../../options/options-core.php
 msgid "Custom Logo"
@@ -889,11 +888,11 @@ msgstr "徽标图像"
 
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr "输入的 URL 或上传文件"
+msgstr "输入 URL 或上传文件"
 
 #: ../../options/options-core.php
 msgid "Custom Favicon"
-msgstr "自定义图标"
+msgstr "自定义网页图标"
 
 #: ../../options/options-core.php
 msgid "Favicon URL"
@@ -901,11 +900,11 @@ msgstr "图标 URL"
 
 #: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr "苹果触摸的自定义图标"
+msgstr "自定义 iOS 主屏幕图标"
 
 #: ../../options/options-core.php
 msgid "Apple Touch URL"
-msgstr "苹果触摸 URL"
+msgstr "iOS 主屏幕图标 URL"
 
 #: ../../options/options-core.php
 msgid "Google Analytics"
@@ -913,15 +912,15 @@ msgstr "Google Analytics"
 
 #: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr "在这里你 Google Analytics 代码复制并粘贴"
+msgstr "输入 Google Analytics 代码"
 
 #: ../../options/options-core.php
 msgid "Searchbar"
-msgstr "Searchbar"
+msgstr "搜索栏"
 
 #: ../../options/options-core.php
 msgid "Choose your icon style"
-msgstr "选择您的图标样式"
+msgstr "选择图标样式"
 
 #: ../../options/options-core.php
 msgid "Twitter"
@@ -941,11 +940,11 @@ msgstr "Facebook 的 URL"
 
 #: ../../options/options-core.php
 msgid "Google+"
-msgstr "谷歌 +"
+msgstr "Google+"
 
 #: ../../options/options-core.php
 msgid "Google+ URL"
-msgstr "谷歌 + URL"
+msgstr "Google+ URL"
 
 #: ../../options/options-core.php
 msgid "Flickr"
@@ -1005,7 +1004,7 @@ msgstr "谷歌地图 URL"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr "拖 & 滴博客元素"
+msgstr "拖放博客元素"
 
 #: ../../options/options-core.php
 msgid "Sidebar Options"
@@ -1013,47 +1012,47 @@ msgstr "侧栏选项"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr "开机自检格式图标"
+msgstr "文章格式图标"
 
 #: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr "开机自检节录"
+msgstr "文章摘要"
 
 #: ../../options/options-core.php
 msgid "Read More Text"
-msgstr "阅读更多的文字"
+msgstr "阅读更多"
 
 #: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr "节录长度"
+msgstr "摘要长度"
 
 #: ../../options/options-core.php
 msgid "Featured Images"
-msgstr "热门的图片"
+msgstr "精选照片"
 
 #: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr "文章署名作者"
+msgstr "文章作者"
 
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
-msgstr "岗位署名类别"
+msgstr "文章类别"
 
 #: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr "刊登署名日期"
+msgstr "发表日期"
 
 #: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr "帖子署名评论"
+msgstr "文章评论"
 
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr "开机自检署名标签"
+msgstr "文章标签"
 
 #: ../../options/options-core.php
 msgid "Boxes Upgrade"
-msgstr "框升级"
+msgstr "展示柜升级"
 
 #: ../../options/options-core.php
 msgid ""
@@ -1061,12 +1060,12 @@ msgid ""
 "Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
 "them and display each category on a different page."
 msgstr ""
-"框 Lite 会限制您共 3 箱在整个站点。升级到 %1$ s，以便能够创建多盒像你。对它们"
-"进行分类和显示不同的页上的每个类别。"
+"展示柜精简版限制了你在整个网站中仅可使用 3 个柜位。升级到%1$s能够创建更多展示"
+"柜，并可将其分类，以及选择在不同的页面显示相应的类别。"
 
 #: ../../options/options-core.php
 msgid "Pro"
-msgstr "临"
+msgstr "Pro"
 
 #: ../../options/options-core.php
 msgid "First Box Image"
@@ -1094,7 +1093,7 @@ msgstr "第三个框文本"
 
 #: ../../options/options-core.php
 msgid "Portfolio Upgrade"
-msgstr "投资组合升级"
+msgstr "作品集升级"
 
 #: ../../options/options-core.php
 msgid ""
@@ -1102,12 +1101,12 @@ msgid ""
 "Upgrade to %1$s to be able to create as many portfolio items as you like. "
 "Categorize them and display each category on a different page."
 msgstr ""
-"投资组合 Lite 会限制您共有 4 个项目在整个站点。升级到 %1$ s，以便能够创建尽可"
-"能多的投资组合项目，像你。对它们进行分类和显示不同的页上的每个类别。"
+"作品集精简版限制了你在整个网站中仅可使用 4 个作品。升级到%1$s能够创建更多作"
+"品，并可将其分类，以及选择在不同的页面显示相应的类别。"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
-msgstr "滑块升级"
+msgstr "幻灯片升级"
 
 #: ../../options/options-core.php
 msgid ""
@@ -1115,40 +1114,40 @@ msgid ""
 "Upgrade to %1$s to be able to create more images. Categorize them and "
 "display each category on a different page."
 msgstr ""
-"滑块 Lite 限制你 3 图像在整个站点的总数。升级到 %1$ s，以便能够创建更多的图"
-"像。对它们进行分类和显示不同的页上的每个类别。"
+"幻灯片精简版限制了你在整个网站中仅可使用3张图片。升级到%1$s能够创建更多图片，"
+"并可将其分类，以及选择在不同的页面显示相应的类别。"
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
-msgstr "滑块图像 1"
+msgstr "幻灯片图片 1"
 
 #: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr "幻灯片 1 URL"
+msgstr "第一个幻灯片 URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 2"
-msgstr "滑块图像 2"
+msgstr "幻灯片图片2"
 
 #: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr "幻灯片 2 URL"
+msgstr "第二个幻灯片 URL"
 
 #: ../../options/options-core.php
 msgid "Slider Image 3"
-msgstr "滑块图像 3"
+msgstr "幻灯片图片 3"
 
 #: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr "幻灯片 3 URL"
+msgstr "第三个幻灯片 URL"
 
 #: ../../options/options-core.php
 msgid "Images per Row"
-msgstr "每行的图像"
+msgstr "每行图片数目"
 
 #: ../../options/options-core.php
 msgid "Featured Excerpt Length"
-msgstr "精选的摘录长度"
+msgstr "精选的摘要长度"
 
 #: ../../options/options-core.php
 msgid "Number of Rows"

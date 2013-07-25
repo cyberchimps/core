@@ -2,1449 +2,1515 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-30 17:23-0000\n"
-"PO-Revision-Date: 2013-05-30 17:23-0000\n"
-"Last-Translator: CyberChimps <support@cyberchimps.com>\n"
-"Language-Team: CyberChimps <support>\n"
-"Language: English\n"
+"POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
+"PO-Revision-Date: 2013-07-25 11:05:11 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
-"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
-"X-Poedit-SearchPath-2: ../..\n"
+"X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../../functions.php:429
+#: ../../functions.php
 msgid "Posted on "
-msgstr ""
+msgstr "Posted on "
 
-#: ../../functions.php:461
-#, php-format
+#: ../../functions.php
 msgid "View all posts by %s"
-msgstr ""
+msgstr "View all posts by %s"
 
-#: ../../functions.php:466
+#: ../../functions.php
 msgid " by "
-msgstr ""
+msgstr " by "
 
-#: ../../functions.php:500
+#: ../../functions.php
 msgid "Posted in"
-msgstr ""
+msgstr "Posted in"
 
-#: ../../functions.php:528
+#: ../../functions.php
 msgid "Tags:"
-msgstr ""
+msgstr "Tags:"
 
-#: ../../functions.php:553 ../../functions.php:566
+#: ../../functions.php
+#: ../../functions.php
 msgid "Leave a comment"
-msgstr ""
+msgstr "Leave a comment"
 
-#: ../../functions.php:556
+#: ../../functions.php
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Comment"
 
-#: ../../functions.php:556 ../../options/options-core.php:297
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
-msgstr ""
+msgstr "Comments"
 
-#: ../../functions.php:586
-#, php-format
+#: ../../functions.php
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permalink to %s"
 
-#: ../../functions.php:668
+#: ../../functions.php
 msgid "Category Archives:"
-msgstr ""
+msgstr "Category Archives:"
 
-#: ../../functions.php:670
+#: ../../functions.php
 msgid "Tag Archives:"
-msgstr ""
+msgstr "Tag Archives:"
 
-#: ../../functions.php:672
+#: ../../functions.php
 msgid "Author Archives"
-msgstr ""
+msgstr "Author Archives"
 
-#: ../../functions.php:674
+#: ../../functions.php
 msgid "Daily Archives:"
-msgstr ""
+msgstr "Daily Archives:"
 
-#: ../../functions.php:676
+#: ../../functions.php
 msgid "Monthly Archives:"
-msgstr ""
+msgstr "Monthly Archives:"
 
-#: ../../functions.php:678
+#: ../../functions.php
 msgid "Yearly Archives:"
-msgstr ""
+msgstr "Yearly Archives:"
 
-#: ../../functions.php:680
+#: ../../functions.php
 msgid "Shop"
-msgstr ""
+msgstr "Shop"
 
-#: ../../functions.php:682
+#: ../../functions.php
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
-#: ../../functions.php:701 ../../inc/meta-box.php:153
+#: ../../functions.php
+#: ../../inc/meta-box.php
 msgid "Page"
-msgstr ""
+msgstr "Page"
 
-#: ../../functions.php:801
+#: ../../functions.php
 msgid "Continue Reading"
-msgstr ""
+msgstr "Continue Reading"
 
-#: ../../functions.php:996 ../../options/options-init.php:140
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
-msgstr ""
+msgstr "Instructions"
 
-#: ../../functions.php:1002 ../../options/options-init.php:139
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
-msgstr ""
+msgstr "Support"
 
-#: ../../functions.php:1011
-#, php-format
+#: ../../functions.php
 msgid "Upgrade to %1$s"
-msgstr ""
+msgstr "Upgrade to %1$s"
 
-#: ../../functions.php:1017
+#: ../../functions.php
 msgid "If you want even more amazing new features upgrade to"
-msgstr ""
+msgstr "If you want even more amazing new features upgrade to"
 
-#: ../../functions.php:1017
-msgid ""
-"which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, "
-"Callout Section, expanded typography including Google Fonts, more color "
-"skins, and many more powerful new features. Please visit"
-msgstr ""
+#: ../../functions.php
+msgid "which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit"
+msgstr "which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit"
 
-#: ../../functions.php:1017
+#: ../../functions.php
 msgid "to learn more!"
-msgstr ""
+msgstr "to learn more!"
 
-#: ../../functions.php:1034
-#, php-format
+#: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr ""
+msgstr "Welcome to %1$s! Learn more now about upgrading to"
 
-#: ../../functions.php:1034
+#: ../../functions.php
 msgid "today."
-msgstr ""
+msgstr "today."
 
-#: ../../functions.php:1073 ../../options/options-init.php:134
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
-#: ../../functions.php:1073
+#: ../../functions.php
 msgid " Options"
-msgstr ""
+msgstr " Options"
 
-#: ../../functions.php:1192
+#: ../../functions.php
 msgid "Add Ons"
-msgstr ""
+msgstr "Add Ons"
 
-#: ../../functions.php:1203
+#: ../../functions.php
 msgid "The Events Calendar"
-msgstr ""
+msgstr "The Events Calendar"
 
-#: ../../functions.php:1214
+#: ../../functions.php
 msgid "Events"
-msgstr ""
+msgstr "Events"
 
-#: ../../functions.php:1233
+#: ../../functions.php
 msgid "Events Plugin Options"
-msgstr ""
+msgstr "Events Plugin Options"
 
-#: ../../functions.php:1235
+#: ../../functions.php
 msgid "Please activate The Events Calendar plugin"
-msgstr ""
+msgstr "Please activate The Events Calendar plugin"
 
-#: ../../functions.php:1238
+#: ../../functions.php
 msgid "Install Events Calendar Plugin"
-msgstr ""
+msgstr "Install Events Calendar Plugin"
 
-#: ../../init.php:81
+#: ../../init.php
 msgid "Primary Menu"
-msgstr ""
+msgstr "Primary Menu"
 
-#: ../../init.php:157
+#: ../../init.php
 msgid "Sidebar Left"
-msgstr ""
+msgstr "Sidebar Left"
 
-#: ../../init.php:166
+#: ../../init.php
 msgid "Sidebar Right"
-msgstr ""
+msgstr "Sidebar Right"
 
-#: ../../init.php:175 ../../options/options-core.php:2528
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
-msgstr ""
+msgstr "Footer Widgets"
 
-#: ../../hooks/blog-hooks.php:23 ../../inc/meta-box.php:155
-#: ../../options/options-core.php:962 ../../options/options-core.php:971
+#: ../../hooks/blog-hooks.php
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Slider Lite"
-msgstr ""
+msgstr "Slider Lite"
 
-#: ../../hooks/blog-hooks.php:24 ../../inc/meta-box.php:152
-#: ../../options/options-core.php:963 ../../options/options-core.php:968
+#: ../../hooks/blog-hooks.php
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Boxes"
-msgstr ""
+msgstr "Boxes"
 
-#: ../../hooks/blog-hooks.php:25 ../../options/options-core.php:964
-#: ../../options/options-core.php:970
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Page"
-msgstr ""
+msgstr "Post Page"
 
-#: ../../hooks/header-hooks.php:21 ../../options/options-core.php:655
-#: ../../options/options-core.php:659
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Logo + Icons"
-msgstr ""
+msgstr "Logo + Icons"
 
-#: ../../inc/cc-custom-background.php:98
+#: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
-msgstr ""
+msgstr "Or choose one of CyberChimps background images"
 
-#: ../../inc/meta-box-class.php:376
+#: ../../inc/meta-box-class.php
 msgid "Uploaded files"
-msgstr ""
+msgstr "Uploaded files"
 
-#: ../../inc/meta-box-class.php:390
+#: ../../inc/meta-box-class.php
 msgid "Upload new files"
-msgstr ""
+msgstr "Upload new files"
 
-#: ../../inc/meta-box-class.php:393
+#: ../../inc/meta-box-class.php
 msgid "Add more file"
-msgstr ""
+msgstr "Add more file"
 
-#: ../../inc/meta-box-class.php:418
+#: ../../inc/meta-box-class.php
 msgid "Uploaded images"
-msgstr ""
+msgstr "Uploaded images"
 
-#: ../../inc/meta-box-class.php:432
+#: ../../inc/meta-box-class.php
 msgid "Upload new images (Make sure to publish the post to save)"
-msgstr ""
+msgstr "Upload new images (Make sure to publish the post to save)"
 
-#: ../../inc/meta-box-class.php:444
+#: ../../inc/meta-box-class.php
 msgid "Select a color"
-msgstr ""
+msgstr "Select a color"
 
-#: ../../inc/meta-box-class.php:603
-#: ../../options/options-medialibrary-uploader.php:112
+#: ../../inc/meta-box-class.php
+#: ../../options/options-medialibrary-uploader.php
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
 
-#: ../../inc/meta-box-class.php:604
+#: ../../inc/meta-box-class.php
 msgid "or enter URL"
-msgstr ""
+msgstr "or enter URL"
 
-#: ../../inc/meta-box.php:130
+#: ../../inc/meta-box.php
 msgid "Slider Options"
-msgstr ""
+msgstr "Slider Options"
 
-#: ../../inc/meta-box.php:133
+#: ../../inc/meta-box.php
 msgid "Slider Image"
-msgstr ""
+msgstr "Slider Image"
 
-#: ../../inc/meta-box.php:134
+#: ../../inc/meta-box.php
 msgid "Slider Caption"
-msgstr ""
+msgstr "Slider Caption"
 
-#: ../../inc/meta-box.php:135
+#: ../../inc/meta-box.php
 msgid "Custom Slide Link"
-msgstr ""
+msgstr "Custom Slide Link"
 
-#: ../../inc/meta-box.php:136 ../../inc/meta-box.php:228
-#: ../../inc/meta-box.php:247 ../../inc/meta-box.php:249
-#: ../../options/options-core.php:1409 ../../options/options-core.php:1539
-#: ../../options/options-core.php:1883
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
-#: ../../inc/meta-box.php:137
+#: ../../inc/meta-box.php
 msgid "Caption"
-msgstr ""
+msgstr "Caption"
 
-#: ../../inc/meta-box.php:138 ../../inc/meta-box.php:160
-#: ../../inc/meta-box.php:189
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
 msgid "Need Help?"
-msgstr ""
+msgstr "Need Help?"
 
-#: ../../inc/meta-box.php:144
+#: ../../inc/meta-box.php
 msgid "Select Page Layout"
-msgstr ""
+msgstr "Select Page Layout"
 
-#: ../../inc/meta-box.php:149
+#: ../../inc/meta-box.php
 msgid "Page Title"
-msgstr ""
+msgstr "Page Title"
 
-#: ../../inc/meta-box.php:150
+#: ../../inc/meta-box.php
 msgid "Page Elements"
-msgstr ""
+msgstr "Page Elements"
 
-#: ../../inc/meta-box.php:154 ../../options/options-core.php:969
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Portfolio Lite"
-msgstr ""
+msgstr "Portfolio Lite"
 
-#: ../../inc/meta-box.php:156 ../../options/options-core.php:972
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Twitter Bar"
-msgstr ""
+msgstr "Twitter Bar"
 
-#: ../../inc/meta-box.php:162 ../../options/options-core.php:1551
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Meta Data"
-msgstr ""
+msgstr "Meta Data"
 
-#: ../../inc/meta-box.php:163 ../../options/options-core.php:1560
+#: ../../options/options-core.php
+#: ../../inc/meta-box.php
 msgid "Featured Image"
-msgstr ""
+msgstr "Featured Image"
 
-#: ../../inc/meta-box.php:164 ../../options/options-core.php:1569
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Category"
-msgstr ""
+msgstr "Category"
 
-#: ../../inc/meta-box.php:164 ../../inc/meta-box.php:184
-#: ../../inc/meta-box.php:226 ../../inc/meta-box.php:254
-#: ../../inc/meta-box.php:258 ../../options/options-core.php:1524
-#: ../../options/options-core.php:1704 ../../options/options-core.php:1938
-#: ../../options/options-core.php:1961
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "You need to create a Category"
-msgstr ""
+msgstr "You need to create a Category"
 
-#: ../../inc/meta-box.php:165 ../../options/options-core.php:1587
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Number of Columns"
-msgstr ""
+msgstr "Number of Columns"
 
-#: ../../inc/meta-box.php:166
+#: ../../inc/meta-box.php
 msgid "Number of Posts"
-msgstr ""
+msgstr "Number of Posts"
 
-#: ../../inc/meta-box.php:167 ../../options/options-core.php:1616
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Wide Posts Below Magazine"
-msgstr ""
+msgstr "Wide Posts Below Magazine"
 
-#: ../../inc/meta-box.php:168
+#: ../../inc/meta-box.php
 msgid "Number of Wide Posts "
-msgstr ""
+msgstr "Number of Wide Posts "
 
-#: ../../inc/meta-box.php:174
+#: ../../inc/meta-box.php
 msgid "Slide One Image"
-msgstr ""
+msgstr "Slide One Image"
 
-#: ../../inc/meta-box.php:175
+#: ../../inc/meta-box.php
 msgid "Slide One Link"
-msgstr ""
+msgstr "Slide One Link"
 
-#: ../../inc/meta-box.php:176
+#: ../../inc/meta-box.php
 msgid "Slide Two Image"
-msgstr ""
+msgstr "Slide Two Image"
 
-#: ../../inc/meta-box.php:177
+#: ../../inc/meta-box.php
 msgid "Slide Two Link"
-msgstr ""
+msgstr "Slide Two Link"
 
-#: ../../inc/meta-box.php:178
+#: ../../inc/meta-box.php
 msgid "Slide Three Image"
-msgstr ""
+msgstr "Slide Three Image"
 
-#: ../../inc/meta-box.php:179
+#: ../../inc/meta-box.php
 msgid "Slide Three Link"
-msgstr ""
+msgstr "Slide Three Link"
 
-#: ../../inc/meta-box.php:181 ../../options/options-core.php:1653
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Size"
-msgstr ""
+msgstr "Slider Size"
 
-#: ../../inc/meta-box.php:181 ../../options/options-core.php:1658
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
-#: ../../inc/meta-box.php:181 ../../options/options-core.php:1659
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Half"
-msgstr ""
+msgstr "Half"
 
-#: ../../inc/meta-box.php:182 ../../options/options-core.php:1666
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Type"
-msgstr ""
+msgstr "Slider Type"
 
-#: ../../inc/meta-box.php:182 ../../options/options-core.php:1672
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Custom"
-msgstr ""
+msgstr "Custom"
 
-#: ../../inc/meta-box.php:182 ../../options/options-core.php:1671
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Posts"
-msgstr ""
+msgstr "Posts"
 
-#: ../../inc/meta-box.php:183 ../../options/options-core.php:1679
-#: ../../options/options-core.php:1902
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Categories"
-msgstr ""
+msgstr "Post Categories"
 
-#: ../../inc/meta-box.php:183 ../../inc/meta-box.php:251
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
 msgid "All"
-msgstr ""
+msgstr "All"
 
-#: ../../inc/meta-box.php:184 ../../options/options-core.php:1690
-#: ../../options/options-core.php:1701
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Custom Categories"
-msgstr ""
+msgstr "Custom Categories"
 
-#: ../../inc/meta-box.php:185
+#: ../../inc/meta-box.php
 msgid "Number of Featured Posts"
-msgstr ""
+msgstr "Number of Featured Posts"
 
-#: ../../inc/meta-box.php:186 ../../options/options-core.php:1720
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Height"
-msgstr ""
+msgstr "Slider Height"
 
-#: ../../inc/meta-box.php:187
+#: ../../inc/meta-box.php
 msgid "Slider Speed"
-msgstr ""
+msgstr "Slider Speed"
 
-#: ../../inc/meta-box.php:188 ../../options/options-core.php:1739
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Slider Arrows"
-msgstr ""
+msgstr "Slider Arrows"
 
-#: ../../inc/meta-box.php:191
+#: ../../inc/meta-box.php
 msgid "Product Layout"
-msgstr ""
+msgstr "Product Layout"
 
-#: ../../inc/meta-box.php:191
+#: ../../inc/meta-box.php
 msgid "Text Left"
-msgstr ""
+msgstr "Text Left"
 
-#: ../../inc/meta-box.php:192
+#: ../../inc/meta-box.php
 msgid "Text Right"
-msgstr ""
+msgstr "Text Right"
 
-#: ../../inc/meta-box.php:194
+#: ../../inc/meta-box.php
 msgid "Product Title"
-msgstr ""
+msgstr "Product Title"
 
-#: ../../inc/meta-box.php:194
+#: ../../inc/meta-box.php
 msgid "Product"
-msgstr ""
+msgstr "Product"
 
-#: ../../inc/meta-box.php:195
+#: ../../inc/meta-box.php
 msgid "Product Text"
-msgstr ""
+msgstr "Product Text"
 
-#: ../../inc/meta-box.php:196
+#: ../../inc/meta-box.php
 msgid "Media Type"
-msgstr ""
+msgstr "Media Type"
 
-#: ../../inc/meta-box.php:196
+#: ../../inc/meta-box.php
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
-#: ../../inc/meta-box.php:196
+#: ../../inc/meta-box.php
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
-#: ../../inc/meta-box.php:199
+#: ../../inc/meta-box.php
 msgid "Product Image URL"
-msgstr ""
+msgstr "Product Image URL"
 
-#: ../../inc/meta-box.php:200
+#: ../../inc/meta-box.php
 msgid "Product Video Embed"
-msgstr ""
+msgstr "Product Video Embed"
 
-#: ../../inc/meta-box.php:201
+#: ../../inc/meta-box.php
 msgid "Product Link"
-msgstr ""
+msgstr "Product Link"
 
-#: ../../inc/meta-box.php:202
+#: ../../inc/meta-box.php
 msgid "Product URL"
-msgstr ""
+msgstr "Product URL"
 
-#: ../../inc/meta-box.php:203
+#: ../../inc/meta-box.php
 msgid "Product Link Text"
-msgstr ""
+msgstr "Product Link Text"
 
-#: ../../inc/meta-box.php:203
+#: ../../inc/meta-box.php
 msgid "Buy Now"
-msgstr ""
+msgstr "Buy Now"
 
-#: ../../inc/meta-box.php:205 ../../options/options-core.php:1750
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Callout Title"
-msgstr ""
+msgstr "Callout Title"
 
-#: ../../inc/meta-box.php:206 ../../options/options-core.php:1752
-#, php-format
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "%1$s's Call Out Element"
-msgstr ""
+msgstr "%1$s's Call Out Element"
 
-#: ../../inc/meta-box.php:208 ../../options/options-core.php:1759
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Callout Text"
-msgstr ""
+msgstr "Callout Text"
 
-#: ../../inc/meta-box.php:209 ../../options/options-core.php:1761
-#, php-format
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
 
-#: ../../inc/meta-box.php:211 ../../options/options-core.php:1768
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Callout Button"
-msgstr ""
+msgstr "Callout Button"
 
-#: ../../inc/meta-box.php:212 ../../options/options-core.php:1777
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Callout Button Text"
-msgstr ""
+msgstr "Callout Button Text"
 
-#: ../../inc/meta-box.php:212 ../../options/options-core.php:1780
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Click Here"
-msgstr ""
+msgstr "Click Here"
 
-#: ../../inc/meta-box.php:213 ../../options/options-core.php:1787
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Callout Button URL"
-msgstr ""
+msgstr "Callout Button URL"
 
-#: ../../inc/meta-box.php:214 ../../options/options-core.php:1797
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Custom Callout Options"
-msgstr ""
+msgstr "Custom Callout Options"
 
-#: ../../inc/meta-box.php:215
+#: ../../inc/meta-box.php
 msgid "Custom Button Image"
-msgstr ""
+msgstr "Custom Button Image"
 
-#: ../../inc/meta-box.php:216
+#: ../../inc/meta-box.php
 msgid "Custom Background Color"
-msgstr ""
+msgstr "Custom Background Color"
 
-#: ../../inc/meta-box.php:217
+#: ../../inc/meta-box.php
 msgid "Custom Title Color"
-msgstr ""
+msgstr "Custom Title Color"
 
-#: ../../inc/meta-box.php:218
+#: ../../inc/meta-box.php
 msgid "Custom Text Color"
-msgstr ""
+msgstr "Custom Text Color"
 
-#: ../../inc/meta-box.php:219
+#: ../../inc/meta-box.php
 msgid "Custom Button Color"
-msgstr ""
+msgstr "Custom Button Color"
 
-#: ../../inc/meta-box.php:220
+#: ../../inc/meta-box.php
 msgid "Custom Button Text Color"
-msgstr ""
+msgstr "Custom Button Text Color"
 
-#: ../../inc/meta-box.php:221
+#: ../../inc/meta-box.php
 msgid "Need help?"
-msgstr ""
+msgstr "Need help?"
 
-#: ../../inc/meta-box.php:223
+#: ../../inc/meta-box.php
 msgid "Custom HTML"
-msgstr ""
+msgstr "Custom HTML"
 
-#: ../../inc/meta-box.php:223
+#: ../../inc/meta-box.php
 msgid "Enter your custom html here"
-msgstr ""
+msgstr "Enter your custom html here"
 
-#: ../../inc/meta-box.php:225
+#: ../../inc/meta-box.php
 msgid "Images per row"
-msgstr ""
+msgstr "Images per row"
 
-#: ../../inc/meta-box.php:225
+#: ../../inc/meta-box.php
 msgid "Two"
-msgstr ""
+msgstr "Two"
 
-#: ../../inc/meta-box.php:225
+#: ../../inc/meta-box.php
 msgid "Three"
-msgstr ""
+msgstr "Three"
 
-#: ../../inc/meta-box.php:225
+#: ../../inc/meta-box.php
 msgid "Four"
-msgstr ""
+msgstr "Four"
 
-#: ../../inc/meta-box.php:226 ../../options/options-core.php:1511
-#: ../../options/options-core.php:1521
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Category"
-msgstr ""
+msgstr "Portfolio Category"
 
-#: ../../inc/meta-box.php:227 ../../inc/meta-box.php:246
-#: ../../options/options-core.php:1399 ../../options/options-core.php:1531
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
 msgid "Portfolio Title"
-msgstr ""
+msgstr "Portfolio Title"
 
-#: ../../inc/meta-box.php:228 ../../inc/meta-box.php:247
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
 msgid "Portfolio"
-msgstr ""
+msgstr "Portfolio"
 
-#: ../../inc/meta-box.php:230 ../../options/options-core.php:1225
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "First Portfolio Image"
-msgstr ""
+msgstr "First Portfolio Image"
 
-#: ../../inc/meta-box.php:231 ../../options/options-core.php:1236
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "First Portfolio Image Caption"
-msgstr ""
+msgstr "First Portfolio Image Caption"
 
-#: ../../inc/meta-box.php:231
+#: ../../inc/meta-box.php
 msgid "Image 1"
-msgstr ""
+msgstr "Image 1"
 
-#: ../../inc/meta-box.php:232 ../../options/options-core.php:1246
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "First Porfolio Link"
-msgstr ""
+msgstr "First Porfolio Link"
 
-#: ../../inc/meta-box.php:233 ../../inc/meta-box.php:237
-#: ../../inc/meta-box.php:241 ../../inc/meta-box.php:245
-#: ../../options/options-core.php:1119 ../../options/options-core.php:1152
-#: ../../options/options-core.php:1185 ../../options/options-core.php:1255
-#: ../../options/options-core.php:1299 ../../options/options-core.php:1343
-#: ../../options/options-core.php:1387
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Link URL"
-msgstr ""
+msgstr "Link URL"
 
-#: ../../inc/meta-box.php:234 ../../options/options-core.php:1269
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Second Portfolio Image"
-msgstr ""
+msgstr "Second Portfolio Image"
 
-#: ../../inc/meta-box.php:235 ../../options/options-core.php:1280
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Second Portfolio Image Caption"
-msgstr ""
+msgstr "Second Portfolio Image Caption"
 
-#: ../../inc/meta-box.php:235
+#: ../../inc/meta-box.php
 msgid "Image 2"
-msgstr ""
+msgstr "Image 2"
 
-#: ../../inc/meta-box.php:236 ../../options/options-core.php:1290
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Second Porfolio Link"
-msgstr ""
+msgstr "Second Porfolio Link"
 
-#: ../../inc/meta-box.php:238 ../../options/options-core.php:1313
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Third Portfolio Image"
-msgstr ""
+msgstr "Third Portfolio Image"
 
-#: ../../inc/meta-box.php:239 ../../options/options-core.php:1324
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Third Portfolio Image Caption"
-msgstr ""
+msgstr "Third Portfolio Image Caption"
 
-#: ../../inc/meta-box.php:239
+#: ../../inc/meta-box.php
 msgid "Image 3"
-msgstr ""
+msgstr "Image 3"
 
-#: ../../inc/meta-box.php:240 ../../options/options-core.php:1334
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Third Porfolio Link"
-msgstr ""
+msgstr "Third Porfolio Link"
 
-#: ../../inc/meta-box.php:242 ../../options/options-core.php:1357
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Fourth Portfolio Image"
-msgstr ""
+msgstr "Fourth Portfolio Image"
 
-#: ../../inc/meta-box.php:243 ../../options/options-core.php:1368
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Fourth Portfolio Image Caption"
-msgstr ""
+msgstr "Fourth Portfolio Image Caption"
 
-#: ../../inc/meta-box.php:243
+#: ../../inc/meta-box.php
 msgid "Image 4"
-msgstr ""
+msgstr "Image 4"
 
-#: ../../inc/meta-box.php:244 ../../options/options-core.php:1378
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Fourth Porfolio Link"
-msgstr ""
+msgstr "Fourth Porfolio Link"
 
-#: ../../inc/meta-box.php:251
+#: ../../inc/meta-box.php
 msgid "Post Category"
-msgstr ""
+msgstr "Post Category"
 
-#: ../../inc/meta-box.php:252 ../../options/options-core.php:1912
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Images"
-msgstr ""
+msgstr "Images"
 
-#: ../../inc/meta-box.php:254
+#: ../../inc/meta-box.php
 msgid "Carousel Category"
-msgstr ""
+msgstr "Carousel Category"
 
-#: ../../inc/meta-box.php:256 ../../options/options-core.php:1986
+#: ../../inc/meta-box.php
+#: ../../options/options-core.php
 msgid "Twitter Handle"
-msgstr ""
+msgstr "Twitter Handle"
 
-#: ../../inc/meta-box.php:256
+#: ../../inc/meta-box.php
 msgid "Enter your Twitter handle if using the Twitter bar"
-msgstr ""
+msgstr "Enter your Twitter handle if using the Twitter bar"
 
-#: ../../inc/meta-box.php:258
+#: ../../inc/meta-box.php
 msgid "Boxes Category"
-msgstr ""
+msgstr "Boxes Category"
 
-#: ../../inc/meta-box.php:259 ../../options/options-core.php:1968
+#: ../../options/options-core.php
+#: ../../inc/meta-box.php
 msgid "Number of boxes per row"
-msgstr ""
+msgstr "Number of boxes per row"
 
-#: ../../options/options-core.php:24
+#: ../../options/options-core.php
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
-#: ../../options/options-core.php:29
+#: ../../options/options-core.php
 msgid "Design"
-msgstr ""
+msgstr "Design"
 
-#: ../../options/options-core.php:34
+#: ../../options/options-core.php
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
-#: ../../options/options-core.php:39
+#: ../../options/options-core.php
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
-#: ../../options/options-core.php:44
+#: ../../options/options-core.php
 msgid "Templates"
-msgstr ""
+msgstr "Templates"
 
-#: ../../options/options-core.php:49
+#: ../../options/options-core.php
 msgid "Footer"
-msgstr ""
+msgstr "Footer"
 
-#: ../../options/options-core.php:78
+#: ../../options/options-core.php
 msgid "Layout Options"
-msgstr ""
+msgstr "Layout Options"
 
-#: ../../options/options-core.php:92
+#: ../../options/options-core.php
 msgid "Custom Colors"
-msgstr ""
+msgstr "Custom Colors"
 
-#: ../../options/options-core.php:98
+#: ../../options/options-core.php
 msgid "Typography"
-msgstr ""
+msgstr "Typography"
 
-#: ../../options/options-core.php:112
+#: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr ""
+msgstr "Header Drag &#38; Drop"
 
-#: ../../options/options-core.php:118
+#: ../../options/options-core.php
 msgid "Header Options"
-msgstr ""
+msgstr "Header Options"
 
-#: ../../options/options-core.php:124
+#: ../../options/options-core.php
 msgid "Social Icons"
-msgstr ""
+msgstr "Social Icons"
 
-#: ../../options/options-core.php:132
+#: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr ""
+msgstr "Drag & Drop"
 
-#: ../../options/options-core.php:138
+#: ../../options/options-core.php
 msgid "Blog Options"
-msgstr ""
+msgstr "Blog Options"
 
-#: ../../options/options-core.php:146
+#: ../../options/options-core.php
 msgid "Blog Slider Lite"
-msgstr ""
+msgstr "Blog Slider Lite"
 
-#: ../../options/options-core.php:152
+#: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr ""
+msgstr "Portfolio Lite Options"
 
-#: ../../options/options-core.php:158
+#: ../../options/options-core.php
 msgid "Boxes Lite"
-msgstr ""
+msgstr "Boxes Lite"
 
-#: ../../options/options-core.php:168
+#: ../../options/options-core.php
 msgid "Blog Slider"
-msgstr ""
+msgstr "Blog Slider"
 
-#: ../../options/options-core.php:174
+#: ../../options/options-core.php
 msgid "Callout Options"
-msgstr ""
+msgstr "Callout Options"
 
-#: ../../options/options-core.php:180
+#: ../../options/options-core.php
 msgid "HTML Box Options"
-msgstr ""
+msgstr "HTML Box Options"
 
-#: ../../options/options-core.php:186
+#: ../../options/options-core.php
 msgid "Carousel Options"
-msgstr ""
+msgstr "Carousel Options"
 
-#: ../../options/options-core.php:192
+#: ../../options/options-core.php
 msgid "Magazine Options"
-msgstr ""
+msgstr "Magazine Options"
 
-#: ../../options/options-core.php:198
+#: ../../options/options-core.php
 msgid "Portfolio Pro Options"
-msgstr ""
+msgstr "Portfolio Pro Options"
 
-#: ../../options/options-core.php:204
+#: ../../options/options-core.php
 msgid "Recent Posts Options"
-msgstr ""
+msgstr "Recent Posts Options"
 
-#: ../../options/options-core.php:211
+#: ../../options/options-core.php
 msgid "Twitterbar Options"
-msgstr ""
+msgstr "Twitterbar Options"
 
-#: ../../options/options-core.php:217
+#: ../../options/options-core.php
 msgid "Boxes Options"
-msgstr ""
+msgstr "Boxes Options"
 
-#: ../../options/options-core.php:237
+#: ../../options/options-core.php
 msgid "Single Post"
-msgstr ""
+msgstr "Single Post"
 
-#: ../../options/options-core.php:243
+#: ../../options/options-core.php
 msgid "Archive"
-msgstr ""
+msgstr "Archive"
 
-#: ../../options/options-core.php:249
+#: ../../options/options-core.php
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
-#: ../../options/options-core.php:263
+#: ../../options/options-core.php
 msgid "Footer Options"
-msgstr ""
+msgstr "Footer Options"
 
-#: ../../options/options-core.php:294
+#: ../../options/options-core.php
 msgid "Author"
-msgstr ""
+msgstr "Author"
 
-#: ../../options/options-core.php:295
+#: ../../options/options-core.php
 msgid "Categories"
-msgstr ""
+msgstr "Categories"
 
-#: ../../options/options-core.php:296
+#: ../../options/options-core.php
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
-#: ../../options/options-core.php:298
+#: ../../options/options-core.php
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
-#: ../../options/options-core.php:385
+#: ../../options/options-core.php
 msgid "Cyberchimps Help"
-msgstr ""
+msgstr "Cyberchimps Help"
 
-#: ../../options/options-core.php:395
+#: ../../options/options-core.php
 msgid "Responsive Design"
-msgstr ""
+msgstr "Responsive Design"
 
-#: ../../options/options-core.php:404
+#: ../../options/options-core.php
 msgid "Responsive Videos"
-msgstr ""
+msgstr "Responsive Videos"
 
-#: ../../options/options-core.php:412
+#: ../../options/options-core.php
 msgid "Gallery Lightbox"
-msgstr ""
+msgstr "Gallery Lightbox"
 
-#: ../../options/options-core.php:421
+#: ../../options/options-core.php
 msgid "Wide Sidebar"
-msgstr ""
+msgstr "Wide Sidebar"
 
-#: ../../options/options-core.php:425
+#: ../../options/options-core.php
 msgid "Only works on layouts with 1 sidebar"
-msgstr ""
+msgstr "Only works on layouts with 1 sidebar"
 
-#: ../../options/options-core.php:431 ../../options/options-customizer.php:167
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
-msgstr ""
+msgstr "Max Width"
 
-#: ../../options/options-core.php:435
+#: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
-msgstr ""
+msgstr "enter the width of your site in pixels"
 
-#: ../../options/options-core.php:526
+#: ../../options/options-core.php
 msgid "Select a Skin Color"
-msgstr ""
+msgstr "Select a Skin Color"
 
-#: ../../options/options-core.php:549 ../../options/options-customizer.php:194
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
-msgstr ""
+msgstr "Text Color"
 
-#: ../../options/options-core.php:550
+#: ../../options/options-core.php
 msgid "Select text color"
-msgstr ""
+msgstr "Select text color"
 
-#: ../../options/options-core.php:558 ../../options/options-customizer.php:206
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
-msgstr ""
+msgstr "Link Color"
 
-#: ../../options/options-core.php:559
+#: ../../options/options-core.php
 msgid "Select link color"
-msgstr ""
+msgstr "Select link color"
 
-#: ../../options/options-core.php:567 ../../options/options-customizer.php:218
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
-msgstr ""
+msgstr "Link Hover Color"
 
-#: ../../options/options-core.php:568
+#: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr ""
+msgstr "Select link hover color"
 
-#: ../../options/options-core.php:611
+#: ../../options/options-core.php
 msgid "Typography Options"
-msgstr ""
+msgstr "Typography Options"
 
-#: ../../options/options-core.php:621
+#: ../../options/options-core.php
 msgid "Google fonts"
-msgstr ""
+msgstr "Google fonts"
 
-#: ../../options/options-core.php:630
+#: ../../options/options-core.php
 msgid "Enter Google font"
-msgstr ""
+msgstr "Enter Google font"
 
-#: ../../options/options-core.php:640
+#: ../../options/options-core.php
 msgid "Demo Text"
-msgstr ""
+msgstr "Demo Text"
 
-#: ../../options/options-core.php:652
+#: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr ""
+msgstr "Header Drag/Drop"
 
-#: ../../options/options-core.php:660
+#: ../../options/options-core.php
 msgid "Logo + Search"
-msgstr ""
+msgstr "Logo + Search"
 
-#: ../../options/options-core.php:661
+#: ../../options/options-core.php
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
-#: ../../options/options-core.php:670
+#: ../../options/options-core.php
 msgid "Custom Logo URL"
-msgstr ""
+msgstr "Custom Logo URL"
 
-#: ../../options/options-core.php:678
+#: ../../options/options-core.php
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
-#: ../../options/options-core.php:679
+#: ../../options/options-core.php
 msgid "Enter URL"
-msgstr ""
+msgstr "Enter URL"
 
-#: ../../options/options-core.php:689
+#: ../../options/options-core.php
 msgid "Custom Logo"
-msgstr ""
+msgstr "Custom Logo"
 
-#: ../../options/options-core.php:697
+#: ../../options/options-core.php
 msgid "Logo Image"
-msgstr ""
+msgstr "Logo Image"
 
-#: ../../options/options-core.php:698 ../../options/options-core.php:717
-#: ../../options/options-core.php:735 ../../options/options-core.php:1109
-#: ../../options/options-core.php:1142 ../../options/options-core.php:1175
-#: ../../options/options-core.php:1226 ../../options/options-core.php:1270
-#: ../../options/options-core.php:1314 ../../options/options-core.php:1358
-#: ../../options/options-core.php:1434 ../../options/options-core.php:1453
-#: ../../options/options-core.php:1472
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr ""
+msgstr "Enter URL or upload file"
 
-#: ../../options/options-core.php:708
+#: ../../options/options-core.php
 msgid "Custom Favicon"
-msgstr ""
+msgstr "Custom Favicon"
 
-#: ../../options/options-core.php:716
+#: ../../options/options-core.php
 msgid "Favicon URL"
-msgstr ""
+msgstr "Favicon URL"
 
-#: ../../options/options-core.php:726
+#: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr ""
+msgstr "Custom Apple touch icon"
 
-#: ../../options/options-core.php:734
+#: ../../options/options-core.php
 msgid "Apple Touch URL"
-msgstr ""
+msgstr "Apple Touch URL"
 
-#: ../../options/options-core.php:745
+#: ../../options/options-core.php
 msgid "Google Analytics"
-msgstr ""
+msgstr "Google Analytics"
 
-#: ../../options/options-core.php:747
+#: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr ""
+msgstr "Copy and paste your Google Analytics code here"
 
-#: ../../options/options-core.php:754
+#: ../../options/options-core.php
 msgid "Searchbar"
-msgstr ""
+msgstr "Searchbar"
 
-#: ../../options/options-core.php:766
+#: ../../options/options-core.php
 msgid "Choose your icon style"
-msgstr ""
+msgstr "Choose your icon style"
 
-#: ../../options/options-core.php:780
+#: ../../options/options-core.php
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
-#: ../../options/options-core.php:788
+#: ../../options/options-core.php
 msgid "Twitter URL"
-msgstr ""
+msgstr "Twitter URL"
 
-#: ../../options/options-core.php:798
+#: ../../options/options-core.php
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
-#: ../../options/options-core.php:806
+#: ../../options/options-core.php
 msgid "Facebook URL"
-msgstr ""
+msgstr "Facebook URL"
 
-#: ../../options/options-core.php:816
+#: ../../options/options-core.php
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
-#: ../../options/options-core.php:824
+#: ../../options/options-core.php
 msgid "Google+ URL"
-msgstr ""
+msgstr "Google+ URL"
 
-#: ../../options/options-core.php:834
+#: ../../options/options-core.php
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
-#: ../../options/options-core.php:841
+#: ../../options/options-core.php
 msgid "Flickr URL"
-msgstr ""
+msgstr "Flickr URL"
 
-#: ../../options/options-core.php:851
+#: ../../options/options-core.php
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
-#: ../../options/options-core.php:858
+#: ../../options/options-core.php
 msgid "Pinterest URL"
-msgstr ""
+msgstr "Pinterest URL"
 
-#: ../../options/options-core.php:868
+#: ../../options/options-core.php
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
-#: ../../options/options-core.php:875
+#: ../../options/options-core.php
 msgid "LinkedIn URL"
-msgstr ""
+msgstr "LinkedIn URL"
 
-#: ../../options/options-core.php:885
+#: ../../options/options-core.php
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
-#: ../../options/options-core.php:892
+#: ../../options/options-core.php
 msgid "YouTube URL"
-msgstr ""
+msgstr "YouTube URL"
 
-#: ../../options/options-core.php:902
+#: ../../options/options-core.php
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
-#: ../../options/options-core.php:909
+#: ../../options/options-core.php
 msgid "RSS URL"
-msgstr ""
+msgstr "RSS URL"
 
-#: ../../options/options-core.php:919
+#: ../../options/options-core.php
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: ../../options/options-core.php:926
+#: ../../options/options-core.php
 msgid "Email Address"
-msgstr ""
+msgstr "Email Address"
 
-#: ../../options/options-core.php:935
+#: ../../options/options-core.php
 msgid "Google Maps"
-msgstr ""
+msgstr "Google Maps"
 
-#: ../../options/options-core.php:942
+#: ../../options/options-core.php
 msgid "Google Maps URL"
-msgstr ""
+msgstr "Google Maps URL"
 
-#: ../../options/options-core.php:959
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr ""
+msgstr "Drag & Drop Blog Elements"
 
-#: ../../options/options-core.php:980 ../../options/options-core.php:2266
-#: ../../options/options-core.php:2360 ../../options/options-core.php:2452
-#: ../../options/options-core.php:2495
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Sidebar Options"
-msgstr ""
+msgstr "Sidebar Options"
 
-#: ../../options/options-core.php:993
+#: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr ""
+msgstr "Post Formats Icons"
 
-#: ../../options/options-core.php:1001 ../../options/options-core.php:2382
-#: ../../options/options-core.php:2466
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr ""
+msgstr "Post Excerpts"
 
-#: ../../options/options-core.php:1009 ../../options/options-core.php:2474
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Read More Text"
-msgstr ""
+msgstr "Read More Text"
 
-#: ../../options/options-core.php:1018 ../../options/options-core.php:2484
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr ""
+msgstr "Excerpt Length"
 
-#: ../../options/options-core.php:1027 ../../options/options-core.php:2290
-#: ../../options/options-core.php:2391
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Featured Images"
-msgstr ""
+msgstr "Featured Images"
 
-#: ../../options/options-core.php:1038 ../../options/options-core.php:2308
-#: ../../options/options-core.php:2401
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr ""
+msgstr "Post Byline Author"
 
-#: ../../options/options-core.php:1048 ../../options/options-core.php:2318
-#: ../../options/options-core.php:2411
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Categories"
-msgstr ""
+msgstr "Post Byline Categories"
 
-#: ../../options/options-core.php:1058 ../../options/options-core.php:2328
-#: ../../options/options-core.php:2421
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr ""
+msgstr "Post Byline Date"
 
-#: ../../options/options-core.php:1068 ../../options/options-core.php:2338
-#: ../../options/options-core.php:2431
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr ""
+msgstr "Post Byline Comments"
 
-#: ../../options/options-core.php:1078 ../../options/options-core.php:2349
-#: ../../options/options-core.php:2441
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr ""
+msgstr "Post Byline Tags"
 
-#: ../../options/options-core.php:1093
+#: ../../options/options-core.php
 msgid "Boxes Upgrade"
-msgstr ""
+msgstr "Boxes Upgrade"
 
-#: ../../options/options-core.php:1096
-#, php-format
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
+#: ../../options/options-core.php
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
 
-#: ../../options/options-core.php:1097 ../../options/options-core.php:1214
-#: ../../options/options-core.php:1425
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Pro"
-msgstr ""
+msgstr "Pro"
 
-#: ../../options/options-core.php:1108
+#: ../../options/options-core.php
 msgid "First Box Image"
-msgstr ""
+msgstr "First Box Image"
 
-#: ../../options/options-core.php:1129
+#: ../../options/options-core.php
 msgid "First Box Text"
-msgstr ""
+msgstr "First Box Text"
 
-#: ../../options/options-core.php:1141
+#: ../../options/options-core.php
 msgid "Second Box Image"
-msgstr ""
+msgstr "Second Box Image"
 
-#: ../../options/options-core.php:1162
+#: ../../options/options-core.php
 msgid "Second Box Text"
-msgstr ""
+msgstr "Second Box Text"
 
-#: ../../options/options-core.php:1174
+#: ../../options/options-core.php
 msgid "Third Box Image"
-msgstr ""
+msgstr "Third Box Image"
 
-#: ../../options/options-core.php:1195
+#: ../../options/options-core.php
 msgid "Third Box Text"
-msgstr ""
+msgstr "Third Box Text"
 
-#: ../../options/options-core.php:1210
+#: ../../options/options-core.php
 msgid "Portfolio Upgrade"
-msgstr ""
+msgstr "Portfolio Upgrade"
 
-#: ../../options/options-core.php:1213
-#, php-format
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
+#: ../../options/options-core.php
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
 
-#: ../../options/options-core.php:1421
+#: ../../options/options-core.php
 msgid "Slider Upgrade"
-msgstr ""
+msgstr "Slider Upgrade"
 
-#: ../../options/options-core.php:1424
-#, php-format
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
+#: ../../options/options-core.php
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
 
-#: ../../options/options-core.php:1433
+#: ../../options/options-core.php
 msgid "Slider Image 1"
-msgstr ""
+msgstr "Slider Image 1"
 
-#: ../../options/options-core.php:1443
+#: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr ""
+msgstr "Slide 1 URL"
 
-#: ../../options/options-core.php:1452
+#: ../../options/options-core.php
 msgid "Slider Image 2"
-msgstr ""
+msgstr "Slider Image 2"
 
-#: ../../options/options-core.php:1462
+#: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr ""
+msgstr "Slide 2 URL"
 
-#: ../../options/options-core.php:1471
+#: ../../options/options-core.php
 msgid "Slider Image 3"
-msgstr ""
+msgstr "Slider Image 3"
 
-#: ../../options/options-core.php:1481
+#: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr ""
+msgstr "Slide 3 URL"
 
-#: ../../options/options-core.php:1497
+#: ../../options/options-core.php
 msgid "Images per Row"
-msgstr ""
+msgstr "Images per Row"
 
-#: ../../options/options-core.php:1578
+#: ../../options/options-core.php
 msgid "Featured Excerpt Length"
-msgstr ""
+msgstr "Featured Excerpt Length"
 
-#: ../../options/options-core.php:1600
+#: ../../options/options-core.php
 msgid "Number of Rows"
-msgstr ""
+msgstr "Number of Rows"
 
-#: ../../options/options-core.php:1625
+#: ../../options/options-core.php
 msgid "Wide Post Excerpt Length"
-msgstr ""
+msgstr "Wide Post Excerpt Length"
 
-#: ../../options/options-core.php:1634
+#: ../../options/options-core.php
 msgid "Number of Wide Posts"
-msgstr ""
+msgstr "Number of Wide Posts"
 
-#: ../../options/options-core.php:1711
+#: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
-msgstr ""
+msgstr "Number of Featured Blog Posts"
 
-#: ../../options/options-core.php:1730
+#: ../../options/options-core.php
 msgid "Slider Speed "
-msgstr ""
+msgstr "Slider Speed "
 
-#: ../../options/options-core.php:1806
+#: ../../options/options-core.php
 msgid "Custom Callout Button"
-msgstr ""
+msgstr "Custom Callout Button"
 
-#: ../../options/options-core.php:1816
+#: ../../options/options-core.php
 msgid "Custom Callout Background Color"
-msgstr ""
+msgstr "Custom Callout Background Color"
 
-#: ../../options/options-core.php:1826
+#: ../../options/options-core.php
 msgid "Custom Callout Title Color"
-msgstr ""
+msgstr "Custom Callout Title Color"
 
-#: ../../options/options-core.php:1836
+#: ../../options/options-core.php
 msgid "Custom Callout Text Color"
-msgstr ""
+msgstr "Custom Callout Text Color"
 
-#: ../../options/options-core.php:1846
+#: ../../options/options-core.php
 msgid "Custom Callout Button Color"
-msgstr ""
+msgstr "Custom Callout Button Color"
 
-#: ../../options/options-core.php:1856
+#: ../../options/options-core.php
 msgid "Custom Callout Button Text Color"
-msgstr ""
+msgstr "Custom Callout Button Text Color"
 
-#: ../../options/options-core.php:1869
+#: ../../options/options-core.php
 msgid "HTML Box"
-msgstr ""
+msgstr "HTML Box"
 
-#: ../../options/options-core.php:1872
+#: ../../options/options-core.php
 msgid "Enter your custom HTML code here"
-msgstr ""
+msgstr "Enter your custom HTML code here"
 
-#: ../../options/options-core.php:1892
+#: ../../options/options-core.php
 msgid "Custom Title"
-msgstr ""
+msgstr "Custom Title"
 
-#: ../../options/options-core.php:1925 ../../options/options-core.php:1935
-#: ../../options/options-core.php:1948 ../../options/options-core.php:1958
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Select a Category"
-msgstr ""
+msgstr "Select a Category"
 
-#: ../../options/options-core.php:2267 ../../options/options-core.php:2361
-#: ../../options/options-core.php:2453 ../../options/options-core.php:2496
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Images for layout."
-msgstr ""
+msgstr "Images for layout."
 
-#: ../../options/options-core.php:2281
+#: ../../options/options-core.php
 msgid "Post title"
-msgstr ""
+msgstr "Post title"
 
-#: ../../options/options-core.php:2298 ../../options/options-core.php:2374
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Format Icons"
-msgstr ""
+msgstr "Post Format Icons"
 
-#: ../../options/options-core.php:2509
+#: ../../options/options-core.php
 msgid "Custom 404 Title"
-msgstr ""
+msgstr "Custom 404 Title"
 
-#: ../../options/options-core.php:2517
+#: ../../options/options-core.php
 msgid "Custom 404 Content"
-msgstr ""
+msgstr "Custom 404 Content"
 
-#: ../../options/options-core.php:2538
+#: ../../options/options-core.php
 msgid "Footer Copyright Text"
-msgstr ""
+msgstr "Footer Copyright Text"
 
-#: ../../options/options-customizer.php:22
+#: ../../options/options-customizer.php
 msgid "Customize"
-msgstr ""
+msgstr "Customize"
 
-#: ../../options/options-customizer.php:80
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
+#: ../../options/options-customizer.php
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "make sure you have removed the image above before selecting one of these"
 
-#: ../../options/options-customizer.php:180
+#: ../../options/options-customizer.php
 msgid "Skin Color"
-msgstr ""
+msgstr "Skin Color"
 
-#: ../../options/options-customizer.php:236
+#: ../../options/options-customizer.php
 msgid "Typography Size"
-msgstr ""
+msgstr "Typography Size"
 
-#: ../../options/options-customizer.php:275
+#: ../../options/options-customizer.php
 msgid "Typography Face"
-msgstr ""
+msgstr "Typography Face"
 
-#: ../../options/options-customizer.php:288
+#: ../../options/options-customizer.php
 msgid "Typography Style"
-msgstr ""
+msgstr "Typography Style"
 
-#: ../../options/options-customizer.php:302
+#: ../../options/options-customizer.php
 msgid "Background Image"
-msgstr ""
+msgstr "Background Image"
 
-#: ../../options/options-init.php:34
+#: ../../options/options-init.php
 msgid "Theme Options Page"
-msgstr ""
+msgstr "Theme Options Page"
 
-#: ../../options/options-init.php:35 ../../options/options-init.php:1065
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
-msgstr ""
+msgstr "Theme Options"
 
-#: ../../options/options-init.php:141
+#: ../../options/options-init.php
 msgid "Buy Themes"
-msgstr ""
+msgstr "Buy Themes"
 
-#: ../../options/options-init.php:175 ../../options/options-init.php:283
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Restore Defaults"
 
-#: ../../options/options-init.php:175 ../../options/options-init.php:283
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
+msgstr "Click OK to reset. Any theme settings will be lost!"
 
-#: ../../options/options-init.php:176 ../../options/options-init.php:237
-#: ../../options/options-init.php:284
+#: ../../options/options-init.php
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Save Options"
-msgstr ""
+msgstr "Save Options"
 
-#: ../../options/options-init.php:269
+#: ../../options/options-init.php
 msgid "CyberChimps Wordpress Themes"
-msgstr ""
+msgstr "CyberChimps Wordpress Themes"
 
-#: ../../options/options-init.php:503
+#: ../../options/options-init.php
 msgid "Default Field"
-msgstr ""
+msgstr "Default Field"
 
-#: ../../options/options-init.php:936
+#: ../../options/options-init.php
 msgid "Options Imported"
-msgstr ""
+msgstr "Options Imported"
 
-#: ../../options/options-init.php:939
+#: ../../options/options-init.php
 msgid "Invalid Data for Import"
-msgstr ""
+msgstr "Invalid Data for Import"
 
-#: ../../options/options-init.php:952
+#: ../../options/options-init.php
 msgid "Default options restored."
-msgstr ""
+msgstr "Default options restored."
 
-#: ../../options/options-init.php:1019
+#: ../../options/options-init.php
 msgid "Options saved."
-msgstr ""
+msgstr "Options saved."
 
-#: ../../options/options-medialibrary-uploader.php:23
+#: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
-msgstr ""
+msgstr "Theme Options Media"
 
-#: ../../options/options-medialibrary-uploader.php:135
+#: ../../options/options-medialibrary-uploader.php
 msgid "View File"
-msgstr ""
+msgstr "View File"
 
-#: ../../options/options-medialibrary-uploader.php:256
+#: ../../options/options-medialibrary-uploader.php
 msgid "Gallery"
-msgstr ""
+msgstr "Gallery"
 
-#: ../../options/options-medialibrary-uploader.php:256
+#: ../../options/options-medialibrary-uploader.php
 msgid "Previously Uploaded"
-msgstr ""
+msgstr "Previously Uploaded"
 
-#: ../../options/options-sanitize.php:283
+#: ../../options/options-sanitize.php
 msgid "No Repeat"
-msgstr ""
+msgstr "No Repeat"
 
-#: ../../options/options-sanitize.php:284
+#: ../../options/options-sanitize.php
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "Repeat Horizontally"
 
-#: ../../options/options-sanitize.php:285
+#: ../../options/options-sanitize.php
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "Repeat Vertically"
 
-#: ../../options/options-sanitize.php:286
+#: ../../options/options-sanitize.php
 msgid "Repeat All"
-msgstr ""
+msgstr "Repeat All"
 
-#: ../../options/options-sanitize.php:299
+#: ../../options/options-sanitize.php
 msgid "Top Left"
-msgstr ""
+msgstr "Top Left"
 
-#: ../../options/options-sanitize.php:300
+#: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr ""
+msgstr "Top Center"
 
-#: ../../options/options-sanitize.php:301
+#: ../../options/options-sanitize.php
 msgid "Top Right"
-msgstr ""
+msgstr "Top Right"
 
-#: ../../options/options-sanitize.php:302
+#: ../../options/options-sanitize.php
 msgid "Middle Left"
-msgstr ""
+msgstr "Middle Left"
 
-#: ../../options/options-sanitize.php:303
+#: ../../options/options-sanitize.php
 msgid "Middle Center"
-msgstr ""
+msgstr "Middle Center"
 
-#: ../../options/options-sanitize.php:304
+#: ../../options/options-sanitize.php
 msgid "Middle Right"
-msgstr ""
+msgstr "Middle Right"
 
-#: ../../options/options-sanitize.php:305
+#: ../../options/options-sanitize.php
 msgid "Bottom Left"
-msgstr ""
+msgstr "Bottom Left"
 
-#: ../../options/options-sanitize.php:306
+#: ../../options/options-sanitize.php
 msgid "Bottom Center"
-msgstr ""
+msgstr "Bottom Center"
 
-#: ../../options/options-sanitize.php:307
+#: ../../options/options-sanitize.php
 msgid "Bottom Right"
-msgstr ""
+msgstr "Bottom Right"
 
-#: ../../options/options-sanitize.php:320
+#: ../../options/options-sanitize.php
 msgid "Scroll Normally"
-msgstr ""
+msgstr "Scroll Normally"
 
-#: ../../options/options-sanitize.php:321
+#: ../../options/options-sanitize.php
 msgid "Fixed in Place"
-msgstr ""
+msgstr "Fixed in Place"
 
-#: ../../options/options-sanitize.php:393
+#: ../../options/options-sanitize.php
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
-#: ../../options/options-sanitize.php:394
+#: ../../options/options-sanitize.php
 msgid "Italic"
-msgstr ""
+msgstr "Italic"
 
-#: ../../options/options-sanitize.php:395
+#: ../../options/options-sanitize.php
 msgid "Bold"
-msgstr ""
+msgstr "Bold"
 
-#: ../../options/options-sanitize.php:396
+#: ../../options/options-sanitize.php
 msgid "Bold Italic"
-msgstr ""
+msgstr "Bold Italic"
+
