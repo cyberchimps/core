@@ -33,6 +33,19 @@ function cyberchimps_blog_section_order_action() {
 	$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
 	$slider_size = cyberchimps_get_option( 'blog_slider_size', 'full' );
 	if ( is_array($blog_section_order) ) {
+	
+		// Check if both of slider and blog post were active
+		if( in_array( 'page_slider', $blog_section_order ) && in_array( 'blog_post_page', $blog_section_order ) ) {
+			
+			// Get position of slider and blog post page in the active elements list.
+			$position_slider = array_search( 'page_slider', $blog_section_order );
+			$position_blog_post = array_search( 'blog_post_page', $blog_section_order );
+		
+			$slider_order = $position_slider > $position_blog_post ? 'after' : 'before';
+			cyberchimps_add_half_slider_action( $slider_order );
+		}
+		
+		
 		foreach ( $blog_section_order as $func) {
 			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
 			if( $func == 'page_slider' && $slider_size == 'half' ) {

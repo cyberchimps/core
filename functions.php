@@ -985,7 +985,11 @@ function cyberchimps_half_slider() {
 		}
 	}
 }
-add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
+
+// Hook action to after/before content hook depending upon slider order.
+function cyberchimps_add_half_slider_action( $slider_order ) {
+	add_action( 'cyberchimps_' . $slider_order . '_content', 'cyberchimps_half_slider' );
+}
 
 // Help text
 function cyberchimps_options_help_text() {
