@@ -230,7 +230,7 @@ function cyberchimps_get_layout( $layout_type ) {
 
 class cyberchimps_Walker extends Walker_Nav_Menu {
 	
-    function start_lvl( &$output, $depth ) {
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
 		//In a child UL, add the 'dropdown-menu' class
 		if( $depth == 0 ) {
 			$indent = str_repeat( "\t", $depth );
@@ -335,7 +335,7 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 }
 
 class Cyberchimps_Fallback_Walker extends Walker_Page {
-    function start_lvl(&$output, $depth) {
+    function start_lvl(&$output, $depth = 0, $args = array() ) {
         if( $depth == 0 ) {
 			$indent = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -344,7 +344,7 @@ class Cyberchimps_Fallback_Walker extends Walker_Page {
 			$output .= "\n$indent<ul>\n";
 		}
     }
-    function start_el(&$output, $page, $depth, $args, $current_page) {
+    function start_el(&$output, $page, $depth =0, $args = array(), $current_page = 0) {
         if ( $depth )
             $indent = str_repeat("\t", $depth);
         else
