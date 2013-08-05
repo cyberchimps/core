@@ -15,8 +15,11 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// create the admin menu for the theme options page
-add_action('admin_menu', 'cyberchimps_admin_add_customizer_page');
+// create the admin menu for the theme options page ( Removed the menu for v3.6 onwards as it adds that of it's own)
+
+if( get_bloginfo( 'version' ) < 3.6 ) {
+	add_action('admin_menu', 'cyberchimps_admin_add_customizer_page');
+}
 function cyberchimps_admin_add_customizer_page() {
 	// add the Customize link to the admin menu
 	add_theme_page( __('Customize', 'cyberchimps_core' ), __('Customize', 'cyberchimps_core' ), 'edit_theme_options', 'customize.php' );
