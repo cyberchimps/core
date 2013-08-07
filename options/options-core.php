@@ -2572,7 +2572,7 @@ endif;// end pro option fields
 		'id'		=> 'footer_copyright_text',
 		'name'		=> __('Footer Copyright Text', 'cyberchimps_core' ),
 		'std'		=> '&copy; ' . get_bloginfo('name'),
-		'type'		=> 'text',
+		'type'		=> 'text_html',
 		'section'	=> 'cyberchimps_footer_section',
 		'heading'	=> 'cyberchimps_footer_heading'
 	);

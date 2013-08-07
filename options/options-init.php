@@ -657,6 +657,11 @@ function cyberchimps_fields_callback( $value ) {
             $output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
             break;
 
+        // Same as text but allows some basic a, href, title, br, em and strong html, check the sanitization
+        case 'text_html':
+            $output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
+            break;
+
         // Textarea
         case 'textarea':
             $rows = '8';
