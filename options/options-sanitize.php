@@ -5,9 +5,7 @@ add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
 /* Text that allows basic html */
 function cyberchimps_sanitize_text_html( $input ) {
-    $output = wp_kses_stripslashes( $input );
-    $output = wp_kses( $output, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) );
-    $output = addslashes_gpc( $output );
+    $output = wp_kses( $input, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) );
     return $output;
 }
 add_filter( 'cyberchimps_sanitize_text_html', 'cyberchimps_sanitize_text_html' );
