@@ -958,4 +958,3 @@ function cyberchimps_add_edit_form_multipart_encoding() {
 }
 
 add_action( 'post_edit_form_tag', 'cyberchimps_add_edit_form_multipart_encoding' );
-add_action( 'post_edit_form_tag', 'cyberchimps_add_edit_form_multipart_encoding' );
