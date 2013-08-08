@@ -294,3 +294,42 @@ function cyberchimps_init_meta_boxes() {
 		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
 	}
 }
+
+function cyberchimps_meta_box() {
+    $new = array(
+        array(
+        'id'    => 'test_id',
+        'title' => 'This is a test title',
+        'post_type' => 'page',
+        'context'   => 'normal',
+        'priority'  => ''
+        ),
+        array(
+            'id'    => 'section_2',
+            'title' => 'Section 2',
+            'post_type' => 'page',
+            'context'   => 'normal',
+            'priority'  => ''
+        )
+    );
+
+    $fields = array(
+        'test_id' => array(
+            'id'        => 'field_one',
+            'title'     => 'Field One',
+            'type'      => 'text'
+
+            ),
+
+        'section_2' => array(
+            'id'        => 'field_two',
+            'title'     => 'Field Two',
+            'type'      => 'text'
+
+    )
+    );
+
+    $test = new Cyberchimps_Meta_Box( $new, $fields );
+    $test->render_display();
+}
+add_action( 'admin_init', 'cyberchimps_meta_box' );
