@@ -650,8 +650,8 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'		=> __('Font Family for headings', 'cyberchimps_core' ),
 		'id'		=> 'font_family_headings',
 		'type'		=> 'typography',
-		'options'	=> $typography_heading_options,
         'std'       => $typography_heading_defaults,
+		'options'	=> $typography_heading_options,
 		'section'	=> 'cyberchimps_typography_section',
 		'heading'	=> 'cyberchimps_design_heading'
 	);
