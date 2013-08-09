@@ -13,7 +13,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-
 class Cyberchimps_Meta_Box {
 
     public $sections;
@@ -21,35 +20,35 @@ class Cyberchimps_Meta_Box {
 
     public function __construct( $sections, $fields ) {
         $this->sections = $sections;
-        $this->fields = $fields;
+        $this->fields   = $fields;
     }
 
     public function render_display() {
-        wp_nonce_field(basename(__FILE__), 'cyberchimps_meta_box_nonce');
+        wp_nonce_field( basename( __FILE__ ), 'cyberchimps_meta_box_nonce' );
 
         foreach( $this->sections as $section ) {
-            $fields = $this->fields;
 
-            add_meta_box( $section['id'], $section['title'], array( &$this, 'render_section'), $section['post_type'], $section['context'], $section['priority'], array( $fields[$section['id']] ) );
+            $fields = $this->fields;
+            add_meta_box( $section['id'], $section['title'], array( &$this, 'render_section' ), $section['post_type'], $section['context'], $section['priority'],
+                          array( 'fields' => $fields[$section['id']] ) );
         }
     }
 
     public function render_section( $post, $args ) {
         global $post;
-
         echo '<table class="form-table">';
-        foreach( $args['args'] as $field ) {
-            $meta = get_post_meta($post->ID, $field['id'], !(isset($field['multiple']) && $field['multiple']));
-            $meta = (!empty($meta) || $meta === "0" ) ? $meta : (isset($field['std']) ? $field['std'] : '');
+        foreach( $args['args']['fields'] as $field ) {
+            $meta = get_post_meta( $post->ID, $field['id'], !( isset( $field['multiple'] ) && $field['multiple'] ) );
+            $meta = ( !empty( $meta ) || $meta === "0" ) ? $meta : ( isset( $field['std'] ) ? $field['std'] : '' );
 
             $this->field_start( $field );
-            call_user_func(array(&$this, 'input_' . $field['type']), $field, $meta );
+            call_user_func( array( &$this, 'input_' . $field['type'] ), $field, $meta );
             $this->field_end();
         }
         echo '</table>';
     }
 
-    public function render_fields(){
+    public function render_fields() {
 
     }
 
@@ -60,7 +59,69 @@ class Cyberchimps_Meta_Box {
     protected function field_end() {
         echo '</td></tr>';
     }
-    protected function input_text( $args ) {
-        echo "<input type='text' name='{$args['id']}' id='{$args['id']}' value='' size='30' style='width:60%' />";
+
+    protected function input_text( $args, $meta ) {
+        echo "<input type='text' name='{$args['id']}' id='{$args['id']}' value='{$meta}' size='30' style='width:60%' />";
+    }
+
+    protected function input_image_select( $field, $meta ) {
+
+        echo "<div class='image_select'>";
+        foreach( $field['options'] as $key => $option ) {
+            echo "<img data-key='{$key}' class='" . ( $key == $meta ? ' selected' : '' ) . "' src='{$option}' />";
+        }
+        echo "<input type='hidden' name='{$field['id']}' />";
+        echo "</div>";
+
+    }
+
+    protected function input_checkbox( $field, $meta ) {
+        echo "<input type='checkbox' class='checkbox' name='{$field['id']}' id='checkbox-{$field['id']}' " . checked( $meta, 1, false ) . " value='1'/> {$field['desc']}</td>";
+    }
+
+    protected function input_section_order( $field, $meta ) {
+        //Define image path
+        $image_path = get_template_directory_uri() . "/cyberchimps/lib/images/";
+
+        echo "<div class='section-order' id=" . esc_attr( $field['id'] ) . ">";
+        echo "<div class='left-list'>";
+        echo "<div id='inactive'>Inactive Elements</div>";
+        echo "<ul id='left_list' class='list-items'>";
+
+        foreach( $field['options'] as $key => $option ) {
+            if( is_array( $meta ) ) {
+                if( in_array( $key, $meta ) ) {
+                    continue;
+                }
+            }
+            echo "<li class='list-item'>";
+            echo '<img src="' . $image_path . 'minus.png" class="action" title="Remove"/>';
+            echo "<span data-key='{$key}'>{$option}</span>";
+            echo "</li>";
+        }
+        echo "</div>";
+        echo '<div id="arrow"><img src="' . $image_path . 'arrowdrag.png" /></div>';
+        echo "<div class='right-list'>";
+        echo "<div id='active'>Active Elements</div>";
+        echo "<ul id='right_list' class='list-items'>";
+
+        if( !is_array( $meta ) ) {
+            $meta = array( $meta );
+        }
+
+        foreach( $meta as $option ) {
+            if( !array_key_exists( $option, $field['options'] ) ) {
+                continue;
+            }
+            echo "<li class='list-item'>";
+            echo '<img src="' . $image_path . 'minus.png" class="action" title="Remove"/>';
+            echo '<span data-key="' . $option . '">' . $field['options'][$option] . '</span>';
+            echo "</li>";
+        }
+
+        echo "</div>";
+        echo "</div>";
+        echo "<input class='section-order-tracker' type='hidden' id={$field['id']} name={$field['id']} />";
+        echo "</div>";
     }
 }

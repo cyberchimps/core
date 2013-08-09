@@ -255,3 +255,47 @@ tr {border-top: 1px solid #E7E7E7;}
 .error , .validation_error {
 	color: red;
 }
+
+/* ==================================== NEW META BOX STYLING ================================================== */
+
+.section-order {
+  margin-top: 30px;
+}
+.section-order .left-list {
+  float: left;
+  width: 30%;
+}
+/*TODO delete this after you have deleted the original styling*/
+.section-order .left-list #inactive, .section-order .right-list #active {
+  background: transparent;
+  border-bottom: none;
+}
+.section-order #arrow {
+  float: left;
+  width: 10%;
+  text-align: center;
+}
+.section-order .right-list {
+  float: left;
+  width: 30%;
+}
+.section-order .list-items {
+  padding-bottom: 20px;
+}
+.section-order .list-item {
+  padding: 5px 5px 5px 10px;
+  color: #444;
+  margin-bottom: 5px;
+  border: 1px solid #888;
+  border-radius: 1px;
+  cursor:move;
+  font-weight: bold;
+  background: #eee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
