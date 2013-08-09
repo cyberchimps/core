@@ -70,9 +70,11 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
 // Creat headings_styles array from options.
 function cyberchimps_headings_styles() {
 	$headings_styles = array();
-	
+
 	// Set header font family.
-	$headings_styles['font-family'] = cyberchimps_get_option( 'font_family_headings' );
+	$headings_styles = cyberchimps_get_option( 'font_family_headings' );
+    $headings_styles['font-family'] = $headings_styles['face'];
+    unset( $headings_styles['face'] );
 	$google_font_headings = cyberchimps_get_option( 'google_font_headings' );
 	
 	if( $headings_styles['font-family'] == "Google Fonts" && $google_font_headings != "" ) {
