@@ -375,7 +375,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
     ) );
 
     // Heading Typography Defaults
-    $typography_heading_defaults = apply_filters( 'cyberchimps_typography_defaults', array(
+    $typography_heading_defaults = apply_filters( 'cyberchimps_typography_heading_defaults', array(
         'size' => '',
         'face' => 'Arial, Helvetica, sans-serif',
         'style' => '',
