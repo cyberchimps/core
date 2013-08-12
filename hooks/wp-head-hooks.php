@@ -79,6 +79,7 @@ function cyberchimps_headings_styles() {
         $headings_styles['font-family'] = $headings_styles['face'];
     }
     else {
+        $headings_styles = array();
         $headings_styles['font-family'] = $headings_styles;
     }
 
