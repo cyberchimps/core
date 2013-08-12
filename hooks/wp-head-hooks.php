@@ -69,16 +69,22 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
 
 // Creat headings_styles array from options.
 function cyberchimps_headings_styles() {
-	$headings_styles = array();
 
 	// Set header font family.
 	$headings_styles = cyberchimps_get_option( 'font_family_headings' );
-    $headings_styles['font-family'] = $headings_styles['face'];
-    unset( $headings_styles['face'] );
 	$google_font_headings = cyberchimps_get_option( 'google_font_headings' );
-	
-	if( $headings_styles['font-family'] == "Google Fonts" && $google_font_headings != "" ) {
-		$headings_styles['font-family'] = $google_font_headings;
+
+    // older versions will have saved the font family as a string so we need to check for that first
+    if( is_array( $headings_styles ) ) {
+        $headings_styles['font-family'] = $headings_styles['face'];
+    }
+    else {
+        $headings_styles['font-family'] = $headings_styles;
+    }
+
+    // Check if Google fonts have been selected
+	if( $headings_styles == "Google Fonts" && $google_font_headings != "" ) {
+		$headings_styles = $google_font_headings;
 		
 		// Check if SSL is present, if so then use https othereise use http
 		$protocol = is_ssl() ? 'https' : 'http';
@@ -86,6 +92,8 @@ function cyberchimps_headings_styles() {
 		wp_register_style( 'google-font-headings', $protocol . '://fonts.googleapis.com/css?family=' . $google_font_headings );
 		wp_enqueue_style( 'google-font-headings' );
 	}
+
+
 	
 	return $headings_styles;
 }
