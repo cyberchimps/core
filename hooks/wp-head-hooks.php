@@ -94,6 +94,13 @@ function cyberchimps_headings_styles() {
 		wp_enqueue_style( 'google-font-headings' );
 	}
 
+    //TODO recreate original settings so they are actually named by the css style they refer to
+    // eg face becomes font-family, size is font-size etc
+
+    unset( $headings_styles['size'] );
+    unset( $headings_styles['face'] );
+    unset( $headings_styles['color'] );
+    unset( $headings_styles['style'] );
 
 	
 	return $headings_styles;
