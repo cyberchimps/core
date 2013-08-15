@@ -17,14 +17,18 @@ class Cyberchimps_Meta_Box {
 
     public $sections;
     public $fields;
+    public $errors;
 
     public function __construct( $sections, $fields ) {
         $this->sections = $sections;
         $this->fields   = $fields;
+
+        add_action( 'save_post', array( &$this, 'save' ) );
+//        add_action( 'admin_notices', array( &$this, 'admin_notice' ) );
+
     }
 
     public function render_display() {
-        wp_nonce_field( basename( __FILE__ ), 'cyberchimps_meta_box_nonce' );
 
         foreach( $this->sections as $section ) {
 
@@ -36,7 +40,11 @@ class Cyberchimps_Meta_Box {
 
     public function render_section( $post, $args ) {
         global $post;
+
+        wp_nonce_field( 'cyberchimps_meta_save_' . $args['id'], 'cyberchimps_meta_nonce_' . $args['id'] );
+
         echo '<table class="form-table">';
+
         foreach( $args['args']['fields'] as $field ) {
             $meta = get_post_meta( $post->ID, $field['id'], !( isset( $field['multiple'] ) && $field['multiple'] ) );
             $meta = ( !empty( $meta ) || $meta === "0" ) ? $meta : ( isset( $field['std'] ) ? $field['std'] : '' );
@@ -124,4 +132,88 @@ class Cyberchimps_Meta_Box {
         echo "<input class='section-order-tracker' type='hidden' id={$field['id']} name={$field['id']} />";
         echo "</div>";
     }
+
+    public function save( $post_id ) {
+
+        print_r( 'Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.' );
+
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return;
+        }
+
+        foreach( $this->sections as $section ) {
+            if( !isset( $_POST['cyberchimps_meta_nonce_' . $section['id']] ) || !wp_verify_nonce( $_POST['cyberchimps_meta_nonce_' . $section['id']],
+                                                                                                  'cyberchimps_meta_save_' . $section['id'] )
+            ) {
+                return;
+            }
+        }
+
+        // Make sure meta is added to the post, not a revision
+        if( $the_post = wp_is_post_revision( $post_id ) ) {
+            $post_id = $the_post;
+        }
+
+        // Save post action removed to prevent infinite loops
+        remove_action( 'save_post', array( $this, 'save' ) );
+
+        if( !current_user_can( 'edit_post', $post_id ) ) {
+            return;
+        }
+
+        foreach( $this->fields as $fields ) {
+            foreach( $fields as $field ) {
+                $name = $field['id'];
+                $type = $field['type'];
+                $old  = get_post_meta( $post_id, $name, !( isset( $field['multiple'] ) && $field['multiple'] ) );
+                $new  = isset( $_POST[$name] ) ? $_POST[$name] : ( ( isset( $field['multiple'] ) && $field['multiple'] ) ? array() : '' );
+
+                if( method_exists( get_class(), 'sanitize_' . $type ) ) {
+                    $new = call_user_func( array( &$this, 'sanitize_' . $type ), $new );
+                }
+                else {
+                    $this->errors( __( 'There is a problem with sanitizing that data type' ) );
+
+                    return;
+                }
+
+            }
+        }
+
+    }
+
+//    public function sanitize_text( $new ) {
+//        print_r( 'TEXT' );
+//    }
+//
+//    public function sanitize_image_select( $new ) {
+//        print_r( 'IMAGE' );
+//    }
+//
+//    public function sanitize_checkbox( $new ) {
+//        print_r( 'CHECK' );
+//    }
+//
+//    public function sanitize_section_order( $new ) {
+//        print_r( 'SECTION' );
+//    }
+//
+//    protected function errors( $message, $data = null ) {
+//        $this->errors = new WP_Error( 'cyberchimps_meta_error', $message, $data );
+//    }
+//
+//    public function admin_notice() {
+//        global $pagenow;
+//
+//        if( is_wp_error( $this->errors ) ) {
+//        $errors = $this->errors->get_error_messages( 'cyberchimps_meta_error' );
+//        if ( $pagenow == 'post.php' ) {
+//        $display = '<div class="updated">
+//                    <p>This notice only appears on the plugins page.</p>
+//                    </div>';
+//
+//        return $display;
+//        }
+//        }
+//    }
 }
