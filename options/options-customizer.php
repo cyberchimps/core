@@ -34,6 +34,27 @@ function cyberchimps_customize( $wp_customize ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
 	
+	/**
+     * Class Cyberchimps_Form
+     *
+     * Creates a form input type with the option to add description and placeholders
+     */
+    class Cyberchimps_Form extends WP_Customize_Control {
+
+        public function render_content() {
+            switch( $this->type ) {
+                case 'textarea':
+                    ?>
+                    <label>
+                        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                        <textarea value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> style="width: 97%; height: 200px;"></textarea>
+                    </label>
+                    <?php
+                    break;
+            }
+        }
+    }
+	
 	class Cyberchimps_Typography_Size extends WP_Customize_Control {
 		public $type = 'select';
 
@@ -259,6 +280,20 @@ function cyberchimps_customize( $wp_customize ) {
     'section' => 'cyberchimps_design_section',
     'settings'   => 'cyberchimps_options[link_hover_colorpicker]',
 	) ) );
+	
+	// Custom CSS
+	$wp_customize->add_setting( 'cyberchimps_options[custom_css]', array(
+        'default'           => '',
+        'type'              => 'option'
+    ) );
+
+    // Content area
+    $wp_customize->add_control( new Cyberchimps_Form( $wp_customize, 'custom_css', array(
+        'label'       => __( 'Custom Css', 'cyberchimps_core' ),
+        'section'     => 'cyberchimps_design_section',
+        'settings'    => 'cyberchimps_options[custom_css]',
+        'type'        => 'textarea'
+    ) ) );
 	
 // new typography section
 	$wp_customize->add_section( 'cyberchimps_typography_section', array(
