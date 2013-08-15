@@ -41,7 +41,7 @@ function cyberchimps_footer_credit() {
 					<div class="span6">
 					<?php $copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;'. date( 'Y' ); ?>
 						<div id="copyright">
-							<?php echo wp_kses( $copyright, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) ); ?>
+							<?php echo wp_kses_post( $copyright ); ?>
 						</div>
 					</div>
 				</footer><!-- row-fluid -->
