@@ -127,7 +127,7 @@ class RW_Meta_Box {
 		$this->check_field_color();
 
 	}
-	
+
 
 	/******************** BEGIN UPLOAD **********************/
 
@@ -164,7 +164,7 @@ class RW_Meta_Box {
 					data = $(this).attr("rel");
 				$.post(ajaxurl, {action: \'rw_delete_file\', data: data}, function(Cyber Chimps Framework){
 					$parent.fadeOut("slow");
-					
+
 				});
 				return false;
 			});
@@ -331,25 +331,25 @@ class RW_Meta_Box {
 		echo "<textarea name='{$field['id']}' class='theEditor' cols='60' rows='15' style='width:97%'>$meta</textarea>";
 		$this->show_field_end($field, $meta);
 	}
-	
-	
+
+
 	function show_field_pagehelp($field, $meta) {
 		$themenamefull = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
-		$pagedocs = apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com' ); 
-		
+		$pagedocs = apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com' );
+
 		$this->show_field_begin($field, $meta);
 		echo "Visit our $themenamefull Page Options help page here: <a href='$pagedocs' target='_blank'>Page Options Instructions</a></td>";
 	}
-		
+
 	function show_field_sliderhelp($field, $meta) {
-		
+
 		$themenamefull = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
 		$sliderdocs = apply_filters( 'cyberchimps_slider_options_help', 'http://cyberchimps.com' );
-		
+
 		$this->show_field_begin($field, $meta);
 		echo "Visit our $themenamefull Slider help page here: <a href='$sliderdocs' target='_blank'>Slider Instructions</a></td>";
 	}
-	
+
 	function show_field_reorder($field, $meta) {
 		$this->show_field_begin($field, $meta);
 		echo "Install the <a href='http://wordpress.org/extend/plugins/post-types-order/' target='_blank'>Post Types Order Plugin</a> to control the order of your custom slides.</td>";
@@ -432,7 +432,7 @@ class RW_Meta_Box {
 		echo "<div style='clear: both'><strong>" . _('Upload new images (Make sure to publish the post to save)') . "</strong></div>
 			<div class='new-files'>
 				<div class='file-input'><input type='file' name='{$field['id']}[]' /></div>
-				
+
 			</div>
 		</td>";
 	}
@@ -466,12 +466,12 @@ class RW_Meta_Box {
 	}
 
 	function show_field_section_order($field, $meta) {
-	
+
 		//Define image path
 		$image_path = get_template_directory_uri() . "/cyberchimps/lib/images/";
-		
+
 		$this->show_field_begin($field, $meta);
-		
+
 		echo "<div class='section_order' id=" . esc_attr($field['id']) . ">";
 		echo "<div class='left_list'>";
 		echo "<div id='inactive'>Inactive Elements</div>";
@@ -520,10 +520,10 @@ class RW_Meta_Box {
 					val += '<input type="hidden" name="'+id+'[]" value="'+$(this).data('key')+'" />';
 				});
 				value_set.html(val);
-			
+
 				el.find('.right_list .action').show();
 				el.find('.left_list .action').hide();
-				
+
 				/* To hide subsections when element is removed from active list */
 				var hidden = base.find("input[class='section-order-tracker']");
 				var val = [];
@@ -533,7 +533,7 @@ class RW_Meta_Box {
 				hidden.val(val.join(",")).change();
 				$('.right_list .action').show();
 				$('.left_list .action').hide();
-				
+
 			}
 			el.find(".left_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
@@ -613,11 +613,11 @@ class RW_Meta_Box {
 	// Save data from meta box
 	function save($post_id) {
 		global $pagenow;
-		
+
 		// check if this is a revision as the revision id is different to post id. if it is get the parent post id if not then get the post id
 		$post_revision = wp_is_post_revision( $post_id );
 		$post_id = ( $post_revision ) ? $post_revision : $post_id;
-		
+
 		// check that the save is coming from the edit post page and not the quick edit
 		if( 'admin-ajax.php' != $pagenow ) {
 			if (isset($_POST['post_type'])) {
@@ -643,7 +643,7 @@ class RW_Meta_Box {
 					$type = $field['type'];
 					$old = get_post_meta($post_id, $name, !(isset($field['multiple']) && $field['multiple']));
 					$new = isset($_POST[$name]) ? $_POST[$name] : ((isset($field['multiple']) && $field['multiple']) ? array() : '');
-					
+
 					// validate meta value
 					if (class_exists('RW_Meta_Box_Validate') && method_exists('RW_Meta_Box_Validate', $field['validate_func'])) {
 						$new = call_user_func(array('RW_Meta_Box_Validate', $field['validate_func']), $new);
@@ -879,7 +879,7 @@ function metabox_enqueue() {
 	wp_register_script ( 'jf-metabox-tabs', $path_js. 'metabox-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');
-	
+
 	// Load different css/js for different version of WP to support respective media uploader
 	if(function_exists( 'wp_enqueue_media' )){
 		wp_enqueue_media();
@@ -891,11 +891,11 @@ function metabox_enqueue() {
 		wp_enqueue_script('thickbox');
 		wp_enqueue_script('metabox-media-uploader-below-3.5', $path_js . 'media-uploader-old.js', array('jquery') );
 	}
-	
+
 	wp_enqueue_script('jf-metabox-tabs');
 	wp_enqueue_script('jquery-touch-punch-min', $path_js . 'touch-punch-min.js', array('jquery') );
 	wp_enqueue_script('jquery-touch-sense', $path_js . 'touch-sensitive.js', array('jquery') );
-		
+
 	wp_enqueue_style('metabox-tabs-css');
 }
 
