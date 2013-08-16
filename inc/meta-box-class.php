@@ -35,7 +35,7 @@ class Chimps_Metabox {
 			'tabs' => $tabs
 		);
 
-		new RW_Meta_Box_Taxonomy($final);
+		new RW_Meta_Box($final);
 	}
 
 	/**
@@ -818,51 +818,51 @@ class RW_Meta_Box {
  * Extend RW_Meta_Box class
  * Add field type: 'taxonomy'
  */
-class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
-
-	function add_missed_values() {
-		parent::add_missed_values();
-
-		// add 'multiple' option to taxonomy field with checkbox_list type
-		foreach($this->tabs as $keytab => $tab) {
-			foreach ($tab['fields'] as $key => $field) {
-				if ('taxonomy' == $field['type'] && 'checkbox_list' == $field['options']['type']) {
-					$this->tabs[$keytab]['fields'][$key]['multiple'] = true;
-				}
-			}
-		}
-	}
-
-	// show taxonomy list
-	function show_field_taxonomy($field, $meta) {
-		global $post;
-
-		if (!is_array($meta)) $meta = (array) $meta;
-
-		$this->show_field_begin($field, $meta);
-
-		$options = $field['options'];
-		$terms = get_terms($options['taxonomy'], $options['args']);
-
-		// checkbox_list
-		if ('checkbox_list' == $options['type']) {
-			foreach ($terms as $term) {
-				echo "<input type='checkbox' name='{$field['id']}[]' value='$term->slug'" . checked(in_array($term->slug, $meta), true, false) . " /> $term->name<br/>";
-			}
-		}
-		// select
-		else {
-			echo "<select name='{$field['id']}" . ($field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'") . ">";
-
-			foreach ($terms as $term) {
-				echo "<option value='$term->slug'" . selected(in_array($term->slug, $meta), true, false) . ">$term->name</option>";
-			}
-			echo "</select>";
-		}
-
-		$this->show_field_end($field, $meta);
-	}
-}
+//class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
+//
+//	function add_missed_values() {
+//		parent::add_missed_values();
+//
+//		// add 'multiple' option to taxonomy field with checkbox_list type
+//		foreach($this->tabs as $keytab => $tab) {
+//			foreach ($tab['fields'] as $key => $field) {
+//				if ('taxonomy' == $field['type'] && 'checkbox_list' == $field['options']['type']) {
+//					$this->tabs[$keytab]['fields'][$key]['multiple'] = true;
+//				}
+//			}
+//		}
+//	}
+//
+//	// show taxonomy list
+//	function show_field_taxonomy($field, $meta) {
+//		global $post;
+//
+//		if (!is_array($meta)) $meta = (array) $meta;
+//
+//		$this->show_field_begin($field, $meta);
+//
+//		$options = $field['options'];
+//		$terms = get_terms($options['taxonomy'], $options['args']);
+//
+//		// checkbox_list
+//		if ('checkbox_list' == $options['type']) {
+//			foreach ($terms as $term) {
+//				echo "<input type='checkbox' name='{$field['id']}[]' value='$term->slug'" . checked(in_array($term->slug, $meta), true, false) . " /> $term->name<br/>";
+//			}
+//		}
+//		// select
+//		else {
+//			echo "<select name='{$field['id']}" . ($field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'") . ">";
+//
+//			foreach ($terms as $term) {
+//				echo "<option value='$term->slug'" . selected(in_array($term->slug, $meta), true, false) . ">$term->name</option>";
+//			}
+//			echo "</select>";
+//		}
+//
+//		$this->show_field_end($field, $meta);
+//	}
+//}
 
 /********************* END EXTENDING CLASS ***********************/
 

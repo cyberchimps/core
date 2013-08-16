@@ -125,7 +125,7 @@ function cyberchimps_init_meta_boxes() {
     }
     // End taxonomy call
 
-    $meta_boxes = array();
+//    $meta_boxes = array();
 
 //    $mb = new Chimps_Metabox( 'post_slide_options', __( 'Slider Options', 'cyberchimps_core' ), array( 'pages' => array( 'post' ) ) );
 //    $mb
@@ -300,6 +300,7 @@ function cyberchimps_init_meta_boxes() {
             ->checkbox('profile_googlemaps', __( 'Google Map', 'cyberchimps_core' ), '' )
             ->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps_core' ), "", array('std' => 'http://www.maps.google.com/' ) ) */
 
+<<<<<<< Updated upstream
 
 
 //        ->end();
@@ -379,3 +380,10 @@ function cyberchimps_meta_box() {
 }
 
 add_action( 'admin_init', 'cyberchimps_meta_box' );
+=======
+    apply_filters( 'cyberchimps_meta_box_fields', $mb->fields );
+//    foreach( $meta_boxes as $meta_box ) {
+//        $my_box = new RW_Meta_Box_Taxonomy( $meta_box );
+//    }
+}
+>>>>>>> Stashed changes
