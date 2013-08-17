@@ -46,7 +46,13 @@ function cyberchimps_core_setup_theme() {
 	
 	// Load Meta Boxes Functions
 	require_once( $directory . '/cyberchimps/inc/meta-box.php' );
-	
+
+    // Load new meta box class
+    require_once( $directory . '/cyberchimps/options/meta-box-class/my-meta-box-class.php');
+
+    // Load new meta box options
+    require_once( $directory . '/cyberchimps/options/meta-box-class/meta-box.php' );
+
 	// Load core hooks file
 	require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 	

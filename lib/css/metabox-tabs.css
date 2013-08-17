@@ -238,16 +238,16 @@ tr {border-top: 1px solid #E7E7E7;}
 
 .subsection select {float: right; }
 
-.image_select {
+.image-select {
 	float: right;
 }
 
-.image_select img {
+.image-select img {
   margin-left: 10px;
   padding: 1px;
   border: 3px solid #EEE;
 }
-.image_select img.selected {
+.image-select img.selected {
 	border: 3px solid #AAA;
   padding: 1px;
 }
