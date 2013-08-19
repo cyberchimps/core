@@ -122,6 +122,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
             $this->_fields       = $this->_meta_box['fields'];
             $this->_Local_images = ( isset( $meta_box['local_images'] ) ) ? true : false;
             $this->add_missed_values();
+
             if( isset( $meta_box['use_with_theme'] ) ) {
                 if( $meta_box['use_with_theme'] === true ) {
                     $this->SelfPath = get_stylesheet_directory_uri() . '/cyberchimps/options/meta-box-class';
@@ -1075,6 +1076,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
          * @access public
          */
         public function save_field( $post_id, $field, $old, $new ) {
+
             $name = $field['id'];
             delete_post_meta( $post_id, $name );
             if( $new === '' || $new === array() ) {
@@ -2002,10 +2004,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 endif; // End Check Class Exists
 
 class CyberChimps_Meta_Box extends AT_Meta_Box {
-
-    public function __construct( $meta_box ) {
-        parent::__construct( $meta_box );
-    }
 
     public function show_field_image_select( $field, $meta ) {
 

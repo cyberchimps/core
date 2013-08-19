@@ -20,13 +20,25 @@ if( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
+add_action( 'admin_head', 'cyberchimps_load_meta_boxes_scripts' );
+function cyberchimps_load_meta_boxes_scripts() {
+    global $post_type;
+
+    // Set library path.
+    $lib_path = get_template_directory_uri() . "/cyberchimps/lib/";
+
+    if( $post_type == 'page' ) :
+        wp_enqueue_style( 'meta-boxes-css', $lib_path . 'css/metabox-tabs.css' );
+
+        // Enqueue only if it is not done before
+        if( !wp_script_is( 'jf-metabox-tabs' ) ) :
+            wp_enqueue_script( 'meta-boxes-js', $lib_path . 'js/metabox-tabs.js', array( 'jquery' ) );
+        endif;
+    endif;
+}
+
 if( is_admin() ) {
-    /*
-     * prefix of meta keys, optional
-     * use underscore (_) at the beginning to make keys hidden, for example $prefix = '_ba_';
-     *  you also can make prefix empty to disable it
-     *
-     */
+
     $image_path = get_template_directory_uri() . '/cyberchimps/lib/images/';
 
     $fields = array( array(
@@ -34,8 +46,7 @@ if( is_admin() ) {
         'id'      => 'cyberchimps_page_sidebar',
         'class'   => '',
         'name'    => __( 'Select Page Layout', 'cyberchimps_core' ),
-        'options' =>
-        apply_filters( 'sidebar_layout_options', array(
+        'options' => apply_filters( 'sidebar_layout_options', array(
             'full_width'    => $image_path . '1col.png',
             'right_sidebar' => $image_path . '2cr.png'
         ) ),
@@ -67,7 +78,7 @@ if( is_admin() ) {
      * configure your meta box
      */
     $config = array(
-        'id'             => 'page_options', // meta box id, unique per meta box
+        'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box
         'title'          => __( 'Page Options', 'cyberchimps_elements' ), // meta box title
         'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
         'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
@@ -81,5 +92,7 @@ if( is_admin() ) {
      * Initiate your meta box
      */
     $my_meta = new Cyberchimps_Meta_Box( $config );
+    //Finish Meta Box Declaration
+    $my_meta->Finish();
 
 }
