@@ -152,15 +152,14 @@ function cyberchimps_display_upsell() {
                     </a>
                 </div>
                 <div class="theme-info span9">
-                    <a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro</h4></a>
+                    <a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
 
                     <div class="theme-description">
-                        <p>Advanced Customization. Modern Design. Developer Friendly. Neuro Pro gives you the tools to turn WordPress into a modern feature rich Content Management System
-                            (CMS). On sale for $15 for a limited time only! Neuro Pro features intuitive design options allowing anyone the ability to easily customize the look and feel of
-                            WordPress.</p>
+                        <p>Neuro Pro 3 now offers a clean modern Responsive WordPress Theme featuring Drag and Drop Theme Options. Neuro Pro offers the same advanced functionality as
+							CyberChimps other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android.</p>
 
-                        <p>We also included several popular color skins to choose from, as well as beautiful modern background images. Neuro Pro also offers designers and developers Custom
-                            CSS, Import / Export options, and support for CSS3 and HTML5.</p>
+                        <p>Neuro Pro now features 5 beautiful skins to select from, as well as Drag and Drop Elements such as the Responsive Feature Slider, Image Carousel,
+						Twitter bar, Widgetized boxes, and Callout section. All of which can be used on a per-page basis.</p>
                     </div>
 
                     <a class="buy btn btn-primary" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><?php _e( 'Buy Neuro Pro', 'cyberchimps_core' ); ?></a>
