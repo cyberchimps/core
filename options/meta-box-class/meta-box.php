@@ -92,7 +92,4 @@ if( is_admin() ) {
      * Initiate your meta box
      */
     $my_meta = new Cyberchimps_Meta_Box( $config );
-    //Finish Meta Box Declaration
-    $my_meta->Finish();
-
 }
