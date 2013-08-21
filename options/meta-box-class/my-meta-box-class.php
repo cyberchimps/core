@@ -1208,6 +1208,22 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
         public function save_field_file_repeater( $post_id, $field, $old, $new ) {
         }
 
+		/**
+         * Save Checkbox Field.
+         *
+         * @param string $post_id
+         * @param string $field
+         * @param string $old
+         * @param string $new
+         *
+         * @since 1.0
+         * @access public
+         */
+		function save_field_checkbox($post_id, $field, $old, $new) {
+			$new = $new ? "1" : "0";
+			update_post_meta($post_id, $field['id'], $new);
+		}
+	
         /**
          * Add missed values for meta box.
          *
