@@ -344,8 +344,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
                     $meta = is_array( $meta ) ? array_map( 'esc_attr', $meta ) : esc_attr( $meta );
                 }
 
+                $class = ( ( $field['class'] != '' ) ) ? ' class="' . $field['class'] . '-container"' : '';
                 if( $this->inGroup !== true ) {
-                    echo '<tr>';
+                    echo '<tr' . $class . '>';
                 }
 
                 if( isset( $field['group'] ) && $field['group'] == 'start' ) {

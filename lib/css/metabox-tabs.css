@@ -15,7 +15,7 @@
 
 
  
-.js .checkbox{
+.js .checkbox, .js .checkbox-toggle {
   display:none;
 }
 
