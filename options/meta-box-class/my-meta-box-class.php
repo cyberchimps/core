@@ -206,8 +206,8 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
             // Enqueu JQuery UI, use proper version.
 
             // Enqueu JQuery select2 library, use proper version.
-            wp_enqueue_style( 'at-multiselect-select2-css', $plugin_path . '/js/select2/select2.css', array(), null );
-            wp_enqueue_script( 'at-multiselect-select2-js', $plugin_path . '/js/select2/select2.js', array( 'jquery' ), false, true );
+//            wp_enqueue_style( 'at-multiselect-select2-css', $plugin_path . '/js/select2/select2.css', array(), null );
+//            wp_enqueue_script( 'at-multiselect-select2-js', $plugin_path . '/js/select2/select2.js', array( 'jquery' ), false, true );
         }
 
         /**

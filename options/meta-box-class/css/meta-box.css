@@ -1,6 +1,4 @@
-/**
- * Metabox Tabs
- */
+
  
 .image_preview {width: 40%;}
 
@@ -14,7 +12,7 @@
 
 
 
- 
+
 .js .checkbox, .js .checkbox-toggle {
   display:none;
 }
@@ -25,7 +23,7 @@
     width:70px;
     height:22px;
     float: right;
- 
+
 }
 
 .toggle.checked{
@@ -33,7 +31,7 @@
 }
 
 
- 
+
 ul.metabox-tabs {
 display: none;
 margin-top: 12px;
@@ -215,8 +213,8 @@ h4 {margin-top: 0px; margin-bottom: 0px; font-size: 1.17em;}
 }
 
 .subsection {
-	border: 1px solid #CCC; 
-	background: white; 
+	border: 1px solid #CCC;
+	background: white;
 	border-radius: 4px;
 	margin-top: 8px; margin-bottom: 8px;
 }
