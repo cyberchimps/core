@@ -7,27 +7,20 @@
  * straightforward. For name spacing purposes, All Types metabox ( meaning you can do anything with it )
  * is used.
  *
- * This class is derived from Meta Box script by Rilwis<rilwis@gmail.com> version 3.2. which later was forked
- * by Cory Crowley (email: cory.ivan@gmail.com) The purpose of this class is not to rewrite the script but to
+ * This class is derived from Ohad Raz (email: admin@bainternet.info) and Meta Box script by Rilwis<rilwis@gmail.com> version 3.2.
+ * which later was forked by Cory Crowley (email: cory.ivan@gmail.com) The purpose of this class is not to rewrite the script but to
  * modify and change small things and adding a few field types that i needed to my personal preference.
  * The original author did a great job in writing this class, so all props goes to him.
  *
- * @version 3.1.0
- * @copyright 2011 - 2013
- * @author Ohad Raz (email: admin@bainternet.info)
- * @link http://en.bainternet.info
- *
- * @license GNU General Public LIcense v3.0 - license.txt
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package MY Meta Box Class
+ * @category CyberChimps Framework
+ * @package  Framework
+ * @since    1.0
+ * @author   CyberChimps
+ * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link     http://www.cyberchimps.com/
  */
+
+// TODO CyberChimps have changed the markup of this class don't just update by copying over it
 
 if( !class_exists( 'AT_Meta_Box' ) ) :
 
