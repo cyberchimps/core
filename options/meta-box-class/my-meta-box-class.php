@@ -171,7 +171,12 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
                 wp_enqueue_style( 'at-meta-box', $plugin_path . '/css/meta-box.css' );
 
                 // Enqueue Meta Box Scripts
-                wp_enqueue_script( 'at-meta-box', $plugin_path . '/js/meta-box.js', array( 'jquery' ), null, true );
+                wp_enqueue_script( 'at-meta-box', $plugin_path . '/js/meta-box.min.js', array( 'jquery' ), null, true );
+                // Enqueue Cyberchimps Scripts
+                wp_enqueue_script( 'meta-boxes-js', $plugin_path . '/js/metabox-tabs.min.js', array( 'jquery' ), null, true );
+                // Enqueue Media uploader for single images TODO look into removing this and use this classes image uploader that saves images as an array. Will need to change all elements to be
+//              TODO able to work with this
+                wp_enqueue_script( 'cc-media-uploader-js', get_stylesheet_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.min.js', array( 'jquery' ), null, true );
 
                 // Make upload feature work event when custom post type doesn't support 'editor'
                 if( $this->has_field( 'image' ) || $this->has_field( 'file' ) ) {
@@ -2104,49 +2109,19 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
      * @since 1.0
      * @access public
      */
-    public function show_field_image( $field, $meta ) {
+    public function show_field_single_image( $field, $meta ) {
         wp_enqueue_media();
 
         $this->show_field_begin( $field, $meta );
 
-        $std   = isset( $field['std'] ) ? $field['std'] : array( 'id' => '', 'url' => '' );
-        $name  = esc_attr( $field['id'] );
-        $value = isset( $meta[0] ) ? $meta[0] : $std;
-
-        if( isset( $meta[0] ) && is_array( $meta[0] ) && isset( $meta[0]['id'] ) ) {
-            $value = $meta[0];
-        }
-        elseif( isset( $meta[0] ) ) {
-            $new_meta = array();
-
-            $new_meta[0]['url'] = $meta[0];
-            $new_meta[0]['id'] = $std['id'];
-
-            $value = $new_meta[0];
-        }
-        else {
-            $value = $std;
+        if( $meta ) {
+            echo "<img class='image-preview' src='{$meta}' /><br/>";
         }
 
-        $value['url'] = isset( $meta[0]['src'] ) ? $meta[0]['src'] : $value['url']; //backwards capability
-        $value['id'] = isset( $meta[0]['id'] ) ? $meta[0]['id'] : $value['id']; //backwards capability
-        $has_image    = empty( $value['url'] ) ? false : true;
-        $w            = isset( $field['width'] ) ? $field['width'] : 'auto';
-        $h            = isset( $field['height'] ) ? $field['height'] : 'auto';
-        $PreviewStyle = "style='width: $w; height: $h;" . ( ( !$has_image ) ? "display: none;'" : "'" );
-        $id           = $field['id'];
-        $multiple     = isset( $field['multiple'] ) ? $field['multiple'] : false;
-        $multiple     = ( $multiple ) ? "multiFile " : "";
+        echo "<input type='button' class='upload_image_button' value='" . __( 'Upload', 'cyberchimps_core' ) . "' style='font-size: 14px;padding: 5px 10px;' />";
+        echo "<br/>" . __( 'or enter URL', 'cyberchimps_core' ) . "<br/>";
+        echo "<input class='upload_image_field' type='text' size='50' name='{$field['id']}' value='{$meta}'/>";
 
-        echo "<span class='simplePanelImagePreview'><img {$PreviewStyle} src='{$value['url']}'><br/></span>";
-        echo "<input type='hidden' name='{$name}[id]' value='{$value['id']}'/>";
-        echo "<input type='hidden' name='{$name}[url]' value='{$value['url']}'/>";
-        if( $has_image ) {
-            echo "<input class='{$multiple} button  simplePanelimageUploadclear' id='{$id}' value='Remove Image' type='button'/>";
-        }
-        else {
-            echo "<input class='{$multiple} button simplePanelimageUpload' id='{$id}' value='Upload Image' type='button'/>";
-        }
         $this->show_field_end( $field, $meta );
     }
 

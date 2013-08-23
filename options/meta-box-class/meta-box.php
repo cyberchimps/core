@@ -20,21 +20,6 @@ if( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-add_action( 'admin_head', 'cyberchimps_load_meta_boxes_scripts' );
-function cyberchimps_load_meta_boxes_scripts() {
-    global $post_type;
-
-    // Set library path.
-    $lib_path = get_template_directory_uri() . "/cyberchimps/lib/";
-
-    if( $post_type == 'page' ) :
-        wp_enqueue_style( 'meta-boxes-css', $lib_path . 'css/metabox-tabs.css' );
-
-       wp_enqueue_script( 'meta-boxes-js', $lib_path . 'js/metabox-tabs.min.js', array( 'jquery' ) );
-
-    endif;
-}
-
 if( is_admin() ) {
 
     $image_path = get_template_directory_uri() . '/cyberchimps/lib/images/';
