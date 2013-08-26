@@ -264,7 +264,7 @@ jQuery(document).ready(function ($) {
 
 
 /**
- * function to allow select inputs to hide and show conditional form elements
+ * function to allow select/dropdown inputs to hide and show conditional form elements
  *
  * Give the select a class of .select-hide
  * Give the sections you want hidden the class of the key/index of the option suffixed with -select

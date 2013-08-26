@@ -32,12 +32,27 @@
 /* ==================================== IMAGE UPLOADER ================================================== */
 
 .image-preview {
+  float: right;
   max-width: 100%;
   margin-bottom: 15px;
+  clear: both;
 }
-.upload_image_button, .remove-image {
+.upload-image-button, .remove-image {
+  float: right;
+  clear: both;
   font-size: 1em;
-  padding: 40px;
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  border: 3px solid #cccccc;
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+.upload-image-button:hover, .upload-image-button:active {
+  border: 3px solid #5DA7F2;
+}
+.upload-image-field, .upload-desc-field {
+  float: right;
+  clear: both;
 }
 
 #pages label, #post_slide_options label, #slides label, #Carousel label {font-weight: bold;}

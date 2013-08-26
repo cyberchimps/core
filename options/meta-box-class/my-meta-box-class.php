@@ -2111,9 +2111,9 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
             echo "<img class='image-preview' src='{$meta}' /><br/>";
         }
 
-        echo "<input type='button' class='upload_image_button' value='" . __( 'Upload', 'cyberchimps_core' ) . "' style='font-size: 14px;padding: 5px 10px;' />";
-        echo "<br/>" . __( 'or enter URL', 'cyberchimps_core' ) . "<br/>";
-        echo "<input class='upload_image_field' type='text' size='50' name='{$field['id']}' value='{$meta}'/>";
+        echo "<input type='button' class='upload-image-button' value='" . __( 'Upload', 'cyberchimps_core' ) . "' />";
+        echo "<div class='upload-desc-field'>" . __( 'or enter URL', 'cyberchimps_core' ) . "</div>";
+        echo "<input class='upload-image-field' type='text' size='50' name='{$field['id']}' value='{$meta}'/>";
 
         $this->show_field_end( $field, $meta );
     }
