@@ -2058,7 +2058,6 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
         echo '<div id="arrow"><img src="' . $image_path . 'arrowdrag.png" /></div>';
         echo "<div class='right-list'>";
         echo "<div id='active'>Active Elements</div>";
-        echo "<div id='drag'>Drag & Drop Elements</div>";
         echo "<div class='list-items'>";
         if( is_array( $meta ) ) {
             foreach( $meta as $key => $option ) {

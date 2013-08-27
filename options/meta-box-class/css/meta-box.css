@@ -69,7 +69,7 @@
 }
 
 .toggle{
-   background:url("../../../lib/images/toggle.png") bottom left;
+   background:url("../../../lib/images/toggle.png") bottom right;
     display:block;
     width:70px;
     height:22px;
@@ -78,7 +78,7 @@
 }
 
 .toggle.checked{
-  background-position:top left;
+  background-position:bottom left;
 }
 
 
@@ -297,7 +297,7 @@ tr {border-top: 1px solid #E7E7E7;}
   border: 3px solid #EEE;
 }
 .image-select img.selected {
-	border: 3px solid #AAA;
+	border: 5px solid #5DA7F2;
   padding: 1px;
 }
 
@@ -347,4 +347,12 @@ tr {border-top: 1px solid #E7E7E7;}
   background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */
   background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+}
+
+.sortable-placeholder {
+  background-color: #efefef;
+  height: 30px;
+  border: 3px solid #5da7f2;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

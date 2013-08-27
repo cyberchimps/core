@@ -43,11 +43,13 @@ jQuery(document).ready(function ($) {
                 update: function () {
                     update($(this).closest(".section-order"));
                 },
-                connectWith: '#' + id + ' .left-list .list-items'
+                connectWith: '#' + id + ' .left-list .list-items',
+                placeholder: 'sortable-placeholder'
             });
 
             el.find(".left-list .list-items").sortable({
-                connectWith: '#' + id + ' .right-list .list-items'
+                connectWith: '#' + id + ' .right-list .list-items',
+                placeholder: 'sortable-placeholder'
             });
 
             update(el);
