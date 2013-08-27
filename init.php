@@ -41,13 +41,6 @@ function cyberchimps_core_setup_theme() {
 	// Load default core settings
 	require_once( $directory . '/cyberchimps/options/options-core.php' );
 
-    // TODO delete the old meta box classes etc once the new ones are established
-	// Load Meta Box Class
-//	require_once( $directory . '/cyberchimps/inc/meta-box-class.php' );
-	
-	// Load Meta Boxes Functions
-//	require_once( $directory . '/cyberchimps/inc/meta-box.php' );
-
 	// Load core hooks file
 	require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 
