@@ -21,7 +21,7 @@
 .postbox tr {
   border-top: none;
 }
-.at-field input {
+.at-field input, .at-field select {
   float: right;
 }
 .at-label {
