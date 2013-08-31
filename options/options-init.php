@@ -137,9 +137,9 @@ function cyberchimps_options_page() {
                     <!-- span4 -->
                     <div class="span8">
                         <ul class="cc-header-links">
-                            <li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/support/' ); ?>"
+                            <li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
                                    target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
-                            <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/docs/' ); ?>"
+                            <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
                                    target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
                             <li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
                                    target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
