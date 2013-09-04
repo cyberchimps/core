@@ -83,10 +83,8 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 	
 	// Add thumbnail size
-	if( function_exists( 'add_image_size' ) ) { 
-        add_image_size( 'featured-thumb', 100, 80, true);
-        add_image_size( 'headline-thumb', 200, 225, true);
-    } 
+	add_image_size( 'featured-thumb', 100, 80, true);
+	add_image_size( 'headline-thumb', 200, 225, true);
 	
 	// add javascript for comments
 	if( is_singular() ) wp_enqueue_script( 'comment-reply' );
