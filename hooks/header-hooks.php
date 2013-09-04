@@ -137,7 +137,7 @@ add_action( 'cyberchimps_logo', 'cyberchimps_logo' );
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
 	 
-	$url = ( cyberchimps_get_option( 'custom_logo_url_link' ) != '' ) ? cyberchimps_get_option( 'custom_logo_url_link' ) : home_url();
+	$url = ( cyberchimps_get_option( 'custom_logo_url_link' ) != '' ) ? cyberchimps_get_option( 'custom_logo_url_link' ) : esc_url( home_url() );
 	if ( cyberchimps_get_option('custom_logo') == '1') {
 		$logo = cyberchimps_get_option('custom_logo_uploader');
 	?>
@@ -153,7 +153,7 @@ function cyberchimps_header_logo() {
 
 function cyberchimps_header_site_title() { ?>	
 	<div class="hgroup">
-		<h2 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+		<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 	</div>
 <?php }
 
