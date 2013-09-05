@@ -201,10 +201,6 @@ function cyberchimps_init_meta_boxes() {
 			->checkbox('cyberchimps_product_link_toggle', __( 'Product Link', 'cyberchimps_core' ), '', array('std' => '1'))
 			->text('cyberchimps_product_link_url', __( 'Product URL', 'cyberchimps_core' ), '', array('std' => home_url()))
 			->text('cyberchimps_product_link_text', __( 'Product Link Text', 'cyberchimps_core' ), '', array('std' => __( 'Buy Now', 'cyberchimps_core' ) ) )
-            ->checkbox('cyberchimps_product_button_image_toggle', __( 'Button Image', 'cyberchimps_core' ), '', array('std' => '0', 'desc' => __( 'This option will overwrite the Product Link',
-                                                                                                                                                  'cyberchimps_core' ) ) )
-            ->single_image('cyberchimps_product_button_image_url', __( 'Product Button URL', 'cyberchimps_core' ), '' )
-
 		->tab("Callout Options")
 			->text('callout_title', __( 'Callout Title', 'cyberchimps_core' ), '',
 				array('std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps_core' ),
