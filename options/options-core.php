@@ -1735,6 +1735,7 @@ if( $theme_check == 'pro' ):
 	$fields_list[]	= array(
 		'name'		=> __('Slider Type', 'cyberchimps_core' ),
 		'id'		=> 'blog_slider_type',
+        'class'     => 'select-hide',
 		'type'		=> 'select',
 		'std'		=> 'custom_slides',
 		'options'	=> array(
@@ -1748,6 +1749,7 @@ if( $theme_check == 'pro' ):
 	$fields_list[]	= array(
 		'name'		=> __('Post Categories', 'cyberchimps_core' ),
 		'id'		=> 'blog_slider_post_cats',
+        'class'     => 'post-select',
 		'type'		=> 'select',
 		'std'		=> 'all',
 		'options'	=> $options_categories,
@@ -1759,6 +1761,7 @@ if( $theme_check == 'pro' ):
 		$fields_list[]	= array(
 			'name'		=> __('Custom Categories', 'cyberchimps_core' ),
 			'id'		=> 'custom_slider_post_cats',
+            'class'     => 'custom_slides-select',
 			'type'		=> 'select',
 			'std'		=> 'cyberchimps_all',
 			'options'	=> $options_slide_cats,
@@ -1770,6 +1773,7 @@ if( $theme_check == 'pro' ):
 		$fields_list[]	= array(
 			'name'		=> __('Custom Categories', 'cyberchimps_core' ),
 			'id'		=> 'custom_slider_post_cats_help',
+            'class'     => 'custom_slides-select',
 			'type'		=> 'help',
 			'desc'		=> __( 'You need to create a Category', 'cyberchimps_core' ),
 			'section'	=> 'cyberchimps_blog_slider_section',
