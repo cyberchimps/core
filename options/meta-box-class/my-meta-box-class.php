@@ -134,7 +134,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
             // Add metaboxes
             add_action( 'add_meta_boxes', array( $this, 'add' ) );
             //add_action( 'wp_insert_post', array( $this, 'save' ) );
-            add_action( 'save_post', array( $this, 'save' ) );
+            add_action( 'pre_post_update', array( $this, 'save' ) );
             // Load common js, css files
             // Must enqueue for all pages as we need js for the media upload, too.
             add_action( 'admin_print_styles', array( $this, 'load_scripts_styles' ) );
