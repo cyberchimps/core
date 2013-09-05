@@ -120,7 +120,7 @@ class RW_Meta_Box {
 		$this->add_missed_values();
 
 		add_action('admin_menu', array(&$this, 'add'));	// add meta box
-		add_action('save_post', array(&$this, 'save'));	// save meta box's data
+		add_action('pre_post_update', array(&$this, 'save'));	// save meta box's data
 
 		// check for some special fields and add needed actions for them
 		$this->check_field_upload();
