@@ -84,8 +84,8 @@ function cyberchimps_headings_styles() {
     }
 
     // Check if Google fonts have been selected
-	if( $headings_styles == "Google Fonts" && $google_font_headings != "" ) {
-		$headings_styles = $google_font_headings;
+	if( $headings_styles['font-family'] == "Google Fonts" && $google_font_headings != "" ) {
+		$headings_styles['font-family'] = $google_font_headings;
 		
 		// Check if SSL is present, if so then use https othereise use http
 		$protocol = is_ssl() ? 'https' : 'http';

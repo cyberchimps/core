@@ -384,7 +384,7 @@ function cyberchimps_customize( $wp_customize ) {
 	) );
 	
 	// Font family for headings
-	$wp_customize->add_setting( 'cyberchimps_options[font_family_headings]', array(
+	$wp_customize->add_setting( 'cyberchimps_options[font_family_headings][face]', array(
 			'default'        => 'Arial',
 			'type'           => 'option',
 		) );
@@ -393,7 +393,7 @@ function cyberchimps_customize( $wp_customize ) {
 		'label'		=> __( 'Font Family for headings', 'cyberchimps_core' ),
 		'section' 	=> 'cyberchimps_typography_section',
 		'type'		=> 'select',
-		'settings'	=> 'cyberchimps_options[font_family_headings]',
+		'settings'	=> 'cyberchimps_options[font_family_headings][face]',
 		'choices'	=> apply_filters( 'cyberchimps_typography_faces', $faces )
 	  ) );
 	
