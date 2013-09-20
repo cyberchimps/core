@@ -126,18 +126,20 @@ function cyberchimps_init_meta_boxes() {
 	// End taxonomy call
 	
 	$meta_boxes = array();
-		
-	$mb = new Chimps_Metabox('post_slide_options', __('Slider Options', 'cyberchimps_core' ), array('pages' => array('post')));
-	$mb
-		->tab("Slider Options")
-			->single_image('cyberchimps_slider_image', __('Slider Image', 'cyberchimps_core' ), '')
-			->text('cyberchimps_slider_caption', __('Slider Caption', 'cyberchimps_core' ), '')			
-			->text('cyberchimps_slider_url', __( 'Custom Slide Link', 'cyberchimps_core' ), '')
-			->checkbox('cyberchimps_slider_hidetitle', __('Title', 'cyberchimps_core' ), '', array('std' => '1'))
-			->checkbox('cyberchimps_slider_hidecaption', __('Caption', 'cyberchimps_core' ), '', array('std' => '1'))
-			->sliderhelp('', __('Need Help?', 'cyberchimps_core' ), '')
-		->end();
-
+	
+	if( cyberchimps_theme_check() == "pro" ) {
+		$mb = new Chimps_Metabox('post_slide_options', __('Slider Options', 'cyberchimps_core' ), array('pages' => array('post')));
+		$mb
+			->tab("Slider Options")
+				->single_image('cyberchimps_slider_image', __('Slider Image', 'cyberchimps_core' ), '')
+				->text('cyberchimps_slider_caption', __('Slider Caption', 'cyberchimps_core' ), '')			
+				->text('cyberchimps_slider_url', __( 'Custom Slide Link', 'cyberchimps_core' ), '')
+				->checkbox('cyberchimps_slider_hidetitle', __('Title', 'cyberchimps_core' ), '', array('std' => '1'))
+				->checkbox('cyberchimps_slider_hidecaption', __('Caption', 'cyberchimps_core' ), '', array('std' => '1'))
+				->sliderhelp('', __('Need Help?', 'cyberchimps_core' ), '')
+			->end();
+	}
+	
 	$mb = new Chimps_Metabox('pages', 'Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")

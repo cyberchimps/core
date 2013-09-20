@@ -988,6 +988,7 @@ function cyberchimps_fields_callback( $value ) {
 
         case "export":
             $output .= "<textarea rows='10'>" . esc_html( serialize( $settings ) ) . "</textarea>";
+			$output .= '<br/><a class="btn btn-info export-option" href="data:text/octet-stream;charset=utf-8,' . esc_html( serialize( $settings ) ) . '" download="theme-option-backup.txt">Download</a>';
             break;
 
         case "import":

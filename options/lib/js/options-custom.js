@@ -382,14 +382,14 @@ jQuery(document).ready(function($) {
 	});
 
 	// Script to hide show the Google Heading Font input depending on value of the Heading select
-	var font = $('#font_family_headings').val();
+	var font = $('#font_family_headings_face').val();
 	if(font != 'Google Fonts'){
 		$('#google_font_headings').parent().hide();
 	}
 	else{
 		$('#google_font_headings').parent().show();
 	}
-	$('#font_family_headings').change(function(){
+	$('#font_family_headings_face').change(function(){
 		var font_change = $(this).val();
 		if(font_change != 'Google Fonts'){
 			$('#google_font_headings').parent().hide();
