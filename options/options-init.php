@@ -117,7 +117,7 @@ function cyberchimps_options_page() {
         <?php do_action( 'cyberchimps_options_before_container' ); ?>
         <div class="container-fluid cc-options">
 
-            <form action="options.php" method="post" id="cyberchimps_options_page">
+            <form action="options.php" method="post" id="cyberchimps_options_page" enctype="multipart/form-data">
                 <?php
                 settings_fields( 'cyberchimps_options' );
                 $headings_list = cyberchimps_get_headings();
@@ -993,6 +993,7 @@ function cyberchimps_fields_callback( $value ) {
 
         case "import":
             $output .= "<textarea name='import' rows='10'></textarea>";
+            $output .= "<br/><input type='file' id='import_file' name='import_file' />";
             break;
     }
 
@@ -1015,12 +1016,41 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
-    // Theme option import functionality
-    if( isset( $_POST['import'] ) ) {
+    /*
+	 * Import functionality
+	 *
+	 * Both the copy/paste and file upload options are active. First it checks for file, if any file is uploaded then
+	 * it processes that. Otherwise it checks if anything is sent with the textarea for the import.
+	 */
+	 
+	// Check if any file is uplaoded
+	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
+
+		// Get the text of the uploaded file and trim it to remove space from either end.
+		$import_file_text = trim( file_get_contents( $_FILES['import_file']['tmp_name'] ) );
+		
+		if( $import_file_text ) {
+            $string = stripslashes( $import_file_text );
+
+            $try = unserialize( $string );
+
+            if( $try ) {
+                add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+
+                return $try;
+            }
+            else {
+                add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+            }
+        }
+	}
+	// If no file is uploaded then check for the texarea field for improt option.
+    else if( isset( $_POST['import'] ) ) {
         if( trim( $_POST['import'] ) ) {
             $string = stripslashes( trim( $_POST['import'] ) );
 
             $try = unserialize( $string );
+
             if( $try ) {
                 add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
