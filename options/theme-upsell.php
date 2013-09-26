@@ -62,7 +62,7 @@ function cyberchimps_display_upsell() {
     <div id="upsell_themes" class="row-fluid">
 
         <!-- -------------- Ifeature Pro ------------------- -->
-
+		
         <div id="ifeature" class="row-fluid">
             <div class="theme-container">
                 <div class="theme-image span3">
@@ -72,7 +72,12 @@ function cyberchimps_display_upsell() {
                 </div>
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank"><h4>iFeature Pro5</h4></a>
-
+			
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "ifeaturepro5" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>iFeature Pro 5 is the World's first Touch Friendly Responsive Drag & Drop WordPress Theme. iFeature Pro 5 lets you create amazing responsive websites that you can
                             control on any touch device including the iPad, iPhone, and Android devices.</p>
@@ -100,6 +105,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/business-pro/" target="_blank"><h4>Business Pro4</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "businesspro4" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>Business Pro 4 from CyberChimps WordPress Themes is a Professional Responsive Business WordPress Theme perfect for any business on any device. It gives your company
                             the tools launch a professional website quickly turning WordPress into a modern Drag and Drop Content Management System (CMS).</p>
@@ -126,6 +136,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro2</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "eclipsepro2" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>Eclipse 2 now offers touch friendly Responsive design, as well as Responsive Drag and Drop Theme Options that responds automatically to mobile devices such as the
                             iPhone, iPad, and Android.</p>
@@ -154,6 +169,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "neuropro3" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>Neuro Pro 3 now offers a clean modern Responsive WordPress Theme featuring Drag and Drop Theme Options. Neuro Pro offers the same advanced functionality as
 							CyberChimps other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android.</p>
@@ -181,6 +201,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro2</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "iribbonpro2" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>iRibbon Pro 2 is a fun and friendly Responsive WordPress Theme featuring Drag and Drop Theme Options. iRibbon Pro offers the same advanced functionality as
                             CyberChimps other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android.</p>
@@ -208,6 +233,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Cyberchimps Pro</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "cyberchimpspro" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>CyberChimps Pro Website Builder is an advanced Responsive Starter Theme for WordPress. CyberChimps Pro is built on Twitter Bootstrap, and features a fully responsive
                             design, and touch friendly Drag and Drop theme options that work on the iPad, iPhone, and Android devices.</p>
@@ -235,6 +265,11 @@ function cyberchimps_display_upsell() {
                 <div class="theme-info span9">
                     <a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Responsive Pro</h4></a>
 
+					<!-- Check if the theme is installed, if so then add a tick mark -->
+					<?php if( wp_get_theme( "responsivepro" )->exists() ) { ?>
+					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png" />
+					<?php } ?>
+					
                     <div class="theme-description">
                         <p>CyberChimps Pro Website Builder is an advanced Responsive Starter Theme for WordPress. CyberChimps Pro is built on Twitter Bootstrap, and features a fully responsive
                             design, and touch friendly Drag and Drop theme options that work on the iPad, iPhone, and Android devices.</p>
