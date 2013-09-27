@@ -48,8 +48,13 @@ ul, ol {
 
 .theme-description {
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .theme-exists {
-  margin: -62px 0 0 119px;
+  margin: 8px;
+}
+
+.theme-name {
+  float: left;
 }
