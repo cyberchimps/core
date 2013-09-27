@@ -49,3 +49,7 @@ ul, ol {
 .theme-description {
   margin-bottom: 20px;
 }
+
+.theme-exists {
+  margin: -62px 0 0 119px;
+}
