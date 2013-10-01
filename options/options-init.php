@@ -1016,6 +1016,7 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
+global $wp_filesystem;
     /*
 	 * Import functionality
 	 *
@@ -1026,8 +1027,11 @@ function cyberchimps_options_validate( $input ) {
 	// Check if any file is uplaoded
 	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
 
+		// Initialise WP filesystem.
+		WP_Filesystem( request_filesystem_credentials('options.php', '', false, false, null) );
+		
 		// Get the text of the uploaded file and trim it to remove space from either end.
-		$import_file_text = trim( file_get_contents( $_FILES['import_file']['tmp_name'] ) );
+		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name']) );
 		
 		if( $import_file_text ) {
             $string = stripslashes( $import_file_text );
