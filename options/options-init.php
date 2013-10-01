@@ -1036,8 +1036,12 @@ global $wp_filesystem;
 		if( $import_file_text ) {
             $string = stripslashes( $import_file_text );
 
-            $try = unserialize( $string );
+			// check string is serialized and unserialize it
+			if( is_serialized( $string ) ) {
+				$try = unserialize( ( $string ) );
+			}
 
+			// make sure $try is set with the unserialized data
             if( $try ) {
                 add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
@@ -1051,10 +1055,15 @@ global $wp_filesystem;
 	// If no file is uploaded then check for the texarea field for improt option.
     else if( isset( $_POST['import'] ) ) {
         if( trim( $_POST['import'] ) ) {
+
             $string = stripslashes( trim( $_POST['import'] ) );
 
-            $try = unserialize( $string );
+			// check string is serialized and unserialize it
+			if( is_serialized( $string ) ) {
+				$try = unserialize( ( $string ) );
+			}
 
+			// make sure $try is set with the unserialized data
             if( $try ) {
                 add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
