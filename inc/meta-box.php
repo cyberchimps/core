@@ -27,7 +27,7 @@ function cyberchimps_load_meta_boxes_scripts() {
 	
 		// Enqueue only if it is not done before
 		if( !wp_script_is('jf-metabox-tabs') ) :
-			wp_enqueue_script('meta-boxes-js', $lib_path . 'js/metabox-tabs.js', array('jquery'));	
+			wp_enqueue_script('meta-boxes-js', $lib_path . 'js/metabox-tabs.min.js', array('jquery'));
 		endif;	
 	endif;
 }
