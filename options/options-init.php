@@ -1016,6 +1016,8 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
+global $wp_filesystem;
+
 	/*
 	 * Import functionality
 	 *
@@ -1026,14 +1028,21 @@ function cyberchimps_options_validate( $input ) {
 	// Check if any file is uplaoded
 	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
 
+		// Initialise WP filesystem.
+		WP_Filesystem( request_filesystem_credentials('options.php', '', false, false, null) );
+		
 		// Get the text of the uploaded file and trim it to remove space from either end.
-		$import_file_text = trim( file_get_contents( $_FILES['import_file']['tmp_name'] ) );
-
+		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name']) );
+		
 		if( $import_file_text ) {
 			$string = stripslashes( $import_file_text );
 
-			$try = unserialize( $string );
+			// check string is serialized and unserialize it
+			if( is_serialized( $string ) ) {
+				$try = unserialize( ( $string ) );
+			}
 
+			// make sure $try is set with the unserialized data
 			if( $try ) {
 				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
@@ -1045,21 +1054,24 @@ function cyberchimps_options_validate( $input ) {
 		}
 	}
 	// If no file is uploaded then check for the texarea field for improt option.
-	else {
-		if( isset( $_POST['import'] ) ) {
-			if( trim( $_POST['import'] ) ) {
-				$string = stripslashes( trim( $_POST['import'] ) );
+	else if( isset( $_POST['import'] ) ) {
+		if( trim( $_POST['import'] ) ) {
 
-				$try = unserialize( $string );
+			$string = stripslashes( trim( $_POST['import'] ) );
 
-				if( $try ) {
-					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+			// check string is serialized and unserialize it
+			if( is_serialized( $string ) ) {
+				$try = unserialize( ( $string ) );
+			}
 
-					return $try;
-				}
-				else {
-					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
-				}
+			// make sure $try is set with the unserialized data
+			if( $try ) {
+				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+
+				return $try;
+			}
+			else {
+				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
 			}
 		}
 	}
