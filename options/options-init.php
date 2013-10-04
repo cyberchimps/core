@@ -1017,8 +1017,7 @@ function cyberchimps_fields_callback( $value ) {
 function cyberchimps_options_validate( $input ) {
 
 global $wp_filesystem;
-
-	/*
+    /*
 	 * Import functionality
 	 *
 	 * Both the copy/paste and file upload options are active. First it checks for file, if any file is uploaded then
