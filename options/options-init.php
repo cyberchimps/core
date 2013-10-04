@@ -110,248 +110,248 @@ function cyberchimps_admin_init() {
 
 // create and display theme options page
 function cyberchimps_options_page() {
-    settings_errors();
-    ?>
+	settings_errors();
+	?>
 
-    <div class="wrap">
-        <?php do_action( 'cyberchimps_options_before_container' ); ?>
-        <div class="container-fluid cc-options">
+	<div class="wrap">
+	<?php do_action( 'cyberchimps_options_before_container' ); ?>
+	<div class="container-fluid cc-options">
 
-            <form action="options.php" method="post" id="cyberchimps_options_page">
-                <?php
-                settings_fields( 'cyberchimps_options' );
-                $headings_list = cyberchimps_get_headings();
-                $sections_list = cyberchimps_get_sections();
+	<form action="options.php" method="post" id="cyberchimps_options_page">
+	<?php
+	settings_fields( 'cyberchimps_options' );
+	$headings_list = cyberchimps_get_headings();
+	$sections_list = cyberchimps_get_sections();
 
-                do_action( 'cyberchimps_options_form_start' )
-                ?>
-                <!-- header -->
-                <div class="row-fluid cc-header">
-                    <div class="span4">
-                        <div class="cc-title">
-                            <div class="icon32" id="icon-tools"><br/></div>
-                            <h2><?php printf( '%1s ' . __( 'Options', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
-                        </div>
-                        <!-- cc-title -->
-                    </div>
-                    <!-- span4 -->
-                    <div class="span8">
-                        <ul class="cc-header-links">
-                            <li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
-                                   target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
-                            <li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-                                   target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
-                            <li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
-                                   target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
-                            <?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
-                                <li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
-                                </li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                    <!-- span8 -->
-                </div>
-                <!-- row-fluid -->
-                <!-- end header -->
+	do_action( 'cyberchimps_options_form_start' )
+	?>
+	<!-- header -->
+	<div class="row-fluid cc-header">
+		<div class="span4">
+			<div class="cc-title">
+				<div class="icon32" id="icon-tools"><br/></div>
+				<h2><?php printf( '%1s ' . __( 'Options', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
+			</div>
+			<!-- cc-title -->
+		</div>
+		<!-- span4 -->
+		<div class="span8">
+			<ul class="cc-header-links">
+				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
+				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
+				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
+				       target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
+				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
+				       target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
+				<?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
+					<li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
+					</li>
+				<?php endif; ?>
+			</ul>
+		</div>
+		<!-- span8 -->
+	</div>
+	<!-- row-fluid -->
+	<!-- end header -->
 
-                <!-- start sub menu -->
-                <div class="row-fluid">
-                    <div class="span12">
-                        <div class="cc-submenu">
-                            <div class="cc-collapse">
-                                <!-- mobile menu button -->
-                                <div class="cc-mobile-menu">
-                                    <a class="btn" data-toggle="modal" href="#cc-mobile-modal">
-                                        <i class="icon-th-list"></i>
-                                    </a>
-                                </div>
-                                <!-- cc-mobil-menu -->
+	<!-- start sub menu -->
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="cc-submenu">
+				<div class="cc-collapse">
+					<!-- mobile menu button -->
+					<div class="cc-mobile-menu">
+						<a class="btn" data-toggle="modal" href="#cc-mobile-modal">
+							<i class="icon-th-list"></i>
+						</a>
+					</div>
+					<!-- cc-mobil-menu -->
 
-                                <div class="cc-social-container-subheader hidden-phone">
-                                    <div class="cc-social twitter">
-                                        <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
-                                        <script>!function (d, s, id) {
-                                                var js, fjs = d.getElementsByTagName(s)[0];
-                                                if (!d.getElementById(id)) {
-                                                    js = d.createElement(s);
-                                                    js.id = id;
-                                                    js.src = "//platform.twitter.com/widgets.js";
-                                                    fjs.parentNode.insertBefore(js, fjs);
-                                                }
-                                            }(document, "script", "twitter-wjs");</script>
-                                    </div>
-                                    <!-- cc-scoial -->
-                                    <div class="cc-social facebook">
-                                        <iframe
-                                            src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-                                            scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
-                                    </div>
-                                    <!-- cc-scoial -->
-                                </div>
-                                <!-- cc-social-container -->
-                            </div>
-                            <!-- cc-collapse -->
+					<div class="cc-social-container-subheader hidden-phone">
+						<div class="cc-social twitter">
+							<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+							<script>!function (d, s, id) {
+									var js, fjs = d.getElementsByTagName(s)[0];
+									if (!d.getElementById(id)) {
+										js = d.createElement(s);
+										js.id = id;
+										js.src = "//platform.twitter.com/widgets.js";
+										fjs.parentNode.insertBefore(js, fjs);
+									}
+								}(document, "script", "twitter-wjs");</script>
+						</div>
+						<!-- cc-scoial -->
+						<div class="cc-social facebook">
+							<iframe
+								src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
+								scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+						</div>
+						<!-- cc-scoial -->
+					</div>
+					<!-- cc-social-container -->
+				</div>
+				<!-- cc-collapse -->
 
 
-                            <div class="cc-submenu-links">
-                                <input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-                                <button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-                                                                                                                                'cyberchimps_core' ) ); ?>' );">
-                                    <?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
-                                </button>
-                            </div>
-                            <!-- cc-submenu-links -->
-                            <div class="clear"></div>
-                        </div>
-                        <!-- cc-submenu -->
+				<div class="cc-submenu-links">
+					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
+						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
+					</button>
+				</div>
+				<!-- cc-submenu-links -->
+				<div class="clear"></div>
+			</div>
+			<!-- cc-submenu -->
 
-                        <!-- hidden mobile menu -->
-                        <div class="modal hide" id="cc-mobile-modal">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&#215;</button>
-                                <div class="cc-mobile-title"></div>
-                                <h3>Navigation</h3>
-                            </div>
-                            <div class="modal-body">
-                                <ul class="cc-parent nav-tab-wrapper">
-                                    <?php
-                                    foreach( $headings_list as $heading ) {
+			<!-- hidden mobile menu -->
+			<div class="modal hide" id="cc-mobile-modal">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&#215;</button>
+					<div class="cc-mobile-title"></div>
+					<h3>Navigation</h3>
+				</div>
+				<div class="modal-body">
+					<ul class="cc-parent nav-tab-wrapper">
+						<?php
+						foreach( $headings_list as $heading ) {
 
-                                        $jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+							$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
-                                        echo '<li class="cc-has-children">';
-                                        echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
-                                        echo '</li>';
-                                    } ?>
-                                </ul>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn" data-dismiss="modal">Close</a>
-                            </div>
-                        </div>
-                        <!-- end mobile menu -->
+							echo '<li class="cc-has-children">';
+							echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
+							echo '</li>';
+						} ?>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn" data-dismiss="modal">Close</a>
+				</div>
+			</div>
+			<!-- end mobile menu -->
 
-                    </div>
-                    <!-- span12 -->
-                </div>
-                <!-- row fluid -->
-                <!-- end sub menu -->
+		</div>
+		<!-- span12 -->
+	</div>
+	<!-- row fluid -->
+	<!-- end sub menu -->
 
-                <!-- start left menu -->
-                <div class="row-fluid cc-content">
-                    <div class="span3">
-                        <div class="cc-left-menu">
-                            <ul class="cc-parent nav-tab-wrapper">
-                                <?php
-                                foreach( $headings_list as $heading ) {
+	<!-- start left menu -->
+	<div class="row-fluid cc-content">
+		<div class="span3">
+			<div class="cc-left-menu">
+				<ul class="cc-parent nav-tab-wrapper">
+					<?php
+					foreach( $headings_list as $heading ) {
 
-                                    $jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
-                                    echo '<li class="cc-has-children">';
-                                    echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a><div class="cc-menu-arrow"><div></div></div>';
+						echo '<li class="cc-has-children">';
+						echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a><div class="cc-menu-arrow"><div></div></div>';
 
-                                    echo '<ul class="cc-child">';
-                                    foreach( $sections_list as $section ) {
-                                        if( in_array( $heading['id'], $section ) ) {
-                                            $jquery_click_section_hook = '';
-                                            $jquery_click_section_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $section['id'] ) );
+						echo '<ul class="cc-child">';
+						foreach( $sections_list as $section ) {
+							if( in_array( $heading['id'], $section ) ) {
+								$jquery_click_section_hook = '';
+								$jquery_click_section_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $section['id'] ) );
 
-                                            echo '<li><a id="' . esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#' . $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
-                                        }
-                                    }
-                                    echo '</ul>';
-                                    echo '</li>';
-                                } ?>
-                                <li id="left-menu-save">
-                                    <input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- cc-left-menu -->
-                    </div>
-                    <!-- span3 -->
-                    <!-- end left menu -->
+								echo '<li><a id="' . esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#' . $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
+							}
+						}
+						echo '</ul>';
+						echo '</li>';
+					} ?>
+					<li id="left-menu-save">
+						<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					</li>
+				</ul>
+			</div>
+			<!-- cc-left-menu -->
+		</div>
+		<!-- span3 -->
+		<!-- end left menu -->
 
-                    <!-- start main content -->
-                    <div class="span9">
-                        <div class="cc-main-content">
-                            <?php foreach( $headings_list as $heading ) {
+		<!-- start main content -->
+		<div class="span9">
+			<div class="cc-main-content">
+				<?php foreach( $headings_list as $heading ) {
 
-                                $jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
-                                echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
-                                echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
-                                if( isset( $heading['description'] ) ) {
-                                    echo '<p>' . esc_html( $heading['description'] ) . '</p>';
-                                }
-                                cyberchimps_do_settings_sections( $heading['id'] );
-                                echo '</div>';
-                            } ?>
-                        </div>
-                        <!-- cc-main-content -->
-                    </div>
-                    <!-- span9 -->
-                </div>
-                <!-- row fluid -->
-                <!-- end main content -->
+					echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
+					echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
+					if( isset( $heading['description'] ) ) {
+						echo '<p>' . esc_html( $heading['description'] ) . '</p>';
+					}
+					cyberchimps_do_settings_sections( $heading['id'] );
+					echo '</div>';
+				} ?>
+			</div>
+			<!-- cc-main-content -->
+		</div>
+		<!-- span9 -->
+	</div>
+	<!-- row fluid -->
+	<!-- end main content -->
 
-                <!-- start footer -->
-                <div class="row-fluid">
-                    <div class="cc-footer">
-                        <div class="span3">
-                            <div class="cc-logo">
-                                <a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/cc-logo.png"
-                                        alt="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"/></a>
-                            </div>
-                            <!-- cc-logo -->
-                        </div>
-                        <!-- span3 -->
-                        <div class="span9">
-                            <div class="cc-social-container">
-                                <div class="cc-social twitter">
-                                    <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
-                                    <script>!function (d, s, id) {
-                                            var js, fjs = d.getElementsByTagName(s)[0];
-                                            if (!d.getElementById(id)) {
-                                                js = d.createElement(s);
-                                                js.id = id;
-                                                js.src = "//platform.twitter.com/widgets.js";
-                                                fjs.parentNode.insertBefore(js, fjs);
-                                            }
-                                        }(document, "script", "twitter-wjs");</script>
-                                </div>
-                                <!-- cc-scoial -->
-                                <div class="cc-social facebook">
-                                    <iframe
-                                        src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-                                        scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
-                                </div>
-                                <!-- cc-scoial -->
-                            </div>
-                            <!-- cc-social-container -->
-                            <div class="footer-links">
-                                <input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-                                <button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-                                                                                                                                'cyberchimps_core' ) ); ?>' );">
-                                    <?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
-                                </button>
-                            </div>
-                            <!-- footer-links -->
-                        </div>
-                        <!-- span 9 -->
-                        <div class="clear"></div>
-                    </div>
-                    <!-- cc-footer -->
-                </div>
-                <!-- row fluid -->
-                <!-- end footer -->
+	<!-- start footer -->
+	<div class="row-fluid">
+		<div class="cc-footer">
+			<div class="span3">
+				<div class="cc-logo">
+					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"><img
+							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/cc-logo.png"
+							alt="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"/></a>
+				</div>
+				<!-- cc-logo -->
+			</div>
+			<!-- span3 -->
+			<div class="span9">
+				<div class="cc-social-container">
+					<div class="cc-social twitter">
+						<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+						<script>!function (d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0];
+								if (!d.getElementById(id)) {
+									js = d.createElement(s);
+									js.id = id;
+									js.src = "//platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js, fjs);
+								}
+							}(document, "script", "twitter-wjs");</script>
+					</div>
+					<!-- cc-scoial -->
+					<div class="cc-social facebook">
+						<iframe
+							src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
+							scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+					</div>
+					<!-- cc-scoial -->
+				</div>
+				<!-- cc-social-container -->
+				<div class="footer-links">
+					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
+						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
+					</button>
+				</div>
+				<!-- footer-links -->
+			</div>
+			<!-- span 9 -->
+			<div class="clear"></div>
+		</div>
+		<!-- cc-footer -->
+	</div>
+	<!-- row fluid -->
+	<!-- end footer -->
 
-            </form>
+	</form>
 
-        </div>
-        <!-- container-fluid -->
-    </div><!-- wrap -->
+	</div>
+	<!-- container-fluid -->
+	</div><!-- wrap -->
 <?php
 }
 
