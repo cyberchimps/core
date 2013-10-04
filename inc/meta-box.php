@@ -26,9 +26,9 @@ function cyberchimps_load_meta_boxes_scripts() {
 		wp_enqueue_style( 'meta-boxes-css', $lib_path . 'css/metabox-tabs.css' );
 
 		// Enqueue only if it is not done before
-		if( !wp_script_is( 'jf-metabox-tabs' ) ) :
-			wp_enqueue_script( 'meta-boxes-js', $lib_path . 'js/metabox-tabs.js', array( 'jquery' ) );
-		endif;
+		if( !wp_script_is('jf-metabox-tabs') ) :
+			wp_enqueue_script('meta-boxes-js', $lib_path . 'js/metabox-tabs.min.js', array('jquery'));
+		endif;	
 	endif;
 }
 
