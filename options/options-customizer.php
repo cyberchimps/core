@@ -353,7 +353,7 @@ function cyberchimps_customize( $wp_customize ) {
 		'Georgia, serif'                                   => 'Georgia',
 		'"HelveticaNeue-Light", "Helvetica Neue Light",
 		"Helvetica Neue",Helvetica, Arial, "Lucida Grande",
-		sans-serif'                        => 'Helvetica Neue',
+		sans-serif'                                => 'Helvetica Neue',
 		'Impact, Charcoal, sans-serif'                     => 'Impact',
 		'Lucida Console, Monaco, monospace'                => 'Lucida Console',
 		'Lucida Sans Unicode, Lucida Grande, sans-serif'   => 'Lucida Sans Unicode',

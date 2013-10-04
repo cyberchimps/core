@@ -47,9 +47,9 @@ function cyberchimps_core_scripts() {
 
 	// set up slimbox for gallery images
 	if( cyberchimps_get_option( 'gallery_lightbox', 1 ) ) {
-		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.min.js' , array( 'jquery' ), '1.0' );
+		wp_enqueue_script( 'gallery-lightbox', $js_path . 'gallery-lightbox.min.js', array( 'jquery' ), '1.0' );
 	}
-	
+
 	// Load JS for slimbox
 	wp_enqueue_script( 'slimbox', $js_path . 'jquery.slimbox.min.js', array( 'jquery' ), '1.0' );
 
@@ -57,9 +57,9 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_script( 'jcarousel', $js_path . 'jquery.jcarousel.min.js', array( 'jquery' ), '1.0' );
 
 	//touch swipe gestures
-	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
-	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.min.js', array('jquery', 'jquery-mobile-touch') );
-		
+	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.min.js', array( 'jquery', 'jquery-mobile-touch' ) );
+
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
 	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array( 'bootstrap-style' ), '2.0.4' );
@@ -74,8 +74,8 @@ function cyberchimps_core_scripts() {
 	}
 
 	// Load core JS
-	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array('jquery') );
-	
+	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
+
 	// Load Core Stylesheet
 	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 

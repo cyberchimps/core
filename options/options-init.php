@@ -60,26 +60,26 @@ function cyberchimps_load_scripts() {
 	// Set template directory uri
 	$directory_uri = get_template_directory_uri();
 
-    // Include media uploader for WP version >= 3.5
-    if( function_exists( 'wp_enqueue_media' ) ) {
-        wp_enqueue_media();
-        wp_enqueue_script( 'theme-option-media-uploader-3.5', $directory_uri . '/cyberchimps/options/lib/js/media-uploader-new.min.js', array( 'jquery' ) );
-    }
+	// Include media uploader for WP version >= 3.5
+	if( function_exists( 'wp_enqueue_media' ) ) {
+		wp_enqueue_media();
+		wp_enqueue_script( 'theme-option-media-uploader-3.5', $directory_uri . '/cyberchimps/options/lib/js/media-uploader-new.min.js', array( 'jquery' ) );
+	}
 
 	// Enqueued scripts
 	wp_enqueue_script( 'jquery-ui-core' );
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
-    // Adding JS to support drag and drop in theme options
-    wp_enqueue_script( 'jquery-touch-punch-min', $directory_uri . '/cyberchimps/lib/js/touch-punch.min.js', array( 'jquery' ) );
-    wp_enqueue_script( 'jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.min.js', array( 'jquery' ) );
+	// Adding JS to support drag and drop in theme options
+	wp_enqueue_script( 'jquery-touch-punch-min', $directory_uri . '/cyberchimps/lib/js/touch-punch.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.min.js', array( 'jquery' ) );
 
-    wp_enqueue_script( 'thickbox' );
-    wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ) );
-    wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.min.js', array( 'jquery' ) );
-    wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ) );
-    wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-    wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'thickbox' );
+	wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ) );
 }
 
 // Load options customizer file
@@ -1016,8 +1016,8 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
-global $wp_filesystem;
-    /*
+	global $wp_filesystem;
+	/*
 	 * Import functionality
 	 *
 	 * Both the copy/paste and file upload options are active. First it checks for file, if any file is uploaded then
@@ -1028,13 +1028,13 @@ global $wp_filesystem;
 	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
 
 		// Initialise WP filesystem.
-		WP_Filesystem( request_filesystem_credentials('options.php', '', false, false, null) );
-		
+		WP_Filesystem( request_filesystem_credentials( 'options.php', '', false, false, null ) );
+
 		// Get the text of the uploaded file and trim it to remove space from either end.
-		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name']) );
-		
+		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name'] ) );
+
 		if( $import_file_text ) {
-            $string = stripslashes( $import_file_text );
+			$string = stripslashes( $import_file_text );
 
 			// check string is serialized and unserialize it
 			if( is_serialized( $string ) ) {
@@ -1042,38 +1042,40 @@ global $wp_filesystem;
 			}
 
 			// make sure $try is set with the unserialized data
-            if( $try ) {
-                add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+			if( $try ) {
+				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
-                return $try;
-            }
-            else {
-                add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
-            }
-        }
+				return $try;
+			}
+			else {
+				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+			}
+		}
 	}
 	// If no file is uploaded then check for the texarea field for improt option.
-    else if( isset( $_POST['import'] ) ) {
-        if( trim( $_POST['import'] ) ) {
+	else {
+		if( isset( $_POST['import'] ) ) {
+			if( trim( $_POST['import'] ) ) {
 
-            $string = stripslashes( trim( $_POST['import'] ) );
+				$string = stripslashes( trim( $_POST['import'] ) );
 
-			// check string is serialized and unserialize it
-			if( is_serialized( $string ) ) {
-				$try = unserialize( ( $string ) );
+				// check string is serialized and unserialize it
+				if( is_serialized( $string ) ) {
+					$try = unserialize( ( $string ) );
+				}
+
+				// make sure $try is set with the unserialized data
+				if( $try ) {
+					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+
+					return $try;
+				}
+				else {
+					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+				}
 			}
-
-			// make sure $try is set with the unserialized data
-            if( $try ) {
-                add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
-
-                return $try;
-            }
-            else {
-                add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
-            }
-        }
-    }
+		}
+	}
 
 	/*
 	 * Restore Defaults.
