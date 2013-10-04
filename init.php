@@ -81,8 +81,8 @@ if( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-								'primary' => __( 'Primary Menu', 'cyberchimps_core' ),
-							) );
+			                    'primary' => __( 'Primary Menu', 'cyberchimps_core' ),
+		                    ) );
 
 		//set up defaults
 		$option_defaults = cyberchimps_get_default_values();
@@ -165,31 +165,31 @@ function cyberchimps_custom_background_cb() {
 // Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
 	register_sidebar( array(
-						  'name'          => __( 'Sidebar Left', 'cyberchimps_core' ),
-						  'id'            => 'sidebar-left',
-						  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-						  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-						  'before_title'  => apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
-						  'after_title'   => apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
-					  ) );
+		                  'name'          => __( 'Sidebar Left', 'cyberchimps_core' ),
+		                  'id'            => 'sidebar-left',
+		                  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
+		                  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
+		                  'before_title'  => apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
+		                  'after_title'   => apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
+	                  ) );
 
 	register_sidebar( array(
-						  'name'          => __( 'Sidebar Right', 'cyberchimps_core' ),
-						  'id'            => 'sidebar-right',
-						  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-						  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-						  'before_title'  => apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
-						  'after_title'   => apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
-					  ) );
+		                  'name'          => __( 'Sidebar Right', 'cyberchimps_core' ),
+		                  'id'            => 'sidebar-right',
+		                  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
+		                  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
+		                  'before_title'  => apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
+		                  'after_title'   => apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
+	                  ) );
 
 	register_sidebar( array(
-						  'name'          => __( 'Footer Widgets', 'cyberchimps_core' ),
-						  'id'            => 'cyberchimps-footer-widgets',
-						  'before_widget' => apply_filters( 'cyberchimps_footer_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
-						  'after_widget'  => apply_filters( 'cyberchimps_footer_after_widget', '</aside>' ),
-						  'before_title'  => apply_filters( 'cyberchimps_footer_before_widget_title', '<h3 class="widget-title">' ),
-						  'after_title'   => apply_filters( 'cyberchimps_footer_after_widget_title', '</h3>' )
-					  ) );
+		                  'name'          => __( 'Footer Widgets', 'cyberchimps_core' ),
+		                  'id'            => 'cyberchimps-footer-widgets',
+		                  'before_widget' => apply_filters( 'cyberchimps_footer_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
+		                  'after_widget'  => apply_filters( 'cyberchimps_footer_after_widget', '</aside>' ),
+		                  'before_title'  => apply_filters( 'cyberchimps_footer_before_widget_title', '<h3 class="widget-title">' ),
+		                  'after_title'   => apply_filters( 'cyberchimps_footer_after_widget_title', '</h3>' )
+	                  ) );
 }
 
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );

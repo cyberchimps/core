@@ -647,8 +647,8 @@ function cyberchimps_categorized_blog() {
 	if( false === ( $cyberchimps_categorized_transient = get_transient( 'cyberchimps_categorized_transient' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$cyberchimps_categorized_transient = get_categories( array(
-																 'hide_empty' => 1,
-															 ) );
+			                                                     'hide_empty' => 1,
+		                                                     ) );
 
 		// Count the number of categories that are attached to the posts
 		$cyberchimps_categorized_transient = count( $cyberchimps_categorized_transient );
@@ -1086,8 +1086,8 @@ function cyberchimps_options_help_text() {
 						</div>
 						<div class="clear"></div>';
 		$text .= sprintf( '<p>' . __( 'If you want even more amazing new features upgrade to', 'cyberchimps_core' ) . ' <a href="%1$s" title="%2$s">%2$s</a> ' . __( 'which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit', 'cyberchimps_core' ) . ' <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> ' . __( 'to learn more!', 'cyberchimps_core' ) . '</p>',
-						  apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-						  apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
+		                  apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
+		                  apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
 		);
 	}
 	//text for pro themes
@@ -1106,9 +1106,9 @@ function cyberchimps_upgrade_bar() {
 	<div class="upgrade-callout">
 		<p><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps"/>
 			<?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to', 'cyberchimps_core' ) . ' <a href="%2$s" target="_blank" title="%3$s">%3$s</a> ' . __( 'today.', 'cyberchimps_core' ),
-						  apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
-						  apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-						  apply_filters( 'cyberchimps_upgrade_pro_title', 'Pro' )
+			              apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
+			              apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
+			              apply_filters( 'cyberchimps_upgrade_pro_title', 'Pro' )
 			); ?>
 		</p>
 
@@ -1156,10 +1156,10 @@ function cyberchimps_admin_link() {
 	global $wp_admin_bar;
 
 	$wp_admin_bar->add_menu( array(
-								 'id'    => 'cyberchimps',
-								 'title' => apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' . __( 'Options', 'cyberchimps_core' ) ) . __( ' Options', 'cyberchimps_core' ),
-								 'href'  => admin_url( 'themes.php?page=cyberchimps-theme-options' )
-							 ) );
+		                         'id'    => 'cyberchimps',
+		                         'title' => apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' . __( 'Options', 'cyberchimps_core' ) ) . __( ' Options', 'cyberchimps_core' ),
+		                         'href'  => admin_url( 'themes.php?page=cyberchimps-theme-options' )
+	                         ) );
 }
 
 add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );

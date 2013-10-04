@@ -190,10 +190,10 @@ class RW_Meta_Box {
 	// Delete all attachments when delete post
 	function delete_attachments( $post_id ) {
 		$attachments = get_posts( array(
-									  'numberposts' => -1,
-									  'post_type'   => 'attachment',
-									  'post_parent' => $post_id
-								  ) );
+			                          'numberposts' => -1,
+			                          'post_type'   => 'attachment',
+			                          'post_parent' => $post_id
+		                          ) );
 		if( !empty( $attachments ) ) {
 			foreach( $attachments as $att ) {
 				wp_delete_attachment( $att->ID );
@@ -384,10 +384,10 @@ class RW_Meta_Box {
 		if( !empty( $meta ) ) {
 			// show attached files
 			$attachs = get_posts( array(
-									  'numberposts' => -1,
-									  'post_type'   => 'attachment',
-									  'post_parent' => $post->ID
-								  ) );
+				                      'numberposts' => -1,
+				                      'post_type'   => 'attachment',
+				                      'post_parent' => $post->ID
+			                      ) );
 
 			$nonce = wp_create_nonce( 'rw_ajax_delete_file' );
 
@@ -428,12 +428,12 @@ class RW_Meta_Box {
 		if( !empty( $meta ) ) {
 			// show attached images
 			$attachs = get_posts( array(
-									  'numberposts'    => -1,
-									  'post_type'      => 'attachment',
-									  'post_parent'    => $post->ID,
-									  'post_mime_type' => 'image', // get attached images only
-									  'output'         => ARRAY_A
-								  ) );
+				                      'numberposts'    => -1,
+				                      'post_type'      => 'attachment',
+				                      'post_parent'    => $post->ID,
+				                      'post_mime_type' => 'image', // get attached images only
+				                      'output'         => ARRAY_A
+			                      ) );
 
 			$nonce = wp_create_nonce( 'rw_ajax_delete_file' );
 
@@ -792,10 +792,10 @@ class RW_Meta_Box {
 	function add_missed_values() {
 		// default values for meta box
 		$this->_meta_box = array_merge( array(
-											'context'  => 'normal',
-											'priority' => 'high',
-											'pages'    => array( 'if_custom_slides' )
-										), $this->_meta_box );
+			                                'context'  => 'normal',
+			                                'priority' => 'high',
+			                                'pages'    => array( 'if_custom_slides' )
+		                                ), $this->_meta_box );
 
 		// default values for fields
 		foreach( $this->tabs as $tabkey => $tab ) {
@@ -804,12 +804,12 @@ class RW_Meta_Box {
 				$std                       = $multiple ? array() : '';
 				$format                    = 'date' == $field['type'] ? 'yy-mm-dd' : ( 'time' == $field['type'] ? 'hh:mm' : '' );
 				$this->tabs[$tabkey][$key] = array_merge( array(
-															  'multiple'      => $multiple,
-															  'std'           => $std,
-															  'desc'          => '',
-															  'format'        => $format,
-															  'validate_func' => ''
-														  ), $field );
+					                                          'multiple'      => $multiple,
+					                                          'std'           => $std,
+					                                          'desc'          => '',
+					                                          'format'        => $format,
+					                                          'validate_func' => ''
+				                                          ), $field );
 			}
 		}
 	}

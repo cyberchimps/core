@@ -1173,7 +1173,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'boxes_upgrade',
 			'class'   => 'cyberchimps_pro_upgrade',
 			'desc'    => sprintf( __( 'Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page.', 'cyberchimps_core' ),
-								  '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
+			                      '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
 			),
 			'type'    => 'info',
 			'section' => 'cyberchimps_blog_boxes_lite_section',
@@ -1295,7 +1295,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'portfolio_upgrade',
 			'class'   => 'cyberchimps_pro_upgrade',
 			'desc'    => sprintf( __( 'Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page.', 'cyberchimps_core' ),
-								  '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
+			                      '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
 			),
 			'type'    => 'info',
 			'section' => 'cyberchimps_blog_portfolio_lite_section',
@@ -1506,7 +1506,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'slider_upgrade',
 			'class'   => 'cyberchimps_pro_upgrade',
 			'desc'    => sprintf( __( 'Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page.', 'cyberchimps_core' ),
-								  '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
+			                      '<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '">' . apply_filters( 'cyberchimps_upgrade_pro_title', __( 'Pro', 'cyberchimps_core' ) ) . '</a>'
 			),
 			'type'    => 'info',
 			'section' => 'cyberchimps_blog_slider_lite_section',

@@ -144,11 +144,11 @@ function cyberchimps_init_meta_boxes() {
 	$mb
 		->tab( "Page Options" )
 		->image_select( 'cyberchimps_page_sidebar', __( 'Select Page Layout', 'cyberchimps_core' ), '',
-						array( 'options' => apply_filters( 'sidebar_layout_options', array(
-							'full_width'    => $image_path . '1col.png',
-							'right_sidebar' => $image_path . '2cr.png'
-						) ), 'std'       => 'right_sidebar'
-						) )
+		                array( 'options' => apply_filters( 'sidebar_layout_options', array(
+			                'full_width'    => $image_path . '1col.png',
+			                'right_sidebar' => $image_path . '2cr.png'
+		                ) ), 'std'       => 'right_sidebar'
+		                ) )
 		->checkbox( 'cyberchimps_page_title_toggle', __( 'Page Title', 'cyberchimps_core' ), '', array( 'std' => '1' ) )
 		->section_order( 'cyberchimps_page_section_order', __( 'Page Elements', 'cyberchimps_core' ), '', array(
 			'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
@@ -169,7 +169,7 @@ function cyberchimps_init_meta_boxes() {
 		->select( 'cyberchimps_magazine_no_of_rows', __( 'Number of Posts', 'cyberchimps_core' ), '', array( 'options' => array( 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20' ) ) )
 		->checkbox( 'cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps_core' ), '', array( 'std' => '1' ) )
 		->select( 'cyberchimps_magazine_no_of_wide_posts', __( 'Number of Wide Posts ', 'cyberchimps_core' ), '',
-				  array( 'options' => array( 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20' ) ) )
+		          array( 'options' => array( 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20' ) ) )
 		/*->tab("Featured Posts Options")
 			->select('cyberchimps_featured_post_category_toggle', __( 'Select post source', 'cyberchimps_core' ), '', array('options' => array( __( 'Latest posts', 'cyberchimps_core' ), __( 'From category', 'cyberchimps_core' ))) )
 			->text('cyberchimps_featured_post_category', __( 'Enter category', 'cyberchimps_core' ), '', array('std' => __( 'featured', 'cyberchimps_core' )))*/
@@ -192,14 +192,14 @@ function cyberchimps_init_meta_boxes() {
 		->sliderhelp( '', __( 'Need Help?', 'cyberchimps_core' ), '' )
 		->tab( "Product Options" )
 		->select( 'cyberchimps_product_text_align', __( 'Product Layout', 'cyberchimps_core' ), '', array( 'options' => array( 'left'  => __( 'Text Left', 'cyberchimps_core' ),
-																															   'right' => __( 'Text Right',
-																																			  'cyberchimps_core' )
+		                                                                                                                       'right' => __( 'Text Right',
+		                                                                                                                                      'cyberchimps_core' )
 		)
 		) )
 		->text( 'cyberchimps_product_title', __( 'Product Title', 'cyberchimps_core' ), '', array( 'std' => __( 'Product', 'cyberchimps_core' ) ) )
 		->textarea( 'cyberchimps_product_text', __( 'Product Text', 'cyberchimps_core' ), '', array( 'std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ' ) )
 		->select( 'cyberchimps_product_type', __( 'Media Type', 'cyberchimps_core' ), '', array( 'options' => array( 'image' => __( 'Image', 'cyberchimps_core' ), 'video' => __( 'Video',
-																																												  'cyberchimps_core' )
+		                                                                                                                                                                          'cyberchimps_core' )
 		)
 		) )
 		->single_image( 'cyberchimps_product_image', __( 'Product Image URL', 'cyberchimps_core' ), '', array( 'std' => $directory_uri . '/elements/lib/images/product/product.jpg' ) )
@@ -209,13 +209,13 @@ function cyberchimps_init_meta_boxes() {
 		->text( 'cyberchimps_product_link_text', __( 'Product Link Text', 'cyberchimps_core' ), '', array( 'std' => __( 'Buy Now', 'cyberchimps_core' ) ) )
 		->tab( "Callout Options" )
 		->text( 'callout_title', __( 'Callout Title', 'cyberchimps_core' ), '',
-				array( 'std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps_core' ),
-										 apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) )
-				) )
+		        array( 'std' => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps_core' ),
+		                                 apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) )
+		        ) )
 		->textarea( 'callout_text', __( 'Callout Text', 'cyberchimps_core' ), '',
-					array( 'std' => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps_core' ),
-											 apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) )
-					) )
+		            array( 'std' => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps_core' ),
+		                                     apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) )
+		            ) )
 		->checkbox( 'disable_callout_button', __( 'Callout Button', 'cyberchimps_core' ), '', array( 'std' => '1' ) )
 		->text( 'callout_button_text', __( 'Callout Button Text', 'cyberchimps_core' ), '', array( 'std' => __( 'Click Here', 'cyberchimps_pro' ) ) )
 		->text( 'callout_url', __( 'Callout Button URL', 'cyberchimps_core' ), '' )
@@ -263,7 +263,7 @@ function cyberchimps_init_meta_boxes() {
 		->tab( "Boxes Options" )
 		->select( 'boxes_category', __( 'Boxes Category', 'cyberchimps_core' ), '', array( 'options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps_core' ) ) ) ) )
 		->select( 'boxes_per_row', __( 'Number of boxes per row', 'cyberchimps_core' ), '',
-				  array( 'options' => array( 2 => '2', 3 => '3', 4 => '4' ), 'std' => '3' ) )
+		          array( 'options' => array( 2 => '2', 3 => '3', 4 => '4' ), 'std' => '3' ) )
 		->tab( "Twitter Options" )
 		->checkbox( 'cyberchimps_twitter_page_options_toggle', __( 'Use default setting', 'cyberchimps_core' ), '', array( 'std' => '1' ) )
 		->text( 'cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps_core' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps_core' ), array( 'std' => apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' ) ) )

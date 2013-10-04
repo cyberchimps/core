@@ -138,11 +138,11 @@ function cyberchimps_options_page() {
 		<div class="span8">
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
-					   target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-					   target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
-					   target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
 				<?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
 					<li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
 					</li>
@@ -196,7 +196,7 @@ function cyberchimps_options_page() {
 				<div class="cc-submenu-links">
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-																													'cyberchimps_core' ) ); ?>' );">
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -333,7 +333,7 @@ function cyberchimps_options_page() {
 				<div class="footer-links">
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-																													'cyberchimps_core' ) ); ?>' );">
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -1202,9 +1202,9 @@ function cyberchimps_admin_bar() {
 	global $wp_admin_bar;
 
 	$wp_admin_bar->add_menu( array(
-								 'parent' => 'appearance',
-								 'id'     => 'cyberchimps_options_page',
-								 'title'  => __( 'Theme Options', 'cyberchimps_core' ),
-								 'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
-							 ) );
+		                         'parent' => 'appearance',
+		                         'id'     => 'cyberchimps_options_page',
+		                         'title'  => __( 'Theme Options', 'cyberchimps_core' ),
+		                         'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
+	                         ) );
 }
