@@ -44,7 +44,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php endif; ?>
 			<?php if ( !empty( $container_styles ) ) : ?>
 			.container {
-			<?php foreach( $container_styles as $key3 => $container_style ): ?> <?php echo $key3; ?> : <?php echo $container_style; ?> px;
+			<?php foreach( $container_styles as $key3 => $container_style ): ?> <?php echo $key3; ?> : <?php echo $container_style; ?>px;
 			<?php endforeach; ?>
 			}
 
