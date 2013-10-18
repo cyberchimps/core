@@ -1416,4 +1416,16 @@ function cyberchimps_digital_downloads_install_link() {
 	return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
 }
 
+// Add class cc-responsive if responisve design is on.
+add_filter( 'body_class', 'cyberchimps_add_responsive_class' );
+
+function cyberchimps_add_responsive_class( $classes ) {
+
+	// Check if responisve design is on.
+	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
+		$classes[] = 'cc-responsive';
+	}
+	
+	return $classes;
+}
 ?>
