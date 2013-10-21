@@ -22,6 +22,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 if( is_admin() ) {
 
+	/*********************************** PAGE OPTIONS STARTS ******************************************/
 	$image_path		= get_template_directory_uri() . '/cyberchimps/lib/images/';
 	$themenamefull	= apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
 	$pagedocs		= apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com/guide/how-to-use-the-page-or-post-page-element/' );
@@ -84,4 +85,62 @@ if( is_admin() ) {
      * Initiate your meta box
      */
     $my_meta = new Cyberchimps_Meta_Box( $config );
+	/************************************ PAGE OPTIONS ENDS ***************************************/
+
+	/************************************ POST SLIDER OPTIONS STARTS ***************************************/
+	$slider_fields = array(
+		array(
+			'type'  => 'single_image',
+			'id'    => 'cyberchimps_slider_image',
+			'class' => '',
+			'name'  => __( 'Slider Image', 'cyberchimps_elements' ),
+			'std'   => '',
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_slider_caption',
+			'class' => '',
+			'name'  => __( 'Slider Caption', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_slider_url',
+			'class' => '',
+			'name'  => __( 'Custom Slide Link', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_slider_hidetitle',
+			'class' => 'checkbox',
+			'name'  => __( 'Title', 'cyberchimps_elements' ),
+			'std'   => 1
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_slider_hidecaption',
+			'class' => 'checkbox',
+			'name'  => __( 'Caption', 'cyberchimps_elements' ),
+			'std'   => 0
+		)
+	);
+	
+	/*
+	* configure your meta box
+	*/
+	$slider_config = array(
+		'id'             => 'post_slider_options', // meta box id, unique per meta box
+		'title'          => __( 'Custom Feature Slides', 'cyberchimps_elements' ), // meta box title
+		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional
+		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
+		'priority'       => 'high', // order of meta box: high (default), low; optional
+		'fields'         => $slider_fields, // list of meta fields (can be added by field arrays)
+		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
+		'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
+	);
+
+	/*
+	* Initiate your meta box
+	*/
+	$slider_meta = new Cyberchimps_Meta_Box( $slider_config );
+	/************************************ POST SLIDER OPTIONS ENDS ***************************************/
 }
