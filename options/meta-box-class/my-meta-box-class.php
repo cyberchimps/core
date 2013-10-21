@@ -1010,6 +1010,22 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
             echo '</table></div>';
             $this->show_field_end( $field, $meta );
         }
+		
+		/**
+		* Show Help Field.
+		*
+		* @param string $field
+		* @param string $meta
+		*
+		* @since 1.0
+		* @access public
+		*/
+		public function show_field_help( $field, $meta ) {
+
+			$this->show_field_begin( $field, $meta );
+			echo '<span class="help-message">' . $field['help_text'] . '</span>';
+			$this->show_field_end( $field, $meta );
+		}
 
         /**
          * Save Data from Metabox

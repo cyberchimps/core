@@ -22,7 +22,9 @@ if( !defined( 'ABSPATH' ) ) {
 
 if( is_admin() ) {
 
-    $image_path = get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$image_path		= get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$themenamefull	= apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
+	$pagedocs		= apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com/guide/how-to-use-the-page-or-post-page-element/' );
 
     $fields = array( array(
         'type'    => 'image_select',
@@ -55,7 +57,14 @@ if( is_admin() ) {
                 'twitterbar_section' => __( 'Twitter Bar', 'cyberchimps_core' )
             ) ),
             'std'     => array( 'page_section' )
-        )
+        ),
+		array(
+			'type'		=> 'help',
+			'id'		=> 'cyberchimps_page_help',
+			'class'		=> 'help-message',
+			'name'		=> __( 'Need Help?', 'cyberchimps_core' ),
+			'help_text'	=> 'Visit our ' . $themenamefull . ' Page Options help page here: <a href="' . $pagedocs . '" target="_blank">Page Options Instructions</a></td>',
+		)
     );
     /*
      * configure your meta box
