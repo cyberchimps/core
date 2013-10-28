@@ -41,19 +41,19 @@ if( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		// Load default core settings
 		require_once( $directory . '/cyberchimps/options/options-core.php' );
 
-		// Load Meta Box Class
-		require_once( $directory . '/cyberchimps/inc/meta-box-class.php' );
-
-		// Load Meta Boxes Functions
-		require_once( $directory . '/cyberchimps/inc/meta-box.php' );
-
 		// Load core hooks file
 		require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 
-		//Load pro features if a pro theme
+		//Load pro features if a pro theme. Load prior to meta boxes so that filters work
 		if( cyberchimps_theme_check() == 'pro' ) {
 			require_once( $directory . '/elements/setup/features.php' );
 		}
+
+		// Load new meta box class
+		require_once( $directory . '/cyberchimps/options/meta-box-class/my-meta-box-class.php' );
+
+		// Load new meta box options
+		require_once( $directory . '/cyberchimps/options/meta-box-class/meta-box.php' );
 
 		// Load theme upsell.
 		require_once( $directory . '/cyberchimps/options/theme-upsell.php' );

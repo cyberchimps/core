@@ -642,8 +642,11 @@ function cyberchimps_fields_callback( $value ) {
 		$explain_value = $value['desc'];
 	}
 
+	// add extra field wrapper class
+	$wrapper_class = ( $value['class'] ) ? ' ' . $value['class'] . '-container' : '';
+
 	// field wrapper
-	$output .= '<div class="field-container">';
+	$output .= '<div class="field-container' . $wrapper_class . '">';
 
 	// Output field name
 	if( $value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome' && $value['type'] != 'toggle' ) {
