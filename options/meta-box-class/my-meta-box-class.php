@@ -718,8 +718,10 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				echo "<textarea class='at-editor theEditor large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' cols='60' rows='10'>{$meta}</textarea>";
 			}
 			else {
+				$default_settings = array( 'media_buttons' => false );
+				
 				// Use new wp_editor() since WP 3.3
-				$settings                 = ( isset( $field['settings'] ) && is_array( $field['settings'] ) ? $field['settings'] : array() );
+				$settings                 = ( isset( $field['settings'] ) && is_array( $field['settings'] ) ? $field['settings'] : $default_settings );
 				$settings['editor_class'] = 'at-editor' . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' );
 				$id                       = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
 				wp_editor( html_entity_decode( $meta ), $id, $settings );
