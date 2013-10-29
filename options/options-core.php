@@ -2599,6 +2599,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'      => 'error_custom_content',
 		'std'     => '',
 		'type'    => 'editor',
+		'settings' => array( 'media_buttons' => true ),
 		'section' => 'cyberchimps_error_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
