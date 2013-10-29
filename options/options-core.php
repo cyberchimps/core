@@ -1849,7 +1849,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'name'    => __( 'Callout Text', 'cyberchimps_core' ),
 			'id'      => 'callout_text',
 			'std'     => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ),
-			'type'    => 'textarea',
+			'type'    => 'editor',
 			'section' => 'cyberchimps_blog_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
@@ -1960,7 +1960,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'html_box',
 			'std'     => '',
 			'desc'    => __( 'Enter your custom HTML code here', 'cyberchimps_core' ),
-			'type'    => 'unfiltered_textarea',
+			'type'    => 'editor',
 			'section' => 'cyberchimps_html_box_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
@@ -2597,7 +2597,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Custom 404 Content', 'cyberchimps_core' ),
 		'id'      => 'error_custom_content',
 		'std'     => '',
-		'type'    => 'textarea',
+		'type'    => 'editor',
 		'section' => 'cyberchimps_error_section',
 		'heading' => 'cyberchimps_templates_heading'
 	);
