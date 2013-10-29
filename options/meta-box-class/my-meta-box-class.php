@@ -460,7 +460,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				if( !$field['inline'] ) {
 					echo '<tr>';
 				}
-				if( $f['type'] != 'wysiwyg' ) {
+				if( $f['type'] != 'editor' ) {
 					call_user_func( array( $this, 'show_field_' . $f['type'] ), $f, '' );
 				}
 				else {
@@ -703,7 +703,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/**
-		 * Show Wysiwig Field.
+		 * Show editor Field.
 		 *
 		 * @param string $field
 		 * @param string $meta
@@ -711,16 +711,16 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @since 1.0
 		 * @access public
 		 */
-		public function show_field_wysiwyg( $field, $meta, $in_repeater = false ) {
+		public function show_field_editor( $field, $meta, $in_repeater = false ) {
 			$this->show_field_begin( $field, $meta );
 
 			if( $in_repeater ) {
-				echo "<textarea class='at-wysiwyg theEditor large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' cols='60' rows='10'>{$meta}</textarea>";
+				echo "<textarea class='at-editor theEditor large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' cols='60' rows='10'>{$meta}</textarea>";
 			}
 			else {
 				// Use new wp_editor() since WP 3.3
 				$settings                 = ( isset( $field['settings'] ) && is_array( $field['settings'] ) ? $field['settings'] : array() );
-				$settings['editor_class'] = 'at-wysiwyg' . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' );
+				$settings['editor_class'] = 'at-editor' . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' );
 				$id                       = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
 				wp_editor( html_entity_decode( $meta ), $id, $settings );
 			}
@@ -1129,7 +1129,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/*
-   * Save Wysiwyg Field.
+   * Save Editor Field.
    *
    * @param string $post_id 
    * @param string $field 
@@ -1138,7 +1138,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
    * @since 1.0
    * @access public 
    */
-		public function save_field_wysiwyg( $post_id, $field, $old, $new ) {
+		public function save_field_editor( $post_id, $field, $old, $new ) {
 			$id  = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
 			$new = ( isset( $_POST[$id] ) ) ? $_POST[$id] : ( ( $field['multiple'] ) ? array() : '' );
 			$this->save_field( $post_id, $field, $old, $new );
@@ -1161,7 +1161,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 					foreach( $field['fields'] as $f ) {
 						$type = $f['type'];
 						switch( $type ) {
-							case 'wysiwyg':
+							case 'editor':
 								$n[$f['id']] = wpautop( $n[$f['id']] );
 								break;
 							default:
@@ -1755,7 +1755,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/**
-		 *  Add WYSIWYG Field to meta box
+		 *  Add Editor Field to meta box
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1769,8 +1769,8 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 *    'validate_func' => // validate function, string optional
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
-		public function addWysiwyg( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'wysiwyg', 'id' => $id, 'std' => '', 'desc' => '', 'style' => 'width: 300px; height: 400px', 'name' => 'WYSIWYG Editor Field' );
+		public function addEditor( $id, $args, $repeater = false ) {
+			$new_field = array( 'type' => 'editor', 'id' => $id, 'std' => '', 'desc' => '', 'style' => 'width: 300px; height: 400px', 'name' => 'Editor Editor Field' );
 			$new_field = array_merge( $new_field, $args );
 			if( false === $repeater ) {
 				$this->_fields[] = $new_field;
