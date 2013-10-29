@@ -937,8 +937,9 @@ function cyberchimps_fields_callback( $value ) {
 			$editor_settings         = array();
 			if( isset( $value['settings'] ) ) {
 				$editor_settings = $value['settings'];
-			}
-			$editor_settings = array_merge( $editor_settings, $default_editor_settings );
+			}		
+			
+			$editor_settings = array_merge( $default_editor_settings, $editor_settings );
 			wp_editor( $val, $value['id'], $editor_settings );
 			$output = '';
 			break;

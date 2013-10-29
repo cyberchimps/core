@@ -1961,6 +1961,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'std'     => '',
 			'desc'    => __( 'Enter your custom HTML code here', 'cyberchimps_core' ),
 			'type'    => 'editor',
+			'settings' => array( 'media_buttons' => true ),
 			'section' => 'cyberchimps_html_box_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
