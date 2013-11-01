@@ -518,4 +518,42 @@ jQuery(document).ready(function ($) {
 	}
 
 	/* **************** JS for slider customization ends ****************** */
+
+
+	/* TODO this is repeated in metabox-tabs.js see if we can move it into one file */
+	/**
+	 * function to allow select/dropdown inputs to hide and show conditional form elements
+	 *
+	 * Give the select a class of .select-hide
+	 * Give the sections you want hidden the class of the key/index of the option suffixed with -select
+	 *
+	 * e.g. a select input with the options (opt1 => 'Option 1', opt2 => 'Option 2') any field with the class of
+	 * opt1-select will get shown when opt1 is selected and hidden when opt2 is selected.
+	 */
+	(function ($) {
+		var select_hide = function (option, selected) {
+			$.each(option, function (index, value) {
+				$('.' + value + '-select-container').hide();
+			});
+			$('.' + selected + '-select-container').show();
+		};
+
+		$('.field-container .select-hide').each(function () {
+			$(this).on('change',function () {
+				var option = Array;
+				var selected = '';
+				$(this).children('option').each(function (i) {
+					if ($(this).is(':selected')) {
+						selected += $(this).val();
+					}
+					else {
+						option[i] = $(this).val();
+					}
+				})
+				select_hide(option, selected);
+
+			}).change();
+		});
+	})(jQuery);
+
 });

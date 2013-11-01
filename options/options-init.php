@@ -75,11 +75,11 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.min.js', array( 'jquery' ) );
 
 	wp_enqueue_script( 'thickbox' );
-	wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
 }
 
 // Load options customizer file
@@ -642,8 +642,11 @@ function cyberchimps_fields_callback( $value ) {
 		$explain_value = $value['desc'];
 	}
 
+	// add extra field wrapper class
+	$wrapper_class = ( $value['class'] ) ? ' ' . $value['class'] . '-container' : '';
+
 	// field wrapper
-	$output .= '<div class="field-container">';
+	$output .= '<div class="field-container' . $wrapper_class . '">';
 
 	// Output field name
 	if( $value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome' && $value['type'] != 'toggle' ) {
@@ -934,8 +937,9 @@ function cyberchimps_fields_callback( $value ) {
 			$editor_settings         = array();
 			if( isset( $value['settings'] ) ) {
 				$editor_settings = $value['settings'];
-			}
-			$editor_settings = array_merge( $editor_settings, $default_editor_settings );
+			}		
+			
+			$editor_settings = array_merge( $default_editor_settings, $editor_settings );
 			wp_editor( $val, $value['id'], $editor_settings );
 			$output = '';
 			break;

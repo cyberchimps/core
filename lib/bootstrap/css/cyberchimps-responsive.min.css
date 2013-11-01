@@ -1,4 +1,4 @@
-@media (max-width:979px) {
+@media (max-width: 979px) {
 	body {
 		padding-top: 0
 	}
@@ -39,15 +39,15 @@
 		margin: 0 0 10px
 	}
 
-	.nav-collapse .nav>li {
+	.nav-collapse .nav > li {
 		float: none
 	}
 
-	.nav-collapse .nav>li>a {
+	.nav-collapse .nav > li > a {
 		margin-bottom: 2px
 	}
 
-	.nav-collapse .nav>.divider-vertical {
+	.nav-collapse .nav > .divider-vertical {
 		display: none
 	}
 
@@ -56,7 +56,7 @@
 		text-shadow: none
 	}
 
-	.nav-collapse .nav>li>a, .nav-collapse .dropdown-menu a {
+	.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
 		padding: 9px 15px;
 		font-weight: bold;
 		color: #777777;
@@ -73,19 +73,19 @@
 		border-radius: 4px
 	}
 
-	.nav-collapse .dropdown-menu li+li a {
+	.nav-collapse .dropdown-menu li + li a {
 		margin-bottom: 2px
 	}
 
-	.nav-collapse .nav>li>a:hover, .nav-collapse .dropdown-menu a:hover {
+	.nav-collapse .nav > li > a:hover, .nav-collapse .dropdown-menu a:hover {
 		background-color: #f2f2f2
 	}
 
-	.navbar-inverse .nav-collapse .nav>li>a, .navbar-inverse .nav-collapse .dropdown-menu a {
+	.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
 		color: #999999
 	}
 
-	.navbar-inverse .nav-collapse .nav>li>a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+	.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:hover {
 		background-color: #111111
 	}
 
@@ -113,7 +113,7 @@
 		box-shadow: none
 	}
 
-	.nav-collapse .open>.dropdown-menu {
+	.nav-collapse .open > .dropdown-menu {
 		display: block
 	}
 
@@ -125,7 +125,7 @@
 		display: none
 	}
 
-	.nav-collapse .nav>li>.dropdown-menu:before, .nav-collapse .nav>li>.dropdown-menu:after {
+	.nav-collapse .nav > li > .dropdown-menu:before, .nav-collapse .nav > li > .dropdown-menu:after {
 		display: none
 	}
 
@@ -165,14 +165,14 @@
 	}
 }
 
-@media (min-width:980px) {
+@media (min-width: 980px) {
 	.nav-collapse.collapse {
 		height: auto !important;
 		overflow: visible !important
 	}
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
 	body {
 		padding-right: 20px;
 		padding-left: 20px
@@ -210,7 +210,7 @@
 		margin-left: 0
 	}
 
-	.thumbnails>li {
+	.thumbnails > li {
 		float: none;
 		margin-left: 0
 	}
@@ -250,7 +250,7 @@
 		width: auto
 	}
 
-	.controls-row [class*="span"]+[class*="span"] {
+	.controls-row [class*="span"] + [class*="span"] {
 		margin-left: 0
 	}
 
@@ -272,7 +272,7 @@
 	}
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
 	.nav-collapse {
 		-webkit-transform: translate3d(0, 0, 0)
 	}
