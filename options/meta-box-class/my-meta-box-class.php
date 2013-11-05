@@ -1143,6 +1143,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function save_field_editor( $post_id, $field, $old, $new ) {
 			$id  = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
 			$new = ( isset( $_POST[$id] ) ) ? $_POST[$id] : ( ( $field['multiple'] ) ? array() : '' );
+			$new = $this->sanitize_field_editor( $new );
 			$this->save_field( $post_id, $field, $old, $new );
 		}
 
@@ -2135,4 +2136,26 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		$this->show_field_end( $field, $meta );
 	}
 
+	/****************************** Sanitization Functions Starts *************************************/
+	
+	/**
+	 * Sanitize editor Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_editor( $input ) {
+		if( current_user_can( 'unfiltered_html' ) ) {
+			$output = $input;
+		}
+		else {
+			global $allowedtags;
+			$output = wpautop( wp_kses( $input, $allowedtags ) );
+		}
+
+		return $output;
+	}
 }
