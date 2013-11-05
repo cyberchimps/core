@@ -2165,4 +2165,34 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		return $output;
 	}
 	
+	/**
+	 * Sanitize text Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_text( $input ) {
+		$output = wp_kses_post( $input );
+		
+		return $output;
+	}
+	
+	/**
+	 * Sanitize textarea Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_textarea( $input ) {
+		global $allowedposttags;
+		$output = wp_kses( $input, $allowedposttags );
+		
+		return $output;
+	}
 }
