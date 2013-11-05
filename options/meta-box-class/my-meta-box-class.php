@@ -1976,7 +1976,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				$ext     = substr( strrchr( $file['name'], '.' ), 1 );
 
 				if( !in_array( $ext, (array)$allowed ) ) {
-					$file['error'] = __( "Sorry, you cannot upload this file type for this field." );
+					$file['error'] = __( 'Sorry, you cannot upload this file type for this field.', 'cyberchimps_core' );
 
 					return $file;
 				}
