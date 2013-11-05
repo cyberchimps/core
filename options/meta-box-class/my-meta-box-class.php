@@ -1068,10 +1068,17 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				//skip on Paragraph field
 				if( $type != "paragraph" ) {
 
+					// Call defined method to sanitize meta value
+					$sanitize_func = 'sanitize_field_' . $type;
+
+					if( method_exists( $this, $sanitize_func ) ) {
+						$new = call_user_func( array( $this, $sanitize_func ), $new );
+					}
+					
 					// Call defined method to save meta value, if there's no methods, call common one.
 					$save_func = 'save_field_' . $type;
 					if( method_exists( $this, $save_func ) ) {
-						call_user_func( array( $this, 'save_field_' . $type ), $post_id, $field, $old, $new );
+						call_user_func( array( $this, $save_func ), $post_id, $field, $old, $new );
 					}
 					else {
 						$this->save_field( $post_id, $field, $old, $new );
@@ -1143,7 +1150,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function save_field_editor( $post_id, $field, $old, $new ) {
 			$id  = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
 			$new = ( isset( $_POST[$id] ) ) ? $_POST[$id] : ( ( $field['multiple'] ) ? array() : '' );
-			$new = $this->sanitize_field_editor( $new );
 			$this->save_field( $post_id, $field, $old, $new );
 		}
 
@@ -2158,4 +2164,5 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 
 		return $output;
 	}
+	
 }
