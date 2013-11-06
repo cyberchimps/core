@@ -181,7 +181,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Check for special fields and add needed actions for them.
 
 				//this replaces the ugly check fields methods calls
-				foreach( array( 'upload', 'color', 'date', 'time', 'code', 'select' ) as $type ) {
+				foreach( array( 'upload', 'color', 'date', 'time', 'select' ) as $type ) {
 					call_user_func( array( $this, 'check_field_' . $type ) );
 				}
 			}
@@ -549,24 +549,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$min  = isset( $field['min'] ) ? "min='" . $field['min'] . "' " : '';
 			$max  = isset( $field['max'] ) ? "max='" . $field['max'] . "' " : '';
 			echo "<input type='number' class='at-number" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='30' " . $step . $min . $max . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . "/>";
-			$this->show_field_end( $field, $meta );
-		}
-
-		/**
-		 * Show Field code editor.
-		 *
-		 * @param string $field
-		 *
-		 * @author Ohad Raz
-		 *
-		 * @param string $meta
-		 *
-		 * @since 2.1
-		 * @access public
-		 */
-		public function show_field_code( $field, $meta ) {
-			$this->show_field_begin( $field, $meta );
-			echo "<textarea class='code_text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' data-lang='{$field['syntax']}' " . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . " data-theme='{$field['theme']}'>{$meta}</textarea>";
 			$this->show_field_end( $field, $meta );
 		}
 
@@ -1398,33 +1380,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function addNumber( $id, $args, $repeater = false ) {
 			$new_field = array( 'type' => 'number', 'id' => $id, 'std' => '0', 'desc' => '', 'style' => '', 'name' => 'Number Field', 'step' => '1', 'min' => '0' );
-			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
-				$this->_fields[] = $new_field;
-			}
-			else {
-				return $new_field;
-			}
-		}
-
-		/**
-		 *  Add code Editor to meta box
-		 * @author Ohad Raz
-		 * @since 2.1
-		 * @access public
-		 *
-		 * @param $id string  field id, i.e. the meta key
-		 * @param $args mixed|array
-		 *    'name' => // field name/label string optional
-		 *    'desc' => // field description, string optional
-		 *    'std' => // default value, string optional
-		 *    'style' =>   // custom style for field, string optional
-		 *    'syntax' =>   // syntax language to use in editor (php,javascript,css,html)
-		 *    'validate_func' => // validate function, string optional
-		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
-		 */
-		public function addCode( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'code', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Code Editor Field', 'syntax' => 'php', 'theme' => 'defualt' );
 			$new_field = array_merge( $new_field, $args );
 			if( false === $repeater ) {
 				$this->_fields[] = $new_field;
