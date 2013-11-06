@@ -285,30 +285,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/**
-		 * Check Field code editor
-		 *
-		 * @since 2.1
-		 * @access public
-		 */
-		public function check_field_code() {
-
-			if( $this->has_field( 'code' ) && $this->is_edit_page() ) {
-				$plugin_path = $this->SelfPath;
-				// Enqueu codemirror js and css
-				wp_enqueue_style( 'at-code-css', $plugin_path . '/js/codemirror/codemirror.css', array(), null );
-				wp_enqueue_style( 'at-code-css-dark', $plugin_path . '/js/codemirror/solarizedDark.css', array(), null );
-				wp_enqueue_style( 'at-code-css-light', $plugin_path . '/js/codemirror/solarizedLight.css', array(), null );
-				wp_enqueue_script( 'at-code-js', $plugin_path . '/js/codemirror/codemirror.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-xml', $plugin_path . '/js/codemirror/xml.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-javascript', $plugin_path . '/js/codemirror/javascript.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-css', $plugin_path . '/js/codemirror/css.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-clike', $plugin_path . '/js/codemirror/clike.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-php', $plugin_path . '/js/codemirror/php.js', array( 'jquery' ), false, true );
-
-			}
-		}
-
-		/**
 		 * Add Meta Box for multiple post types.
 		 *
 		 * @since 1.0
