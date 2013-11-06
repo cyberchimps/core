@@ -407,3 +407,62 @@ tr {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+.colorSelector {
+	position: relative;
+	left: 1px;
+	cursor: pointer;
+	height: 28px;
+	width: 24px;
+	padding: 0;
+	background: none;
+	z-index: 10;
+	float: right !important;
+	border: 1px solid #CCCCCC;
+}
+
+.colorSelector div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 28px;
+	-webkit-border-radius: 2px 0px 0px 2px;
+	border-radius: 2px 0px 0px 2px;
+	background-color: #ffffff;
+}
+
+.of-color {
+	z-index: 5;
+}
+
+.colorpicker {
+	z-index: 1000;
+}
+
+.colorSelector:before {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 8px;
+	bottom: auto;
+	margin-left: -5px;
+	left: 100%;
+	border-style: solid;
+	border-width: 6px 6px 6px 0;
+	border-color: transparent #cccccc;
+	z-index: 11;
+}
+
+.colorSelector:after {
+	content: '';
+	position: absolute;
+	top: 9px;
+	bottom: auto;
+	margin-left: -3px;
+	left: 100%;
+	border-style: solid;
+	border-width: 5px 5px 5px 0;
+	border-color: transparent #ffffff;
+	z-index: 12;
+}

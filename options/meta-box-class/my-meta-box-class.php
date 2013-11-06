@@ -153,6 +153,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			// Get Plugin Path
 			$plugin_path = $this->SelfPath;
+			
+			// Set template directory uri
+			$directory_uri = get_template_directory_uri();
 
 			//only load styles and js when needed
 			/*
@@ -163,6 +166,10 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueue Meta Box Style
 				wp_enqueue_style( 'at-meta-box', $plugin_path . '/css/meta-box.css' );
 
+				// Load color picker
+				wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
+				wp_enqueue_script( 'color-picker-js', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ), '', true );
+				
 				// Enqueue Meta Box Scripts
 				wp_enqueue_script( 'at-meta-box', $plugin_path . '/js/meta-box.min.js', array( 'jquery' ), null, true );
 				// Enqueue Cyberchimps Scripts
@@ -781,14 +788,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			}
 
 			$this->show_field_begin( $field, $meta );
-			if( wp_style_is( 'wp-color-picker', 'registered' ) ) { //iris color picker since 3.5
-				echo "<input class='at-color-iris" . ( isset( $field['class'] ) ? " {$field['class']}" : "" ) . "' type='text' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='8' />";
-			}
-			else {
-				echo "<input class='at-color" . ( isset( $field['class'] ) ? " {$field['class']}" : "" ) . "' type='text' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='8' />";
-				echo "<input type='button' class='at-color-select button' rel='{$field['id']}' value='" . __( 'Select a color', 'apc' ) . "'/>";
-				echo "<div style='display:none' class='at-color-picker' rel='{$field['id']}'></div>";
-			}
+			echo '<div class="input-prepend ' . $field['class'] . '"><input class="of-color" name="' . $field['id'] . '" id="' . $field['id'] . '" type="text" value="' . $meta . '" />';
+			echo '<div id="' . $field['id'] . '_picker'  . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $meta ) . '"></div></div></div>';
+			
 			$this->show_field_end( $field, $meta );
 
 		}
