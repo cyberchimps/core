@@ -141,6 +141,8 @@ if( is_admin() ) {
 	/*
 	* Initiate your meta box
 	*/
-	$slider_meta = new Cyberchimps_Meta_Box( $slider_config );
+	if( 'free' != cyberchimps_theme_check() ) {
+		$slider_meta = new Cyberchimps_Meta_Box( $slider_config );
+	}
 	/************************************ POST SLIDER OPTIONS ENDS ***************************************/
 }
