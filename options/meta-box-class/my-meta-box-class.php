@@ -287,7 +287,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueu JQuery UI, use proper version.
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
 				wp_enqueue_script( 'jquery-ui' );
-				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
+				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.min.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
 			}
 		}
 
