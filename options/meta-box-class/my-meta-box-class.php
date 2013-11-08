@@ -287,7 +287,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueu JQuery UI, use proper version.
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
 				wp_enqueue_script( 'jquery-ui' );
-				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
+				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.min.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
 			}
 		}
 
@@ -1028,10 +1028,17 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				//skip on Paragraph field
 				if( $type != "paragraph" ) {
 
+					// Call defined method to sanitize meta value
+					$sanitize_func = 'sanitize_field_' . $type;
+
+					if( method_exists( $this, $sanitize_func ) ) {
+						$new = call_user_func( array( $this, $sanitize_func ), $new );
+					}
+					
 					// Call defined method to save meta value, if there's no methods, call common one.
 					$save_func = 'save_field_' . $type;
 					if( method_exists( $this, $save_func ) ) {
-						call_user_func( array( $this, 'save_field_' . $type ), $post_id, $field, $old, $new );
+						call_user_func( array( $this, $save_func ), $post_id, $field, $old, $new );
 					}
 					else {
 						$this->save_field( $post_id, $field, $old, $new );
@@ -2068,4 +2075,57 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		$this->show_field_end( $field, $meta );
 	}
 
+	/****************************** Sanitization Functions Starts *************************************/
+	
+	/**
+	 * Sanitize editor Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_editor( $input ) {
+		if( current_user_can( 'unfiltered_html' ) ) {
+			$output = $input;
+		}
+		else {
+			global $allowedtags;
+			$output = wpautop( wp_kses( $input, $allowedtags ) );
+		}
+
+		return $output;
+	}
+	
+	/**
+	 * Sanitize text Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_text( $input ) {
+		$output = wp_kses_post( $input );
+		
+		return $output;
+	}
+	
+	/**
+	 * Sanitize textarea Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_textarea( $input ) {
+		global $allowedposttags;
+		$output = wp_kses( $input, $allowedposttags );
+		
+		return $output;
+	}
 }
