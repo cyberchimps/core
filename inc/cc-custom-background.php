@@ -149,7 +149,7 @@ function ifeature_background_image( $options ) {
 			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
 			'space' => $imagepath . 'backgrounds/thumbs/space.png',
 			'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png',
-			'silk' => $imagepath . 'backgrounds/thumbs/silk.png',
+			'silk' => $imagepath . 'backgrounds/thumbs/silk.jpg',
 			);
 	return $options;
 }
