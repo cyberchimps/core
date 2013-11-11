@@ -138,3 +138,25 @@ class CC_Custom_Background {
 		echo $style;
 	}
 }
+
+// Default background image.
+function ifeature_background_image( $options ) {
+	$imagepath =  get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$options = array(
+			'none' => $imagepath . 'backgrounds/thumbs/none.png',
+			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
+			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
+			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
+			'space' => $imagepath . 'backgrounds/thumbs/space.png',
+			'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png'
+			);
+	return $options;
+}
+add_filter( 'cyberchimps_background_image', 'ifeature_background_image' );
+
+// default background color
+function ifeature_default_background_color() {
+	$color = 'f7f7f7';
+	return $color;
+}
+add_filter( 'default_background_color', 'ifeature_default_background_color' );
