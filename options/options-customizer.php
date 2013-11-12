@@ -151,7 +151,8 @@ function cyberchimps_customize( $wp_customize ) {
 					margin-top: 5px;
 					padding: 2px;
 					border: 5px solid #eee;
-					height: 44px;
+					height: 80px;
+					width: 80px;
 				}
 
 				.images-skin-subcontainer img.of-radio-img-selected {
