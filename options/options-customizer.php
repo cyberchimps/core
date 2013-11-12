@@ -139,8 +139,12 @@ function cyberchimps_customize( $wp_customize ) {
 		public function render_content() {
 			?>
 			<style>
-				.images-skin-subcontainer {
-					display: inline;
+				.images-skin-subcontainer, .images-radio-subcontainer {
+					display: inline-block;
+				}
+				
+				#customize-control-cyberchimps_background em {
+					display: block;
 				}
 
 				.images-skin-subcontainer img {
