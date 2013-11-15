@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-07-25 16:28-0000\n"
-"Last-Translator: CyberChimps <support@cyberchimps.com>\n"
+"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Italian, Italy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +80,7 @@ msgstr "Negozio"
 msgid "Archives"
 msgstr "Archivi"
 
-#: ../../functions.php ../../inc/meta-box.php
+#: ../../functions.php ../../options/meta-box-class/meta-box.php
 msgid "Page"
 msgstr "Pagina"
 
@@ -159,6 +159,22 @@ msgstr "Si prega di attivare il plugin il calendario degli eventi"
 msgid "Install Events Calendar Plugin"
 msgstr "Installare Plugin calendario eventi"
 
+#: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Download digitali"
+
+#: ../../functions.php
+msgid "Digital Downloads Settings"
+msgstr "Impostazioni di download digitali"
+
+#: ../../functions.php
+msgid "Please activate Easy Digital Downloads plugin"
+msgstr "Si prega di attivare il plugin il calendario degli eventi"
+
+#: ../../functions.php
+msgid "Install Easy Digital Downloads Plugin"
+msgstr "Installare Plugin calendario eventi"
+
 #: ../../init.php
 msgid "Primary Menu"
 msgstr "Menu principale"
@@ -175,19 +191,22 @@ msgstr "Barra laterale destra"
 msgid "Footer Widgets"
 msgstr "Widget piè di pagina"
 
-#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
-#: ../../options/options-core.php
+#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Slider Lite"
 msgstr "Cursore Lite"
 
-#: ../../hooks/blog-hooks.php ../../inc/meta-box.php
-#: ../../options/options-core.php
+#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
 msgid "Boxes"
 msgstr "Scatole"
 
 #: ../../hooks/blog-hooks.php ../../options/options-core.php
 msgid "Post Page"
 msgstr "Pagina del post"
+
+msgid "Our Blog"
+msgstr "Blog"
 
 #: ../../hooks/header-hooks.php ../../options/options-core.php
 msgid "Logo + Icons"
@@ -196,455 +215,6 @@ msgstr "Logo + icone"
 #: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "O scegliere una delle immagini di sfondo CyberChimps"
-
-#: ../../inc/meta-box-class.php
-msgid "Uploaded files"
-msgstr "File caricati"
-
-#: ../../inc/meta-box-class.php
-msgid "Upload new files"
-msgstr "Caricare nuovi file"
-
-#: ../../inc/meta-box-class.php
-msgid "Add more file"
-msgstr "Aggiungere ulteriori file."
-
-#: ../../inc/meta-box-class.php
-msgid "Uploaded images"
-msgstr "Immagini caricate"
-
-#: ../../inc/meta-box-class.php
-msgid "Upload new images (Make sure to publish the post to save)"
-msgstr "Caricare nuove immagini (assicurati di pubblicare il post per salvare)"
-
-#: ../../inc/meta-box-class.php
-msgid "Select a color"
-msgstr "Selezionare un colore"
-
-#: ../../inc/meta-box-class.php
-#: ../../options/options-medialibrary-uploader.php
-msgid "Upload"
-msgstr "Upload"
-
-#: ../../inc/meta-box-class.php
-msgid "or enter URL"
-msgstr "o immettere l'URL"
-
-#: ../../inc/meta-box.php
-msgid "Slider Options"
-msgstr "Opzioni di cursore"
-
-#: ../../inc/meta-box.php
-msgid "Slider Image"
-msgstr "Image Slider"
-
-#: ../../inc/meta-box.php
-msgid "Slider Caption"
-msgstr "Cursore didascalia"
-
-#: ../../inc/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Link personalizzati Slide"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Title"
-msgstr "Titolo"
-
-#: ../../inc/meta-box.php
-msgid "Caption"
-msgstr "Didascalia"
-
-#: ../../inc/meta-box.php
-msgid "Need Help?"
-msgstr "Hai bisogno di aiuto?"
-
-#: ../../inc/meta-box.php
-msgid "Select Page Layout"
-msgstr "Seleziona Layout di pagina"
-
-#: ../../inc/meta-box.php
-msgid "Page Title"
-msgstr "Titolo della pagina"
-
-#: ../../inc/meta-box.php
-msgid "Page Elements"
-msgstr "Elementi di pagina"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Portfolio Lite"
-msgstr "Portfolio Lite"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Meta dati"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Featured Image"
-msgstr "Immagine consigliati"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Category"
-msgstr "Categoria"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "You need to create a Category"
-msgstr "È necessario creare una categoria"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Numero di colonne"
-
-#: ../../inc/meta-box.php
-msgid "Number of Posts"
-msgstr "Numero di messaggi"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Ampie posti sotto Magazine"
-
-#: ../../inc/meta-box.php
-msgid "Number of Wide Posts "
-msgstr "Numero di posti ampie "
-
-#: ../../inc/meta-box.php
-msgid "Slide One Image"
-msgstr "Un'immagine della diapositiva"
-
-#: ../../inc/meta-box.php
-msgid "Slide One Link"
-msgstr "Link di una diapositiva"
-
-#: ../../inc/meta-box.php
-msgid "Slide Two Image"
-msgstr "Diapositiva immagine due"
-
-#: ../../inc/meta-box.php
-msgid "Slide Two Link"
-msgstr "Far scorrere due Link"
-
-#: ../../inc/meta-box.php
-msgid "Slide Three Image"
-msgstr "Diapositiva immagine tre"
-
-#: ../../inc/meta-box.php
-msgid "Slide Three Link"
-msgstr "Far scorrere tre Link"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Slider Size"
-msgstr "Dispositivo di scorrimento dimensioni"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Full"
-msgstr "Completo"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Half"
-msgstr "Metà"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Slider Type"
-msgstr "Tipo Slider"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Custom"
-msgstr "Custom"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Posts"
-msgstr "Tutti i messaggi"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Post Categories"
-msgstr "Categorie post"
-
-#: ../../inc/meta-box.php
-msgid "All"
-msgstr "Tutti i"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Custom Categories"
-msgstr "Categorie personalizzate"
-
-#: ../../inc/meta-box.php
-msgid "Number of Featured Posts"
-msgstr "Numero di posti consigliati"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Slider Height"
-msgstr "Cursore altezza"
-
-#: ../../inc/meta-box.php
-msgid "Slider Speed"
-msgstr "Dispositivo di scorrimento Velocità"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Slider Arrows"
-msgstr "Frecce di scorrimento"
-
-#: ../../inc/meta-box.php
-msgid "Product Layout"
-msgstr "Layout di prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Text Left"
-msgstr "Testo a sinistra"
-
-#: ../../inc/meta-box.php
-msgid "Text Right"
-msgstr "Testo a destra"
-
-#: ../../inc/meta-box.php
-msgid "Product Title"
-msgstr "Titolo prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Product"
-msgstr "Prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Product Text"
-msgstr "Prodotto testo"
-
-#: ../../inc/meta-box.php
-msgid "Media Type"
-msgstr "Tipo di supporto"
-
-#: ../../inc/meta-box.php
-msgid "Image"
-msgstr "Immagine"
-
-#: ../../inc/meta-box.php
-msgid "Video"
-msgstr "Video"
-
-#: ../../inc/meta-box.php
-msgid "Product Image URL"
-msgstr "URL dell'immagine prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Product Video Embed"
-msgstr "Incorporare Video prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Product Link"
-msgstr "Prodotto Link"
-
-#: ../../inc/meta-box.php
-msgid "Product URL"
-msgstr "URL prodotto"
-
-#: ../../inc/meta-box.php
-msgid "Product Link Text"
-msgstr "Prodotto Link Text"
-
-#: ../../inc/meta-box.php
-msgid "Buy Now"
-msgstr "Acquista ora"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Callout Title"
-msgstr "Callout titolo"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "%1$s's Call Out Element"
-msgstr "%1$ s's chiamata elemento"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Callout Text"
-msgstr "Callout testo"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Utilizzare %1$ s's chiamare fuori sezione su qualsiasi pagina dove si "
-"desidera recapitare un messaggio importante al vostro cliente o cliente."
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Callout Button"
-msgstr "Callout pulsante"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Callout Button Text"
-msgstr "Testo pulsante callout"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Click Here"
-msgstr "Fai clic qui"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Callout Button URL"
-msgstr "Callout pulsante URL"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Custom Callout Options"
-msgstr "Opzioni personalizzate Callout"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Image"
-msgstr "Immagine pulsante personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Custom Background Color"
-msgstr "Colore di sfondo personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Custom Title Color"
-msgstr "Colore del titolo personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Custom Text Color"
-msgstr "Colore del testo personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Color"
-msgstr "Colore pulsante personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Custom Button Text Color"
-msgstr "Colore testo pulsante personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Need help?"
-msgstr "Hai bisogno di aiuto?"
-
-#: ../../inc/meta-box.php
-msgid "Custom HTML"
-msgstr "Custom HTML"
-
-#: ../../inc/meta-box.php
-msgid "Enter your custom html here"
-msgstr "Inserisci qui il tuo html personalizzato"
-
-#: ../../inc/meta-box.php
-msgid "Images per row"
-msgstr "Immagini per riga"
-
-#: ../../inc/meta-box.php
-msgid "Two"
-msgstr "Due"
-
-#: ../../inc/meta-box.php
-msgid "Three"
-msgstr "Tre"
-
-#: ../../inc/meta-box.php
-msgid "Four"
-msgstr "Quattro"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Portfolio Category"
-msgstr "Categoria portfolio"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Portfolio Title"
-msgstr "Titolo portfolio"
-
-#: ../../inc/meta-box.php
-msgid "Portfolio"
-msgstr "Portfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "First Portfolio Image"
-msgstr "Prima immagine di Portfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "First Portfolio Image Caption"
-msgstr "Didascalia dell'immagine primo Portfolio"
-
-#: ../../inc/meta-box.php
-msgid "Image 1"
-msgstr "Immagine 1"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "First Porfolio Link"
-msgstr "Primo Link Porfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Link URL"
-msgstr "URL del link"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Second Portfolio Image"
-msgstr "Seconda immagine di Portfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Second Portfolio Image Caption"
-msgstr "Didascalia dell'immagine secondo Portfolio"
-
-#: ../../inc/meta-box.php
-msgid "Image 2"
-msgstr "Immagine 2"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Second Porfolio Link"
-msgstr "Secondo Link Porfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Third Portfolio Image"
-msgstr "Terza immagine Portfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Third Portfolio Image Caption"
-msgstr "Terza didascalia dell'immagine Portfolio"
-
-#: ../../inc/meta-box.php
-msgid "Image 3"
-msgstr "Immagine 3"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Third Porfolio Link"
-msgstr "Terzo Link Porfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Fourth Portfolio Image"
-msgstr "Quarta immagine Portfolio"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Fourth Portfolio Image Caption"
-msgstr "Quarto Portfolio didascalia dell'immagine"
-
-#: ../../inc/meta-box.php
-msgid "Image 4"
-msgstr "Immagine 4"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Fourth Porfolio Link"
-msgstr "Quarto collegamento Porfolio"
-
-#: ../../inc/meta-box.php
-msgid "Post Category"
-msgstr "Categoria post"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Images"
-msgstr "Immagini"
-
-#: ../../inc/meta-box.php
-msgid "Carousel Category"
-msgstr "Categoria carosello"
-
-#: ../../inc/meta-box.php ../../options/options-core.php
-msgid "Twitter Handle"
-msgstr "Maniglia Twitter"
-
-#: ../../inc/meta-box.php
-msgid "Enter your Twitter handle if using the Twitter bar"
-msgstr "Inserire la maniglia Twitter se si utilizza la barra di Twitter"
-
-#: ../../inc/meta-box.php
-msgid "Boxes Category"
-msgstr "Categoria scatole"
-
-#: ../../options/options-core.php ../../inc/meta-box.php
-msgid "Number of boxes per row"
-msgstr "Numero di scatole per riga"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -741,10 +311,6 @@ msgstr "Portafoglio opzioni Pro"
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
 msgstr "Opzioni messaggi recenti"
-
-#: ../../options/options-core.php
-msgid "Twitterbar Options"
-msgstr "Opzioni TwitterBar"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
@@ -847,16 +413,24 @@ msgid "Typography Options"
 msgstr "Tipografia opzioni"
 
 #: ../../options/options-core.php
-msgid "Google fonts"
-msgstr "Google font"
-
-#: ../../options/options-core.php
 msgid "Enter Google font"
 msgstr "Inserire i font di Google"
 
 #: ../../options/options-core.php
+msgid "Google font names are case sensitive"
+msgstr "I nomi dei font di Google sono case sensitive"
+
+#: ../../options/options-core.php
 msgid "Demo Text"
 msgstr "Demo del testo"
+
+#: ../../options/options-core.php ../../options/options-customizer.php
+msgid "Font Family for headings"
+msgstr "Famiglia di caratteri per le intestazioni"
+
+#: ../../options/options-core.php ../../options/options-customizer.php
+msgid "Google font for headings"
+msgstr "Google Font"
 
 #: ../../options/options-core.php
 msgid "Header Drag/Drop"
@@ -923,16 +497,16 @@ msgid "Searchbar"
 msgstr "Searchbar"
 
 #: ../../options/options-core.php
+msgid "Header Scripts"
+msgstr "Opzioni intestazione"
+
+#: ../../options/options-core.php
+msgid "Please add script tags"
+msgstr "Si prega di aggiungere tag script"
+
+#: ../../options/options-core.php
 msgid "Choose your icon style"
 msgstr "Scegli il tuo stile icona"
-
-#: ../../options/options-core.php
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../../options/options-core.php
-msgid "Twitter URL"
-msgstr "URL di Twitter"
 
 #: ../../options/options-core.php
 msgid "Facebook"
@@ -943,28 +517,20 @@ msgid "Facebook URL"
 msgstr "URL di Facebook"
 
 #: ../../options/options-core.php
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../../options/options-core.php
+msgid "Twitter URL"
+msgstr "URL di Twitter"
+
+#: ../../options/options-core.php
 msgid "Google+"
 msgstr "Google +"
 
 #: ../../options/options-core.php
 msgid "Google+ URL"
 msgstr "Google + URL"
-
-#: ../../options/options-core.php
-msgid "Flickr"
-msgstr "Flickr"
-
-#: ../../options/options-core.php
-msgid "Flickr URL"
-msgstr "Flickr URL"
-
-#: ../../options/options-core.php
-msgid "Pinterest"
-msgstr "Pinterest"
-
-#: ../../options/options-core.php
-msgid "Pinterest URL"
-msgstr "URL pinterest"
 
 #: ../../options/options-core.php
 msgid "LinkedIn"
@@ -983,20 +549,20 @@ msgid "YouTube URL"
 msgstr "URL di YouTube"
 
 #: ../../options/options-core.php
-msgid "RSS"
-msgstr "RSS"
+msgid "Flickr"
+msgstr "Flickr"
 
 #: ../../options/options-core.php
-msgid "RSS URL"
-msgstr "URL RSS"
+msgid "Flickr URL"
+msgstr "Flickr URL"
 
 #: ../../options/options-core.php
-msgid "Email"
-msgstr "Posta elettronica"
+msgid "Pinterest"
+msgstr "Pinterest"
 
 #: ../../options/options-core.php
-msgid "Email Address"
-msgstr "Indirizzo di posta elettronica"
+msgid "Pinterest URL"
+msgstr "URL pinterest"
 
 #: ../../options/options-core.php
 msgid "Google Maps"
@@ -1007,12 +573,44 @@ msgid "Google Maps URL"
 msgstr "URL di Google Maps"
 
 #: ../../options/options-core.php
+msgid "Email"
+msgstr "Posta elettronica"
+
+#: ../../options/options-core.php
+msgid "Email Address"
+msgstr "Indirizzo di posta elettronica"
+
+#: ../../options/options-core.php
+msgid "RSS"
+msgstr "RSS"
+
+#: ../../options/options-core.php
+msgid "RSS URL"
+msgstr "URL RSS"
+
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
 msgstr "Trascinare & elementi del Blog"
+
+#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Portfolio Lite"
+
+#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Bar"
 
 #: ../../options/options-core.php
 msgid "Sidebar Options"
 msgstr "Opzioni di Sidebar"
+
+#: ../../options/options-core.php
+msgid "Blog Title"
+msgstr "Titolo della pagina"
+
+#: ../../options/options-core.php
+msgid "Blog Title Text"
+msgstr "Testo del titolo del Blog"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
@@ -1077,6 +675,10 @@ msgid "First Box Image"
 msgstr "Prima casella immagine"
 
 #: ../../options/options-core.php
+msgid "Link URL"
+msgstr "URL del link"
+
+#: ../../options/options-core.php
 msgid "First Box Text"
 msgstr "Prima casella di testo"
 
@@ -1110,6 +712,62 @@ msgstr ""
 "Aggiornamento a %1$ s di essere in grado di creare come molti elementi del "
 "portfolio come ti piace. Classificarli e visualizzare ogni categoria in una "
 "pagina diversa."
+
+#: ../../options/options-core.php
+msgid "First Portfolio Image"
+msgstr "Prima immagine di Portfolio"
+
+#: ../../options/options-core.php
+msgid "First Portfolio Image Caption"
+msgstr "Didascalia dell'immagine primo Portfolio"
+
+#: ../../options/options-core.php
+msgid "First Porfolio Link"
+msgstr "Primo Link Porfolio"
+
+#: ../../options/options-core.php
+msgid "Second Portfolio Image"
+msgstr "Seconda immagine di Portfolio"
+
+#: ../../options/options-core.php
+msgid "Second Portfolio Image Caption"
+msgstr "Didascalia dell'immagine secondo Portfolio"
+
+#: ../../options/options-core.php
+msgid "Second Porfolio Link"
+msgstr "Secondo Link Porfolio"
+
+#: ../../options/options-core.php
+msgid "Third Portfolio Image"
+msgstr "Terza immagine Portfolio"
+
+#: ../../options/options-core.php
+msgid "Third Portfolio Image Caption"
+msgstr "Terza didascalia dell'immagine Portfolio"
+
+#: ../../options/options-core.php
+msgid "Third Porfolio Link"
+msgstr "Terzo Link Porfolio"
+
+#: ../../options/options-core.php
+msgid "Fourth Portfolio Image"
+msgstr "Quarta immagine Portfolio"
+
+#: ../../options/options-core.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Quarto Portfolio didascalia dell'immagine"
+
+#: ../../options/options-core.php
+msgid "Fourth Porfolio Link"
+msgstr "Quarto collegamento Porfolio"
+
+#: ../../options/options-core.php
+msgid "Portfolio Title"
+msgstr "Titolo portfolio"
+
+#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "Titolo"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
@@ -1154,12 +812,40 @@ msgid "Images per Row"
 msgstr "Immagini per riga"
 
 #: ../../options/options-core.php
+msgid "Portfolio Category"
+msgstr "Categoria portfolio"
+
+#: ../../options/options-core.php
+msgid "You need to create a Category"
+msgstr "È necessario creare una categoria"
+
+#: ../../options/options-core.php
+msgid "Meta Data"
+msgstr "Meta dati"
+
+#: ../../options/options-core.php
+msgid "Featured Image"
+msgstr "Immagine consigliati"
+
+#: ../../options/options-core.php
+msgid "Category"
+msgstr "Categoria"
+
+#: ../../options/options-core.php
 msgid "Featured Excerpt Length"
 msgstr "Lunghezza Excerpt consigliati"
 
 #: ../../options/options-core.php
+msgid "Number of Columns"
+msgstr "Numero di colonne"
+
+#: ../../options/options-core.php
 msgid "Number of Rows"
 msgstr "Numero di righe"
+
+#: ../../options/options-core.php
+msgid "Wide Posts Below Magazine"
+msgstr "Ampie posti sotto Magazine"
 
 #: ../../options/options-core.php
 msgid "Wide Post Excerpt Length"
@@ -1170,12 +856,92 @@ msgid "Number of Wide Posts"
 msgstr "Numero di posti ampie"
 
 #: ../../options/options-core.php
+msgid "Slider Size"
+msgstr "Dispositivo di scorrimento dimensioni"
+
+#: ../../options/options-core.php
+msgid "Full"
+msgstr "Completo"
+
+#: ../../options/options-core.php
+msgid "Half"
+msgstr "Metà"
+
+#: ../../options/options-core.php
+msgid "Slider Type"
+msgstr "Tipo Slider"
+
+#: ../../options/options-core.php
+msgid "Posts"
+msgstr "Tutti i messaggi"
+
+#: ../../options/options-core.php
+msgid "Custom"
+msgstr "Custom"
+
+#: ../../options/options-core.php
+msgid "Post Categories"
+msgstr "Categorie post"
+
+#: ../../options/options-core.php
+msgid "Custom Categories"
+msgstr "Categorie personalizzate"
+
+#: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
 msgstr "Numero di post di Blog consigliati"
 
 #: ../../options/options-core.php
+msgid "Slider Height"
+msgstr "Cursore altezza"
+
+#: ../../options/options-core.php
 msgid "Slider Speed "
 msgstr "Dispositivo di scorrimento Velocità "
+
+#: ../../options/options-core.php
+msgid "Slider Arrows"
+msgstr "Frecce di scorrimento"
+
+#: ../../options/options-core.php
+msgid "Callout Title"
+msgstr "Callout titolo"
+
+#: ../../options/options-core.php
+msgid "%1$s's Call Out Element"
+msgstr "%1$ s's chiamata elemento"
+
+#: ../../options/options-core.php
+msgid "Callout Text"
+msgstr "Callout testo"
+
+#: ../../options/options-core.php
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Utilizzare %1$ s's chiamare fuori sezione su qualsiasi pagina dove si "
+"desidera recapitare un messaggio importante al vostro cliente o cliente."
+
+#: ../../options/options-core.php
+msgid "Callout Button"
+msgstr "Callout pulsante"
+
+#: ../../options/options-core.php
+msgid "Callout Button Text"
+msgstr "Testo pulsante callout"
+
+#: ../../options/options-core.php
+msgid "Click Here"
+msgstr "Fai clic qui"
+
+#: ../../options/options-core.php
+msgid "Callout Button URL"
+msgstr "Callout pulsante URL"
+
+#: ../../options/options-core.php
+msgid "Custom Callout Options"
+msgstr "Opzioni personalizzate Callout"
 
 #: ../../options/options-core.php
 msgid "Custom Callout Button"
@@ -1214,8 +980,16 @@ msgid "Custom Title"
 msgstr "Titolo personalizzato"
 
 #: ../../options/options-core.php
+msgid "Images"
+msgstr "Immagini"
+
+#: ../../options/options-core.php
 msgid "Select a Category"
 msgstr "Selezionare una categoria"
+
+#: ../../options/options-core.php
+msgid "Number of boxes per row"
+msgstr "Numero di scatole per riga"
 
 #: ../../options/options-core.php
 msgid "Images for layout."
@@ -1257,16 +1031,24 @@ msgid "Skin Color"
 msgstr "Colore della pelle"
 
 #: ../../options/options-customizer.php
+msgid "Custom Css"
+msgstr "Colori personalizzati"
+
+#: ../../options/options-customizer.php
 msgid "Typography Size"
 msgstr "Tipografia dimensione"
+
+#: ../../options/options-customizer.php
+msgid "Typography Style"
+msgstr "Tipografia stile"
 
 #: ../../options/options-customizer.php
 msgid "Typography Face"
 msgstr "Tipografia viso"
 
 #: ../../options/options-customizer.php
-msgid "Typography Style"
-msgstr "Tipografia stile"
+msgid "Text google font"
+msgstr "Inserire i font di Google"
 
 #: ../../options/options-customizer.php
 msgid "Background Image"
@@ -1285,8 +1067,8 @@ msgid "Buy Themes"
 msgstr "Acquistare temi"
 
 #: ../../options/options-init.php
-msgid "Restore Defaults"
-msgstr "Ripristinare le impostazioni predefinite"
+msgid "Save Options"
+msgstr "Salvare le opzioni"
 
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
@@ -1295,8 +1077,8 @@ msgstr ""
 "perse!"
 
 #: ../../options/options-init.php
-msgid "Save Options"
-msgstr "Salvare le opzioni"
+msgid "Restore Defaults"
+msgstr "Ripristinare le impostazioni predefinite"
 
 #: ../../options/options-init.php
 msgid "CyberChimps Wordpress Themes"
@@ -1325,6 +1107,11 @@ msgstr "Opzioni salvate."
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
 msgstr "Tema opzioni multimediali"
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Upload"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1413,3 +1200,124 @@ msgstr "Grassetto"
 #: ../../options/options-sanitize.php
 msgid "Bold Italic"
 msgstr "Grassetto corsivo"
+
+#: ../../options/theme-upsell.php
+msgid "Themes You Can Trust"
+msgstr "Temi che ci si può fidare"
+
+#: ../../options/theme-upsell.php
+msgid "Buy iFeature Pro5"
+msgstr "Acquista iFeature Pro5"
+
+#: ../../options/theme-upsell.php
+msgid "View Demo"
+msgstr "Mostra il file"
+
+#: ../../options/theme-upsell.php
+msgid "Try iFeature 5 Free"
+msgstr "Provare iFeature 5 libero"
+
+#: ../../options/theme-upsell.php
+msgid "Buy Business Pro4"
+msgstr "Acquistare Business Pro4"
+
+#: ../../options/theme-upsell.php
+msgid "Try Business Lite"
+msgstr "Cercare Business Lite"
+
+#: ../../options/theme-upsell.php
+msgid "Buy Eclipse Pro2"
+msgstr "Comprare Eclipse Pro2"
+
+#: ../../options/theme-upsell.php
+msgid "Try Eclipse 2 Free"
+msgstr "Provare Eclipse 2 gratis"
+
+#: ../../options/theme-upsell.php
+msgid "Buy Neuro Pro"
+msgstr "Acquista"
+
+#: ../../options/theme-upsell.php
+msgid "Try Neuro Free"
+msgstr "Prova gratuita di Neuro"
+
+#: ../../options/theme-upsell.php
+msgid "Buy iRibbon Pro2"
+msgstr "Acquista iRibbon Pro2"
+
+#: ../../options/theme-upsell.php
+msgid "Try iRibbon 2 Free"
+msgstr "Provare iRibbon 2 gratis"
+
+#: ../../options/theme-upsell.php
+msgid "Buy Cyberchimps Pro"
+msgstr "Cyberchimps aiuto"
+
+#: ../../options/theme-upsell.php
+msgid "Try cyberchimps Free"
+msgstr "Cyberchimps aiuto"
+
+#: ../../options/theme-upsell.php
+msgid "Buy Responsive Pro"
+msgstr "Reattivo video"
+
+#: ../../options/theme-upsell.php
+msgid "Try Responsive Free"
+msgstr "Design sensibile"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Select Page Layout"
+msgstr "Seleziona Layout di pagina"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Title"
+msgstr "Titolo della pagina"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Elements"
+msgstr "Elementi di pagina"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
+msgstr "Hai bisogno di aiuto?"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Salva Opzioni"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Image Slider"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Cursore didascalia"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Link personalizzati Slide"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Didascalia"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Categorie personalizzate"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Rimuovi"
+
+msgid "Add"
+msgstr "Add Ons"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr ""
+"Siamo spiacenti, non è possibile caricare questo tipo di file per questo "
+"campo."
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "o immettere l'URL"

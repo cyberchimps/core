@@ -89,7 +89,7 @@ class CC_Custom_Background {
 	 */
 	protected function get_radio_fields() {
 		$value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
-		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light' );
+		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk' );
 		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ) . '</label><br>';
 
 		foreach( $radios as $radio ) {
@@ -138,3 +138,26 @@ class CC_Custom_Background {
 		echo $style;
 	}
 }
+
+// Default background image.
+function ifeature_background_image( $options ) {
+	$imagepath =  get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$options = array(
+			'none' => $imagepath . 'backgrounds/thumbs/none.png',
+			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
+			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
+			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
+			'space' => $imagepath . 'backgrounds/thumbs/space.png',
+			'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png',
+			'silk' => $imagepath . 'backgrounds/thumbs/silk.png',
+			);
+	return $options;
+}
+add_filter( 'cyberchimps_background_image', 'ifeature_background_image' );
+
+// default background color
+function ifeature_default_background_color() {
+	$color = 'f7f7f7';
+	return $color;
+}
+add_filter( 'default_background_color', 'ifeature_default_background_color' );
