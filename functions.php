@@ -82,10 +82,6 @@ function cyberchimps_core_scripts() {
 	// Load Theme Stylesheet
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
 
-	// Add thumbnail size
-	add_image_size( 'featured-thumb', 100, 80, true );
-	add_image_size( 'headline-thumb', 200, 225, true );
-
 	// add javascript for comments
 	if( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -746,10 +742,17 @@ add_filter( 'wp_title', 'cyberchimps_default_site_title' );
 function cyberchimps_seo_compatibility_check() {
 	if( cyberchimps_detect_seo_plugins() ) {
 		remove_filter( 'wp_title', 'cyberchimps_default_site_title', 10, 3 );
-	}
+	}	
 }
 
 add_action( 'after_setup_theme', 'cyberchimps_seo_compatibility_check', 5 );
+
+// Add thumbnail size
+function cyberchimps_add_thumbnail_size() {
+	add_image_size( 'featured-thumb', 100, 80, true );
+	add_image_size( 'headline-thumb', 200, 225, true );
+}
+add_action( 'after_setup_theme', 'cyberchimps_add_thumbnail_size', 5 );
 
 // Detect some SEO Plugin that add constants, classes or functions.
 function cyberchimps_detect_seo_plugins() {
