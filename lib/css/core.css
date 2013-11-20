@@ -1,3 +1,6 @@
+/* @override 
+	http://cyberchimpspro.dev/wp-content/themes/cyberchimpspro/cyberchimps/lib/css/core.css?ver=1.0 */
+
 /* Core Stylesheet
 ----------------------------------------------- */
 
@@ -52,7 +55,7 @@
 	display: block;
 }
 
-/* ==================================== FOOTER ================================================== */
+/* === FOOTER === */
 
 @import url('http://fonts.googleapis.com/css?family=Bitter');
 
@@ -72,3 +75,59 @@
 	color: #22699d;
 	font-weight: 200;
 }
+
+/* === SOCIAL ICON FONT === */
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('MonoSocialIconsFont-1.10.eot');
+    src: url('MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol {
+	font-size: 200%;
+}
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 50%;
+}
+
+a.symbol {
+	padding: 4px 3px 1px 0;
+	float: left;
+	display: block;
+	margin: 0 6px 10px 0;
+    
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+   	background: #444;
+   	border: 1px solid #333;
+	box-shadow: 2px 2px 0 #ccc;
+	text-shadow: 1px 1px 0 #111;
+}
+
+a.symbol:hover {
+	background: #222; }
