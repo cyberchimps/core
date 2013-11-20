@@ -91,7 +91,7 @@
 }
 
 .symbol {
-	font-size: 200%;
+	
 }
 
 .symbol, a.symbol:before {
@@ -115,11 +115,11 @@ a.symbol:before {
 }
 
 a.symbol {
-	padding: 4px 3px 1px 0;
+	font-size: 3em;
+	line-height: .6em;
 	float: left;
-	display: block;
+	padding: 4px 0 0;
 	margin: 0 6px 10px 0;
-    
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -127,7 +127,116 @@ a.symbol {
    	border: 1px solid #333;
 	box-shadow: 2px 2px 0 #ccc;
 	text-shadow: 1px 1px 0 #111;
+	text-indent: -4px;
+}
+
+.default-icons a.symbol {
+    border-radius: 4px;
+    color: #555;
+   	border: 1px solid #ccc;
+	box-shadow: 2px 2px 0 #ededed;
+	text-shadow: 2px 1px 0 #fff;
+	background: #eeeeee;
+	background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc));
+	background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
+}
+
+.retina-icons a.symbol {
+	font-size: 3.5em;
+    color: #555;
+   	border: none;
+	box-shadow: none;
+	text-shadow: 2px 2px rgba(204, 204, 204, 0.5);
+	background: none;
+	margin-right: 0;
+}
+
+.retina-icons a.symbol:hover {
+	background: #eee; 
+	color: #222;
+}
+
+.legacy-icons a.symbol {
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid #ccc;
+	box-shadow: 2px 2px 0 #ededed;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+	background: #eeeeee;
+}
+
+.round-icons a.symbol {
+    border-radius: 20px;
+    color: #fff;
+    border: 1px solid #ccc;
+	box-shadow: 2px 2px 0 #ededed;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+	background: #eeeeee;
+}
+
+.round-icons a.symbol:hover,
+.legacy-icons a.symbol:hover {
+	opacity: .8;
+}
+
+.round-icons a.symbol.facebook,
+.legacy-icons a.symbol.facebook {
+	background: #556fa3;
+	border: 1px solid #4d6595;
+}
+
+.round-icons a.symbol.twitter,
+.legacy-icons a.symbol.twitter {
+	background: #4dc4ec;
+	border: 1px solid #37bce9;
+}
+
+.round-icons a.symbol.gplus,
+.legacy-icons a.symbol.gplus {
+	background: #d34d3b;
+	border: 1px solid #b43727;
+}
+
+.round-icons a.symbol.linkedin,
+.legacy-icons a.symbol.linkedin {
+	background: #0072b1;
+	border: 1px solid #00659c;
+}
+
+.round-icons a.symbol.youtube,
+.legacy-icons a.symbol.youtube {
+	background: #b42d24;
+	border: 1px solid #9f271f;
+}
+
+.round-icons a.symbol.flickr,
+.legacy-icons a.symbol.flickr {
+	background: #0969dd;
+	border: 1px solid #0756b7;
+}
+
+.round-icons a.symbol.pinterest,
+.legacy-icons a.symbol.pinterest {
+	background: #cd2123;
+	border: 1px solid #b81d1f;
+}
+
+.round-icons a.symbol.email,
+.legacy-icons a.symbol.email {
+	background: #4170bd;
+	border: 1px solid #3b65ab;
+}
+
+.round-icons a.symbol.rss,
+.legacy-icons a.symbol.rss {
+	background: #f07013;
+	border: 1px solid #dc650e;
 }
 
 a.symbol:hover {
-	background: #222; }
+	background: #ccc; }
