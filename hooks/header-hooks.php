@@ -182,8 +182,11 @@ function cyberchimps_header_site_title() {
 /**
  * Social icons positioned in header and some theme's footer
  *
+ * The key of the $social variable has to match the font icon you want to use. If that differs from the name you want displayed set the title key
+ * e.g. $social['twitterbird']['title'] = 'twitter';
+ * 
  * styling is located in /lib/css/core.css
- *
+ * icon fonts are from http://drinchev.github.io/monosocialiconsfont/
  */
 function cyberchimps_header_social_icons() {
 
