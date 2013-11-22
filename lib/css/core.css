@@ -1,6 +1,3 @@
-/* @override 
-	http://cyberchimpspro.dev/wp-content/themes/cyberchimpspro/cyberchimps/lib/css/core.css?ver=1.0 */
-
 /* Core Stylesheet
 ----------------------------------------------- */
 
@@ -105,16 +102,10 @@
 	font-smoothing: antialiased;
 }
 
-/*a.symbol:before {*/
-/*content: attr(title);*/
-/*margin-right: 0.3em;*/
-/*font-size: 50%;*/
-/*}*/
-
 a.symbol {
 	float: left;
 	margin: 0 6px 10px 0;
-	padding: 4px 0;
+	padding: 3px 0 6px 1px;
 	border: 1px solid #333333;
 	border-radius: 4px;
 	background: #444444;
@@ -138,7 +129,7 @@ a.symbol {
 	background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
 	box-shadow: 2px 2px 0 #ededed;
 	color: #555555;
-	text-shadow: 2px 1px 0 #ffffff;
+	text-shadow: 1px 1px 0 #ffffff;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
 }
 
@@ -168,7 +159,7 @@ a.symbol {
 
 .round-icons a.symbol {
 	border: 1px solid #cccccc;
-	border-radius: 20px;
+	border-radius: 50%;
 	background: #eeeeee;
 	box-shadow: 2px 2px 0 #ededed;
 	color: #ffffff;
@@ -192,8 +183,8 @@ a.symbol {
 	background: #4dc4ec;
 }
 
-.round-icons a.symbol.gplus,
-.legacy-icons a.symbol.gplus {
+.round-icons a.symbol.googleplus,
+.legacy-icons a.symbol.googleplus {
 	border: 1px solid #b43727;
 	background: #d34d3b;
 }
@@ -208,6 +199,12 @@ a.symbol {
 .legacy-icons a.symbol.youtube {
 	border: 1px solid #9f271f;
 	background: #b42d24;
+}
+
+.round-icons a.symbol.gowallapin,
+.legacy-icons a.symbol.gowallapin {
+	border: 1px solid #74a82a;
+	background: #7fb72f;
 }
 
 .round-icons a.symbol.flickr,
