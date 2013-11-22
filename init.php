@@ -208,7 +208,7 @@ function cyberchimps_load_hooks() {
 
 add_action( 'after_setup_theme', 'cyberchimps_load_hooks' );
 
-//after install redirect user to options page
-if( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+//after install redirect user to options page if it's a pro theme.
+if( 'pro' == cyberchimps_theme_check() && is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 	wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
 }
