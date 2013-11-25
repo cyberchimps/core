@@ -76,6 +76,11 @@ function cyberchimps_core_scripts() {
 	// Load core JS
 	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
 
+	/**
+	 * With the use of @2x at the end of an image it will use that to display the retina image. Both images have to been in the same folder
+	 */
+	wp_enqueue_script( 'retina-js', $js_path . 'retina-1.1.0.min.js', '', '1.1.0', true );
+
 	// Load Core Stylesheet
 	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
 
