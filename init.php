@@ -208,7 +208,17 @@ function cyberchimps_load_hooks() {
 
 add_action( 'after_setup_theme', 'cyberchimps_load_hooks' );
 
-//after install redirect user to options page if it's a pro theme.
-if( 'pro' == cyberchimps_theme_check() && is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
-	wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
+//after install redirect user to options page if it's a pro theme. Incase of free show a welcome message with link to theme options.
+if( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+
+	if( 'pro' == cyberchimps_theme_check() ) {
+		wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
+	}
+	else if( 'free' == cyberchimps_theme_check() ) {
+	?>
+		<div id="welcome" class="updated settings-error">
+			Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps '); ?> and thank you for choosing one of <a target="_blank" href="http://www.cyberchimps.com/">Cyberchimps</a> theme. To help you find your way round please visit our <a href="themes.php?page=cyberchimps-theme-options">Theme options.</a>
+		</div>
+	<?php
+	}
 }
