@@ -231,8 +231,7 @@ if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 							margin: 5px 0 0;">
 					<img src="<?php echo get_template_directory_uri(). '/cyberchimps/options/lib/images/chimp.png'; ?>" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
 					5px;">
-					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> and thank you for choosing one of <a target="_blank" href="http://www.cyberchimps
-			.com/">Cyberchimps</a> themes. To help you find your way round please visit our <a href="themes.php?page=cyberchimps-theme-options">Theme options.</a></p>
+					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> by <a target="_blank" href="http://www.cyberchimps.com/">CyberChimps</a>. Please visit the <a href="themes.php?page=cyberchimps-theme-options">Theme Options</a> to setup and build your website.</p>
 			</div>
 		<?php
 		}
