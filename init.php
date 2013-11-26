@@ -229,7 +229,7 @@ if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 							line-height: 1.4em;
 							font-weight: bold;
 							margin: 5px 0 0;">
-					<img src="http://www.new-cc.dev/wp-content/themes/ifeature/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
+					<img src="<?php echo get_template_directory_uri(). '/cyberchimps/options/lib/images/chimp.png'; ?>" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
 					5px;">
 					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> and thank you for choosing one of <a target="_blank" href="http://www.cyberchimps
 			.com/">Cyberchimps</a> themes. To help you find your way round please visit our <a href="themes.php?page=cyberchimps-theme-options">Theme options.</a></p>
