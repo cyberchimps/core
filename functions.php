@@ -1029,7 +1029,7 @@ function cyberchimps_options_help_text() {
 						</div>
 						</div>';
 	// Upgrade Button and text for free themes
-	if( cyberchimps_theme_check() == 'free' ) {
+	if ( cyberchimps_theme_check() == 'free' ) {
 		$text .= '<div class="row">
 						<div class="col-md-6">
 						<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) . '">
