@@ -65,19 +65,19 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_style( 'bootstrap-theme-style', $bootstrap_path . 'css/bootstrap-theme.min.css', array( 'bootstrap-style' ), '2.0.4' );
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
 
-	//responsive design
-	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
-		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
-	}
-	else {
-		wp_dequeue_style( 'cyberchimps_responsive' );
-	}
+	//responsive design TODO This is not set up yet
+//	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
+//		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
+//	}
+//	else {
+//		wp_dequeue_style( 'cyberchimps_responsive' );
+//	}
 
 	// Load core JS
 	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
 
 	// Load Core Stylesheet
-	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
+	wp_enqueue_style( 'core-style', $directory_uri . '/cyberchimps/lib/css/core.css', array( 'bootstrap-style' ), '1.0' );
 
 	// Load Theme Stylesheet
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'core-style' ), '1.0' );
