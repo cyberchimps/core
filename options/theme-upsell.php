@@ -74,7 +74,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank"><h4>iFeature Pro5</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "ifeaturepro5" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "ifeaturepro5" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -106,7 +106,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/business-pro/" target="_blank"><h4>Business Pro4</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "businesspro4" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "businesspro4" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -137,7 +137,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro2</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "eclipsepro2" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "eclipsepro2" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -170,7 +170,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "neuropro3" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "neuropro3" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -202,7 +202,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro2</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "iribbonpro2" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "iribbonpro2" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -234,7 +234,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Cyberchimps Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "cyberchimpspro" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "cyberchimpspro" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
@@ -266,7 +266,7 @@ function cyberchimps_display_upsell() {
 				<a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Responsive Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if( wp_get_theme( "responsivepro" )->exists() ) { ?>
+				<?php if ( wp_get_theme( "responsivepro" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
 
