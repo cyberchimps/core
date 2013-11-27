@@ -69,73 +69,73 @@ function cyberchimps_class_row_fluid( $classes ) {
 }
 
 function cyberchimps_class_span12( $classes ) {
-	$classes[] = 'span12';
+	$classes[] = 'col-md-12';
 
 	return $classes;
 }
 
 function cyberchimps_class_span11( $classes ) {
-	$classes[] = 'span11';
+	$classes[] = 'col-md-11';
 
 	return $classes;
 }
 
 function cyberchimps_class_span10( $classes ) {
-	$classes[] = 'span10';
+	$classes[] = 'col-md-10';
 
 	return $classes;
 }
 
 function cyberchimps_class_span9( $classes ) {
-	$classes[] = 'span9';
+	$classes[] = 'col-md-9';
 
 	return $classes;
 }
 
 function cyberchimps_class_span8( $classes ) {
-	$classes[] = 'span8';
+	$classes[] = 'col-md-8';
 
 	return $classes;
 }
 
 function cyberchimps_class_span7( $classes ) {
-	$classes[] = 'span7';
+	$classes[] = 'col-md-7';
 
 	return $classes;
 }
 
 function cyberchimps_class_span6( $classes ) {
-	$classes[] = 'span6';
+	$classes[] = 'col-md-6';
 
 	return $classes;
 }
 
 function cyberchimps_class_span5( $classes ) {
-	$classes[] = 'span5';
+	$classes[] = 'col-md-5';
 
 	return $classes;
 }
 
 function cyberchimps_class_span4( $classes ) {
-	$classes[] = 'span4';
+	$classes[] = 'col-md-4';
 
 	return $classes;
 }
 
 function cyberchimps_class_span3( $classes ) {
-	$classes[] = 'span3';
+	$classes[] = 'col-md-3';
 
 	return $classes;
 }
 
 function cyberchimps_class_span2( $classes ) {
-	$classes[] = 'span2';
+	$classes[] = 'col-md-2';
 
 	return $classes;
 }
 
 function cyberchimps_class_span1( $classes ) {
-	$classes[] = 'span1';
+	$classes[] = 'col-md-1';
 
 	return $classes;
 }

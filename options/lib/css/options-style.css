@@ -36,7 +36,7 @@ form {
 	margin: 0;
 }
 
-.cc-content .span9 {
+.cc-content .col-md-9 {
 	width: 76.523076923%;
 	margin-left: 0;
 }
@@ -881,7 +881,7 @@ img.action {
 
 /************** Help Page ********************/
 
-.cc_help_section .span3 {
+.cc_help_section .col-md-3 {
 	text-align: center;
 }
 
@@ -994,7 +994,7 @@ img.action {
 		margin: 10px 10px 0 10px;
 	}
 
-	.cc-content .span9 {
+	.cc-content .col-md-9 {
 		width: 100%;
 	}
 

@@ -127,7 +127,7 @@ function cyberchimps_options_page() {
 	?>
 	<!-- header -->
 	<div class="row cc-header">
-		<div class="span4">
+		<div class="col-md-4">
 			<div class="cc-title">
 				<div class="icon32" id="icon-tools"><br/></div>
 				<h2><?php printf( '%1s ' . __( 'Options', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
@@ -135,7 +135,7 @@ function cyberchimps_options_page() {
 			<!-- cc-title -->
 		</div>
 		<!-- span4 -->
-		<div class="span8">
+		<div class="col-md-8">
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
 				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
@@ -156,7 +156,7 @@ function cyberchimps_options_page() {
 
 	<!-- start sub menu -->
 	<div class="row">
-		<div class="span12">
+		<div class="col-md-12">
 			<div class="cc-submenu">
 				<div class="cc-collapse">
 					<!-- mobile menu button -->
@@ -239,7 +239,7 @@ function cyberchimps_options_page() {
 
 	<!-- start left menu -->
 	<div class="row cc-content">
-		<div class="span3">
+		<div class="col-md-3">
 			<div class="cc-left-menu">
 				<ul class="cc-parent nav-tab-wrapper">
 					<?php
@@ -273,7 +273,7 @@ function cyberchimps_options_page() {
 		<!-- end left menu -->
 
 		<!-- start main content -->
-		<div class="span9">
+		<div class="col-md-9">
 			<div class="cc-main-content">
 				<?php foreach( $headings_list as $heading ) {
 
@@ -298,7 +298,7 @@ function cyberchimps_options_page() {
 	<!-- start footer -->
 	<div class="row">
 		<div class="cc-footer">
-			<div class="span3">
+			<div class="col-md-3">
 				<div class="cc-logo">
 					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"><img
 							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/cc-logo.png"
@@ -307,7 +307,7 @@ function cyberchimps_options_page() {
 				<!-- cc-logo -->
 			</div>
 			<!-- span3 -->
-			<div class="span9">
+			<div class="col-md-9">
 				<div class="cc-social-container">
 					<div class="cc-social twitter">
 						<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
@@ -496,7 +496,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	}
 
 	$output .= "<div class='section_order' id=" . esc_attr( $value['id'] ) . ">";
-	$output .= "<div class='left_list span6'>";
+	$output .= "<div class='left_list col-md-6'>";
 	$output .= "<div class='inactive'>Inactive Elements</div>";
 	$output .= "<div class='list_items'>";
 	if( is_array( $val ) ) {
@@ -512,8 +512,8 @@ function cyberchimps_drag_drop_field( $value ) {
 	}
 	$output .= "</div>";
 	$output .= "</div>";
-	$output .= '<div class="options-arrow span1 hidden-phone"><img src="' . $directory_uri . '/cyberchimps/lib/images/arrowdrag.png" /></div>';
-	$output .= "<div class='right_list span5'>";
+	$output .= '<div class="options-arrow col-md-1 hidden-phone"><img src="' . $directory_uri . '/cyberchimps/lib/images/arrowdrag.png" /></div>';
+	$output .= "<div class='right_list col-md-5'>";
 	$output .= "<div class='active'>Active Elements</div>";
 	$output .= "<div class='drag'>Drag & Drop Elements</div>";
 	$output .= "<div class='list_items'>";

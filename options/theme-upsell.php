@@ -50,7 +50,7 @@ function cyberchimps_display_upsell() {
 	<div class="container">
 	<div id="upsell_container">
 	<div class="row">
-		<div id="upsell_header" class="span12">
+		<div id="upsell_header" class="col-md-12">
 			<h2>
 				<a href="http://cyberchimps.com" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/options/upsell-logo.png"/>
@@ -65,12 +65,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="ifeature" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/ifeaturepro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank"><h4>iFeature Pro5</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -97,12 +97,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="business" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/business-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/businesspro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/business-pro/" target="_blank"><h4>Business Pro4</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -128,12 +128,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="eclipse" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/eclipse-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/eclipsepro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro2</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -161,12 +161,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="neuro" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/neuro-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/neuropro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -193,12 +193,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="iribbon" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/iribbon-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/iribbonpro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro2</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -225,12 +225,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="cyberchimps" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/cyberchimpspro.jpg"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Cyberchimps Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
@@ -257,12 +257,12 @@ function cyberchimps_display_upsell() {
 
 	<div id="responsive" class="row">
 		<div class="theme-container">
-			<div class="theme-image span3">
+			<div class="theme-image col-md-3">
 				<a href="http://cyberchimps.com/store/responsive-pro/" target="_blank">
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/responsivepro.png"/>
 				</a>
 			</div>
-			<div class="theme-info span9">
+			<div class="theme-info col-md-9">
 				<a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Responsive Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->

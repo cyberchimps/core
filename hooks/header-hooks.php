@@ -39,13 +39,13 @@ add_action( 'cyberchimps_header', 'cyberchimps_header_section_order' );
 function cyberchimps_logo_icons() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
 		</div>
 
-		<div id="register" class="span5">
+		<div id="register" class="col-md-5">
 			<?php if( function_exists( 'cyberchimps_header_social_icons' ) ) {
 				cyberchimps_header_social_icons();
 			} ?>
@@ -60,13 +60,13 @@ add_action( 'cyberchimps_header_content', 'cyberchimps_logo_icons' );
 function cyberchimps_logo_searchform() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
 		</div>
 
-		<div id="search" class="span5">
+		<div id="search" class="col-md-5">
 			<?php
 			get_search_form( true );
 			?>
@@ -81,11 +81,11 @@ add_action( 'cyberchimps_logo_search', 'cyberchimps_logo_searchform' );
 function cyberchimps_description_icons() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
-		<div id="register" class="span5">
+		<div id="register" class="col-md-5">
 			<?php if( function_exists( 'cyberchimps_header_social_icons' ) ) {
 				cyberchimps_header_social_icons();
 			} ?>
@@ -100,13 +100,13 @@ add_action( 'cyberchimps_description_icons', 'cyberchimps_description_icons' );
 function cyberchimps_sitename_contact() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
 		</div>
 
-		<div id="register" class="span5">
+		<div id="register" class="col-md-5">
 			<?php if( function_exists( 'cyberchimps_contact_info' ) ) {
 				echo cyberchimps_contact_info();
 			} ?>
@@ -121,13 +121,13 @@ add_action( 'cyberchimps_sitename_contact', 'cyberchimps_sitename_contact' );
 function cyberchimps_logo_description() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
 		</div>
 
-		<div id="description" class="span5">
+		<div id="description" class="col-md-5">
 			<?php if( function_exists( 'cyberchimps_description' ) ) {
 				echo cyberchimps_description();
 			} ?>
@@ -142,7 +142,7 @@ add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
 function cyberchimps_logo() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
@@ -266,7 +266,7 @@ function cyberchimps_header_social_icons() {
 function cyberchimps_custom_header_element_content() {
 	?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php echo stripslashes( cyberchimps_get_option( 'custom_header_element' ) ); ?>
 		</div>
 	</header>
@@ -277,13 +277,13 @@ function cyberchimps_custom_header_element_content() {
 function cyberchimps_logo_register_content() {
 	global $current_user; ?>
 	<header id="cc-header" class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
 			} ?>
 		</div>
 
-		<div id="register" class="span5">
+		<div id="register" class="col-md-5">
 			<div class="register">
 				<?php if( !is_user_logged_in() ) : ?>
 					<?php wp_loginout(); ?> <?php wp_meta(); ?> | <?php wp_register( '', '', true ); ?>
