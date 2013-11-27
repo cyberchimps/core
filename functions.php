@@ -61,9 +61,9 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.min.js', array( 'jquery', 'jquery-mobile-touch' ) );
 
 	// Load Bootstrap Library Items
-	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-theme-style', $bootstrap_path . 'css/bootstrap-theme.min.css', array( 'bootstrap-style' ), '2.0.4' );
-	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
+	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '3.0.2' );
+	wp_enqueue_style( 'bootstrap-theme-style', $bootstrap_path . 'css/bootstrap-theme.min.css', array( 'bootstrap-style' ), '3.0.2' );
+	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '3.0.2', true );
 
 	//responsive design TODO This is not set up yet
 //	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
