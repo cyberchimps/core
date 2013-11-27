@@ -60,19 +60,6 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.min.js', array( 'jquery', 'jquery-mobile-touch' ) );
 
-	// Load Bootstrap Library Items
-	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
-	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array( 'bootstrap-style' ), '2.0.4' );
-	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
-
-	//responsive design
-	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
-		wp_enqueue_style( 'cyberchimps_responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.min.css', array( 'bootstrap-responsive-style', 'bootstrap-style' ), '1.0' );
-	}
-	else {
-		wp_dequeue_style( 'cyberchimps_responsive' );
-	}
-
 	// Load core JS
 	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
 
