@@ -54,14 +54,11 @@ function cyberchimps_blog_section_order_action() {
 				?>
 				<div class="container-full-width" id="<?php echo $func; ?>_section">
 					<div class="container">
-						<div class="container-fluid">
-							<?php
-							do_action( $func );
-							?>
-						</div>
-						<!-- .container-fluid-->
+						<?php
+						do_action( $func );
+						?>
 					</div>
-					<!-- .container -->
+					<!-- .container-->
 				</div>    <!-- .container-full-width -->
 			<?php
 			}
@@ -120,7 +117,7 @@ function cyberchimps_blog_title() {
 		if( $title_toggle ) {
 			$title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
 			echo apply_filters( 'cyberchimps_blog_title_html', '
-        <div id="cyberchimps_blog_title" class="row-fluid">
+        <div id="cyberchimps_blog_title" class="row">
             <header class="page-header">
                 <h1 class="page-title">' . $title_text . '</h1>
             </header>

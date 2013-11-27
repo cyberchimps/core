@@ -57,13 +57,13 @@ function cyberchimps_content_sb2r_class( $classes ) {
 
 /* Start of functions to add different classes for html elements to $classes[] */
 function cyberchimps_class_container_fluid( $classes ) {
-	$classes[] = 'container-fluid';
+	$classes[] = 'container';
 
 	return $classes;
 }
 
 function cyberchimps_class_row_fluid( $classes ) {
-	$classes[] = 'row-fluid';
+	$classes[] = 'row';
 
 	return $classes;
 }
@@ -159,7 +159,7 @@ function cyberchimps_filter_content_class() {
 // Define default container class
 add_filter( 'cyberchimps_container_class', 'cyberchimps_default_container_classes' );
 function cyberchimps_default_container_classes( $classes ) {
-	$classes[] = 'row-fluid';
+	$classes[] = 'row';
 
 	return $classes;
 }

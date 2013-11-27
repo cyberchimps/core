@@ -115,7 +115,7 @@ function cyberchimps_options_page() {
 
 	<div class="wrap">
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
-	<div class="container-fluid cc-options">
+	<div class="container cc-options">
 
 	<form action="options.php" method="post" id="cyberchimps_options_page">
 	<?php
@@ -126,7 +126,7 @@ function cyberchimps_options_page() {
 	do_action( 'cyberchimps_options_form_start' )
 	?>
 	<!-- header -->
-	<div class="row-fluid cc-header">
+	<div class="row cc-header">
 		<div class="span4">
 			<div class="cc-title">
 				<div class="icon32" id="icon-tools"><br/></div>
@@ -151,11 +151,11 @@ function cyberchimps_options_page() {
 		</div>
 		<!-- span8 -->
 	</div>
-	<!-- row-fluid -->
+	<!-- row -->
 	<!-- end header -->
 
 	<!-- start sub menu -->
-	<div class="row-fluid">
+	<div class="row">
 		<div class="span12">
 			<div class="cc-submenu">
 				<div class="cc-collapse">
@@ -238,7 +238,7 @@ function cyberchimps_options_page() {
 	<!-- end sub menu -->
 
 	<!-- start left menu -->
-	<div class="row-fluid cc-content">
+	<div class="row cc-content">
 		<div class="span3">
 			<div class="cc-left-menu">
 				<ul class="cc-parent nav-tab-wrapper">
@@ -296,7 +296,7 @@ function cyberchimps_options_page() {
 	<!-- end main content -->
 
 	<!-- start footer -->
-	<div class="row-fluid">
+	<div class="row">
 		<div class="cc-footer">
 			<div class="span3">
 				<div class="cc-logo">
@@ -350,7 +350,7 @@ function cyberchimps_options_page() {
 	</form>
 
 	</div>
-	<!-- container-fluid -->
+	<!-- container -->
 	</div><!-- wrap -->
 <?php
 }

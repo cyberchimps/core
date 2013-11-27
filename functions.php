@@ -120,8 +120,6 @@ if( !function_exists( 'cyberchimps_wrapper_start' ) ) {
 
 		<div class="container">
 
-		<div class="container-fluid">
-
 		<div id="container" <?php cyberchimps_filter_container_class(); ?>>
 
 		<?php do_action( 'cyberchimps_before_content_container' ); ?>
@@ -142,9 +140,7 @@ if( !function_exists( 'cyberchimps_wrapper_end' ) ) {
 
 		<?php do_action( 'cyberchimps_after_content_container' ); ?>
 
-		</div><!-- #container .row-fluid-->
-
-		</div><!-- container fluid -->
+		</div><!-- #container .row-->
 
 		</div><!-- conatiner -->
 
@@ -1061,7 +1057,7 @@ function cyberchimps_options_help_text() {
 	$instruction_img = get_template_directory_uri() . '/cyberchimps/options/lib/images/document.png';
 	$support_img     = get_template_directory_uri() . '/cyberchimps/options/lib/images/questionsupport.png';
 	$text .= '<div class="cc_help_section">
-						<div class="row-fluid"><div class="span3">
+						<div class="row"><div class="span3">
 							<a href="' . apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com' ) . '" title="CyberChimps Instructions">
 								<img src="' . $instruction_img . '" alt="CyberChimps Instructions" />
 								<div class="cc_help_caption"><p>' . __( 'Instructions', 'cyberchimps_core' ) . '</p></div>
@@ -1076,7 +1072,7 @@ function cyberchimps_options_help_text() {
 						</div>';
 	// Upgrade Button and text for free themes
 	if( cyberchimps_theme_check() == 'free' ) {
-		$text .= '<div class="row-fluid">
+		$text .= '<div class="row">
 						<div class="span6">
 						<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) . '">
 						<div class="cc_help_upgrade_bar">' . sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) . '</div>

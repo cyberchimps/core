@@ -52,12 +52,9 @@ function cyberchimps_page_section_order_action() {
 					?>
 					<div class="container-full-width" id="<?php echo $func; ?>_section">
 						<div class="container">
-							<div class="container-fluid">
-								<?php
-								do_action( $func );
-								?>
-							</div>
-							<!-- .container-fluid-->
+							<?php
+							do_action( $func );
+							?>
 						</div>
 						<!-- .container -->
 					</div>    <!-- .container-full-width -->
@@ -71,18 +68,15 @@ function cyberchimps_page_section_order_action() {
 		?>
 		<div class="container-full-width" id="<?php echo $func; ?>_section">
 			<div class="container">
-				<div class="container-fluid">
-					<div id="container" class="row-fluid">
-						<div id="content">
-							<article class="post">
-								<?php
-								echo get_the_password_form();
-								?>
-							</article>
-						</div>
+				<div id="container" class="row">
+					<div id="content">
+						<article class="post">
+							<?php
+							echo get_the_password_form();
+							?>
+						</article>
 					</div>
 				</div>
-				<!-- .container-fluid-->
 			</div>
 			<!-- .container -->
 		</div>    <!-- .container-full-width -->
@@ -122,7 +116,7 @@ function cyberchimps_page() {
 
 		<?php do_action( 'cyberchimps_after_content_container' ); ?>
 
-	</div><!-- #container .row-fluid-->
+	</div><!-- #container .row-->
 <?php
 }
 

@@ -47,9 +47,9 @@ function cyberchimps_display_upsell() {
 	?>
 
 	<div class="wrap">
-	<div class="container-fluid">
+	<div class="container">
 	<div id="upsell_container">
-	<div class="row-fluid">
+	<div class="row">
 		<div id="upsell_header" class="span12">
 			<h2>
 				<a href="http://cyberchimps.com" target="_blank">
@@ -59,11 +59,11 @@ function cyberchimps_display_upsell() {
 			<h5><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h5>
 		</div>
 	</div>
-	<div id="upsell_themes" class="row-fluid">
+	<div id="upsell_themes" class="row">
 
 	<!-- -------------- Ifeature Pro ------------------- -->
 
-	<div id="ifeature" class="row-fluid">
+	<div id="ifeature" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank">
@@ -95,7 +95,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- Business Pro ------------------- -->
 
-	<div id="business" class="row-fluid">
+	<div id="business" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/business-pro/" target="_blank">
@@ -126,7 +126,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- Eclipse Pro ------------------- -->
 
-	<div id="eclipse" class="row-fluid">
+	<div id="eclipse" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/eclipse-pro/" target="_blank">
@@ -159,7 +159,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- Neuro Pro ------------------- -->
 
-	<div id="neuro" class="row-fluid">
+	<div id="neuro" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/neuro-pro/" target="_blank">
@@ -191,7 +191,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- iRibbon Pro ------------------- -->
 
-	<div id="iribbon" class="row-fluid">
+	<div id="iribbon" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/iribbon-pro/" target="_blank">
@@ -223,7 +223,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- Cyberchimps Pro ------------------- -->
 
-	<div id="cyberchimps" class="row-fluid">
+	<div id="cyberchimps" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank">
@@ -255,7 +255,7 @@ function cyberchimps_display_upsell() {
 
 	<!-- -------------- Responsive Pro ------------------- -->
 
-	<div id="responsive" class="row-fluid">
+	<div id="responsive" class="row">
 		<div class="theme-container">
 			<div class="theme-image span3">
 				<a href="http://cyberchimps.com/store/responsive-pro/" target="_blank">
@@ -290,7 +290,7 @@ function cyberchimps_display_upsell() {
 	</div>
 	<!-- upsell container -->
 	</div>
-	<!-- container-fluid -->
+	<!-- container -->
 	</div>
 <?php
 }

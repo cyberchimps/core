@@ -38,7 +38,7 @@ add_action( 'cyberchimps_header', 'cyberchimps_header_section_order' );
 // Logo/Icons header element.
 function cyberchimps_logo_icons() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -59,7 +59,7 @@ add_action( 'cyberchimps_header_content', 'cyberchimps_logo_icons' );
 // Logo/Search header element.
 function cyberchimps_logo_searchform() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -80,7 +80,7 @@ add_action( 'cyberchimps_logo_search', 'cyberchimps_logo_searchform' );
 // Description/Icons header element.
 function cyberchimps_description_icons() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
@@ -99,7 +99,7 @@ add_action( 'cyberchimps_description_icons', 'cyberchimps_description_icons' );
 // Logo and Contact
 function cyberchimps_sitename_contact() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -120,7 +120,7 @@ add_action( 'cyberchimps_sitename_contact', 'cyberchimps_sitename_contact' );
 // Logo and Description
 function cyberchimps_logo_description() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -141,7 +141,7 @@ add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
 // Defines action for header elelment "Logo"
 function cyberchimps_logo() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -265,7 +265,7 @@ function cyberchimps_header_social_icons() {
 // Custom HTML header element.
 function cyberchimps_custom_header_element_content() {
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php echo stripslashes( cyberchimps_get_option( 'custom_header_element' ) ); ?>
 		</div>
@@ -276,7 +276,7 @@ function cyberchimps_custom_header_element_content() {
 // Sitename/Register
 function cyberchimps_logo_register_content() {
 	global $current_user; ?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div class="span7">
 			<?php if( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
@@ -308,7 +308,7 @@ function cyberchimps_banner_content() {
 	$default = get_template_directory_uri() . apply_filters( 'cyberchimps_banner_img', '/cyberchimps/lib/images/banner.jpg' );
 	$url     = cyberchimps_get_option( 'header_banner_url' );
 	?>
-	<header id="cc-header" class="row-fluid">
+	<header id="cc-header" class="row">
 		<div id="banner">
 			<?php if( $banner != "" ): ?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="logo"></a>
