@@ -25,7 +25,7 @@
 
 /* ie only */
 /* fix for ie 8 and less nav dropdown menu not showing*/
-.lte9 .nav-collapse.collapse {
+.lte9 .navbar-collapse.collapse {
 	overflow: visible;
 }
 
