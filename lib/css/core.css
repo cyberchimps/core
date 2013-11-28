@@ -1,6 +1,13 @@
 /* Core Stylesheet
 ----------------------------------------------- */
 
+/* Basic HTML styles. */
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
 /* Container Full Width that everything is wrapped in */
 .container-full-width {
 	width: 100%;
