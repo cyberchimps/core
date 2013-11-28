@@ -59,6 +59,52 @@ img {
 	display: block;
 }
 
+/* ==================================== PAGINATION ================================================== */
+
+.pagination ul {
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.pagination li {
+	list-style: none;
+	display: inline;
+}
+
+.pagination {
+	margin: 20px 0px;
+}
+
+.pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
+	border-bottom-left-radius: 4px;
+	border-left-width: 1px;
+	border-top-left-radius: 4px;
+}
+
+.pagination ul > li > a:hover, .pagination ul > .active > a, .pagination ul > .active > span {
+	background-color: #F5F5F5;
+}
+
+.pagination ul > .active > a, .pagination ul > .active > span {
+	color: #999999;
+	cursor: default;
+}
+
+.pagination ul > li > a, .pagination ul > li > span {
+	background-color: #FFFFFF;
+	border-color: #DDDDDD;
+	border-image: none;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	float: left;
+	line-height: 20px;
+	padding: 4px 12px;
+	text-decoration: none;
+}
+
 /* ==================================== FOOTER ================================================== */
 
 @import url('http://fonts.googleapis.com/css?family=Bitter');
