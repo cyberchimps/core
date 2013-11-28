@@ -46,10 +46,9 @@ function cyberchimps_load_styles() {
 	// Set template directory uri
 	$directory_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-	wp_enqueue_style( 'plugin_option_styles', $directory_uri . '/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-theme', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-theme.min.css', 'bootstrap' );
+	wp_enqueue_style( 'plugin_option_styles', $directory_uri . '/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-theme' ) );
 
 	wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
 	wp_enqueue_style( 'thickbox' );
