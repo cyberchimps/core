@@ -512,7 +512,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	}
 	$output .= "</div>";
 	$output .= "</div>";
-	$output .= '<div class="options-arrow span1 hidden-phone"><img src="' . $directory_uri . '/cyberchimps/lib/images/arrowdrag.png" /></div>';
+	$output .= '<div class="options-arrow span1 hidden-phone"><i class="fa fa-arrow-right"></i></div>';
 	$output .= "<div class='right_list span5'>";
 	$output .= "<div class='active'>Active Elements</div>";
 	$output .= "<div class='drag'>Drag & Drop Elements</div>";
