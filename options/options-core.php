@@ -1637,6 +1637,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		/********* MAGAZINE STARTS *****************/
 
 		$fields_list[] = array(
+			'name'    => __( 'Sidebar', 'cyberchimps_core' ),
+			'id'      => 'blog_magazine_sidebar',
+			'type'    => 'toggle',
+			'std'     => 'checked',
+			'section' => 'cyberchimps_blog_magazine_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+		
+		$fields_list[] = array(
 			'name'    => __( 'Meta Data', 'cyberchimps_core' ),
 			'id'      => 'blog_magazine_metadata',
 			'type'    => 'toggle',
