@@ -837,11 +837,8 @@ textarea#custom_css, textarea#html_box {
 	margin-top: 60px;
 }
 
-img.action {
-	margin-right: 5px;
-	margin-bottom: 2px;
-	background: #ffffff;
-	border: 1px solid #acacac;
+img.action, .action {
+	margin: 2px 2px 2px 0;
 	text-align: right;
 	cursor: pointer;
 	padding: 2px;

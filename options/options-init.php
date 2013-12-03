@@ -505,7 +505,7 @@ function cyberchimps_drag_drop_field( $value ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
-			$output .= '<img src="' . $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .= '<span class="icon-minus-sign action"></span>';
 			$output .= "<span data-key='{$key}'>{$option}</span>";
 			$output .= "</div>";
 		}
@@ -523,7 +523,7 @@ function cyberchimps_drag_drop_field( $value ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
-			$output .= '<img src="' . $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .= '<span class="icon-minus-sign action"></span>';
 			$output .= "<span data-key='{$key}'>{$value['options'][$key]}</span>";
 			$output .= "</div>";
 		}
