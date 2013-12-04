@@ -1297,21 +1297,33 @@ function cyberchimps_addons_headings( $headings_list ) {
 
 add_filter( 'cyberchimps_headings_filter', 'cyberchimps_addons_headings', 20, 1 );
 
-// The Events Calendar Section
-function cyberchimps_eventcal_add_sections( $sections_list ) {
+// Addon Section
+function cyberchimps_addon_sections( $sections_list ) {
 	$sections_list[] = array(
 		'id'      => 'cyberchimps_eventcal_options',
 		'label'   => __( 'The Events Calendar', 'cyberchimps' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
 
+	$sections_list[] = array(
+		'id'      => 'cyberchimps_digital_downloads_options',
+		'label'   => __( 'Digital Downloads', 'cyberchimps' ),
+		'heading' => 'cyberchimps_addons_heading'
+	);
+	
+	$sections_list[] = array(
+		'id'      => 'cyberchimps_resposnive_addon_options',
+		'label'   => __( 'Responsive Addon', 'cyberchimps' ),
+		'heading' => 'cyberchimps_addons_heading'
+	);
+	
 	return $sections_list;
 }
 
-add_filter( 'cyberchimps_section_list', 'cyberchimps_eventcal_add_sections', 20, 1 );
+add_filter( 'cyberchimps_section_list', 'cyberchimps_addon_sections', 20, 1 );
 
-// The Events Calendar Fields
-function cyberchimps_eventcal_add_fields( $fields_list ) {
+// Addon Fields
+function cyberchimps_addon_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name'     => __( 'Events', 'cyberchimps' ),
 		'id'       => 'events_info',
@@ -1320,11 +1332,29 @@ function cyberchimps_eventcal_add_fields( $fields_list ) {
 		'section'  => 'cyberchimps_eventcal_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
-
+	
+	$fields_list[] = array(
+		'name'     => __( 'Digital Downloads', 'cyberchimps' ),
+		'id'       => 'digital_downloads',
+		'type'     => 'info',
+		'callback' => 'cyberchimps_digital_downloads_callback',
+		'section'  => 'cyberchimps_digital_downloads_options',
+		'heading'  => 'cyberchimps_addons_heading'
+	);
+	
+	$fields_list[] = array(
+		'name'     => __( 'Responsive Addon', 'cyberchimps' ),
+		'id'       => 'responsive_addon',
+		'type'     => 'info',
+		'callback' => 'cyberchimps_responsive_addon_callback',
+		'section'  => 'cyberchimps_resposnive_addon_options',
+		'heading'  => 'cyberchimps_addons_heading'
+	);
+	
 	return $fields_list;
 }
 
-add_filter( 'cyberchimps_field_list', 'cyberchimps_eventcal_add_fields', 20, 1 );
+add_filter( 'cyberchimps_field_list', 'cyberchimps_addon_fields', 20, 1 );
 
 // The Events Calendar Text
 function cyberchimps_custom_events_callback( $value ) {
@@ -1357,35 +1387,6 @@ function cyberchimps_eventcal_install_link() {
 
 	return wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug );
 }
-
-// Digital Downloads Section
-function cyberchimps_digital_downloads_sections( $sections_list ) {
-	$sections_list[] = array(
-		'id'      => 'cyberchimps_digital_downloads_options',
-		'label'   => __( 'Digital Downloads', 'cyberchimps' ),
-		'heading' => 'cyberchimps_addons_heading'
-	);
-
-	return $sections_list;
-}
-
-add_filter( 'cyberchimps_section_list', 'cyberchimps_digital_downloads_sections', 20, 1 );
-
-// Digital Downloads Fields
-function cyberchimps_digital_downloads_fields( $fields_list ) {
-	$fields_list[] = array(
-		'name'     => __( 'Digital Downloads', 'cyberchimps' ),
-		'id'       => 'digital_downloads',
-		'type'     => 'info',
-		'callback' => 'cyberchimps_digital_downloads_callback',
-		'section'  => 'cyberchimps_digital_downloads_options',
-		'heading'  => 'cyberchimps_addons_heading'
-	);
-
-	return $fields_list;
-}
-
-add_filter( 'cyberchimps_field_list', 'cyberchimps_digital_downloads_fields', 20, 1 );
 
 // Digital Downloads Text
 function cyberchimps_digital_downloads_callback( $value ) {
