@@ -13,61 +13,51 @@
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)
  * @link     http://www.cyberchimps.com/
  */
- 
- /*CYBERCHIMPS ICON FONT*/
- 
+
+/*CYBERCHIMPS ICON FONT*/
+
 @charset "UTF-8";
 
 @font-face {
-  font-family: "cyberchimps";
-  src:url("fonts/cyberchimps.eot");
-  src:url("fonts/cyberchimps.eot?#iefix") format("embedded-opentype"),
-    url("fonts/cyberchimps.woff") format("woff"),
-    url("fonts/cyberchimps.ttf") format("truetype"),
-    url("fonts/cyberchimps.svg#cyberchimps") format("svg");
-  font-weight: normal;
-  font-style: normal;
-
+	font-family: "cyberchimps";
+	src: url("../../../lib/css/cyberchimps.eot");
+	src: url("../../../lib/css/cyberchimps.eot?#iefix") format("embedded-opentype"), url("../../../lib/css/cyberchimps.woff") format("woff"), url("../../../lib/css/cyberchimps.ttf") format("truetype"), url("../../../lib/css/cyberchimps.svg#cyberchimps") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
-[data-icon]:before {
-  font-family: "cyberchimps" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#adminmenu #menu-posts-portfolio_images .menu-icon-portfolio_images div.wp-menu-image img {
+	display: none;
 }
 
-[class^="cc-"]:before,
-[class*=" cc-"]:before {
-  font-family: "cyberchimps" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#adminmenu #menu-posts-portfolio_images .menu-icon-portfolio_images div.wp-menu-image:before {
+	font-family: 'cyberchimps' !important;
+	content: 'c';
 }
 
-.cc-slider:before {
-  content: "b";
+#adminmenu #menu-posts-boxes .menu-icon-boxes div.wp-menu-image img {
+	display: none;
 }
-.cc-portfolio:before {
-  content: "c";
+
+#adminmenu #menu-posts-boxes .menu-icon-boxes div.wp-menu-image:before {
+	font-family: 'cyberchimps' !important;
+	content: 'e';
 }
-.cc-carousel:before {
-  content: "d";
+
+#adminmenu #menu-posts-custom_slides .menu-icon-custom_slides div.wp-menu-image img {
+	display: none;
 }
-.cc-boxes:before {
-  content: "e";
+
+#adminmenu #menu-posts-custom_slides .menu-icon-custom_slides div.wp-menu-image:before {
+	font-family: 'cyberchimps' !important;
+	content: 'b';
 }
-.cc-chimp:before {
-  content: "f";
+
+#adminmenu #menu-posts-featured_posts .menu-icon-featured_posts div.wp-menu-image img {
+	display: none;
+}
+
+#adminmenu #menu-posts-featured_posts .menu-icon-featured_posts div.wp-menu-image:before {
+	font-family: 'cyberchimps' !important;
+	content: 'd';
 }
