@@ -1311,12 +1311,6 @@ function cyberchimps_addon_sections( $sections_list ) {
 		'heading' => 'cyberchimps_addons_heading'
 	);
 	
-	$sections_list[] = array(
-		'id'      => 'cyberchimps_resposnive_addon_options',
-		'label'   => __( 'Responsive Addon', 'cyberchimps' ),
-		'heading' => 'cyberchimps_addons_heading'
-	);
-	
 	return $sections_list;
 }
 
