@@ -303,20 +303,22 @@ function cyberchimps_customize( $wp_customize ) {
 		'section'  => 'cyberchimps_design_section',
 		'settings' => 'cyberchimps_options[link_hover_colorpicker]',
 	) ) );
-
+	
 	// Custom CSS
-	$wp_customize->add_setting( 'cyberchimps_options[custom_css]', array(
-		'default' => '',
-		'type'    => 'option'
-	) );
+	if( 'pro' == cyberchimps_theme_check() ) {
+		$wp_customize->add_setting( 'cyberchimps_options[custom_css]', array(
+			'default' => '',
+			'type'    => 'option'
+		) );
 
-	// Content area
-	$wp_customize->add_control( new Cyberchimps_Form( $wp_customize, 'custom_css', array(
-		'label'    => __( 'Custom Css', 'cyberchimps_core' ),
-		'section'  => 'cyberchimps_design_section',
-		'settings' => 'cyberchimps_options[custom_css]',
-		'type'     => 'textarea'
-	) ) );
+		// Content area
+		$wp_customize->add_control( new Cyberchimps_Form( $wp_customize, 'custom_css', array(
+			'label'    => __( 'Custom Css', 'cyberchimps_core' ),
+			'section'  => 'cyberchimps_design_section',
+			'settings' => 'cyberchimps_options[custom_css]',
+			'type'     => 'textarea'
+		) ) );
+	}
 
 // new typography section
 	$wp_customize->add_section( 'cyberchimps_typography_section', array(

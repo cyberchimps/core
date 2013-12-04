@@ -15,7 +15,7 @@
  * @link     http://www.cyberchimps.com/
  */
 
-if( !function_exists( 'cyberchimps_core_setup_theme' ) ):
+if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 
 // Setup the theme
 	function cyberchimps_core_setup_theme() {
@@ -45,7 +45,7 @@ if( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
 
 		//Load pro features if a pro theme. Load prior to meta boxes so that filters work
-		if( cyberchimps_theme_check() == 'pro' ) {
+		if ( cyberchimps_theme_check() == 'pro' ) {
 			require_once( $directory . '/elements/setup/features.php' );
 		}
 
@@ -88,11 +88,10 @@ if( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 
 		//set up defaults
 		$option_defaults = cyberchimps_get_default_values();
-		if( !get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+		if ( !get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 			update_option( 'cyberchimps_options', $option_defaults );
-		}
-		//if not then set up defaults for this theme
-		elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+		} //if not then set up defaults for this theme
+		elseif ( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 			$options                         = get_option( 'cyberchimps_options' );
 			$options['header_section_order'] = $option_defaults['header_section_order'];
 			$options['theme_backgrounds']    = $option_defaults['theme_backgrounds'];
@@ -113,36 +112,36 @@ function cyberchimps_custom_background_cb() {
 	// CyberChimps background image
 	$cc_background = get_theme_mod( 'cyberchimps_background' );
 
-	if( !$background && !$color && !$cc_background ) {
+	if ( !$background && !$color && !$cc_background ) {
 		return;
 	}
 
 	$style = $color ? "background-color: #$color;" : '';
 
-	if( $background ) {
+	if ( $background ) {
 		$image = " background-image: url('$background');";
 
 		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
-		if( !in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
+		if ( !in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
 			$repeat = 'repeat';
 		}
 		$repeat = " background-repeat: $repeat;";
 
 		$position = get_theme_mod( 'background_position_x', 'left' );
-		if( !in_array( $position, array( 'center', 'right', 'left' ) ) ) {
+		if ( !in_array( $position, array( 'center', 'right', 'left' ) ) ) {
 			$position = 'left';
 		}
 		$position = " background-position: top $position;";
 
 		$attachment = get_theme_mod( 'background_attachment', 'scroll' );
-		if( !in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
+		if ( !in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
 			$attachment = 'scroll';
 		}
 		$attachment = " background-attachment: $attachment;";
 
 		$style .= $image . $repeat . $position . $attachment;
 	}
-	if( !$background && !$color && $cc_background != 'none' ) {
+	if ( !$background && !$color && $cc_background != 'none' ) {
 		$img_url = get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . $cc_background . '.jpg';
 		$image   = "background-image: url( '$img_url' );";
 		$style .= $image; ?>
@@ -152,8 +151,7 @@ function cyberchimps_custom_background_cb() {
 			}
 		</style>
 	<?php
-	}
-	else {
+	} else {
 		?>
 		<style type="text/css" id="custom-background-css">
 			body.custom-background {
@@ -210,7 +208,44 @@ function cyberchimps_load_hooks() {
 
 add_action( 'after_setup_theme', 'cyberchimps_load_hooks' );
 
-//after install redirect user to options page
-if( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
-	wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
+//after install redirect user to options page if it's a pro theme.
+function cyberchimps_pro_welcome_notice() {
+	global $pagenow;
+	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+
+		if ( 'pro' == cyberchimps_theme_check() ) {
+			wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
+		}
+	}
 }
+add_action( 'after_setup_theme', 'cyberchimps_pro_welcome_notice' );
+
+//Incase of free show a welcome message with link to theme options.
+function cyberchimps_welcome_notice() {
+	global $pagenow;
+	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+
+		if ( 'free' == cyberchimps_theme_check() ) {
+			?>
+			<div id="welcome" style="
+										background: #81c7ef;
+										padding: 0 20px 20px;
+										margin: 20px 20px 20px 0;
+										font-size: 1.5em;
+										border: 1px solid #5ba9d3;
+										-webkit-border-radius: 3px;
+										border-radius: 3px;">
+				<p style="color: #ffffff;
+							text-align: center;
+							line-height: 1.4em;
+							font-weight: bold;
+							margin: 5px 0 0;">
+					<img src="<?php echo get_template_directory_uri(). '/cyberchimps/options/lib/images/chimp.png'; ?>" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
+					5px;">
+					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> by <a target="_blank" href="http://www.cyberchimps.com/">CyberChimps</a>. Please visit the <a href="themes.php?page=cyberchimps-theme-options">Theme Options</a> to setup and build your website.</p>
+			</div>
+		<?php
+		}
+	}
+}
+add_action( 'admin_notices', 'cyberchimps_welcome_notice' );

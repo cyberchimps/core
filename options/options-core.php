@@ -767,14 +767,17 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_header_heading'
 	);
 
-	$fields_list[] = array(
-		'id'      => 'google_analytics',
-		'name'    => __( 'Google Analytics', 'cyberchimps_core' ),
-		'type'    => 'textarea',
-		'desc'    => __( 'Copy and paste your Google Analytics code here', 'cyberchimps_core' ),
-		'section' => 'cyberchimps_header_options_section',
-		'heading' => 'cyberchimps_header_heading'
-	);
+	// Add Google Analytics only to pro themes. In free themes it will be added by plugin as per WP standards.
+	if( $theme_check == 'pro' ) {
+		$fields_list[] = array(
+			'id'      => 'google_analytics',
+			'name'    => __( 'Google Analytics', 'cyberchimps_core' ),
+			'type'    => 'textarea',
+			'desc'    => __( 'Copy and paste your Google Analytics code here', 'cyberchimps_core' ),
+			'section' => 'cyberchimps_header_options_section',
+			'heading' => 'cyberchimps_header_heading'
+		);
+	}
 
 	// Search bar toggle
 	$fields_list[] = array(

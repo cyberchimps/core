@@ -1174,7 +1174,9 @@ function cyberchimps_google_analytics() {
 	}
 }
 
-add_action( 'wp_head', 'cyberchimps_google_analytics', 9999 );
+if( 'pro' == cyberchimps_theme_check() ) {
+	add_action( 'wp_head', 'cyberchimps_google_analytics', 9999 );
+}
 
 // Add an array to an existing array in a certain position, used by options
 function cyberchimps_heading_filter( $orig, $new ) {
