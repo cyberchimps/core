@@ -32,8 +32,8 @@
 
 #adminmenu #menu-posts-portfolio_images .menu-icon-portfolio_images div.wp-menu-image:before {
 	font-family: 'cyberchimps' !important;
-	content: 'c';
-	font-size: 98% !important;
+	content: "\e001";
+	font-size: 100% !important;
 	line-height: 1.4em !important;
 }
 
@@ -43,7 +43,7 @@
 
 #adminmenu #menu-posts-boxes .menu-icon-boxes div.wp-menu-image:before {
 	font-family: 'cyberchimps' !important;
-	content: 'e';
+	content: "\e003";
 	font-size: 100% !important;
 	line-height: 1.4em !important;
 }
@@ -54,9 +54,9 @@
 
 #adminmenu #menu-posts-custom_slides .menu-icon-custom_slides div.wp-menu-image:before {
 	font-family: 'cyberchimps' !important;
-	content: 'b';
-	font-size: 108% !important;
-	line-height: 1.3em !important;
+	content: "\e000";
+	font-size: 115% !important;
+	line-height: 1.2em !important;
 }
 
 #adminmenu #menu-posts-featured_posts .menu-icon-featured_posts div.wp-menu-image img {
@@ -65,7 +65,7 @@
 
 #adminmenu #menu-posts-featured_posts .menu-icon-featured_posts div.wp-menu-image:before {
 	font-family: 'cyberchimps' !important;
-	content: 'd';
-	font-size: 100% !important;
+	content: "\e002";
+	font-size: 108% !important;
 	line-height: 1.4em !important;
 }
