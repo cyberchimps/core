@@ -1338,15 +1338,6 @@ function cyberchimps_addon_fields( $fields_list ) {
 		'heading'  => 'cyberchimps_addons_heading'
 	);
 	
-	$fields_list[] = array(
-		'name'     => __( 'Responsive Addon', 'cyberchimps' ),
-		'id'       => 'responsive_addon',
-		'type'     => 'info',
-		'callback' => 'cyberchimps_responsive_addon_callback',
-		'section'  => 'cyberchimps_resposnive_addon_options',
-		'heading'  => 'cyberchimps_addons_heading'
-	);
-	
 	return $fields_list;
 }
 
