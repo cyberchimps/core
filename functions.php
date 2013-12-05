@@ -1436,7 +1436,7 @@ function cyberchimps_add_responsive_class( $classes ) {
 
 if ( 'mp6' === get_user_option( 'admin_color' ) ) {
 	function load_custom_admin_styles() {
-		wp_register_style( 'cc-admin', get_template_directory_uri() . '/cyberchimps/options/lib/css/admin.css', false, '1.0.0' );
+		wp_register_style( 'cc-admin', get_template_directory_uri() . '/cyberchimps/options/lib/css/custom-post-icons.css', false, '1.0.0' );
 		wp_enqueue_style( 'cc-admin' );
 	}
 	add_action( 'admin_enqueue_scripts', 'load_custom_admin_styles' );

@@ -1,3 +1,11 @@
+@font-face {
+	font-family: "cyberchimps";
+	src: url("../../../lib/css/cyberchimps.eot");
+	src: url("../../../lib/css/cyberchimps.eot?#iefix") format("embedded-opentype"), url("../../../lib/css/cyberchimps.woff") format("woff"), url("../../../lib/css/cyberchimps.ttf") format("truetype"), url("../../../lib/css/cyberchimps.svg#cyberchimps") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*************** HTML & Basics ****************/
 
 body {
