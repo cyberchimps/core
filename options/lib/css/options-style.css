@@ -32,6 +32,10 @@
 	width: 1em;
 }
 
+.glyphicon-arrow-right:before {
+	content: "\e092";
+}
+
 /*************** HTML & Basics ****************/
 
 body {
