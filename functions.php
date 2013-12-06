@@ -853,7 +853,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 	return '&hellip;
 			</p>
 			<div class="more-link">
-				<span class="continue-arrow"><img src="' . get_template_directory_uri() . '/cyberchimps/lib/images/continue.png"></span><a href="' . get_permalink( $post->ID ) . '">  ' . $linktext . '</a>
+				<span class="glyphicon glyphicon-arrow-right"></span><a href="' . get_permalink( $post->ID ) . '">  ' . $linktext . '</a>
 			</div>';
 }
 
