@@ -50,6 +50,7 @@
 
 .glyphicon-chevron-up:before {
 	content: "\e113";
+	font-size: 60%;
 }
 
 .glyphicon-circle-arrow-right:before {
@@ -421,7 +422,7 @@ ul.cc-parent > li.cc-active > a {
 	border-bottom: none;
 }
 
-ul.cc-parent > li > a i {
+ul.cc-parent > li > a > span {
 	float: right;
 	margin-top: -2px;
 	margin-right: 5%;
@@ -764,17 +765,11 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 70px;
-	/*font-size: 414%;*/
-	/*color: #5fb53c;*/
 }
 
 .cc-main-content .toggle.checked:before {
 	content: "\e005"; /*on*/
 	color: #4993e7;
-}
-
-.cc-main-content .toggle.checked:hover {
-	color: #333 !important;
 }
 
 .cc-main-content .left-label {
@@ -942,16 +937,11 @@ img.action, .action {
 }
 
 .section-group h3 span {
-	/*background: url("../../../lib/images/downarrow.png") repeat scroll 0 0 transparent;*/
 	display: block;
 	float: right;
 	height: 16px;
 	width: 16px;
 	margin-top: 0px;
-}
-
-.section-group h3 span.minus {
-	background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
 }
 
 /* ==================================== Twitter API ================================================== */
