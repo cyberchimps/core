@@ -248,7 +248,8 @@ function cyberchimps_options_page() {
 						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
 						echo '<li class="cc-has-children">';
-						echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '<i class="icon-chevron-down"></i></a><div class="cc-menu-arrow"><div></div></div>';
+						echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html(
+								$heading['title'] ) . '<span class="glyphicon glyphicon-chevron-down"></span></a><div class="cc-menu-arrow"><div></div></div>';
 
 						echo '<ul class="cc-child">';
 						foreach( $sections_list as $section ) {
@@ -373,7 +374,7 @@ function cyberchimps_do_settings_sections( $page ) {
 
 		echo '<div class="section-group" id="' . esc_attr( $jquery_click_section_hook ) . '">';
 		if( $section['title'] ) {
-			echo "<h3>{$section['title']}<span></span></h3>\n";
+			echo "<h3><span class='glyphicon glyphicon-chevron-down'></span> {$section['title']}</h3>\n";
 		}
 
 		// wrapper div of all field-container divs
@@ -505,14 +506,14 @@ function cyberchimps_drag_drop_field( $value ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
-			$output .= '<img src="' . $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .= '<span class="icon-minus-sign action"></span>';
 			$output .= "<span data-key='{$key}'>{$option}</span>";
 			$output .= "</div>";
 		}
 	}
 	$output .= "</div>";
 	$output .= "</div>";
-	$output .= '<div class="options-arrow span1 hidden-phone"><i class="fa fa-arrow-right"></i></div>';
+	$output .= '<div class="options-arrow span1 hidden-phone"><span class="glyphicon glyphicon-arrow-right"></span></div>';
 	$output .= "<div class='right_list span5'>";
 	$output .= "<div class='active'>Active Elements</div>";
 	$output .= "<div class='drag'>Drag & Drop Elements</div>";
@@ -523,7 +524,7 @@ function cyberchimps_drag_drop_field( $value ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
-			$output .= '<img src="' . $directory_uri . '/cyberchimps/lib/images/minus.png" class="action" title="Remove"/>';
+			$output .= '<span class="glyphicon glyphicon-minus-sign action"></span>';
 			$output .= "<span data-key='{$key}'>{$value['options'][$key]}</span>";
 			$output .= "</div>";
 		}

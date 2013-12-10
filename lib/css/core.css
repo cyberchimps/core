@@ -8,8 +8,8 @@
 
 .container-full-width:before, .container-full-width:after {
 	display: table;
-	line-height: 0;
 	content: "";
+	line-height: 0;
 }
 
 .container-full-width:after {
@@ -18,9 +18,9 @@
 
 /* Text meant only for screen readers */
 .assistive-text {
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	position: absolute !important; /* IE6, IE7 */
+	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
 }
 
 /* ie only */
@@ -31,19 +31,19 @@
 
 /* CSS to make the video responsive starts */
 .flex-video {
-	height: 0;
-	margin-bottom: 16px;
-	overflow: hidden;
-	padding-bottom: 67.5%;
 	position: relative;
+	overflow: hidden;
+	margin-bottom: 16px;
+	padding-bottom: 67.5%;
+	height: 0;
 }
 
 .flex-video iframe, .flex-video object, .flex-video embed {
-	height: 100%;
-	left: 0;
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
+	height: 100%;
 }
 
 /* CSS to make the video responsive ends */
@@ -52,7 +52,7 @@
 	display: block;
 }
 
-/* ==================================== FOOTER ================================================== */
+/* === FOOTER === */
 
 @import url('http://fonts.googleapis.com/css?family=Bitter');
 
@@ -61,14 +61,176 @@
 }
 
 #after_footer .cc-credit-text {
+	float: left;
 	margin-top: 5px;
 	margin-left: 5px;
-	font-family: 'Bitter', serif;
-	float: left;
 	color: #9b9c9b;
+	font-family: 'Bitter', serif;
 }
 
 #after_footer .cc-credit-text span {
 	color: #22699d;
 	font-weight: 200;
+}
+
+/* === SOCIAL ICON FONT === */
+
+@font-face {
+	font-family: 'Mono Social Icons Font';
+	src: url('MonoSocialIconsFont-1.10.eot');
+	src: url('MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/MonoSocialIconsFont-1.10.woff') format('woff'), url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'), url('../fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+	src: url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#social {
+	float: right;
+}
+
+.symbol {
+	font-family: 'Mono Social Icons Font';
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+a.symbol {
+	float: left;
+	margin: 0 6px 10px 0;
+	padding: 3px 0 6px 1px;
+	border: 1px solid #333333;
+	border-radius: 4px;
+	background: #444444;
+	box-shadow: 2px 2px 0 #cccccc;
+	color: white;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #111111;
+	font-size: 3em;
+	line-height: 0.6;
+}
+
+.default-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	background: #eeeeee;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+	background: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+	box-shadow: 2px 2px 0 #ededed;
+	color: #555555;
+	text-shadow: 1px 1px 0 #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
+}
+
+.retina-icons a.symbol {
+	margin-right: 0;
+	border: none;
+	background: none;
+	box-shadow: none;
+	color: #555555;
+	text-shadow: 2px 2px rgba(204, 204, 204, 0.5);
+	font-size: 3.5em;
+}
+
+.retina-icons a.symbol:hover {
+	background: #eeeeee;
+	color: #222222;
+}
+
+.legacy-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	background: #eeeeee;
+	box-shadow: 2px 2px 0 #ededed;
+	color: #ffffff;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+}
+
+.round-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 50%;
+	background: #eeeeee;
+	box-shadow: 2px 2px 0 #ededed;
+	color: #ffffff;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+}
+
+.round-icons a.symbol:hover,
+.legacy-icons a.symbol:hover {
+	opacity: .8;
+}
+
+.round-icons a.symbol.facebook,
+.legacy-icons a.symbol.facebook {
+	border: 1px solid #4d6595;
+	background: #556fa3;
+}
+
+.round-icons a.symbol.twitterbird,
+.legacy-icons a.symbol.twitterbird {
+	border: 1px solid #37bce9;
+	background: #4dc4ec;
+}
+
+.round-icons a.symbol.googleplus,
+.legacy-icons a.symbol.googleplus {
+	border: 1px solid #b43727;
+	background: #d34d3b;
+}
+
+.round-icons a.symbol.linkedin,
+.legacy-icons a.symbol.linkedin {
+	border: 1px solid #00659c;
+	background: #0072b1;
+}
+
+.round-icons a.symbol.youtube,
+.legacy-icons a.symbol.youtube {
+	border: 1px solid #9f271f;
+	background: #b42d24;
+}
+
+.round-icons a.symbol.gowallapin,
+.legacy-icons a.symbol.gowallapin {
+	border: 1px solid #74a82a;
+	background: #7fb72f;
+}
+
+.round-icons a.symbol.flickr,
+.legacy-icons a.symbol.flickr {
+	border: 1px solid #0756b7;
+	background: #0969dd;
+}
+
+.round-icons a.symbol.pinterest,
+.legacy-icons a.symbol.pinterest {
+	border: 1px solid #b81d1f;
+	background: #cd2123;
+}
+
+.round-icons a.symbol.email,
+.legacy-icons a.symbol.email {
+	border: 1px solid #3b65ab;
+	background: #4170bd;
+}
+
+.round-icons a.symbol.rss,
+.legacy-icons a.symbol.rss {
+	border: 1px solid #dc650e;
+	background: #f07013;
+}
+
+a.symbol:hover {
+	background: #cccccc;
 }

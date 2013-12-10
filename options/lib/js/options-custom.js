@@ -26,16 +26,19 @@ jQuery(document).ready(function ($) {
 		var $this = $(this);
 
 		$this.parent().find('div.clear').css("display", "none");
-		$this.find("span.minus").removeClass('minus');
 		if ($this.siblings('div').is(":visible")) {
 			$this.siblings('div').fadeOut(function () {
 				cc_height($('.cc-content').height() - $this.siblings('div').height());
 			});
+
+			$this.find("span.glyphicon").removeClass('glyphicon-chevron-down');
+			$this.find("span.glyphicon").addClass('glyphicon-chevron-up');
 		} else {
 			$this.siblings('div').fadeIn(function () {
 				cc_height($('.cc-content').height() + $this.siblings('div').height());
 			});
-			$this.find("span").addClass('minus');
+			$this.find("span.glyphicon").removeClass('glyphicon-chevron-up');
+			$this.find("span.glyphicon").addClass('glyphicon-chevron-down');
 		}
 	});
 
