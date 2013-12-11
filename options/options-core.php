@@ -189,12 +189,6 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		);
 
 		$sections_list[] = array(
-			'id'      => 'cyberchimps_blog_magazine_section',
-			'label'   => __( 'Magazine Options', 'cyberchimps_core' ),
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$sections_list[] = array(
 			'id'      => 'cyberchimps_blog_portfolio_pro_section',
 			'label'   => __( 'Portfolio Pro Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
@@ -1633,109 +1627,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'heading' => 'cyberchimps_blog_heading'
 		);
 		/********* PORTFOLIO PRO ENDS *****************/
-
-		/********* MAGAZINE STARTS *****************/
-
-		$fields_list[] = array(
-			'name'    => __( 'Meta Data', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_metadata',
-			'type'    => 'toggle',
-			'std'     => 'checked',
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Featured Image', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_featured_image',
-			'type'    => 'toggle',
-			'std'     => 'checked',
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Category', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_category',
-			'type'    => 'select',
-			'options' => $options_categories,
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Featured Excerpt Length', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_excerpt_length',
-			'type'    => 'text',
-			'std'     => '70',
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Number of Columns', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_no_of_columns',
-			'type'    => 'select',
-			'std'     => 2,
-			'options' => array(
-				2 => '2',
-				3 => '3'
-			),
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Number of Rows', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_no_of_rows',
-			'type'    => 'select',
-			'std'     => '2',
-			'options' => array(
-				'1'  => '1', '2' => '2', '3' => '3', '4' => '4',
-				'5'  => '5', '6' => '6', '7' => '7', '8' => '8',
-				'9'  => '9', '10' => '10', '11' => '11', '12' => '12',
-				'13' => '13', '14' => '14', '15' => '15', '16' => '16',
-				'17' => '17', '18' => '18', '19' => '19', '20' => '20'
-			),
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Wide Posts Below Magazine', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_wide_post',
-			'type'    => 'toggle',
-			'std'     => 'checked',
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Wide Post Excerpt Length', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_wide_excerpt_length',
-			'type'    => 'text',
-			'std'     => '130',
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		$fields_list[] = array(
-			'name'    => __( 'Number of Wide Posts', 'cyberchimps_core' ),
-			'id'      => 'blog_magazine_no_of_wide_posts',
-			'type'    => 'select',
-			'std'     => '6',
-			'options' => array(
-				'1'  => '1', '2' => '2', '3' => '3', '4' => '4',
-				'5'  => '5', '6' => '6', '7' => '7', '8' => '8',
-				'9'  => '9', '10' => '10', '11' => '11', '12' => '12',
-				'13' => '13', '14' => '14', '15' => '15', '16' => '16',
-				'17' => '17', '18' => '18', '19' => '19', '20' => '20'
-			),
-			'section' => 'cyberchimps_blog_magazine_section',
-			'heading' => 'cyberchimps_blog_heading'
-		);
-
-		/********* MAGAZINE ENDS *****************/
 
 		/********* BLOG SLIDER STARTS ***********/
 		$fields_list[] = array(
