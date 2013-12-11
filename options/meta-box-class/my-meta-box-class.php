@@ -415,7 +415,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 					echo '
         <span class="re-control at-re-toggle"><img src="' . $plugin_path . '/images/edit.png" alt="Edit" title="Edit"/></span> 
-        <span class="re-control"><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'mmb' ) . '" title="' . __( 'Remove', 'mmb' ) . '" id="remove-' . $field['id'] . '"></span>
+        <span class="re-control"><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'cyberchimps_core' ) . '" title="' . __( 'Remove', 'cyberchimps_core' ) . '" id="remove-' . $field['id'] . '"></span>
         <span class="re-control-clear"></span></div>';
 					$c = $c + 1;
 				}
@@ -428,7 +428,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			else {
 				echo 'http://i.imgur.com/w5Tuc.png';
 			}
-			echo '" alt="' . __( 'Add', 'mmb' ) . '" title="' . __( 'Add', 'mmb' ) . '" id="add-' . $field['id'] . '"><br/></div>';
+			echo '" alt="' . __( 'Add', 'cyberchimps_core' ) . '" title="' . __( 'Add', 'cyberchimps_core' ) . '" id="add-' . $field['id'] . '"><br/></div>';
 
 			//create all fields once more for js function and catch with object buffer
 			ob_start();
@@ -457,7 +457,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			if( $field['inline'] ) {
 				echo '</tr>';
 			}
-			echo '</table><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'mmb' ) . '" title="' . __( 'Remove', 'mmb' ) . '" id="remove-' . $field['id'] . '"></div>';
+			echo '</table><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'cyberchimps_core' ) . '" title="' . __( 'Remove', 'cyberchimps_core' ) . '" id="remove-' . $field['id'] . '"></div>';
 			$counter = 'countadd_' . $field['id'];
 			$js_code = ob_get_clean();
 			$js_code = str_replace( "\n", "", $js_code );
@@ -1917,7 +1917,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				$ext     = substr( strrchr( $file['name'], '.' ), 1 );
 
 				if( !in_array( $ext, (array)$allowed ) ) {
-					$file['error'] = __( "Sorry, you cannot upload this file type for this field." );
+					$file['error'] = __( 'Sorry, you cannot upload this file type for this field.', 'cyberchimps_core' );
 
 					return $file;
 				}
@@ -1927,7 +1927,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 						return $file;
 					}
 				}
-				$file['error'] = __( "Sorry, you cannot upload this file type for this field." );
+				$file['error'] = __( 'Sorry, you cannot upload this file type for this field.', 'cyberchimps_core' );
 			}
 
 			return $file;
@@ -1972,7 +1972,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function load_textdomain() {
 			//In themes/plugins/mu-plugins directory
-			load_textdomain( 'mmb', dirname( __FILE__ ) . '/lang/' . get_locale() . 'mo' );
+			load_textdomain( 'cyberchimps_core', dirname( __FILE__ ) . '/lang/' . get_locale() . 'mo' );
 		}
 	} // End Class
 endif; // End Check Class Exists
