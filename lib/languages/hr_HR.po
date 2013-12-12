@@ -1077,8 +1077,8 @@ msgid "Restore Defaults"
 msgstr "Vrati polazno"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
-msgstr "CyberChimps Wordpress teme"
+msgid "CyberChimps WordPress Themes"
+msgstr "CyberChimps WordPress teme"
 
 #: ../../options/options-init.php
 msgid "Default Field"

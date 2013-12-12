@@ -1077,8 +1077,8 @@ msgid "Restore Defaults"
 msgstr "Gjenopprett Standard"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
-msgstr "CyberChimps Wordpress-temaer"
+msgid "CyberChimps WordPress Themes"
+msgstr "CyberChimps WordPress-temaer"
 
 #: ../../options/options-init.php
 msgid "Default Field"

@@ -1080,8 +1080,8 @@ msgid "Restore Defaults"
 msgstr "Kembalikan aturan baku"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
-msgstr "CyberChimps Wordpress tema"
+msgid "CyberChimps WordPress Themes"
+msgstr "CyberChimps WordPress tema"
 
 #: ../../options/options-init.php
 msgid "Default Field"
