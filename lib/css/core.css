@@ -116,6 +116,10 @@ a.symbol {
 	line-height: 0.6;
 }
 
+a.symbol:hover {
+	text-decoration: none;
+}
+
 .default-icons a.symbol {
 	border: 1px solid #cccccc;
 	border-radius: 4px;
