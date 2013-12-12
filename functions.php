@@ -301,7 +301,7 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 
-	//Overwrite display_element function to add has_children attribute. Not needed in >= Wordpress 3.4
+	//Overwrite display_element function to add has_children attribute. Not needed in >= WordPress 3.4
 	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
 
 		if( !$element ) {

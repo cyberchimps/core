@@ -301,9 +301,9 @@ function cyberchimps_options_page() {
 		<div class="cc-footer">
 			<div class="span3">
 				<div class="cc-logo">
-					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"><img
+					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"><img
 							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/cc-logo.png"
-							alt="<?php esc_attr_e( 'CyberChimps Wordpress Themes', 'cyberchimps_core' ); ?>"/></a>
+							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"/></a>
 				</div>
 				<!-- cc-logo -->
 			</div>
