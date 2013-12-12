@@ -18,6 +18,22 @@
 /********************************************* MAIN BOX STYLES **********************************************/
 /************************************************************************************************************/
 
+@font-face {
+	font-family: "cyberchimps";
+	src: url("../../../lib/fonts/cyberchimps.eot");
+	src: url("../../../lib/fonts/cyberchimps.eot?#iefix") format("embedded-opentype"), url("../../../lib/fonts/cyberchimps.woff") format("woff"), url("../../../lib/fonts/cyberchimps.ttf") format("truetype"), url("../../../lib/fonts/cyberchimps.svg#cyberchimps") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Glyphicons Halflings";
+	src: url("../../../lib/fonts/glyphicons-halflings-regular.eot");
+	src: url("../../../lib/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../../lib/fonts/glyphicons-halflings-regular.woff") format("woff"), url("../../../lib/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../../../lib/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 table.form-table {
 	display: table;
 	table-layout: fixed;
