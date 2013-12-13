@@ -199,26 +199,36 @@ function cyberchimps_header_social_icons() {
 	$social['twitterbird']['set']   = cyberchimps_get_option( 'social_twitter', 'checked' );
 	$social['twitterbird']['title'] = 'twitter';
 	$social['twitterbird']['url'] = cyberchimps_get_option( 'twitter_url' );
+	$social['twitterbird']['uni'] = '&#xe086;';
 	$social['facebook']['set']      = cyberchimps_get_option( 'social_facebook', 'checked' );
 	$social['facebook']['url'] = cyberchimps_get_option( 'facebook_url' );
+	$social['facebook']['uni'] = '&#xe027;';
 	$social['googleplus']['set']    = cyberchimps_get_option( 'social_google', 'checked' );
 	$social['googleplus']['url'] = cyberchimps_get_option( 'google_url' );
+	$social['googleplus']['uni'] = '&#xe039;';
 	$social['flickr']['set']        = cyberchimps_get_option( 'social_flickr' );
 	$social['flickr']['url'] = cyberchimps_get_option( 'flickr_url' );
+	$social['flickr']['uni'] = '&#xe029;';
 	$social['pinterest']['set']     = cyberchimps_get_option( 'social_pinterest' );
 	$social['pinterest']['url'] = cyberchimps_get_option( 'pinterest_url' );
+	$social['pinterest']['uni'] = '&#xe064;';
 	$social['linkedin']['set']      = cyberchimps_get_option( 'social_linkedin' );
 	$social['linkedin']['url'] = cyberchimps_get_option( 'linkedin_url' );
+	$social['linkedin']['uni'] = '&#xe052;';
 	$social['youtube']['set']       = cyberchimps_get_option( 'social_youtube' );
 	$social['youtube']['url'] = cyberchimps_get_option( 'youtube_url' );
+	$social['youtube']['uni'] = '&#xe099;';
 	//TODO we don't have a google maps icon, we need to add one using gowalla logo in meantime
 	$social['gowallapin']['set']   = cyberchimps_get_option( 'social_googlemaps' );
 	$social['gowallapin']['title'] = 'google maps';
 	$social['gowallaoin']['url'] = cyberchimps_get_option( 'googlemaps_url' );
+	$social['gowallaoin']['uni'] = '&#xe041;';
 	$social['email']['set']        = cyberchimps_get_option( 'social_email' );
 	$social['email']['url'] = cyberchimps_get_option( 'email_url' );
+	$social['email']['uni'] = '&#xe024;';
 	$social['rss']['set']          = cyberchimps_get_option( 'social_rss' );
 	$social['rss']['url'] = cyberchimps_get_option( 'rss_url' );
+	$social['rss']['uni'] = '&#xe071;';
 
 	$output = '';
 
@@ -236,7 +246,7 @@ function cyberchimps_header_social_icons() {
 
 			// Create the output
 			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '" target="_blank"
-			title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $key ) . '</a>';
+			title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $social[$key]['uni'] ) . '</a>';
 		}
 
 	}
