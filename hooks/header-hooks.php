@@ -221,8 +221,8 @@ function cyberchimps_header_social_icons() {
 	//TODO we don't have a google maps icon, we need to add one using gowalla logo in meantime
 	$social['gowallapin']['set']	= cyberchimps_get_option( 'social_googlemaps' );
 	$social['gowallapin']['title']	= 'google maps';
-	$social['gowallaoin']['url']	= cyberchimps_get_option( 'googlemaps_url' );
-	$social['gowallaoin']['uni']	= '&#xe041;';
+	$social['gowallapin']['url']	= cyberchimps_get_option( 'googlemaps_url' );
+	$social['gowallapin']['uni']	= '&#xe041;';
 	$social['email']['set']			= cyberchimps_get_option( 'social_email' );
 	$social['email']['url']			= 'mailto:' .cyberchimps_get_option( 'email_url' );
 	$social['email']['uni']			= '&#xe024;';
@@ -243,7 +243,7 @@ function cyberchimps_header_social_icons() {
 
 			// check if title is set and use it otherwise use key as title
 			$title = ( isset( $social[$key]['title'] ) ) ? $social[$key]['title'] : $key;
-
+			
 			// Create the output
 			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '" target="_blank"
 			title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $social[$key]['uni'] ) . '</a>';
