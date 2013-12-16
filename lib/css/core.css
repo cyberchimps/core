@@ -1,6 +1,16 @@
 /* Core Stylesheet
 ----------------------------------------------- */
 
+/* === SOCIAL ICON FONT === */
+
+@font-face {
+	font-family: 'Mono Social Icons Font';
+	src: url('../fonts/monosocialiconsfont-1.10.eot');
+	src: url('../fonts/monosocialiconsfont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/monosocialiconsfont-1.10.woff') format('woff'), url('../fonts/monosocialiconsfont-1.10.ttf') format('truetype'), url('../fonts/monosocialiconsfont-1.10.svg#MonoSocialIconsFont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /* Container Full Width that everything is wrapped in */
 .container-full-width {
 	width: 100%;
@@ -71,17 +81,6 @@
 #after_footer .cc-credit-text span {
 	color: #22699d;
 	font-weight: 200;
-}
-
-/* === SOCIAL ICON FONT === */
-
-@font-face {
-	font-family: 'Mono Social Icons Font';
-	src: url('MonoSocialIconsFont-1.10.eot');
-	src: url('MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/MonoSocialIconsFont-1.10.woff') format('woff'), url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'), url('../fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
-	src: url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 
 #social {
