@@ -11,14 +11,6 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: "Glyphicons Halflings";
-	src: url("../../lib/fonts/glyphicons-halflings-regular.eot");
-	src: url("../../lib/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../lib/fonts/glyphicons-halflings-regular.woff") format("woff"), url("../../lib/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../../lib/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
 /* Container Full Width that everything is wrapped in */
 .container-full-width {
 	width: 100%;
@@ -239,30 +231,4 @@ a.symbol:hover {
 
 a.symbol:hover {
 	background: #cccccc;
-}
-
-/* FONT ICONS ===================*/
-
-.glyphicon {
-	position: relative;
-	top: 1px;
-	display: inline-block;
-	font-family: 'Glyphicons Halflings';
-	-webkit-font-smoothing: antialiased;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.glyphicon:empty {
-	width: 1em;
-}
-
-.glyphicon-list-alt:before {
-	content: "\e032";
-}
-
-.glyphicon-file:before {
-	content: "\e022";
 }

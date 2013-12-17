@@ -634,24 +634,10 @@ function cyberchimps_post_format_icon() {
 		$show = ( cyberchimps_get_option( 'post_format_icons', 1 ) ) ? cyberchimps_get_option( 'post_format_icons', 1 ) : false;
 	}
 	if( $show ):
-
-		// array of post formats and the matching font icons
-		$icons = array(
-			'aside' => '<span class="glyphicon glyphicon-list-alt"></span>',
-			'audio' => '<span class="glyphicon glyphicon-volume-up"></span>',
-			'chat' =>  '<span class="glyphicon glyphicon-comment"></span>',
-			'default' => '<span class="glyphicon glyphicon-file"></span>',
-			'gallery' => '<span class="glyphicon glyphicon-film"></span>',
-			'image' => '<span class="glyphicon glyphicon-picture"></span>',
-			'link' => '<span class="glyphicon glyphicon-link"></span>',
-			'quote' => '<span class="glyphicon glyphicon-share"></span>',
-			'status' => '<span class="glyphicon glyphicon-th"></span>',
-			'video' => '<span class="glyphicon glyphicon-facetime-video"></span>'
-		);
 		?>
 
 		<div class="postformats"><!--begin format icon-->
-			<?php echo $icons[$format]; ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format; ?>.png" alt="formats"/>
 		</div><!--end format-icon-->
 	<?php
 	endif;
