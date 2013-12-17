@@ -603,6 +603,21 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			echo "<textarea class='at-textarea large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " cols='60' rows='10'>{$meta}</textarea>";
 			$this->show_field_end( $field, $meta );
 		}
+		
+		/**
+		 * Show Field Unfiltered Textarea.
+		 *
+		 * @param string $field
+		 * @param string $meta
+		 *
+		 * @since 1.0
+		 * @access public
+		 */
+		public function show_field_unfiltered_textarea( $field, $meta ) {
+			$this->show_field_begin( $field, $meta );
+			echo "<textarea class='at-textarea large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " cols='60' rows='10'>{$meta}</textarea>";
+			$this->show_field_end( $field, $meta );
+		}
 
 		/**
 		 * Show Field Select.
@@ -1033,7 +1048,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 					$sanitize_func = 'sanitize_field_' . $type;
 
 					if( method_exists( $this, $sanitize_func ) ) {
-						$new = call_user_func( array( $this, $sanitize_func ), $new );
+						$new = call_user_func( array( $this, $sanitize_func ), $new, $old );
 					}
 					
 					// Call defined method to save meta value, if there's no methods, call common one.
@@ -2128,5 +2143,23 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		$output = wp_kses( $input, $allowedposttags );
 		
 		return $output;
+	}
+	
+	/**
+	 * Sanitize unfiltered_textarea Field.
+	 *
+	 * @param string $input
+	 *
+	 * @returns string $output
+	 *
+	 * @access public
+	 */
+	public function sanitize_field_unfiltered_textarea( $input, $old ) {
+		if( current_user_can( 'unfiltered_html' ) ) {
+			return $input;
+		}
+		else {
+			return $old;
+		}
 	}
 }
