@@ -14,9 +14,9 @@
  * @link     http://www.cyberchimps.com/
 */
 
-/************************************************************************************************************/
-/********************************************* MAIN BOX STYLES **********************************************/
-/************************************************************************************************************/
+/***************************/
+/* FONTS AND ICONS *********/
+/***************************/
 
 @font-face {
 	font-family: "cyberchimps";
@@ -33,6 +33,53 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+/* Glyphicons ===================*/
+
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon:empty {
+	width: 1em;
+}
+
+.glyphicon-arrow-right:before {
+	content: "\e092";
+}
+
+.glyphicon-minus-sign:before {
+	content: "\e082";
+	font-size: 88%;
+	color: #c00000;
+	margin-right: 3px;
+}
+
+.glyphicon-chevron-down:before {
+	content: "\e114";
+	font-size: 60%;
+}
+
+.glyphicon-chevron-up:before {
+	content: "\e113";
+	font-size: 60%;
+}
+
+.glyphicon-circle-arrow-right:before {
+	content: "\e131";
+}
+
+/************************************************************************************************************/
+/********************************************* MAIN BOX STYLES **********************************************/
+/************************************************************************************************************/
 
 table.form-table {
 	display: table;

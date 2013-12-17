@@ -506,7 +506,7 @@ function cyberchimps_drag_drop_field( $value ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
-			$output .= '<span class="icon-minus-sign action"></span>';
+			$output .= '<span class="glyphicon glyphicon-minus-sign action"></span>';
 			$output .= "<span data-key='{$key}'>{$option}</span>";
 			$output .= "</div>";
 		}
