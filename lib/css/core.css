@@ -248,6 +248,8 @@ a.symbol:hover {
 
 .glyphicon {
 	position: relative;
+	font-size: 1.9em;
+	color: #ccc;
 	top: 1px;
 	display: inline-block;
 	font-family: 'Glyphicons Halflings';
@@ -266,6 +268,38 @@ a.symbol:hover {
 	content: "\e032";
 }
 
+.glyphicon-volume-up:before {
+	content: "\e038";
+}
+
+.glyphicon-comment:before {
+	content: "\e111";
+}
+
 .glyphicon-file:before {
 	content: "\e022";
+}
+
+.glyphicon-film:before {
+	content: "\e009";
+}
+
+.glyphicon-picture:before {
+	content: "\e060";
+}
+
+.glyphicon-link:before {
+	content: "\e144";
+}
+
+.glyphicon-share:before {
+	content: "\e066";
+}
+
+.glyphicon-th:before {
+	content: "\e011";
+}
+
+.glyphicon-facetime-video:before {
+	content: "\e059";
 }
