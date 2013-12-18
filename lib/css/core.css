@@ -246,7 +246,7 @@ a.symbol:hover {
 
 /* FONT ICONS ===================*/
 
-.glyphicon {
+.postformats .glyphicon {
 	position: relative;
 	font-size: 1.9em;
 	color: #ccc;
