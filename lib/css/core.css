@@ -251,6 +251,7 @@ a.symbol:hover {
 	font-size: 1.9em;
 	color: #ccc;
 	top: 1px;
+	margin-left: 10px;
 	display: inline-block;
 	font-family: 'Glyphicons Halflings';
 	-webkit-font-smoothing: antialiased;
