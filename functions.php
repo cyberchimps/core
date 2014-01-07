@@ -634,10 +634,24 @@ function cyberchimps_post_format_icon() {
 		$show = ( cyberchimps_get_option( 'post_format_icons', 1 ) ) ? cyberchimps_get_option( 'post_format_icons', 1 ) : false;
 	}
 	if( $show ):
+
+		// array of post formats and the matching font icons
+		$icons = array(
+			'aside' => '<span class="glyphicon glyphicon-list-alt"></span>',
+			'audio' => '<span class="glyphicon glyphicon-volume-up"></span>',
+			'chat' =>  '<span class="glyphicon glyphicon-comment"></span>',
+			'default' => '<span class="glyphicon glyphicon-file"></span>',
+			'gallery' => '<span class="glyphicon glyphicon-film"></span>',
+			'image' => '<span class="glyphicon glyphicon-picture"></span>',
+			'link' => '<span class="glyphicon glyphicon-link"></span>',
+			'quote' => '<span class="glyphicon glyphicon-share"></span>',
+			'status' => '<span class="glyphicon glyphicon-th"></span>',
+			'video' => '<span class="glyphicon glyphicon-facetime-video"></span>'
+		);
 		?>
 
 		<div class="postformats"><!--begin format icon-->
-			<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format; ?>.png" alt="formats"/>
+			<?php echo $icons[$format]; ?>
 		</div><!--end format-icon-->
 	<?php
 	endif;
@@ -1425,7 +1439,7 @@ function cyberchimps_add_responsive_class( $classes ) {
 	return $classes;
 }
 
-if ( 'mp6' === get_user_option( 'admin_color' ) ) {
+if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp_version'], '3.8-alpha', '>' ) ) {
 	function load_custom_admin_styles() {
 		wp_register_style( 'cc-admin', get_template_directory_uri() . '/cyberchimps/options/lib/css/custom-post-icons.css', false, '1.0.0' );
 		wp_enqueue_style( 'cc-admin' );
