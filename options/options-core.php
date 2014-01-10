@@ -1030,7 +1030,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 
 	/********* BLOG OPTIONS STARTS ***********/
 	$fields_list[] = array(
-		'name'    => __( 'Sidebar Options', 'cyberchimps_core' ),
+		'name'    => __( 'Select Page Layout', 'cyberchimps_core' ),
 		'id'      => 'sidebar_images',
 		'std'     => 'right_sidebar',
 		'type'    => 'images',
