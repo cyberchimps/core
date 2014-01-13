@@ -177,7 +177,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				wp_enqueue_script( 'meta-boxes-js', $metabox_uri . '/js/metabox-tabs.min.js', array( 'jquery' ), null, true );
 				// Enqueue Media uploader for single images TODO look into removing this and use this classes image uploader that saves images as an array. Will need to change all elements to be
 //              TODO able to work with this
-				wp_enqueue_script( 'cc-media-uploader-js', get_stylesheet_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.min.js', array( 'jquery' ), null, true );
+				wp_enqueue_script( 'cc-media-uploader-js', get_template_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.min.js', array( 'jquery' ), null, true );
 
 				// Make upload feature work event when custom post type doesn't support 'editor'
 				if( $this->has_field( 'image' ) || $this->has_field( 'file' ) ) {
