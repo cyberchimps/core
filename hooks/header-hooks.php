@@ -240,13 +240,13 @@ function cyberchimps_header_social_icons() {
 
 		// Check that the social icon has been set
 		if ( !empty( $value['set'] ) ) {
-
+		
 			// check if title is set and use it otherwise use key as title
 			$title = ( isset( $social[$key]['title'] ) ) ? $social[$key]['title'] : $key;
 			
 			// Create the output
-			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '" target="_blank"
-			title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $social[$key]['uni'] ) . '</a>';
+			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '"' . ( "email" != $key ? 'target="_blank"' : '' )
+			. 'title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $social[$key]['uni'] ) . '</a>';
 		}
 
 	}
