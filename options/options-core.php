@@ -1021,8 +1021,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'boxes_lite'         => __( 'Boxes', 'cyberchimps_core' ),
 			'portfolio_lite'     => __( 'Portfolio Lite', 'cyberchimps_core' ),
 			'blog_post_page'     => __( 'Post Page', 'cyberchimps_core' ),
-			'slider_lite'        => __( 'Slider Lite', 'cyberchimps_core' ),
-			'twitterbar_section' => __( 'Twitter Bar', 'cyberchimps_core' )
+			'slider_lite'        => __( 'Slider Lite', 'cyberchimps_core' )
 		) ),
 		'section'  => 'cyberchimps_blog_drag_and_drop_section',
 		'heading'  => 'cyberchimps_blog_heading'
