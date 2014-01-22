@@ -1031,7 +1031,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[] = array(
 		'name'    => __( 'Select Page Layout', 'cyberchimps_core' ),
 		'id'      => 'sidebar_images',
-		'std'     => 'right_sidebar',
+		'std'     => apply_filters( 'cyberchimps_blog_layout_options_default', 'right_sidebar' ),
 		'type'    => 'images',
 		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width'    => $imagepath . '1col.png',
