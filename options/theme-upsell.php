@@ -32,7 +32,7 @@ function cyberchimps_upsell_style() {
 
 // Add upsell page to the menu.
 function cyberchimps_add_upsell() {
-	$page = add_theme_page( 'CyberChimps Themes', 'CyberChimps Themes', 'administrator', 'cyberchimps-themes', 'cyberchimps_display_upsell' );
+	$page = add_theme_page( 'More Themes', 'More Themes', 'administrator', 'cyberchimps-themes', 'cyberchimps_display_upsell' );
 
 	add_action( 'admin_print_styles-' . $page, 'cyberchimps_upsell_style' );
 }
@@ -56,7 +56,7 @@ function cyberchimps_display_upsell() {
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/options/upsell-logo.png"/>
 				</a>
 			</h2>
-			<h5><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h5>
+			<h3><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h3>
 		</div>
 	</div>
 	<div id="upsell_themes" class="row-fluid">
@@ -71,7 +71,7 @@ function cyberchimps_display_upsell() {
 				</a>
 			</div>
 			<div class="theme-info span9">
-				<a class="theme-name" href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank"><h4>iFeature Pro5</h4></a>
+				<a class="theme-name" href="http://cyberchimps.com/store/ifeaturepro5/" target="_blank"><h4>iFeature Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
 				<?php if( wp_get_theme( "ifeaturepro5" )->exists() ) { ?>
@@ -103,7 +103,7 @@ function cyberchimps_display_upsell() {
 				</a>
 			</div>
 			<div class="theme-info span9">
-				<a class="theme-name" href="http://cyberchimps.com/store/business-pro/" target="_blank"><h4>Business Pro4</h4></a>
+				<a class="theme-name" href="http://cyberchimps.com/store/business-pro/" target="_blank"><h4>Business Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
 				<?php if( wp_get_theme( "businesspro4" )->exists() ) { ?>
@@ -134,7 +134,7 @@ function cyberchimps_display_upsell() {
 				</a>
 			</div>
 			<div class="theme-info span9">
-				<a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro2</h4></a>
+				<a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
 				<?php if( wp_get_theme( "eclipsepro2" )->exists() ) { ?>
@@ -167,7 +167,7 @@ function cyberchimps_display_upsell() {
 				</a>
 			</div>
 			<div class="theme-info span9">
-				<a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
+				<a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
 				<?php if( wp_get_theme( "neuropro3" )->exists() ) { ?>
@@ -199,7 +199,7 @@ function cyberchimps_display_upsell() {
 				</a>
 			</div>
 			<div class="theme-info span9">
-				<a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro2</h4></a>
+				<a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro</h4></a>
 
 				<!-- Check if the theme is installed, if so then add a tick mark -->
 				<?php if( wp_get_theme( "iribbonpro2" )->exists() ) { ?>
