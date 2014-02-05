@@ -1081,8 +1081,8 @@ msgid "Restore Defaults"
 msgstr "Restaurar padrões"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
-msgstr "CyberChimps Wordpress temas"
+msgid "CyberChimps WordPress Themes"
+msgstr "CyberChimps WordPress temas"
 
 #: ../../options/options-init.php
 msgid "Default Field"

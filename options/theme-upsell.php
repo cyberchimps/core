@@ -32,7 +32,7 @@ function cyberchimps_upsell_style() {
 
 // Add upsell page to the menu.
 function cyberchimps_add_upsell() {
-	$page = add_theme_page( 'CyberChimps Themes', 'CyberChimps Themes', 'administrator', 'cyberchimps-themes', 'cyberchimps_display_upsell' );
+	$page = add_theme_page( 'More Themes', 'More Themes', 'administrator', 'cyberchimps-themes', 'cyberchimps_display_upsell' );
 
 	add_action( 'admin_print_styles-' . $page, 'cyberchimps_upsell_style' );
 }
@@ -56,7 +56,7 @@ function cyberchimps_display_upsell() {
 					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/options/upsell-logo.png"/>
 				</a>
 			</h2>
-			<h5><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h5>
+			<h3><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h3>
 		</div>
 	</div>
 	<div id="upsell_themes" class="row">

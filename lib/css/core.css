@@ -1,11 +1,22 @@
 /* Core Stylesheet
 ----------------------------------------------- */
 
-/* Basic HTML styles. */
-img {
-	display: block;
-	height: auto;
-	max-width: 100%;
+/* === SOCIAL ICON FONT === */
+
+@font-face {
+	font-family: 'Mono Social Icons Font';
+	src: url('../fonts/monosocialiconsfont-1.10.eot');
+	src: url('../fonts/monosocialiconsfont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/monosocialiconsfont-1.10.woff') format('woff'), url('../fonts/monosocialiconsfont-1.10.ttf') format('truetype'), url('../fonts/monosocialiconsfont-1.10.svg#MonoSocialIconsFont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Glyphicons Halflings";
+	src: url("../../lib/fonts/glyphicons-halflings-regular.eot");
+	src: url("../../lib/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../lib/fonts/glyphicons-halflings-regular.woff") format("woff"), url("../../lib/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../../lib/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* Container Full Width that everything is wrapped in */
@@ -15,8 +26,8 @@ img {
 
 .container-full-width:before, .container-full-width:after {
 	display: table;
-	line-height: 0;
 	content: "";
+	line-height: 0;
 }
 
 .container-full-width:after {
@@ -25,9 +36,9 @@ img {
 
 /* Text meant only for screen readers */
 .assistive-text {
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	position: absolute !important; /* IE6, IE7 */
+	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
 }
 
 /* ie only */
@@ -38,19 +49,19 @@ img {
 
 /* CSS to make the video responsive starts */
 .flex-video {
-	height: 0;
-	margin-bottom: 16px;
-	overflow: hidden;
-	padding-bottom: 67.5%;
 	position: relative;
+	overflow: hidden;
+	margin-bottom: 16px;
+	padding-bottom: 67.5%;
+	height: 0;
 }
 
 .flex-video iframe, .flex-video object, .flex-video embed {
-	height: 100%;
-	left: 0;
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
+	height: 100%;
 }
 
 /* CSS to make the video responsive ends */
@@ -59,53 +70,7 @@ img {
 	display: block;
 }
 
-/* ==================================== PAGINATION ================================================== */
-
-.pagination ul {
-	border-radius: 4px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-	display: inline-block;
-	margin-bottom: 0;
-	margin-left: 0;
-}
-
-.pagination li {
-	list-style: none;
-	display: inline;
-}
-
-.pagination {
-	margin: 20px 0px;
-}
-
-.pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
-	border-bottom-left-radius: 4px;
-	border-left-width: 1px;
-	border-top-left-radius: 4px;
-}
-
-.pagination ul > li > a:hover, .pagination ul > .active > a, .pagination ul > .active > span {
-	background-color: #F5F5F5;
-}
-
-.pagination ul > .active > a, .pagination ul > .active > span {
-	color: #999999;
-	cursor: default;
-}
-
-.pagination ul > li > a, .pagination ul > li > span {
-	background-color: #FFFFFF;
-	border-color: #DDDDDD;
-	border-image: none;
-	border-style: solid;
-	border-width: 1px 1px 1px 0;
-	float: left;
-	line-height: 20px;
-	padding: 4px 12px;
-	text-decoration: none;
-}
-
-/* ==================================== FOOTER ================================================== */
+/* === FOOTER === */
 
 @import url('http://fonts.googleapis.com/css?family=Bitter');
 
@@ -114,14 +79,227 @@ img {
 }
 
 #after_footer .cc-credit-text {
+	float: left;
 	margin-top: 5px;
 	margin-left: 5px;
-	font-family: 'Bitter', serif;
-	float: left;
 	color: #9b9c9b;
+	font-family: 'Bitter', serif;
 }
 
 #after_footer .cc-credit-text span {
 	color: #22699d;
 	font-weight: 200;
+}
+
+/* === SOCIAL ICON FONT === */
+
+#social {
+	float: right;
+}
+
+.symbol {
+	font-family: 'Mono Social Icons Font';
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+a.symbol {
+	float: left;
+	margin: 0 6px 10px 0;
+	padding: 3px 0 6px 1px;
+	border: 1px solid #333333;
+	border-radius: 4px;
+	background: #444444;
+	color: white;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #111111;
+	font-size: 3em;
+	line-height: 0.6;
+}
+
+a.symbol:hover {
+	text-decoration: none;
+}
+
+.default-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	background: #eeeeee;
+	background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+	background: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+	background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+	color: #555555;
+	text-shadow: 1px 1px 0 #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
+}
+
+.retina-icons a.symbol {
+	margin-right: 0;
+	border: none;
+	background: none;
+	color: #555555;
+	text-shadow: 2px 2px rgba(204, 204, 204, 0.5);
+	font-size: 3.5em;
+}
+
+.retina-icons a.symbol:hover {
+	background: #eeeeee;
+	color: #222222;
+}
+
+.legacy-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	background: #eeeeee;
+	color: #ffffff;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+}
+
+.round-icons a.symbol {
+	border: 1px solid #cccccc;
+	border-radius: 50%;
+	background: #eeeeee;
+	color: #ffffff;
+	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
+}
+
+.round-icons a.symbol:hover,
+.legacy-icons a.symbol:hover {
+	opacity: .8;
+}
+
+.round-icons a.symbol.facebook,
+.legacy-icons a.symbol.facebook {
+	border: 1px solid #4d6595;
+	background: #556fa3;
+}
+
+.round-icons a.symbol.twitterbird,
+.legacy-icons a.symbol.twitterbird {
+	border: 1px solid #37bce9;
+	background: #4dc4ec;
+}
+
+.round-icons a.symbol.googleplus,
+.legacy-icons a.symbol.googleplus {
+	border: 1px solid #b43727;
+	background: #d34d3b;
+}
+
+.round-icons a.symbol.linkedin,
+.legacy-icons a.symbol.linkedin {
+	border: 1px solid #00659c;
+	background: #0072b1;
+}
+
+.round-icons a.symbol.youtube,
+.legacy-icons a.symbol.youtube {
+	border: 1px solid #9f271f;
+	background: #b42d24;
+}
+
+.round-icons a.symbol.gowallapin,
+.legacy-icons a.symbol.gowallapin {
+	border: 1px solid #74a82a;
+	background: #7fb72f;
+}
+
+.round-icons a.symbol.flickr,
+.legacy-icons a.symbol.flickr {
+	border: 1px solid #0756b7;
+	background: #0969dd;
+}
+
+.round-icons a.symbol.pinterest,
+.legacy-icons a.symbol.pinterest {
+	border: 1px solid #b81d1f;
+	background: #cd2123;
+}
+
+.round-icons a.symbol.email,
+.legacy-icons a.symbol.email {
+	border: 1px solid #3b65ab;
+	background: #4170bd;
+}
+
+.round-icons a.symbol.rss,
+.legacy-icons a.symbol.rss {
+	border: 1px solid #dc650e;
+	background: #f07013;
+}
+
+a.symbol:hover {
+	background: #cccccc;
+}
+
+/* FONT ICONS ===================*/
+
+.postformats .glyphicon {
+	position: relative;
+	font-size: 1.9em;
+	color: #ccc;
+	top: 1px;
+	margin-left: 10px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon:empty {
+	width: 1em;
+}
+
+.glyphicon-list-alt:before {
+	content: "\e032";
+}
+
+.glyphicon-volume-up:before {
+	content: "\e038";
+}
+
+.glyphicon-comment:before {
+	content: "\e111";
+}
+
+.glyphicon-file:before {
+	content: "\e022";
+}
+
+.glyphicon-film:before {
+	content: "\e009";
+}
+
+.glyphicon-picture:before {
+	content: "\e060";
+}
+
+.glyphicon-link:before {
+	content: "\e144";
+}
+
+.glyphicon-share:before {
+	content: "\e066";
+}
+
+.glyphicon-th:before {
+	content: "\e011";
+}
+
+.glyphicon-facetime-video:before {
+	content: "\e059";
 }

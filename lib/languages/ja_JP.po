@@ -1078,7 +1078,7 @@ msgid "Restore Defaults"
 msgstr "既定値に戻す"
 
 #: ../../options/options-init.php
-msgid "CyberChimps Wordpress Themes"
+msgid "CyberChimps WordPress Themes"
 msgstr "CyberChimps ワードプレスのテーマ"
 
 #: ../../options/options-init.php

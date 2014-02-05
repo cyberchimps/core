@@ -75,8 +75,10 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		// add theme support for backgrounds
 		$defaults = array(
 			'default-color'    => apply_filters( 'default_background_color', '' ),
+			'default-image'    => apply_filters( 'default_background_image', '' ),
 			'wp-head-callback' => 'cyberchimps_custom_background_cb'
 		);
+
 		add_theme_support( 'custom-background', $defaults );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -206,14 +208,23 @@ function cyberchimps_load_hooks() {
 
 add_action( 'after_setup_theme', 'cyberchimps_load_hooks' );
 
-//after install redirect user to options page if it's a pro theme. Incase of free show a welcome message with link to theme options.
+//after install redirect user to options page if it's a pro theme.
+function cyberchimps_pro_welcome_notice() {
+	global $pagenow;
+	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+
+		if ( 'pro' == cyberchimps_theme_check() ) {
+			wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
+		}
+	}
+}
+add_action( 'after_setup_theme', 'cyberchimps_pro_welcome_notice' );
+
+//Incase of free show a welcome message with link to theme options.
 function cyberchimps_welcome_notice() {
 	global $pagenow;
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
+	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 
-	if ( 'pro' == cyberchimps_theme_check() ) {
-		wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
-	} else {
 		if ( 'free' == cyberchimps_theme_check() ) {
 			?>
 			<div id="welcome" style="
@@ -236,6 +247,5 @@ if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 		<?php
 		}
 	}
-}
 }
 add_action( 'admin_notices', 'cyberchimps_welcome_notice' );
