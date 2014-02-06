@@ -1152,6 +1152,11 @@ function cyberchimps_options_validate( $input ) {
 				}
 			}
 
+			// Catch any other id's that have not been set and set them to false. For some themes we remove options and we don't want them causing a problem
+			if( !isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+
 			// For a value to be submitted to database it must pass through a sanitization filter
 			if( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
 				$clean[$id] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $input[$id], $option );
