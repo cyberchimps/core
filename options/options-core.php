@@ -129,7 +129,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 	/***************************** BLOG **************************************************/
 
 	$sections_list[] = array(
-		'id'      => 'cyberchimps_blog_drag_and_drop_section',
+		'id'      => 'cyberchimps_drag_and_drop_section',
 		'label'   => __( 'Drag & Drop', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_blog_heading'
 	);
@@ -165,13 +165,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 //check if pro theme
 	if ( $theme_check == 'pro' ):
 		$sections_list[] = array(
-			'id'      => 'cyberchimps_blog_slider_section',
+			'id'      => 'cyberchimps_slider_section',
 			'label'   => __( 'Blog Slider', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
 		$sections_list[] = array(
-			'id'      => 'cyberchimps_blog_callout_section',
+			'id'      => 'cyberchimps_callout_section',
 			'label'   => __( 'Callout Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
@@ -189,13 +189,13 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		);
 
 		$sections_list[] = array(
-			'id'      => 'cyberchimps_blog_portfolio_pro_section',
+			'id'      => 'cyberchimps_portfolio_pro_section',
 			'label'   => __( 'Portfolio Pro Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
 		$sections_list[] = array(
-			'id'      => 'cyberchimps_blog_recent_posts_section',
+			'id'      => 'cyberchimps_recent_posts_section',
 			'label'   => __( 'Recent Posts Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
@@ -1023,7 +1023,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'blog_post_page'     => __( 'Post Page', 'cyberchimps_core' ),
 			'slider_lite'        => __( 'Slider Lite', 'cyberchimps_core' )
 		) ),
-		'section'  => 'cyberchimps_blog_drag_and_drop_section',
+		'section'  => 'cyberchimps_drag_and_drop_section',
 		'heading'  => 'cyberchimps_blog_heading'
 	);
 
@@ -1583,7 +1583,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				2 => 'Two',
 				4 => 'Four'
 			),
-			'section' => 'cyberchimps_blog_portfolio_pro_section',
+			'section' => 'cyberchimps_portfolio_pro_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1593,7 +1593,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'id'      => 'cyberchimps_blog_portfolio_pro_category',
 				'type'    => 'select',
 				'options' => $options_portfolio_cats,
-				'section' => 'cyberchimps_blog_portfolio_pro_section',
+				'section' => 'cyberchimps_portfolio_pro_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
 		} else {
@@ -1602,7 +1602,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'id'      => 'cyberchimps_blog_portfolio_pro_category_help',
 				'type'    => 'help',
 				'desc'    => __( 'You need to create a Category', 'cyberchimps_core' ),
-				'section' => 'cyberchimps_blog_portfolio_pro_section',
+				'section' => 'cyberchimps_portfolio_pro_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
 		}
@@ -1611,7 +1611,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'name'    => __( 'Portfolio Title', 'cyberchimps_core' ),
 			'id'      => 'cyberchimps_blog_portfolio_pro_title',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_portfolio_pro_section',
+			'section' => 'cyberchimps_portfolio_pro_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1620,7 +1620,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'cyberchimps_blog_portfolio_pro_title_text',
 			'class'   => 'cyberchimps_blog_portfolio_pro_title_toggle',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_portfolio_pro_section',
+			'section' => 'cyberchimps_portfolio_pro_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 		/********* PORTFOLIO PRO ENDS *****************/
@@ -1635,7 +1635,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'full' => __( 'Full', 'cyberchimps_core' ),
 				'half' => __( 'Half', 'cyberchimps_core' ),
 			),
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading',
 		);
 
@@ -1649,7 +1649,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'post'          => __( 'Posts', 'cyberchimps_core' ),
 				'custom_slides' => __( 'Custom', 'cyberchimps_core' ),
 			),
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1660,7 +1660,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'type'    => 'select',
 			'std'     => 'all',
 			'options' => $options_categories,
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1672,7 +1672,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'type'    => 'select',
 				'std'     => 'cyberchimps_all',
 				'options' => $options_slide_cats,
-				'section' => 'cyberchimps_blog_slider_section',
+				'section' => 'cyberchimps_slider_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
 		} else {
@@ -1682,7 +1682,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 				'class'   => 'custom_slides-select',
 				'type'    => 'help',
 				'desc'    => __( 'You need to create a Category', 'cyberchimps_core' ),
-				'section' => 'cyberchimps_blog_slider_section',
+				'section' => 'cyberchimps_slider_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
 		}
@@ -1692,7 +1692,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'blog_no_featured_posts',
 			'std'     => '',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1701,7 +1701,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'slider_height',
 			'std'     => '',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1711,7 +1711,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'slider_speed',
 			'std'     => '3000',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1720,7 +1720,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'slider_arrows',
 			'std'     => 'checked',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_slider_section',
+			'section' => 'cyberchimps_slider_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 		/********* BLOG SLIDER ENDS ***********/
@@ -1731,7 +1731,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'callout_title',
 			'std'     => sprintf( __( '%1$s\'s Call Out Element', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ),
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1740,7 +1740,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'callout_text',
 			'std'     => sprintf( __( 'Use %1$s\'s Call Out section on any page where you want to deliver an important message to your customer or client.', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'Cyberchimps' ) ),
 			'type'    => 'editor',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1749,7 +1749,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'callout_button',
 			'std'     => '',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1759,7 +1759,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'callout_button_toggle',
 			'std'     => __( 'Click Here', 'cyberchimps_core' ),
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1769,7 +1769,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'callout_button_toggle',
 			'std'     => '',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1778,7 +1778,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'custom_callout_options',
 			'std'     => '',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1788,7 +1788,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'upload',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1798,7 +1798,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'color',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1808,7 +1808,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'color',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1818,7 +1818,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'color',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1828,7 +1828,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'color',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1838,7 +1838,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
 			'type'    => 'color',
-			'section' => 'cyberchimps_blog_callout_section',
+			'section' => 'cyberchimps_callout_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 		/*********** CALLOUT OPTIONS ENDS **************/
@@ -1865,7 +1865,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'recent_posts_title',
 			'std'     => '',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_recent_posts_section',
+			'section' => 'cyberchimps_recent_posts_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1875,7 +1875,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'class'   => 'recent_posts_title_toggle',
 			'std'     => '',
 			'type'    => 'text',
-			'section' => 'cyberchimps_blog_recent_posts_section',
+			'section' => 'cyberchimps_recent_posts_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1885,7 +1885,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'type'    => 'select',
 			'std'     => 'all',
 			'options' => $options_categories,
-			'section' => 'cyberchimps_blog_recent_posts_section',
+			'section' => 'cyberchimps_recent_posts_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
@@ -1894,7 +1894,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'id'      => 'recent_posts_images',
 			'std'     => '',
 			'type'    => 'toggle',
-			'section' => 'cyberchimps_blog_recent_posts_section',
+			'section' => 'cyberchimps_recent_posts_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
