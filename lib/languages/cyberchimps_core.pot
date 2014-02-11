@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 07:40:49 UTC\n"
+"PO-Revision-Date: 2014-02-10 12:31:13 UTC\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -143,6 +143,11 @@ msgid "The Events Calendar"
 msgstr "The Events Calendar"
 
 #: ../../functions.php
+#: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Digital Downloads"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "Events"
 
@@ -157,11 +162,6 @@ msgstr "Please activate The Events Calendar plugin"
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Install Events Calendar Plugin"
-
-#: ../../functions.php
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "Digital Downloads"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -309,10 +309,6 @@ msgstr "HTML Box Options"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Carousel Options"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Magazine Options"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -628,16 +624,8 @@ msgstr "Portfolio Lite"
 
 #: ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Sidebar Options"
+msgid "Select Page Layout"
+msgstr "Select Page Layout"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -868,42 +856,6 @@ msgid "You need to create a Category"
 msgstr "You need to create a Category"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Meta Data"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Featured Image"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "Category"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Featured Excerpt Length"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Number of Columns"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Number of Rows"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Wide Posts Below Magazine"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Wide Post Excerpt Length"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Number of Wide Posts"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Slider Size"
 
@@ -1039,6 +991,13 @@ msgstr "Select a Category"
 #: ../../options/options-core.php
 msgid "Number of boxes per row"
 msgstr "Number of boxes per row"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Sidebar Options"
 
 #: ../../options/options-core.php
 #: ../../options/options-core.php
@@ -1328,16 +1287,16 @@ msgid "Try Responsive Free"
 msgstr "Responsive Design"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Select Page Layout"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Page Title"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Page Elements"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Bar"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"

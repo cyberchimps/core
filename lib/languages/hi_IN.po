@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Hindi, India\n"
 "MIME-Version: 1.0\n"
@@ -143,6 +143,10 @@ msgid "The Events Calendar"
 msgstr "घटनाओं कैलेंडर"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "डिजिटल डाउनलोड"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "घटनाक्रम"
 
@@ -157,10 +161,6 @@ msgstr "कृपया घटनाओं कैलेंडर प्लगइ
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "घटनाओं कैलेंडर प्लगइन स्थापित करें"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "डिजिटल डाउनलोड"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -299,10 +299,6 @@ msgstr "HTML बॉक्स विकल्प"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "हिंडोला विकल्प"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "पत्रिका विकल्प"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -597,12 +593,8 @@ msgid "Portfolio Lite"
 msgstr "पोर्टफोलियो लाइट"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "चहचहाना पट्टी"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "साइडबार विकल्प"
+msgid "Select Page Layout"
+msgstr "पेज लेआउट का चयन करें"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -819,42 +811,6 @@ msgid "You need to create a Category"
 msgstr "आप एक श्रेणी बनाने की आवश्यकता है"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "मेटा डेटा"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "विशेष रुप से प्रदर्शित छवि"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "श्रेणी"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "विशेष रुप से प्रदर्शित अंश लंबाई"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "स्तंभों की संख्या"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "पंक्तियों की संख्या"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "पत्रिका नीचे विस्तृत पोस्ट"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "विस्तृत पोस्ट अंश लंबाई"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "विस्तृत पदों की संख्या"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "स्लाइडर आकार"
 
@@ -991,6 +947,10 @@ msgid "Number of boxes per row"
 msgstr "प्रत्येक पंक्ति बक्से की संख्या"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "साइडबार विकल्प"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "लेआउट के लिए छवियाँ।"
 
@@ -1077,7 +1037,7 @@ msgstr "डिफ़ॉल्ट पुनर्स्थापित करे�
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress थीम्स"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1261,16 +1221,16 @@ msgid "Try Responsive Free"
 msgstr "उत्तरदायी डिजाइन"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "पेज लेआउट का चयन करें"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "पृष्ठ शीर्षक"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "पृष्ठ तत्वों"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "चहचहाना पट्टी"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"

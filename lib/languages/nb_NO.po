@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Norwegian Bokmål, Norway\n"
 "MIME-Version: 1.0\n"
@@ -144,6 +144,10 @@ msgid "The Events Calendar"
 msgstr "The Events Calendar"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Digitale nedlastinger"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "Arrangementer"
 
@@ -158,10 +162,6 @@ msgstr "Vennligst aktivér The Events Calendar-utvidelsen"
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Installér Events Calendar-utvidelsen"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "Digitale nedlastinger"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -300,10 +300,6 @@ msgstr "Alternativer for HTML-Boks"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Alternativer for Bildekarusell"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Alternativer for Magazine"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -598,12 +594,8 @@ msgid "Portfolio Lite"
 msgstr "Portfolio Lite"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitterpanel"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Alternativer for Sidepanel"
+msgid "Select Page Layout"
+msgstr "Velg sideoppsett"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -820,42 +812,6 @@ msgid "You need to create a Category"
 msgstr "Du må opprette en Kategori"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Metadata"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Utvalgt bilde"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "Kategori"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Utdragslengde for utvalgt innhold"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Antall Kolonner"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Antall rader"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Brede innlegg under Bladformat"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Utdragslengde for brede innlegg"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Antall brede innlegg"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Størrelse på Bildeveksleren"
 
@@ -992,6 +948,10 @@ msgid "Number of boxes per row"
 msgstr "Antall bokser per rad"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Alternativer for Sidepanel"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Bilder for sideoppsett"
 
@@ -1078,7 +1038,7 @@ msgstr "Gjenopprett Standard"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress-temaer"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1262,16 +1222,16 @@ msgid "Try Responsive Free"
 msgstr "Forståelsesfull Design"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Velg sideoppsett"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Sidetittel"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Elementer på siden"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitterpanel"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"

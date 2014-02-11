@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Japanese, Japan\n"
 "MIME-Version: 1.0\n"
@@ -143,6 +143,10 @@ msgid "The Events Calendar"
 msgstr "イベント カレンダー"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "デジタル ダウンロード"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "イベント"
 
@@ -157,10 +161,6 @@ msgstr "ください、イベント カレンダー プラグインをアクテ�
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "イベント カレンダー プラグインをインストールします。"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "デジタル ダウンロード"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -299,10 +299,6 @@ msgstr "HTML ボックスのオプション"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "カルーセル オプション"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "雑誌のオプション"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -597,12 +593,8 @@ msgid "Portfolio Lite"
 msgstr "Lite のポートフォリオ"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter のバー"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "サイドバーのオプション"
+msgid "Select Page Layout"
+msgstr "ページ レイアウトを選択します。"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -819,42 +811,6 @@ msgid "You need to create a Category"
 msgstr "カテゴリを作成する必要があります。"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "メタ データ"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "特集イメージ"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "カテゴリ"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "注目の抜粋の長さ"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "列の数"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "行の数"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "マガジンの下の全体の投稿"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "広いポストの抜粋の長さ"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "全体の投稿の数"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "スライダーのサイズ"
 
@@ -991,6 +947,10 @@ msgid "Number of boxes per row"
 msgstr "ボックス 1 行あたりの数"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "サイドバーのオプション"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "レイアウトの画像。"
 
@@ -1079,7 +1039,7 @@ msgstr "既定値に戻す"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps ワードプレスのテーマ"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1263,16 +1223,16 @@ msgid "Try Responsive Free"
 msgstr "レスポンシブ デザイン"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "ページ レイアウトを選択します。"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "ページのタイトル"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "ページ要素"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter のバー"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"
