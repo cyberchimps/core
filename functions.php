@@ -1310,7 +1310,7 @@ add_action( 'admin_head', 'cyberchimps_woocommerce_shop_style' );
 function cyberchimps_addons_headings( $headings_list ) {
 	$headings_list[] = array(
 		'id'    => 'cyberchimps_addons_heading',
-		'title' => __( 'Add Ons', 'cyberchimps' ),
+		'title' => __( 'Add Ons', 'cyberchimps_core' ),
 	);
 
 	return $headings_list;
@@ -1322,13 +1322,13 @@ add_filter( 'cyberchimps_headings_filter', 'cyberchimps_addons_headings', 20, 1 
 function cyberchimps_addon_sections( $sections_list ) {
 	$sections_list[] = array(
 		'id'      => 'cyberchimps_eventcal_options',
-		'label'   => __( 'The Events Calendar', 'cyberchimps' ),
+		'label'   => __( 'The Events Calendar', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
 
 	$sections_list[] = array(
 		'id'      => 'cyberchimps_digital_downloads_options',
-		'label'   => __( 'Digital Downloads', 'cyberchimps' ),
+		'label'   => __( 'Digital Downloads', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
 	
@@ -1340,7 +1340,7 @@ add_filter( 'cyberchimps_section_list', 'cyberchimps_addon_sections', 20, 1 );
 // Addon Fields
 function cyberchimps_addon_fields( $fields_list ) {
 	$fields_list[] = array(
-		'name'     => __( 'Events', 'cyberchimps' ),
+		'name'     => __( 'Events', 'cyberchimps_core' ),
 		'id'       => 'events_info',
 		'type'     => 'info',
 		'callback' => 'cyberchimps_custom_events_callback',
@@ -1373,14 +1373,14 @@ function cyberchimps_custom_events_callback( $value ) {
 
 	if( isset( $installed_plugins[$plugin] ) ) {
 		if( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=tribe_events&page=tribe-events-calendar' ) . '">' . __( 'Events Plugin Options', 'cyberchimps' ) . '</a>';
+			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=tribe_events&page=tribe-events-calendar' ) . '">' . __( 'Events Plugin Options', 'cyberchimps_core' ) . '</a>';
 		}
 		else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps' ) . '</a>';
+			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps_core' ) . '</a>';
 		}
 	}
 	else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_eventcal_install_link() . '">' . __( 'Install Events Calendar Plugin', 'cyberchimps' ) . '</a>';
+		$output .= $icon_neg . '<a href="' . cyberchimps_eventcal_install_link() . '">' . __( 'Install Events Calendar Plugin', 'cyberchimps_core' ) . '</a>';
 	}
 
 	echo $output;
@@ -1405,14 +1405,14 @@ function cyberchimps_digital_downloads_callback( $value ) {
 
 	if( isset( $installed_plugins[$plugin] ) ) {
 		if( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps' ) . '</a>';
+			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps_core' ) . '</a>';
 		}
 		else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps' ) . '</a>';
+			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps_core' ) . '</a>';
 		}
 	}
 	else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps' ) . '</a>';
+		$output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps_core' ) . '</a>';
 	}
 
 	echo $output;
