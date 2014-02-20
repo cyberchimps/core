@@ -863,7 +863,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 
 	global $custom_excerpt, $post;
 
-	$linktext = cyberchimps_blog_read_more_text()
+	$linktext = cyberchimps_blog_read_more_text();
 
 	return '&hellip;
 			</p>
