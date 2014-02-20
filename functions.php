@@ -863,9 +863,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 
 	global $custom_excerpt, $post;
 
-	if( $custom_excerpt == 'recent' ) {
-		$linktext = __( 'Continue Reading', 'cyberchimps_core' );
-	}
+	$linktext = cyberchimps_blog_read_more_text()
 
 	return '&hellip;
 			</p>
@@ -878,7 +876,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 function cyberchimps_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a>';
+	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">cyberchimps_blog_read_more_text()</a>';
 }
 
 // Set length of the excerpt
@@ -890,7 +888,7 @@ function cyberchimps_featured_post_length( $length ) {
 function cyberchimps_magazine_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a>';
+	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">cyberchimps_blog_read_more_text()</a>';
 }
 
 // Set length of the magazine featured post excerpt
@@ -940,35 +938,34 @@ function cyberchimps_search_excerpt_length( $length ) {
 //For archive posts
 function cyberchimps_archive_excerpt_more( $more ) {
 	global $post;
-	if( cyberchimps_get_option( 'blog_read_more_text' ) != '' ) {
-		$more = '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_get_option( 'blog_read_more_text' ) . '</a></p>';
-
-		return $more;
-	}
-	else {
-		$more = '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a></p>';
-
-		return $more;
-	}
+	return '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a></p>';
 }
 
 if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ) {
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
 }
 
+// Set value for blog read more text option.
+function cyberchimps_blog_read_more_text() {
+
+	// Get the value of blog read more text option.
+	$read_more = cyberchimps_get_option( 'blog_read_more_text' );
+	
+	// Check whether any not null value supplied and set the value accordingly.
+	if( '' != $read_more ) {
+		return $read_more;
+	}
+	else {
+		return __( 'Read More', 'cyberchimps_core' ) . '...';
+	}
+
+}
+
 //For blog posts
 function cyberchimps_blog_excerpt_more( $more ) {
 	global $post;
-	if( cyberchimps_get_option( 'blog_read_more_text' ) != '' ) {
-		$more = '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_get_option( 'blog_read_more_text' ) . '</a></p>';
+	return '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a></p>';
 
-		return $more;
-	}
-	else {
-		$more = '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a></p>';
-
-		return $more;
-	}
 }
 
 if( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ) {
@@ -982,8 +979,7 @@ function manual_excerpt_read_more_link( $output ) {
 
 	global $post;
 
-	$linktext = cyberchimps_get_option( 'blog_read_more_text' );
-	$linktext = $linktext == '' ? 'Read More' : $linktext;
+	$linktext = cyberchimps_blog_read_more_text();
 
 	if( !empty( $post->post_excerpt ) ) {
 		return $output . '<p><a class="excerpt-more" href="' . get_permalink( $post->ID ) . '">' . $linktext . '</a></p>';
