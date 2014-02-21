@@ -863,12 +863,10 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 
 	global $custom_excerpt, $post;
 
-	$linktext = cyberchimps_blog_read_more_text();
-
 	return '&hellip;
 			</p>
 			<div class="more-link">
-				<span class="glyphicon glyphicon-arrow-right"></span><a href="' . get_permalink( $post->ID ) . '">  ' . $linktext . '</a>
+				<a href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>
 			</div>';
 }
 
@@ -876,7 +874,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 function cyberchimps_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">cyberchimps_blog_read_more_text()</a>';
+	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>';
 }
 
 // Set length of the excerpt
@@ -888,7 +886,7 @@ function cyberchimps_featured_post_length( $length ) {
 function cyberchimps_magazine_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">cyberchimps_blog_read_more_text()</a>';
+	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>';
 }
 
 // Set length of the magazine featured post excerpt
