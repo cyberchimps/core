@@ -58,7 +58,21 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php } ?>
 			}
 
-			<?php } ?>
+			<?php } 
+			
+			$width = intval( cyberchimps_get_option( 'max_width' ) ) . 'px';
+			if( !cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
+			?>
+				@media screen and (max-width: <?php echo $width; ?>) {
+					.container-full-width {
+						width: <?php echo $width; ?>;
+					}
+				}
+			<?php
+			}
+			
+			
+			?>
 
 		</style>
 		<?php
