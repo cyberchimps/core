@@ -101,6 +101,7 @@ endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
 function cyberchimps_custom_background_cb() {
+
 	// $background is the saved custom image, or the default image.
 	$background = get_background_image();
 
@@ -110,13 +111,11 @@ function cyberchimps_custom_background_cb() {
 
 	// CyberChimps background image
 	$cc_background = get_theme_mod( 'cyberchimps_background' );
-
+	
 	if ( !$background && !$color && !$cc_background ) {
 		return;
 	}
-
-	$style = $color ? "background-color: #$color;" : '';
-
+	
 	if ( $background ) {
 		$image = " background-image: url('$background');";
 
@@ -138,27 +137,24 @@ function cyberchimps_custom_background_cb() {
 		}
 		$attachment = " background-attachment: $attachment;";
 
-		$style .= $image . $repeat . $position . $attachment;
+		$style = $image . $repeat . $position . $attachment;
 	}
-	if ( !$background && !$color && $cc_background != 'none' ) {
+	else if( $cc_background != 'none' ) {
 		$img_url = get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . $cc_background . '.jpg';
-		$image   = "background-image: url( '$img_url' );";
-		$style .= $image; ?>
-		<style type="text/css">
-			body {
-			<?php echo trim( $style ); ?>
-			}
-		</style>
-	<?php
-	} else {
-		?>
-		<style type="text/css" id="custom-background-css">
-			body.custom-background {
-			<?php echo trim( $style ); ?>
-			}
-		</style>
-	<?php
+		$style = "background-image: url( '$img_url' );";
 	}
+	else if( $color ) {
+		$style = "background-color: #$color;";
+		$style .= "background-image: none;";
+	} ?>
+
+	<style type="text/css">
+		body {
+		<?php echo trim( $style ); ?>
+		}
+	</style>
+	
+<?php
 }
 
 // Register our sidebars and widgetized areas.

@@ -158,11 +158,6 @@ function cyberchimps_body_styles() {
 		wp_enqueue_style( 'google-font' );
 	}
 
-	//Set background image/color
-	if( !get_theme_mod( 'background_image' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' && get_theme_mod( 'cyberchimps_background' ) != '' ) {
-		$body_styles['background-image'] = 'url(' . get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . get_theme_mod( 'cyberchimps_background' ) . '.jpg )';
-	}
-
 	return $body_styles;
 }
 
