@@ -633,7 +633,7 @@ function cyberchimps_post_format_icon() {
 	else {
 		$show = ( cyberchimps_get_option( 'post_format_icons', 1 ) ) ? cyberchimps_get_option( 'post_format_icons', 1 ) : false;
 	}
-	if( $show ):
+	if( !is_page() && $show ):
 
 		// array of post formats and the matching font icons
 		$icons = array(
