@@ -64,7 +64,8 @@ if( is_admin() ) {
 			'id'        => 'cyberchimps_page_help',
 			'class'     => 'help-message',
 			'name'      => __( 'Need Help?', 'cyberchimps_core' ),
-			'help_text' => 'Visit our ' . $themenamefull . ' Page Options help page here: <a href="' . $pagedocs . '" target="_blank">Page Options Instructions</a></td>',
+//			'help_text' => 'Visit our ' . $themenamefull . ' Page Options help page here: <a href="' . $pagedocs . '" target="_blank">Page Options Instructions</a></td>',
+			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit our %s page options help' ), $themenamefull ) . '</a></td>'
 		)
 	);
 	/*
