@@ -78,6 +78,8 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 			'wp-head-callback' => 'cyberchimps_custom_background_cb'
 		);
 
+		$defaults = apply_filters( 'cyberchimps_background_default_args', $defaults );
+
 		add_theme_support( 'custom-background', $defaults );
 
 		// This theme uses wp_nav_menu() in one location.
