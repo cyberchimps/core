@@ -266,7 +266,7 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		//Add class and attribute to LI element that contains a submenu UL.
 		if( $args->has_children && $depth < 1 ) {
 			$classes[] = 'dropdown';
-			$li_attributes .= 'data-dropdown="dropdown"';
+			$li_attributes .= ' data-dropdown="dropdown"';
 		}
 		if( $args->has_children && $depth == 1 ) {
 			$classes[] = 'grandchild';
