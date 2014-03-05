@@ -59,3 +59,7 @@ ul, ol {
 .theme-name {
 	float: left;
 }
+
+.no-left-megin {
+	margin-left: 0px !important;
+}
