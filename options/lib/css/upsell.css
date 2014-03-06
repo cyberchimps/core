@@ -37,19 +37,13 @@ ul, ol {
 }
 
 .theme-container {
-	margin-bottom: 40px;
-	padding-bottom: 40px;
-	border-bottom: 1px dashed #cccccc;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 40px;
 }
 
 .theme-container .theme-image img {
 	padding: 3px;
 	border: 5px solid #aaaaaa;
-}
-
-.theme-description {
-	margin-bottom: 20px;
-	display: inline-block;
 }
 
 .theme-exists {
@@ -63,3 +57,15 @@ ul, ol {
 .no-left-megin {
 	margin-left: 0px !important;
 }
+
+.theme-details {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-top: 1px solid #CCCCCC;
+	font-size: 18px;
+	height: 25px;
+	padding: 10px;
+}
+.preview {
+    margin-right: 3px !important;
+}
+#response{ display: none; }

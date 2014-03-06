@@ -61,16 +61,20 @@ function cyberchimps_display_upsell() {
 				
 				<div id="upsell_themes" class="row-fluid">
 					<?php
-					$themes = cyberchimps_get_themes();
-					
+					$themes = cyberchimps_get_themes();					
 					$counter = 1;
 					
 					foreach( $themes->themes as $theme ) { ?>
 						
-						<div class="theme-image span4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
-							<a href="<?php echo $theme->homepage ?>" target="_blank">
-								<img src="<?php echo $theme->screenshot_url ?>"/>
-							</a>							
+						<div id="<?php echo $theme->slug; ?>" class="theme-container span4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
+							
+							<img class="theme-screenshot" data-toggle="popover" data-placement="bottom" title="<?php echo $theme->description; ?>" src="<?php echo $theme->screenshot_url ?>"/>
+							
+							<div class="theme-details">
+								<span class="theme-name"><?php echo $theme->name; ?></span>
+								<a class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+								<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
+							</div>
 						</div>
 					<?php
 						$counter++;
@@ -79,6 +83,12 @@ function cyberchimps_display_upsell() {
 			</div>
 		</div>
 	</div>
+	
+<script>
+	jQuery(function () {
+		jQuery('.theme-screenshot').popover();
+	});
+</script>
 <?php
 }
 
@@ -98,24 +108,34 @@ function cyberchimps_get_themes() {
 		)
 	);
 	
-	// Send the request to the API.
-	$response = wp_remote_post('http://api.wordpress.org/themes/info/1.0/',$request);
+	// Generate a cache key that would hold the response for this request:
+    $key= 'cyberchimps_' . md5( serialize( $request ) );
 	
-	// Check for the error.
-	if ( !is_wp_error( $response ) ) {
-		$themes = unserialize( wp_remote_retrieve_body( $response ) );
+	// Check transient. If it's there - use that, if not re fetch the theme
+    if ( false === ( $themes = get_transient( $key ) ) ) {
+	
+		// Transient expired/does not exist. Send request to the API.
+		$response = wp_remote_post( 'http://api.wordpress.org/themes/info/1.0/', $request);
+	
+		// Check for the error.
+		if ( !is_wp_error( $response ) ) {
 		
-		if ( !is_object( $themes ) && !is_array( $theme ) ) {
-		
-			// Response body does not contain an object/array
-			echo "An error has occurred";
+			$themes = unserialize( wp_remote_retrieve_body( $response ) );
+			
+			if ( !is_object( $themes ) && !is_array( $themes ) ) {
+			
+				// Response body does not contain an object/array
+				return new WP_Error('theme_api_error', 'An unexpected error has occurred');
+			}
+			
+			// Set transient for next time... keep it for 24 hours should be good
+			set_transient($key, $themes, 60*60*24);
 		}
 		else {
-			return $themes;
+			// Error object returned
+			return $response;
 		}
 	}
-	else {
-		// Error object returned
-		echo "An error has occurred";
-	}
+	
+	return $themes;
 }
