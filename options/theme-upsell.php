@@ -61,10 +61,38 @@ function cyberchimps_display_upsell() {
 				
 				<div id="upsell_themes" class="row-fluid">
 					<?php
-					$themes = cyberchimps_get_themes();					
+					// Set the argument array with author name.
+					$args = array(
+						'author' => 'cyberchimps',
+					);
+					
+					// Set the $request array.
+					$request = array(
+						'body' => array(
+							'action' => 'query_themes',
+							'request' => serialize((object)$args)
+						)
+					);
+					$themes = cyberchimps_get_themes( $request );					
 					$counter = 1;
 					
-					foreach( $themes->themes as $theme ) { ?>
+					foreach( $themes->themes as $theme ) {
+					
+						// Set the argument array with author name.
+						$args = array(
+							'slug' => $theme->slug,
+						);
+						
+						// Set the $request array.
+						$request = array(
+							'body' => array(
+								'action' => 'theme_information',
+								'request' => serialize((object)$args)
+							)
+						);
+					
+						$theme_details = cyberchimps_get_themes( $request );
+					?>
 						
 						<div id="<?php echo $theme->slug; ?>" class="theme-container span4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
 							
@@ -72,7 +100,7 @@ function cyberchimps_display_upsell() {
 							
 							<div class="theme-details">
 								<span class="theme-name"><?php echo $theme->name; ?></span>
-								<a class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+								<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . $theme_details->downloaded . ' times'; ?>" class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
 								<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
 							</div>
 						</div>
@@ -87,26 +115,14 @@ function cyberchimps_display_upsell() {
 <script>
 	jQuery(function () {
 		jQuery('.theme-screenshot').popover();
+		jQuery('.download').tooltip();
 	});
 </script>
 <?php
 }
 
 // Get all CyberChimps themes by using API.
-function cyberchimps_get_themes() {
-
-	// Set the argument array with author name.
-	$args = array(
-		'author' => 'cyberchimps',
-	);
-	
-	// Set the $request array.
-	$request = array(
-		'body' => array(
-			'action' => 'query_themes',
-			'request' => serialize((object)$args)
-		)
-	);
+function cyberchimps_get_themes( $request ) {
 	
 	// Generate a cache key that would hold the response for this request:
     $key= 'cyberchimps_' . md5( serialize( $request ) );

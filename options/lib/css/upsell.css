@@ -69,3 +69,8 @@ ul, ol {
     margin-right: 3px !important;
 }
 #response{ display: none; }
+
+.theme-screenshot:hover {
+	opacity: 0.4;
+	cursor: pointer;
+}
