@@ -70,7 +70,36 @@ ul, ol {
 }
 #response{ display: none; }
 
-.theme-screenshot:hover {
-	opacity: 0.4;
-	cursor: pointer;
+
+/********* theme description style ***********/
+.theme-description{
+	background-color: #000000;
+    color: #FFFFFF;
+    display: none;
+    float: left;
+    height: 230px;
+    max-width: 320px;
+    padding: 15px;
+    position: absolute;
+	z-index: 100;
+    -webkit-transition: all 300ms ease-out;  
+    -moz-transition: all 300ms ease-out;  
+    -o-transition: all 300ms ease-out;  
+    -ms-transition: all 300ms ease-out;  
+    transition: all 300ms ease-out;  
+}
+.theme-container:hover  .theme-description {
+	display:block;
+	opacity: 0.7; 
+    -moz-transform: translateY(-100%);  
+    -o-transform: translateY(-100%);  
+    -webkit-transform: translateY(-100%);  
+    transform: translateY(-100%);  
+}
+.theme-description p {  
+    -webkit-transition-delay: 500ms;  
+    -moz-transition-delay: 500ms;  
+    -o-transition-delay: 500ms;  
+    -ms-transition-delay: 500ms;  
+    transition-delay: 500ms;  
 }

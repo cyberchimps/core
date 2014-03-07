@@ -96,7 +96,11 @@ function cyberchimps_display_upsell() {
 						
 						<div id="<?php echo $theme->slug; ?>" class="theme-container span4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
 							
-							<img class="theme-screenshot" data-toggle="popover" data-placement="bottom" title="<?php echo $theme->description; ?>" src="<?php echo $theme->screenshot_url ?>"/>
+							<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
+							
+							<span class="theme-description">
+								<p><?php echo $theme->description; ?></p>
+							</span>
 							
 							<div class="theme-details">
 								<span class="theme-name"><?php echo $theme->name; ?></span>
@@ -114,7 +118,6 @@ function cyberchimps_display_upsell() {
 	
 <script>
 	jQuery(function () {
-		jQuery('.theme-screenshot').popover();
 		jQuery('.download').tooltip();
 	});
 </script>
