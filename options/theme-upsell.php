@@ -100,7 +100,7 @@ function cyberchimps_display_upsell() {
 							
 							<div class="theme-details">
 								<span class="theme-name"><?php echo $theme->name; ?></span>
-								<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . $theme_details->downloaded . ' times'; ?>" class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+								<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
 								<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
 							</div>
 						</div>
