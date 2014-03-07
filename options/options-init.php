@@ -110,8 +110,7 @@ function cyberchimps_admin_init() {
 
 // create and display theme options page
 function cyberchimps_options_page() {
-	settings_errors();
-	?>
+?>
 
 	<div class="wrap">
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
