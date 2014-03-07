@@ -98,10 +98,10 @@ function cyberchimps_display_upsell() {
 						<div id="<?php echo $theme->slug; ?>" class="theme-container span4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
 							<div class="image-container">
 								<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-							
-							<span class="theme-description">
-								<p><?php echo $theme->description; ?></p>
-							</span>
+
+								<div class="theme-description">
+									<p><?php echo $theme->description; ?></p>
+								</div>
 							</div>
 							<div class="theme-details">
 								<span class="theme-name"><?php echo $theme->name; ?></span>
