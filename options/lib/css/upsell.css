@@ -102,8 +102,6 @@ ul, ol {
 
 .theme-description p {
 	display: block;
-}
-.image-container:hover .theme-description p {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
