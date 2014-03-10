@@ -43,11 +43,6 @@ ul, ol {
 
 .theme-exists {
 	margin-left: 10px;
-	opacity: 0.4;
-}
-
-.theme-active {
-	opacity: 1;
 }
 
 .theme-name {
@@ -64,6 +59,11 @@ ul, ol {
 	border-top: 1px solid #cccccc;
 	background: none repeat scroll 0 0 #ffffff;
 	font-size: 18px;
+}
+
+.theme-details.active {
+	background: none repeat scroll 0 0 #2B5F87;
+	color: #fff;
 }
 
 .preview {
