@@ -105,8 +105,28 @@ function cyberchimps_display_upsell() {
 							</div>
 							<div class="theme-details">
 								<span class="theme-name"><?php echo $theme->name; ?></span>
+								
+								<!-- Check if the theme is installed, if so then add a tick mark -->
+								<?php if( wp_get_theme( $theme->slug )->exists() ) {
+								
+									// Checked whetehr it is active or not. Change the class and title accordingly.
+									if( wp_get_theme()->get( 'Name' ) == $theme->name ) {
+										$class = "theme-exists theme-active";
+										$title = "Already installed and curently active";
+									}
+									else {
+										$class = "theme-exists";
+										$title = "Already installed";
+									}
+								?>
+									<img data-toggle="tooltip" title="<?php echo $title; ?>" data-placement="bottom" class="<?php echo $class; ?>" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
+								<?php } ?>
+				
+								<!-- Download Button -->
 								<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
 								   class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+								
+								<!-- Preview button -->
 								<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
 							</div>
 						</div>
@@ -121,6 +141,7 @@ function cyberchimps_display_upsell() {
 	<script>
 		jQuery(function () {
 			jQuery('.download').tooltip();
+			jQuery('.theme-exists').tooltip();
 		});
 	</script>
 <?php

@@ -42,7 +42,12 @@ ul, ol {
 }
 
 .theme-exists {
-	margin: 8px;
+	margin-left: 10px;
+	opacity: 0.4;
+}
+
+.theme-active {
+	opacity: 1;
 }
 
 .theme-name {
@@ -80,6 +85,7 @@ ul, ol {
 	max-width: 100%;
 	height: 100%;
 	background-color: #000000;
+	border: 5px solid #FFFFFF;
 	color: #ffffff;
 	-webkit-transition: all 300ms ease-out;
 	-moz-transition: all 300ms ease-out;
