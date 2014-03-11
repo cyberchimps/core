@@ -143,11 +143,16 @@ function cyberchimps_display_upsell() {
 										<a  class="button button-primary activate right"
 											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
 									<?php }
-									else { ?>
-					
-										<!-- Download Button -->
-										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
-										   class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+									else { 
+									
+										// Set the install url for the theme.
+										$install_url = add_query_arg( array(
+												'action' => 'install-theme',
+												'theme'  => $theme->slug,
+											), self_admin_url( 'update.php' ) );
+									?>
+										<!-- Install Button -->
+										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" >Install Now</a>
 									<?php } ?>
 									
 									<!-- Preview button -->
