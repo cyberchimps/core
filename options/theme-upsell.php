@@ -133,14 +133,22 @@ function cyberchimps_display_upsell() {
 								<div class="theme-details">
 									<span class="theme-name"><?php echo $theme->name; ?></span>
 									
-									<!-- Check if the theme is installed, if so then add a tick mark -->
+									<!-- Check if the theme is installed -->
 									<?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
+									
+										<!-- Show the tick image notifying the theme is already installed. -->
 										<img data-toggle="tooltip" title="Already installed" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
-									<?php } ?>
+										
+										<!-- Activate Button -->
+										<a  class="button button-primary activate right"
+											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
+									<?php }
+									else { ?>
 					
-									<!-- Download Button -->
-									<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
-									   class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+										<!-- Download Button -->
+										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
+										   class="button button-primary download right" target="_blank" href="<?php echo $theme->homepage; ?>">Download</a>
+									<?php } ?>
 									
 									<!-- Preview button -->
 									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
