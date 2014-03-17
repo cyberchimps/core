@@ -704,7 +704,7 @@ function cyberchimps_default_site_title() {
 		echo ' | ' . get_the_title();
 	}
 
-	//Title for archives 	
+	//Title for archives
 	if( is_archive() ) {
 		echo ' | ';
 		if( is_category() ) {
@@ -733,12 +733,12 @@ function cyberchimps_default_site_title() {
 		}
 	}
 
-	//Title for search 
+	//Title for search
 	if( is_search() ) {
 		echo ' | Search for &quot;' . get_search_query() . '&quot;';
 	}
 
-	//Title for 404 
+	//Title for 404
 	if( is_404() ) {
 		echo ' | Not Found ';
 	}
@@ -761,7 +761,7 @@ add_filter( 'wp_title', 'cyberchimps_default_site_title' );
 function cyberchimps_seo_compatibility_check() {
 	if( cyberchimps_detect_seo_plugins() ) {
 		remove_filter( 'wp_title', 'cyberchimps_default_site_title', 10, 3 );
-	}	
+	}
 }
 
 add_action( 'after_setup_theme', 'cyberchimps_seo_compatibility_check', 5 );
@@ -948,7 +948,7 @@ function cyberchimps_blog_read_more_text() {
 
 	// Get the value of blog read more text option.
 	$read_more = cyberchimps_get_option( 'blog_read_more_text' );
-	
+
 	// Check whether any not null value supplied and set the value accordingly.
 	if( '' != $read_more ) {
 		return $read_more;
@@ -1092,18 +1092,22 @@ function cyberchimps_options_help_text() {
 						</div>';
 	// Upgrade Button and text for free themes
 	if( cyberchimps_theme_check() == 'free' ) {
+		$upgrade_link = apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' );
+		$pro_title = apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' );
+
 		$text .= '<div class="row-fluid">
 						<div class="span6">
-						<a href="' . apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ) . '" title="' . apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) . '">
-						<div class="cc_help_upgrade_bar">' . sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) . '</div>
+						<a href="' . $upgrade_link . '" title="' . $pro_title . '">
+						<div class="cc_help_upgrade_bar">' . sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), $pro_title ) . '</div>
 						</a>
 						</div>
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( '<p>' . __( 'If you want even more amazing new features upgrade to', 'cyberchimps_core' ) . ' <a href="%1$s" title="%2$s">%2$s</a> ' . __( 'which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit', 'cyberchimps_core' ) . ' <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> ' . __( 'to learn more!', 'cyberchimps_core' ) . '</p>',
-		                  apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-		                  apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
+		$text .= sprintf(
+			'<p>' . __( 'If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
+			'<a href="' . $upgrade_link . ' title="' . $pro_title . '">' . $pro_title . '</a>',
+			'<a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a>'
 		);
 	}
 	//text for pro themes
@@ -1200,9 +1204,9 @@ function cyberchimps_heading_filter( $orig, $new ) {
 	return $orig;
 }
 
-// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading. 
+// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading.
 
-//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.	
+//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.
 function cyberchimps_section_start_no( $heading, $orig ) {
 	foreach( $orig as $key => $value ) {
 		if( $value['heading'] == $heading ) {
@@ -1232,9 +1236,9 @@ function cyberchimps_array_section_organizer( $orig, $new ) {
 	return $orig;
 }
 
-// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section. 
+// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section.
 
-//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.																	
+//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.
 function cyberchimps_field_start_no( $section, $orig ) {
 	foreach( $orig as $key => $value ) {
 		if( $value['section'] == $section ) {
@@ -1325,7 +1329,7 @@ function cyberchimps_addon_sections( $sections_list ) {
 		'label'   => __( 'Digital Downloads', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
-	
+
 	return $sections_list;
 }
 
@@ -1341,7 +1345,7 @@ function cyberchimps_addon_fields( $fields_list ) {
 		'section'  => 'cyberchimps_eventcal_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
-	
+
 	$fields_list[] = array(
 		'name'     => __( 'Digital Downloads', 'cyberchimps' ),
 		'id'       => 'digital_downloads',
@@ -1350,7 +1354,7 @@ function cyberchimps_addon_fields( $fields_list ) {
 		'section'  => 'cyberchimps_digital_downloads_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
-	
+
 	return $fields_list;
 }
 
@@ -1429,7 +1433,7 @@ function cyberchimps_add_responsive_class( $classes ) {
 	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
 		$classes[] = 'cc-responsive';
 	}
-	
+
 	return $classes;
 }
 
