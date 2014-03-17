@@ -64,7 +64,7 @@ if( is_admin() ) {
 			'id'        => 'cyberchimps_page_help',
 			'class'     => 'help-message',
 			'name'      => __( 'Need Help?', 'cyberchimps_core' ),
-			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit our %s page options help', 'cyberchimps_core' ), $themenamefull ) . '</a></td>'
+			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'cyberchimps_core' ), $themenamefull ) . '</a></td>'
 		)
 	);
 	/*
@@ -72,7 +72,7 @@ if( is_admin() ) {
 	 */
 	$config = array(
 		'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box
-		'title'          => __( 'Page Options', 'cyberchimps_elements' ), // meta box title
+		'title'          => __( 'Page Options', 'cyberchimps_core' ), // meta box title
 		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional
@@ -93,33 +93,33 @@ if( is_admin() ) {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_slider_image',
 			'class' => '',
-			'name'  => __( 'Slider Image', 'cyberchimps_elements' ),
+			'name'  => __( 'Slider Image', 'cyberchimps_core' ),
 			'std'   => '',
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_slider_caption',
 			'class' => '',
-			'name'  => __( 'Slider Caption', 'cyberchimps_elements' )
+			'name'  => __( 'Slider Caption', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_slider_url',
 			'class' => '',
-			'name'  => __( 'Custom Slide Link', 'cyberchimps_elements' )
+			'name'  => __( 'Custom Slide Link', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_slider_hidetitle',
 			'class' => 'checkbox',
-			'name'  => __( 'Title', 'cyberchimps_elements' ),
+			'name'  => __( 'Title', 'cyberchimps_core' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_slider_hidecaption',
 			'class' => 'checkbox',
-			'name'  => __( 'Caption', 'cyberchimps_elements' ),
+			'name'  => __( 'Caption', 'cyberchimps_core' ),
 			'std'   => 0
 		)
 	);
@@ -129,7 +129,7 @@ if( is_admin() ) {
 	*/
 	$slider_config = array(
 		'id'             => 'post_slider_options', // meta box id, unique per meta box
-		'title'          => __( 'Custom Feature Slides', 'cyberchimps_elements' ), // meta box title
+		'title'          => __( 'Custom Feature Slides', 'cyberchimps_core' ), // meta box title
 		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional
