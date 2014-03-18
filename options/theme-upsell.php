@@ -166,7 +166,7 @@ function cyberchimps_display_upsell() {
 				<?php if ( wp_get_theme( "cyberchimpspro" )->exists() ) { ?>
 					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
 				<?php } ?>
-=======
+
 	<script>
 		jQuery(function () {
 			jQuery('.download').tooltip();
@@ -175,7 +175,6 @@ function cyberchimps_display_upsell() {
 	</script>
 <?php
 }
->>>>>>> refs/remotes/origin/master
 
 // Get all CyberChimps themes by using API.
 function cyberchimps_get_themes( $request ) {

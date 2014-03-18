@@ -678,9 +678,9 @@ function cyberchimps_default_site_title() {
 		echo ' | ';
 		if( is_category() ) {
 			printf( __( 'Category Archives:', 'cyberchimps_core' ) . ' %s', single_cat_title( '', false ) );
-		elseif( is_tag() ) {
+		} elseif( is_tag() ) {
 			printf( __( 'Tag Archives:', 'cyberchimps_core' ) . ' %s', single_tag_title( '', false ) );
-		elseif( is_author() ) {
+		} elseif( is_author() ) {
 			_e( 'Author Archives', 'cyberchimps_core' );
 		} elseif ( is_day() ) {
 			printf( __( 'Daily Archives:', 'cyberchimps_core' ) . ' %s', get_the_date() );

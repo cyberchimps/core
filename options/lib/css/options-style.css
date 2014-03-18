@@ -87,8 +87,8 @@ ul, ol {
 
 /************** Bootstrap reset **************/
 
-.container {
-	padding: 0;
+.container-fluid {
+	padding: 0 15px;
 }
 
 form {
@@ -357,6 +357,7 @@ form {
 .cc-left-menu {
 	background-color: #f1f1f1;
 	border-right: 1px solid #c8c8c8;
+	margin-left: -15px;
 }
 
 ul.cc-parent {
@@ -498,7 +499,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 /**************** Main Content ******************/
 
 .cc-main-content {
-	margin: 20px 40px 0 40px;
+	margin: 20px 20px 0 0;
 }
 
 .cc-content-section {
@@ -524,6 +525,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 }
 
 .cc-content-section .section-group h3 {
+	line-height: 1.5;
 	color: #666666;
 	font-weight: 100;
 	cursor: pointer;

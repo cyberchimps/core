@@ -113,7 +113,7 @@ function cyberchimps_options_page() {
 
 	<div class="wrap">
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
-	<div class="container cc-options">
+	<div class="container-fluid cc-options">
 
 	<form action="options.php" method="post" id="cyberchimps_options_page">
 	<?php
@@ -154,8 +154,7 @@ function cyberchimps_options_page() {
 
 	<!-- start sub menu -->
 	<div class="row">
-		<div class="col-md-12">
-			<div class="cc-submenu">
+		<div class="col-md-12 cc-submenu">
 				<div class="cc-collapse">
 					<!-- mobile menu button -->
 					<div class="cc-mobile-menu">
@@ -200,8 +199,6 @@ function cyberchimps_options_page() {
 				</div>
 				<!-- cc-submenu-links -->
 				<div class="clear"></div>
-			</div>
-			<!-- cc-submenu -->
 
 			<!-- hidden mobile menu -->
 			<div class="modal hide" id="cc-mobile-modal">
@@ -511,7 +508,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	}
 	$output .= "</div>";
 	$output .= "</div>";
-	$output .= '<div class="options-arrow col-md-1 hidden-phone"><img src="' . $directory_uri . '/cyberchimps/lib/images/arrowdrag.png" /></div>';
+	$output .= '<div class="options-arrow col-md-1 hidden-phone"><span class="glyphicon glyphicon-arrow-right"></span></div>';
 	$output .= "<div class='right_list col-md-5'>";
 	$output .= "<div class='active'>Active Elements</div>";
 	$output .= "<div class='drag'>Drag & Drop Elements</div>";
