@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Croatian, Croatia\n"
 "MIME-Version: 1.0\n"
@@ -144,6 +144,10 @@ msgid "The Events Calendar"
 msgstr ""
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr ""
+
+#: ../../functions.php
 msgid "Events"
 msgstr ""
 
@@ -157,10 +161,6 @@ msgstr ""
 
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
-msgstr ""
-
-#: ../../functions.php
-msgid "Digital Downloads"
 msgstr ""
 
 #: ../../functions.php
@@ -300,10 +300,6 @@ msgstr "Opcije HTML okvira"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Opcije vrtuljka"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr ""
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -598,12 +594,8 @@ msgid "Portfolio Lite"
 msgstr ""
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Opcije sidebara"
+msgid "Select Page Layout"
+msgstr "Izaberi postavku stranice"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -820,42 +812,6 @@ msgid "You need to create a Category"
 msgstr "Morate kreirati kategoriju"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Broj stupaca"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Broj redova"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr ""
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr ""
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Veličina slidera"
 
@@ -992,6 +948,10 @@ msgid "Number of boxes per row"
 msgstr ""
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Opcije sidebara"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Slike za prikaz:"
 
@@ -1078,7 +1038,7 @@ msgstr "Vrati polazno"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress teme"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1262,16 +1222,16 @@ msgid "Try Responsive Free"
 msgstr ""
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Izaberi postavku stranice"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Naziv stranice"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Elementi stranice"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr ""
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"

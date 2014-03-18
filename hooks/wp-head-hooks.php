@@ -58,7 +58,21 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php } ?>
 			}
 
-			<?php } ?>
+			<?php } 
+			
+			$width = intval( cyberchimps_get_option( 'max_width' ) ) . 'px';
+			if( !cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
+			?>
+				@media screen and (max-width: <?php echo $width; ?>) {
+					.container-full-width {
+						width: <?php echo $width; ?>;
+					}
+				}
+			<?php
+			}
+			
+			
+			?>
 
 		</style>
 		<?php
@@ -142,11 +156,6 @@ function cyberchimps_body_styles() {
 
 		wp_register_style( 'google-font', $protocol . '://fonts.googleapis.com/css?family=' . $google_font );
 		wp_enqueue_style( 'google-font' );
-	}
-
-	//Set background image/color
-	if( !get_theme_mod( 'background_image' ) && get_theme_mod( 'cyberchimps_background' ) != 'none' && get_theme_mod( 'cyberchimps_background' ) != '' ) {
-		$body_styles['background-image'] = 'url(' . get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . get_theme_mod( 'cyberchimps_background' ) . '.jpg )';
 	}
 
 	return $body_styles;

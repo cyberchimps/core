@@ -254,7 +254,7 @@ class cyberchimps_Walker extends Walker_Nav_Menu {
 		//Add class and attribute to LI element that contains a submenu UL.
 		if ( $args->has_children && $depth < 1 ) {
 			$classes[] = 'dropdown';
-			$li_attributes .= 'data-dropdown="dropdown"';
+			$li_attributes .= ' data-dropdown="dropdown"';
 		}
 		if ( $args->has_children && $depth == 1 ) {
 			$classes[] = 'grandchild';
@@ -603,7 +603,7 @@ function cyberchimps_post_format_icon() {
 	} else {
 		$show = ( cyberchimps_get_option( 'post_format_icons', 1 ) ) ? cyberchimps_get_option( 'post_format_icons', 1 ) : false;
 	}
-	if( $show ):
+	if( !is_page() && $show ):
 
 		// array of post formats and the matching font icons
 		$icons = array(
@@ -673,14 +673,14 @@ function cyberchimps_default_site_title() {
 		echo ' | ' . get_the_title();
 	}
 
-	//Title for archives 	
-	if ( is_archive() ) {
+	//Title for archives
+	if( is_archive() ) {
 		echo ' | ';
-		if ( is_category() ) {
+		if( is_category() ) {
 			printf( __( 'Category Archives:', 'cyberchimps_core' ) . ' %s', single_cat_title( '', false ) );
-		} elseif ( is_tag() ) {
+		elseif( is_tag() ) {
 			printf( __( 'Tag Archives:', 'cyberchimps_core' ) . ' %s', single_tag_title( '', false ) );
-		} elseif ( is_author() ) {
+		elseif( is_author() ) {
 			_e( 'Author Archives', 'cyberchimps_core' );
 		} elseif ( is_day() ) {
 			printf( __( 'Daily Archives:', 'cyberchimps_core' ) . ' %s', get_the_date() );
@@ -695,13 +695,13 @@ function cyberchimps_default_site_title() {
 		}
 	}
 
-	//Title for search 
-	if ( is_search() ) {
+	//Title for search
+	if( is_search() ) {
 		echo ' | Search for &quot;' . get_search_query() . '&quot;';
 	}
 
-	//Title for 404 
-	if ( is_404() ) {
+	//Title for 404
+	if( is_404() ) {
 		echo ' | Not Found ';
 	}
 
@@ -723,7 +723,7 @@ add_filter( 'wp_title', 'cyberchimps_default_site_title' );
 function cyberchimps_seo_compatibility_check() {
 	if ( cyberchimps_detect_seo_plugins() ) {
 		remove_filter( 'wp_title', 'cyberchimps_default_site_title', 10, 3 );
-	}	
+	}
 }
 
 add_action( 'after_setup_theme', 'cyberchimps_seo_compatibility_check', 5 );
@@ -825,14 +825,10 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 
 	global $custom_excerpt, $post;
 
-	if ( $custom_excerpt == 'recent' ) {
-		$linktext = __( 'Continue Reading', 'cyberchimps_core' );
-	}
-
 	return '&hellip;
 			</p>
 			<div class="more-link">
-				<span class="glyphicon glyphicon-arrow-right"></span><a href="' . get_permalink( $post->ID ) . '">  ' . $linktext . '</a>
+				<a href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>
 			</div>';
 }
 
@@ -840,7 +836,7 @@ function cyberchimps_recent_post_excerpt_more( $more ) {
 function cyberchimps_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a>';
+	return '&hellip;</p></span><a class="excerpt-more featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>';
 }
 
 // Set length of the excerpt
@@ -852,7 +848,7 @@ function cyberchimps_featured_post_length( $length ) {
 function cyberchimps_magazine_featured_post_excerpt_more( $more ) {
 	global $post;
 
-	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a>';
+	return '&hellip;</p></span><a class="excerpt-more magazine-featured-post-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a>';
 }
 
 // Set length of the magazine featured post excerpt
@@ -900,33 +896,34 @@ function cyberchimps_search_excerpt_length( $length ) {
 //For archive posts
 function cyberchimps_archive_excerpt_more( $more ) {
 	global $post;
-	if ( cyberchimps_get_option( 'blog_read_more_text' ) != '' ) {
-		$more = '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_get_option( 'blog_read_more_text' ) . '</a></p>';
-
-		return $more;
-	} else {
-		$more = '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a></p>';
-
-		return $more;
-	}
+	return '<p><a class="excerpt-more archive-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a></p>';
 }
 
-if ( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ) {
+if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ) {
 	add_filter( 'excerpt_more', 'cyberchimps_blog_excerpt_more', 999 );
+}
+
+// Set value for blog read more text option.
+function cyberchimps_blog_read_more_text() {
+
+	// Get the value of blog read more text option.
+	$read_more = cyberchimps_get_option( 'blog_read_more_text' );
+
+	// Check whether any not null value supplied and set the value accordingly.
+	if( '' != $read_more ) {
+		return $read_more;
+	}
+	else {
+		return __( 'Read More', 'cyberchimps_core' ) . '...';
+	}
+
 }
 
 //For blog posts
 function cyberchimps_blog_excerpt_more( $more ) {
 	global $post;
-	if ( cyberchimps_get_option( 'blog_read_more_text' ) != '' ) {
-		$more = '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_get_option( 'blog_read_more_text' ) . '</a></p>';
+	return '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">' . cyberchimps_blog_read_more_text() . '</a></p>';
 
-		return $more;
-	} else {
-		$more = '<p><a class="excerpt-more blog-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a></p>';
-
-		return $more;
-	}
 }
 
 if ( cyberchimps_get_option( 'post_excerpts', 0 ) != 0 ) {
@@ -940,8 +937,7 @@ function manual_excerpt_read_more_link( $output ) {
 
 	global $post;
 
-	$linktext = cyberchimps_get_option( 'blog_read_more_text' );
-	$linktext = $linktext == '' ? 'Read More' : $linktext;
+	$linktext = cyberchimps_blog_read_more_text();
 
 	if ( !empty( $post->post_excerpt ) ) {
 		return $output . '<p><a class="excerpt-more" href="' . get_permalink( $post->ID ) . '">' . $linktext . '</a></p>';
@@ -1061,9 +1057,10 @@ function cyberchimps_options_help_text() {
 						</div>
 						</div>
 						<div class="clear"></div>';
-		$text .= sprintf( '<p>' . __( 'If you want even more amazing new features upgrade to', 'cyberchimps_core' ) . ' <a href="%1$s" title="%2$s">%2$s</a> ' . __( 'which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit', 'cyberchimps_core' ) . ' <a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a> ' . __( 'to learn more!', 'cyberchimps_core' ) . '</p>',
-		                  apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-		                  apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' )
+		$text .= sprintf(
+			'<p>' . __( 'If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
+			'<a href="' . $upgrade_link . ' title="' . $pro_title . '">' . $pro_title . '</a>',
+			'<a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a>'
 		);
 	} //text for pro themes
 	else {
@@ -1159,9 +1156,9 @@ function cyberchimps_heading_filter( $orig, $new ) {
 	return $orig;
 }
 
-// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading. 
+// the following 2 functions help retrieve the starting key number of the whole array of sections. There by allowing you to select the position of the custom section within that heading. 2 array's are passed to cyberchimps_array_section_organizer(). The initial array and the array of new sections. The array of new sections should have the format: $new_section[][10]	= array( field-data ). 10 being the position within that heading.
 
-//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.	
+//this function finds the initial key number where the heading name exists in the original array. If it does not yet exist then this must be a new heading and it returns the last key number of the array.
 function cyberchimps_section_start_no( $heading, $orig ) {
 	foreach ( $orig as $key => $value ) {
 		if ( $value['heading'] == $heading ) {
@@ -1190,9 +1187,9 @@ function cyberchimps_array_section_organizer( $orig, $new ) {
 	return $orig;
 }
 
-// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section. 
+// the following 2 functions help retrieve the starting key number of the whole array of fields. There by allowing you to select the position of the custom field within that section. 2 array's are passed to cyberchimps_array_field_organizer(). The initial array and the array of new fields. The array of new fields should have the format: $new_field[][10]	= array( field-data ). 10 being the position within that section.
 
-//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.																	
+//this function finds the initial key number wherethe section name exists in the original array. If it does not yet exist then this must be a new section and it returns the last key number of the array.
 function cyberchimps_field_start_no( $section, $orig ) {
 	foreach ( $orig as $key => $value ) {
 		if ( $value['section'] == $section ) {
@@ -1261,7 +1258,7 @@ add_action( 'admin_head', 'cyberchimps_woocommerce_shop_style' );
 function cyberchimps_addons_headings( $headings_list ) {
 	$headings_list[] = array(
 		'id'    => 'cyberchimps_addons_heading',
-		'title' => __( 'Add Ons', 'cyberchimps' ),
+		'title' => __( 'Add Ons', 'cyberchimps_core' ),
 	);
 
 	return $headings_list;
@@ -1273,16 +1270,16 @@ add_filter( 'cyberchimps_headings_filter', 'cyberchimps_addons_headings', 20, 1 
 function cyberchimps_addon_sections( $sections_list ) {
 	$sections_list[] = array(
 		'id'      => 'cyberchimps_eventcal_options',
-		'label'   => __( 'The Events Calendar', 'cyberchimps' ),
+		'label'   => __( 'The Events Calendar', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
 
 	$sections_list[] = array(
 		'id'      => 'cyberchimps_digital_downloads_options',
-		'label'   => __( 'Digital Downloads', 'cyberchimps' ),
+		'label'   => __( 'Digital Downloads', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_addons_heading'
 	);
-	
+
 	return $sections_list;
 }
 
@@ -1291,14 +1288,14 @@ add_filter( 'cyberchimps_section_list', 'cyberchimps_addon_sections', 20, 1 );
 // Addon Fields
 function cyberchimps_addon_fields( $fields_list ) {
 	$fields_list[] = array(
-		'name'     => __( 'Events', 'cyberchimps' ),
+		'name'     => __( 'Events', 'cyberchimps_core' ),
 		'id'       => 'events_info',
 		'type'     => 'info',
 		'callback' => 'cyberchimps_custom_events_callback',
 		'section'  => 'cyberchimps_eventcal_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
-	
+
 	$fields_list[] = array(
 		'name'     => __( 'Digital Downloads', 'cyberchimps' ),
 		'id'       => 'digital_downloads',
@@ -1307,7 +1304,7 @@ function cyberchimps_addon_fields( $fields_list ) {
 		'section'  => 'cyberchimps_digital_downloads_options',
 		'heading'  => 'cyberchimps_addons_heading'
 	);
-	
+
 	return $fields_list;
 }
 
@@ -1322,14 +1319,16 @@ function cyberchimps_custom_events_callback( $value ) {
 
 	$installed_plugins = get_plugins();
 
-	if ( isset( $installed_plugins[$plugin] ) ) {
-		if ( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=tribe_events&page=tribe-events-calendar' ) . '">' . __( 'Events Plugin Options', 'cyberchimps' ) . '</a>';
-		} else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps' ) . '</a>';
+	if( isset( $installed_plugins[$plugin] ) ) {
+		if( is_plugin_active( $plugin ) ) {
+			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=tribe_events&page=tribe-events-calendar' ) . '">' . __( 'Events Plugin Options', 'cyberchimps_core' ) . '</a>';
 		}
-	} else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_eventcal_install_link() . '">' . __( 'Install Events Calendar Plugin', 'cyberchimps' ) . '</a>';
+		else {
+			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate The Events Calendar plugin', 'cyberchimps_core' ) . '</a>';
+		}
+	}
+	else {
+		$output .= $icon_neg . '<a href="' . cyberchimps_eventcal_install_link() . '">' . __( 'Install Events Calendar Plugin', 'cyberchimps_core' ) . '</a>';
 	}
 
 	echo $output;
@@ -1352,14 +1351,16 @@ function cyberchimps_digital_downloads_callback( $value ) {
 
 	$installed_plugins = get_plugins();
 
-	if ( isset( $installed_plugins[$plugin] ) ) {
-		if ( is_plugin_active( $plugin ) ) {
-			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps' ) . '</a>';
-		} else {
-			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps' ) . '</a>';
+	if( isset( $installed_plugins[$plugin] ) ) {
+		if( is_plugin_active( $plugin ) ) {
+			$output .= $icon . '<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings' ) . '">' . __( 'Digital Downloads Settings', 'cyberchimps_core' ) . '</a>';
 		}
-	} else {
-		$output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps' ) . '</a>';
+		else {
+			$output .= $icon_neg . '<a href="' . admin_url( 'plugins.php' ) . '">' . __( 'Please activate Easy Digital Downloads plugin', 'cyberchimps_core' ) . '</a>';
+		}
+	}
+	else {
+		$output .= $icon_neg . '<a href="' . cyberchimps_digital_downloads_install_link() . '">' . __( 'Install Easy Digital Downloads Plugin', 'cyberchimps_core' ) . '</a>';
 	}
 
 	echo $output;

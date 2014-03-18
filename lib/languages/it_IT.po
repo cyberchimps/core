@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Italian, Italy\n"
 "MIME-Version: 1.0\n"
@@ -144,6 +144,10 @@ msgid "The Events Calendar"
 msgstr "Il calendario degli eventi"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Download digitali"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "Eventi"
 
@@ -158,10 +162,6 @@ msgstr "Si prega di attivare il plugin il calendario degli eventi"
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Installare Plugin calendario eventi"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "Download digitali"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -205,6 +205,7 @@ msgstr "Scatole"
 msgid "Post Page"
 msgstr "Pagina del post"
 
+#: ../../hooks/blog-hooks.php
 msgid "Our Blog"
 msgstr "Blog"
 
@@ -299,10 +300,6 @@ msgstr "Casella Opzioni HTML"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Opzioni di carosello"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Riviste opzioni"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -597,12 +594,8 @@ msgid "Portfolio Lite"
 msgstr "Portfolio Lite"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Opzioni di Sidebar"
+msgid "Select Page Layout"
+msgstr "Seleziona Layout di pagina"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -820,42 +813,6 @@ msgid "You need to create a Category"
 msgstr "È necessario creare una categoria"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Meta dati"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Immagine consigliati"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "Categoria"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Lunghezza Excerpt consigliati"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Numero di colonne"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Numero di righe"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Ampie posti sotto Magazine"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Ampia Post Excerpt lunghezza"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Numero di posti ampie"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Dispositivo di scorrimento dimensioni"
 
@@ -992,6 +949,10 @@ msgid "Number of boxes per row"
 msgstr "Numero di scatole per riga"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Opzioni di Sidebar"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Immagini per il layout."
 
@@ -1082,7 +1043,7 @@ msgstr "Ripristinare le impostazioni predefinite"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress Themes"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1266,16 +1227,16 @@ msgid "Try Responsive Free"
 msgstr "Design sensibile"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Seleziona Layout di pagina"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Titolo della pagina"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Elementi di pagina"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Bar"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"
@@ -1309,6 +1270,7 @@ msgstr "Categorie personalizzate"
 msgid "Remove"
 msgstr "Rimuovi"
 
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Add"
 msgstr "Add Ons"
 

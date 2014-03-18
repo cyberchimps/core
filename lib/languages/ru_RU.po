@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Russian, Russia\n"
 "MIME-Version: 1.0\n"
@@ -145,6 +145,10 @@ msgid "The Events Calendar"
 msgstr "Календарь событий"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Цифровые загрузки"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "События"
 
@@ -159,10 +163,6 @@ msgstr "Пожалуйста, активируйте плагин календа
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Установить плагин календарь событий"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "Цифровые загрузки"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -301,10 +301,6 @@ msgstr "Параметры HTML"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Карусель опции"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Журнал опции"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -599,12 +595,8 @@ msgid "Portfolio Lite"
 msgstr "Портфолио Lite"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter Бар"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Опции панели"
+msgid "Select Page Layout"
+msgstr "Выберите макет страницы"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -824,42 +816,6 @@ msgid "You need to create a Category"
 msgstr "Вам необходимо создать категорию"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Мета-данные"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Признакам изображения"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "Категория"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Рекомендуемые Выдержки длина"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Число столбцов"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Количество строк"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Широкий должностей ниже журнал"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Широкий пост отрывок длина"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Количество должностей, широкий"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Размер Slider"
 
@@ -996,6 +952,10 @@ msgid "Number of boxes per row"
 msgstr "Количество коробок в строке"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Опции панели"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Образы для макета."
 
@@ -1084,7 +1044,7 @@ msgstr "Восстановить настройки по умолчанию"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress темы"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1268,16 +1228,16 @@ msgid "Try Responsive Free"
 msgstr "Чутко дизайн"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Выберите макет страницы"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Название страницы"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Элементы страницы"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Бар"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"

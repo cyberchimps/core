@@ -109,8 +109,7 @@ function cyberchimps_admin_init() {
 
 // create and display theme options page
 function cyberchimps_options_page() {
-	settings_errors();
-	?>
+?>
 
 	<div class="wrap">
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
@@ -1149,6 +1148,11 @@ function cyberchimps_options_validate( $input ) {
 				foreach( $option['options'] as $key => $value ) {
 					$input[$id][$key] = false;
 				}
+			}
+
+			// Catch any other id's that have not been set and set them to false. For some themes we remove options and we don't want them causing a problem
+			if( !isset( $input[$id] ) ) {
+				$input[$id] = false;
 			}
 
 			// For a value to be submitted to database it must pass through a sanitization filter

@@ -303,3 +303,7 @@ a.symbol:hover {
 .glyphicon-facetime-video:before {
 	content: "\e059";
 }
+
+.glyphicon-arrow-right:before {
+	content: "\e092";
+}

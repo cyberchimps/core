@@ -61,7 +61,6 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		// Core Translations can be filed in the /inc/languages/ directory
 		load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
 		load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );
-		load_theme_textdomain( 'cyberchimps', $directory . '/inc/languages' );
 
 		// Add support for the Aside Post Formats
 		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
@@ -78,6 +77,8 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 			'default-image'    => apply_filters( 'default_background_image', '' ),
 			'wp-head-callback' => 'cyberchimps_custom_background_cb'
 		);
+
+		$defaults = apply_filters( 'cyberchimps_background_default_args', $defaults );
 
 		add_theme_support( 'custom-background', $defaults );
 
@@ -102,6 +103,7 @@ endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
 function cyberchimps_custom_background_cb() {
+
 	// $background is the saved custom image, or the default image.
 	$background = get_background_image();
 
@@ -111,13 +113,11 @@ function cyberchimps_custom_background_cb() {
 
 	// CyberChimps background image
 	$cc_background = get_theme_mod( 'cyberchimps_background' );
-
+	
 	if ( !$background && !$color && !$cc_background ) {
 		return;
 	}
-
-	$style = $color ? "background-color: #$color;" : '';
-
+	
 	if ( $background ) {
 		$image = " background-image: url('$background');";
 
@@ -139,27 +139,24 @@ function cyberchimps_custom_background_cb() {
 		}
 		$attachment = " background-attachment: $attachment;";
 
-		$style .= $image . $repeat . $position . $attachment;
+		$style = $image . $repeat . $position . $attachment;
 	}
-	if ( !$background && !$color && $cc_background != 'none' ) {
+	else if( $cc_background != 'none' ) {
 		$img_url = get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . $cc_background . '.jpg';
-		$image   = "background-image: url( '$img_url' );";
-		$style .= $image; ?>
-		<style type="text/css">
-			body {
-			<?php echo trim( $style ); ?>
-			}
-		</style>
-	<?php
-	} else {
-		?>
-		<style type="text/css" id="custom-background-css">
-			body.custom-background {
-			<?php echo trim( $style ); ?>
-			}
-		</style>
-	<?php
+		$style = "background-image: url( '$img_url' );";
 	}
+	else if( $color ) {
+		$style = "background-color: #$color;";
+		$style .= "background-image: none;";
+	} ?>
+
+	<style type="text/css">
+		body {
+		<?php echo trim( $style ); ?>
+		}
+	</style>
+	
+<?php
 }
 
 // Register our sidebars and widgetized areas.

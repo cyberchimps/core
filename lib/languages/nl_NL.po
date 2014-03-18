@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2013-11-12 13:29+0530\n"
+"PO-Revision-Date: 2014-02-11 12:23+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Dutch, Netherlands\n"
 "MIME-Version: 1.0\n"
@@ -143,6 +143,10 @@ msgid "The Events Calendar"
 msgstr "De evenementenkalender"
 
 #: ../../functions.php
+msgid "Digital Downloads"
+msgstr "Digitale Downloads"
+
+#: ../../functions.php
 msgid "Events"
 msgstr "Evenementen"
 
@@ -157,10 +161,6 @@ msgstr "Activeer de evenementenkalender plugin"
 #: ../../functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Evenementen Kalender Plugin installeren"
-
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "Digitale Downloads"
 
 #: ../../functions.php
 msgid "Digital Downloads Settings"
@@ -299,10 +299,6 @@ msgstr "HTML-opties"
 #: ../../options/options-core.php
 msgid "Carousel Options"
 msgstr "Carrousel opties"
-
-#: ../../options/options-core.php
-msgid "Magazine Options"
-msgstr "Tijdschrift opties"
 
 #: ../../options/options-core.php
 msgid "Portfolio Pro Options"
@@ -597,12 +593,8 @@ msgid "Portfolio Lite"
 msgstr "Portefeuille Lite"
 
 #: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Zijbalk opties"
+msgid "Select Page Layout"
+msgstr "Selecteer pagina-indeling"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -819,42 +811,6 @@ msgid "You need to create a Category"
 msgstr "U moet een categorie maken"
 
 #: ../../options/options-core.php
-msgid "Meta Data"
-msgstr "Meta-gegevens"
-
-#: ../../options/options-core.php
-msgid "Featured Image"
-msgstr "Aanbevolen afbeelding"
-
-#: ../../options/options-core.php
-msgid "Category"
-msgstr "Categorie"
-
-#: ../../options/options-core.php
-msgid "Featured Excerpt Length"
-msgstr "Aanbevolen uittreksel lengte"
-
-#: ../../options/options-core.php
-msgid "Number of Columns"
-msgstr "Aantal kolommen"
-
-#: ../../options/options-core.php
-msgid "Number of Rows"
-msgstr "Aantal rijen"
-
-#: ../../options/options-core.php
-msgid "Wide Posts Below Magazine"
-msgstr "Brede berichten hieronder Magazine"
-
-#: ../../options/options-core.php
-msgid "Wide Post Excerpt Length"
-msgstr "Grote Post fragment lengte"
-
-#: ../../options/options-core.php
-msgid "Number of Wide Posts"
-msgstr "Aantal berichten dat breed"
-
-#: ../../options/options-core.php
 msgid "Slider Size"
 msgstr "Grootte Slider"
 
@@ -991,6 +947,10 @@ msgid "Number of boxes per row"
 msgstr "Aantal dozen per rij"
 
 #: ../../options/options-core.php
+msgid "Sidebar Options"
+msgstr "Zijbalk opties"
+
+#: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Beelden voor lay-out."
 
@@ -1080,7 +1040,7 @@ msgstr "Standaardinstellingen herstellen"
 
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
-msgstr "CyberChimps WordPress thema 's"
+msgstr ""
 
 #: ../../options/options-init.php
 msgid "Default Field"
@@ -1247,9 +1207,11 @@ msgstr "Kopen iRibbon Pro2"
 msgid "Try iRibbon 2 Free"
 msgstr "Probeer iRibbon 2 vrije"
 
+#: ../../options/theme-upsell.php
 msgid "Buy Cyberchimps Pro"
 msgstr "Cyberchimps Help"
 
+#: ../../options/theme-upsell.php
 msgid "Try cyberchimps Free"
 msgstr "Cyberchimps Help"
 
@@ -1262,16 +1224,16 @@ msgid "Try Responsive Free"
 msgstr "Responsieve ontwerp"
 
 #: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Selecteer pagina-indeling"
-
-#: ../../options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Paginatitel"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Pagina-elementen"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter Bar"
 
 #: ../../options/meta-box-class/meta-box.php
 msgid "Need Help?"
@@ -1305,6 +1267,7 @@ msgstr "Aangepaste categorieën"
 msgid "Remove"
 msgstr "Weghalen"
 
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Add"
 msgstr "Add Ons"
 
