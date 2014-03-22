@@ -521,7 +521,7 @@ if( !function_exists( 'cyberchimps_posted_in' ) ) {
 		if( $show ):
 			$categories_list = get_the_category_list( ', ' );
 			if( $categories_list ) :
-				$cats = sprintf( __( 'Posted in', 'cyberchimps_core' ) . ' %1$s', $categories_list );
+				$cats = sprintf( __( 'Posted in %s', 'cyberchimps_core' ), $categories_list );
 				?>
 				<span class="cat-links">
 				<?php echo apply_filters( 'cyberchimps_post_categories', $cats ); ?>
@@ -549,7 +549,7 @@ if( !function_exists( 'cyberchimps_post_tags' ) ) {
 		if( $show ):
 			$tags_list = get_the_tag_list( '', ', ' );
 			if( $tags_list ) :
-				$tags = sprintf( __( 'Tags:', 'cyberchimps_core' ) . ' %1$s', $tags_list );
+				$tags = sprintf( __( 'Tags: %s', 'cyberchimps_core' ), $tags_list );
 				?>
 				<span class="taglinks">
 				<?php echo apply_filters( 'cyberchimps_post_tags', $tags ); ?>
@@ -708,22 +708,22 @@ function cyberchimps_default_site_title() {
 	if( is_archive() ) {
 		echo ' | ';
 		if( is_category() ) {
-			printf( __( 'Category Archives:', 'cyberchimps_core' ) . ' %s', single_cat_title( '', false ) );
+			printf( __( 'Category Archives: %s', 'cyberchimps_core' ), single_cat_title( '', false ) );
 		}
 		elseif( is_tag() ) {
-			printf( __( 'Tag Archives:', 'cyberchimps_core' ) . ' %s', single_tag_title( '', false ) );
+			printf( __( 'Tag Archives: %s', 'cyberchimps_core' ) , single_tag_title( '', false ) );
 		}
 		elseif( is_author() ) {
 			_e( 'Author Archives', 'cyberchimps_core' );
 		}
 		elseif( is_day() ) {
-			printf( __( 'Daily Archives:', 'cyberchimps_core' ) . ' %s', get_the_date() );
+			printf( __( 'Daily Archives: %s', 'cyberchimps_core' ), get_the_date() );
 		}
 		elseif( is_month() ) {
-			printf( __( 'Monthly Archives:', 'cyberchimps_core' ) . ' %s', get_the_date( 'F Y' ) );
+			printf( __( 'Monthly Archives: %s', 'cyberchimps_core' ), get_the_date( 'F Y' ) );
 		}
 		elseif( is_year() ) {
-			printf( __( 'Yearly Archives:', 'cyberchimps_core' ) . ' %s', get_the_date( 'Y' ) );
+			printf( __( 'Yearly Archives: %s', 'cyberchimps_core' ), get_the_date( 'Y' ) );
 		}
 		elseif( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {
 			_e( 'Shop', 'cyberchimps_core_scripts' );
@@ -735,12 +735,12 @@ function cyberchimps_default_site_title() {
 
 	//Title for search
 	if( is_search() ) {
-		echo ' | Search for &quot;' . get_search_query() . '&quot;';
+		echo ' | ' . sprintf( __( 'Search for &quot; %s &quot;', 'cyberchimps_core' ), get_search_query() );
 	}
 
 	//Title for 404
 	if( is_404() ) {
-		echo ' | Not Found ';
+		echo ' | ' . __( 'Not Found', 'cyberchimps_core' ) . ' ';
 	}
 
 	// Add the blog description for the home/front page.
@@ -751,7 +751,7 @@ function cyberchimps_default_site_title() {
 
 	// Add a page number if necessary:
 	if( $paged >= 2 || $page >= 2 ) {
-		echo ' | ' . sprintf( __( 'Page', 'cyberchimps_core' ) . ' %s', max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'cyberchimps_core' ), max( $paged, $page ) );
 	}
 }
 
@@ -912,7 +912,7 @@ function cyberchimps_search_excerpt_more( $more ) {
 		return $more;
 	}
 	else {
-		$more = '<p><a class="excerpt-more search-excerpt" href="' . get_permalink( $post->ID ) . '">Read More...</a></p>';
+		$more = '<p><a class="excerpt-more search-excerpt" href="' . get_permalink( $post->ID ) . '">' . __( 'Read More...', 'cyberchimps_core' ) . '</a></p>';
 
 		return $more;
 	}
@@ -954,7 +954,7 @@ function cyberchimps_blog_read_more_text() {
 		return $read_more;
 	}
 	else {
-		return __( 'Read More', 'cyberchimps_core' ) . '...';
+		return __( 'Read More...', 'cyberchimps_core' );
 	}
 
 }
