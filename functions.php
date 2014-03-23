@@ -453,10 +453,12 @@ if( !function_exists( 'cyberchimps_posted_on' ) ) {
 		$date       = esc_html( get_the_date() );
 
 		// Set the HTML for date link.
-		$posted_on = __( 'Posted on ', 'cyberchimps_core' ) .
-			'<a href="' . $date_url . '" title="' . $date_title . '" rel="bookmark">
-				<time class="entry-date updated" datetime="' . $date_time . '">' . $date . '</time>
-			</a>';
+		$posted_on = printf(
+						__( 'Posted on %s', 'cyberchimps_core' ),
+						'<a href="' . $date_url . '" title="' . $date_title . '" rel="bookmark">
+							<time class="entry-date updated" datetime="' . $date_time . '">' . $date . '</time>
+						</a>'
+					);
 
 		// If post byline date toggle is on then print HTML for date link.
 		if( $show_date ) {
@@ -488,15 +490,13 @@ if( !function_exists( 'cyberchimps_posted_by' ) ) {
 		$auther_link_title = esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) );
 
 		// Set the HTML for author link.
-		$posted_by = '
-			<span class="byline">
-				' . __( ' by ', 'cyberchimps_core' ) . '
-				<span class="author vcard">
-					<a class="url fn n" href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="author">
-						' . esc_html( get_the_author() ) . '
-					</a>
-				</span>
-			</span>';
+		$posted_by = printf(
+						'<span class="byline"> ' . __( 'by %s', 'cyberchimps_core' ),
+							'<span class="author vcard">
+								<a class="url fn n" href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="author">' . esc_html( get_the_author() ) . '</a>
+							</span>
+						</span>'
+					);
 
 		// If post byline author toggle is on then print HTML for author link.
 		if( $show_author ) {
@@ -1124,13 +1124,16 @@ add_filter( 'cyberchimps_help_description', 'cyberchimps_options_help_text' );
 
 // upgrade bar for free themes
 function cyberchimps_upgrade_bar() {
+	$current_theme_name = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
+	$upgrade_link = apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' );
+	$pro_title = apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' );
 	?>
 	<div class="upgrade-callout">
 		<p><img src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/chimp.png" alt="CyberChimps"/>
-			<?php printf( __( 'Welcome to %1$s! Learn more now about upgrading to', 'cyberchimps_core' ) . ' <a href="%2$s" target="_blank" title="%3$s">%3$s</a> ' . __( 'today.', 'cyberchimps_core' ),
-			              apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ),
-			              apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-			              apply_filters( 'cyberchimps_upgrade_pro_title', 'Pro' )
+			<?php printf(
+				__( 'Welcome to %1$s! Learn more now about upgrading to %2$s today.', 'cyberchimps_core' ),
+				$current_theme_name,
+				'<a href="' . $upgrade_link . '" target="_blank" title="' . $pro_title . '">' . $pro_title . '</a> '
 			); ?>
 		</p>
 
