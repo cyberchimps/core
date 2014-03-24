@@ -31,9 +31,9 @@ ul, ol {
 	border: 1px solid #cccccc;
 }
 
-.theme-container .theme-image img {
-	padding: 3px;
-	border: 5px solid #aaaaaa;
+.theme-container .image-container img {
+	max-width: 100%;
+	height: auto;
 }
 
 .image-container {
@@ -49,20 +49,16 @@ ul, ol {
 	float: left;
 }
 
-.no-left-megin {
-	margin-left: 0px !important;
-}
-
 .theme-details {
 	padding: 10px;
-	height: 25px;
+	height: 50px;
 	border-top: 1px solid #cccccc;
-	background: none repeat scroll 0 0 #ffffff;
+	background: #ffffff;
 	font-size: 18px;
 }
 
 .theme-details.active {
-	background: none repeat scroll 0 0 #2B5F87;
+	background: #2B5F87;
 	color: #fff;
 }
 

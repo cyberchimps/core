@@ -21,9 +21,9 @@ function cyberchimps_upsell_style() {
 	// Set template directory uri
 	$directory_uri = get_template_directory_uri();
 
-	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
+	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-theme', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-theme.min.css', 'bootstrap' );
+//	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
 
 	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
 
@@ -48,124 +48,134 @@ function cyberchimps_display_upsell() {
 	<div class="wrap">
 		<div class="container-fluid">
 			<div id="upsell_container">
-				<div class="row-fluid">
-					<div id="upsell_header" class="span12">
+				<div class="row">
+					<div id="upsell_header" class="col-md-12">
 						<h2>
 							<a href="http://cyberchimps.com" target="_blank">
 								<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/options/upsell-logo.png"/>
-	<!-- -------------- Eclipse Pro ------------------- -->
+							</a>
+						</h2>
 
-	<div id="eclipse" class="row">
-		<div class="theme-container">
-			<div class="theme-image col-md-3">
-				<a href="http://cyberchimps.com/store/eclipse-pro/" target="_blank">
-					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/eclipsepro.jpg"/>
-				</a>
-			</div>
-			<div class="theme-info col-md-9">
-				<a class="theme-name" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><h4>Eclipse Pro2</h4></a>
-
-				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if ( wp_get_theme( "eclipsepro2" )->exists() ) { ?>
-					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
-				<?php } ?>
-
-				<div class="theme-description">
-					<p>Eclipse 2 now offers touch friendly Responsive design, as well as Responsive Drag and Drop Theme Options that responds automatically to mobile devices such as the
-						iPhone, iPad, and Android.</p>
-
-					<p>Eclipse Pro also includes Drag and Drop Elements such as the Portfolio Element, Responsive Feature Slider, Product Element, Page Content, Image Carousel, Twitter
-						bar, Widgetized boxes, and Callout section. All of which can be used on a per-page basis using Drag and Drop Page Options that also include sidebar and layout
-						options giving you the power to control the look and feel of every page of your website. We have also added 5 new colored skins to select from!</p>
+						<h3><?php _e( 'Themes You Can Trust', 'cyberchimps_core' ); ?></h3>
+					</div>
 				</div>
 
-				<a class="buy btn btn-primary" href="http://cyberchimps.com/store/eclipse-pro/" target="_blank"><?php _e( 'Buy Eclipse Pro2', 'cyberchimps_core' ); ?></a>
-				<a class="buy  btn btn-info" href="http://demos.cyberchimps.com/eclipsepro/" target="_blank"><?php _e( 'View Demo', 'cyberchimps_core' ); ?></a>
-				<a class="free btn btn-success" href="http://cyberchimps.com/eclipse/" target="_blank"><?php _e( 'Try Eclipse 2 Free', 'cyberchimps_core' ); ?></a>
+				<div id="upsell_themes" class="row">
+					<?php
+					// Set the argument array with author name.
+					$args = array(
+						'author' => 'cyberchimps',
+					);
+
+					// Set the $request array.
+					$request = array(
+						'body' => array(
+							'action'  => 'query_themes',
+							'request' => serialize( (object)$args )
+						)
+					);
+					$themes = cyberchimps_get_themes( $request );
+					$active_theme = wp_get_theme()->get( 'Name' );
+					$counter = 1;
+
+					// For currently active theme.
+					foreach ( $themes->themes as $theme ) {
+						if ( $active_theme == $theme->name ) {
+							?>
+
+							<div id="<?php echo $theme->slug; ?>" class="col-md-4">
+								<div class="theme-container">
+									<div class="image-container">
+										<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
+
+										<div class="theme-description">
+											<p><?php echo $theme->description; ?></p>
+										</div>
+									</div>
+									<div class="theme-details active">
+										<span class="theme-name"><?php echo $theme->name; ?>: Current theme</span>
+										<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url() . '/wp-admin/customize.php' ?>">Customize</a>
+									</div>
+								</div>
+							</div>
+
+							<?php
+							$counter++;
+							break;
+						}
+					}
+
+					// For all other themes.
+					foreach ( $themes->themes as $theme ) {
+						if ( $active_theme != $theme->name ) {
+
+							// Set the argument array with author name.
+							$args = array(
+								'slug' => $theme->slug,
+							);
+
+							// Set the $request array.
+							$request = array(
+								'body' => array(
+									'action'  => 'theme_information',
+									'request' => serialize( (object)$args )
+								)
+							);
+
+							$theme_details = cyberchimps_get_themes( $request );
+							?>
+
+							<div id="<?php echo $theme->slug; ?>" class="col-md-4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
+								<div class="theme-container">
+									<div class="image-container">
+										<img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
+
+										<div class="theme-description">
+											<p><?php echo $theme->description; ?></p>
+										</div>
+									</div>
+									<div class="theme-details">
+										<span class="theme-name"><?php echo $theme->name; ?></span>
+
+										<!-- Check if the theme is installed -->
+										<?php if ( wp_get_theme( $theme->slug )->exists() ) { ?>
+
+											<!-- Show the tick image notifying the theme is already installed. -->
+											<img data-toggle="tooltip" title="Already installed" data-placement="bottom" class="theme-exists"
+												 src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
+
+											<!-- Activate Button -->
+											<a class="button button-primary activate right"
+											   href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug ); ?>">Activate</a>
+										<?php
+										}
+										else {
+
+											// Set the install url for the theme.
+											$install_url = add_query_arg( array(
+																			  'action' => 'install-theme',
+																			  'theme'  => $theme->slug,
+																		  ), self_admin_url( 'update.php' ) );
+											?>
+											<!-- Install Button -->
+											<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>"
+											   class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>">Install
+												Now</a>
+										<?php } ?>
+
+										<!-- Preview button -->
+										<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
+									</div>
+								</div>
+							</div>
+							<?php
+							$counter++;
+						}
+					}?>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<!-- -------------- Neuro Pro ------------------- -->
-
-	<div id="neuro" class="row">
-		<div class="theme-container">
-			<div class="theme-image col-md-3">
-				<a href="http://cyberchimps.com/store/neuro-pro/" target="_blank">
-					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/neuropro.jpg"/>
-				</a>
-			</div>
-			<div class="theme-info col-md-9">
-				<a class="theme-name" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><h4>Neuro Pro 3</h4></a>
-
-				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if ( wp_get_theme( "neuropro3" )->exists() ) { ?>
-					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
-				<?php } ?>
-
-				<div class="theme-description">
-					<p>Neuro Pro 3 now offers a clean modern Responsive WordPress Theme featuring Drag and Drop Theme Options. Neuro Pro offers the same advanced functionality as
-						CyberChimps other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android.</p>
-
-					<p>Neuro Pro now features 5 beautiful skins to select from, as well as Drag and Drop Elements such as the Responsive Feature Slider, Image Carousel,
-						Twitter bar, Widgetized boxes, and Callout section. All of which can be used on a per-page basis.</p>
-				</div>
-
-				<a class="buy btn btn-primary" href="http://cyberchimps.com/store/neuro-pro/" target="_blank"><?php _e( 'Buy Neuro Pro', 'cyberchimps_core' ); ?></a>
-				<a class="buy  btn btn-info" href="http://demos.cyberchimps.com/neuropro/" target="_blank"><?php _e( 'View Demo', 'cyberchimps_core' ); ?></a>
-				<a class="free btn btn-success" href="http://cyberchimps.com/neuro/" target="_blank"><?php _e( 'Try Neuro Free', 'cyberchimps_core' ); ?></a>
-			</div>
-		</div>
-	</div>
-
-	<!-- -------------- iRibbon Pro ------------------- -->
-
-	<div id="iribbon" class="row">
-		<div class="theme-container">
-			<div class="theme-image col-md-3">
-				<a href="http://cyberchimps.com/store/iribbon-pro/" target="_blank">
-					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/iribbonpro.jpg"/>
-				</a>
-			</div>
-			<div class="theme-info col-md-9">
-				<a class="theme-name" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><h4>iRibbon Pro2</h4></a>
-
-				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if ( wp_get_theme( "iribbonpro2" )->exists() ) { ?>
-					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
-				<?php } ?>
-
-				<div class="theme-description">
-					<p>iRibbon Pro 2 is a fun and friendly Responsive WordPress Theme featuring Drag and Drop Theme Options. iRibbon Pro offers the same advanced functionality as
-						CyberChimps other WordPress Themes including a Responsive Design that responds automatically to mobile devices such as the iPhone, iPad, and Android.</p>
-
-					<p>now features 4 beautiful skins to select from, as well as Drag and Drop Elements such as the Responsive Feature Slider, Image Carousel, Twitter bar, Widgetized
-						boxes, and Callout section. All of which can be used on a per-page basis.</p>
-				</div>
-
-				<a class="buy btn btn-primary" href="http://cyberchimps.com/store/iribbon-pro/" target="_blank"><?php _e( 'Buy iRibbon Pro2', 'cyberchimps_core' ); ?></a>
-				<a class="buy  btn btn-info" href="http://demos.cyberchimps.com/iribbonpro2/" target="_blank"><?php _e( 'View Demo', 'cyberchimps_core' ); ?></a>
-				<a class="free btn btn-success" href="http://cyberchimps.com/iribbon/" target="_blank"><?php _e( 'Try iRibbon 2 Free', 'cyberchimps_core' ); ?></a>
-			</div>
-		</div>
-	</div>
-
-	<!-- -------------- Cyberchimps Pro ------------------- -->
-
-	<div id="cyberchimps" class="row">
-		<div class="theme-container">
-			<div class="theme-image col-md-3">
-				<a href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank">
-					<img src="<?php echo $directory_uri; ?>/cyberchimps/options/lib/images/themes/cyberchimpspro.jpg"/>
-				</a>
-			</div>
-			<div class="theme-info col-md-9">
-				<a class="theme-name" href="http://cyberchimps.com/store/cyberchimps-pro/" target="_blank"><h4>Cyberchimps Pro</h4></a>
-
-				<!-- Check if the theme is installed, if so then add a tick mark -->
-				<?php if ( wp_get_theme( "cyberchimpspro" )->exists() ) { ?>
-					<img class="theme-exists" src="<?php echo $directory_uri ?>/cyberchimps/options/lib/images/tick.png"/>
-				<?php } ?>
 
 	<script>
 		jQuery(function () {
