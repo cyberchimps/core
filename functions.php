@@ -406,7 +406,7 @@ function cyberchimps_fallback_menu() {
 		'post_status' => 'publish'
 	);
 	$pages   = wp_list_pages( $args );
-	$prepend = '<ul id="menu-menu" class="nav">';
+	$prepend = '<ul id="menu-menu" class="nav navbar-nav">';
 	$pages   = apply_filters( 'cyberchimps_fallback_menu_filter', $pages, $args );
 	$append  = '</ul>';
 	$output  = $prepend . $pages . $append;
