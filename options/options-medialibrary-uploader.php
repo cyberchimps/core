@@ -59,8 +59,7 @@ if( !function_exists( 'cyberchimps_mlu_css' ) ) {
 if( !function_exists( 'cyberchimps_mlu_js' ) ) {
 	function cyberchimps_mlu_js() {
 		// Registers custom scripts for the Media Library AJAX uploader.
-		wp_register_script( 'cyberchimps-medialibrary-uploader', dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
-		wp_enqueue_script( 'cyberchimps-medialibrary-uploader' );
+		wp_enqueue_script( 'cyberchimps-medialibrary-uploader', dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
 		wp_enqueue_script( 'media-upload' );
 	}
 }
