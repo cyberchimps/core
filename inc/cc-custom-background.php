@@ -89,7 +89,7 @@ class CC_Custom_Background {
 	 */
 	protected function get_radio_fields() {
 		$value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
-		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk' );
+		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk', 'grid' );
 		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ) . '</label><br>';
 
 		foreach( $radios as $radio ) {
@@ -150,6 +150,7 @@ function ifeature_background_image( $options ) {
 			'space' => $imagepath . 'backgrounds/thumbs/space.png',
 			'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png',
 			'silk' => $imagepath . 'backgrounds/thumbs/silk.png',
+			'grid' => $imagepath . 'backgrounds/thumbs/grid.png',
 			);
 	return $options;
 }
