@@ -448,3 +448,38 @@ function cyberchimps_customize( $wp_customize ) {
 		'choices'  => apply_filters( 'cyberchimps_background_image', '' ),
 	) ) );
 }
+
+// Add upgrade button to the free theme customizer.
+function cc_add_upgrade_button() {
+
+	// Get the upgrade link.
+	$upgrade_link = apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' );
+?>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			jQuery('#customize-info .accordion-section-title').append('<a target="_blank" class="button btn-upgrade" href="<?php echo $upgrade_link; ?>">Upgrade To Pro</a>');
+			jQuery('#customize-info .btn-upgrade').click(function(event){
+				event.stopPropagation();
+			});
+		});
+	</script>
+	<style>
+		.wp-core-ui .btn-upgrade {
+			color: #fff;
+			background: none repeat scroll 0 0 #5BC0DE;
+			border-color: #CCCCCC;
+			box-shadow: 0 1px 0 #5BC0DE inset, 0 1px 0 rgba(0, 0, 0, 0.08);
+			float: right;
+			margin-top: -23px;
+		}
+		.wp-core-ui .btn-upgrade:hover {
+			color: #fff;
+			background: none repeat scroll 0 0 #39B3D7;
+			box-shadow: 0 1px 0 #39B3D7 inset, 0 1px 0 rgba(0, 0, 0, 0.08);
+		}
+	</style>
+<?php
+}
+if( cyberchimps_theme_check() == 'free' ) {
+	add_action('customize_controls_print_footer_scripts', 'cc_add_upgrade_button');
+}
