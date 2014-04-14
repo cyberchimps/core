@@ -4,9 +4,9 @@
 /* === SOCIAL ICON FONT === */
 
 @font-face {
-	font-family: 'Mono Social Icons Font';
-	src: url('../fonts/monosocialiconsfont-1.10.eot');
-	src: url('../fonts/monosocialiconsfont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/monosocialiconsfont-1.10.woff') format('woff'), url('../fonts/monosocialiconsfont-1.10.ttf') format('truetype'), url('../fonts/monosocialiconsfont-1.10.svg#MonoSocialIconsFont') format('svg');
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -98,7 +98,10 @@
 }
 
 .symbol {
-	font-family: 'Mono Social Icons Font';
+	display: inline-block;
+	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	-ms-text-rendering: optimizeLegibility;
@@ -121,8 +124,50 @@ a.symbol {
 	color: white;
 	text-decoration: none;
 	text-shadow: 1px 1px 0 #111111;
+	font-weight: normal;
+	font-style: normal;
 	font-size: 3em;
-	line-height: 0.6;
+	line-height: 1;
+}
+
+a.symbol.twitterbird:before {
+	content: "\f099";
+}
+
+a.symbol.facebook:before {
+	content: "\f09a";
+}
+
+a.symbol.googleplus:before {
+	content: "\f0d5";
+}
+
+a.symbol.flickr:before {
+	content: "\f16e";
+}
+
+a.symbol.pinterest:before {
+	content: "\f0d2";
+}
+
+a.symbol.linkedin:before {
+	content: "\f0e1";
+}
+
+a.symbol.youtube:before {
+	content: "\f167";
+}
+
+a.symbol.map:before {
+	content: "\f041";
+}
+
+a.symbol.email:before {
+	content: "\f0e0";
+}
+
+a.symbol.rss:before {
+	content: "\f09e";
 }
 
 a.symbol:hover {
@@ -209,8 +254,8 @@ a.symbol:hover {
 	background: #b42d24;
 }
 
-.round-icons a.symbol.gowallapin,
-.legacy-icons a.symbol.gowallapin {
+.round-icons a.symbol.map,
+.legacy-icons a.symbol.map {
 	border: 1px solid #74a82a;
 	background: #7fb72f;
 }
@@ -247,16 +292,16 @@ a.symbol:hover {
 
 .postformats .glyphicon {
 	position: relative;
-	font-size: 1.9em;
-	color: #ccc;
 	top: 1px;
-	margin-left: 10px;
 	display: inline-block;
-	font-family: 'Glyphicons Halflings';
-	-webkit-font-smoothing: antialiased;
-	font-style: normal;
+	margin-left: 10px;
+	color: #cccccc;
 	font-weight: normal;
+	font-style: normal;
+	font-size: 1.9em;
+	font-family: 'Glyphicons Halflings';
 	line-height: 1;
+	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 

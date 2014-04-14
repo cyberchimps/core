@@ -184,7 +184,7 @@ function cyberchimps_header_site_title() {
  *
  * The key of the $social variable has to match the font icon you want to use. If that differs from the name you want displayed set the title key
  * e.g. $social['twitterbird']['title'] = 'twitter';
- * 
+ *
  * styling is located in /lib/css/core.css
  * icon fonts are from http://drinchev.github.io/monosocialiconsfont/
  */
@@ -196,39 +196,28 @@ function cyberchimps_header_social_icons() {
 	// create array of social icons to loop through to check if they are set and add title key to
 	// social networks with names different to key
 
-	$social['twitterbird']['set']	= cyberchimps_get_option( 'social_twitter', 'checked' );
-	$social['twitterbird']['title']	= 'twitter';
-	$social['twitterbird']['url']	= cyberchimps_get_option( 'twitter_url' );
-	$social['twitterbird']['uni']	= '&#xe086;';
-	$social['facebook']['set']		= cyberchimps_get_option( 'social_facebook', 'checked' );
-	$social['facebook']['url']		= cyberchimps_get_option( 'facebook_url' );
-	$social['facebook']['uni']		= '&#xe027;';
-	$social['googleplus']['set']	= cyberchimps_get_option( 'social_google', 'checked' );
-	$social['googleplus']['url']	= cyberchimps_get_option( 'google_url' );
-	$social['googleplus']['uni']	= '&#xe039;';
-	$social['flickr']['set']		= cyberchimps_get_option( 'social_flickr' );
-	$social['flickr']['url']		= cyberchimps_get_option( 'flickr_url' );
-	$social['flickr']['uni']		= '&#xe029;';
-	$social['pinterest']['set']		= cyberchimps_get_option( 'social_pinterest' );
-	$social['pinterest']['url']		= cyberchimps_get_option( 'pinterest_url' );
-	$social['pinterest']['uni']		= '&#xe064;';
-	$social['linkedin']['set']		= cyberchimps_get_option( 'social_linkedin' );
-	$social['linkedin']['url']		= cyberchimps_get_option( 'linkedin_url' );
-	$social['linkedin']['uni']		= '&#xe052;';
-	$social['youtube']['set']		= cyberchimps_get_option( 'social_youtube' );
-	$social['youtube']['url']		= cyberchimps_get_option( 'youtube_url' );
-	$social['youtube']['uni']		= '&#xe099;';
-	//TODO we don't have a google maps icon, we need to add one using gowalla logo in meantime
-	$social['gowallapin']['set']	= cyberchimps_get_option( 'social_googlemaps' );
-	$social['gowallapin']['title']	= 'google maps';
-	$social['gowallapin']['url']	= cyberchimps_get_option( 'googlemaps_url' );
-	$social['gowallapin']['uni']	= '&#xe041;';
-	$social['email']['set']			= cyberchimps_get_option( 'social_email' );
-	$social['email']['url']			= 'mailto:' .cyberchimps_get_option( 'email_url' );
-	$social['email']['uni']			= '&#xe024;';
-	$social['rss']['set']			= cyberchimps_get_option( 'social_rss' );
-	$social['rss']['url']			= cyberchimps_get_option( 'rss_url' );
-	$social['rss']['uni']			= '&#xe071;';
+	$social['twitterbird']['set']   = cyberchimps_get_option( 'social_twitter', 'checked' );
+	$social['twitterbird']['title'] = 'twitter';
+	$social['twitterbird']['url']   = cyberchimps_get_option( 'twitter_url' );
+	$social['facebook']['set']      = cyberchimps_get_option( 'social_facebook', 'checked' );
+	$social['facebook']['url']      = cyberchimps_get_option( 'facebook_url' );
+	$social['googleplus']['set']    = cyberchimps_get_option( 'social_google', 'checked' );
+	$social['googleplus']['url']    = cyberchimps_get_option( 'google_url' );
+	$social['flickr']['set']        = cyberchimps_get_option( 'social_flickr' );
+	$social['flickr']['url']        = cyberchimps_get_option( 'flickr_url' );
+	$social['pinterest']['set']     = cyberchimps_get_option( 'social_pinterest' );
+	$social['pinterest']['url']     = cyberchimps_get_option( 'pinterest_url' );
+	$social['linkedin']['set']      = cyberchimps_get_option( 'social_linkedin' );
+	$social['linkedin']['url']      = cyberchimps_get_option( 'linkedin_url' );
+	$social['youtube']['set']       = cyberchimps_get_option( 'social_youtube' );
+	$social['youtube']['url']       = cyberchimps_get_option( 'youtube_url' );
+	$social['map']['set']           = cyberchimps_get_option( 'social_googlemaps' );
+	$social['map']['title']         = 'google maps';
+	$social['map']['url']           = cyberchimps_get_option( 'googlemaps_url' );
+	$social['email']['set']         = cyberchimps_get_option( 'social_email' );
+	$social['email']['url']         = 'mailto:' . cyberchimps_get_option( 'email_url' );
+	$social['rss']['set']           = cyberchimps_get_option( 'social_rss' );
+	$social['rss']['url']           = cyberchimps_get_option( 'rss_url' );
 
 	$output = '';
 
@@ -240,13 +229,13 @@ function cyberchimps_header_social_icons() {
 
 		// Check that the social icon has been set
 		if ( !empty( $value['set'] ) ) {
-		
+
 			// check if title is set and use it otherwise use key as title
 			$title = ( isset( $social[$key]['title'] ) ) ? $social[$key]['title'] : $key;
-			
+
 			// Create the output
 			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '"' . ( "email" != $key ? 'target="_blank"' : '' )
-			. 'title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '">' . esc_html( $social[$key]['uni'] ) . '</a>';
+				. 'title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
 		}
 
 	}
