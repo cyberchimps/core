@@ -1186,7 +1186,10 @@ function cyberchimps_admin_link() {
 	                         ) );
 }
 
-add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
+// Include link to theme option in the admin header bar in pro theme only, as it is ruled out in free themes by WPORG.
+if( 'free' != cyberchimps_theme_check() ) {
+	add_action( 'admin_bar_menu', 'cyberchimps_admin_link', 113 );
+}
 
 function cyberchimps_google_analytics() {
 	$code = cyberchimps_get_option( 'google_analytics', '' );
