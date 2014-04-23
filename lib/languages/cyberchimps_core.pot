@@ -3,112 +3,121 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/functions\n"
-"POT-Creation-Date: 2014-03-23 23:14:39+00:00\n"
+"Report-Msgid-Bugs-To: http://cyberchimps.com/forum/\n"
+"POT-Creation-Date: 2014-04-23 09:56:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Ulrich Pogson <ulrich@cyberchimps.com>\n"
+"Language-Team: CyberChimps Translate <support@cyberchimps.com>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-Sourcecharset: utf-8\n"
+"X-Poedit-Keywordslist: "
+"__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_"
+"x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Textdomain-Support: yes\n"
 
-#: functions.php:457
+#: functions.php:456
 msgid "Posted on %s"
 msgstr ""
 
-#: functions.php:490
+#: functions.php:489
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:494
+#: functions.php:493
 msgid "by %s"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:525
 msgid "Posted in %s"
 msgstr ""
 
-#: functions.php:554
+#: functions.php:553
 msgid "Tags: %s"
 msgstr ""
 
-#: functions.php:579 functions.php:592
+#: functions.php:578 functions.php:591
 msgid "Leave a comment"
 msgstr ""
 
-#: functions.php:582
+#: functions.php:581
 msgid "1 Comment"
 msgstr ""
 
-#: functions.php:582 options/options-core.php:287
+#: functions.php:581 options/options-core.php:287
 msgid "Comments"
 msgstr ""
 
-#: functions.php:613
+#: functions.php:612
 msgid "Permalink to %s"
 msgstr ""
 
-#: functions.php:713
+#: functions.php:712
 msgid "Category Archives: %s"
 msgstr ""
 
-#: functions.php:716
+#: functions.php:715
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: functions.php:719
+#: functions.php:718
 msgid "Author Archives"
 msgstr ""
 
-#: functions.php:722
+#: functions.php:721
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: functions.php:725
+#: functions.php:724
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: functions.php:728
+#: functions.php:727
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: functions.php:731
+#: functions.php:730
 msgid "Shop"
 msgstr ""
 
-#: functions.php:734
+#: functions.php:733
 msgid "Archives"
 msgstr ""
 
-#: functions.php:740
+#: functions.php:739
 msgid "Search for &quot; %s &quot;"
 msgstr ""
 
-#: functions.php:745
+#: functions.php:744
 msgid "Not Found"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:755
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:917 functions.php:959
+#: functions.php:916 functions.php:958
 msgid "Read More..."
 msgstr ""
 
-#: functions.php:1085 options/options-init.php:142
+#: functions.php:1084 options/options-init.php:139
 msgid "Instructions"
 msgstr ""
 
-#: functions.php:1091 options/options-init.php:140
+#: functions.php:1090 options/options-init.php:137
 msgid "Support"
 msgstr ""
 
-#: functions.php:1103
+#: functions.php:1102
 msgid "Upgrade to %1$s"
 msgstr ""
 
-#: functions.php:1110
+#: functions.php:1109
 msgid ""
 "If you want even more amazing new features upgrade to %1$s which includes a "
 "Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
@@ -116,51 +125,51 @@ msgid ""
 "powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
-#: functions.php:1134
+#: functions.php:1133
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php:1185 options/options-init.php:132
+#: functions.php:1184 options/options-init.php:129
 msgid "Options"
 msgstr ""
 
-#: functions.php:1316
+#: functions.php:1318
 msgid "Add Ons"
 msgstr ""
 
-#: functions.php:1328
+#: functions.php:1330
 msgid "The Events Calendar"
 msgstr ""
 
-#: functions.php:1334 functions.php:1355
+#: functions.php:1336 functions.php:1357
 msgid "Digital Downloads"
 msgstr ""
 
-#: functions.php:1346
+#: functions.php:1348
 msgid "Events"
 msgstr ""
 
-#: functions.php:1379
+#: functions.php:1381
 msgid "Events Plugin Options"
 msgstr ""
 
-#: functions.php:1382
+#: functions.php:1384
 msgid "Please activate The Events Calendar plugin"
 msgstr ""
 
-#: functions.php:1386
+#: functions.php:1388
 msgid "Install Events Calendar Plugin"
 msgstr ""
 
-#: functions.php:1411
+#: functions.php:1413
 msgid "Digital Downloads Settings"
 msgstr ""
 
-#: functions.php:1414
+#: functions.php:1416
 msgid "Please activate Easy Digital Downloads plugin"
 msgstr ""
 
-#: functions.php:1418
+#: functions.php:1420
 msgid "Install Easy Digital Downloads Plugin"
 msgstr ""
 
@@ -284,7 +293,7 @@ msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
 #: options/meta-box-class/my-meta-box-class.php:2087
-#: options/options-medialibrary-uploader.php:114
+#: options/options-medialibrary-uploader.php:113
 msgid "Upload"
 msgstr ""
 
@@ -1088,48 +1097,48 @@ msgstr ""
 msgid "Theme Options Page"
 msgstr ""
 
-#: options/options-init.php:34 options/options-init.php:1216
+#: options/options-init.php:34 options/options-init.php:1213
 msgid "Theme Options"
 msgstr ""
 
-#: options/options-init.php:144
+#: options/options-init.php:141
 msgid "Buy Themes"
 msgstr ""
 
-#: options/options-init.php:196 options/options-init.php:266
-#: options/options-init.php:334
+#: options/options-init.php:193 options/options-init.php:263
+#: options/options-init.php:331
 msgid "Save Options"
 msgstr ""
 
-#: options/options-init.php:197 options/options-init.php:335
+#: options/options-init.php:194 options/options-init.php:332
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: options/options-init.php:199 options/options-init.php:337
+#: options/options-init.php:196 options/options-init.php:334
 msgid "Restore Defaults"
 msgstr ""
 
-#: options/options-init.php:303 options/options-init.php:305
+#: options/options-init.php:300 options/options-init.php:302
 msgid "CyberChimps WordPress Themes"
 msgstr ""
 
-#: options/options-init.php:582
+#: options/options-init.php:579
 msgid "Default Field"
 msgstr ""
 
-#: options/options-init.php:1050 options/options-init.php:1073
+#: options/options-init.php:1047 options/options-init.php:1070
 msgid "Options Imported"
 msgstr ""
 
-#: options/options-init.php:1055 options/options-init.php:1078
+#: options/options-init.php:1052 options/options-init.php:1075
 msgid "Invalid Data for Import"
 msgstr ""
 
-#: options/options-init.php:1092
+#: options/options-init.php:1089
 msgid "Default options restored."
 msgstr ""
 
-#: options/options-init.php:1167
+#: options/options-init.php:1164
 msgid "Options saved."
 msgstr ""
 
@@ -1137,15 +1146,15 @@ msgstr ""
 msgid "Theme Options Media"
 msgstr ""
 
-#: options/options-medialibrary-uploader.php:138
+#: options/options-medialibrary-uploader.php:137
 msgid "View File"
 msgstr ""
 
-#: options/options-medialibrary-uploader.php:264
+#: options/options-medialibrary-uploader.php:263
 msgid "Gallery"
 msgstr ""
 
-#: options/options-medialibrary-uploader.php:264
+#: options/options-medialibrary-uploader.php:263
 msgid "Previously Uploaded"
 msgstr ""
 

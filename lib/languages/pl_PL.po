@@ -3,1280 +3,1278 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-02-11 12:23+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2014-03-27 18:02:53 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Polish, Poland\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ../../functions.php
-msgid "Posted on "
-msgstr "Wysłana na "
+#: functions.php
+msgid "Posted on %s"
+msgstr ""
 
-#: ../../functions.php
+#: functions.php
 msgid "View all posts by %s"
 msgstr "Wyświetlić wszystkie stanowiska przez %s"
 
-#: ../../functions.php
-msgid " by "
-msgstr " przez "
+#: functions.php
+msgid "by %s"
+msgstr ""
 
-#: ../../functions.php
-msgid "Posted in"
-msgstr "Opublikowany w"
+#: functions.php
+msgid "Posted in %s"
+msgstr ""
 
-#: ../../functions.php
-msgid "Tags:"
-msgstr "Tagi:"
+#: functions.php
+msgid "Tags: %s"
+msgstr ""
 
-#: ../../functions.php
+#: functions.php
+#: functions.php
 msgid "Leave a comment"
 msgstr "Zostaw komentarz"
 
-#: ../../functions.php
+#: functions.php
 msgid "1 Comment"
 msgstr "1 Komentarz"
 
-#: ../../functions.php ../../options/options-core.php
+#: functions.php
+#: options/options-core.php
 msgid "Comments"
 msgstr "Komentarze"
 
-#: ../../functions.php
+#: functions.php
 msgid "Permalink to %s"
 msgstr "Permalink do %s"
 
-#: ../../functions.php
-msgid "Category Archives:"
-msgstr "Archiwum kategorii:"
+#: functions.php
+msgid "Category Archives: %s"
+msgstr ""
 
-#: ../../functions.php
-msgid "Tag Archives:"
-msgstr "Tag Archives:"
+#: functions.php
+msgid "Tag Archives: %s"
+msgstr ""
 
-#: ../../functions.php
+#: functions.php
 msgid "Author Archives"
 msgstr "Archiwum autora"
 
-#: ../../functions.php
-msgid "Daily Archives:"
-msgstr "Codziennie Archiwum:"
+#: functions.php
+msgid "Daily Archives: %s"
+msgstr ""
 
-#: ../../functions.php
-msgid "Monthly Archives:"
-msgstr "Miesięczne archiwa:"
+#: functions.php
+msgid "Monthly Archives: %s"
+msgstr ""
 
-#: ../../functions.php
-msgid "Yearly Archives:"
-msgstr "Roczne Archiwum:"
+#: functions.php
+msgid "Yearly Archives: %s"
+msgstr ""
 
-#: ../../functions.php
+#: functions.php
 msgid "Shop"
 msgstr "Sklep"
 
-#: ../../functions.php
+#: functions.php
 msgid "Archives"
 msgstr "Archiwum"
 
-#: ../../functions.php ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "Strona"
+#: functions.php
+msgid "Search for &quot; %s &quot;"
+msgstr ""
 
-#: ../../functions.php
-msgid "Continue Reading"
-msgstr "Kontynuuj czytanie"
+#: functions.php
+msgid "Not Found"
+msgstr ""
 
-#: ../../functions.php ../../options/options-init.php
+#: functions.php
+msgid "Page %s"
+msgstr ""
+
+#: functions.php
+#: functions.php
+msgid "Read More..."
+msgstr ""
+
+#: functions.php
+#: options/options-init.php
 msgid "Instructions"
 msgstr "Instrukcje"
 
-#: ../../functions.php ../../options/options-init.php
+#: functions.php
+#: options/options-init.php
 msgid "Support"
 msgstr "Wsparcie"
 
-#: ../../functions.php
+#: functions.php
 msgid "Upgrade to %1$s"
 msgstr "Uaktualnienie do %1$ s"
 
-#: ../../functions.php
-msgid "If you want even more amazing new features upgrade to"
+#: functions.php
+msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
 msgstr ""
-"Jeśli chcesz jeszcze bardziej niesamowite nowe funkcje uaktualnienia do"
 
-#: ../../functions.php
-msgid ""
-"which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, "
-"Callout Section, expanded typography including Google Fonts, more color "
-"skins, and many more powerful new features. Please visit"
+#: functions.php
+msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
-"który zawiera niestandardowe funkcje suwaka, obraz karuzeli, Widgetized "
-"pola, objaśnienia sekcja, rozszerzony typografii, w tym Google czcionki, "
-"więcej kolor skórki i wiele nowe, bardziej zaawansowane funkcje. Odwiedź"
 
-#: ../../functions.php
-msgid "to learn more!"
-msgstr "Aby dowiedzieć się więcej!"
-
-#: ../../functions.php
-msgid "Welcome to %1$s! Learn more now about upgrading to"
-msgstr "Zapraszamy do %1$ s! Dowiedz się więcej, teraz o modernizacji do"
-
-#: ../../functions.php
-msgid "today."
-msgstr "dzisiaj."
-
-#: ../../functions.php ../../options/options-init.php
+#: functions.php
+#: options/options-init.php
 msgid "Options"
 msgstr "Opcje"
 
-#: ../../functions.php
-msgid " Options"
-msgstr " Opcje"
-
-#: ../../functions.php
+#: functions.php
 msgid "Add Ons"
 msgstr "Dodać Ons"
 
-#: ../../functions.php
+#: functions.php
 msgid "The Events Calendar"
 msgstr "Kalendarz imprez"
 
-#: ../../functions.php
+#: functions.php
+#: functions.php
 msgid "Digital Downloads"
 msgstr "Cyfrowe pliki do pobrania"
 
-#: ../../functions.php
+#: functions.php
 msgid "Events"
 msgstr "Wydarzenia"
 
-#: ../../functions.php
+#: functions.php
 msgid "Events Plugin Options"
 msgstr "Wydarzenia Plugin opcje"
 
-#: ../../functions.php
+#: functions.php
 msgid "Please activate The Events Calendar plugin"
 msgstr "Aktywuj plugin Kalendarz imprez"
 
-#: ../../functions.php
+#: functions.php
 msgid "Install Events Calendar Plugin"
 msgstr "Zainstaluj Plugin Kalendarz imprez"
 
-#: ../../functions.php
+#: functions.php
 msgid "Digital Downloads Settings"
 msgstr "Ustawienia cyfrowe pliki do pobrania"
 
-#: ../../functions.php
+#: functions.php
 msgid "Please activate Easy Digital Downloads plugin"
 msgstr "Aktywuj plugin Kalendarz imprez"
 
-#: ../../functions.php
+#: functions.php
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Zainstaluj Plugin Kalendarz imprez"
 
-#: ../../init.php
-msgid "Primary Menu"
-msgstr "Główne Menu"
-
-#: ../../init.php
-msgid "Sidebar Left"
-msgstr "Pasek boczny w lewo"
-
-#: ../../init.php
-msgid "Sidebar Right"
-msgstr "Wstęga boczna prawa"
-
-#: ../../init.php ../../options/options-core.php
-msgid "Footer Widgets"
-msgstr "Stopki wzory"
-
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
+#: hooks/blog-hooks.php
+#: options/meta-box-class/meta-box.php
+#: options/options-core.php
+#: options/options-core.php
 msgid "Slider Lite"
 msgstr "Suwak Lite"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
+#: hooks/blog-hooks.php
+#: options/meta-box-class/meta-box.php
+#: options/options-core.php
+#: options/options-core.php
 msgid "Boxes"
 msgstr "Pola"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: hooks/blog-hooks.php
+#: options/options-core.php
+#: options/options-core.php
 msgid "Post Page"
 msgstr "Po stronie"
 
-#: ../../hooks/blog-hooks.php
+#: hooks/blog-hooks.php
 msgid "Our Blog"
 msgstr "Blog"
 
-#: ../../hooks/header-hooks.php ../../options/options-core.php
+#: hooks/header-hooks.php
+#: options/options-core.php
+#: options/options-core.php
 msgid "Logo + Icons"
 msgstr "Logo + ikony"
 
-#: ../../inc/cc-custom-background.php
+#: inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "Lub wybrać jeden z obrazów tła CyberChimps"
 
-#: ../../options/options-core.php
-msgid "Help"
-msgstr "Pomoc"
-
-#: ../../options/options-core.php
-msgid "Design"
-msgstr "Projekt"
-
-#: ../../options/options-core.php
-msgid "Header"
-msgstr "Nagłówek"
-
-#: ../../options/options-core.php
-msgid "Blog"
-msgstr "Blog"
-
-#: ../../options/options-core.php
-msgid "Templates"
-msgstr "Szablony"
-
-#: ../../options/options-core.php
-msgid "Footer"
-msgstr "Stopka"
-
-#: ../../options/options-core.php
-msgid "Layout Options"
-msgstr "Opcje układu"
-
-#: ../../options/options-core.php
-msgid "Custom Colors"
-msgstr "Kolory niestandardowe"
-
-#: ../../options/options-core.php
-msgid "Typography"
-msgstr "Typografia"
-
-#: ../../options/options-core.php
-msgid "Header Drag &#38; Drop"
-msgstr "Przeciągnij nagłówek & spadku"
-
-#: ../../options/options-core.php
-msgid "Header Options"
-msgstr "Opcje nagłówka"
-
-#: ../../options/options-core.php
-msgid "Social Icons"
-msgstr "Społecznego ikony"
-
-#: ../../options/options-core.php
-msgid "Drag & Drop"
-msgstr "Przeciąganie upuszczanie &"
-
-#: ../../options/options-core.php
-msgid "Blog Options"
-msgstr "Opcje blog"
-
-#: ../../options/options-core.php
-msgid "Blog Slider Lite"
-msgstr "Blog suwak Lite"
-
-#: ../../options/options-core.php
-msgid "Portfolio Lite Options"
-msgstr "Portfolio opcje Lite"
-
-#: ../../options/options-core.php
-msgid "Boxes Lite"
-msgstr "Skrzynki Lite"
-
-#: ../../options/options-core.php
-msgid "Blog Slider"
-msgstr "Blog suwak"
-
-#: ../../options/options-core.php
-msgid "Callout Options"
-msgstr "Opcje objaśnienia"
-
-#: ../../options/options-core.php
-msgid "HTML Box Options"
-msgstr "Opcji HTML"
-
-#: ../../options/options-core.php
-msgid "Carousel Options"
-msgstr "Karuzela opcje"
-
-#: ../../options/options-core.php
-msgid "Portfolio Pro Options"
-msgstr "Portfela opcji Pro"
-
-#: ../../options/options-core.php
-msgid "Recent Posts Options"
-msgstr "Ostatnie posty opcje"
-
-#: ../../options/options-core.php
-msgid "Boxes Options"
-msgstr "Opcje pola"
-
-#: ../../options/options-core.php
-msgid "Single Post"
-msgstr "Jeden Post"
-
-#: ../../options/options-core.php
-msgid "Archive"
-msgstr "Archiwum"
-
-#: ../../options/options-core.php
-msgid "Search"
-msgstr "Szukaj"
-
-#: ../../options/options-core.php
-msgid "Footer Options"
-msgstr "Opcje stopki"
-
-#: ../../options/options-core.php
-msgid "Author"
-msgstr "Autor"
-
-#: ../../options/options-core.php
-msgid "Categories"
-msgstr "Kategorie"
-
-#: ../../options/options-core.php
-msgid "Date"
-msgstr "Data"
-
-#: ../../options/options-core.php
-msgid "Tags"
-msgstr "Tagi"
-
-#: ../../options/options-core.php
-msgid "Cyberchimps Help"
-msgstr "Cyberchimps pomoc"
-
-#: ../../options/options-core.php
-msgid "Responsive Design"
-msgstr "Elastyczne projektowanie"
-
-#: ../../options/options-core.php
-msgid "Responsive Videos"
-msgstr "Elastyczne filmy"
-
-#: ../../options/options-core.php
-msgid "Gallery Lightbox"
-msgstr "Galerii Lightbox"
-
-#: ../../options/options-core.php
-msgid "Wide Sidebar"
-msgstr "Szeroki pasek boczny"
-
-#: ../../options/options-core.php
-msgid "Only works on layouts with 1 sidebar"
-msgstr "Działa tylko na układy z bocznym 1"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Max Width"
-msgstr "Szerokość max"
-
-#: ../../options/options-core.php
-msgid "enter the width of your site in pixels"
-msgstr "Wprowadź szerokość witryny w pikselach"
-
-#: ../../options/options-core.php
-msgid "Select a Skin Color"
-msgstr "Wybierz kolor skóry"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Text Color"
-msgstr "Kolor tekstu"
-
-#: ../../options/options-core.php
-msgid "Select text color"
-msgstr "Wybierz kolor tekstu"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Link Color"
-msgstr "Kolor łącza"
-
-#: ../../options/options-core.php
-msgid "Select link color"
-msgstr "Wybierz link kolor"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Link Hover Color"
-msgstr "Kolor aktywowania łącza"
-
-#: ../../options/options-core.php
-msgid "Select link hover color"
-msgstr "Wybierz kolor aktywowania łącza"
-
-#: ../../options/options-core.php
-msgid "Typography Options"
-msgstr "Opcje typografii"
-
-#: ../../options/options-core.php
-msgid "Enter Google font"
-msgstr "Wprowadź Google czcionki"
-
-#: ../../options/options-core.php
-msgid "Google font names are case sensitive"
-msgstr "Nazwy czcionek Google jest uwzględniana wielkość liter"
-
-#: ../../options/options-core.php
-msgid "Demo Text"
-msgstr "Tekst nazwa zbioru demonstracyjnego"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Font Family for headings"
-msgstr "Rodzina czcionek dla nagłówków"
-
-#: ../../options/options-core.php ../../options/options-customizer.php
-msgid "Google font for headings"
-msgstr "Google czcionki"
-
-#: ../../options/options-core.php
-msgid "Header Drag/Drop"
-msgstr "Nagłówek przeciągnij i upuść"
-
-#: ../../options/options-core.php
-msgid "Logo + Search"
-msgstr "Logo + Szukaj"
-
-#: ../../options/options-core.php
-msgid "Logo"
-msgstr "Logo"
-
-#: ../../options/options-core.php
-msgid "Custom Logo URL"
-msgstr "Logo niestandardowego adresu URL"
-
-#: ../../options/options-core.php
-msgid "URL"
-msgstr "ADRES URL"
-
-#: ../../options/options-core.php
-msgid "Enter URL"
-msgstr "Wprowadź adres URL"
-
-#: ../../options/options-core.php
-msgid "Custom Logo"
-msgstr "Własne Logo"
-
-#: ../../options/options-core.php
-msgid "Logo Image"
-msgstr "Obraz logo"
-
-#: ../../options/options-core.php
-msgid "Enter URL or upload file"
-msgstr "Wprowadź adres URL lub przesłać plik"
-
-#: ../../options/options-core.php
-msgid "Custom Favicon"
-msgstr "Niestandardowy Favicon"
-
-#: ../../options/options-core.php
-msgid "Favicon URL"
-msgstr "Favicon URL"
-
-#: ../../options/options-core.php
-msgid "Custom Apple touch icon"
-msgstr "Niestandardową ikonę Apple touch"
-
-#: ../../options/options-core.php
-msgid "Apple Touch URL"
-msgstr "Apple Touch URL"
-
-#: ../../options/options-core.php
-msgid "Google Analytics"
-msgstr "Google Analytics"
-
-#: ../../options/options-core.php
-msgid "Copy and paste your Google Analytics code here"
-msgstr "Skopiuj i wklej kod Google Analytics"
-
-#: ../../options/options-core.php
-msgid "Searchbar"
-msgstr "Searchbar"
-
-#: ../../options/options-core.php
-msgid "Header Scripts"
-msgstr "Opcje nagłówka"
-
-#: ../../options/options-core.php
-msgid "Please add script tags"
-msgstr "Proszę dodać znaczniki skryptów"
-
-#: ../../options/options-core.php
-msgid "Choose your icon style"
-msgstr "Wybierz swój styl ikony"
-
-#: ../../options/options-core.php
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../../options/options-core.php
-msgid "Facebook URL"
-msgstr "Facebook URL"
-
-#: ../../options/options-core.php
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../../options/options-core.php
-msgid "Twitter URL"
-msgstr "Twitter URL"
-
-#: ../../options/options-core.php
-msgid "Google+"
-msgstr "Google +"
-
-#: ../../options/options-core.php
-msgid "Google+ URL"
-msgstr "URL Google +"
-
-#: ../../options/options-core.php
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: ../../options/options-core.php
-msgid "LinkedIn URL"
-msgstr "LinkedIn URL"
-
-#: ../../options/options-core.php
-msgid "YouTube"
-msgstr "YouTube"
-
-#: ../../options/options-core.php
-msgid "YouTube URL"
-msgstr "Adres URL YouTube"
-
-#: ../../options/options-core.php
-msgid "Flickr"
-msgstr "Flickr"
-
-#: ../../options/options-core.php
-msgid "Flickr URL"
-msgstr "Flickr URL"
-
-#: ../../options/options-core.php
-msgid "Pinterest"
-msgstr "Pinterest"
-
-#: ../../options/options-core.php
-msgid "Pinterest URL"
-msgstr "Pinterest URL"
-
-#: ../../options/options-core.php
-msgid "Google Maps"
-msgstr "Mapy Google"
-
-#: ../../options/options-core.php
-msgid "Google Maps URL"
-msgstr "Adres URL mapy Google"
-
-#: ../../options/options-core.php
-msgid "Email"
-msgstr "Adres e-mail"
-
-#: ../../options/options-core.php
-msgid "Email Address"
-msgstr "Adres e-mail"
-
-#: ../../options/options-core.php
-msgid "RSS"
-msgstr "RSS"
-
-#: ../../options/options-core.php
-msgid "RSS URL"
-msgstr "RSS URL"
-
-#: ../../options/options-core.php
-msgid "Drag & Drop Blog Elements"
-msgstr "Przeciągnij & upuść elementy Blog"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr "Portfolio Lite"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
+#: init.php
+msgid "Primary Menu"
+msgstr "Główne Menu"
+
+#: init.php
+msgid "Sidebar Left"
+msgstr "Pasek boczny w lewo"
+
+#: init.php
+msgid "Sidebar Right"
+msgstr "Wstęga boczna prawa"
+
+#: init.php
+#: options/options-core.php
+msgid "Footer Widgets"
+msgstr "Stopki wzory"
+
+#: options/meta-box-class/meta-box.php
+#: options/options-core.php
 msgid "Select Page Layout"
 msgstr "Wybierz układ strony"
 
-#: ../../options/options-core.php
-msgid "Blog Title"
-msgstr "Tytuł strony"
-
-#: ../../options/options-core.php
-msgid "Blog Title Text"
-msgstr "Blog tytuł tekstu"
-
-#: ../../options/options-core.php
-msgid "Post Formats Icons"
-msgstr "Post formatów ikon"
-
-#: ../../options/options-core.php
-msgid "Post Excerpts"
-msgstr "Fragmenty postu"
-
-#: ../../options/options-core.php
-msgid "Read More Text"
-msgstr "Czytaj więcej tekstu"
-
-#: ../../options/options-core.php
-msgid "Excerpt Length"
-msgstr "Długość fragment"
-
-#: ../../options/options-core.php
-msgid "Featured Images"
-msgstr "Rekomendowane Zdjęcia"
-
-#: ../../options/options-core.php
-msgid "Post Byline Author"
-msgstr "Autor wiersza autora postu"
-
-#: ../../options/options-core.php
-msgid "Post Byline Categories"
-msgstr "Post redaguje Kategorie"
-
-#: ../../options/options-core.php
-msgid "Post Byline Date"
-msgstr "Datą redaguje post"
-
-#: ../../options/options-core.php
-msgid "Post Byline Comments"
-msgstr "Redaguje komentarze"
-
-#: ../../options/options-core.php
-msgid "Post Byline Tags"
-msgstr "Tagi wiersza autora postu"
-
-#: ../../options/options-core.php
-msgid "Boxes Upgrade"
-msgstr "Aktualizacja pola"
-
-#: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Lite pola ogranicza się do w sumie 3 pola całej całą witrynę. Uaktualnienie "
-"do %1$ s aby móc stworzyć tak wiele pól, jak chcesz. Kategoryzować je i "
-"wyświetlania każdej kategorii na innej stronie."
-
-#: ../../options/options-core.php
-msgid "Pro"
-msgstr "Pro"
-
-#: ../../options/options-core.php
-msgid "First Box Image"
-msgstr "Pierwsze pole obrazu"
-
-#: ../../options/options-core.php
-msgid "Link URL"
-msgstr "Ogniwo URL"
-
-#: ../../options/options-core.php
-msgid "First Box Text"
-msgstr "Pierwszy tekst pudło"
-
-#: ../../options/options-core.php
-msgid "Second Box Image"
-msgstr "Drugie pole obrazu"
-
-#: ../../options/options-core.php
-msgid "Second Box Text"
-msgstr "Drugie pole tekstowe"
-
-#: ../../options/options-core.php
-msgid "Third Box Image"
-msgstr "Trzecie pole obrazu"
-
-#: ../../options/options-core.php
-msgid "Third Box Text"
-msgstr "Trzecie pole tekstowe"
-
-#: ../../options/options-core.php
-msgid "Portfolio Upgrade"
-msgstr "Aktualizacja portfolio"
-
-#: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Lite portfela ogranicza się do w sumie 4 elementów całej całą witrynę. "
-"Uaktualnienie do %1$ s, aby być w stanie stworzyć tak wiele elementów "
-"portfela jak chcesz. Kategoryzować je i wyświetlania każdej kategorii na "
-"innej stronie."
-
-#: ../../options/options-core.php
-msgid "First Portfolio Image"
-msgstr "Pierwszy obraz Portfolio"
-
-#: ../../options/options-core.php
-msgid "First Portfolio Image Caption"
-msgstr "Pierwszy podpis obrazu Portfolio"
-
-#: ../../options/options-core.php
-msgid "First Porfolio Link"
-msgstr "Pierwszy Link do portfolio"
-
-#: ../../options/options-core.php
-msgid "Second Portfolio Image"
-msgstr "Drugi obraz Portfolio"
-
-#: ../../options/options-core.php
-msgid "Second Portfolio Image Caption"
-msgstr "Drugie Portfolio podpis obrazu"
-
-#: ../../options/options-core.php
-msgid "Second Porfolio Link"
-msgstr "Drugi Link portfolio"
-
-#: ../../options/options-core.php
-msgid "Third Portfolio Image"
-msgstr "Trzeci obraz Portfolio"
-
-#: ../../options/options-core.php
-msgid "Third Portfolio Image Caption"
-msgstr "Trzeci podpis obrazu Portfolio"
-
-#: ../../options/options-core.php
-msgid "Third Porfolio Link"
-msgstr "Trzeci Link portfolio"
-
-#: ../../options/options-core.php
-msgid "Fourth Portfolio Image"
-msgstr "Czwarty obraz Portfolio"
-
-#: ../../options/options-core.php
-msgid "Fourth Portfolio Image Caption"
-msgstr "Czwarty podpis obrazu Portfolio"
-
-#: ../../options/options-core.php
-msgid "Fourth Porfolio Link"
-msgstr "Czwarty portfolio Link"
-
-#: ../../options/options-core.php
-msgid "Portfolio Title"
-msgstr "Tytuł portfolio"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Title"
-msgstr "Tytuł"
-
-#: ../../options/options-core.php
-msgid "Slider Upgrade"
-msgstr "Suwak Upgrade"
-
-#: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Suwak Lite ogranicza się do w sumie 3 zdjęć całej całą witrynę. "
-"Uaktualnienie do %1$ s, aby być w stanie utworzyć więcej zdjęć. "
-"Kategoryzować je i wyświetlania każdej kategorii na innej stronie."
-
-#: ../../options/options-core.php
-msgid "Slider Image 1"
-msgstr "Suwak obrazu 1"
-
-#: ../../options/options-core.php
-msgid "Slide 1 URL"
-msgstr "Slajd 1 URL"
-
-#: ../../options/options-core.php
-msgid "Slider Image 2"
-msgstr "Suwak obrazu 2"
-
-#: ../../options/options-core.php
-msgid "Slide 2 URL"
-msgstr "Slajd 2 URL"
-
-#: ../../options/options-core.php
-msgid "Slider Image 3"
-msgstr "Suwak obrazu 3"
-
-#: ../../options/options-core.php
-msgid "Slide 3 URL"
-msgstr "Slajd 3 URL"
-
-#: ../../options/options-core.php
-msgid "Images per Row"
-msgstr "Obrazy na wiersz"
-
-#: ../../options/options-core.php
-msgid "Portfolio Category"
-msgstr "Kategorii portfolio"
-
-#: ../../options/options-core.php
-msgid "You need to create a Category"
-msgstr "Musisz utworzyć kategorię"
-
-#: ../../options/options-core.php
-msgid "Slider Size"
-msgstr "Suwak rozmiar"
-
-#: ../../options/options-core.php
-msgid "Full"
-msgstr "Pełna"
-
-#: ../../options/options-core.php
-msgid "Half"
-msgstr "Połowa"
-
-#: ../../options/options-core.php
-msgid "Slider Type"
-msgstr "Typ suwaka"
-
-#: ../../options/options-core.php
-msgid "Posts"
-msgstr "Posty"
-
-#: ../../options/options-core.php
-msgid "Custom"
-msgstr "Niestandardowe"
-
-#: ../../options/options-core.php
-msgid "Post Categories"
-msgstr "Kategorie postu"
-
-#: ../../options/options-core.php
-msgid "Custom Categories"
-msgstr "Niestandardowe Kategorie"
-
-#: ../../options/options-core.php
-msgid "Number of Featured Blog Posts"
-msgstr "Liczba Rekomendowane w blogach"
-
-#: ../../options/options-core.php
-msgid "Slider Height"
-msgstr "Suwak wysokość"
-
-#: ../../options/options-core.php
-msgid "Slider Speed "
-msgstr "Suwak szybkość "
-
-#: ../../options/options-core.php
-msgid "Slider Arrows"
-msgstr "Strzałek suwaka"
-
-#: ../../options/options-core.php
-msgid "Callout Title"
-msgstr "Objaśnienie tytuł"
-
-#: ../../options/options-core.php
-msgid "%1$s's Call Out Element"
-msgstr "%1$ s zawołać Element"
-
-#: ../../options/options-core.php
-msgid "Callout Text"
-msgstr "Objaśnienie tekstu"
-
-#: ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Używać %1$ s Call Out sekcji na stronie gdzie ty potrzeba wobec wygłosić "
-"ważne przesłanie do klienta lub klienta."
-
-#: ../../options/options-core.php
-msgid "Callout Button"
-msgstr "Objaśnienie przycisk"
-
-#: ../../options/options-core.php
-msgid "Callout Button Text"
-msgstr "Tekst przycisku objaśnienie"
-
-#: ../../options/options-core.php
-msgid "Click Here"
-msgstr "Kliknij tutaj"
-
-#: ../../options/options-core.php
-msgid "Callout Button URL"
-msgstr "Objaśnienie przycisk URL"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Options"
-msgstr "Opcje niestandardowego objaśnienia"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Button"
-msgstr "Przycisk niestandardowy objaśnienie"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Background Color"
-msgstr "Objaśnienie niestandardowy kolor tła"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Title Color"
-msgstr "Objaśnienie niestandardowy kolor tytułu"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Text Color"
-msgstr "Objaśnienie niestandardowy kolor tekstu"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Button Color"
-msgstr "Objaśnienie niestandardowy przycisk kolor"
-
-#: ../../options/options-core.php
-msgid "Custom Callout Button Text Color"
-msgstr "Kolor tekstu przycisku niestandardowego objaśnienie"
-
-#: ../../options/options-core.php
-msgid "HTML Box"
-msgstr "Pole HTML"
-
-#: ../../options/options-core.php
-msgid "Enter your custom HTML code here"
-msgstr "Wprowadzić niestandardowy kod HTML tutaj"
-
-#: ../../options/options-core.php
-msgid "Custom Title"
-msgstr "Niestandardowy tytuł"
-
-#: ../../options/options-core.php
-msgid "Images"
-msgstr "Zdjęcia"
-
-#: ../../options/options-core.php
-msgid "Select a Category"
-msgstr "Wybierz kategorię"
-
-#: ../../options/options-core.php
-msgid "Number of boxes per row"
-msgstr "Liczba pól w wierszu"
-
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "Opcje paska bocznego"
-
-#: ../../options/options-core.php
-msgid "Images for layout."
-msgstr "Obrazy dla układu."
-
-#: ../../options/options-core.php
-msgid "Post title"
-msgstr "Tytuł wpisu"
-
-#: ../../options/options-core.php
-msgid "Post Format Icons"
-msgstr "Format ikony"
-
-#: ../../options/options-core.php
-msgid "Custom 404 Title"
-msgstr "Tytuł niestandardowy 404"
-
-#: ../../options/options-core.php
-msgid "Custom 404 Content"
-msgstr "Zawartość niestandardową 404"
-
-#: ../../options/options-core.php
-msgid "Footer Copyright Text"
-msgstr "Prawa autorskie tekst stopki"
-
-#: ../../options/options-customizer.php
-msgid "Customize"
-msgstr "Dostosuj"
-
-#: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
-"Upewnij się, że obraz powyżej zostały usunięte przed wybierając jedną z tych"
-
-#: ../../options/options-customizer.php
-msgid "Skin Color"
-msgstr "Kolor skóry"
-
-#: ../../options/options-customizer.php
-msgid "Custom Css"
-msgstr "Własne kolory"
-
-#: ../../options/options-customizer.php
-msgid "Typography Size"
-msgstr "Rozmiar Typografia"
-
-#: ../../options/options-customizer.php
-msgid "Typography Style"
-msgstr "Stylu w typografii"
-
-#: ../../options/options-customizer.php
-msgid "Typography Face"
-msgstr "Typografia twarz"
-
-#: ../../options/options-customizer.php
-msgid "Text google font"
-msgstr "Wprowadź Google czcionki"
-
-#: ../../options/options-customizer.php
-msgid "Background Image"
-msgstr "Obraz w tle"
-
-#: ../../options/options-init.php
-msgid "Theme Options Page"
-msgstr "Strona Opcje tematu"
-
-#: ../../options/options-init.php
-msgid "Theme Options"
-msgstr "Opcje tematu"
-
-#: ../../options/options-init.php
-msgid "Buy Themes"
-msgstr "Kupic Themes"
-
-#: ../../options/options-init.php
-msgid "Save Options"
-msgstr "Zapisz opcje"
-
-#: ../../options/options-init.php
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-"Kliknij przycisk OK, aby zresetować. Wszelkie ustawienia zostaną utracone!"
-
-#: ../../options/options-init.php
-msgid "Restore Defaults"
-msgstr "Przywracanie ustawień domyślnych"
-
-#: ../../options/options-init.php
-msgid "CyberChimps WordPress Themes"
-msgstr ""
-
-#: ../../options/options-init.php
-msgid "Default Field"
-msgstr "Domyślnie pola"
-
-#: ../../options/options-init.php
-msgid "Options Imported"
-msgstr "Opcje importowane"
-
-#: ../../options/options-init.php
-msgid "Invalid Data for Import"
-msgstr "Nieprawidłowe dane dotyczące przywozu"
-
-#: ../../options/options-init.php
-msgid "Default options restored."
-msgstr "Domyślne opcje przywrócone."
-
-#: ../../options/options-init.php
-msgid "Options saved."
-msgstr "Opcje zapisane."
-
-#: ../../options/options-medialibrary-uploader.php
-msgid "Theme Options Media"
-msgstr "Temat opcji Media"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "Przesłać"
-
-#: ../../options/options-medialibrary-uploader.php
-msgid "View File"
-msgstr "Plik widoku"
-
-#: ../../options/options-medialibrary-uploader.php
-msgid "Gallery"
-msgstr "Galeria"
-
-#: ../../options/options-medialibrary-uploader.php
-msgid "Previously Uploaded"
-msgstr "Wczesniej wgrałeś"
-
-#: ../../options/options-sanitize.php
-msgid "No Repeat"
-msgstr "Nie powtarzaj"
-
-#: ../../options/options-sanitize.php
-msgid "Repeat Horizontally"
-msgstr "Powtarzać poziomo"
-
-#: ../../options/options-sanitize.php
-msgid "Repeat Vertically"
-msgstr "Powtórz pionowo"
-
-#: ../../options/options-sanitize.php
-msgid "Repeat All"
-msgstr "Powtórz wszystkie"
-
-#: ../../options/options-sanitize.php
-msgid "Top Left"
-msgstr "W lewym górnym rogu"
-
-#: ../../options/options-sanitize.php
-msgid "Top Center"
-msgstr "Top centrum"
-
-#: ../../options/options-sanitize.php
-msgid "Top Right"
-msgstr "Prawym górnym rogu"
-
-#: ../../options/options-sanitize.php
-msgid "Middle Left"
-msgstr "Środku lewej"
-
-#: ../../options/options-sanitize.php
-msgid "Middle Center"
-msgstr "Środku centrum"
-
-#: ../../options/options-sanitize.php
-msgid "Middle Right"
-msgstr "Środkowy prawy"
-
-#: ../../options/options-sanitize.php
-msgid "Bottom Left"
-msgstr "Na dole po lewej"
-
-#: ../../options/options-sanitize.php
-msgid "Bottom Center"
-msgstr "Na dole w środku"
-
-#: ../../options/options-sanitize.php
-msgid "Bottom Right"
-msgstr "Na dole po prawej"
-
-#: ../../options/options-sanitize.php
-msgid "Scroll Normally"
-msgstr "Przewiń normalnie"
-
-#: ../../options/options-sanitize.php
-msgid "Fixed in Place"
-msgstr "Stałe miejsce"
-
-#: ../../options/options-sanitize.php
-msgid "Normal"
-msgstr "Normalne"
-
-#: ../../options/options-sanitize.php
-msgid "Italic"
-msgstr "Kursywa"
-
-#: ../../options/options-sanitize.php
-msgid "Bold"
-msgstr "Pogrubienie"
-
-#: ../../options/options-sanitize.php
-msgid "Bold Italic"
-msgstr "Pogrubienie kursywa"
-
-#: ../../options/theme-upsell.php
-msgid "Themes You Can Trust"
-msgstr "Motywy, można zaufać"
-
-#: ../../options/theme-upsell.php
-msgid "Buy iFeature Pro5"
-msgstr "Kupię iFeature Pro5"
-
-#: ../../options/theme-upsell.php
-msgid "View Demo"
-msgstr "Plik widoku"
-
-#: ../../options/theme-upsell.php
-msgid "Try iFeature 5 Free"
-msgstr "Spróbuj iFeature 5 Free"
-
-#: ../../options/theme-upsell.php
-msgid "Buy Business Pro4"
-msgstr "Sprzedam biznes Pro4"
-
-#: ../../options/theme-upsell.php
-msgid "Try Business Lite"
-msgstr "Spróbuj biznes Lite"
-
-#: ../../options/theme-upsell.php
-msgid "Buy Eclipse Pro2"
-msgstr "Kupię Eclipse Pro2"
-
-#: ../../options/theme-upsell.php
-msgid "Try Eclipse 2 Free"
-msgstr "Próbować Eclipse 2 za darmo"
-
-#: ../../options/theme-upsell.php
-msgid "Buy Neuro Pro"
-msgstr "Kup teraz"
-
-#: ../../options/theme-upsell.php
-msgid "Try Neuro Free"
-msgstr "Spróbuj Neuro wolna"
-
-#: ../../options/theme-upsell.php
-msgid "Buy iRibbon Pro2"
-msgstr "Kupię iRibbon Pro2"
-
-#: ../../options/theme-upsell.php
-msgid "Try iRibbon 2 Free"
-msgstr "Spróbuj iRibbon 2 darmowe"
-
-#: ../../options/theme-upsell.php
-msgid "Buy Cyberchimps Pro"
-msgstr "Cyberchimps pomoc"
-
-#: ../../options/theme-upsell.php
-msgid "Try cyberchimps Free"
-msgstr "Cyberchimps pomoc"
-
-#: ../../options/theme-upsell.php
-msgid "Buy Responsive Pro"
-msgstr "Elastyczne filmy"
-
-#: ../../options/theme-upsell.php
-msgid "Try Responsive Free"
-msgstr "Elastyczne projektowanie"
-
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Page Title"
 msgstr "Tytuł strony"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Page Elements"
 msgstr "Elementy strony"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Strona"
+
+#: options/meta-box-class/meta-box.php
+#: options/options-core.php
+msgid "Portfolio Lite"
+msgstr "Portfolio Lite"
+
+#: options/meta-box-class/meta-box.php
 msgid "Twitter Bar"
 msgstr "Twitter Bar"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Need Help?"
 msgstr "Potrzebujesz pomocy?"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr ""
+
+#: options/meta-box-class/meta-box.php
 msgid "Page Options"
 msgstr "Zapisz opcje"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Slider Image"
 msgstr "Suwak obrazu"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Slider Caption"
 msgstr "Suwak podpis"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Custom Slide Link"
 msgstr "Niestandardowe Link"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Title"
+msgstr "Tytuł"
+
+#: options/meta-box-class/meta-box.php
 msgid "Caption"
 msgstr "Podpis"
 
-#: ../../options/meta-box-class/meta-box.php
+#: options/meta-box-class/meta-box.php
 msgid "Custom Feature Slides"
 msgstr "Niestandardowe Kategorie"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Usuń"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
 msgid "Add"
 msgstr "Dodać Ons"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Przepraszamy nie można wysyłać tego typu pliku dla tego pola."
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: options/meta-box-class/my-meta-box-class.php
+#: options/options-medialibrary-uploader.php
+msgid "Upload"
+msgstr "Przesłać"
+
+#: options/meta-box-class/my-meta-box-class.php
 msgid "or enter URL"
 msgstr "lub wprowadź adres URL"
+
+#: options/options-core.php
+msgid "Help"
+msgstr "Pomoc"
+
+#: options/options-core.php
+msgid "Design"
+msgstr "Projekt"
+
+#: options/options-core.php
+msgid "Header"
+msgstr "Nagłówek"
+
+#: options/options-core.php
+msgid "Blog"
+msgstr "Blog"
+
+#: options/options-core.php
+msgid "Templates"
+msgstr "Szablony"
+
+#: options/options-core.php
+msgid "Footer"
+msgstr "Stopka"
+
+#: options/options-core.php
+msgid "Layout Options"
+msgstr "Opcje układu"
+
+#: options/options-core.php
+msgid "Custom Colors"
+msgstr "Kolory niestandardowe"
+
+#: options/options-core.php
+msgid "Typography"
+msgstr "Typografia"
+
+#: options/options-core.php
+msgid "Header Drag &#38; Drop"
+msgstr "Przeciągnij nagłówek & spadku"
+
+#: options/options-core.php
+msgid "Header Options"
+msgstr "Opcje nagłówka"
+
+#: options/options-core.php
+msgid "Social Icons"
+msgstr "Społecznego ikony"
+
+#: options/options-core.php
+msgid "Drag & Drop"
+msgstr "Przeciąganie upuszczanie &"
+
+#: options/options-core.php
+msgid "Blog Options"
+msgstr "Opcje blog"
+
+#: options/options-core.php
+msgid "Blog Slider Lite"
+msgstr "Blog suwak Lite"
+
+#: options/options-core.php
+msgid "Portfolio Lite Options"
+msgstr "Portfolio opcje Lite"
+
+#: options/options-core.php
+msgid "Boxes Lite"
+msgstr "Skrzynki Lite"
+
+#: options/options-core.php
+msgid "Blog Slider"
+msgstr "Blog suwak"
+
+#: options/options-core.php
+msgid "Callout Options"
+msgstr "Opcje objaśnienia"
+
+#: options/options-core.php
+msgid "HTML Box Options"
+msgstr "Opcji HTML"
+
+#: options/options-core.php
+msgid "Carousel Options"
+msgstr "Karuzela opcje"
+
+#: options/options-core.php
+msgid "Portfolio Pro Options"
+msgstr "Portfela opcji Pro"
+
+#: options/options-core.php
+msgid "Recent Posts Options"
+msgstr "Ostatnie posty opcje"
+
+#: options/options-core.php
+msgid "Boxes Options"
+msgstr "Opcje pola"
+
+#: options/options-core.php
+msgid "Single Post"
+msgstr "Jeden Post"
+
+#: options/options-core.php
+msgid "Archive"
+msgstr "Archiwum"
+
+#: options/options-core.php
+msgid "Search"
+msgstr "Szukaj"
+
+#: options/options-core.php
+msgid "Footer Options"
+msgstr "Opcje stopki"
+
+#: options/options-core.php
+msgid "Author"
+msgstr "Autor"
+
+#: options/options-core.php
+msgid "Categories"
+msgstr "Kategorie"
+
+#: options/options-core.php
+msgid "Date"
+msgstr "Data"
+
+#: options/options-core.php
+msgid "Tags"
+msgstr "Tagi"
+
+#: options/options-core.php
+msgid "Cyberchimps Help"
+msgstr "Cyberchimps pomoc"
+
+#: options/options-core.php
+msgid "Responsive Design"
+msgstr "Elastyczne projektowanie"
+
+#: options/options-core.php
+msgid "Responsive Videos"
+msgstr "Elastyczne filmy"
+
+#: options/options-core.php
+msgid "Gallery Lightbox"
+msgstr "Galerii Lightbox"
+
+#: options/options-core.php
+msgid "Wide Sidebar"
+msgstr "Szeroki pasek boczny"
+
+#: options/options-core.php
+msgid "Only works on layouts with 1 sidebar"
+msgstr "Działa tylko na układy z bocznym 1"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Max Width"
+msgstr "Szerokość max"
+
+#: options/options-core.php
+msgid "enter the width of your site in pixels"
+msgstr "Wprowadź szerokość witryny w pikselach"
+
+#: options/options-core.php
+msgid "Select a Skin Color"
+msgstr "Wybierz kolor skóry"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Text Color"
+msgstr "Kolor tekstu"
+
+#: options/options-core.php
+msgid "Select text color"
+msgstr "Wybierz kolor tekstu"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Link Color"
+msgstr "Kolor łącza"
+
+#: options/options-core.php
+msgid "Select link color"
+msgstr "Wybierz link kolor"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Link Hover Color"
+msgstr "Kolor aktywowania łącza"
+
+#: options/options-core.php
+msgid "Select link hover color"
+msgstr "Wybierz kolor aktywowania łącza"
+
+#: options/options-core.php
+msgid "Typography Options"
+msgstr "Opcje typografii"
+
+#: options/options-core.php
+msgid "Enter Google font"
+msgstr "Wprowadź Google czcionki"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Google font names are case sensitive"
+msgstr "Nazwy czcionek Google jest uwzględniana wielkość liter"
+
+#: options/options-core.php
+msgid "Demo Text"
+msgstr "Tekst nazwa zbioru demonstracyjnego"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Font Family for headings"
+msgstr "Rodzina czcionek dla nagłówków"
+
+#: options/options-core.php
+#: options/options-customizer.php
+msgid "Google font for headings"
+msgstr "Google czcionki"
+
+#: options/options-core.php
+msgid "Header Drag/Drop"
+msgstr "Nagłówek przeciągnij i upuść"
+
+#: options/options-core.php
+msgid "Logo + Search"
+msgstr "Logo + Szukaj"
+
+#: options/options-core.php
+msgid "Logo"
+msgstr "Logo"
+
+#: options/options-core.php
+msgid "Custom Logo URL"
+msgstr "Logo niestandardowego adresu URL"
+
+#: options/options-core.php
+msgid "URL"
+msgstr "ADRES URL"
+
+#: options/options-core.php
+msgid "Enter URL"
+msgstr "Wprowadź adres URL"
+
+#: options/options-core.php
+msgid "Custom Logo"
+msgstr "Własne Logo"
+
+#: options/options-core.php
+msgid "Logo Image"
+msgstr "Obraz logo"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Enter URL or upload file"
+msgstr "Wprowadź adres URL lub przesłać plik"
+
+#: options/options-core.php
+msgid "Custom Favicon"
+msgstr "Niestandardowy Favicon"
+
+#: options/options-core.php
+msgid "Favicon URL"
+msgstr "Favicon URL"
+
+#: options/options-core.php
+msgid "Custom Apple touch icon"
+msgstr "Niestandardową ikonę Apple touch"
+
+#: options/options-core.php
+msgid "Apple Touch URL"
+msgstr "Apple Touch URL"
+
+#: options/options-core.php
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: options/options-core.php
+msgid "Copy and paste your Google Analytics code here"
+msgstr "Skopiuj i wklej kod Google Analytics"
+
+#: options/options-core.php
+msgid "Searchbar"
+msgstr "Searchbar"
+
+#: options/options-core.php
+msgid "Header Scripts"
+msgstr "Opcje nagłówka"
+
+#: options/options-core.php
+msgid "Please add script tags"
+msgstr "Proszę dodać znaczniki skryptów"
+
+#: options/options-core.php
+msgid "Choose your icon style"
+msgstr "Wybierz swój styl ikony"
+
+#: options/options-core.php
+msgid "Facebook"
+msgstr "Facebook"
+
+#: options/options-core.php
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: options/options-core.php
+msgid "Twitter"
+msgstr "Twitter"
+
+#: options/options-core.php
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: options/options-core.php
+msgid "Google+"
+msgstr "Google +"
+
+#: options/options-core.php
+msgid "Google+ URL"
+msgstr "URL Google +"
+
+#: options/options-core.php
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: options/options-core.php
+msgid "LinkedIn URL"
+msgstr "LinkedIn URL"
+
+#: options/options-core.php
+msgid "YouTube"
+msgstr "YouTube"
+
+#: options/options-core.php
+msgid "YouTube URL"
+msgstr "Adres URL YouTube"
+
+#: options/options-core.php
+msgid "Flickr"
+msgstr "Flickr"
+
+#: options/options-core.php
+msgid "Flickr URL"
+msgstr "Flickr URL"
+
+#: options/options-core.php
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: options/options-core.php
+msgid "Pinterest URL"
+msgstr "Pinterest URL"
+
+#: options/options-core.php
+msgid "Google Maps"
+msgstr "Mapy Google"
+
+#: options/options-core.php
+msgid "Google Maps URL"
+msgstr "Adres URL mapy Google"
+
+#: options/options-core.php
+msgid "Email"
+msgstr "Adres e-mail"
+
+#: options/options-core.php
+msgid "Email Address"
+msgstr "Adres e-mail"
+
+#: options/options-core.php
+msgid "RSS"
+msgstr "RSS"
+
+#: options/options-core.php
+msgid "RSS URL"
+msgstr "RSS URL"
+
+#: options/options-core.php
+msgid "Drag & Drop Blog Elements"
+msgstr "Przeciągnij & upuść elementy Blog"
+
+#: options/options-core.php
+msgid "Blog Title"
+msgstr "Tytuł strony"
+
+#: options/options-core.php
+msgid "Blog Title Text"
+msgstr "Blog tytuł tekstu"
+
+#: options/options-core.php
+msgid "Post Formats Icons"
+msgstr "Post formatów ikon"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Excerpts"
+msgstr "Fragmenty postu"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Read More Text"
+msgstr "Czytaj więcej tekstu"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Excerpt Length"
+msgstr "Długość fragment"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Featured Images"
+msgstr "Rekomendowane Zdjęcia"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Byline Author"
+msgstr "Autor wiersza autora postu"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Byline Categories"
+msgstr "Post redaguje Kategorie"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Byline Date"
+msgstr "Datą redaguje post"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Byline Comments"
+msgstr "Redaguje komentarze"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Byline Tags"
+msgstr "Tagi wiersza autora postu"
+
+#: options/options-core.php
+msgid "Boxes Upgrade"
+msgstr "Aktualizacja pola"
+
+#: options/options-core.php
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Lite pola ogranicza się do w sumie 3 pola całej całą witrynę. Uaktualnienie do %1$ s aby móc stworzyć tak wiele pól, jak chcesz. Kategoryzować je i wyświetlania każdej kategorii na innej stronie."
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Pro"
+msgstr "Pro"
+
+#: options/options-core.php
+msgid "First Box Image"
+msgstr "Pierwsze pole obrazu"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Link URL"
+msgstr "Ogniwo URL"
+
+#: options/options-core.php
+msgid "First Box Text"
+msgstr "Pierwszy tekst pudło"
+
+#: options/options-core.php
+msgid "Second Box Image"
+msgstr "Drugie pole obrazu"
+
+#: options/options-core.php
+msgid "Second Box Text"
+msgstr "Drugie pole tekstowe"
+
+#: options/options-core.php
+msgid "Third Box Image"
+msgstr "Trzecie pole obrazu"
+
+#: options/options-core.php
+msgid "Third Box Text"
+msgstr "Trzecie pole tekstowe"
+
+#: options/options-core.php
+msgid "Portfolio Upgrade"
+msgstr "Aktualizacja portfolio"
+
+#: options/options-core.php
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Lite portfela ogranicza się do w sumie 4 elementów całej całą witrynę. Uaktualnienie do %1$ s, aby być w stanie stworzyć tak wiele elementów portfela jak chcesz. Kategoryzować je i wyświetlania każdej kategorii na innej stronie."
+
+#: options/options-core.php
+msgid "First Portfolio Image"
+msgstr "Pierwszy obraz Portfolio"
+
+#: options/options-core.php
+msgid "First Portfolio Image Caption"
+msgstr "Pierwszy podpis obrazu Portfolio"
+
+#: options/options-core.php
+msgid "First Porfolio Link"
+msgstr "Pierwszy Link do portfolio"
+
+#: options/options-core.php
+msgid "Second Portfolio Image"
+msgstr "Drugi obraz Portfolio"
+
+#: options/options-core.php
+msgid "Second Portfolio Image Caption"
+msgstr "Drugie Portfolio podpis obrazu"
+
+#: options/options-core.php
+msgid "Second Porfolio Link"
+msgstr "Drugi Link portfolio"
+
+#: options/options-core.php
+msgid "Third Portfolio Image"
+msgstr "Trzeci obraz Portfolio"
+
+#: options/options-core.php
+msgid "Third Portfolio Image Caption"
+msgstr "Trzeci podpis obrazu Portfolio"
+
+#: options/options-core.php
+msgid "Third Porfolio Link"
+msgstr "Trzeci Link portfolio"
+
+#: options/options-core.php
+msgid "Fourth Portfolio Image"
+msgstr "Czwarty obraz Portfolio"
+
+#: options/options-core.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Czwarty podpis obrazu Portfolio"
+
+#: options/options-core.php
+msgid "Fourth Porfolio Link"
+msgstr "Czwarty portfolio Link"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Portfolio Title"
+msgstr "Tytuł portfolio"
+
+#: options/options-core.php
+msgid "Slider Upgrade"
+msgstr "Suwak Upgrade"
+
+#: options/options-core.php
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Suwak Lite ogranicza się do w sumie 3 zdjęć całej całą witrynę. Uaktualnienie do %1$ s, aby być w stanie utworzyć więcej zdjęć. Kategoryzować je i wyświetlania każdej kategorii na innej stronie."
+
+#: options/options-core.php
+msgid "Slider Image 1"
+msgstr "Suwak obrazu 1"
+
+#: options/options-core.php
+msgid "Slide 1 URL"
+msgstr "Slajd 1 URL"
+
+#: options/options-core.php
+msgid "Slider Image 2"
+msgstr "Suwak obrazu 2"
+
+#: options/options-core.php
+msgid "Slide 2 URL"
+msgstr "Slajd 2 URL"
+
+#: options/options-core.php
+msgid "Slider Image 3"
+msgstr "Suwak obrazu 3"
+
+#: options/options-core.php
+msgid "Slide 3 URL"
+msgstr "Slajd 3 URL"
+
+#: options/options-core.php
+msgid "Images per Row"
+msgstr "Obrazy na wiersz"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Portfolio Category"
+msgstr "Kategorii portfolio"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "You need to create a Category"
+msgstr "Musisz utworzyć kategorię"
+
+#: options/options-core.php
+msgid "Slider Size"
+msgstr "Suwak rozmiar"
+
+#: options/options-core.php
+msgid "Full"
+msgstr "Pełna"
+
+#: options/options-core.php
+msgid "Half"
+msgstr "Połowa"
+
+#: options/options-core.php
+msgid "Slider Type"
+msgstr "Typ suwaka"
+
+#: options/options-core.php
+msgid "Posts"
+msgstr "Posty"
+
+#: options/options-core.php
+msgid "Custom"
+msgstr "Niestandardowe"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Categories"
+msgstr "Kategorie postu"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Custom Categories"
+msgstr "Niestandardowe Kategorie"
+
+#: options/options-core.php
+msgid "Number of Featured Blog Posts"
+msgstr "Liczba Rekomendowane w blogach"
+
+#: options/options-core.php
+msgid "Slider Height"
+msgstr "Suwak wysokość"
+
+#: options/options-core.php
+msgid "Slider Speed "
+msgstr "Suwak szybkość "
+
+#: options/options-core.php
+msgid "Slider Arrows"
+msgstr "Strzałek suwaka"
+
+#: options/options-core.php
+msgid "Callout Title"
+msgstr "Objaśnienie tytuł"
+
+#: options/options-core.php
+msgid "%1$s's Call Out Element"
+msgstr "%1$ s zawołać Element"
+
+#: options/options-core.php
+msgid "Callout Text"
+msgstr "Objaśnienie tekstu"
+
+#: options/options-core.php
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Używać %1$ s Call Out sekcji na stronie gdzie ty potrzeba wobec wygłosić ważne przesłanie do klienta lub klienta."
+
+#: options/options-core.php
+msgid "Callout Button"
+msgstr "Objaśnienie przycisk"
+
+#: options/options-core.php
+msgid "Callout Button Text"
+msgstr "Tekst przycisku objaśnienie"
+
+#: options/options-core.php
+msgid "Click Here"
+msgstr "Kliknij tutaj"
+
+#: options/options-core.php
+msgid "Callout Button URL"
+msgstr "Objaśnienie przycisk URL"
+
+#: options/options-core.php
+msgid "Custom Callout Options"
+msgstr "Opcje niestandardowego objaśnienia"
+
+#: options/options-core.php
+msgid "Custom Callout Button"
+msgstr "Przycisk niestandardowy objaśnienie"
+
+#: options/options-core.php
+msgid "Custom Callout Background Color"
+msgstr "Objaśnienie niestandardowy kolor tła"
+
+#: options/options-core.php
+msgid "Custom Callout Title Color"
+msgstr "Objaśnienie niestandardowy kolor tytułu"
+
+#: options/options-core.php
+msgid "Custom Callout Text Color"
+msgstr "Objaśnienie niestandardowy kolor tekstu"
+
+#: options/options-core.php
+msgid "Custom Callout Button Color"
+msgstr "Objaśnienie niestandardowy przycisk kolor"
+
+#: options/options-core.php
+msgid "Custom Callout Button Text Color"
+msgstr "Kolor tekstu przycisku niestandardowego objaśnienie"
+
+#: options/options-core.php
+msgid "HTML Box"
+msgstr "Pole HTML"
+
+#: options/options-core.php
+msgid "Enter your custom HTML code here"
+msgstr "Wprowadzić niestandardowy kod HTML tutaj"
+
+#: options/options-core.php
+msgid "Custom Title"
+msgstr "Niestandardowy tytuł"
+
+#: options/options-core.php
+msgid "Images"
+msgstr "Zdjęcia"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Select a Category"
+msgstr "Wybierz kategorię"
+
+#: options/options-core.php
+msgid "Number of boxes per row"
+msgstr "Liczba pól w wierszu"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Sidebar Options"
+msgstr "Opcje paska bocznego"
+
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+#: options/options-core.php
+msgid "Images for layout."
+msgstr "Obrazy dla układu."
+
+#: options/options-core.php
+msgid "Post title"
+msgstr "Tytuł wpisu"
+
+#: options/options-core.php
+#: options/options-core.php
+msgid "Post Format Icons"
+msgstr "Format ikony"
+
+#: options/options-core.php
+msgid "Custom 404 Title"
+msgstr "Tytuł niestandardowy 404"
+
+#: options/options-core.php
+msgid "Custom 404 Content"
+msgstr "Zawartość niestandardową 404"
+
+#: options/options-core.php
+msgid "Footer Copyright Text"
+msgstr "Prawa autorskie tekst stopki"
+
+#: options/options-customizer.php
+msgid "Customize"
+msgstr "Dostosuj"
+
+#: options/options-customizer.php
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "Upewnij się, że obraz powyżej zostały usunięte przed wybierając jedną z tych"
+
+#: options/options-customizer.php
+msgid "Skin Color"
+msgstr "Kolor skóry"
+
+#: options/options-customizer.php
+msgid "Custom Css"
+msgstr "Własne kolory"
+
+#: options/options-customizer.php
+msgid "Typography Size"
+msgstr "Rozmiar Typografia"
+
+#: options/options-customizer.php
+msgid "Typography Style"
+msgstr "Stylu w typografii"
+
+#: options/options-customizer.php
+msgid "Typography Face"
+msgstr "Typografia twarz"
+
+#: options/options-customizer.php
+msgid "Text google font"
+msgstr "Wprowadź Google czcionki"
+
+#: options/options-customizer.php
+msgid "Background Image"
+msgstr "Obraz w tle"
+
+#: options/options-init.php
+msgid "Theme Options Page"
+msgstr "Strona Opcje tematu"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "Theme Options"
+msgstr "Opcje tematu"
+
+#: options/options-init.php
+msgid "Buy Themes"
+msgstr "Kupic Themes"
+
+#: options/options-init.php
+#: options/options-init.php
+#: options/options-init.php
+msgid "Save Options"
+msgstr "Zapisz opcje"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Kliknij przycisk OK, aby zresetować. Wszelkie ustawienia zostaną utracone!"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "Restore Defaults"
+msgstr "Przywracanie ustawień domyślnych"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "CyberChimps WordPress Themes"
+msgstr ""
+
+#: options/options-init.php
+msgid "Default Field"
+msgstr "Domyślnie pola"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "Options Imported"
+msgstr "Opcje importowane"
+
+#: options/options-init.php
+#: options/options-init.php
+msgid "Invalid Data for Import"
+msgstr "Nieprawidłowe dane dotyczące przywozu"
+
+#: options/options-init.php
+msgid "Default options restored."
+msgstr "Domyślne opcje przywrócone."
+
+#: options/options-init.php
+msgid "Options saved."
+msgstr "Opcje zapisane."
+
+#: options/options-medialibrary-uploader.php
+msgid "Theme Options Media"
+msgstr "Temat opcji Media"
+
+#: options/options-medialibrary-uploader.php
+msgid "View File"
+msgstr "Plik widoku"
+
+#: options/options-medialibrary-uploader.php
+msgid "Gallery"
+msgstr "Galeria"
+
+#: options/options-medialibrary-uploader.php
+msgid "Previously Uploaded"
+msgstr "Wczesniej wgrałeś"
+
+#: options/options-sanitize.php
+msgid "No Repeat"
+msgstr "Nie powtarzaj"
+
+#: options/options-sanitize.php
+msgid "Repeat Horizontally"
+msgstr "Powtarzać poziomo"
+
+#: options/options-sanitize.php
+msgid "Repeat Vertically"
+msgstr "Powtórz pionowo"
+
+#: options/options-sanitize.php
+msgid "Repeat All"
+msgstr "Powtórz wszystkie"
+
+#: options/options-sanitize.php
+msgid "Top Left"
+msgstr "W lewym górnym rogu"
+
+#: options/options-sanitize.php
+msgid "Top Center"
+msgstr "Top centrum"
+
+#: options/options-sanitize.php
+msgid "Top Right"
+msgstr "Prawym górnym rogu"
+
+#: options/options-sanitize.php
+msgid "Middle Left"
+msgstr "Środku lewej"
+
+#: options/options-sanitize.php
+msgid "Middle Center"
+msgstr "Środku centrum"
+
+#: options/options-sanitize.php
+msgid "Middle Right"
+msgstr "Środkowy prawy"
+
+#: options/options-sanitize.php
+msgid "Bottom Left"
+msgstr "Na dole po lewej"
+
+#: options/options-sanitize.php
+msgid "Bottom Center"
+msgstr "Na dole w środku"
+
+#: options/options-sanitize.php
+msgid "Bottom Right"
+msgstr "Na dole po prawej"
+
+#: options/options-sanitize.php
+msgid "Scroll Normally"
+msgstr "Przewiń normalnie"
+
+#: options/options-sanitize.php
+msgid "Fixed in Place"
+msgstr "Stałe miejsce"
+
+#: options/options-sanitize.php
+msgid "Normal"
+msgstr "Normalne"
+
+#: options/options-sanitize.php
+msgid "Italic"
+msgstr "Kursywa"
+
+#: options/options-sanitize.php
+msgid "Bold"
+msgstr "Pogrubienie"
+
+#: options/options-sanitize.php
+msgid "Bold Italic"
+msgstr "Pogrubienie kursywa"
+
+#: options/theme-upsell.php
+msgid "Themes You Can Trust"
+msgstr "Motywy, można zaufać"
+
