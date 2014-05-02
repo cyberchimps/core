@@ -452,7 +452,7 @@ if( !function_exists( 'cyberchimps_posted_on' ) ) {
 		$date       = esc_html( get_the_date() );
 
 		// Set the HTML for date link.
-		$posted_on = printf(
+		$posted_on = sprintf(
 						__( 'Posted on %s', 'cyberchimps_core' ),
 						'<a href="' . $date_url . '" title="' . $date_title . '" rel="bookmark">
 							<time class="entry-date updated" datetime="' . $date_time . '">' . $date . '</time>
@@ -489,7 +489,7 @@ if( !function_exists( 'cyberchimps_posted_by' ) ) {
 		$auther_link_title = esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) );
 
 		// Set the HTML for author link.
-		$posted_by = printf(
+		$posted_by = sprintf(
 						'<span class="byline"> ' . __( 'by %s', 'cyberchimps_core' ),
 							'<span class="author vcard">
 								<a class="url fn n" href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="author">' . esc_html( get_the_author() ) . '</a>
