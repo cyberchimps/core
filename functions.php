@@ -1450,3 +1450,8 @@ if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp
 	}
 	add_action( 'admin_enqueue_scripts', 'load_custom_admin_styles' );
 }
+
+add_action( 'send_headers', 'add_header_xua' );
+function add_header_xua() {
+	header( 'X-UA-Compatible: IE=edge,chrome=1' );
+}
