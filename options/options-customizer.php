@@ -313,7 +313,6 @@ function cyberchimps_customize( $wp_customize ) {
 
 		// Content area
 		$wp_customize->add_control( new Cyberchimps_Form( $wp_customize, 'custom_css', array(
-			'label'    => __( 'Custom Css', 'cyberchimps_core' ),
 			'section'  => 'cyberchimps_design_section',
 			'settings' => 'cyberchimps_options[custom_css]',
 			'type'     => 'textarea'
