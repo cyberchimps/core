@@ -401,7 +401,7 @@ function cyberchimps_customize( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'google_font_field', array(
-		'label'    => __( 'Text google font', 'cyberchimps_core' ),
+		'label'    => __( 'Enter Google font', 'cyberchimps_core' ),
 		'section'  => 'cyberchimps_typography_section',
 		'type'     => 'text',
 		'settings' => 'cyberchimps_options[google_font_field]',
