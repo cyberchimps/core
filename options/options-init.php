@@ -298,8 +298,8 @@ function cyberchimps_options_page() {
 			<div class="span3">
 				<div class="cc-logo">
 					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"><img
-							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/cc-logo.png"
-							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"/></a>
+							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/logo.png"
+							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"/><span>CyberChimps</span></a>
 				</div>
 				<!-- cc-logo -->
 			</div>

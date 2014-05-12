@@ -553,6 +553,13 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 	height: auto;
 }
 
+.cc-logo span {
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
 .cc-social-container {
 	float: left;
 	width: 266px;
