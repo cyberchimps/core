@@ -1445,13 +1445,14 @@ function cyberchimps_add_responsive_class( $classes ) {
 }
 
 if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp_version'], '3.8-alpha', '>' ) ) {
-	function load_custom_admin_styles() {
+	function cyberchimps_load_custom_admin_styles() {
 		wp_enqueue_style( 'cc-admin', get_template_directory_uri() . '/cyberchimps/options/lib/css/custom-post-icons.css', false, '1.0.0' );
 	}
-	add_action( 'admin_enqueue_scripts', 'load_custom_admin_styles' );
+	add_action( 'admin_enqueue_scripts', 'cyberchimps_load_custom_admin_styles' );
 }
 
-add_action( 'send_headers', 'add_header_xua' );
-function add_header_xua() {
+// FOR IE compatiblilty mode.
+add_action( 'send_headers', 'cyberchimps_add_header_xua' );
+function cyberchimps_add_header_xua() {
 	header( 'X-UA-Compatible: IE=edge,chrome=1' );
 }
