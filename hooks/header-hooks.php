@@ -161,7 +161,7 @@ function cyberchimps_header_logo() {
 		$logo = cyberchimps_get_option( 'custom_logo_uploader' );
 		?>
 		<div id="logo">
-			<a href="<?php echo $url; ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img src="<?php echo stripslashes( $logo ); ?>" alt="logo"></a>
+			<a href="<?php echo $url; ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img src="<?php echo stripslashes( $logo ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>"></a>
 		</div>
 	<?php
 	} else {
