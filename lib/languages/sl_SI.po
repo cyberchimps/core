@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:50 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:09+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Slovenian, Slovenia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"Language: sl_SI\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +35,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr ""
 
@@ -41,8 +42,7 @@ msgstr ""
 msgid "1 Comment"
 msgstr ""
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr ""
 
@@ -95,17 +95,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr ""
 
@@ -114,15 +111,18 @@ msgid "Upgrade to %1$s"
 msgstr ""
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr ""
 
@@ -134,7 +134,6 @@ msgstr ""
 msgid "The Events Calendar"
 msgstr ""
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr ""
@@ -167,23 +166,17 @@ msgstr ""
 msgid "Install Easy Digital Downloads Plugin"
 msgstr ""
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr ""
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr ""
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr ""
 
@@ -191,9 +184,7 @@ msgstr ""
 msgid "Our Blog"
 msgstr ""
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr ""
 
@@ -213,13 +204,11 @@ msgstr ""
 msgid "Sidebar Right"
 msgstr ""
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr ""
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr ""
 
@@ -235,8 +224,7 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr ""
 
@@ -268,10 +256,7 @@ msgstr ""
 msgid "Custom Slide Link"
 msgstr ""
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr ""
 
@@ -284,7 +269,6 @@ msgid "Custom Feature Slides"
 msgstr ""
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr ""
 
@@ -292,7 +276,6 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
@@ -458,8 +441,7 @@ msgstr ""
 msgid "Only works on layouts with 1 sidebar"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr ""
 
@@ -471,8 +453,7 @@ msgstr ""
 msgid "Select a Skin Color"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr ""
 
@@ -480,8 +461,7 @@ msgstr ""
 msgid "Select text color"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr ""
 
@@ -489,8 +469,7 @@ msgstr ""
 msgid "Select link color"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr ""
 
@@ -507,7 +486,6 @@ msgid "Enter Google font"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr ""
 
@@ -515,13 +493,11 @@ msgstr ""
 msgid "Demo Text"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr ""
 
@@ -557,18 +533,6 @@ msgstr ""
 msgid "Logo Image"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr ""
@@ -710,53 +674,37 @@ msgid "Post Formats Icons"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr ""
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr ""
@@ -766,11 +714,12 @@ msgid "Boxes Upgrade"
 msgstr ""
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr ""
@@ -779,12 +728,6 @@ msgstr ""
 msgid "First Box Image"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr ""
@@ -814,7 +757,10 @@ msgid "Portfolio Upgrade"
 msgstr ""
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
 msgstr ""
 
 #: options/options-core.php
@@ -866,7 +812,6 @@ msgid "Fourth Porfolio Link"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr ""
 
@@ -875,7 +820,10 @@ msgid "Slider Upgrade"
 msgstr ""
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
 msgstr ""
 
 #: options/options-core.php
@@ -907,13 +855,9 @@ msgid "Images per Row"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr ""
@@ -943,11 +887,9 @@ msgid "Custom"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr ""
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr ""
@@ -981,7 +923,9 @@ msgid "Callout Text"
 msgstr ""
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
 msgstr ""
 
 #: options/options-core.php
@@ -1045,9 +989,6 @@ msgid "Images"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr ""
 
@@ -1056,15 +997,9 @@ msgid "Number of boxes per row"
 msgstr ""
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr ""
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr ""
@@ -1073,7 +1008,6 @@ msgstr ""
 msgid "Post title"
 msgstr ""
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr ""
@@ -1095,7 +1029,8 @@ msgid "Customize"
 msgstr ""
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
 msgstr ""
 
 #: options/options-customizer.php
@@ -1131,7 +1066,6 @@ msgid "Theme Options Page"
 msgstr ""
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr ""
 
@@ -1140,22 +1074,17 @@ msgid "Buy Themes"
 msgstr ""
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr ""
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Restore Defaults"
 msgstr ""
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1094,9 @@ msgid "Default Field"
 msgstr ""
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr ""
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr ""
@@ -1277,4 +1204,3 @@ msgstr ""
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr ""
-

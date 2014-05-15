@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:52 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:02+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Indonesian, Indonesia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: id_ID\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +34,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr "Tinggalkan komentar"
 
@@ -41,8 +41,7 @@ msgstr "Tinggalkan komentar"
 msgid "1 Comment"
 msgstr "1 Komentar"
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr "Komentar"
 
@@ -95,17 +94,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr "Petunjuk"
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr "Dukungan"
 
@@ -114,15 +110,18 @@ msgid "Upgrade to %1$s"
 msgstr "Upgrade ke %1$ s"
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr "Pilihan"
 
@@ -134,7 +133,6 @@ msgstr "Add Ons"
 msgid "The Events Calendar"
 msgstr "Kalender acara"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "Unduhan digital"
@@ -167,23 +165,17 @@ msgstr "Aktifkan plugin kalendar acara"
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Menginstal Plugin kalender peristiwa"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr "Slider Lite"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr "Kotak"
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr "Halaman posting"
 
@@ -191,9 +183,7 @@ msgstr "Halaman posting"
 msgid "Our Blog"
 msgstr "Blog"
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr "Logo + ikon"
 
@@ -213,13 +203,11 @@ msgstr "Sidebar kiri"
 msgid "Sidebar Right"
 msgstr "Sidebar kanan"
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr "Footer widget"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr "Pilih tata letak halaman"
 
@@ -235,8 +223,7 @@ msgstr "Elemen halaman"
 msgid "Page"
 msgstr "Halaman"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr "Portofolio Lite"
 
@@ -268,10 +255,7 @@ msgstr "Slider Caption"
 msgid "Custom Slide Link"
 msgstr "Kustom Slide Link"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr "Judul"
 
@@ -284,7 +268,6 @@ msgid "Custom Feature Slides"
 msgstr "Kategori kustom"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Hapus"
 
@@ -292,7 +275,6 @@ msgstr "Hapus"
 msgid "Add"
 msgstr "Add Ons"
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Maaf, Anda tidak bisa meng-upload jenis file ini untuk bidang ini."
@@ -458,8 +440,7 @@ msgstr "Lebar Sidebar"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Hanya bekerja pada layout dengan 1 sidebar"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "Maksimum lebar"
 
@@ -471,8 +452,7 @@ msgstr "masukkan lebar situs Anda dalam pixel"
 msgid "Select a Skin Color"
 msgstr "Pilih warna kulit"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "Warna teks"
 
@@ -480,8 +460,7 @@ msgstr "Warna teks"
 msgid "Select text color"
 msgstr "Pilih warna teks"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "Warna link"
 
@@ -489,8 +468,7 @@ msgstr "Warna link"
 msgid "Select link color"
 msgstr "Pilih warna link"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Warna Hover link"
 
@@ -507,7 +485,6 @@ msgid "Enter Google font"
 msgstr "Masukkan Google font"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Nama font Google bersifat case sensitive."
 
@@ -515,13 +492,11 @@ msgstr "Nama font Google bersifat case sensitive."
 msgid "Demo Text"
 msgstr "Demo teks"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Keluarga font judul"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google font"
 
@@ -557,18 +532,6 @@ msgstr "Custom Logo"
 msgid "Logo Image"
 msgstr "Gambar logo"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Masukkan URL atau meng-upload file"
@@ -710,53 +673,37 @@ msgid "Post Formats Icons"
 msgstr "Posting format ikon"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "Post kutipan"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "Membaca teks More"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "Kutipan panjang"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "Gambar Terpilih"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "Anung Byline"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Post Byline Kategori"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "Tanggal Byline posting"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Posting Byline komentar"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Posting Byline Tag"
@@ -766,11 +713,16 @@ msgid "Boxes Upgrade"
 msgstr "Kotak Upgrade"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "Kotak Lite membatasi Anda untuk total 3 kotak seluruh seluruh situs Anda. Upgrade ke %1$ s agar dapat membuat kotak-kotak sebanyak yang Anda inginkan. Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang berbeda."
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"Kotak Lite membatasi Anda untuk total 3 kotak seluruh seluruh situs Anda. "
+"Upgrade ke %1$ s agar dapat membuat kotak-kotak sebanyak yang Anda inginkan. "
+"Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang "
+"berbeda."
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -779,12 +731,6 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Gambar kotak pertama"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "Link URL"
@@ -814,8 +760,15 @@ msgid "Portfolio Upgrade"
 msgstr "Portofolio Upgrade"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "Portofolio Lite membatasi Anda untuk total 4 item sepanjang seluruh situs Anda. Upgrade ke %1$ s untuk dapat membuat sebagai banyak portofolio item yang Anda inginkan. Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang berbeda."
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Portofolio Lite membatasi Anda untuk total 4 item sepanjang seluruh situs "
+"Anda. Upgrade ke %1$ s untuk dapat membuat sebagai banyak portofolio item "
+"yang Anda inginkan. Mengkategorikan mereka dan menampilkan setiap kategori "
+"pada halaman yang berbeda."
 
 #: options/options-core.php
 msgid "First Portfolio Image"
@@ -866,7 +819,6 @@ msgid "Fourth Porfolio Link"
 msgstr "Keempat portofolio Link"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "Portofolio judul"
 
@@ -875,8 +827,15 @@ msgid "Slider Upgrade"
 msgstr "Slider Upgrade"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "Slider Lite membatasi Anda untuk total 3 gambar sepanjang seluruh situs Anda. Upgrade ke %1$ s untuk dapat membuat lebih banyak gambar. Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang berbeda."
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"Slider Lite membatasi Anda untuk total 3 gambar sepanjang seluruh situs "
+"Anda. Upgrade ke %1$ s untuk dapat membuat lebih banyak gambar. "
+"Mengkategorikan mereka dan menampilkan setiap kategori pada halaman yang "
+"berbeda."
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -907,13 +866,9 @@ msgid "Images per Row"
 msgstr "Gambar per baris"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr "Portofolio Kategori"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr "Anda perlu membuat kategori"
@@ -943,11 +898,9 @@ msgid "Custom"
 msgstr "Custom"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr "Post kategori"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr "Kategori kustom"
@@ -981,8 +934,12 @@ msgid "Callout Text"
 msgstr "Teks callout"
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "Menggunakan %1$ s's panggilan keluar bagian pada halaman manapun di mana Anda ingin menyampaikan pesan penting kepada pelanggan atau klien."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Menggunakan %1$ s's panggilan keluar bagian pada halaman manapun di mana "
+"Anda ingin menyampaikan pesan penting kepada pelanggan atau klien."
 
 #: options/options-core.php
 msgid "Callout Button"
@@ -1045,9 +1002,6 @@ msgid "Images"
 msgstr "Gambar"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "Pilih sebuah kategori"
 
@@ -1056,15 +1010,9 @@ msgid "Number of boxes per row"
 msgstr "Jumlah kotak per baris"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "Sidebar pilihan"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "Gambar untuk tata letak."
@@ -1073,7 +1021,6 @@ msgstr "Gambar untuk tata letak."
 msgid "Post title"
 msgstr "Judul posting"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "Posting Format ikon"
@@ -1095,8 +1042,11 @@ msgid "Customize"
 msgstr "Menyesuaikan"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
-msgstr "Pastikan Anda telah menghapus gambar di atas sebelum memilih salah satu dari ini"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"Pastikan Anda telah menghapus gambar di atas sebelum memilih salah satu dari "
+"ini"
 
 #: options/options-customizer.php
 msgid "Skin Color"
@@ -1131,7 +1081,6 @@ msgid "Theme Options Page"
 msgstr "Tema pilihan Halaman"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "Pilihan tema"
 
@@ -1140,22 +1089,17 @@ msgid "Buy Themes"
 msgstr "Membeli tema"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "Pilihan Simpan"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "Klik OK untuk me-reset. Tema pengaturan akan hilang!"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Restore Defaults"
 msgstr "Kembalikan aturan baku"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1109,9 @@ msgid "Default Field"
 msgstr "Default Field"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "Pilihan impor"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Data tidak valid untuk impor"
@@ -1277,4 +1219,3 @@ msgstr "Bold miring"
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr "Tema-tema yang dapat Anda percaya"
-

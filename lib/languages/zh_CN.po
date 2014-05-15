@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:53 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:04+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Chinese, China\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +34,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr "发表评论"
 
@@ -41,8 +41,7 @@ msgstr "发表评论"
 msgid "1 Comment"
 msgstr "1 条评论"
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr "评论"
 
@@ -95,17 +94,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr "说明"
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr "支持"
 
@@ -114,15 +110,18 @@ msgid "Upgrade to %1$s"
 msgstr "升级到 %1$s"
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr "选项"
 
@@ -134,7 +133,6 @@ msgstr "加载 Ons"
 msgid "The Events Calendar"
 msgstr "事件日历"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "数码下载"
@@ -167,23 +165,17 @@ msgstr "请激活事件日历插件"
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "安装事件日历插件"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr "幻灯片精简版"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr "盒子"
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr "发布页面"
 
@@ -191,9 +183,7 @@ msgstr "发布页面"
 msgid "Our Blog"
 msgstr "博客"
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr "徽标 + 图标"
 
@@ -213,13 +203,11 @@ msgstr "左侧边栏"
 msgid "Sidebar Right"
 msgstr "右侧边栏"
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr "页脚小工具"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr "选择页面布局"
 
@@ -235,8 +223,7 @@ msgstr "页面元素"
 msgid "Page"
 msgstr "页面"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr "相册精简版"
 
@@ -268,10 +255,7 @@ msgstr "幻灯片说明"
 msgid "Custom Slide Link"
 msgstr "自定义幻灯片链接"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr "标题"
 
@@ -284,7 +268,6 @@ msgid "Custom Feature Slides"
 msgstr "自定义类别"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "删除"
 
@@ -292,7 +275,6 @@ msgstr "删除"
 msgid "Add"
 msgstr "加载 Ons"
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "对不起，您不能上载此文件类型为此字段。"
@@ -458,8 +440,7 @@ msgstr "宽侧边栏"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "仅适用于具有一个侧栏的布局"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "最大宽度"
 
@@ -471,8 +452,7 @@ msgstr "输入您站点的宽度 （以像素为单位）"
 msgid "Select a Skin Color"
 msgstr "选择皮肤颜色"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "文本颜色"
 
@@ -480,8 +460,7 @@ msgstr "文本颜色"
 msgid "Select text color"
 msgstr "选择文本颜色"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "链接的颜色"
 
@@ -489,8 +468,7 @@ msgstr "链接的颜色"
 msgid "Select link color"
 msgstr "选择链接颜色"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "链接悬停颜色"
 
@@ -507,7 +485,6 @@ msgid "Enter Google font"
 msgstr "输入谷歌字体名称"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "谷歌字体名称是区分大小写"
 
@@ -515,13 +492,11 @@ msgstr "谷歌字体名称是区分大小写"
 msgid "Demo Text"
 msgstr "演示文本"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "标题字体系列"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "谷歌字体"
 
@@ -557,18 +532,6 @@ msgstr "自定义徽标"
 msgid "Logo Image"
 msgstr "徽标图像"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "输入 URL 或上传文件"
@@ -710,53 +673,37 @@ msgid "Post Formats Icons"
 msgstr "文章格式图标"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "文章摘要"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "阅读更多"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "摘要长度"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "精选照片"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "文章信息栏作者"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "文章信息栏类别"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "文章信息栏发表日期"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "文章信息栏评论"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "文章信息栏标签"
@@ -766,11 +713,14 @@ msgid "Boxes Upgrade"
 msgstr "升级盒子"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "盒子精简版限制你在整个网站中仅可使用 3 个盒子。升级到%1$s能够创建更多盒子。你还可以将其分类，并选择在不同的页面显示不同的类别。"
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"盒子精简版限制你在整个网站中仅可使用 3 个盒子。升级到%1$s能够创建更多盒子。你"
+"还可以将其分类，并选择在不同的页面显示不同的类别。"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -779,12 +729,6 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "第一个盒子的图像"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "链接 URL"
@@ -814,8 +758,13 @@ msgid "Portfolio Upgrade"
 msgstr "升级相册"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "相册精简版限制你在整个网站中仅可使用 4 个项目，升级到%1$s能够创建更多相册项目。你还可以将其分类，并选择在不同的页面显示不同的类别。"
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"相册精简版限制你在整个网站中仅可使用 4 个项目，升级到%1$s能够创建更多相册项"
+"目。你还可以将其分类，并选择在不同的页面显示不同的类别。"
 
 #: options/options-core.php
 msgid "First Portfolio Image"
@@ -866,7 +815,6 @@ msgid "Fourth Porfolio Link"
 msgstr "第四个相册的链接"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "相册名称"
 
@@ -875,8 +823,13 @@ msgid "Slider Upgrade"
 msgstr "幻灯片升级"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "幻灯片精简版限制你在整个网站中仅可使用3张图片，升级到%1$s能够创建更多图片。你还可以将其分类，并选择在不同的页面显示不同的类别。"
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"幻灯片精简版限制你在整个网站中仅可使用3张图片，升级到%1$s能够创建更多图片。你"
+"还可以将其分类，并选择在不同的页面显示不同的类别。"
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -907,13 +860,9 @@ msgid "Images per Row"
 msgstr "每行图片数目"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr "相册类别"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr "您需要创建一个分类"
@@ -943,11 +892,9 @@ msgid "Custom"
 msgstr "自定义"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr "文章类别"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr "自定义类别"
@@ -981,7 +928,9 @@ msgid "Callout Text"
 msgstr "特别标注文本"
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
 msgstr "在任意页面中使用%1$s的特别标注区块，传递一个重要的信息给你的客户。"
 
 #: options/options-core.php
@@ -1045,9 +994,6 @@ msgid "Images"
 msgstr "图片"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "选择一个类别"
 
@@ -1056,15 +1002,9 @@ msgid "Number of boxes per row"
 msgstr "每一行盒子的数量"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "侧栏选项"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "图像的布局"
@@ -1073,7 +1013,6 @@ msgstr "图像的布局"
 msgid "Post title"
 msgstr "文章标题"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "文章的格式图标"
@@ -1095,7 +1034,8 @@ msgid "Customize"
 msgstr "自定义"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
 msgstr "请确保您在选择其中之一之前已删除上面的图片"
 
 #: options/options-customizer.php
@@ -1131,7 +1071,6 @@ msgid "Theme Options Page"
 msgstr "主题选项页"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "主题选项"
 
@@ -1140,22 +1079,17 @@ msgid "Buy Themes"
 msgstr "购买主题"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "保存选项"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "单击 “确定”以重置。关于主题的任何设置将会丢失!"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Restore Defaults"
 msgstr "还原默认值"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1099,9 @@ msgid "Default Field"
 msgstr "默认字段"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "导入的选项"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "导入的数据无效"
@@ -1277,4 +1209,3 @@ msgstr "加粗斜体"
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr "你可以信任的主题"
-

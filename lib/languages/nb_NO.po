@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:52 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:03+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Norwegian Bokmål, Norway\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: nb_NO\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +34,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr "Legg igjen en kommentar"
 
@@ -41,8 +41,7 @@ msgstr "Legg igjen en kommentar"
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr "Kommentarer"
 
@@ -95,17 +94,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr "Instruksjoner"
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr "Støtte"
 
@@ -114,15 +110,18 @@ msgid "Upgrade to %1$s"
 msgstr "Oppgrader til %1$s"
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr "Alternativer"
 
@@ -134,7 +133,6 @@ msgstr "Tillegg"
 msgid "The Events Calendar"
 msgstr "The Events Calendar"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "Digitale nedlastinger"
@@ -167,23 +165,17 @@ msgstr "Vennligst aktivér The Events Calendar-utvidelsen"
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Installér Events Calendar-utvidelsen"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr "Slider Lite"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr "Bokser"
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr "Innleggsside"
 
@@ -191,9 +183,7 @@ msgstr "Innleggsside"
 msgid "Our Blog"
 msgstr "Blogg"
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr "Logo + Ikoner"
 
@@ -213,13 +203,11 @@ msgstr "Sidepanel Venstre"
 msgid "Sidebar Right"
 msgstr "Sidepanel Høyre"
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr "Widgeter i Bunnområdet"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr "Velg sideoppsett"
 
@@ -235,8 +223,7 @@ msgstr "Elementer på siden"
 msgid "Page"
 msgstr "Side"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr "Portfolio Lite"
 
@@ -268,10 +255,7 @@ msgstr "Bildetekst til Slider"
 msgid "Custom Slide Link"
 msgstr "Egendefinert lenke i Bildeveksler"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr "Tittel"
 
@@ -284,7 +268,6 @@ msgid "Custom Feature Slides"
 msgstr "Tilpassede kategorier"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Fjern"
 
@@ -292,7 +275,6 @@ msgstr "Fjern"
 msgid "Add"
 msgstr "Tillegg"
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Beklager, du ikke kan laste opp denne filtypen for dette feltet."
@@ -458,8 +440,7 @@ msgstr "Bredt sidepanel"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Fungerer kun på oppsett med 1 sidepanel"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "Maksimal bredde"
 
@@ -471,8 +452,7 @@ msgstr "Angi bredden på siden i piksler"
 msgid "Select a Skin Color"
 msgstr "Velg et fargeoppsett"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "Tekstfarge"
 
@@ -480,8 +460,7 @@ msgstr "Tekstfarge"
 msgid "Select text color"
 msgstr "Velg tekstfarge"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "Farge på lenker"
 
@@ -489,8 +468,7 @@ msgstr "Farge på lenker"
 msgid "Select link color"
 msgstr "Velg farge for lenker"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Markert lenkefarge"
 
@@ -507,7 +485,6 @@ msgid "Enter Google font"
 msgstr "Angi Google-skrifttype"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google er skrift"
 
@@ -515,13 +492,11 @@ msgstr "Google er skrift"
 msgid "Demo Text"
 msgstr "Demotekst"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Skriftfamilien for overskrifter"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google skrifter"
 
@@ -557,18 +532,6 @@ msgstr "Egendefinert Logo"
 msgid "Logo Image"
 msgstr "Bilde til Logo"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Angi URL eller Last opp fil"
@@ -710,53 +673,37 @@ msgid "Post Formats Icons"
 msgstr "Formateringsikoner for innlegg"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "Utdrag fra Innlegg"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "Les Mer-tekst"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "Utdragslengde"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "Utvalgte bilder"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "Forfatter av innlegg i infolinje"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Kategorier for Infolinjer på innlegg"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "Dato i infolinje på innlegg"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Kommentarinformasjon i infolinje"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Merkelapper i infolinje"
@@ -766,11 +713,15 @@ msgid "Boxes Upgrade"
 msgstr "Oppgradering av Bokser"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "Boxes Lite begrenser deg til totalt 3 bokser over hele nettstedet. Oppgradering til %1$s muliggjør ubegrenset antall bokser. Kategoriser disse og vis hver kategori på hver sin side."
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"Boxes Lite begrenser deg til totalt 3 bokser over hele nettstedet. "
+"Oppgradering til %1$s muliggjør ubegrenset antall bokser. Kategoriser disse "
+"og vis hver kategori på hver sin side."
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -779,12 +730,6 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Første Boks-bilde"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "URL fra lenke"
@@ -814,8 +759,14 @@ msgid "Portfolio Upgrade"
 msgstr "Oppgradering av Portfolio Lite"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "Portfolio Lite begrenser deg til totalt 4 elementer på hele nettstedet. Oppgradering til %1$ s muliggjør ubegrenset antall portefølje-elementer. Kategoriser disse og vis hver kategori på hver sin side."
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Portfolio Lite begrenser deg til totalt 4 elementer på hele nettstedet. "
+"Oppgradering til %1$ s muliggjør ubegrenset antall portefølje-elementer. "
+"Kategoriser disse og vis hver kategori på hver sin side."
 
 #: options/options-core.php
 msgid "First Portfolio Image"
@@ -866,7 +817,6 @@ msgid "Fourth Porfolio Link"
 msgstr "Fjerde Porteføljelenke"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "Tittel på Portefølje"
 
@@ -875,8 +825,14 @@ msgid "Slider Upgrade"
 msgstr "Oppgradering av Bildeveksling"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "Slider Lite begrenser deg til totalt 3 bilder på hele nettstedet. Oppgradering til %1$s muliggjør opprettelse av flere bilder. Kategoriser disse og vis hver kategori på hver sin side."
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"Slider Lite begrenser deg til totalt 3 bilder på hele nettstedet. "
+"Oppgradering til %1$s muliggjør opprettelse av flere bilder. Kategoriser "
+"disse og vis hver kategori på hver sin side."
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -907,13 +863,9 @@ msgid "Images per Row"
 msgstr "Bilder per rad"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr "Porteføljekategori"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr "Du må opprette en Kategori"
@@ -943,11 +895,9 @@ msgid "Custom"
 msgstr "Egendefinert"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr "Kategorier for Innlegg"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr "Egendefinerte Kategorier"
@@ -981,8 +931,12 @@ msgid "Callout Text"
 msgstr "Tekst til Fokusområde"
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "Bruk %1$s sitt Fokusområde på hvilken som helst side der du ønsker å formidle en viktig beskjed til din kunde eller publikum."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Bruk %1$s sitt Fokusområde på hvilken som helst side der du ønsker å "
+"formidle en viktig beskjed til din kunde eller publikum."
 
 #: options/options-core.php
 msgid "Callout Button"
@@ -1045,9 +999,6 @@ msgid "Images"
 msgstr "Bilder"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "Velg en kategori"
 
@@ -1056,15 +1007,9 @@ msgid "Number of boxes per row"
 msgstr "Antall bokser per rad"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "Alternativer for Sidepanel"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "Bilder for sideoppsett"
@@ -1073,7 +1018,6 @@ msgstr "Bilder for sideoppsett"
 msgid "Post title"
 msgstr "Innleggtittel"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "Ikoner for innleggsformatering"
@@ -1095,7 +1039,8 @@ msgid "Customize"
 msgstr "Tilpass"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
 msgstr "sørg for at du har fjernet bildet ovenfor før du velger en av disse"
 
 #: options/options-customizer.php
@@ -1131,7 +1076,6 @@ msgid "Theme Options Page"
 msgstr "Side for Temainnstillinger"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "Temainnstillinger"
 
@@ -1140,22 +1084,17 @@ msgid "Buy Themes"
 msgstr "Kjøp Temaer"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "Lagre innstillinger"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "Klikk OK for å tilbakestille. Alle temainnstillinger vil gå tapt!"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Restore Defaults"
 msgstr "Gjenopprett Standard"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1104,9 @@ msgid "Default Field"
 msgstr "Standardfeltet"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "Innstillinger ble importert"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Ugyldige Data for Importering"
@@ -1277,4 +1214,3 @@ msgstr "Fet kursiv"
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr "Temaer du kan stole på"
-

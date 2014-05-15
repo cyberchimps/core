@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:52 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:04+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Japanese, Japan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja_JP\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +34,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
@@ -41,8 +41,7 @@ msgstr "コメントを残す"
 msgid "1 Comment"
 msgstr "1 つのコメント"
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr "コメント"
 
@@ -95,17 +94,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr "手順"
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr "サポート"
 
@@ -114,15 +110,18 @@ msgid "Upgrade to %1$s"
 msgstr "%1$ S をアップグレードします。"
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr "オプション"
 
@@ -134,7 +133,6 @@ msgstr "アドオンを追加します。"
 msgid "The Events Calendar"
 msgstr "イベント カレンダー"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "デジタル ダウンロード"
@@ -167,23 +165,17 @@ msgstr "ください、イベント カレンダー プラグインをアクテ�
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "イベント カレンダー プラグインをインストールします。"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr "Lite のスライダー"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr "ボックス"
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr "投稿ページ"
 
@@ -191,9 +183,7 @@ msgstr "投稿ページ"
 msgid "Our Blog"
 msgstr "ブログ"
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr "ロゴ + アイコン"
 
@@ -213,13 +203,11 @@ msgstr "左のサイドバー"
 msgid "Sidebar Right"
 msgstr "サイドバーの右"
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr "フッターのウィジェット"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr "ページ レイアウトを選択します。"
 
@@ -235,8 +223,7 @@ msgstr "ページ要素"
 msgid "Page"
 msgstr "ページ"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr "Lite のポートフォリオ"
 
@@ -268,10 +255,7 @@ msgstr "スライダーのキャプション"
 msgid "Custom Slide Link"
 msgstr "カスタム スライドのリンク"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr "タイトル"
 
@@ -284,7 +268,6 @@ msgid "Custom Feature Slides"
 msgstr "カスタムカテゴリ"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "削除"
 
@@ -293,9 +276,9 @@ msgid "Add"
 msgstr "アドオンを追加します。"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
-msgstr "申し訳ありませんが、このフィールドの種類のファイルをアップロードできません。"
+msgstr ""
+"申し訳ありませんが、このフィールドの種類のファイルをアップロードできません。"
 
 #: options/meta-box-class/my-meta-box-class.php
 #: options/options-medialibrary-uploader.php
@@ -458,8 +441,7 @@ msgstr "広いサイドバー"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "1 サイドバーのレイアウト上でのみ動作します。"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "幅の最大値"
 
@@ -471,8 +453,7 @@ msgstr "あなたのサイトの幅をピクセル単位で入力します"
 msgid "Select a Skin Color"
 msgstr "肌の色を選択します"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "テキストの色"
 
@@ -480,8 +461,7 @@ msgstr "テキストの色"
 msgid "Select text color"
 msgstr "テキストの色を選択します"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "リンクの色"
 
@@ -489,8 +469,7 @@ msgstr "リンクの色"
 msgid "Select link color"
 msgstr "リンクの色を選択します"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "リンクをホバー色"
 
@@ -507,7 +486,6 @@ msgid "Enter Google font"
 msgstr "Google のフォントを入力してください。"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google のフォント名は大文字小文字を区別"
 
@@ -515,13 +493,11 @@ msgstr "Google のフォント名は大文字小文字を区別"
 msgid "Demo Text"
 msgstr "デモのテキスト"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "見出しのフォント ファミリ"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google のフォント"
 
@@ -557,18 +533,6 @@ msgstr "カスタム ロゴ"
 msgid "Logo Image"
 msgstr "ロゴのイメージ"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "URL を入力するかファイルをアップロード"
@@ -710,53 +674,37 @@ msgid "Post Formats Icons"
 msgstr "ポストのアイコンを形式します。"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "記事の抜粋"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "続きを読む."
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "抜粋の長さ"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "注目の画像"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "投稿の署名者"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "署名欄のカテゴリを記事します。"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "ポスト署名日付"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "署名欄コメントの投稿"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "ポスト署名タグ"
@@ -766,11 +714,15 @@ msgid "Boxes Upgrade"
 msgstr "ボックスのアップグレード"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "ボックス Lite 3 ボックス全体サイト全体の合計を制限します。あなたのような多くのボックスを作成することができます %1$ s をアップグレードします。それらを分類し、各カテゴリ別のページに表示します。"
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"ボックス Lite 3 ボックス全体サイト全体の合計を制限します。あなたのような多く"
+"のボックスを作成することができます %1$ s をアップグレードします。それらを分類"
+"し、各カテゴリ別のページに表示します。"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr "プロ"
@@ -779,12 +731,6 @@ msgstr "プロ"
 msgid "First Box Image"
 msgstr "最初のボックスの画像"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "リンクの URL"
@@ -814,8 +760,14 @@ msgid "Portfolio Upgrade"
 msgstr "ポートフォリオのアップグレード"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "ポートフォリオ Lite は、サイト全体を全体の 4 項目の合計に制限されます。あなたのように多くのポートフォリオ アイテムを作成できるようにする %1$ s をアップグレードします。それらを分類し、各カテゴリ別のページに表示します。"
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"ポートフォリオ Lite は、サイト全体を全体の 4 項目の合計に制限されます。あなた"
+"のように多くのポートフォリオ アイテムを作成できるようにする %1$ s をアップグ"
+"レードします。それらを分類し、各カテゴリ別のページに表示します。"
 
 #: options/options-core.php
 msgid "First Portfolio Image"
@@ -866,7 +818,6 @@ msgid "Fourth Porfolio Link"
 msgstr "4 番目のポートフォリオのリンク"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "ポートフォリオ タイトル"
 
@@ -875,8 +826,14 @@ msgid "Slider Upgrade"
 msgstr "スライダーのアップグレード"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "スライダー Lite 3 画像全体サイト全体の合計を制限します。多くの画像を作成できるようにする %1$ s をアップグレードします。それらを分類し、各カテゴリ別のページに表示します。"
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"スライダー Lite 3 画像全体サイト全体の合計を制限します。多くの画像を作成でき"
+"るようにする %1$ s をアップグレードします。それらを分類し、各カテゴリ別のペー"
+"ジに表示します。"
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -907,13 +864,9 @@ msgid "Images per Row"
 msgstr "行ごとの画像"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr "ポートフォリオ カテゴリー"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr "カテゴリを作成する必要があります。"
@@ -943,11 +896,9 @@ msgid "Custom"
 msgstr "カスタム"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr "投稿カテゴリ"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr "ユーザー設定のカテゴリ"
@@ -981,8 +932,12 @@ msgid "Callout Text"
 msgstr "吹き出しのテキスト"
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "%1$ S を呼び出すアウト セクションは、あなたの顧客やクライアントとの重要なメッセージを配信する任意のページでを使用します。"
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"%1$ S を呼び出すアウト セクションは、あなたの顧客やクライアントとの重要なメッ"
+"セージを配信する任意のページでを使用します。"
 
 #: options/options-core.php
 msgid "Callout Button"
@@ -1045,9 +1000,6 @@ msgid "Images"
 msgstr "画像"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "カテゴリを選択します。"
 
@@ -1056,15 +1008,9 @@ msgid "Number of boxes per row"
 msgstr "ボックス 1 行あたりの数"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "サイドバーのオプション"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "レイアウトの画像。"
@@ -1073,7 +1019,6 @@ msgstr "レイアウトの画像。"
 msgid "Post title"
 msgstr "記事のタイトル"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "形式の投稿アイコン"
@@ -1095,8 +1040,10 @@ msgid "Customize"
 msgstr "カスタマイズ"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
-msgstr "これらのいずれかを選択する前に上記の画像を削除していることを確認します。"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"これらのいずれかを選択する前に上記の画像を削除していることを確認します。"
 
 #: options/options-customizer.php
 msgid "Skin Color"
@@ -1131,7 +1078,6 @@ msgid "Theme Options Page"
 msgstr "テーマ オプションのページ"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "テーマのオプション"
 
@@ -1140,22 +1086,18 @@ msgid "Buy Themes"
 msgstr "テーマを購入します。"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "オプションを保存します。"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "リセットするには、[ok] をクリックします。任意のテーマの設定は失われます。"
+msgstr ""
+"リセットするには、[ok] をクリックします。任意のテーマの設定は失われます。"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Restore Defaults"
 msgstr "既定値に戻す"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1107,9 @@ msgid "Default Field"
 msgstr "既定のフィールド"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "インポート オプション"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "無効なデータのインポート"
@@ -1277,4 +1217,3 @@ msgstr "太字斜体"
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr "信頼できるテーマ"
-

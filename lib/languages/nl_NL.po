@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:53 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:04+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Dutch, Netherlands\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: nl_NL\n"
 
 msgid "Posted on %s"
 msgstr "Gepubliceerd op %s"
@@ -87,8 +88,15 @@ msgstr "Ondersteuning"
 msgid "Upgrade to %1$s"
 msgstr "Een upgrade uitvoeren naar %1$ s"
 
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
-msgstr "Als u meer fantastische mogelijkheden wilt voor %1$s waaronder custom sliders, afbeeldingen caroussel, widget boxes en nog veel meer. Bezoek dan %2$s om meer te zien."
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
+msgstr ""
+"Als u meer fantastische mogelijkheden wilt voor %1$s waaronder custom "
+"sliders, afbeeldingen caroussel, widget boxes en nog veel meer. Bezoek dan "
+"%2$s om meer te zien."
 
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr "Welkom bij %1$s! Meer informatie om vandaag te upgraden naar %2$s."
@@ -104,7 +112,6 @@ msgstr "Add Ons"
 msgid "The Events Calendar"
 msgstr "De evenementenkalender"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "Digitale Downloads"
@@ -216,7 +223,6 @@ msgid "Custom Feature Slides"
 msgstr "Aangepaste categorieën"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Weghalen"
 
@@ -224,7 +230,6 @@ msgstr "Weghalen"
 msgid "Add"
 msgstr "Add Ons"
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Sorry, dat u kan niet uploaden dit bestandstype voor dit veld."
@@ -387,8 +392,7 @@ msgstr "Breed Sidebar"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Werkt alleen in lay-outs met 1 sidebar"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "Maximale breedte"
 
@@ -400,8 +404,7 @@ msgstr "Voer in pixels in de breedte van uw site"
 msgid "Select a Skin Color"
 msgstr "Selecteer een huidskleur"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "Tekstkleur"
 
@@ -409,8 +412,7 @@ msgstr "Tekstkleur"
 msgid "Select text color"
 msgstr "Selecteer tekstkleur"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "Kleur van koppeling"
 
@@ -418,8 +420,7 @@ msgstr "Kleur van koppeling"
 msgid "Select link color"
 msgstr "Selecteer kleur van koppeling"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Linkkleur Hover"
 
@@ -436,7 +437,6 @@ msgid "Enter Google font"
 msgstr "Voer Google lettertype"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google lettertypenamen zijn hoofdlettergevoelig"
 
@@ -444,13 +444,11 @@ msgstr "Google lettertypenamen zijn hoofdlettergevoelig"
 msgid "Demo Text"
 msgstr "Demo tekst"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Lettertypefamilie voor koppen"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google lettertypen"
 
@@ -486,18 +484,6 @@ msgstr "Aangepast Logo"
 msgid "Logo Image"
 msgstr "Embleembeeld"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Voer de URL of bestand uploaden"
@@ -639,53 +625,37 @@ msgid "Post Formats Icons"
 msgstr "Post formaten pictogrammen"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "Berichtfragment"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "Lees meer tekst"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "Lengte van het fragment"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "Aanbevolen afbeeldingen"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "Naamregel postauteur"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Post naamregel Categorieën"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "Post naamregel Date"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Post naamregel reacties"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Post naamregel Tags"
@@ -695,8 +665,14 @@ msgid "Boxes Upgrade"
 msgstr "Vakken Upgrade"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "Vakken Lite beperkt u tot een totaal van 3 vakken gedurende uw hele site. Bijwerken naar %1$ s te kunnen maken van zo veel vakken als u nodig hebt. Categoriseren en elke categorie op een andere pagina laten weergeven."
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"Vakken Lite beperkt u tot een totaal van 3 vakken gedurende uw hele site. "
+"Bijwerken naar %1$ s te kunnen maken van zo veel vakken als u nodig hebt. "
+"Categoriseren en elke categorie op een andere pagina laten weergeven."
 
 msgid "Pro"
 msgstr "Pro"
@@ -705,12 +681,6 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Eerste afbeelding"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "Link URL"
@@ -740,8 +710,14 @@ msgid "Portfolio Upgrade"
 msgstr "Portefeuille Upgrade"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "Portefeuille Lite beperkt u tot totaal 4 artikelen in uw hele site. Bijwerken naar %1$ s te kunnen zoveel portefeuille items als u wilt maken. Categoriseren en elke categorie op een andere pagina laten weergeven."
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Portefeuille Lite beperkt u tot totaal 4 artikelen in uw hele site. "
+"Bijwerken naar %1$ s te kunnen zoveel portefeuille items als u wilt maken. "
+"Categoriseren en elke categorie op een andere pagina laten weergeven."
 
 msgid "First Portfolio Image"
 msgstr "Eerste afbeelding van de portfolio"
@@ -791,7 +767,6 @@ msgid "Fourth Porfolio Link"
 msgstr "Vierde Porfolio Link"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "Titel van de portefeuille"
 
@@ -800,8 +775,14 @@ msgid "Slider Upgrade"
 msgstr "Schuifregelaar Upgrade"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "Schuifregelaar Lite beperkt u tot een totaal van 3 beelden in uw hele site. Bijwerken naar %1$ s te kunnen om meer afbeeldingen te maken. Categoriseren en elke categorie op een andere pagina laten weergeven."
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"Schuifregelaar Lite beperkt u tot een totaal van 3 beelden in uw hele site. "
+"Bijwerken naar %1$ s te kunnen om meer afbeeldingen te maken. Categoriseren "
+"en elke categorie op een andere pagina laten weergeven."
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -884,8 +865,12 @@ msgstr "%1$s's oproep Element"
 msgid "Callout Text"
 msgstr "Toelichtingstekst"
 
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "Gebruik %1$s's Oproeptekst op elke pagina waar u wilt leveren een belangrijke boodschap aan uw klant of client."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Gebruik %1$s's Oproeptekst op elke pagina waar u wilt leveren een "
+"belangrijke boodschap aan uw klant of client."
 
 msgid "Callout Button"
 msgstr "Oproep knop"
@@ -944,9 +929,6 @@ msgid "Images"
 msgstr "Afbeeldingen"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "Selecteer een categorie"
 
@@ -955,15 +937,9 @@ msgid "Number of boxes per row"
 msgstr "Aantal dozen per rij"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "Zijbalk opties"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "Beelden voor lay-out."
@@ -972,7 +948,6 @@ msgstr "Beelden voor lay-out."
 msgid "Post title"
 msgstr "Posttitel"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "Post formaat pictogrammen"
@@ -994,8 +969,11 @@ msgid "Customize"
 msgstr "Aanpassen"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
-msgstr "Zorg ervoor dat u de bovenstaande afbeelding hebt verwijderd voordat u een van deze"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"Zorg ervoor dat u de bovenstaande afbeelding hebt verwijderd voordat u een "
+"van deze"
 
 #: options/options-customizer.php
 msgid "Skin Color"
@@ -1030,7 +1008,6 @@ msgid "Theme Options Page"
 msgstr "Thema optiespagina"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "Thema-opties"
 
@@ -1039,17 +1016,14 @@ msgid "Buy Themes"
 msgstr "Kopen van thema 's"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "Opties voor opslaan"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
+msgstr ""
+"Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Restore Defaults"
 msgstr "Standaardinstellingen herstellen"
@@ -1062,11 +1036,9 @@ msgid "Default Field"
 msgstr "Standaardveld"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "Opties geïmporteerd"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Ongeldige gegevens voor invoer"

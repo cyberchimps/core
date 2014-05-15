@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-03-27 18:02:53 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2014-05-15 13:03+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Russian, Russia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: ru_RU\n"
 
 #: functions.php
 msgid "Posted on %s"
@@ -33,7 +35,6 @@ msgid "Tags: %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Leave a comment"
 msgstr "Оставить комментарий"
 
@@ -41,8 +42,7 @@ msgstr "Оставить комментарий"
 msgid "1 Comment"
 msgstr "1 Комментарий"
 
-#: functions.php
-#: options/options-core.php
+#: functions.php options/options-core.php
 msgid "Comments"
 msgstr "Комментарии"
 
@@ -95,17 +95,14 @@ msgid "Page %s"
 msgstr ""
 
 #: functions.php
-#: functions.php
 msgid "Read More..."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Instructions"
 msgstr "Инструкции"
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Support"
 msgstr "Поддержка"
 
@@ -114,15 +111,18 @@ msgid "Upgrade to %1$s"
 msgstr "Обновление до %1$ s"
 
 #: functions.php
-msgid "If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!"
+msgid ""
+"If you want even more amazing new features upgrade to %1$s which includes a "
+"Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, "
+"expanded typography including Google Fonts, more color skins, and many more "
+"powerful new features. Please visit %2$s to learn more!"
 msgstr ""
 
 #: functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr ""
 
-#: functions.php
-#: options/options-init.php
+#: functions.php options/options-init.php
 msgid "Options"
 msgstr "Параметры"
 
@@ -134,7 +134,6 @@ msgstr "Добавить дополнений"
 msgid "The Events Calendar"
 msgstr "Календарь событий"
 
-#: functions.php
 #: functions.php
 msgid "Digital Downloads"
 msgstr "Цифровые загрузки"
@@ -167,23 +166,17 @@ msgstr "Пожалуйста, активируйте плагин календа
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Установить плагин календарь событий"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Slider Lite"
 msgstr "Слайдер Lite"
 
-#: hooks/blog-hooks.php
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/meta-box-class/meta-box.php
 #: options/options-core.php
 msgid "Boxes"
 msgstr "Коробки"
 
-#: hooks/blog-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/blog-hooks.php options/options-core.php
 msgid "Post Page"
 msgstr "Пост страница"
 
@@ -191,9 +184,7 @@ msgstr "Пост страница"
 msgid "Our Blog"
 msgstr "Блог"
 
-#: hooks/header-hooks.php
-#: options/options-core.php
-#: options/options-core.php
+#: hooks/header-hooks.php options/options-core.php
 msgid "Logo + Icons"
 msgstr "Логотип + значки"
 
@@ -213,13 +204,11 @@ msgstr "Боковой панели слева"
 msgid "Sidebar Right"
 msgstr "Правой боковой панели"
 
-#: init.php
-#: options/options-core.php
+#: init.php options/options-core.php
 msgid "Footer Widgets"
 msgstr "Колонтитулом виджеты"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Select Page Layout"
 msgstr "Выберите макет страницы"
 
@@ -235,8 +224,7 @@ msgstr "Элементы страницы"
 msgid "Page"
 msgstr "Страница"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Portfolio Lite"
 msgstr "Портфолио Lite"
 
@@ -268,10 +256,7 @@ msgstr "Ползунок заголовок"
 msgid "Custom Slide Link"
 msgstr "Ссылка слайдов"
 
-#: options/meta-box-class/meta-box.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
+#: options/meta-box-class/meta-box.php options/options-core.php
 msgid "Title"
 msgstr "Название"
 
@@ -284,7 +269,6 @@ msgid "Custom Feature Slides"
 msgstr "Пользовательские категории"
 
 #: options/meta-box-class/my-meta-box-class.php
-#: options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Убрать"
 
@@ -292,7 +276,6 @@ msgstr "Убрать"
 msgid "Add"
 msgstr "Добавить дополнений"
 
-#: options/meta-box-class/my-meta-box-class.php
 #: options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "К сожалению, вы не можете загрузить этот тип файла для этого поля."
@@ -458,8 +441,7 @@ msgstr "Широкий боковой панели"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Работает только на макеты с 1 боковой панели"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Max Width"
 msgstr "Макс ширина"
 
@@ -471,8 +453,7 @@ msgstr "Введите ширину вашего сайта в пикселях"
 msgid "Select a Skin Color"
 msgstr "Выберите цвет кожи"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Text Color"
 msgstr "Цвет текста"
 
@@ -480,8 +461,7 @@ msgstr "Цвет текста"
 msgid "Select text color"
 msgstr "Выберите цвет текста"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Color"
 msgstr "Цвет ссылок"
 
@@ -489,8 +469,7 @@ msgstr "Цвет ссылок"
 msgid "Select link color"
 msgstr "Выберите цвет ссылок"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Цвет ссылок при наведении"
 
@@ -507,7 +486,6 @@ msgid "Enter Google font"
 msgstr "Введите Google шрифт"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google шрифт имена чувствительны к регистру"
 
@@ -515,13 +493,11 @@ msgstr "Google шрифт имена чувствительны к регист�
 msgid "Demo Text"
 msgstr "Демо текст"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Семейство шрифтов для заголовков"
 
-#: options/options-core.php
-#: options/options-customizer.php
+#: options/options-core.php options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google шрифты"
 
@@ -557,18 +533,6 @@ msgstr "Логотип"
 msgid "Logo Image"
 msgstr "Изображения логотипа"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Введите URL-адрес или загрузить файл"
@@ -710,53 +674,37 @@ msgid "Post Formats Icons"
 msgstr "Пост форматы иконок"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Excerpts"
 msgstr "После выдержки"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Read More Text"
 msgstr "Читать больше текста"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Excerpt Length"
 msgstr "Длина выдержки"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Featured Images"
 msgstr "Популярные изображения"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Author"
 msgstr "Пост Byline автора"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Пост Byline категории"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Date"
 msgstr "Дата подписи автора"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Почтовые автор сообщения комментарии"
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Пост Byline Теги"
@@ -766,11 +714,16 @@ msgid "Boxes Upgrade"
 msgstr "Обновление полей"
 
 #: options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "Коробки Lite ограничивает вас в общей сложности 3 коробки на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько коробки, как вам нравится. Классифицировать их и отображения каждой категории на другой странице."
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"Коробки Lite ограничивает вас в общей сложности 3 коробки на протяжении "
+"всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько "
+"коробки, как вам нравится. Классифицировать их и отображения каждой "
+"категории на другой странице."
 
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Pro"
 msgstr "Про"
@@ -779,12 +732,6 @@ msgstr "Про"
 msgid "First Box Image"
 msgstr "Первое поле изображение"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Link URL"
 msgstr "URL-адрес ссылки"
@@ -814,8 +761,15 @@ msgid "Portfolio Upgrade"
 msgstr "Обновление портфолио"
 
 #: options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "Портфолио Lite ограничивает вас в общей сложности 4 пунктов на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько элементов портфолио, как вам нравится. Классифицировать их и отображения каждой категории на другой странице."
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Портфолио Lite ограничивает вас в общей сложности 4 пунктов на протяжении "
+"всего сайта. Обновление до %1$ s чтобы иметь возможность создать столько "
+"элементов портфолио, как вам нравится. Классифицировать их и отображения "
+"каждой категории на другой странице."
 
 #: options/options-core.php
 msgid "First Portfolio Image"
@@ -866,7 +820,6 @@ msgid "Fourth Porfolio Link"
 msgstr "Четвертый портфель ссылка"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Title"
 msgstr "Портфолио название"
 
@@ -875,8 +828,15 @@ msgid "Slider Upgrade"
 msgstr "Слайдер обновления"
 
 #: options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "Ползунок Lite ограничивает вас в общей сложности 3 изображения на протяжении всего сайта. Обновление до %1$ s чтобы иметь возможность создать более изображений. Классифицировать их и отображения каждой категории на другой странице."
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"Ползунок Lite ограничивает вас в общей сложности 3 изображения на протяжении "
+"всего сайта. Обновление до %1$ s чтобы иметь возможность создать более "
+"изображений. Классифицировать их и отображения каждой категории на другой "
+"странице."
 
 #: options/options-core.php
 msgid "Slider Image 1"
@@ -907,13 +867,9 @@ msgid "Images per Row"
 msgstr "Изображения в строке"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Portfolio Category"
 msgstr "Портфолио Категория"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "You need to create a Category"
 msgstr "Вам необходимо создать категорию"
@@ -943,11 +899,9 @@ msgid "Custom"
 msgstr "Пользовательские"
 
 #: options/options-core.php
-#: options/options-core.php
 msgid "Post Categories"
 msgstr "Пост категории"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Custom Categories"
 msgstr "Пользовательские категории"
@@ -981,8 +935,12 @@ msgid "Callout Text"
 msgstr "Текст выноски"
 
 #: options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "Используйте %1$ сек вызова из секции на любой странице, где вы хотите доставить важное сообщение для вашего клиента или клиента."
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"Используйте %1$ сек вызова из секции на любой странице, где вы хотите "
+"доставить важное сообщение для вашего клиента или клиента."
 
 #: options/options-core.php
 msgid "Callout Button"
@@ -1045,9 +1003,6 @@ msgid "Images"
 msgstr "Изображения"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Select a Category"
 msgstr "Выберите категорию"
 
@@ -1056,15 +1011,9 @@ msgid "Number of boxes per row"
 msgstr "Количество коробок в строке"
 
 #: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 msgid "Sidebar Options"
 msgstr "Опции панели"
 
-#: options/options-core.php
-#: options/options-core.php
-#: options/options-core.php
 #: options/options-core.php
 msgid "Images for layout."
 msgstr "Образы для макета."
@@ -1073,7 +1022,6 @@ msgstr "Образы для макета."
 msgid "Post title"
 msgstr "Название должности"
 
-#: options/options-core.php
 #: options/options-core.php
 msgid "Post Format Icons"
 msgstr "Сообщение формата иконки"
@@ -1095,8 +1043,10 @@ msgid "Customize"
 msgstr "Настроить"
 
 #: options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
-msgstr "Убедитесь, что вы удалили изображение выше прежде чем выбрать один из этих"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"Убедитесь, что вы удалили изображение выше прежде чем выбрать один из этих"
 
 #: options/options-customizer.php
 msgid "Skin Color"
@@ -1131,7 +1081,6 @@ msgid "Theme Options Page"
 msgstr "Страница Параметры тема"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Theme Options"
 msgstr "Тема опции"
 
@@ -1140,22 +1089,18 @@ msgid "Buy Themes"
 msgstr "Купить темы"
 
 #: options/options-init.php
-#: options/options-init.php
-#: options/options-init.php
 msgid "Save Options"
 msgstr "Параметры сохранения"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "Нажмите кнопку ОК, чтобы сбросить. Любые параметры темы будут потеряны!"
+msgstr ""
+"Нажмите кнопку ОК, чтобы сбросить. Любые параметры темы будут потеряны!"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Restore Defaults"
 msgstr "Восстановить настройки по умолчанию"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr ""
@@ -1165,11 +1110,9 @@ msgid "Default Field"
 msgstr "Поля по умолчанию"
 
 #: options/options-init.php
-#: options/options-init.php
 msgid "Options Imported"
 msgstr "Параметры импорта"
 
-#: options/options-init.php
 #: options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Недопустимые данные для импорта"
@@ -1277,4 +1220,3 @@ msgstr "Полужирный курсив"
 #: options/theme-upsell.php
 msgid "Themes You Can Trust"
 msgstr "Темы, которой можно доверять"
-
