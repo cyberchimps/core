@@ -1106,7 +1106,7 @@ function cyberchimps_options_help_text() {
 						</div>
 						<div class="clear"></div>';
 		$text .= sprintf(
-			'<p>' . __( 'If you want even more amazing new features upgrade to %1$s which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, Callout Section, expanded typography including Google Fonts, more color skins, and many more powerful new features. Please visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
+			'<p>' . __( 'For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
 			'<a href="' . $upgrade_link . ' title="' . $pro_title . '">' . $pro_title . '</a>',
 			'<a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a>'
 		);
