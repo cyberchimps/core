@@ -161,7 +161,10 @@ function cyberchimps_custom_background_cb() {
 
 // Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
-	register_sidebar( array(
+
+	// Add left sidebar only to pro themes as it is not avialble in free.
+	if ( 'pro' == cyberchimps_theme_check() ) {
+		register_sidebar( array(
 		                  'name'          => __( 'Sidebar Left', 'cyberchimps_core' ),
 		                  'id'            => 'sidebar-left',
 		                  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
@@ -169,6 +172,7 @@ function cyberchimps_widgets_init() {
 		                  'before_title'  => apply_filters( 'cyberchimps_sidebar_before_widget_title', '<h3 class="widget-title">' ),
 		                  'after_title'   => apply_filters( 'cyberchimps_sidebar_after_widget_title', '</h3>' )
 	                  ) );
+	}
 
 	register_sidebar( array(
 		                  'name'          => __( 'Sidebar Right', 'cyberchimps_core' ),
