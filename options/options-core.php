@@ -1783,7 +1783,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Button', 'cyberchimps_core' ),
+			'name'    => __( 'Button', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_button',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
@@ -1793,7 +1793,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Background Color', 'cyberchimps_core' ),
+			'name'    => __( 'Background Color', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_background_color',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
@@ -1803,7 +1803,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Title Color', 'cyberchimps_core' ),
+			'name'    => __( 'Title Color', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_title_color',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
@@ -1813,7 +1813,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Text Color', 'cyberchimps_core' ),
+			'name'    => __( 'Text Color', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_text_color',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
@@ -1823,7 +1823,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Button Color', 'cyberchimps_core' ),
+			'name'    => __( 'Button Color', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_button_color',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
@@ -1833,7 +1833,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		$fields_list[] = array(
-			'name'    => __( 'Custom Callout Button Text Color', 'cyberchimps_core' ),
+			'name'    => __( 'Button Text Color', 'cyberchimps_core' ),
 			'id'      => 'custom_callout_button_text_color',
 			'class'   => 'custom_callout_options_toggle',
 			'std'     => '',
