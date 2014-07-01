@@ -136,6 +136,10 @@ a.symbol.twitterbird:before {
 	content: "\f099";
 }
 
+a.symbol.instagram:before {
+	content: "\f16d";
+}
+
 a.symbol.facebook:before {
 	content: "\f09a";
 }

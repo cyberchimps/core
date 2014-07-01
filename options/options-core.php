@@ -1001,6 +1001,25 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
+	
+	// Instagram
+	$fields_list[] = array(
+		'name'    => __( 'Instagram', 'cyberchimps_core' ),
+		'id'      => 'social_instagram',
+		'type'    => 'toggle',
+		'section' => 'cyberchimps_header_social_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
+
+	$fields_list[] = array(
+		'name'    => __( 'Instagram URL', 'cyberchimps_core' ),
+		'id'      => 'instagram_url',
+		'class'   => 'social_instagram_toggle',
+		'std'     => 'http://instagram.com/',
+		'type'    => 'text',
+		'section' => 'cyberchimps_header_social_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
 	/********** SOCIAL ENDS ************/
 
 	/*************************** HEADER ENDS ***************************************************/
