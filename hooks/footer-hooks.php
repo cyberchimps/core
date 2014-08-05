@@ -64,13 +64,17 @@ add_action( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
 // Start new row of footer widgets with a new row-fluid div so that it keeps the fluid layout.
 function cyberchimps_footer_widgets( $params ) {
 
-	// Declare a widget counter globally so that we can increase it in each iteration.
-	global $footer_widget_counter;
-	$footer_widget_counter++; 
+	// Checked if it's footer widgets.
+	if( 'Footer Widgets' == $params[0]['name'] ) {
+	
+		// Declare a widget counter globally so that we can increase it in each iteration.
+		global $footer_widget_counter;
+		$footer_widget_counter++; 
 
-	// If it's 5(or multiple of 5)th widget then we need to close the current row-fluid div and start a new one.
-	if ( $footer_widget_counter % 5 == 0 ) {
-		echo '</div> <div class="row-fluid">';
+		// If it's 5(or multiple of 5)th widget then we need to close the current row-fluid div and start a new one.
+		if ( $footer_widget_counter % 5 == 0 ) {
+			echo '</div> <div class="row-fluid">';
+		}
 	}
 	
 	return $params;
