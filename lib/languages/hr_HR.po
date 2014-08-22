@@ -3,15 +3,14 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-06-27 13:02+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2014-08-22 08:07:24 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Croatian, Croatia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../functions.php
 msgid "Posted on %s"
@@ -34,6 +33,7 @@ msgid "Tags: %s"
 msgstr "Tagovi: %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Leave a comment"
 msgstr "Komentiraj"
 
@@ -41,7 +41,8 @@ msgstr "Komentiraj"
 msgid "1 Comment"
 msgstr "1 komentar"
 
-#: ../../functions.php ../../options/options-core.php
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
 msgstr "Komentari"
 
@@ -94,14 +95,17 @@ msgid "Page %s"
 msgstr "Stranica: %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Read More..."
 msgstr ""
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
 msgstr "Instrukcije"
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
 msgstr "Podrška"
 
@@ -110,23 +114,15 @@ msgid "Upgrade to %1$s"
 msgstr ""
 
 #: ../../functions.php
-msgid ""
-"For even more amazing new features, upgrade to %1$s which includes a slider "
-"with customizable features, an image carousel, widgetized boxes, a callout "
-"section, expanded typography (including Google Fonts), additional color "
-"skins, and many more powerful new features. Visit %2$s to learn more!"
-msgstr ""
-"Za još više iznenađujuće nove mogućnosti, nadograditi na %1$ s ishranom "
-"klizač s prilagodljivih mogućnosti, slika vrtuljak, widgetized kutije, "
-"sekciju oblačić, prošireni tipografija (uključujući Google fontovi), dodatne "
-"boje kože i mnogo više snažne nove značajke. Posjetite %2$ s Dodatne "
-"informacije!"
+msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
+msgstr "Za još više iznenađujuće nove mogućnosti, nadograditi na %1$ s ishranom klizač s prilagodljivih mogućnosti, slika vrtuljak, widgetized kutije, sekciju oblačić, prošireni tipografija (uključujući Google fontovi), dodatne boje kože i mnogo više snažne nove značajke. Posjetite %2$ s Dodatne informacije!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr "Dobrodošli na %1$ s! Saznajte još sada oko nadogradnje na %2$ s danas."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
 msgstr "Opcije"
 
@@ -138,6 +134,7 @@ msgstr ""
 msgid "The Events Calendar"
 msgstr ""
 
+#: ../../functions.php
 #: ../../functions.php
 msgid "Digital Downloads"
 msgstr ""
@@ -170,6 +167,40 @@ msgstr ""
 msgid "Install Easy Digital Downloads Plugin"
 msgstr ""
 
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Lite"
+msgstr ""
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Boxes"
+msgstr "Okviri"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Page"
+msgstr "Objavi stranicu"
+
+#: ../../hooks/blog-hooks.php
+msgid "Our Blog"
+msgstr ""
+
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Logo + Icons"
+msgstr "Logo + ikone"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Ili izaberi jednu od CyberChimps pozadinskih slika"
+
 #: ../../init.php
 msgid "Primary Menu"
 msgstr "Primarni meni"
@@ -182,35 +213,98 @@ msgstr "Sidebar lijevo"
 msgid "Sidebar Right"
 msgstr "Sidebar desno"
 
-#: ../../init.php ../../options/options-core.php
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
 msgstr "Widgeti podnožja"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Slider Lite"
+msgid "Select Page Layout"
+msgstr "Izaberi postavku stranice"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Title"
+msgstr "Naziv stranice"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Elements"
+msgstr "Elementi stranice"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Stranica"
+
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Portfolio Lite"
 msgstr ""
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Boxes"
-msgstr "Okviri"
-
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-msgid "Post Page"
-msgstr "Objavi stranicu"
-
-#: ../../hooks/blog-hooks.php
-msgid "Our Blog"
+msgid "Twitter Bar"
 msgstr ""
 
-#: ../../hooks/header-hooks.php ../../options/options-core.php
-msgid "Logo + Icons"
-msgstr "Logo + ikone"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
+msgstr "Trebate pomoć?"
 
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "Ili izaberi jednu od CyberChimps pozadinskih slika"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr "Posjetite Vodič za opcije stranica %s"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Spremi opcije"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Slika Slidera"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Naslov Slidera"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Specifičan link slidea"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "naslov"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Naslov"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Prilagođene kategorije"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Ukloni"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Add"
+msgstr ""
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr ""
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Učitaj"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "ubaci URL"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -364,7 +458,8 @@ msgstr ""
 msgid "Only works on layouts with 1 sidebar"
 msgstr ""
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
 msgstr "Maksimalna širina"
 
@@ -376,7 +471,9 @@ msgstr "unesi širinu svog web sitea u pixelima"
 msgid "Select a Skin Color"
 msgstr "Izaberi boju teme"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
 msgstr "Boja teksta"
 
@@ -384,7 +481,8 @@ msgstr "Boja teksta"
 msgid "Select text color"
 msgstr "Izaberi boju teksta"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
 msgstr "Boja linka"
 
@@ -392,7 +490,8 @@ msgstr "Boja linka"
 msgid "Select link color"
 msgstr "Izaberi boju linka"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Boja lebdećeg linka"
 
@@ -404,10 +503,12 @@ msgstr "Izaberi boju lebdećeg linka"
 msgid "Typography Options"
 msgstr "Opcije tipografije"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Enter Google font"
 msgstr "Unesi Google font"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr ""
@@ -416,11 +517,13 @@ msgstr ""
 msgid "Demo Text"
 msgstr "Demo tekst"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Font Family for headings"
 msgstr ""
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Google font for headings"
 msgstr ""
 
@@ -456,6 +559,18 @@ msgstr "Prilagođen logo"
 msgid "Logo Image"
 msgstr "Slika logoa"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Unesi URL ili učitaj datoteku"
@@ -581,16 +696,16 @@ msgid "RSS URL"
 msgstr ""
 
 #: ../../options/options-core.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../../options/options-core.php
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
 msgstr "Drag & Drop blog elementi"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr ""
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Izaberi postavku stranice"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -605,37 +720,53 @@ msgid "Post Formats Icons"
 msgstr "Post format ikone"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Excerpts"
 msgstr "Objavi isječke"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
 msgstr "Pročitaj još teksta"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Excerpt Length"
 msgstr "Dužina isječka"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
 msgstr "Omiljene slike"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Author"
 msgstr "Objavi autora u liniji"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Objavi kategorije u liniji"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Date"
 msgstr "Objavi datum u liniji"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Objavi komentare u liniji"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Objavi oznake u liniji"
@@ -645,15 +776,11 @@ msgid "Boxes Upgrade"
 msgstr "Nadogradnja okvira"
 
 #: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Boxes Lite vas limitira na maksimalno 3 okvira kroz cijeli web site. "
-"Nadogradite na %1$s da bi mogli kreirati onoliko okvira koliko želite. "
-"Kategorizirajte ih i prikažite svaku kategoriju na drugoj stranici."
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Boxes Lite vas limitira na maksimalno 3 okvira kroz cijeli web site. Nadogradite na %1$s da bi mogli kreirati onoliko okvira koliko želite. Kategorizirajte ih i prikažite svaku kategoriju na drugoj stranici."
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Pro"
 msgstr ""
@@ -662,6 +789,12 @@ msgstr ""
 msgid "First Box Image"
 msgstr ""
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Link URL"
 msgstr ""
@@ -691,14 +824,8 @@ msgid "Portfolio Upgrade"
 msgstr "Nadogradnja programa"
 
 #: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Portfolio Lite vas limitira na maksimalno 4 stavke kroz cijeli web site. "
-"Nadogradite na %1$s da bi mogli kreirati onoliko stavki koliko želite. "
-"Kategorizirajte ih i prikažite svaku kategoriju na drugoj stranici."
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Portfolio Lite vas limitira na maksimalno 4 stavke kroz cijeli web site. Nadogradite na %1$s da bi mogli kreirati onoliko stavki koliko želite. Kategorizirajte ih i prikažite svaku kategoriju na drugoj stranici."
 
 #: ../../options/options-core.php
 msgid "First Portfolio Image"
@@ -749,26 +876,17 @@ msgid "Fourth Porfolio Link"
 msgstr "Link četvrtog programa"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Title"
 msgstr "Naziv programa"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Title"
-msgstr "naslov"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
 msgstr "Nadogradnja slidera"
 
 #: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Slider Lite vas limitira na maksimalno 3 slike kroz cijeli web site. "
-"Nadogradite na %1$s da bi mogli kreirati slika po želji. Kategorizirajte ih "
-"i prikažite svaku kategoriju na drugoj stranici."
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Slider Lite vas limitira na maksimalno 3 slike kroz cijeli web site. Nadogradite na %1$s da bi mogli kreirati slika po želji. Kategorizirajte ih i prikažite svaku kategoriju na drugoj stranici."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
@@ -799,9 +917,13 @@ msgid "Images per Row"
 msgstr "Slika po redu"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Category"
 msgstr "Kategorija programa"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "You need to create a Category"
 msgstr "Morate kreirati kategoriju"
@@ -831,9 +953,11 @@ msgid "Custom"
 msgstr "Vlastito"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Categories"
 msgstr "Kategorije članaka"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Custom Categories"
 msgstr "Prilagođene kategorije"
@@ -867,12 +991,8 @@ msgid "Callout Text"
 msgstr "Tekst doziva"
 
 #: ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Upotrijebi %1$s dozivnih sekcija na bilo kojoj stranici gdje želiš "
-"isporučiti važnu poruku svom klijentu (kupcu)."
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Upotrijebi %1$s dozivnih sekcija na bilo kojoj stranici gdje želiš isporučiti važnu poruku svom klijentu (kupcu)."
 
 #: ../../options/options-core.php
 msgid "Callout Button"
@@ -931,6 +1051,9 @@ msgid "Images"
 msgstr ""
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Select a Category"
 msgstr "Izaberi kategoriju"
 
@@ -939,9 +1062,15 @@ msgid "Number of boxes per row"
 msgstr ""
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Sidebar Options"
 msgstr "Opcije sidebara"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Slike za prikaz:"
@@ -950,6 +1079,7 @@ msgstr "Slike za prikaz:"
 msgid "Post title"
 msgstr "Naslov članka"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Format Icons"
 msgstr "Ikone formata članka"
@@ -971,8 +1101,7 @@ msgid "Customize"
 msgstr "Prilagodi"
 
 #: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
+msgid "make sure you have removed the image above before selecting one of these"
 msgstr "budi siguran da si uklonio gornju sliku prije izabiranja jedne od ovih"
 
 #: ../../options/options-customizer.php
@@ -1000,6 +1129,7 @@ msgid "Theme Options Page"
 msgstr "Stranica opcija teme"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
 msgstr "Opcije teme"
 
@@ -1008,17 +1138,22 @@ msgid "Buy Themes"
 msgstr "Kupi teme"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Save Options"
 msgstr "Spremi opcije"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "Klikni OK za reset. Sve postavke teme će se izgubiti."
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Restore Defaults"
 msgstr "Vrati polazno"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr "CyberChimps Wordpress teme"
@@ -1028,9 +1163,11 @@ msgid "Default Field"
 msgstr "Osnovno polje"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Options Imported"
 msgstr "Uvezene opcije"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Podaci nisu valjani za uvoz"
@@ -1046,11 +1183,6 @@ msgstr "Opcije snimljene."
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
 msgstr "Medij tematskih opcija"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "Učitaj"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1144,66 +1276,3 @@ msgstr "Masno koso"
 msgid "Themes You Can Trust"
 msgstr ""
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Title"
-msgstr "Naziv stranice"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Elements"
-msgstr "Elementi stranice"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "Stranica"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr ""
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Need Help?"
-msgstr "Trebate pomoć?"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Visit the %s page options guide"
-msgstr "Posjetite Vodič za opcije stranica %s"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Options"
-msgstr "Spremi opcije"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Image"
-msgstr "Slika Slidera"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Caption"
-msgstr "Naslov Slidera"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Specifičan link slidea"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Caption"
-msgstr "Naslov"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Feature Slides"
-msgstr "Prilagođene kategorije"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Remove"
-msgstr "Ukloni"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Add"
-msgstr ""
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Sorry, you cannot upload this file type for this field."
-msgstr ""
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "or enter URL"
-msgstr "ubaci URL"

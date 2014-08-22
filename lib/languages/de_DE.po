@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-06-27 13:01+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2014-08-22 08:07:31 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: German, Germany\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: WebTranslateIt.com\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../functions.php
@@ -33,6 +33,7 @@ msgid "Tags: %s"
 msgstr "Tags: %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Leave a comment"
 msgstr "Hinterlassen Sie einen Kommentar"
 
@@ -40,7 +41,8 @@ msgstr "Hinterlassen Sie einen Kommentar"
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../../functions.php ../../options/options-core.php
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -93,14 +95,17 @@ msgid "Page %s"
 msgstr "Seite %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Read More..."
 msgstr "Weiterlesen..."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
 msgstr "Anleitung"
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
 msgstr "Support"
 
@@ -109,25 +114,15 @@ msgid "Upgrade to %1$s"
 msgstr "Upgrade auf %1$ s"
 
 #: ../../functions.php
-msgid ""
-"For even more amazing new features, upgrade to %1$s which includes a slider "
-"with customizable features, an image carousel, widgetized boxes, a callout "
-"section, expanded typography (including Google Fonts), additional color "
-"skins, and many more powerful new features. Visit %2$s to learn more!"
-msgstr ""
-"Aktualisieren Sie für noch mehr erstaunliche neue Funktionen auf %1$ s, "
-"umfasst einen Schieberegler mit anpassbaren Funktionen, eine Bild-Karussell, "
-"widgetized Boxen, ein Callout-Abschnitt, Erweiterte Typografie "
-"(einschließlich Google Fonts), zusätzliche Farbe Skins und viele mehr "
-"leistungsstarke neue Funktionen. Besuchen Sie %2$ s, um mehr zu erfahren!"
+msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
+msgstr "Aktualisieren Sie für noch mehr erstaunliche neue Funktionen auf %1$ s, umfasst einen Schieberegler mit anpassbaren Funktionen, eine Bild-Karussell, widgetized Boxen, ein Callout-Abschnitt, Erweiterte Typografie (einschließlich Google Fonts), zusätzliche Farbe Skins und viele mehr leistungsstarke neue Funktionen. Besuchen Sie %2$ s, um mehr zu erfahren!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
-msgstr ""
-"Willkommen Sie bei %1$ s! Erfahren Sie mehr, jetzt etwa auf %2$ s heute zu "
-"aktualisieren."
+msgstr "Willkommen Sie bei %1$ s! Erfahren Sie mehr, jetzt etwa auf %2$ s heute zu aktualisieren."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
 msgstr "Optionen"
 
@@ -139,6 +134,7 @@ msgstr "Add-Ons"
 msgid "The Events Calendar"
 msgstr "Der Veranstaltungskalender"
 
+#: ../../functions.php
 #: ../../functions.php
 msgid "Digital Downloads"
 msgstr "Digitale Downloads"
@@ -171,6 +167,40 @@ msgstr "Aktivieren Sie bitte das Events Calendar plugin"
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Events Calendar Plugin installieren"
 
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Lite"
+msgstr "Schieberegler Lite"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Boxes"
+msgstr "Boxen"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Page"
+msgstr "Post-Seite"
+
+#: ../../hooks/blog-hooks.php
+msgid "Our Blog"
+msgstr "Blogs"
+
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Logo + Icons"
+msgstr "Logo + Icons"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Oder wählen Sie eine der CyberChimps-Hintergrund-Bilder"
+
 #: ../../init.php
 msgid "Primary Menu"
 msgstr "Primäre Menü"
@@ -183,35 +213,98 @@ msgstr "Seitenleiste links"
 msgid "Sidebar Right"
 msgstr "Seitenleiste rechts"
 
-#: ../../init.php ../../options/options-core.php
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
 msgstr "Footer-Widgets"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Slider Lite"
-msgstr "Schieberegler Lite"
+msgid "Select Page Layout"
+msgstr "Wählen Sie Seitenlayout"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Boxes"
-msgstr "Boxen"
+msgid "Page Title"
+msgstr "Seitentitel"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-msgid "Post Page"
-msgstr "Post-Seite"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Elements"
+msgstr "Seitenelemente"
 
-#: ../../hooks/blog-hooks.php
-msgid "Our Blog"
-msgstr "Blogs"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Seite"
 
-#: ../../hooks/header-hooks.php ../../options/options-core.php
-msgid "Logo + Icons"
-msgstr "Logo + Icons"
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Portfolio Lite"
 
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "Oder wählen Sie eine der CyberChimps-Hintergrund-Bilder"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter-Bar"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
+msgstr "Brauchen Sie Hilfe?"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr "Besuchen Sie das Handbuch für das %s Seite options"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Optionen speichern"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Slider-Bild"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Schieberegler Bildunterschrift"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Benutzerdefinierte Folie Link"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "Titel"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Beschriftung"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Benutzerdefinierte Kategorien"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Löschen"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Add"
+msgstr "Add-Ons"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr "Tut mir leid, Sie können diesen Dateityp für dieses Feld nicht hochladen."
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Upload"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "oder URL eingeben"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -365,7 +458,8 @@ msgstr "Breite Sidebar"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Funktioniert nur für Layouts mit 1 Seitenleiste"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
 msgstr "Max. Breite"
 
@@ -377,7 +471,9 @@ msgstr "Geben Sie die Breite Ihrer Website in Pixel"
 msgid "Select a Skin Color"
 msgstr "Wählen Sie eine Hautfarbe"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
 msgstr "Textfarbe"
 
@@ -385,7 +481,8 @@ msgstr "Textfarbe"
 msgid "Select text color"
 msgstr "Wählen Sie die Farbe des Textes"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
 msgstr "Linkfarbe"
 
@@ -393,7 +490,8 @@ msgstr "Linkfarbe"
 msgid "Select link color"
 msgstr "Wählen Sie Link-Farbe"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Link Hover-Farbe"
 
@@ -405,10 +503,12 @@ msgstr "Wählen Sie Link-Hover-Farbe"
 msgid "Typography Options"
 msgstr "Typografieoptionen"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Enter Google font"
 msgstr "Geben Sie Google Schriftart"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google-Schriftartnamen Groß-/Kleinschreibung"
@@ -417,11 +517,13 @@ msgstr "Google-Schriftartnamen Groß-/Kleinschreibung"
 msgid "Demo Text"
 msgstr "Demo-Text"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Schriftfamilie für Überschriften"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google fonts"
 
@@ -457,6 +559,18 @@ msgstr "Individuelles Logo"
 msgid "Logo Image"
 msgstr "Logo-Bild"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Geben Sie die URL oder hochladen Datei"
@@ -582,16 +696,16 @@ msgid "RSS URL"
 msgstr "RSS URL"
 
 #: ../../options/options-core.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../../options/options-core.php
+msgid "Instagram URL"
+msgstr "Instagram-URL"
+
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
 msgstr "Drag & & Drop-Blog-Elemente"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr "Portfolio Lite"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Wählen Sie Seitenlayout"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -606,37 +720,53 @@ msgid "Post Formats Icons"
 msgstr "Post-Formate Ikonen"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Excerpts"
 msgstr "Post-Auszüge"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
 msgstr "Lesen Sie mehr Text"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Excerpt Length"
 msgstr "Auszug Länge"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
 msgstr "Empfohlene Bilder"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Author"
 msgstr "Post Quellenangabe Autor"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Post Quellenangabe-Kategorien"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Date"
 msgstr "Quellenangabe-Buchungsdatum"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Quellenangabe Kommentare"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Post Quellenangabe Tags"
@@ -646,16 +776,11 @@ msgid "Boxes Upgrade"
 msgstr "Boxen-Upgrade"
 
 #: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Boxen-Lite beschränkt Sie auf insgesamt 3 Boxen auf Ihrer gesamten Website. "
-"Aktualisieren Sie auf %1$ s, dass man möglichst viele Boxen nach Belieben zu "
-"erstellen. Kategorisieren und jeder Kategorie auf einer anderen Seite "
-"anzuzeigen."
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Boxen-Lite beschränkt Sie auf insgesamt 3 Boxen auf Ihrer gesamten Website. Aktualisieren Sie auf %1$ s, dass man möglichst viele Boxen nach Belieben zu erstellen. Kategorisieren und jeder Kategorie auf einer anderen Seite anzuzeigen."
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -664,6 +789,12 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Erste Box-Bild"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Link URL"
 msgstr "Link-URL"
@@ -693,15 +824,8 @@ msgid "Portfolio Upgrade"
 msgstr "Portfolio-Upgrade"
 
 #: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Portfolio-Lite beschränkt Sie auf insgesamt 4 Teile Ihrer gesamten Website. "
-"Aktualisieren Sie auf %1$ s, dass man so viele Portfolio-Elemente nach "
-"Belieben zu erstellen. Kategorisieren und jeder Kategorie auf einer anderen "
-"Seite anzuzeigen."
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Portfolio-Lite beschränkt Sie auf insgesamt 4 Teile Ihrer gesamten Website. Aktualisieren Sie auf %1$ s, dass man so viele Portfolio-Elemente nach Belieben zu erstellen. Kategorisieren und jeder Kategorie auf einer anderen Seite anzuzeigen."
 
 #: ../../options/options-core.php
 msgid "First Portfolio Image"
@@ -752,26 +876,17 @@ msgid "Fourth Porfolio Link"
 msgstr "Vierte Porfolio-Link"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Title"
 msgstr "Portfolio-Titel"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Title"
-msgstr "Titel"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
 msgstr "Schieberegler-Upgrade"
 
 #: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Schieberegler Lite beschränkt Sie auf insgesamt 3 Bilder in Ihrer ganzen "
-"Site. Aktualisieren Sie auf %1$ s, weitere Bilder erstellen zu können. "
-"Kategorisieren und jeder Kategorie auf einer anderen Seite anzuzeigen."
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Schieberegler Lite beschränkt Sie auf insgesamt 3 Bilder in Ihrer ganzen Site. Aktualisieren Sie auf %1$ s, weitere Bilder erstellen zu können. Kategorisieren und jeder Kategorie auf einer anderen Seite anzuzeigen."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
@@ -802,9 +917,13 @@ msgid "Images per Row"
 msgstr "Bilder pro Zeile"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Category"
 msgstr "Portfolio-Kategorie"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "You need to create a Category"
 msgstr "Sie benötigen zum Erstellen einer Kategorie"
@@ -834,9 +953,11 @@ msgid "Custom"
 msgstr "Benutzerdefinierte"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Categories"
 msgstr "Post-Kategorien"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Custom Categories"
 msgstr "Benutzerdefinierte Kategorien"
@@ -870,12 +991,8 @@ msgid "Callout Text"
 msgstr "Legendentext"
 
 #: ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Verwenden Sie %1$ s ist Call Out Abschnitt auf einer beliebigen Seite in "
-"eine wichtige Botschaft an Ihre Kunden oder Klienten liefern soll."
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Verwenden Sie %1$ s ist Call Out Abschnitt auf einer beliebigen Seite in eine wichtige Botschaft an Ihre Kunden oder Klienten liefern soll."
 
 #: ../../options/options-core.php
 msgid "Callout Button"
@@ -934,6 +1051,9 @@ msgid "Images"
 msgstr "Bilder und Videos"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Select a Category"
 msgstr "Wählen Sie eine Kategorie"
 
@@ -942,9 +1062,15 @@ msgid "Number of boxes per row"
 msgstr "Kolli Zeile"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Sidebar Options"
 msgstr "Seitenleiste-Optionen"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Bilder für Layout."
@@ -953,6 +1079,7 @@ msgstr "Bilder für Layout."
 msgid "Post title"
 msgstr "Post-Titel"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Format Icons"
 msgstr "Post-Icons im Format"
@@ -974,11 +1101,8 @@ msgid "Customize"
 msgstr "Anpassen"
 
 #: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
-"Stellen Sie sicher, dass Sie das Bild oben entfernt haben, bevor Sie eine "
-"dieser Optionen auswählen"
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "Stellen Sie sicher, dass Sie das Bild oben entfernt haben, bevor Sie eine dieser Optionen auswählen"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -1005,6 +1129,7 @@ msgid "Theme Options Page"
 msgstr "Thema Optionsseite"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
 msgstr "Themen-Optionen"
 
@@ -1013,19 +1138,22 @@ msgid "Buy Themes"
 msgstr "Themen zu kaufen"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Save Options"
 msgstr "Speicheroptionen"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-"Klicken Sie zum Zurücksetzen auf OK. Alle Design-Einstellungen gehen "
-"verloren!"
+msgstr "Klicken Sie zum Zurücksetzen auf OK. Alle Design-Einstellungen gehen verloren!"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Restore Defaults"
 msgstr "Standardeinstellungen wiederherstellen"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr "CyberChimps-Wordpress Themes"
@@ -1035,9 +1163,11 @@ msgid "Default Field"
 msgstr "Default-Feld"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Options Imported"
 msgstr "Optionen importiert"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Ungültige Daten für den Import"
@@ -1053,11 +1183,6 @@ msgstr "Optionen gespeichert."
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
 msgstr "Thema Optionen Media"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "Upload"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1151,67 +1276,3 @@ msgstr "Fett Kursiv"
 msgid "Themes You Can Trust"
 msgstr "Themen, die Sie vertrauen können"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Title"
-msgstr "Seitentitel"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Elements"
-msgstr "Seitenelemente"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "Seite"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter-Bar"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Need Help?"
-msgstr "Brauchen Sie Hilfe?"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Visit the %s page options guide"
-msgstr "Besuchen Sie das Handbuch für das %s Seite options"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Options"
-msgstr "Optionen speichern"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Image"
-msgstr "Slider-Bild"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Caption"
-msgstr "Schieberegler Bildunterschrift"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Benutzerdefinierte Folie Link"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Caption"
-msgstr "Beschriftung"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Feature Slides"
-msgstr "Benutzerdefinierte Kategorien"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Remove"
-msgstr "Löschen"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Add"
-msgstr "Add-Ons"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Sorry, you cannot upload this file type for this field."
-msgstr ""
-"Tut mir leid, Sie können diesen Dateityp für dieses Feld nicht hochladen."
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "or enter URL"
-msgstr "oder URL eingeben"

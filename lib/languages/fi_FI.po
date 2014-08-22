@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-06-27 13:02+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2014-08-22 08:14:49 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Finnish, Finland\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: WebTranslateIt.com\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../functions.php
@@ -33,6 +33,7 @@ msgid "Tags: %s"
 msgstr "Tunnisteet: %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
@@ -40,7 +41,8 @@ msgstr "Jätä kommentti"
 msgid "1 Comment"
 msgstr "1 kommentti"
 
-#: ../../functions.php ../../options/options-core.php
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
 msgstr "Kommentit"
 
@@ -93,14 +95,17 @@ msgid "Page %s"
 msgstr "Sivu %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Read More..."
 msgstr "Lue lisää..."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
 msgstr "Ohjeet"
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
 msgstr "Tuki"
 
@@ -109,22 +114,15 @@ msgid "Upgrade to %1$s"
 msgstr "Päivitä %1$s"
 
 #: ../../functions.php
-msgid ""
-"For even more amazing new features, upgrade to %1$s which includes a slider "
-"with customizable features, an image carousel, widgetized boxes, a callout "
-"section, expanded typography (including Google Fonts), additional color "
-"skins, and many more powerful new features. Visit %2$s to learn more!"
-msgstr ""
-"Yhä enemmän uusia ominaisuuksia päivittää %1$ s, joka sisältää liukusäädintä "
-"räätälöitäviä ominaisuuksia, kuva karuselli, widgetized laatikot, kuvateksti "
-"osio, laajennettu typografia (mukaan lukien Google fontit), lisää väriä "
-"nahat ja monia muita tehokkaita uusia ominaisuuksia. Käy %2$ s oppia lisää!"
+msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
+msgstr "Yhä enemmän uusia ominaisuuksia päivittää %1$ s, joka sisältää liukusäädintä räätälöitäviä ominaisuuksia, kuva karuselli, widgetized laatikot, kuvateksti osio, laajennettu typografia (mukaan lukien Google fontit), lisää väriä nahat ja monia muita tehokkaita uusia ominaisuuksia. Käy %2$ s oppia lisää!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
 msgstr "Tervetuloa %1$ s! Lisätietoja nyt noin päivittäminen %2$ s tänään."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
 msgstr "Asetukset"
 
@@ -136,6 +134,7 @@ msgstr "Lisää"
 msgid "The Events Calendar"
 msgstr "Tapahtumakalenteri"
 
+#: ../../functions.php
 #: ../../functions.php
 msgid "Digital Downloads"
 msgstr "Lataukset"
@@ -168,6 +167,40 @@ msgstr "Aktivoi latausten lisäosa"
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Asenna latausten lisäosa"
 
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Lite"
+msgstr "Perusslideri"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Boxes"
+msgstr "Laatikot"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Page"
+msgstr "Blogin sivu"
+
+#: ../../hooks/blog-hooks.php
+msgid "Our Blog"
+msgstr "Meidän blogi"
+
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Logo + Icons"
+msgstr "Logo + kuvaket"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Tai valitse taustakuvat"
+
 #: ../../init.php
 msgid "Primary Menu"
 msgstr "Päävalikko"
@@ -180,35 +213,98 @@ msgstr "Vasen sivupalkki"
 msgid "Sidebar Right"
 msgstr "Oikea sivupalkki"
 
-#: ../../init.php ../../options/options-core.php
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
 msgstr "Alapalkin vimpaimet"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Slider Lite"
-msgstr "Perusslideri"
+msgid "Select Page Layout"
+msgstr "Valitse sivun taitto"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Boxes"
-msgstr "Laatikot"
+msgid "Page Title"
+msgstr "Sivun otsikko"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-msgid "Post Page"
-msgstr "Blogin sivu"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Elements"
+msgstr "Sivun elementit"
 
-#: ../../hooks/blog-hooks.php
-msgid "Our Blog"
-msgstr "Meidän blogi"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Sivu"
 
-#: ../../hooks/header-hooks.php ../../options/options-core.php
-msgid "Logo + Icons"
-msgstr "Logo + kuvaket"
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Perus portfolio"
 
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "Tai valitse taustakuvat"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitterin palkki"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
+msgstr "Tarvitko apua?"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr "Katso %s sivun asetukset opas"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Sivun asetukset"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Kuvaslideri"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Sliderin kuvaus"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Sliderin oma linkki"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "Otsikko"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Kuvaus"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Omat suositut slidet"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Poista"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Add"
+msgstr "Lisää"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr "Et voi ladata tämän tiedostotyypin kentälle."
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Lataa"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "tai anna URL"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -362,7 +458,8 @@ msgstr "Leveä sivupalkki"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Toimii vain yhdella sivupalkilla"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
 msgstr "Leveys max:"
 
@@ -374,7 +471,9 @@ msgstr "Anna sivustosi leveys pikseleinä"
 msgid "Select a Skin Color"
 msgstr "Valitse väri"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
 msgstr "Tekstin väri"
 
@@ -382,7 +481,8 @@ msgstr "Tekstin väri"
 msgid "Select text color"
 msgstr "Valitse tekstin väri"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
 msgstr "Linkin väri"
 
@@ -390,7 +490,8 @@ msgstr "Linkin väri"
 msgid "Select link color"
 msgstr "Valitse linkin väri"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Linkin vaihtoväri"
 
@@ -402,10 +503,12 @@ msgstr "Valitse linkin vaihtoväri"
 msgid "Typography Options"
 msgstr "Typografian asetukset"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Enter Google font"
 msgstr "Googlen kirjasin"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google kirjaimet"
@@ -414,11 +517,13 @@ msgstr "Google kirjaimet"
 msgid "Demo Text"
 msgstr "Teksti"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Kirjasin ryhmät"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Yläpalkin Google kirjaimet"
 
@@ -454,6 +559,18 @@ msgstr "Oma logo"
 msgid "Logo Image"
 msgstr "Logokuva"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Kirjoita URL-osoite tai lataa tiedosto"
@@ -579,16 +696,16 @@ msgid "RSS URL"
 msgstr "RSS-osoite"
 
 #: ../../options/options-core.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../../options/options-core.php
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
 msgstr "Vedä & pudota blogin elementit"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr "Perus portfolio"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Valitse sivun taitto"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -603,37 +720,53 @@ msgid "Post Formats Icons"
 msgstr "Artikkelimuodot"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Excerpts"
 msgstr "Artikkelin ote"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
 msgstr "Lue lisää teksti"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Excerpt Length"
 msgstr "Oten pituus"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
 msgstr "Suositellut kuvat"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Author"
 msgstr "Tekijä"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Kategoriat"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Date"
 msgstr "Päiväys"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Kommentit"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Tagit"
@@ -643,15 +776,11 @@ msgid "Boxes Upgrade"
 msgstr "Laatikojen päivitys"
 
 #: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Laatikot Lite rajoittaa yhteensä 3 laatikkoa koko koko sivuston. Päivitä %1$ "
-"s voi luoda niin monta laatikkoa kuin haluat. Luokitella niitä ja näyttää "
-"kunkin luokan eri sivulla."
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Laatikot Lite rajoittaa yhteensä 3 laatikkoa koko koko sivuston. Päivitä %1$ s voi luoda niin monta laatikkoa kuin haluat. Luokitella niitä ja näyttää kunkin luokan eri sivulla."
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -660,6 +789,12 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Eka kuvalaatikko"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Link URL"
 msgstr "URL:n linkki"
@@ -689,14 +824,8 @@ msgid "Portfolio Upgrade"
 msgstr "Portfolion päivitys"
 
 #: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Portfolio Lite rajoittaa yhteensä 4 kappaletta koko koko sivuston. Päivitä "
-"%1$ s voi luoda niin monta salkun kohteita kuin haluat. Luokitella niitä ja "
-"näyttää kunkin luokan eri sivulla."
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Portfolio Lite rajoittaa yhteensä 4 kappaletta koko koko sivuston. Päivitä %1$ s voi luoda niin monta salkun kohteita kuin haluat. Luokitella niitä ja näyttää kunkin luokan eri sivulla."
 
 #: ../../options/options-core.php
 msgid "First Portfolio Image"
@@ -747,26 +876,17 @@ msgid "Fourth Porfolio Link"
 msgstr "Neljäs portfolion linkki"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Title"
 msgstr "Portfolion otsikko"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Title"
-msgstr "Otsikko"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
 msgstr "Sliderin päivitys"
 
 #: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Liukusäädintä Lite rajoittaa yhteensä 3 kuvien koko koko sivuston. Päivitä "
-"%1$ s voi luoda lisää kuvia. Luokitella niitä ja näyttää kunkin luokan eri "
-"sivulla."
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Liukusäädintä Lite rajoittaa yhteensä 3 kuvien koko koko sivuston. Päivitä %1$ s voi luoda lisää kuvia. Luokitella niitä ja näyttää kunkin luokan eri sivulla."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
@@ -797,9 +917,13 @@ msgid "Images per Row"
 msgstr "Kuvia per rivi"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Category"
 msgstr "Protfolion kategoria"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "You need to create a Category"
 msgstr "Sinun täytyy luoda katergorian"
@@ -829,9 +953,11 @@ msgid "Custom"
 msgstr "Muokattu"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Categories"
 msgstr "Artikkelin kategoriat"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Custom Categories"
 msgstr "Muut kategoriat"
@@ -865,12 +991,8 @@ msgid "Callout Text"
 msgstr "Toiminon teksti"
 
 #: ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"Käytä %1$ jäsenen soittaa Out-osiossa sivulla haluamaasi tärkeä viesti "
-"toimitetaan asiakkaalle tai asiakas."
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "Käytä %1$ jäsenen soittaa Out-osiossa sivulla haluamaasi tärkeä viesti toimitetaan asiakkaalle tai asiakas."
 
 #: ../../options/options-core.php
 msgid "Callout Button"
@@ -929,6 +1051,9 @@ msgid "Images"
 msgstr "Kuvat"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Select a Category"
 msgstr "Valitse kategoria"
 
@@ -937,9 +1062,15 @@ msgid "Number of boxes per row"
 msgstr "Laatikoiden määrä per rivi"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Sidebar Options"
 msgstr "Sivupalkin asetukset"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Taiton kuvia."
@@ -948,6 +1079,7 @@ msgstr "Taiton kuvia."
 msgid "Post title"
 msgstr "Artikkelin otsikko"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Format Icons"
 msgstr "Artikkelin kuvakeet"
@@ -969,10 +1101,8 @@ msgid "Customize"
 msgstr "Muokkaa"
 
 #: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
-"Varmista, että olet poistanut kuva yllä ennen kuin valitset yhden näistä"
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "Varmista, että olet poistanut kuva yllä ennen kuin valitset yhden näistä"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -999,6 +1129,7 @@ msgid "Theme Options Page"
 msgstr "Teeman asetukset"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
 msgstr "Teeman asetukset"
 
@@ -1007,17 +1138,22 @@ msgid "Buy Themes"
 msgstr "Osta teemoja"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Save Options"
 msgstr "Tallenna asetukset"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "Valitsemalla OK voit palauttaa. Teeman asetukset menetetään!"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Restore Defaults"
 msgstr "Palauta oletusarvot"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr "Teemat"
@@ -1027,9 +1163,11 @@ msgid "Default Field"
 msgstr "Oletus"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Options Imported"
 msgstr "Tuotuja asetuksia"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Virheellinen tuonti tieto"
@@ -1045,11 +1183,6 @@ msgstr "Asetukset tallennettu."
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
 msgstr "Media"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "Lataa"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1143,66 +1276,3 @@ msgstr "Lihavoi kursivoi"
 msgid "Themes You Can Trust"
 msgstr "Luotetut teemat"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Title"
-msgstr "Sivun otsikko"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Elements"
-msgstr "Sivun elementit"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "Sivu"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitterin palkki"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Need Help?"
-msgstr "Tarvitko apua?"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Visit the %s page options guide"
-msgstr "Katso %s sivun asetukset opas"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Options"
-msgstr "Sivun asetukset"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Image"
-msgstr "Kuvaslideri"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Caption"
-msgstr "Sliderin kuvaus"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Sliderin oma linkki"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Caption"
-msgstr "Kuvaus"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Feature Slides"
-msgstr "Omat suositut slidet"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Remove"
-msgstr "Poista"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Add"
-msgstr "Lisää"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Sorry, you cannot upload this file type for this field."
-msgstr "Et voi ladata tämän tiedostotyypin kentälle."
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "or enter URL"
-msgstr "tai anna URL"

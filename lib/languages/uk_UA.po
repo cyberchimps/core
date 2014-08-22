@@ -3,15 +3,14 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-06-27 13:11+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2014-08-22 08:14:53 UTC\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Ukrainian, Ukraine\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../functions.php
 msgid "Posted on %s"
@@ -34,6 +33,7 @@ msgid "Tags: %s"
 msgstr "Мітки: %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Leave a comment"
 msgstr "Напиши коментар"
 
@@ -41,7 +41,8 @@ msgstr "Напиши коментар"
 msgid "1 Comment"
 msgstr "1 коментар"
 
-#: ../../functions.php ../../options/options-core.php
+#: ../../functions.php
+#: ../../options/options-core.php
 msgid "Comments"
 msgstr "Коментарі"
 
@@ -94,14 +95,17 @@ msgid "Page %s"
 msgstr "Сторінка %s"
 
 #: ../../functions.php
+#: ../../functions.php
 msgid "Read More..."
 msgstr "Читати все..."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Instructions"
 msgstr "Інструкції"
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Support"
 msgstr "Підтримка"
 
@@ -110,24 +114,15 @@ msgid "Upgrade to %1$s"
 msgstr "Оновити %1$ s"
 
 #: ../../functions.php
-msgid ""
-"For even more amazing new features, upgrade to %1$s which includes a slider "
-"with customizable features, an image carousel, widgetized boxes, a callout "
-"section, expanded typography (including Google Fonts), additional color "
-"skins, and many more powerful new features. Visit %2$s to learn more!"
-msgstr ""
-"Ще більш дивним терапією оновлення до %1$ s, яка включає в себе слайдер з "
-"настроюються, функції, зображення каруселі, віджети коробки, виноска розділ, "
-"розширений типографіки (включаючи Google шрифти), додаткового кольору скіни "
-"і багато більш потужних функцій. Відвідайте %2$ s, щоб дізнатися більше!"
+msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
+msgstr "Ще більш дивним терапією оновлення до %1$ s, яка включає в себе слайдер з настроюються, функції, зображення каруселі, віджети коробки, виноска розділ, розширений типографіки (включаючи Google шрифти), додаткового кольору скіни і багато більш потужних функцій. Відвідайте %2$ s, щоб дізнатися більше!"
 
 #: ../../functions.php
 msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
-msgstr ""
-"Ласкаво просимо до %1$ s! Дізнатися більше, тепер про оновлення до %2$ s "
-"сьогодні."
+msgstr "Ласкаво просимо до %1$ s! Дізнатися більше, тепер про оновлення до %2$ s сьогодні."
 
-#: ../../functions.php ../../options/options-init.php
+#: ../../functions.php
+#: ../../options/options-init.php
 msgid "Options"
 msgstr "oпції"
 
@@ -139,6 +134,7 @@ msgstr "Додаткові компоненти"
 msgid "The Events Calendar"
 msgstr "Календар подій"
 
+#: ../../functions.php
 #: ../../functions.php
 msgid "Digital Downloads"
 msgstr "Цифрове завантаження"
@@ -171,6 +167,40 @@ msgstr "Будь ласка, активуйте плагін Цифрових З
 msgid "Install Easy Digital Downloads Plugin"
 msgstr "Встановити плагін Цифрових Завантажень"
 
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Lite"
+msgstr "Повзунок Lite"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Boxes"
+msgstr "Коробки"
+
+#: ../../hooks/blog-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Post Page"
+msgstr "Пост сторінці"
+
+#: ../../hooks/blog-hooks.php
+msgid "Our Blog"
+msgstr "Наш блог"
+
+#: ../../hooks/header-hooks.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+msgid "Logo + Icons"
+msgstr "Логотип + іконки"
+
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "Або вибрати один з CyberChimps фонових зображень"
+
 #: ../../init.php
 msgid "Primary Menu"
 msgstr "Основного меню"
@@ -183,35 +213,98 @@ msgstr "Бічна панель ліворуч"
 msgid "Sidebar Right"
 msgstr "Бічній панелі праворуч"
 
-#: ../../init.php ../../options/options-core.php
+#: ../../init.php
+#: ../../options/options-core.php
 msgid "Footer Widgets"
 msgstr "Footer віджетів"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Slider Lite"
-msgstr "Повзунок Lite"
+msgid "Select Page Layout"
+msgstr "Виберіть макет сторінки"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
 #: ../../options/meta-box-class/meta-box.php
-msgid "Boxes"
-msgstr "Коробки"
+msgid "Page Title"
+msgstr "Назва сторінки"
 
-#: ../../hooks/blog-hooks.php ../../options/options-core.php
-msgid "Post Page"
-msgstr "Пост сторінці"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Elements"
+msgstr "Елементи сторінки"
 
-#: ../../hooks/blog-hooks.php
-msgid "Our Blog"
-msgstr "Наш блог"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page"
+msgstr "Сторінка"
 
-#: ../../hooks/header-hooks.php ../../options/options-core.php
-msgid "Logo + Icons"
-msgstr "Логотип + іконки"
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Портфоліо Lite"
 
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "Або вибрати один з CyberChimps фонових зображень"
+#: ../../options/meta-box-class/meta-box.php
+msgid "Twitter Bar"
+msgstr "Twitter бар"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Need Help?"
+msgstr "Потрібна допомога?"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Visit the %s page options guide"
+msgstr "Відвідайте сторінку %s параметри керівництво"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Page Options"
+msgstr "Параметри сторінки"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Image"
+msgstr "Слайдер зображень"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Slider Caption"
+msgstr "Повзунок підпис"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Slide Link"
+msgstr "Користувальницькі слайд посилання"
+
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/meta-box-class/meta-box.php
+msgid "Title"
+msgstr "Назва"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Caption"
+msgstr "Підпис"
+
+#: ../../options/meta-box-class/meta-box.php
+msgid "Custom Feature Slides"
+msgstr "Користувацькі функції слайди"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Remove"
+msgstr "Видалити"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Add"
+msgstr "Додати"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr "На жаль, не можна надсилати файли цього типу для цього поля."
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "Upload"
+msgstr "Завантажити"
+
+#: ../../options/meta-box-class/my-meta-box-class.php
+msgid "or enter URL"
+msgstr "або введіть URL-адресу"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -365,7 +458,8 @@ msgstr "Широкий бічної панелі"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "Працює лише в макетах з 1 бічна панель"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Max Width"
 msgstr "Макс. ширина"
 
@@ -377,7 +471,9 @@ msgstr "Введіть ширину вашого сайту в пікселях"
 msgid "Select a Skin Color"
 msgstr "Вибрати колір шкіри"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Text Color"
 msgstr "Колір тексту"
 
@@ -385,7 +481,8 @@ msgstr "Колір тексту"
 msgid "Select text color"
 msgstr "Оберіть колір тексту"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Color"
 msgstr "Колір посилання"
 
@@ -393,7 +490,8 @@ msgstr "Колір посилання"
 msgid "Select link color"
 msgstr "Виберіть посилання колір"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Link Hover Color"
 msgstr "Колір посилання при наведенні"
 
@@ -405,10 +503,12 @@ msgstr "Виберіть посилання колір при наведенні
 msgid "Typography Options"
 msgstr "Параметри виводу на друк"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Enter Google font"
 msgstr "Введіть Google шрифту"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Google font names are case sensitive"
 msgstr "Google назви шрифтів чутливі до регістру"
@@ -417,11 +517,13 @@ msgstr "Google назви шрифтів чутливі до регістру"
 msgid "Demo Text"
 msgstr "Демо-текст"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Font Family for headings"
 msgstr "Родина шрифтів для заголовків"
 
-#: ../../options/options-core.php ../../options/options-customizer.php
+#: ../../options/options-core.php
+#: ../../options/options-customizer.php
 msgid "Google font for headings"
 msgstr "Google шрифт для заголовків"
 
@@ -457,6 +559,18 @@ msgstr "Власний логотип"
 msgid "Logo Image"
 msgstr "Зображення емблеми"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Enter URL or upload file"
 msgstr "Введіть URL-адресу або передати файл"
@@ -582,16 +696,16 @@ msgid "RSS URL"
 msgstr "URL-АДРЕСА RSS"
 
 #: ../../options/options-core.php
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../../options/options-core.php
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
 msgstr "Перетягніть & елементів, блог"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr "Портфоліо Lite"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "Виберіть макет сторінки"
 
 #: ../../options/options-core.php
 msgid "Blog Title"
@@ -606,37 +720,53 @@ msgid "Post Formats Icons"
 msgstr "Пост в форматах іконки"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Excerpts"
 msgstr "Публікація скороченого опису"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
 msgstr "Текст \"Читай далі\""
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Excerpt Length"
 msgstr "Довжина скороченого опису (к-сть символів)"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
 msgstr "Рекламовані зображення"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Author"
 msgstr "Вказувати автора публікації"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
 msgstr "Публікувати категорії кожної публікації"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Date"
 msgstr "Вказувати дату публікації"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Byline Comments"
 msgstr "Відображати коментарі до публікацій"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Tags"
 msgstr "Публікувати Теги"
@@ -646,15 +776,11 @@ msgid "Boxes Upgrade"
 msgstr "Оновлення поля"
 
 #: ../../options/options-core.php
-msgid ""
-"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
-"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
-"them and display each category on a different page."
-msgstr ""
-"Коробки Lite обмежує вас в загальній складності 3 коробки протягом всього "
-"сайту. Оновити %1$ s, щоб мати можливість створення як багато ящиків, як вам "
-"подобається. Групувати їх і відображення кожної категорії на іншій сторінці."
+msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
+msgstr "Коробки Lite обмежує вас в загальній складності 3 коробки протягом всього сайту. Оновити %1$ s, щоб мати можливість створення як багато ящиків, як вам подобається. Групувати їх і відображення кожної категорії на іншій сторінці."
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Pro"
 msgstr "Pro"
@@ -663,6 +789,12 @@ msgstr "Pro"
 msgid "First Box Image"
 msgstr "Перше поле зображення"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Link URL"
 msgstr "URL лінку"
@@ -692,15 +824,8 @@ msgid "Portfolio Upgrade"
 msgstr "Портфоліо оновлення"
 
 #: ../../options/options-core.php
-msgid ""
-"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
-"Upgrade to %1$s to be able to create as many portfolio items as you like. "
-"Categorize them and display each category on a different page."
-msgstr ""
-"Портфоліо Lite обмежує вас в загальній складності 4 пункти протягом всього "
-"сайту. Оновити %1$ s, щоб мати можливість створити багато доробки елементів, "
-"як вам подобається. Групувати їх і відображення кожної категорії на іншій "
-"сторінці."
+msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
+msgstr "Портфоліо Lite обмежує вас в загальній складності 4 пункти протягом всього сайту. Оновити %1$ s, щоб мати можливість створити багато доробки елементів, як вам подобається. Групувати їх і відображення кожної категорії на іншій сторінці."
 
 #: ../../options/options-core.php
 msgid "First Portfolio Image"
@@ -751,26 +876,17 @@ msgid "Fourth Porfolio Link"
 msgstr "Четвертий портфоліо посилання"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Title"
 msgstr "Портфоліо заголовок"
-
-#: ../../options/options-core.php ../../options/meta-box-class/meta-box.php
-msgid "Title"
-msgstr "Назва"
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
 msgstr "Повзунок оновлення"
 
 #: ../../options/options-core.php
-msgid ""
-"Slider Lite limits you to a total of 3 images throughout your whole site. "
-"Upgrade to %1$s to be able to create more images. Categorize them and "
-"display each category on a different page."
-msgstr ""
-"Повзунок Lite обмежує вас в загальній складності 3 зображення протягом "
-"всього сайту. Оновити %1$ s для того, щоб створити більше зображень. "
-"Групувати їх і відображення кожної категорії на іншій сторінці."
+msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
+msgstr "Повзунок Lite обмежує вас в загальній складності 3 зображення протягом всього сайту. Оновити %1$ s для того, щоб створити більше зображень. Групувати їх і відображення кожної категорії на іншій сторінці."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
@@ -801,9 +917,13 @@ msgid "Images per Row"
 msgstr "Зображення на рядок"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Portfolio Category"
 msgstr "Портфоліо Категорія"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "You need to create a Category"
 msgstr "Вам потрібно створити категорію"
@@ -833,9 +953,11 @@ msgid "Custom"
 msgstr "інша"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Post Categories"
 msgstr "Посади категорії"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Custom Categories"
 msgstr "Настроюваними категоріями"
@@ -869,12 +991,8 @@ msgid "Callout Text"
 msgstr "Текст виноски"
 
 #: ../../options/options-core.php
-msgid ""
-"Use %1$s's Call Out section on any page where you want to deliver an "
-"important message to your customer or client."
-msgstr ""
-"За допомогою %1$ s's викликати на розділ на будь-якій сторінці куди потрібно "
-"доставити важливі повідомлення для ваших клієнтів або клієнт."
+msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
+msgstr "За допомогою %1$ s's викликати на розділ на будь-якій сторінці куди потрібно доставити важливі повідомлення для ваших клієнтів або клієнт."
 
 #: ../../options/options-core.php
 msgid "Callout Button"
@@ -933,6 +1051,9 @@ msgid "Images"
 msgstr "Зображення"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Select a Category"
 msgstr "Обрати категорію"
 
@@ -941,9 +1062,15 @@ msgid "Number of boxes per row"
 msgstr "Кількість полів у рядку"
 
 #: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 msgid "Sidebar Options"
 msgstr "Бічна панель параметрів"
 
+#: ../../options/options-core.php
+#: ../../options/options-core.php
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Images for layout."
 msgstr "Зображення для розмітки."
@@ -952,6 +1079,7 @@ msgstr "Зображення для розмітки."
 msgid "Post title"
 msgstr "Заголовок повідомлення"
 
+#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Format Icons"
 msgstr "Повідомлення формату іконки"
@@ -973,10 +1101,8 @@ msgid "Customize"
 msgstr "Змінити"
 
 #: ../../options/options-customizer.php
-msgid ""
-"make sure you have removed the image above before selecting one of these"
-msgstr ""
-"Переконайтеся, що ви видалили зображення вище, перш ніж вибрати один з цих"
+msgid "make sure you have removed the image above before selecting one of these"
+msgstr "Переконайтеся, що ви видалили зображення вище, перш ніж вибрати один з цих"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -1003,6 +1129,7 @@ msgid "Theme Options Page"
 msgstr "Сторінку"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Theme Options"
 msgstr "Опції теми"
 
@@ -1011,17 +1138,22 @@ msgid "Buy Themes"
 msgstr "Купити темами"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Save Options"
 msgstr "Зберегти"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "НатиснітьOK, щоб скинути. Будь-які настройки теми будуть втрачені!"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Restore Defaults"
 msgstr "За змовчуванням"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "CyberChimps WordPress Themes"
 msgstr "CyberChimps Wordpress теми"
@@ -1031,9 +1163,11 @@ msgid "Default Field"
 msgstr "За замовчуванням поле"
 
 #: ../../options/options-init.php
+#: ../../options/options-init.php
 msgid "Options Imported"
 msgstr "Параметри імпорту"
 
+#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "Неприпустимі дані для імпорту"
@@ -1049,11 +1183,6 @@ msgstr "Налаштування збережено."
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
 msgstr "Тема опціони медіа"
-
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "Завантажити"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
@@ -1147,66 +1276,3 @@ msgstr "Жирний курсив"
 msgid "Themes You Can Trust"
 msgstr "Довірені теми"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Title"
-msgstr "Назва сторінки"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Elements"
-msgstr "Елементи сторінки"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "Сторінка"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "Twitter бар"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Need Help?"
-msgstr "Потрібна допомога?"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Visit the %s page options guide"
-msgstr "Відвідайте сторінку %s параметри керівництво"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Options"
-msgstr "Параметри сторінки"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Image"
-msgstr "Слайдер зображень"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Caption"
-msgstr "Повзунок підпис"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Slide Link"
-msgstr "Користувальницькі слайд посилання"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Caption"
-msgstr "Підпис"
-
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Feature Slides"
-msgstr "Користувацькі функції слайди"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Remove"
-msgstr "Видалити"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Add"
-msgstr "Додати"
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Sorry, you cannot upload this file type for this field."
-msgstr "На жаль, не можна надсилати файли цього типу для цього поля."
-
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "or enter URL"
-msgstr "або введіть URL-адресу"
