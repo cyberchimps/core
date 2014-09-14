@@ -1102,7 +1102,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'      => 'blog_read_more_text',
 		'class'   => 'post_excerpts_toggle',
 		'type'    => 'text',
-		'std'     => 'Read More...',
+		'std'     => __( 'Read More...', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
