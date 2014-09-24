@@ -77,6 +77,12 @@ function cyberchimps_core_scripts() {
 
 	// Load core JS
 	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
+	
+	// Placeholder fix for IE8/9
+	if(preg_match('/(?i)msie [8-9]/',$_SERVER['HTTP_USER_AGENT']))
+	{
+		wp_enqueue_script( 'placeholder', $js_path . 'jquery.placeholder.js', array( 'jquery' ) );
+	}
 
 	/**
 	 * With the use of @2x at the end of an image it will use that to display the retina image. Both images have to been in the same folder
