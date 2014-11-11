@@ -13,30 +13,6 @@ if( is_admin() ) {
 }
 
 /**
- * Sets up a custom post type to attach image to. This allows us to have
- * individual galleries for different uploaders.
- */
-if( !function_exists( 'cyberchimps_mlu_init' ) ) {
-	function cyberchimps_mlu_init() {
-		register_post_type( 'cybrchmpsthmoption', array(
-			'labels'            => array(
-				'name' => __( 'Theme Options Media', 'cyberchimps_core' ),
-			),
-			'public'            => true,
-			'show_ui'           => false,
-			'capability_type'   => 'post',
-			'hierarchical'      => false,
-			'rewrite'           => false,
-			'supports'          => array( 'title', 'editor' ),
-			'query_var'         => false,
-			'can_export'        => true,
-			'show_in_nav_menus' => false,
-			'public'            => false
-		) );
-	}
-}
-
-/**
  * Adds the Thickbox CSS file and specific loading and button images to the header
  * on the pages where this function is called.
  */
