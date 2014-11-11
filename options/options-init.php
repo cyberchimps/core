@@ -21,7 +21,6 @@ function cyberchimps_edit_themes_role_check() {
 	if( current_user_can( 'edit_theme_options' ) ) {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_init', 'cyberchimps_admin_init' );
-		add_action( 'admin_init', 'cyberchimps_mlu_init' );
 		add_action( 'admin_menu', 'cyberchimps_admin_add_page' );
 		add_action( 'wp_before_admin_bar_render', 'cyberchimps_admin_bar' );
 	}
