@@ -242,6 +242,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[max_width]', array(
 		'default' => 1020,
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'max_width', array(
@@ -258,6 +259,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[cyberchimps_skin_color]', array(
 		'default' => array( 'default' => get_template_directory_uri() . '/inc/css/skins/images/default.png' ),
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( new Cyberchimps_skin_selector( $wp_customize, 'skin_color', array(
@@ -272,6 +274,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[text_colorpicker]', array(
 		'default' => '',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_colorpicker', array(
@@ -284,6 +287,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[link_colorpicker]', array(
 		'default' => '',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_colorpicker', array(
@@ -296,6 +300,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[link_hover_colorpicker]', array(
 		'default' => '',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_colorpicker', array(
@@ -308,7 +313,8 @@ function cyberchimps_customize( $wp_customize ) {
 	if( 'pro' == cyberchimps_theme_check() ) {
 		$wp_customize->add_setting( 'cyberchimps_options[custom_css]', array(
 			'default' => '',
-			'type'    => 'option'
+			'type'    => 'option',
+			'sanitize_callback' => 'cyberchimps_text_sanitization'
 		) );
 
 		// Content area
@@ -329,6 +335,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][size]', array(
 		'default' => '14px',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size', array(
@@ -343,6 +350,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
 		'default' => 'normal',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'typography_style', array(
@@ -384,6 +392,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][face]', array(
 		'default' => 'Arial',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'typography_face', array(
@@ -398,6 +407,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[google_font_field]', array(
 		'default' => 'Arial',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'google_font_field', array(
@@ -411,6 +421,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[font_family_headings][face]', array(
 		'default' => 'Arial',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'font_family_headings', array(
@@ -425,6 +436,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_options[google_font_headings]', array(
 		'default' => 'Arial',
 		'type'    => 'option',
+		'sanitize_callback' => 'cyberchimps_text_sanitization'
 	) );
 
 	$wp_customize->add_control( 'google_font_headings', array(
@@ -438,6 +450,7 @@ function cyberchimps_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'cyberchimps_background', array(
 		'default' => 'none',
 		'type'    => 'theme_mod',
+		'sanitize_callback' => 'cyberchimps_file_sanitization'
 	) );
 
 	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'cyberchimps_background', array(
@@ -481,4 +494,26 @@ function cc_add_upgrade_button() {
 }
 if( cyberchimps_theme_check() == 'free' ) {
 	add_action('customize_controls_print_footer_scripts', 'cc_add_upgrade_button');
+}
+
+/**
+ * Text field sanitization
+ *
+ * @param $text
+ *
+ * @return string
+ */
+function cyberchimps_text_sanitization( $text ) {
+	return sanitize_text_field( $text );
+}
+
+/**
+ * File sanitization
+ *
+ * @param $text
+ *
+ * @return string
+ */
+function cyberchimps_file_sanitization( $name ) {
+	return sanitize_file_name( $name );
 }
