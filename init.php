@@ -227,26 +227,36 @@ function cyberchimps_welcome_notice() {
 	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) {
 
 		if ( 'free' == cyberchimps_theme_check() ) {
-			?>
-			<div id="welcome" style="
-										background: #81c7ef;
-										padding: 0 20px 20px;
-										margin: 20px 20px 20px 0;
-										font-size: 1.5em;
-										border: 1px solid #5ba9d3;
-										-webkit-border-radius: 3px;
-										border-radius: 3px;">
-				<p style="color: #ffffff;
-							text-align: center;
-							line-height: 1.4em;
-							font-weight: bold;
-							margin: 5px 0 0;">
-					<img src="<?php echo get_template_directory_uri(). '/cyberchimps/options/lib/images/chimp.png'; ?>" alt="CyberChimps" style="position:relative; top:10px; left:0; margin-right:
-					5px;">
-					Welcome to <?php echo apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps ' ); ?> by <a target="_blank" href="http://www.cyberchimps.com/">CyberChimps</a>. Please visit the <a href="themes.php?page=cyberchimps-theme-options">Theme Options</a> to setup and build your website.</p>
-			</div>
-		<?php
+		
+			if ( isset( $_GET['activated'] ) ) {
+				$return = '<div class="updated activation"><p><strong>';
+							$my_theme = wp_get_theme();
+				if ( isset( $_GET['previewed'] ) ) {
+				} else {
+					$return .= sprintf( __( '%s activated successfully.', 'CyberChimps' ), $my_theme->get( 'Name' ) );
+				}
+				$return .= '</strong> <a href="' . home_url( '/' ) . '">' . __( 'Visit site', 'CyberChimps' ) . '</a></p>';
+				$return .= '<p>';
+				$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'themes.php?page=cyberchimps-theme-options' ) . '">' . __( 'Theme Options', 'CyberChimps' ) . '</a>';
+				$return .= ' <a class="button button-primary help" href="https://cyberchimps.com/forum/free/">' . __( 'Help', 'CyberChimps' ) . '</a>';
+				$return .= '</p></div>';
+				echo $return;
+			}
 		}
 	}
 }
 add_action( 'admin_notices', 'cyberchimps_welcome_notice' );
+
+function responsive_admin_css() {
+?>
+	<style>
+		.themes-php #message2 {
+			display: none;
+		}
+		.themes-php div.activation a {
+			text-decoration: none;
+		}
+	</style>
+<?php
+}
+add_action( 'admin_head', 'responsive_admin_css' );
