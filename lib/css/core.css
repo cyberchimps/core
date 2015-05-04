@@ -84,12 +84,23 @@
 	margin-left: 5px;
 	color: #9b9c9b;
 	font-family: 'Bitter', serif;
+	margin-right: 10px;
 }
 
 #after_footer .cc-credit-text span {
 	color: #22699d;
 	font-weight: 200;
 }
+
+.market {
+	line-height:2.3;
+}
+
+@media (min-width:320px) and (max-width:480px)
+{
+	.market { float:left; }
+}
+
 
 /* === SOCIAL ICON FONT === */
 

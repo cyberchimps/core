@@ -34,14 +34,15 @@ function cyberchimps_footer_credit() {
 										<h4 class="cc-credit-text">CyberChimps WordPress Themes</h4>
 									<?php }
 									else { ?>
+										
 										<img width="32" height="32" class="cc-credit-logo" src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/achimps.png" alt="CyberChimps"/>
-										<h4 class="cc-credit-text"><span>Cyber</span>Chimps</h4>
+										<h4 class="cc-credit-text"><span>Cyber</span>Chimps</h4></a></div>
+                                                                                <div class="market" style="line-height:2.3"><a href="http://neilpatel.com/" rel="noindex, nofollow">Marketed  By Neil Patel</a></div>
 									<?php } ?>
-								</a>
+								
 							<?php endif; ?>
-						</div>
+						
 					</div>
-
 					<!-- Adds the afterfooter copyright area -->
 					<div class="span6">
 						<?php $copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;' . date( 'Y' ); ?>
