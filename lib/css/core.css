@@ -92,6 +92,12 @@
 	font-weight: 200;
 }
 
+.site-footer #copyright {
+	color: #9b9c9b;
+	margin-left: 40px;
+	text-align: left;
+}
+
 .market {
 	line-height:2.3;
 }
