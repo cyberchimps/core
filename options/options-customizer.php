@@ -1950,7 +1950,7 @@ function cc_add_upgrade_button() {
     ?>
     <script type="text/javascript">
         jQuery( document ).ready( function( $ ) {
-            jQuery( '#customize-info .accordion-section-title' ).append( '<a target="_blank" class="button btn-upgrade" href="<?php echo $upgrade_link; ?>"><?php __( 'Upgrade To Pro', 'cyberchimps_core' ) ?></a>' );
+            jQuery( '#customize-info .accordion-section-title' ).append( '<a target="_blank" class="button btn-upgrade" href="<?php echo $upgrade_link; ?>"><?php _e( 'Upgrade To Pro', 'cyberchimps_core' ) ?></a>' );
             jQuery( '#customize-info .btn-upgrade' ).click( function( event ) {
                 event.stopPropagation();
             } );
