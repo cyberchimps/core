@@ -399,7 +399,7 @@ function cyberchimps_sanitize_hex( $hex, $default = '' ) {
  * @return   array
  */
 function cyberchimps_recognized_font_sizes() {
-	$sizes = range( 9, 71 );
+	$sizes = range( 8, 71 );
 	$sizes = apply_filters( 'cyberchimps_recognized_font_sizes', $sizes );
 	$sizes = array_map( 'absint', $sizes );
 
