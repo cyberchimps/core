@@ -287,7 +287,7 @@ function cyberchimps_customize( $wp_customize ) {
     $wp_customize->add_setting( 'cyberchimps_options[custom_logo_uploader]', array(
         'default' => apply_filters( 'cyberchimps_default_logo', $imagepath . '/achimps.png' ),
         'type' => 'option',
-        'sanitize_callback' => 'cyberchimps_sanitize_images'
+        'sanitize_callback' => 'cyberchimps_sanitize_upload'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_logo_uploader', array(
@@ -313,7 +313,7 @@ function cyberchimps_customize( $wp_customize ) {
 // Add favicon image
     $wp_customize->add_setting( 'cyberchimps_options[favicon_uploader]', array(
         'type' => 'option',
-        'sanitize_callback' => 'cyberchimps_sanitize_images'
+        'sanitize_callback' => 'cyberchimps_sanitize_upload'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'favicon_uploader', array(
@@ -339,7 +339,7 @@ function cyberchimps_customize( $wp_customize ) {
 // Add Custom Apple touch icon image
     $wp_customize->add_setting( 'cyberchimps_options[apple_touch_uploader]', array(
         'type' => 'option',
-        'sanitize_callback' => 'cyberchimps_sanitize_images'
+        'sanitize_callback' => 'cyberchimps_sanitize_upload'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'apple_touch_uploader', array(
@@ -835,7 +835,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[image_one_slide]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img1', '/images/branding/slide1.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_one_slide', array(
             'label' => __( 'Upload Slider Image 1', 'cyberchimps_core' ),
@@ -860,7 +860,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[image_two_slide]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_two_slide', array(
             'label' => __( 'Upload Slider Image 2', 'cyberchimps_core' ),
@@ -885,7 +885,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[image_three_slide]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_three_slide', array(
             'label' => __( 'Upload Slider Image 3', 'cyberchimps_core' ),
@@ -923,7 +923,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_portfolio_lite_image_one]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_portfolio_lite_image_one', array(
             'label' => __( 'First Portfolio Image', 'cyberchimps_core' ),
@@ -974,7 +974,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_portfolio_lite_image_two]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_portfolio_lite_image_two', array(
             'label' => __( 'Second Portfolio Image', 'cyberchimps_core' ),
@@ -1025,7 +1025,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_portfolio_lite_image_three]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_portfolio_lite_image_three', array(
             'label' => __( 'Third Portfolio Image', 'cyberchimps_core' ),
@@ -1076,7 +1076,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_portfolio_lite_image_four]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_portfolio_lite_image_four', array(
             'label' => __( 'Forth Portfolio Image', 'cyberchimps_core' ),
@@ -1139,7 +1139,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_boxes_lite_image_one]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_boxes_lite_img1', '/elements/lib/images/boxes/slidericon.png' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_boxes_lite_image_one', array(
             'label' => __( 'First Box Image', 'cyberchimps_core' ),
@@ -1179,7 +1179,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_boxes_lite_image_two]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_boxes_lite_img2', '/elements/lib/images/boxes/blueprint.png' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_boxes_lite_image_two', array(
             'label' => __( 'Second Box Image', 'cyberchimps_core' ),
@@ -1219,7 +1219,7 @@ function cyberchimps_customize( $wp_customize ) {
         $wp_customize->add_setting( 'cyberchimps_options[cyberchimps_blog_boxes_lite_image_three]', array(
             'default' => get_template_directory_uri() . apply_filters( 'cyberchimps_boxes_lite_img3', '/elements/lib/images/boxes/docs.png' ),
             'type' => 'option',
-            'sanitize_callback' => 'cyberchimps_sanitize_images'
+            'sanitize_callback' => 'cyberchimps_sanitize_upload'
         ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cyberchimps_blog_boxes_lite_image_three', array(
             'label' => __( 'Third Box Image', 'cyberchimps_core' ),
@@ -1950,7 +1950,7 @@ function cc_add_upgrade_button() {
     ?>
     <script type="text/javascript">
         jQuery( document ).ready( function( $ ) {
-            jQuery( '#customize-info .accordion-section-title' ).append( '<a target="_blank" class="button btn-upgrade" href="<?php echo $upgrade_link; ?>"><?php _e( 'Upgrade To Pro', 'cyberchimps_core' ) ?></a>' );
+            jQuery( '#customize-info .accordion-section-title' ).append( '<a target="_blank" class="button btn-upgrade" href="<?php echo $upgrade_link; ?>"><?php _e( 'Upgrade To Pro', 'cyberchimps_core' ); ?></a>' );
             jQuery( '#customize-info .btn-upgrade' ).click( function( event ) {
                 event.stopPropagation();
             } );
