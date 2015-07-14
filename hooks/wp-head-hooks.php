@@ -30,11 +30,11 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php foreach ( $body_styles as $key => $body_style ): ?>
                                 <?php
                                         if ( $key == 'font-family' ) {
-                                            echo $key;?> : '<?php echo $body_style; ?>'; 
+                                            echo $key;?> : '<?php echo $body_style; ?>' 
                                             <?php } else {
-                                            echo $key; ?> : <?php echo $body_style;
-                                        }
-                                ?>
+                                                echo $key; ?> : <?php echo $body_style;
+                                            }
+                                ?>;
                         <?php endforeach; ?>
 			}
 
