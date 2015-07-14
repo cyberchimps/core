@@ -27,8 +27,15 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 		<style type="text/css" media="all">
 			<?php if ( !empty( $body_styles ) ) : ?>
 			body {
-			<?php foreach( $body_styles as $key => $body_style ): ?> <?php echo $key; ?> : <?php echo $body_style; ?>;
-			<?php endforeach; ?>
+			<?php foreach ( $body_styles as $key => $body_style ): ?>
+                                <?php
+                                        if ( $key == 'font-family' ) {
+                                            echo $key;?> : '<?php echo $body_style; ?>'; 
+                                            <?php } else {
+                                            echo $key; ?> : <?php echo $body_style;
+                                        }
+                                ?>
+                        <?php endforeach; ?>
 			}
 
 			<?php endif; ?>
