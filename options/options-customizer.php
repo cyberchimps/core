@@ -1970,6 +1970,10 @@ function cc_add_upgrade_button() {
             background: none repeat scroll 0 0 #39B3D7;
             box-shadow: 0 1px 0 #39B3D7 inset, 0 1px 0 rgba(0, 0, 0, 0.08);
         }
+        .wp-core-ui #customize-info .theme-name{
+                    word-break: break-all;
+                    padding-right: 120px;
+        }
     </style>
     <?php
 }
