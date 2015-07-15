@@ -80,9 +80,8 @@
 
 #after_footer .cc-credit-text {
 	float: left;
-	margin-top: 0;
+	margin-top: 5px;
 	margin-left: 5px;
-	margin-right: 5px;
 	color: #9b9c9b;
 	font-family: 'Bitter', serif;
 	margin-right: 10px;
@@ -91,12 +90,6 @@
 #after_footer .cc-credit-text span {
 	color: #22699d;
 	font-weight: 200;
-}
-
-.site-footer #copyright {
-	color: #9b9c9b;
-	margin-left: 40px;
-	text-align: left;
 }
 
 .market {
