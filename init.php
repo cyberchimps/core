@@ -104,6 +104,7 @@ add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
 function cyberchimps_custom_background_cb() {
 
+	$style = "";
 	// $background is the saved custom image, or the default image.
 	$background = get_background_image();
 
