@@ -80,8 +80,9 @@
 
 #after_footer .cc-credit-text {
 	float: left;
-	margin-top: 5px;
+	margin-top: 0;
 	margin-left: 5px;
+	margin-right: 5px;
 	color: #9b9c9b;
 	font-family: 'Bitter', serif;
 	margin-right: 10px;

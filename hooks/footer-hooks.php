@@ -38,12 +38,12 @@ function cyberchimps_footer_credit() {
 									<?php } ?>
 								</a>
 								<?php endif; ?>
-								<?php if ( 'free' != cyberchimps_theme_check() ) { ?>
+								
 									<?php $copyright = ( cyberchimps_get_option( 'footer_copyright_text' ) ) ? cyberchimps_get_option( 'footer_copyright_text' ) : 'CyberChimps &#169;' . date( 'Y' ); ?>
 									<div id="copyright">
 										<?php echo wp_kses_post( $copyright ); ?>
 									</div>
-								<?php } ?>
+								
 						</div>
 					</div>
 
