@@ -156,7 +156,7 @@ add_action( 'cyberchimps_logo', 'cyberchimps_logo' );
 // Header left content (sitename or logo)
 function cyberchimps_header_logo() {
 
-	$url = ( cyberchimps_get_option( 'custom_logo_url_link' ) != '' ) ? cyberchimps_get_option( 'custom_logo_url_link' ) : esc_url( home_url() );
+	$url = ( cyberchimps_get_option( 'custom_logo_url' ) == '1' ) ? cyberchimps_get_option( 'custom_logo_url_link' ) : esc_url( home_url() );
 	if ( cyberchimps_get_option( 'custom_logo' ) == '1' ) {
 		$logo = cyberchimps_get_option( 'custom_logo_uploader' );
 		?>
