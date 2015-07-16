@@ -219,7 +219,7 @@ function cyberchimps_customize( $wp_customize ) {
         }
     }
     ?>
-    <style>
+    <style type="text/css">
         #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
         #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
     </style>    
