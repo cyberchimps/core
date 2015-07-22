@@ -430,7 +430,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Max Width', 'cyberchimps_core' ),
 		'id'      => 'max_width',
 		'class'   => '',
-		'std'     => 1020,
+		'std'     => apply_filters('max_width_default','1020'),
 		'desc'    => __( 'enter the width of your site in pixels', 'cyberchimps_core' ),
 		'type'    => 'text',
 		'section' => 'cyberchimps_custom_layout_section',
