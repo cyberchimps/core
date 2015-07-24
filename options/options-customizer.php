@@ -1714,7 +1714,7 @@ function cyberchimps_customize( $wp_customize ) {
 
 // website width
     $wp_customize->add_setting( 'cyberchimps_options[max_width]', array(
-        'default' => add_filter('cyberchimps_max_width_default','1020'),
+        'default' => apply_filters( 'cyberchimps_max_width_default', '1020' ),
         'type' => 'option',
         'sanitize_callback' => 'absint'
     ) );
