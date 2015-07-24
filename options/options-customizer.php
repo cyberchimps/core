@@ -83,6 +83,8 @@ function cyberchimps_customize( $wp_customize ) {
                     cursor: pointer;
                     border: 5px solid #5DA7F2;
                 }
+                #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
+                #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
             </style>
             <script>
 				jQuery(function ($) {
@@ -151,6 +153,8 @@ function cyberchimps_customize( $wp_customize ) {
                     cursor: pointer;
                     border: 5px solid #5DA7F2;
                 }
+                #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
+                #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
             </style>
             <script>
 				jQuery(function ($) {
@@ -218,11 +222,7 @@ function cyberchimps_customize( $wp_customize ) {
             endforeach;
         }
     }
-    ?>
-    <style type="text/css">
-        #accordion-section-cyberchimps_header_section .customize-control-image img{ width: auto;}
-        #accordion-section-cyberchimps_social_media .images-skin-subcontainer img{ height: auto;}
-    </style>    
+    ?>   
     <?php
     /*     * ******** Class for skin color selection option ends ************ */
     $imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
