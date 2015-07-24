@@ -27,9 +27,18 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 		<style type="text/css" media="all">
 			<?php if ( !empty( $body_styles ) ) : ?>
 			body {
-			<?php foreach ( $body_styles as $key => $body_style ): ?>
-                                     <?php if ( $key == 'font-family' ) {echo $key;?> : '<?php echo $body_style; ?>'<?php } else {echo $key; ?> : <?php echo $body_style;}?>;
-                        <?php endforeach; ?>
+					<?php foreach ( $body_styles as $key => $body_style ): ?>
+						<?php
+						if ( $key == 'font-family' && $body_style == 'google-fonts' ) {
+							echo $key;
+							?> : '<?php echo $body_style; ?>'<?php
+						} else {
+							echo $key;
+							?> : <?php
+							echo $body_style;
+						}
+						?>;
+					<?php endforeach; ?>
 			}
 
 			<?php endif; ?>
@@ -52,11 +61,16 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php endif; ?>
 
 			<?php if ( !empty( $headings_styles ) ) { ?>
-			h1, h2, h3, h4, h5, h6 {
-			<?php
-			foreach( $headings_styles as $key => $headings_style ) {
-				if ( $key == 'font-family' ) {echo $key;?> : '<?php echo $headings_style; ?>'<?php } else {echo $key; ?> : <?php echo $headings_style;}?>;
-			<?php } ?>
+				h1, h2, h3, h4, h5, h6 {
+				<?php
+				foreach( $headings_styles as $key => $headings_style ) {
+					if ( $key == 'font-family' && $headings_style == 'google-fonts' ) {
+										echo $key;
+						?> : '<?php echo $headings_style; ?>'<?php 					
+					} else {
+						echo $key; ?> : <?php echo $headings_style;
+					} ?>;
+				<?php } ?>
 			}
 
 			<?php } 
@@ -70,8 +84,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 					}
 				}
 			<?php
-			}
-			
+			}			
 			
 			?>
 
