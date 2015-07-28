@@ -27,18 +27,8 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 		<style type="text/css" media="all">
 			<?php if ( !empty( $body_styles ) ) : ?>
 			body {
-					<?php foreach ( $body_styles as $key => $body_style ): ?>
-						<?php
-						if ( $key == 'font-family' && $body_style == 'google-fonts' ) {
-							echo $key;
-							?> : '<?php echo $body_style; ?>'<?php
-						} else {
-							echo $key;
-							?> : <?php
-							echo $body_style;
-						}
-						?>;
-					<?php endforeach; ?>
+			<?php foreach( $body_styles as $key => $body_style ): ?> <?php echo $key; ?> : <?php echo $body_style; ?>;
+			<?php endforeach; ?>
 			}
 
 			<?php endif; ?>
@@ -61,16 +51,11 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php endif; ?>
 
 			<?php if ( !empty( $headings_styles ) ) { ?>
-				h1, h2, h3, h4, h5, h6 {
-				<?php
-				foreach( $headings_styles as $key => $headings_style ) {
-					if ( $key == 'font-family' && $headings_style == 'google-fonts' ) {
-										echo $key;
-						?> : '<?php echo $headings_style; ?>'<?php 					
-					} else {
-						echo $key; ?> : <?php echo $headings_style;
-					} ?>;
-				<?php } ?>
+			h1, h2, h3, h4, h5, h6 {
+			<?php
+			foreach( $headings_styles as $key => $headings_style ) {
+				echo $key; ?> : <?php echo $headings_style; ?>;
+			<?php } ?>
 			}
 
 			<?php } 
@@ -84,7 +69,8 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 					}
 				}
 			<?php
-			}			
+			}
+			
 			
 			?>
 
@@ -114,7 +100,7 @@ function cyberchimps_headings_styles() {
 
 	// Check if Google fonts have been selected
 	if( $headings_styles['font-family'] == "Google Fonts" && $google_font_headings != "" ) {
-		$headings_styles['font-family'] = $google_font_headings;
+		$headings_styles['font-family'] = '"'.$google_font_headings.'"';
 
 		// Check if SSL is present, if so then use https othereise use http
 		$protocol = is_ssl() ? 'https' : 'http';
@@ -163,7 +149,7 @@ function cyberchimps_body_styles() {
 	$google_font = cyberchimps_get_option( 'google_font_field' );
 
 	if( $body_styles['font-family'] == "Google Fonts" && $google_font != "" ) {
-		$body_styles['font-family'] = $google_font;
+		$body_styles['font-family'] = '"'.$google_font.'"';
 
 		// Check if SSL is present, if so then use https othereise use http
 		$protocol = is_ssl() ? 'https' : 'http';
