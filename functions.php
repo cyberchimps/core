@@ -467,8 +467,7 @@ if( !function_exists( 'cyberchimps_posted_on' ) ) {
 
 		// If post byline date toggle is on then print HTML for date link.
 		if( $show_date ) {
-			apply_filters( 'cyberchimps_posted_on', $posted_on );
-			echo $posted_on;
+			echo apply_filters( 'cyberchimps_posted_on', $posted_on );
 		}
 	}
 }
@@ -505,8 +504,7 @@ if( !function_exists( 'cyberchimps_posted_by' ) ) {
 
 		// If post byline author toggle is on then print HTML for author link.
 		if( $show_author ) {
-			apply_filters( 'cyberchimps_posted_by', $posted_by );
-			echo $posted_by;
+			echo apply_filters( 'cyberchimps_posted_by', $posted_by );			
 		}
 	}
 }
