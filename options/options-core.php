@@ -629,6 +629,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Enter Google font', 'cyberchimps_core' ),
 		'id'      => 'google_font_field',
 		'type'    => 'text',
+		'std'     => apply_filters( 'cyberchimps_typography_google_default', '' ),		
 		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
@@ -659,6 +660,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Google font for headings', 'cyberchimps_core' ),
 		'id'      => 'google_font_headings',
 		'type'    => 'text',
+		'std'     => apply_filters( 'cyberchimps_typography_heading_google_default', '' ),
 		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
