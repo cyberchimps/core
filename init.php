@@ -39,7 +39,7 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		require_once( $directory . '/cyberchimps/options/options-init.php' );
 
 		// Load default core settings
-		require_once( $directory . '/cyberchimps/options/options-core.php' );
+		//require_once( $directory . '/cyberchimps/options/options-core.php' );
 
 		// Load core hooks file
 		require_once( $directory . '/cyberchimps/inc/cc-custom-background.php' );
@@ -56,7 +56,7 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		require_once( $directory . '/cyberchimps/options/meta-box-class/meta-box.php' );
 
 		// Load theme upsell.
-		require_once( $directory . '/cyberchimps/options/theme-upsell.php' );
+		//require_once( $directory . '/cyberchimps/options/theme-upsell.php' );
 
 		// Core Translations can be filed in the /inc/languages/ directory
 		load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
@@ -88,17 +88,17 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		                    ) );
 
 		//set up defaults
-		$option_defaults = cyberchimps_get_default_values();
-		if ( !get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
-			update_option( 'cyberchimps_options', $option_defaults );
-		} //if not then set up defaults for this theme
-		elseif ( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
-			$options                         = get_option( 'cyberchimps_options' );
-			$options['header_section_order'] = $option_defaults['header_section_order'];
-			$options['theme_backgrounds']    = $option_defaults['theme_backgrounds'];
-			update_option( 'cyberchimps_options', $options );
+//		$option_defaults = cyberchimps_get_default_values();
+//		if ( !get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+//			update_option( 'cyberchimps_options', $option_defaults );
+//		} //if not then set up defaults for this theme
+//		elseif ( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+//			$options                         = get_option( 'cyberchimps_options' );
+//			$options['header_section_order'] = $option_defaults['header_section_order'];
+//			$options['theme_backgrounds']    = $option_defaults['theme_backgrounds'];
+//			update_option( 'cyberchimps_options', $options );
+//	}
 		}
-	}
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
