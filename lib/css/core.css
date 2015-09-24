@@ -19,6 +19,15 @@
 	font-style: normal;
 }
 
+/*Dropdown widget title*/
+.screen-reader-text {
+   clip: rect(1px, 1px, 1px, 1px);
+   height: 1px;
+   overflow: hidden;
+   position: absolute;
+   width: 1px;
+}
+
 /* Container Full Width that everything is wrapped in */
 .container-full-width {
 	width: 100%;
