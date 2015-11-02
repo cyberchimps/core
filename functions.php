@@ -1457,6 +1457,10 @@ if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp
 
 // FOR IE compatiblilty mode.
 add_action( 'send_headers', 'cyberchimps_add_header_xua' );
-function cyberchimps_add_header_xua() {
-	header( 'X-UA-Compatible: IE=edge,chrome=1' );
+function cyberchimps_add_header_xua() 
+{
+	if (!headers_sent()) 	
+	{
+		header( 'X-UA-Compatible: IE=edge,chrome=1' );
+	}
 }
