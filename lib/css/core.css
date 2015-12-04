@@ -1,5 +1,6 @@
 /* Core Stylesheet
 ----------------------------------------------- */
+@import url('http://fonts.googleapis.com/css?family=Bitter');
 
 /* === SOCIAL ICON FONT === */
 
@@ -81,8 +82,6 @@
 
 /* === FOOTER === */
 
-@import url('http://fonts.googleapis.com/css?family=Bitter');
-
 #after_footer .cc-credit-logo {
 	float: left;
 }
@@ -126,12 +125,12 @@
 	-moz-text-rendering: optimizeLegibility;
 	-ms-text-rendering: optimizeLegibility;
 	-o-text-rendering: optimizeLegibility;
-	text-rendering: optimizeLegibility;
+	-ms-filter: "progid:DXImageTransform.Microsoft.text-rendering(optimizeLegibility)";
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-ms-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	-ms-filter: "progid:DXImageTransform.Microsoft.font-smoothing(antialiased)";
 }
 
 a.symbol {
@@ -212,7 +211,7 @@ a.symbol:hover {
 	background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
 	color: #555555;
 	text-shadow: 1px 1px 0 #ffffff;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#eeeeee, endColorstr=#cccccc)";
 }
 
 .retina-icons a.symbol {
