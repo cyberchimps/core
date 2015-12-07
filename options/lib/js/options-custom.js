@@ -55,6 +55,10 @@ jQuery(document).ready(function ($) {
 		recent_posts: "cyberchimps_recent_posts_section",
 		html_box: "cyberchimps_html_box_section",
 		boxes: "cyberchimps_boxes_section",
+		separator: "cyberchimps_separator_section",
+		blank_space: "cyberchimps_blank_space_section",
+		google_maps: "cyberchimps_google_maps_section",
+		video: "cyberchimps_video_section"
 		//profile				: "cyberchimps_profile_section"
 	};
 

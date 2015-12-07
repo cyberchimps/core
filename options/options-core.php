@@ -199,6 +199,26 @@ function cyberchimps_add_core_sections( $sections_list ) {
 			'label'   => __( 'Recent Posts Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
+		$sections_list[] = array(
+			'id'      => 'cyberchimps_separator_section',
+			'label'   => __( 'Separator', 'cyberchimps_core' ),
+			'heading' => 'cyberchimps_blog_heading'
+		);
+		$sections_list[] = array(
+			'id'      => 'cyberchimps_blank_space_section',
+			'label'   => __( 'Blank Space', 'cyberchimps_core' ),
+			'heading' => 'cyberchimps_blog_heading'
+		);
+		$sections_list[] = array(
+			'id'      => 'cyberchimps_google_maps_section',
+			'label'   => __( 'Google Maps', 'cyberchimps_core' ),
+			'heading' => 'cyberchimps_blog_heading'
+		);
+		$sections_list[] = array(
+			'id'      => 'cyberchimps_video_section',
+			'label'   => __( 'Video Options', 'cyberchimps_core' ),
+			'heading' => 'cyberchimps_blog_heading'
+		);
 	endif;
 
 	$sections_list[] = array(
@@ -1877,6 +1897,106 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		);
 
 		/********* HTML BOX OPTIONS ENDS *************/
+
+		/********* SEPARATOR OPTIONS STARTS ***********/
+
+		$fields_list[] = array(
+			'name'     => __( 'Separator', 'cyberchimps_core' ),
+			'id'       => 'separator_thickness',
+			'std'      => apply_filters('separator_thickness_default','5'),
+			'desc'     => __( 'Enter the thickness of horizontal separator here (in pixels)', 'cyberchimps_core' ),
+			'type'     => 'text',
+			'section'  => 'cyberchimps_separator_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+		$fields_list[] = array(
+			'name'    => __( 'Color', 'cyberchimps_core' ),
+			'desc'    => __( 'Select color of the separator', 'cyberchimps_core' ),
+			'id'      => 'separator_color',
+			'std'     => '',
+			'type'    => 'color',
+			'section' => 'cyberchimps_separator_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+		$fields_list[] = array(
+			'name'    => __( 'Separator style', 'cyberchimps_core' ),
+			'desc'    => __( 'Select style of the separator', 'cyberchimps_core' ),
+			'id'      => 'separator_style',
+			'std'     => '',
+			'type'    => 'select',
+			'options' => array(
+                                'dashed' => 'Dashed',
+                                'dotted' => 'Dotted',
+                                'solid' => 'Solid',
+                                'double' => 'Double'
+                        ),
+			'section' => 'cyberchimps_separator_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+
+		/********* SEPARATOR OPTIONS ENDS *************/
+
+		/********* BLANK SPACE OPTIONS STARTS ***********/
+
+		$fields_list[] = array(
+			'name'     => __( 'Blank Space', 'cyberchimps_core' ),
+			'id'       => 'blank_space',
+			'std'      => apply_filters('blank_space_default','30'),
+			'desc'     => __( 'Enter the height of blank space here', 'cyberchimps_core' ),
+			'type'     => 'text',
+			'section'  => 'cyberchimps_blank_space_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+
+		/********* BLANK SPACE OPTIONS ENDS *************/
+
+		/********* GOOGLE MAPS OPTIONS STARTS ***********/
+
+		$fields_list[] = array(
+			'name'     => __( 'Maps Title', 'cyberchimps_core' ),
+			'id'       => 'google_maps_title',
+			'std'      => apply_filters('google_maps_title_default','Google Maps'),
+			'desc'     => __( 'Enter google maps title ', 'cyberchimps_core' ),
+			'type'     => 'text',
+			'section'  => 'cyberchimps_google_maps_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+
+		$fields_list[] = array(
+			'name'     => __( 'Map embed iframe', 'cyberchimps_core' ),
+			'id'       => 'google_maps_embed_iframe',
+			'std'      => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387145.86645180546!2d-74.25820099260999!3d40.70531102328323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1449467194352" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+			'desc'     => __( 'Go to <a target="_blank" href="https://www.google.com/maps">Google maps.</a> Steps to add: 1) Choose the location 2) Click on menu on top left corner and select "Share or embed map" 3) Select "Embed map" 4) Copy iframe code and paste here', 'cyberchimps_core' ),
+			'type'     => 'editor',
+			'settings' => array( 'media_buttons' => true ),
+			'section'  => 'cyberchimps_google_maps_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+
+		/********* GOOGLE MAPS OPTIONS ENDS *************/
+
+		/********* VIDEO OPTIONS STARTS ***********/
+
+		$fields_list[] = array(
+			'name'     => __( 'Video Title', 'cyberchimps_core' ),
+			'id'       => 'video_title',
+			'std'      => apply_filters('video_title_default','Video title'),
+			'desc'     => __( 'Enter the title here', 'cyberchimps_core' ),
+			'type'     => 'text',
+			'section'  => 'cyberchimps_video_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+		$fields_list[] = array(
+			'name'     => __( 'Video Link', 'cyberchimps_core' ),
+			'id'       => 'video_link',
+			'std'      => 'https://www.youtube.com/watch?v=O5yfVAx3LrM',
+			'desc'     => __( 'Enter the video link here (youtube, vimeo)', 'cyberchimps_core' ),
+			'type'     => 'text',
+			'section'  => 'cyberchimps_video_section',
+			'heading'  => 'cyberchimps_blog_heading'
+		);
+
+		/********* VIDEO OPTIONS ENDS *************/
 
 		/************ RECENT POSTS STARTS **************/
 

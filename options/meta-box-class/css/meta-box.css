@@ -304,7 +304,7 @@ ul.metabox-tabs li {
 	font-weight: bold;
 	color: #000000;
 	text-align: center;
-	margin-top: -10px;
+	margin-top: 0.2em;
 	margin-left: -10px;
 	margin-right: -10px;
 	margin-bottom: 10px;
@@ -333,18 +333,11 @@ ul.metabox-tabs li {
 	color: #000000;
 	font-weight: bold;
 	text-align: center;
-	margin-top: -10px;
+	margin-top: 0.2em;
 	margin-left: -10px;
 	margin-right: -10px;
 	margin-bottom: 10px;
-	border-bottom: 1px solid #cccccc;
 	background: #ffffff; /* Old browsers */
-	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* IE10+ */
-	background: linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0); /* IE6-9 */
 
 }
@@ -438,6 +431,8 @@ tr {
 .section-order .left-list {
 	float: left;
 	width: 30%;
+	box-shadow: 0px 0px 5px #888;
+	padding:10px;
 }
 
 /*TODO delete this after you have deleted the original styling*/
@@ -455,6 +450,8 @@ tr {
 .section-order .right-list {
 	float: left;
 	width: 30%;
+	box-shadow: 0px 0px 5px #888;
+	padding:10px;
 }
 
 .section-order .list-items {
@@ -462,23 +459,31 @@ tr {
 }
 
 .section-order .list-item {
-	padding: 5px 5px 5px 10px;
+	padding: 10px;
 	color: #444444;
-	margin-bottom: 5px;
-	border: 1px solid #888888;
+	border: 1px solid #fff;
 	border-radius: 1px;
 	cursor: move;
 	font-weight: bold;
-	background: #eeeeee; /* Old browsers */
-	background: -moz-linear-gradient(top, #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(40%, #ededed), color-stop(100%, #dddddd)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* IE10+ */
-	background: linear-gradient(top, #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* W3C */
+	background: #f8f8f8;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#dddddd', GradientType=0); /* IE6-9 */
 }
 
+.section-order .list-item:hover
+{
+	border: 1px solid #23527C;
+	color:#23527C;
+}
+.glyphicon-remove:before 
+{
+	content: "\e014";
+}
+.section-order .list-item .glyphicon-remove
+{
+	color: #E71E1E;
+	margin-right: 0.5em;
+	font-size: 12px;
+}
 .sortable-placeholder {
 	background-color: #efefef;
 	height: 30px;
@@ -544,4 +549,98 @@ tr {
 	border-width: 5px 5px 5px 0;
 	border-color: transparent #ffffff;
 	z-index: 12;
+}
+
+/************** Icons for theme option elements ****************/
+#blank_space_img
+{
+	background: url("../../lib/images/icons/blankspace.png") no-repeat;
+}
+#breadcrumbs_img
+{
+	background: url("../../lib/images/icons/breadcrumbs.png") no-repeat;
+}
+#boxes_img
+{
+	background: url("../../lib/images/icons/boxes.png") no-repeat;
+}
+#callout_section_img
+{
+	background: url("../../lib/images/icons/callout.png") no-repeat;
+	
+}
+#carousel_section_img
+{
+	background: url("../../lib/images/icons/carousel.png") no-repeat;
+}
+#google_maps_img
+{
+	background: url("../../lib/images/icons/googlemaps.png") no-repeat;
+}
+#html_box_img
+{
+	background: url("../../lib/images/icons/htmlbox.png") no-repeat;
+}
+#magazine_img
+{
+	background: url("../../lib/images/icons/magazine.png") no-repeat;
+}
+#portfolio_pro_img
+{
+	background: url("../../lib/images/icons/portfolio.png") no-repeat;
+}
+#page_section_img
+{
+	background: url("../../lib/images/icons/postpage.png") no-repeat;
+}
+#product_element_img
+{
+	background: url("../../lib/images/icons/products.png") no-repeat;
+}
+#recent_posts_img
+{
+	background: url("../../lib/images/icons/recentpost.png") no-repeat;
+}
+#separator_img
+{
+	background: url("../../lib/images/icons/separator.png") no-repeat;
+}
+#page_slider_img
+{
+	background: url("../../lib/images/icons/slider.png") no-repeat;
+}
+#twitterbar_section_img
+{
+	background: url("../../lib/images/icons/twitterbar.png") no-repeat;
+}
+#video_img
+{
+	background: url("../../lib/images/icons/video.png") no-repeat;
+}
+#widgets_section_img
+{
+	background: url("../../lib/images/icons/widgets.png") no-repeat;
+}
+#callout_section_img,
+#carousel_section_img,
+#html_box_img,
+#magazine_img,
+#portfolio_pro_img,
+#product_element_img,
+#recent_posts_img,
+#twitterbar_section_img,
+#widgets_section_img,
+#separator_img,
+#blank_space_img,
+#google_maps_img,
+#video_img,
+#page_slider_img,
+#boxes_img,
+#page_section_img,
+#breadcrumbs_img
+{
+	float:right;
+	display:inline-block;
+	height: 1.6em;
+	width: 1.6em;
 }

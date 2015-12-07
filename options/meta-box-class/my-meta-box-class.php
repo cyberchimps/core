@@ -2023,8 +2023,9 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 				}
 			}
 			echo "<div class='list-item'>";
-			echo '<span class="glyphicon glyphicon-minus-sign action"></span>';
+			echo '<span class="glyphicon glyphicon-remove action"></span>';
 			echo "<span data-key='{$key}'>{$option}</span>";
+			echo "<span id='{$key}_img'></span>";
 			echo "</div>";
 		}
 		echo "</div>";
@@ -2039,8 +2040,9 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 					continue;
 				}
 				echo "<div class='list-item'>";
-				echo '<span class="glyphicon glyphicon-minus-sign action"></span>';
+				echo '<span class="glyphicon glyphicon-remove action"></span>';
 				echo '<span data-key="' . $option . '">' . $field['options'][$option] . '</span>';
+				echo "<span id='{$option}_img'></span>";
 				echo "</div>";
 			}
 		}
