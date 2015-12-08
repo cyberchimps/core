@@ -377,3 +377,15 @@ a.symbol:hover {
 .glyphicon-arrow-right:before {
 	content: "\e092";
 }
+
+/*==================Google maps element ===================*/
+.google-maps-iframe iframe
+{
+	max-width:100%;
+}
+/*==================Separator element ====================*/
+#separator_section
+{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
