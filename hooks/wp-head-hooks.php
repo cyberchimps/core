@@ -61,6 +61,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			h1, h2, h3, h4, h5, h6 {
 			<?php
 			foreach( $headings_styles as $key => $headings_style ) {
+				// Changed to previous code for minor font changes
 				echo $key; ?> : <?php echo $headings_style; ?>;
 			<?php } ?>
 			}
