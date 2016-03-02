@@ -1135,7 +1135,8 @@ img.action, .action {
 {
 	background: url("../images/icons/blankspace.png") no-repeat;
 }
-#boxes_img
+#boxes_img,
+#boxes_lite_img
 {
 	background: url("../images/icons/boxes.png") no-repeat;
 }
@@ -1160,7 +1161,8 @@ img.action, .action {
 {
 	background: url("../images/icons/magazine.png") no-repeat;
 }
-#portfolio_pro_img
+#portfolio_pro_img,
+#portfolio_lite_img
 {
 	background: url("../images/icons/portfolio.png") no-repeat;
 }
@@ -1180,7 +1182,8 @@ img.action, .action {
 {
 	background: url("../images/icons/separator.png") no-repeat;
 }
-#page_slider_img
+#page_slider_img,
+#slider_lite_img
 {
 	background: url("../images/icons/slider.png") no-repeat;
 }
@@ -1211,7 +1214,10 @@ img.action, .action {
 #video_img,
 #page_slider_img,
 #boxes_img,
-#blog_post_page_img
+#blog_post_page_img,
+#boxes_lite_img,
+#portfolio_lite_img,
+#slider_lite_img
 {
 	float:right;
 	display:inline-block;
