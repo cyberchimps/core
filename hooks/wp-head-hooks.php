@@ -29,7 +29,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			body {
 			<?php  // Changed to previous code for minor font changes
 				foreach( $body_styles as $key => $body_style ): ?> <?php echo $key; ?> : <?php echo $body_style; ?>;
--			<?php 	endforeach; ?>
+			<?php 	endforeach; ?>
 			}
 
 			<?php endif; ?>
