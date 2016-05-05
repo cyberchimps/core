@@ -280,7 +280,7 @@ function cyberchimps_logo_register_content() {
 					<?php wp_loginout(); ?> <?php wp_meta(); ?> | <?php wp_register( '', '', true ); ?>
 				<?php else : ?>
 					Welcome back <strong><?php global $current_user;
-						get_currentuserinfo();
+						$current_user = wp_get_current_user();
 						echo( $current_user->user_login ); ?></strong> | <?php wp_loginout(); ?>
 				<?php endif; ?>
 			</div>
