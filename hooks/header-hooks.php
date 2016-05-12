@@ -266,7 +266,7 @@ function cyberchimps_custom_header_element_content() {
 
 // Sitename/Register
 function cyberchimps_logo_register_content() {
-	global $current_user; ?>
+	//global $current_user; Commented By Swapnil as global $current_user is no longer being use ?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
 			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
@@ -279,8 +279,8 @@ function cyberchimps_logo_register_content() {
 				<?php if ( !is_user_logged_in() ) : ?>
 					<?php wp_loginout(); ?> <?php wp_meta(); ?> | <?php wp_register( '', '', true ); ?>
 				<?php else : ?>
-					Welcome back <strong><?php global $current_user;
-						get_currentuserinfo();
+					Welcome back <strong><?php // global $current_user;
+						$current_user = wp_get_current_user();
 						echo( $current_user->user_login ); ?></strong> | <?php wp_loginout(); ?>
 				<?php endif; ?>
 			</div>
