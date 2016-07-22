@@ -395,33 +395,7 @@ function cyberchimps_account_page() {
 			$cc_user_login_id = get_option("cc_account_user_details");
 		}
 	}
-	?>
-			<script type="text/javascript">
-				jQuery(document).ready(function(){
-					jQuery('#ccSubmitBtn').click(function(){ 
-						if(jQuery('#ccuname').val().trim()==''){ 
-							jQuery('#ccuname').tooltip('show');
-							jQuery('#ccuname').val('');
-							return false;
-						}
-						else {
-							jQuery('#ccuname').val(jQuery('#ccuname').val().trim());					
-						}  
-						if(jQuery('#ccpwd').val().trim()==''){
-							jQuery('#ccpwd').tooltip('show');
-							jQuery('#ccpwd').val('');
-							return false;
-						}
-						else {
-							jQuery('#ccpwd').val(jQuery('#ccpwd').val().trim());
-						}					
-						
-					});
-					jQuery('#ccCancelBtn').click(function(){
-						window.location.href = '<?php echo 'admin.php?page=CC-Manager';?>' 
-					});
-				});
-				</script>				
+	?>							
 				
 				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo "Enter CyberChimps Account Details";?></h3></div>				
 				<div class="panel panel-primary">
@@ -435,8 +409,7 @@ function cyberchimps_account_page() {
 								  <label for="ccpwd">Password</label>
 								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password'];?>"/>
 						   </div>
-						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Submit">
-						   <button id="ccCancelBtn" class="btn btn-primary">Cancel</button>
+						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">						   
 					   </form>
 					</div>
 				</div>

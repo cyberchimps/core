@@ -42,7 +42,7 @@ if(!class_exists('CC_Updater')) :
 				
 				if(trim($response) == 'not_found') {					
 					//User is not found
-					$strResponseMessage = "User name or Password is wrong! Please confirm & validate again.";
+					$strResponseMessage = "Username or Password is incorrect. Please check your credentials and authenticate again.";
 					$account_data = array('username'   => $this->username, 'password' => $this->password);
 					update_option('cc_account_user_details', $account_data);
 					update_option( 'cc_account_status', 'not_found' );
