@@ -1228,6 +1228,7 @@ img.action, .action {
 .panel-primary {
 	margin-top: 15px; border: 1px solid rgb(200, 200, 200); width: 94%; padding: 20px;
 }
+.panel a {color : #005580;font-weight: bold;}
 .panel-body {
 	padding: 20px; border: 1px solid rgb(205, 205, 205); display: inline-block; background: none repeat scroll 0% 0% rgb(255, 255, 255);
 	width: 30%;

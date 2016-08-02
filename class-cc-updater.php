@@ -19,7 +19,7 @@ if(!class_exists('CC_Updater')) :
 		
 		$strResponseMessage = '';
 		$username = $this->username;	$password = $this->password;
-		$current_theme_name = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
+		$current_theme_name = apply_filters( 'cyberchimps_custom_current_theme_name', 'CyberChimps' );
 		$api_values = array(
 				'cc_action_to_take' => 'check_cc_login_details',
 				'username'	   => $username,
@@ -57,6 +57,13 @@ if(!class_exists('CC_Updater')) :
 				elseif (trim($response) == '1' )  {
 					//User found - not purchased
 					$strResponseMessage = "Settings saved";
+					$account_data = array('username'   => $this->username, 'password' => $this->password);
+					update_option('cc_account_user_details', $account_data);
+					update_option( 'cc_account_status', 'not_valid' );
+				}
+				elseif (trim($response) == '3' )  {
+					//User found - purchase expired
+					$strResponseMessage = "Your access to theme updates has expired. Please renew now. Use Coupon Code RENEW50 to get 50% off. <a href='https://cyberchimps.com/product-category/themes/' target='_blank'>Click Here to renew</a>";
 					$account_data = array('username'   => $this->username, 'password' => $this->password);
 					update_option('cc_account_user_details', $account_data);
 					update_option( 'cc_account_status', 'not_valid' );
