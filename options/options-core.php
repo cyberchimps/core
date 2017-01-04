@@ -389,6 +389,28 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'color' => '#333333'
 	) );
 
+// Heading1 Typography Defaults
+	$typography_heading1_defaults = apply_filters( 'cyberchimps_heading1_typography_defaults', array(
+		'size'  => '36px',
+		'face'  => 'Arial, Helvetica, sans-serif',
+		'style' => '',
+		'color' => ''
+	) );
+	// Heading2 Typography Defaults
+	$typography_heading2_defaults = apply_filters( 'cyberchimps_heading2_typography_defaults', array(
+		'size'  => '30px',
+		'face'  => 'Arial, Helvetica, sans-serif',
+		'style' => '',
+		'color' => ''
+	) );
+	// Heading3 Typography Defaults
+	$typography_heading3_defaults = apply_filters( 'cyberchimps_heading3_typography_defaults', array(
+		'size'  => '24px',
+		'face'  => 'Arial, Helvetica, sans-serif',
+		'style' => '',
+		'color' => ''
+	) );
+
 	// Heading Typography Defaults
 	$typography_heading_defaults = apply_filters( 'cyberchimps_typography_heading_defaults', array(
 		'size'  => '',
@@ -626,7 +648,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'color'  => false
 	);
 	$typography_heading_options = array(
-		'sizes'  => false,
+		'sizes'  => apply_filters( 'cyberchimps_typography_sizes', array( '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20' ) ),
 		'faces'  => apply_filters( 'cyberchimps_typography_faces', $faces ),
 		'styles' => false,
 		'color'  => false
@@ -654,6 +676,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 
+
 	$fields_list[] = array(
 		'name'    => __( 'Demo Text', 'cyberchimps_core' ),
 		'id'      => 'font_demo_text',
@@ -663,10 +686,10 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 
-	// Font Family for headings.
+	// Font Family for headings 1.
 	$fields_list[] = array(
-		'name'    => __( 'Font Family for headings', 'cyberchimps_core' ),
-		'id'      => 'font_family_headings',
+		'name'    => __( 'Font Family for H1', 'cyberchimps_core' ),
+		'id'      => 'font_family_h1',
 		'type'    => 'typography',
 		'std'     => $typography_heading_defaults,
 		'options' => $typography_heading_options,
@@ -674,16 +697,104 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'heading' => 'cyberchimps_design_heading'
 	);
 
-	// Google Font for headings.
+	// Google Font for headings 1.
 	$fields_list[] = array(
-		'name'    => __( 'Google font for headings', 'cyberchimps_core' ),
-		'id'      => 'google_font_headings',
+		'name'    => __( 'Google font for H1', 'cyberchimps_core' ),
+		'id'      => 'google_font_h1',
 		'type'    => 'text',
 		'std'     => apply_filters( 'cyberchimps_typography_heading_google_default', '' ),
 		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
+
+       // Font Family for Headings 2.
+
+	$fields_list[] = array(
+
+		'name'    => __( 'Font Family for H2', 'cyberchimps_core' ),
+
+		'id'      => 'font_family_h2',
+
+		'type'    => 'typography',
+
+		'std'     => $typography_heading_defaults,
+
+		'options' => $typography_heading_options,
+
+		'section' => 'cyberchimps_typography_section',
+
+		'heading' => 'cyberchimps_design_heading'
+
+	);
+
+
+
+	// Google Font for Headings 2.
+
+	$fields_list[] = array(
+
+		'name'    => __( 'Google font for H2', 'cyberchimps_core' ),
+
+		'id'      => 'google_font_h2',
+
+		'type'    => 'text',
+
+		'std'     => apply_filters( 'cyberchimps_typography_heading_google_default', '' ),
+
+		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
+
+		'section' => 'cyberchimps_typography_section',
+
+		'heading' => 'cyberchimps_design_heading'
+
+	);
+
+        
+       // Font Family for Headings 3.
+
+	$fields_list[] = array(
+
+		'name'    => __( 'Font Family for H3', 'cyberchimps_core' ),
+
+		'id'      => 'font_family_h3',
+
+		'type'    => 'typography',
+
+		'std'     => $typography_heading_defaults,
+
+		'options' => $typography_heading_options,
+
+		'section' => 'cyberchimps_typography_section',
+
+		'heading' => 'cyberchimps_design_heading'
+
+	);
+
+
+
+	// Google Font for Headings 3.
+
+	$fields_list[] = array(
+
+		'name'    => __( 'Google font for H3', 'cyberchimps_core' ),
+
+		'id'      => 'google_font_h3',
+
+		'type'    => 'text',
+
+		'std'     => apply_filters( 'cyberchimps_typography_heading_google_default', '' ),
+
+		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
+
+		'section' => 'cyberchimps_typography_section',
+
+		'heading' => 'cyberchimps_design_heading'
+
+	);
+	
+
+
 
 	/*************************** HEADER STARTS ***************************************************/
 
