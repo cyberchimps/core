@@ -390,21 +390,55 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
-	// Script to hide show the Google Heading Font input depending on value of the Heading select
-	var font = $('#font_family_headings_face').val();
+	// Script to hide show the Google Heading H1 Font input depending on value of the Heading select
+	var font = $('#font_family_h1_face').val();
 	if (font != 'Google Fonts') {
-		$('#google_font_headings').parent().hide();
+		$('#google_font_h1').parent().hide();
 	}
 	else {
-		$('#google_font_headings').parent().show();
+		$('#google_font_h1').parent().show();
 	}
-	$('#font_family_headings_face').change(function () {
+	$('#font_family_h1_face').change(function () {
 		var font_change = $(this).val();
 		if (font_change != 'Google Fonts') {
-			$('#google_font_headings').parent().hide();
+			$('#google_font_h1').parent().hide();
 		}
 		else {
-			$('#google_font_headings').parent().show();
+			$('#google_font_h1').parent().show();
+		}
+	});
+	// Script to hide show the Google Heading H2 Font input depending on value of the Heading select
+	var font = $('#font_family_h2_face').val();
+	if (font != 'Google Fonts') {
+		$('#google_font_h2').parent().hide();
+	}
+	else {
+		$('#google_font_h2').parent().show();
+	}
+	$('#font_family_h2_face').change(function () {
+		var font_change = $(this).val();
+		if (font_change != 'Google Fonts') {
+			$('#google_font_h2').parent().hide();
+		}
+		else {
+			$('#google_font_h2').parent().show();
+		}
+	});
+	// Script to hide show the Google Heading H3 Font input depending on value of the Heading select
+	var font = $('#font_family_h3_face').val();
+	if (font != 'Google Fonts') {
+		$('#google_font_h3').parent().hide();
+	}
+	else {
+		$('#google_font_h3').parent().show();
+	}
+	$('#font_family_h3_face').change(function () {
+		var font_change = $(this).val();
+		if (font_change != 'Google Fonts') {
+			$('#google_font_h3').parent().hide();
+		}
+		else {
+			$('#google_font_h3').parent().show();
 		}
 	});
 
