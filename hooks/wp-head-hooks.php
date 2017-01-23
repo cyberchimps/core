@@ -52,50 +52,28 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 			<?php endif; ?>
 
 			<?php if ( !empty( $headings_styles[0] ) ) { ?>
-			h1 {
-			<?php
-			foreach( $headings_styles[0] as $key => $headings_style_1 ) {
-				// Changed to previous code for minor font changes
-				echo $key; ?> : <?php echo $headings_style_1; ?>;
-			<?php } ?>
-			}
-                        <?php }
+					h1 {
+						<?php foreach( $headings_styles[0] as $key => $headings_style_1 ) {
+						// Changed to previous code for minor font changes
+						echo $key; ?> : <?php echo $headings_style_1; ?>;
+						<?php } ?>
+						}
+            <?php }
+ 
+                  if ( !empty( $headings_styles[1] ) ) { ?>
+					h2 {
+						<?php foreach( $headings_styles[1] as $key => $headings_style_2 ) {
+							echo $key; ?> : <?php echo $headings_style_2; ?>;
+						<?php } ?>
+						}
+            <?php }
 
-                        
-
-                         if ( !empty( $headings_styles[1] ) ) { ?>
-
-			h2 {
-
-			<?php
-
-			foreach( $headings_styles[1] as $key => $headings_style_2 ) {
-
-				echo $key; ?> : <?php echo $headings_style_2; ?>;
-
-			<?php } ?>
-
-			}
-
-                        <?php }
-
-                        
-
-                         if ( !empty( $headings_styles[2] ) ) { ?>
-
-			h3 {
-
-			<?php
-
-			foreach( $headings_styles[2] as $key => $headings_style_3 ) {
-
-				echo $key; ?> : <?php echo $headings_style_3; ?>;
-
-			<?php } ?>
-
-			}
-
-
+                  if ( !empty( $headings_styles[2] ) ) { ?>
+					h3 {
+						<?php foreach( $headings_styles[2] as $key => $headings_style_3 ) {
+							echo $key; ?> : <?php echo $headings_style_3; ?>;
+						<?php } ?>
+						}
 			<?php } 
 			
 			$width = intval( cyberchimps_get_option( 'max_width' ) ) . 'px';
@@ -122,321 +100,94 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
 
 // Creat headings_styles array from options.
 function cyberchimps_headings_styles() {
-
+	
 	// Set header font family.
 	$headings_styles_1      = cyberchimps_get_option( 'font_family_h1' );
+	$google_font_h1 = cyberchimps_get_option( 'google_font_h1' );     
 
-	$google_font_h1 = cyberchimps_get_option( 'google_font_h1' );
-     
-
-        $headings_styles_2      = cyberchimps_get_option( 'font_family_h2' );
-
+    $headings_styles_2      = cyberchimps_get_option( 'font_family_h2' );
 	$google_font_h2 = cyberchimps_get_option( 'google_font_h2' );
       
-
-        $headings_styles_3      = cyberchimps_get_option( 'font_family_h3' );
-
+    $headings_styles_3      = cyberchimps_get_option( 'font_family_h3' );
 	$google_font_h3 = cyberchimps_get_option( 'google_font_h3' );
 
 
 	// older versions will have saved the font family as a string so we need to check for that first
 	if( is_array( $headings_styles_1 ) ) {
-
 		$headings_styles_1['font-family'] = $headings_styles_1['face'];
-
-                foreach( $headings_styles_1 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_1[$option] = $value;
-
-			}
-
-		}
-
 	}
-
 	else {
-
 		$headings_styles_1                = array();
-
 		$headings_styles_1['font-family'] = $headings_styles_1;
-
-                foreach( $headings_styles_1 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_1[$option] = $value;
-
-			}
-
-		}
-
 	}
 
-        
-
-        if( is_array( $headings_styles_2 ) ) {
-
+    if( is_array( $headings_styles_2 ) ) {
 		$headings_styles_2['font-family'] = $headings_styles_2['face'];
-
-                foreach( $headings_styles_2 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_2[$option] = $value;
-
-			}
-
-		}
-
 	}
-
 	else {
-
 		$headings_styles_2                = array();
-
 		$headings_styles_2['font-family'] = $headings_styles_2;
-
-                foreach( $headings_styles_2 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_2[$option] = $value;
-
-			}
-
-		}
-
 	}
 
-        
-
-        if( is_array( $headings_styles_3 ) ) {
-
+    if( is_array( $headings_styles_3 ) ) {
 		$headings_styles_3['font-family'] = $headings_styles_3['face'];
-
-                foreach( $headings_styles_3 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_3[$option] = $value;
-
-			}
-
-		}	}
+	}
 	else {
 		$headings_styles_3                = array();
-
 		$headings_styles_3['font-family'] = $headings_styles_3;
-
-                foreach( $headings_styles_3 as $option => $value ) {
-
-			if( $option == 'size' ) {
-
-				$option = 'font-size';
-
-			}
-
-			if( $option == 'face' ) {
-
-				$option = 'font-family';
-
-			}
-
-			if( $option == 'style' ) {
-
-				$option = 'font-weight';
-
-			}
-
-			if( $value != '' ) {
-
-				$headings_styles_3[$option] = $value;
-
-			}
-
-		}
 	}
 
-	// Check if Google fonts have been selected
+	// Check if Google fonts have been selected - h1
 	if( $headings_styles_1['font-family'] == "Google Fonts" && $google_font_h1 != "" ) {
-
 		$headings_styles_1['font-family'] = '"'.$google_font_h1.'"';
 
-
-
 		// Check if SSL is present, if so then use https othereise use http
-
 		$protocol = is_ssl() ? 'https' : 'http';
 
-
-
 		wp_register_style( 'google-font-h1', $protocol . '://fonts.googleapis.com/css?family=' . $google_font_h1 );
-
 		wp_enqueue_style( 'google-font-h1' );
-
 	}
 
-        
-
-        if( $headings_styles_2['font-family'] == "Google Fonts" && $google_font_h2 != "" ) {
-
+	// Check if Google fonts have been selected - h2
+    if( $headings_styles_2['font-family'] == "Google Fonts" && $google_font_h2 != "" ) {
 		$headings_styles_2['font-family'] = '"'.$google_font_h2.'"';
 
 		// Check if SSL is present, if so then use https othereise use http
 		$protocol = is_ssl() ? 'https' : 'http';
-
 		wp_register_style( 'google-font-h2', $protocol . '://fonts.googleapis.com/css?family=' . $google_font_h2 );
-
 		wp_enqueue_style( 'google-font-h2' );
-
 	}
 
-        
-
-        if( $headings_styles_3['font-family'] == "Google Fonts" && $google_font_h3 != "" ) {
-
+	// Check if Google fonts have been selected - h3
+    if( $headings_styles_3['font-family'] == "Google Fonts" && $google_font_h3 != "" ) {
 		$headings_styles_3['font-family'] = '"'.$google_font_h3.'"';
 
-
-
 		// Check if SSL is present, if so then use https othereise use http
-
 		$protocol = is_ssl() ? 'https' : 'http';
 
-
-
 		wp_register_style( 'google-font-h3', $protocol . '://fonts.googleapis.com/css?family=' . $google_font_h3 );
-
 		wp_enqueue_style( 'google-font-h3' );
-
 	}
 
 	//TODO recreate original settings so they are actually named by the css style they refer to
 	// eg face becomes font-family, size is font-size etc
 
 	unset( $headings_styles_1['size'] );
-
 	unset( $headings_styles_1['face'] );
-
 	unset( $headings_styles_1['color'] );
-
 	unset( $headings_styles_1['style'] );
 
-        
-
-        unset( $headings_styles_2['size'] );
-
+	unset( $headings_styles_2['size'] );
 	unset( $headings_styles_2['face'] );
-
 	unset( $headings_styles_2['color'] );
-
 	unset( $headings_styles_2['style'] );
 
-        
-
-        unset( $headings_styles_3['size'] );
-
+	unset( $headings_styles_3['size'] );
 	unset( $headings_styles_3['face'] );
-
 	unset( $headings_styles_3['color'] );
-
 	unset( $headings_styles_3['style'] );
 
-
-
-        $headings_styles = array($headings_styles_1, $headings_styles_2, $headings_styles_3);
+    $headings_styles = array($headings_styles_1, $headings_styles_2, $headings_styles_3);
 
 	return $headings_styles;
 }
