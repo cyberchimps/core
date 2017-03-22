@@ -185,7 +185,7 @@ function cyberchimps_sanitize_enum( $input, $option ) {
 
 /* Section Order */
 function cyberchimps_sanitize_section_order( $input, $option ) {
-	$output = '';
+	$output = array();
 	if( is_array( $input ) ) {
 		foreach( $input as $key => $value ) {
 			if( array_key_exists( $key, $option['options'] ) && $key ) {
