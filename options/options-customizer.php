@@ -1941,6 +1941,20 @@ if (!($cc_wp_version >= 4.7))
         'settings' => 'cyberchimps_options[google_font_field]',
     ) );
 
+// H1
+      $wp_customize->add_setting( 'cyberchimps_options[font_family_h1][size]', array(
+        'default' => '14px',
+        'type' => 'option',
+        'sanitize_callback' => 'cyberchimps_text_sanitization'
+    ) );
+
+    $wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size1', array(
+        'label' => __( 'Typography Size for Heading 1', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_typography_section',
+        'type' => 'select',
+        'settings' => 'cyberchimps_options[font_family_h1][size]',
+        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+    ) ) );
 // Font family for headings: h1
     $wp_customize->add_setting( 'cyberchimps_options[font_family_h1][face]', array(
          'default' => 'Arial',
@@ -1970,6 +1984,22 @@ if (!($cc_wp_version >= 4.7))
         'settings' => 'cyberchimps_options[google_font_h1]',
     ) );
 
+// H2
+      $wp_customize->add_setting( 'cyberchimps_options[font_family_h2][size]', array(
+        'default' => '14px',
+        'type' => 'option',
+        'sanitize_callback' => 'cyberchimps_text_sanitization'
+    ) );
+
+    $wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size2', array(
+        'label' => __( 'Typography Size for Heading 2', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_typography_section',
+        'type' => 'select',
+        'settings' => 'cyberchimps_options[font_family_h2][size]',
+        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+    ) ) );
+
+
 // Font family for headings: h2
  $wp_customize->add_setting( 'cyberchimps_options[font_family_h2][face]', array(
         'default' => 'Arial',
@@ -1998,6 +2028,22 @@ if (!($cc_wp_version >= 4.7))
         'type' => 'text',
         'settings' => 'cyberchimps_options[google_font_h2]',
     ) );
+
+// H3
+      $wp_customize->add_setting( 'cyberchimps_options[font_family_h3][size]', array(
+        'default' => '14px',
+        'type' => 'option',
+        'sanitize_callback' => 'cyberchimps_text_sanitization'
+    ) );
+
+    $wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size3', array(
+        'label' => __( 'Typography Size for Heading 3', 'cyberchimps_core' ),
+        'section' => 'cyberchimps_typography_section',
+        'type' => 'select',
+        'settings' => 'cyberchimps_options[font_family_h3][size]',
+        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+    ) ) );
+
 
 // Font family for headings: h3    
  $wp_customize->add_setting( 'cyberchimps_options[font_family_h3][face]', array(

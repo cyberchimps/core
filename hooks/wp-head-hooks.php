@@ -115,26 +115,113 @@ function cyberchimps_headings_styles() {
 	// older versions will have saved the font family as a string so we need to check for that first
 	if( is_array( $headings_styles_1 ) ) {
 		$headings_styles_1['font-family'] = $headings_styles_1['face'];
+foreach( $headings_styles_1 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_1[$option] = $value;
+			}
+		}
 	}
 	else {
 		$headings_styles_1                = array();
 		$headings_styles_1['font-family'] = $headings_styles_1;
+		foreach( $headings_styles_1 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_1[$option] = $value;
+			}
+		}
 	}
 
     if( is_array( $headings_styles_2 ) ) {
 		$headings_styles_2['font-family'] = $headings_styles_2['face'];
+                foreach( $headings_styles_2 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_2[$option] = $value;
+			}
+		}
+
 	}
 	else {
 		$headings_styles_2                = array();
 		$headings_styles_2['font-family'] = $headings_styles_2;
+                foreach( $headings_styles_2 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_2[$option] = $value;
+			}
+		}
+
 	}
 
     if( is_array( $headings_styles_3 ) ) {
 		$headings_styles_3['font-family'] = $headings_styles_3['face'];
+		 foreach( $headings_styles_3 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_3[$option] = $value;
+			}
+		}
 	}
 	else {
 		$headings_styles_3                = array();
 		$headings_styles_3['font-family'] = $headings_styles_3;
+                foreach( $headings_styles_3 as $option => $value ) {
+			if( $option == 'size' ) {
+				$option = 'font-size';
+			}
+			if( $option == 'face' ) {
+				$option = 'font-family';
+			}
+			if( $option == 'style' ) {
+				$option = 'font-weight';
+			}
+			if( $value != '' ) {
+				$headings_styles_3[$option] = $value;
+			}
+		}
+
 	}
 
 	// Check if Google fonts have been selected - h1
