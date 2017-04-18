@@ -35,7 +35,7 @@ function cyberchimps_footer_credit() {
 									<?php }
 									else { ?>
 										
-										<img width="150px" height="auto" class="cc-credit-logo" src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/logo_cc.png" alt="CyberChimps"/>
+										<img width="150px" height="auto" class="cc-credit-logo" src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/logo_cc.png" alt="Premium WordPress Themes By CyberChimps"/>
 										</a>
                                                                               <!--  <div class="market" style="line-height:2.3"><a href="http://neilpatel.com/" rel="noindex, nofollow">Marketed  By Neil Patel</a></div>-->
 									<?php } ?>
