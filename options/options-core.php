@@ -391,21 +391,21 @@ function cyberchimps_add_core_fields( $fields_list ) {
 
 // Heading1 Typography Defaults
 	$typography_heading1_defaults = apply_filters( 'cyberchimps_heading1_typography_defaults', array(
-		'size'  => '',
+		'size'  => '36px',
 		'face'  => 'Arial, Helvetica, sans-serif',
 		'style' => '',
 		'color' => ''
 	) );
 	// Heading2 Typography Defaults
 	$typography_heading2_defaults = apply_filters( 'cyberchimps_heading2_typography_defaults', array(
-		'size'  => '',
+		'size'  => '26px',
 		'face'  => 'Arial, Helvetica, sans-serif',
 		'style' => '',
 		'color' => ''
 	) );
 	// Heading3 Typography Defaults
 	$typography_heading3_defaults = apply_filters( 'cyberchimps_heading3_typography_defaults', array(
-		'size'  => '',
+		'size'  => '16px',
 		'face'  => 'Arial, Helvetica, sans-serif',
 		'style' => '',
 		'color' => ''
@@ -640,7 +640,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'color'  => false
 	);
 	$typography_heading_options = array(
-		'sizes'  => false,
+		'sizes'  => apply_filters( 'cyberchimps_typography_sizes', array( '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20' ) ),
 		'faces'  => apply_filters( 'cyberchimps_typography_faces', $faces ),
 		'styles' => false,
 		'color'  => false
