@@ -220,6 +220,8 @@ function cyberchimps_header_social_icons() {
 	$social['rss']['url']           = cyberchimps_get_option( 'rss_url' );
 	$social['instagram']['set']		= cyberchimps_get_option( 'social_instagram' );
 	$social['instagram']['url']		= cyberchimps_get_option( 'instagram_url' );
+	$social['snapchat']['set']		= cyberchimps_get_option( 'social_snapchat' );
+	$social['snapchat']['url']		= cyberchimps_get_option( 'snapchat_url' );
 
 	$output = '';
 
