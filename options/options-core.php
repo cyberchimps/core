@@ -839,6 +839,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
+        $fields_list[] = array(
+		'name'    => __( 'Sticky Header', 'cyberchimps_core' ),
+		'id'      => 'sticky_header',
+		'type'    => 'toggle',
+		'std'     => '',
+		'desc'    => 'Fix the navigation bar on top of the page, on scroll',
+		'section' => 'cyberchimps_header_options_section',
+		'heading' => 'cyberchimps_header_heading'
+	);
 
 	// Add Google Analytics only to pro themes. In free themes it will be added by plugin as per WP standards.
 	if ( $theme_check == 'pro' ) {
