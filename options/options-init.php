@@ -1282,7 +1282,30 @@ function cyberchimps_admin_bar() {
 		                         'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
 	                         ) );
 }
-
+/** Sticky Header **/
+add_action( 'wp_footer', 'cyberchimps_fixed_menu_onscroll' );
+function cyberchimps_fixed_menu_onscroll()
+{
+	if( cyberchimps_get_option( 'sticky_header', 'checked' ) ) {
+            
+	?>
+		<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$(window).scroll(function()  {
+			if ($(this).scrollTop() > 0) {
+			$('#header_section').addClass("sticky-header");
+                       
+			}
+			else{
+			$('#header_section').removeClass("sticky-header");
+                       
+			}
+			});
+		});
+		</script>
+	<?php
+	}
+}
 add_action('admin_notices', 'cyberchimps_invalid_account_details');
 //Function to display if inavalid account details
 function cyberchimps_invalid_account_details() {
