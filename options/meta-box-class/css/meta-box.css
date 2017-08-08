@@ -624,6 +624,10 @@ tr {
 {
 	background: url("../../lib/images/icons/widgets.png") no-repeat;
 }
+#testimonial_img
+{
+	background: url("../../lib/images/icons/testimonial.png") no-repeat;
+}
 #callout_section_img,
 #carousel_section_img,
 #html_box_img,
@@ -643,7 +647,8 @@ tr {
 #breadcrumbs_img,
 #boxes_lite_img,
 #portfolio_lite_img,
-#slider_lite_img
+#slider_lite_img,
+#testimonial_img
 {
 	float:right;
 	display:inline-block;

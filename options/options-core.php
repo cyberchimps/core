@@ -219,6 +219,11 @@ function cyberchimps_add_core_sections( $sections_list ) {
 			'label'   => __( 'Video Options', 'cyberchimps_core' ),
 			'heading' => 'cyberchimps_blog_heading'
 		);
+                $sections_list[] = array(
+			'id'      => 'cyberchimps_testimonial_section',
+			'label'   => __( 'Testimonial Options', 'cyberchimps_core' ),
+			'heading' => 'cyberchimps_blog_heading'
+		);
 	endif;
 
 	$sections_list[] = array(
@@ -340,6 +345,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	if ( !is_wp_error( $portfolio_categories ) ) {
 		foreach ( $portfolio_categories as $portfolio_cat ) {
 			$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
+		}
+	}
+        
+        // Pull all testimonial categories
+	$options_testimonial_cats = array();
+	$testimonial_categories   = get_terms( 'testimonial_categories', array( 'hide_empty' => 0 ) );
+	if ( !is_wp_error( $testimonial_categories ) ) {
+		foreach ( $testimonial_categories as $testimonial_cat ) {
+			$options_testimonial_cats[$testimonial_cat->term_id] = $testimonial_cat->name;
 		}
 	}
 
@@ -2435,6 +2449,39 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	 * /* Social options for profile ends */
 
 	/********* PROFILE OPTIONS ENDS ************/
+        
+        /********* TESTIMONIAL OPTIONS STARTS ***********/
+
+		if ( $options_testimonial_cats ) {
+			$fields_list[] = array(
+				'name'    => __( 'Select a Category', 'cyberchimps_core' ),
+				'id'      => 'testimonial_categories',
+				'type'    => 'select',
+				'options' => $options_testimonial_cats,
+				'section' => 'cyberchimps_testimonial_section',
+				'heading' => 'cyberchimps_blog_heading'
+			);
+		} else {
+			$fields_list[] = array(
+				'name'    => __( 'Select a Category', 'cyberchimps_core' ),
+				'id'      => 'testimonial_categories_help',
+				'type'    => 'help',
+				'desc'    => __( 'You need to create a Category', 'cyberchimps_core' ),
+				'section' => 'cyberchimps_testimonial_section',
+				'heading' => 'cyberchimps_blog_heading'
+			);
+		}
+		$fields_list[] = array(
+			'name'    => __( 'Background Image', 'cyberchimps_core' ),
+			'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),
+			'id'      => 'testimonial_background',
+			'type'    => 'upload',
+			'std'     => apply_filters( 'cyberchimps_testimonial_img', $directory_uri . '/cyberchimps/lib/images/testimonial.jpg' ),
+			'section' => 'cyberchimps_testimonial_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+
+		/********* TESTIMONIAL OPTIONS ENDS *************/
 
 	/*************************** TEMPLATES ***************************************************/
 
