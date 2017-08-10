@@ -65,7 +65,9 @@ function cyberchimps_core_scripts() {
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
 	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array( 'bootstrap-style' ), '2.0.4' );
+        wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
+        
 
 	//responsive design
 	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
