@@ -2488,6 +2488,14 @@ function cyberchimps_add_core_fields( $fields_list ) {
 
             /********* TESTIMONIAL OPTIONS ENDS *************/
             /********* CONTACT US OPTIONS STARTS ************** / */
+            $fields_list[] = array(
+			'name'    => __( 'Contact Section Title', 'cyberchimps_core' ),
+			'id'      => 'custom_contact_title',
+			'std'     => __( 'Get In Touch', 'cyberchimps_core' ),
+			'type'    => 'text',
+			'section' => 'cyberchimps_contactus_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
              $fields_list[] = array(
 			'name'    => __( 'Contact Address', 'cyberchimps_core' ),
 			'id'      => 'custom_contact_address',
@@ -2524,7 +2532,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
                 $fields_list[] = array(
 			'name'    => __( 'Background Image', 'cyberchimps_core' ),
 			'id'      => 'contactus_background_image',
-			'std'     => apply_filters( 'cyberchimps_contact_bg_img', $directory_uri . '/cyberchimps/lib/images/testimonial.jpg' ),
+			'std'     => apply_filters( 'cyberchimps_contact_bg_img', $directory_uri . '/cyberchimps/lib/images/contact_bg.jpg' ),
                         'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),
 			'type'    => 'upload',
 			'section' => 'cyberchimps_contactus_section',
