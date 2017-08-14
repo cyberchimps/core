@@ -1199,6 +1199,10 @@ img.action, .action {
 {
 	background: url("../images/icons/widgets.png") no-repeat;
 }
+#testimonial_img
+{
+	background: url("../images/icons/testimonial.png") no-repeat;
+}
 #callout_section_img,
 #carousel_section_img,
 #html_box_img,
@@ -1217,7 +1221,8 @@ img.action, .action {
 #blog_post_page_img,
 #boxes_lite_img,
 #portfolio_lite_img,
-#slider_lite_img
+#slider_lite_img,
+#testimonial_img
 {
 	float:right;
 	display:inline-block;

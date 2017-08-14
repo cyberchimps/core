@@ -389,6 +389,11 @@ a.symbol:hover {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
+/*==================Testimonial element ====================*/
+#testimonial_section .container
+{
+	max-width:100%;
+}
 /*================Sticky header option ==================*/
 .sticky-header
 {
