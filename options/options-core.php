@@ -2456,7 +2456,16 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	/********* PROFILE OPTIONS ENDS ************/
         
         /********* TESTIMONIAL OPTIONS STARTS ***********/
-
+                $fields_list[] = array(
+			'name'    => __( 'Testimonial title', 'cyberchimps_core' ),
+			'desc'    => '',
+			'id'      => 'ir_testimonial_title',
+			'type'    => 'text',
+			'std'     => 'Testimonial',
+			'section' => 'cyberchimps_testimonial_section',
+			'heading' => 'cyberchimps_blog_heading'
+		);
+               
 		if ( $options_testimonial_cats ) {
 			$fields_list[] = array(
 				'name'    => __( 'Select a Category', 'cyberchimps_core' ),
