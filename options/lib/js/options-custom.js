@@ -58,7 +58,9 @@ jQuery(document).ready(function ($) {
 		separator: "cyberchimps_separator_section",
 		blank_space: "cyberchimps_blank_space_section",
 		google_maps: "cyberchimps_google_maps_section",
-		video: "cyberchimps_video_section"
+		video: "cyberchimps_video_section",
+		testimonial: "cyberchimps_testimonial_section",
+                map_contact: "cyberchimps_map_contact_section"
 		//profile				: "cyberchimps_profile_section"
 	};
 
