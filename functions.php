@@ -67,7 +67,7 @@ function cyberchimps_core_scripts() {
 	wp_enqueue_style( 'bootstrap-responsive-style', $bootstrap_path . 'css/bootstrap-responsive.min.css', array( 'bootstrap-style' ), '2.0.4' );
         wp_enqueue_style( 'font-awesome', $directory_uri. '/cyberchimps/lib/css/font-awesome.min.css' );
 	wp_enqueue_script( 'bootstrap-js', $bootstrap_path . 'js/bootstrap.min.js', array( 'jquery' ), '2.0.4', true );
-        
+
 
 	//responsive design
 	if( cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
@@ -79,7 +79,7 @@ function cyberchimps_core_scripts() {
 
 	// Load core JS
 	wp_enqueue_script( 'core-js', $js_path . 'core.min.js', array( 'jquery' ) );
-	
+
 	// Placeholder fix for IE8/9
 	if(preg_match('/(?i)msie [8-9]/',$_SERVER['HTTP_USER_AGENT']))
 	{
@@ -506,7 +506,7 @@ if( !function_exists( 'cyberchimps_posted_by' ) ) {
 
 		// If post byline author toggle is on then print HTML for author link.
 		if( $show_author ) {
-			echo apply_filters( 'cyberchimps_posted_by', $posted_by );			
+			echo apply_filters( 'cyberchimps_posted_by', $posted_by );
 		}
 	}
 }
@@ -1459,10 +1459,53 @@ if ( 'mp6' === get_user_option( 'admin_color' ) || version_compare( $GLOBALS['wp
 
 // FOR IE compatiblilty mode.
 add_action( 'send_headers', 'cyberchimps_add_header_xua' );
-function cyberchimps_add_header_xua() 
+function cyberchimps_add_header_xua()
 {
-	if (!headers_sent()) 	
+	if (!headers_sent())
 	{
 		header( 'X-UA-Compatible: IE=edge,chrome=1' );
 	}
+}
+
+// For Author Bio on Single Posts Page
+if(!function_exists('cyberchimps_posts_author_bio'))
+{
+    function cyberchimps_posts_author_bio()
+    {
+      if( is_single() ) {
+			$show = ( cyberchimps_get_option( 'single_post_author_bio', 1 ) ) ? cyberchimps_get_option( 'single_post_author_bio', 1 ) : false;
+                        if($show){
+                        $user_description = get_the_author_meta( 'user_description', $post->post_author );
+                        ?>
+
+                                <div class="cyberchimps_author_bio">
+                                    <div class="author_bio_wrapper">
+                                    <div class="avatar_author">
+
+                                       <?php echo get_avatar( get_the_author_meta( 'ID' ), 90 ); ?>
+
+                                    </div>
+                                    <div class="author_bio">
+                                        <?php
+                                        // Get url of all author archive( the page will contain all posts by the author).
+                                        $auther_posts_url = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+
+                                        // Set author title text which will appear on hover over the author link.
+                                        $auther_link_title = esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) );
+
+                                        echo '<div class="author vcard author_bio_name">
+								<a class="url fn n" href="' . $auther_posts_url . '" title="' . $auther_link_title . '" rel="author">' . esc_html( get_the_author() ) . '</a>
+							</div>';
+                                        echo $user_description;
+                                        ?>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                                <?php
+
+                        }
+		}
+    }
 }
