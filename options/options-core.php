@@ -105,7 +105,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'label' => __('Custom CSS', 'cyberchimps_core' ),
 		'heading' => 'cyberchimps_design_heading'
 	);
-	
+
 /**************************** HEADER **************************************************/
 
 	$sections_list[] = array(
@@ -140,7 +140,7 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_blog_heading'
 	);
 
-//check if free theme	
+//check if free theme
 	if ( $theme_check == 'free' ):
 		$sections_list[] = array(
 			'id'      => 'cyberchimps_blog_slider_lite_section',
@@ -302,7 +302,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 
 	/*************************** LISTS AND DEFAULTS *********************************************/
 
-	// post byline 
+	// post byline
 	$pbe_defaults = array(
 		'author'     => 1,
 		'categories' => 1,
@@ -352,7 +352,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
 		}
 	}
-        
+
         // Pull all testimonial categories
 	$options_testimonial_cats = array();
 	$testimonial_categories   = get_terms( 'testimonial_categories', array( 'hide_empty' => 0 ) );
@@ -681,7 +681,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Enter Google font', 'cyberchimps_core' ),
 		'id'      => 'google_font_field',
 		'type'    => 'text',
-		'std'     => apply_filters( 'cyberchimps_typography_google_default', '' ),		
+		'std'     => apply_filters( 'cyberchimps_typography_google_default', '' ),
 		'desc'    => __( 'Google font names are case sensitive', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
@@ -740,7 +740,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
 	);
-        
+
     // Font Family for Headings 3.
 	$fields_list[] = array(
 		'name'    => __( 'Font Family for H3', 'cyberchimps_core' ),
@@ -862,7 +862,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name'    => __( 'Sticky Header', 'cyberchimps_core' ),
 		'id'      => 'sticky_header',
 		'type'    => 'toggle',
-		'std'     => '',
+		'std'     => 'checked',
 		'desc'    => 'Fix the navigation bar on top of the page, on scroll',
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
@@ -1109,7 +1109,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_header_social_section',
 		'heading' => 'cyberchimps_header_heading'
 	);
-	
+
 	// Instagram
 	$fields_list[] = array(
 		'name'    => __( 'Instagram', 'cyberchimps_core' ),
@@ -1284,6 +1284,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	// Author Bio
+$fields_list[] = array(
+'name'    => __( 'Post Author Bio', 'cyberchimps_core' ),
+'id'      => 'single_post_author_bio',
+'std'     => 0,
+'type'    => 'toggle',
+'section' => 'cyberchimps_single_post_section',
+'heading' => 'cyberchimps_templates_heading'
+);
 	/********* Post Byline Ends ***********/
 	/********* BLOG OPTIONS ENDS ***********/
 
@@ -1832,7 +1841,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'heading' => 'cyberchimps_blog_heading'
 		);
 
-		// Slider Speed 
+		// Slider Speed
 		$fields_list[] = array(
 			'name'    => __( 'Slider Speed ', 'cyberchimps_core' ),
 			'id'      => 'slider_speed',
@@ -2454,7 +2463,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	 * /* Social options for profile ends */
 
 	/********* PROFILE OPTIONS ENDS ************/
-        
+
         /********* TESTIMONIAL OPTIONS STARTS ***********/
                 $fields_list[] = array(
 			'name'    => __( 'Testimonial title', 'cyberchimps_core' ),
@@ -2465,7 +2474,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'section' => 'cyberchimps_testimonial_section',
 			'heading' => 'cyberchimps_blog_heading'
 		);
-               
+
 		if ( $options_testimonial_cats ) {
 			$fields_list[] = array(
 				'name'    => __( 'Select a Category', 'cyberchimps_core' ),
@@ -2512,7 +2521,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 			'type'    => 'text',
 			'section' => 'cyberchimps_map_contact_section',
 			'heading' => 'cyberchimps_blog_heading'
-		); 
+		);
               $fields_list[] = array(
 			'name'    => __( 'Contact Number', 'cyberchimps_core' ),
 			'id'      => 'custom_contact_number',

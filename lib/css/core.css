@@ -427,3 +427,27 @@ a.symbol:hover {
     top: 0;
   }
 }
+
+/* Author Bio  */
+.cyberchimps_author_bio
+{
+    margin-top: 2%;
+}
+.author_bio_wrapper {
+    border: 1px solid #cfcfcf;
+    display: inline-block;
+    padding: 2% 0;
+}
+.author_bio_name a
+{
+    font-size: 25px;
+}
+.avatar_author img
+{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 0 #e4e4e4;
+    height: 90px;
+    padding: 5px;
+    width: 90px;
+}
