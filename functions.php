@@ -1472,10 +1472,13 @@ if(!function_exists('cyberchimps_posts_author_bio'))
 {
     function cyberchimps_posts_author_bio()
     {
+      global $post;
       if( is_single() ) {
 			$show = ( cyberchimps_get_option( 'single_post_author_bio', 1 ) ) ? cyberchimps_get_option( 'single_post_author_bio', 1 ) : false;
                         if($show){
                         $user_description = get_the_author_meta( 'user_description', $post->post_author );
+			if($user_description)
+			{
                         ?>
 
                                 <div class="cyberchimps_author_bio">
@@ -1504,7 +1507,7 @@ if(!function_exists('cyberchimps_posts_author_bio'))
 
 
                                 <?php
-
+			}
                         }
 		}
     }
