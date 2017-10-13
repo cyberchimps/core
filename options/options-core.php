@@ -1160,7 +1160,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'      => 'sidebar_images',
 		'std'     => apply_filters( 'cyberchimps_blog_layout_options_default', 'right_sidebar' ),
 		'type'    => 'images',
-		'options' => apply_filters( 'sidebar_layout_options', array(
+		'options' => apply_filters( 'blog_layout_options', array(
 			'full_width'    => $imagepath . '1col.png',
 			'right_sidebar' => $imagepath . '2cr.png'
 		) ),
