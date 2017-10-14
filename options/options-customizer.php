@@ -687,7 +687,7 @@ function cyberchimps_customize( $wp_customize ) {
         'panel' => 'blog_id',
     ) );
 
-    $sidebar_choices = apply_filters( 'sidebar_layout_options', array(
+    $sidebar_choices = apply_filters( 'blog_layout_options', array(
         'full_width' => $imagepath . '1col.png',
         'right_sidebar' => $imagepath . '2cr.png'
             ) );
