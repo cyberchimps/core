@@ -104,6 +104,7 @@ function cyberchimps_display_upsell() {
 					
 					// For all other themes.
 					foreach ( $themes->themes as $theme ) {
+	                   if ($theme->slug != 'response') {	
 						if( $active_theme != $theme->name ) {
 
 							// Set the argument array with author name.
@@ -161,6 +162,7 @@ function cyberchimps_display_upsell() {
 							</div>
 							<?php
 							$counter++;
+						}
 						}
 					}?>
 				</div>

@@ -27,6 +27,8 @@ function cyberchimps_customize( $wp_customize ) {
      *
      * Creates a form input type with the option to add description and placeholders
      */
+	require_once( trailingslashit( get_template_directory() ) . 'cyberchimps/options/control-checkbox-multiple.php' );
+	
     class Cyberchimps_Form extends WP_Customize_Control {
 
         public function render_content() {
@@ -263,7 +265,7 @@ function cyberchimps_customize( $wp_customize ) {
     <?php
     /*     * ******** Class for skin color selection option ends ************ */
     $imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
-
+    
     /* --------------------------------------------------------------
       // MAIN HEADER SECTION
       -------------------------------------------------------------- */
@@ -853,6 +855,39 @@ function cyberchimps_customize( $wp_customize ) {
         'settings' => 'cyberchimps_options[post_byline_tags]',
         'type' => 'checkbox'
     ) );
+    $args = array(
+    		'type'         => 'post',
+    		'orderby'      => 'name',
+    		'order'        => 'ASC',
+    		'hide_empty'   => 1,
+    		'hierarchical' => 1,
+    		'taxonomy'     => 'category',
+    );
+    $option_categories = array();
+    $category_lists = get_categories( $args );
+    $option_categories[''] = esc_html( __( 'Choose Category', 'cyberchimps_core' ) );
+    foreach ( $category_lists as $category ) {
+    	$option_categories[ $category->term_id ] = $category->name;
+    }
+    
+    $option_all_post_cat = array();
+    foreach( $category_lists as $category ){
+    	$option_all_post_cat[$category->term_id] = $category->name;
+    }    
+    $wp_customize->add_setting( 'cyberchimps_exclude_post_cat', array( 'sanitize_callback' => 'cyberchimps_sanitize_multiple_checkboxes') );
+    $wp_customize->add_control(
+    		new cyberchimps_Customize_Control_Checkbox_Multiple(
+    				$wp_customize,
+    				'cyberchimps_exclude_post_cat',
+    				array(
+    						'section'       => 'cyberchimps_blog_section',
+    						'label'         => __( 'Exclude Categories from Blog page', 'cyberchimps_core' ),
+    						'description'   => __( 'Please choose the post categories that should not be displayed on the blog page', 'cyberchimps_core' ),
+    						'settings'      => 'cyberchimps_exclude_post_cat',
+    						'choices'       => $option_all_post_cat
+    				)
+    		)
+    );
 
     /* --------------------------------------------------------------
       // BLOG SLIDER SECTION
@@ -2148,4 +2183,11 @@ function cyberchimps_text_sanitization( $text ) {
  */
 function cyberchimps_file_sanitization( $name ) {
     return sanitize_file_name( $name );
+}
+
+function cyberchimps_sanitize_multiple_checkboxes( $values ) {
+
+	$multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
+
+	return !empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
 }
