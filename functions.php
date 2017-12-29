@@ -183,7 +183,7 @@ function cyberchimps_create_layout() {
 
 	}
 	elseif( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {
-		$page_sidebar = get_post_meta( woocommerce_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
+		$page_sidebar = get_post_meta( wc_get_page_id( 'shop' ), 'cyberchimps_page_sidebar' );
 		$layout_type  = ( isset( $page_sidebar[0] ) ) ? $page_sidebar[0] : 'right_sidebar';
 
 	}
@@ -1305,7 +1305,7 @@ add_action( 'wp_head', 'cyberchimps_ie8_responsive' );
 function cyberchimps_woocommerce_shop_style() {
 	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 		global $pagenow;
-		if( $pagenow == 'post.php' && $_GET['post'] == woocommerce_get_page_id( 'shop' ) ) {
+		if( $pagenow == 'post.php' && $_GET['post'] == wc_get_page_id( 'shop' ) ) {
 			echo '<style type="text/css">.cyberchimps_page_title_toggle, .cyberchimps_page_section_order{display:none}</style>';
 		}
 	}

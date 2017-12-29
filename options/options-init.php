@@ -191,7 +191,7 @@ function cyberchimps_options_page() {
 
 
 				<div class="cc-submenu-links">
-				 <a class="btn" href="https://cyberchimps.com/plus/" title="Need Customization" target="_blank"><?php _e( 'Need Customization', 'cyberchimps_core' ); ?></a> 
+				 <a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a> 
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
 					                                                                                                'cyberchimps_core' ) ); ?>' );">
@@ -330,7 +330,7 @@ function cyberchimps_options_page() {
 				<!--  </div>-->
 				<!-- cc-social-container -->
 				<div class="footer-links">
-				<a class="btn" href="https://cyberchimps.com/plus/" title="Need Customization" target="_blank"><?php _e( 'Need Customization', 'cyberchimps_core' ); ?></a>
+				<a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
 					                                                                                                'cyberchimps_core' ) ); ?>' );">
