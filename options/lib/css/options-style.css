@@ -88,6 +88,33 @@ ul, ol {
 .clear {
 	clear: both;
 }
+.cc-options input[type="submit"], .cc-submenu-links .btn .btn-default, .reset-button ,.cc-submenu-links .btn {
+	border: solid 1px #163c4a;
+	background: #d04d4c;
+	color: #ffffff;	
+	font-weight:bold;
+	text-transform:uppercase;	
+        border-radius: 5px !important;
+        text-shadow: none;
+        display: inline-block;
+    font-size: 12px !important;
+    line-height: 30px !important;
+    padding: 3px 25px !important;
+}
+.cc-options input[type="submit"]:hover, .reset-button:hover, .cc-submenu-links .btn{
+	background: #b63332;
+   border: solid 1px #163c4a;
+   color: #ffffff;
+	font-weight:bold;
+	text-transform:uppercase;
+    border-radius: 5px !important;
+    display: inline-block;
+    font-size: 12px !important;
+    line-height: 30px !important;
+    line-height: 30px !important;
+    padding: 3px 25px !important;
+
+}
 
 /************** Bootstrap reset **************/
 
@@ -206,14 +233,14 @@ form {
 	min-height: 45px;
 	padding: 5px 0;
 	border-bottom: 1px solid #4d4d4d;
-	background: #fefefe;
-	background: -moz-linear-gradient(top, #fefefe 0%, #ededed 100%);
+	background: #163c4a;
+	/*background: -moz-linear-gradient(top, #fefefe 0%, #ededed 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #ededed));
 	background: -webkit-linear-gradient(top, #fefefe 0%, #ededed 100%);
 	background: -o-linear-gradient(top, #fefefe 0%, #ededed 100%);
 	background: -ms-linear-gradient(top, #fefefe 0%, #ededed 100%);
 	background: linear-gradient(to bottom, #fefefe 0%, #ededed 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#ededed', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#ededed', GradientType=0);*/
 }
 
 .cc-header .cc-title {
@@ -232,7 +259,7 @@ form {
 	margin-left: 0.5em;
 }
 
-.cc-options ul.cc-header-links li a {
+/*.cc-options ul.cc-header-links li a {
 	color: #4b4b4b;
 	font-weight: bold;
 	padding: 4px 6px;
@@ -251,6 +278,21 @@ form {
 	background: -ms-linear-gradient(top, #f0f0f0 0%, #e6e6e6 100%);
 	background: linear-gradient(to bottom, #f0f0f0 0%, #e6e6e6 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e6e6e6', GradientType=0);
+}*/
+.cc-options ul.cc-header-links li a {
+	color: #fff;
+	font-weight: normal;
+	padding: 4px 10px;
+	border: 1px solid #aaa;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+.cc-options ul.cc-header-links li a:hover {
+	text-decoration: none;
+	color: #424242;
+        border: 1px solid #eee;
+        background-color: #fafafa;
 }
 
 /***************** Sub Menu *******************/
@@ -283,16 +325,16 @@ form {
 
 .cc-submenu {
 	padding: 10px 0;
-	background-color: #dddddd;
+	//background-color: #dddddd;
 	border-bottom: 1px solid #626262;
-	background: #9a9a9a;
+	/*background: #9a9a9a;
 	background: -moz-linear-gradient(top, #9a9a9a 0%, #7e7e7e 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9a9a9a), color-stop(100%, #7e7e7e));
 	background: -webkit-linear-gradient(top, #9a9a9a 0%, #7e7e7e 100%);
 	background: -o-linear-gradient(top, #9a9a9a 0%, #7e7e7e 100%);
 	background: -ms-linear-gradient(top, #9a9a9a 0%, #7e7e7e 100%);
 	background: linear-gradient(to bottom, #9a9a9a 0%, #7e7e7e 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a9a9a', endColorstr='#7e7e7e', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a9a9a', endColorstr='#7e7e7e', GradientType=0);*/
 	-webkit-box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -502,10 +544,11 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 /**************** Main Content ******************/
 
 .cc-main-content {
-	margin: 20px 40px 0 40px;
+	//margin: 20px 40px 0 40px;
 }
 
 .cc-content-section {
+	border: 1px solid #c8c8c8;
 }
 
 .cc-content-section h3 {
@@ -593,6 +636,8 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 
 .cc-main-content select, .cc-main-content textarea, .cc-main-content input[type="text"], .cc-main-content input[type="password"], .cc-main-content input[type="datetime"], .cc-main-content input[type="datetime-local"], .cc-main-content input[type="date"], .cc-main-content input[type="month"], .cc-main-content input[type="time"], .cc-main-content input[type="week"], .cc-main-content input[type="number"], .cc-main-content input[type="email"], .cc-main-content input[type="url"], .cc-main-content input[type="search"], .cc-main-content input[type="tel"], .cc-main-content input[type="color"], .cc-main-content .uneditable-input {
 	height: auto;
+	font-weight: 500;
+	padding:3px 5px;
 }
 
 .cc-main-content select {
@@ -689,7 +734,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 }
 
 .cc-main-content .toggle-container {
-	width: 300px;
+	width: 450px;
 	float: left;
 	clear: left;
 }
@@ -711,7 +756,7 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 }
 
 .cc-main-content label {
-	font-weight: bold;
+	font-weight: normal;
 }
 
 .cc-main-content .radio-container label, .cc-main-content .checkbox-container label {
@@ -1129,6 +1174,10 @@ img.action, .action {
 		font-size: 0.8em;
 	}
 }
+.field-container > label {
+    display: block;
+    margin-bottom: 10px;
+}
 
 /************** Icons for theme option elements ****************/
 #blank_space_img
@@ -1226,8 +1275,10 @@ img.action, .action {
 {
 	float:right;
 	display:inline-block;
-	height: 1.6em;
-	width: 1.55em;
+	//height: 1.6em;
+	//width: 1.55em;
+	height: 22px;
+	width: 22px;
 }
 /* CSS for CyberChimps account page */
 .panel-primary {
@@ -1249,3 +1300,225 @@ img.action, .action {
 .panel-heading h3 {font-size: 20px;}
 .updateres { font-size:1.1em; margin-bottom: 15px;display: block;color: #005580;}
 .ccinfo { font-size:1.1em; margin-bottom: 15px;display: block;}
+.cc-main-content input[type="text"].of-color{
+	height:28px;
+}
+.cc-main-content
+{
+	background:#c8c8c8;
+}
+.sky-tabs .active
+{
+	text-align:left;
+}
+#header_section_order .right_list .active
+{
+	text-align: center;
+	//margin-top: -10px;
+	//margin-left: -10px;
+	//margin-right: -10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #cccccc;
+	//background: #ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#header_section_order .right_list .list_items *
+{
+	padding:5px;
+	background:#fff;		
+}
+#header_section_order .left_list .inactive
+{
+	margin-top: 0.2em;
+	margin-bottom: 10px;
+	background: #ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#blog_section_order .right_list .active
+{
+	text-align: center;
+	margin-top: -10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #cccccc;
+	background: #ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#blog_section_order .list_item
+{
+	padding:10px;
+	border:1px solid #fff;
+	background:#f8f8f8;
+}
+#blog_section_order .cc_elements_guide
+{
+	padding-left:1em;
+}
+#blog_section_order .left_list .inactive
+{
+	margin-top: 0.2em;
+	margin-bottom: 10px;
+	background: #ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#header_section_order .list_item
+{
+	padding:10px;
+	border:1px solid #fff;
+	background:#f8f8f8;
+}
+#cyberchimps_header_heading > h2, #cyberchimps_blog_heading > h2, #cyberchimps_templates_heading > h2, #cyberchimps_footer_heading > h2, #cyberchimps_import_export_heading > h2, #cyberchimps_addons_heading > h2
+{
+    padding: 15px 0;
+}
+#cyberchimps_addons_heading, #cyberchimps_header_heading, #cyberchimps_design_heading
+{
+	min-height: 290px;
+}
+
+.formsuccess p { 
+	font-size: 20px;
+}
+.sky-tabs div.formsuccess
+{
+	position:fixed;	
+	top:25%;
+	left:0;
+	right:0;
+	z-index:9999;
+	text-align:center;
+	color: #F4FCEF;
+	background:none repeat scroll 0% 0% #01AA42; 
+	padding: 16px;
+	margin: 0 auto;
+	width: 18%;
+	border-radius:2px;
+}
+
+.sky-tabs-pos-left > label.blog_sub_headings_new
+{
+	display:none;
+	line-height: 30px;
+	padding-left: 10px;
+}
+.tab-content > div
+{
+	padding-top:0;
+}
+.cc-content-section h3.blog_section_titles
+{
+	padding: 10px;
+	font-size: 16px;
+	background: #ddd;
+	margin-bottom: 10px;
+}
+.sky-tabs ul .nav-tabs li
+{
+	background: #fff;
+	padding: 4px;
+	font-size: 13px;
+	border-right: 1px solid #cfcfcf;
+}
+.sky-tabs ul .nav-tabs li:last-child
+{
+	border-right:none;
+}
+.cc-main-content .field-container-wrapper
+{
+	background:#fff;
+	padding: 20px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+{
+	background: #2da5da;
+	color: #fff;
+	border: 1px solid #2da5da;
+	border-radius: 0px;
+}
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    border-color: transparent;
+background: #2da5da;
+	color: #fff;
+	border: 1px solid #2da5da;
+	border-radius: 0px;
+	cursor:pointer;
+}
+.cc-options ul.nav
+{
+	border-bottom:1px solid #cfcfcf;
+	padding-bottom: 10px;
+}
+.nav-tabs > li
+{
+	margin-bottom:0;
+}
+.upload_button.btn
+{
+	background: #cfcfcf;
+	padding: 5px;
+	color: #333;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+.cc-header .cc-title h3 {
+    text-transform: uppercase;
+    font-size: 14px !important;
+    font-weight: normal;
+}
+#setting-error-tgmpa
+{
+    margin-left: 0px;
+	margin-top: 15px;
+	margin-right: 40px;
+	color: #777;
+}
+/*========= new css for guide links for sky tabs ==========*/
+.nav > li > a {
+	padding-right:30px;
+}
+.sky-tabs .nav-tabs li a.cc_right_subsections
+{
+	position: absolute;
+	right: 6%;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	top:30%;
+}
+.sky-tabs .nav-tabs li a.cc_right_subsections:hover
+{
+	background:#fff;
+	color:#163c4a;
+}
+.sky-tabs .nav-tabs li.active a.cc_right_subsections:hover
+{
+	background:transparent;
+	color:#163c4a;
+}
+.cc_right_subsections_blog
+{
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    font-size: 1.5em;
+}
+.tab-content {
+   overflow-x: hidden;	
+}
+.cc-header .cc-title h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight:bold;	
+}
+.sky-tabs label {
+font-size: 12px;
+}
+.cc-submit {
+background-color: #163c4a;
+}

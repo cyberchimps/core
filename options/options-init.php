@@ -61,6 +61,8 @@ function cyberchimps_load_styles() {
 
 	wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
 	wp_enqueue_style( 'thickbox' );
+	
+	wp_enqueue_style( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/css/sky-tabs.css');
 }
 
 function cyberchimps_load_scripts() {
@@ -85,6 +87,8 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
+	
+	wp_enqueue_script('cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js');
 }
 function cyberchimps_load_styles_account() {
 
@@ -174,7 +178,7 @@ function cyberchimps_options_page() {
 	<!-- end header -->
 
 	<!-- start sub menu -->
-	<div class="row-fluid">
+	<div class="row-fluid cc-submit">
 		<div class="span12">
 			<div class="cc-submenu">
 				<div class="cc-collapse">
@@ -236,109 +240,230 @@ function cyberchimps_options_page() {
 	<!-- end sub menu -->
 
 	<!-- start left menu -->
-	<div class="row-fluid cc-content">
-		<div class="span3">
-			<div class="cc-left-menu">
-				<ul class="cc-parent nav-tab-wrapper">
-					<?php
-					foreach( $headings_list as $heading ) {
-
-						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
-
-						echo '<li class="cc-has-children">';
-						echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html(
-								$heading['title'] ) . '<span class="glyphicon glyphicon-chevron-down"></span></a><div class="cc-menu-arrow"><div></div></div>';
-
-						echo '<ul class="cc-child">';
-						foreach( $sections_list as $section ) {
-							if( in_array( $heading['id'], $section ) ) {
-								$jquery_click_section_hook = '';
-								$jquery_click_section_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $section['id'] ) );
-
-								echo '<li><a id="' . esc_attr( $jquery_click_section_hook ) . '-tab" title="' . esc_attr( $section['label'] ) . '" href="' . esc_attr( '#' . $jquery_click_section_hook ) . '">' . esc_html( $section['label'] ) . '</a></li>';
-							}
+	<div class="row-fluid cc-content cc-main-content">
+		<div class="sky-tabs sky-tabs-pos-left sky-tabs-anim-flip sky-tabs-response-to-icons">
+		<?php global $wp_settings_sections, $wp_settings_fields; ?>		
+		<?php $count_left_menu = 1; ?>
+		<?php	foreach( $headings_list as $heading ) {
+	
+					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) ); 
+					
+						if($count_left_menu == 1)
+						{
+							echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
+							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
 						}
-						echo '</ul>';
-						echo '</li>';
-					} ?>
-					<li id="left-menu-save">
-						<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-					</li>
-				</ul>
-			</div>
-			<!-- cc-left-menu -->
-		</div>
-		<!-- span3 -->
-		<!-- end left menu -->
+						else
+						{
+							echo '<input type="radio" name="sky-tabs" id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
+							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
+							if($jquery_click_hook == "cyberchimps_blog_heading")
+							{ ?>
+								
+				<?php			foreach( (array)$wp_settings_sections[$heading['id']] as $section ) 
+								{
+									echo '<input type="radio" name="sky-tabs" id="sky-tab-'.$section['id'].'" class="sky-tab-content-'.$section['id']. '">';
+									echo '<label id="sky-tab-label-'.$section['id'].'" for="sky-tab-'.$section['id'].'" class="blog_sub_headings_new"><a class="anchor_heading" href="#wrapper_'.$section['id'].'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $section['title'] ).'</span></span></a></label>';
+								} ?>
+							
+			<?php			}
+						}
 
-		<!-- start main content -->
-		<div class="span9">
-			<div class="cc-main-content">
+				$count_left_menu++;	
+				}
+		?>
+				<ul>
+				<?php $count_right_items = 1; ?>
+	
 				<?php foreach( $headings_list as $heading ) {
+					
+						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+						
+						echo '<li class="sky-tab-content-'.$count_right_items.'">';
+						echo '<div class="cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">'; ?>
 
-					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+				<?php	if($jquery_click_hook != "cyberchimps_blog_heading")
+						{  ?>
+		<?php				echo '<ul class="nav nav-tabs" role="tablist">';
+									$i = 0;
 
-					echo '<div class="group cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
-					echo '<h2>' . esc_html( $heading['title'] ) . '</h2>';
-					if( isset( $heading['description'] ) ) {
-						echo '<p>' . esc_html( $heading['description'] ) . '</p>';
-					}
-					cyberchimps_do_settings_sections( $heading['id'] );
-					echo '</div>';
-				} ?>
-			</div>
-			<!-- cc-main-content -->
-		</div>
-		<!-- span9 -->
-	</div>
-	<!-- row fluid -->
-	<!-- end main content -->
+									foreach( (array)$wp_settings_sections[$heading['id']] as $section ) 
+									{
+										switch($section['id'])	
+										{
+											case 'cyberchimps_custom_layout_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-layout-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_custom_colors_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-custom-colors/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_typography_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-typography-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_header_drag_drop_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_header_options_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_header_social_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-social-icons/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_header_details_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-contact-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_header_banner_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-banner-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_single_post_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-single-post/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_archive_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-archive/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_search_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-search/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_error_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-404/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_footer_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/footer-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											case 'cyberchimps_import_export_section' :
+												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/import-export-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+												break;
+											default:
+												$cc_section_link = '';
+										}	
+										$jquery_click_section_hook = '';
 
-	<!-- start footer -->
-	<div class="row-fluid">
-		<div class="cc-footer">
-			<div class="span3">
-				<div class="cc-logo">
-					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"><img
-							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/chimp.png"
-							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"/><span>CyberChimps</span></a>
-				</div>
-				<!-- cc-logo -->
-			</div>
-			<!-- span3 -->
-			<div class="span9">
-				<!--  <div class="cc-social-container">
-					<div class="cc-social twitter">
-						<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
-						<script>!function (d, s, id) {
-								var js, fjs = d.getElementsByTagName(s)[0];
-								if (!d.getElementById(id)) {
-									js = d.createElement(s);
-									js.id = id;
-									js.src = "//platform.twitter.com/widgets.js";
-									fjs.parentNode.insertBefore(js, fjs);
-								}
-							}(document, "script", "twitter-wjs");</script>
-					</div>
-					<!-- cc-scoial -->
-					<!--  <div class="cc-social facebook">
-						<iframe
-							src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-							scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
-					</div>
-					<!-- cc-scoial -->
-				<!--  </div>-->
-				<!-- cc-social-container -->
-				<div class="footer-links">
-				<a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
-					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-					                                                                                                'cyberchimps_core' ) ); ?>' );">
-						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
-					</button>
-				</div>
-				<!-- footer-links -->
-			</div>
+										if ($i == 0) 
+										{
+											echo 
+											'<li class="active">
+												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">    
+												'.$section['title'].'
+												</a>';
+											echo $cc_section_link;
+											echo '</li>';
+										} else{
+											echo 
+											'<li>
+												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">    
+												'.$section['title'].'
+												</a>';
+											echo $cc_section_link;
+											echo '</li>';
+										}
+										$i++;
+									} // end of foreach
+							echo '</ul>';
+						}
+
+						echo '<div class="tab-content">';
+							$j = 0;
+								foreach((array)$wp_settings_sections[$heading['id']] as $section)
+								{ 
+									if ($j == 0) 
+									{
+										echo '<div class="tab-pane active" id="' . $section['id'].'">';
+									} 
+									else
+									{
+										echo '<div class="tab-pane" id="' . $section['id'].'">';
+									}
+									$j++;
+		
+									// wrapper div of all field-container divs
+									echo '<div class="field-container-wrapper" id="wrapper_'.$section['id'].'">';
+
+										//Hook before section options
+										do_action( $jquery_click_section_hook . '_before' );
+										call_user_func( $section['callback'], $section );
+
+										if( isset( $wp_settings_fields ) && isset( $wp_settings_fields[$heading['id']] ) && isset( $wp_settings_fields[$heading['id']][$section['id']] ) ) 
+										{ ?>
+										<?php if ($jquery_click_hook == "cyberchimps_blog_heading")
+												{ ?>
+													<?php
+													switch($section['id'])	
+													{
+														case 'cyberchimps_drag_and_drop_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_blog_options_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_magazine_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-magazine-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_twitter_api_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-twitter-bar-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_boxes_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-boxes-options-not-the-box-widgets/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_callout_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-callout-section-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_slider_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-cyberchimps-slider-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_html_box_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-html-box-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_carousel_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-carousel-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_portfolio_pro_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-portfolio-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_recent_posts_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-recent-posts-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_separator_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-separator-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_blank_space_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-blank-space-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_google_maps_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-google-maps-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_video_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-video-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														case 'cyberchimps_showcase_section' :
+															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-showcase-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+															break;
+														default:
+															$cc_section_link = '';
+													}	?>
+													<h3 class="blog_section_titles"><?php echo $section['title']; ?> </h3>
+													<?php echo $cc_section_link; ?>
+										<?php   }  ?>
+							<?php		cyberchimps_do_settings_fields( $heading['id'], $section['id'] );
+										}
+
+										//Hook after section options
+										do_action( $jquery_click_section_hook . '_after' );
+
+									echo '</div>'; // .field-container ends
+
+									echo '</div>'; // end of .tab-pane
+								} //end of foreach
+
+						echo '</div>'; // end of cc-content-section
+	
+						echo '</li>';
+
+				$count_right_items++;
+				} // end of main foreach $headings_list
+
+?>
+				</ul>
+			
 			<!-- span 9 -->
 			<div class="clear"></div>
 		</div>
@@ -539,7 +664,7 @@ function cyberchimps_drag_drop_field( $value ) {
 	}
 
 	$output .= "<div class='section_order' id=" . esc_attr( $value['id'] ) . ">";
-	$output .= "<div class='left_list span6'>";
+	$output .= "<div class='left_list span5'>";
 	$output .= "<div class='inactive'>Inactive Elements</div>";
 	$output .= "<div class='list_items'>";
 	if( is_array( $val ) ) {
