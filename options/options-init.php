@@ -248,7 +248,7 @@ function cyberchimps_options_page() {
 	
 					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) ); 
 					
-						if($count_left_menu == 3)
+						if($count_left_menu == 1)
 						{
 							echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
 							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
@@ -369,6 +369,9 @@ function cyberchimps_options_page() {
 									{
 										echo '<div class="tab-pane active" id="' . $section['id'].'">';
 									} 
+									else if ($section['id']== 'cyberchimps_blog_options_section')
+									{
+									}
 									else
 									{
 										echo '<div class="tab-pane" id="' . $section['id'].'">';
@@ -1020,7 +1023,7 @@ function cyberchimps_fields_callback( $value ) {
 			if( isset( $value['options'] ) ) {
 				$typography_options = wp_parse_args( $value['options'], $typography_options );
 			}
-error_log('ty');
+
 			// Font Size
 			if( $typography_options['sizes'] ) {
 				$font_size = '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';

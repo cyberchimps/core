@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
 		slider_lite: "cyberchimps_blog_slider_lite_section",
 		page_slider: "cyberchimps_slider_section",
 		callout_section: "cyberchimps_callout_section",
-		twitterbar_section: "cyberchimps_twitterbar_section",
+		twitterbar_section: "cyberchimps_twitter_api_section",
 		carousel_section: "cyberchimps_carousel_section",
 		magazine: "cyberchimps_magazine_section",
 		portfolio_lite: "cyberchimps_blog_portfolio_lite_section",

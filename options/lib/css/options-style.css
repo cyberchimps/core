@@ -1304,23 +1304,17 @@ img.action, .action {
 	text-align: center;		
 	border-bottom: 1px solid #cccccc;
 	background: #fff;
-	padding: 1em 0; 
-	/*padding-top: 1em;
-	padding-bottom: 1em;*/
-	 
+	font-weight:bold;
+	padding: 1em 0; 	 
 	/*margin-top: -10px;
     margin-left: -10px;
     margin-right: -10px;
-    margin-bottom: 10px;*/
-    //margin: -10px -10px 10px -10px!important;
-    //padding: 11.9999990463257px 0px!important;
-  
+    margin-bottom: 10px;*/  
 }
 
 .sky-tabs #header_section_order .right_list .list_items *
 {
 	padding:5px;
-	background:#fff;		
 }
 #header_section_order .left_list .inactive
 {
@@ -1333,10 +1327,11 @@ img.action, .action {
 #blog_section_order .right_list .active
 {
 	text-align: center;
-	margin-top: -10px;
+	font-weight:bold;
+	/*margin-top: -10px;
 	margin-left: -10px;
 	margin-right: -10px;
-	margin-bottom: 10px;
+	margin-bottom: 10px;*/
 	border-bottom: 1px solid #cccccc;
 	background: #ffffff;
 	padding-top: 1em;
