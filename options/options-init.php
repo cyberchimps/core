@@ -248,7 +248,7 @@ function cyberchimps_options_page() {
 	
 					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) ); 
 					
-						if($count_left_menu == 1)
+						if($count_left_menu == 3)
 						{
 							echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
 							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
@@ -468,10 +468,32 @@ function cyberchimps_options_page() {
 			<div class="clear"></div>
 		</div>
 		<!-- cc-footer -->
+		<!-- start footer -->
+	<div>
+		<div class="cc-footer">
+			<div class="span4">
+							</div>
+			<!-- col-md-3 -->
+			<div class="span8">
+				<div class="footer-links">
+					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
+						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
+					</button>
+				</div>
+				<!-- footer-links -->
+			</div>
+			<!-- span 9 -->
+			<div class="clear"></div>
+		</div>
+		<!-- cc-footer -->
+	</div>
+		
 	</div>
 	<!-- row fluid -->
 	<!-- end footer -->
-
+	
 	</form>
 
 	</div>
@@ -998,7 +1020,7 @@ function cyberchimps_fields_callback( $value ) {
 			if( isset( $value['options'] ) ) {
 				$typography_options = wp_parse_args( $value['options'], $typography_options );
 			}
-
+error_log('ty');
 			// Font Size
 			if( $typography_options['sizes'] ) {
 				$font_size = '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';

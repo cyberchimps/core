@@ -580,14 +580,14 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 
 .cc-footer {
 	padding: 10px 0;
-	background: #575757;
-	background: -moz-linear-gradient(top, #575757 0%, #121212 100%);
+	background: #163c4a;
+	/*background: -moz-linear-gradient(top, #575757 0%, #121212 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #575757), color-stop(100%, #121212));
 	background: -webkit-linear-gradient(top, #575757 0%, #121212 100%);
 	background: -o-linear-gradient(top, #575757 0%, #121212 100%);
 	background: -ms-linear-gradient(top, #575757 0%, #121212 100%);
 	background: linear-gradient(to bottom, #575757 0%, #121212 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#121212', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#121212', GradientType=0);*/
 }
 
 .cc-logo {
@@ -879,7 +879,11 @@ textarea#custom_css, textarea#html_box {
 	text-align: left;
 }
 
-.right_list {
+.sky-tabs .right_list {
+	background: #999999;
+	
+}
+.right_list{
 	background: #999999;
 	padding: 10px;
 	box-shadow: 0 0 5px #000000;
@@ -913,33 +917,17 @@ textarea#custom_css, textarea#html_box {
 	font-size: 12px;
 }
 
-.list_items {
-	padding-bottom: 5px;
+.sky-tabs .list_items {
+	padding-bottom: 15px;
 }
 
-.active {
-	font-size: 12px;
-	font-weight: bold;
-	color: #000000;
-	text-align: center;
-	margin-top: -10px;
-	margin-left: -10px;
-	margin-right: -10px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #cccccc;
-	background: #ffffff; 
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0); /* IE6-9 */
-	padding-top:1em;
-	padding-bottom:1em;
-}
-
-.drag {
+.sky-tabs .drag {
 	font-size: 10px;
 	font-weight: bold;
 	color: #ffffff;
-	text-align: center;
-	margin-top: -5px;
-	margin-bottom: 5px;
+	text-align: center;	
+	/*margin: -5px 0 5px 0;
+	padding: 1em 0;*/
 }
 
 .inactive {
@@ -1309,21 +1297,27 @@ img.action, .action {
 }
 .sky-tabs .active
 {
-	text-align:left;
+	text-align:left;	
 }
-#header_section_order .right_list .active
+.sky-tabs #header_section_order .right_list .active
 {
-	text-align: center;
-	//margin-top: -10px;
-	//margin-left: -10px;
-	//margin-right: -10px;
-	margin-bottom: 10px;
+	text-align: center;		
 	border-bottom: 1px solid #cccccc;
-	//background: #ffffff;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	background: #fff;
+	padding: 1em 0; 
+	/*padding-top: 1em;
+	padding-bottom: 1em;*/
+	 
+	/*margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 10px;*/
+    //margin: -10px -10px 10px -10px!important;
+    //padding: 11.9999990463257px 0px!important;
+  
 }
-#header_section_order .right_list .list_items *
+
+.sky-tabs #header_section_order .right_list .list_items *
 {
 	padding:5px;
 	background:#fff;		
