@@ -324,8 +324,7 @@ form {
 }
 
 .cc-submenu {
-	padding: 10px 0;
-	//background-color: #dddddd;
+	padding: 10px 0;	
 	border-bottom: 1px solid #626262;
 	/*background: #9a9a9a;
 	background: -moz-linear-gradient(top, #9a9a9a 0%, #7e7e7e 100%);
@@ -1303,6 +1302,7 @@ img.action, .action {
 {
 	text-align: center;		
 	border-bottom: 1px solid #cccccc;
+	color: #000000;
 	background: #fff;
 	font-weight:bold;
 	padding: 1em 0; 	 
@@ -1328,6 +1328,7 @@ img.action, .action {
 {
 	text-align: center;
 	font-weight:bold;
+	color: #000000;
 	/*margin-top: -10px;
 	margin-left: -10px;
 	margin-right: -10px;
