@@ -260,9 +260,7 @@ function cyberchimps_customize( $wp_customize ) {
                 <?php
             endforeach;
         }
-    }
-    ?>   
-    <?php
+    }    
     /*     * ******** Class for skin color selection option ends ************ */
     $imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
     
