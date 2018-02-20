@@ -66,6 +66,7 @@ var page_subsection_map = {
 		video: "cyberchimps_video_section",
 		showcase: "cyberchimps_showcase_section",
 		testimonial: "cyberchimps_testimonial_section",
+		map_contact: "cyberchimps_map_contact_section",
 		blog_post_page: "cyberchimps_blog_options_section",
 		//profile				: "cyberchimps_profile_section"
 	};

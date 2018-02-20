@@ -88,7 +88,7 @@ ul, ol {
 .clear {
 	clear: both;
 }
-.cc-options input[type="submit"], .cc-submenu-links .btn .btn-default, .reset-button ,.cc-submenu-links .btn {
+.cc-options input[type="submit"], .cc-submenu-links .btn .btn-default, .reset-button ,.cc-submenu-links .btn, .cc-footer .btn {
 	border: solid 1px #163c4a;
 	background: #d04d4c;
 	color: #ffffff;	
@@ -101,7 +101,7 @@ ul, ol {
     line-height: 30px !important;
     padding: 3px 25px !important;
 }
-.cc-options input[type="submit"]:hover, .reset-button:hover, .cc-submenu-links .btn{
+.cc-options input[type="submit"]:hover, .reset-button:hover, .cc-submenu-links .btn:hover,.cc-footer .btn:hover{
 	background: #b63332;
    border: solid 1px #163c4a;
    color: #ffffff;
