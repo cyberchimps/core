@@ -90,7 +90,7 @@ class CC_Custom_Background {
 	protected function get_radio_fields() {
 		$value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
 		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk', 'grid' );
-		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ) . '</label><br>';
+		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'primo' ) . '</label><br>';
 
 		foreach( $radios as $radio ) {
 			$html .= '<div class="images-radio-subcontainer">';

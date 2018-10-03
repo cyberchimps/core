@@ -86,7 +86,7 @@ if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		}
 
 		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="cyberchimps_options' . $name . '" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps_core' ) . '" rel="' . $int . '" /></div>' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'primo' ) . '" rel="' . $int . '" /></div>' . "\n";
 
 		if( $_desc != '' ) {
 			$output .= '<span class="cyberchimps_metabox_desc">' . $_desc . '</span>' . "\n";
@@ -110,7 +110,7 @@ if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 				$output .= '';
 
 				// Standard generic output if it's not an image.	
-				$title = __( 'View File', 'cyberchimps_core' );
+				$title = __( 'View File', 'primo' );
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span>' . $remove . '</div>';
 			}
 		}
@@ -236,7 +236,7 @@ if( !function_exists( 'cyberchimps_mlu_js_popup' ) ) {
  */
 if( !function_exists( 'cyberchimps_mlu_modify_tabs' ) ) {
 	function cyberchimps_mlu_modify_tabs( $tabs ) {
-		$tabs['gallery'] = str_replace( __( 'Gallery', 'cyberchimps_core' ), __( 'Previously Uploaded', 'cyberchimps_core' ), $tabs['gallery'] );
+		$tabs['gallery'] = str_replace( __( 'Gallery', 'primo' ), __( 'Previously Uploaded', 'primo' ), $tabs['gallery'] );
 
 		return $tabs;
 	}

@@ -31,7 +31,7 @@ if( is_admin() ) {
 		'type'    => 'image_select',
 		'id'      => 'cyberchimps_page_sidebar',
 		'class'   => '',
-		'name'    => __( 'Select Page Layout', 'cyberchimps_core' ),
+		'name'    => __( 'Select Page Layout', 'primo' ),
 		'options' => apply_filters( 'sidebar_layout_options', array(
 			'full_width'    => $image_path . '1col.png',
 			'right_sidebar' => $image_path . '2cr.png'
@@ -42,20 +42,20 @@ if( is_admin() ) {
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_page_title_toggle',
 			'class' => 'checkbox',
-			'name'  => __( 'Page Title', 'cyberchimps_core' ),
+			'name'  => __( 'Page Title', 'primo' ),
 			'std'   => 1
 		),
 		array(
 			'type'    => 'section_order',
 			'id'      => 'cyberchimps_page_section_order',
 			'class'   => '',
-			'name'    => __( 'Page Elements', 'cyberchimps_core' ),
+			'name'    => __( 'Page Elements', 'primo' ),
 			'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
-				'boxes'              => __( 'Boxes', 'cyberchimps_core' ),
-				'page_section'       => __( 'Page', 'cyberchimps_core' ),
-				'portfolio_lite'     => __( 'Portfolio Lite', 'cyberchimps_core' ),
-				'slider_lite'        => __( 'Slider Lite', 'cyberchimps_core' ),
-				'twitterbar_section' => __( 'Twitter Bar', 'cyberchimps_core' )
+				'boxes'              => __( 'Boxes', 'primo' ),
+				'page_section'       => __( 'Page', 'primo' ),
+				'portfolio_lite'     => __( 'Portfolio Lite', 'primo' ),
+				'slider_lite'        => __( 'Slider Lite', 'primo' ),
+				'twitterbar_section' => __( 'Twitter Bar', 'primo' )
 			) ),
 			'std'     => array( 'page_section' )
 		),
@@ -63,8 +63,8 @@ if( is_admin() ) {
 			'type'      => 'help',
 			'id'        => 'cyberchimps_page_help',
 			'class'     => 'help-message',
-			'name'      => __( 'Need Help?', 'cyberchimps_core' ),
-			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'cyberchimps_core' ), $themenamefull ) . '</a></td>'
+			'name'      => __( 'Need Help?', 'primo' ),
+			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'primo' ), $themenamefull ) . '</a></td>'
 		)
 	);
 	/*
@@ -72,7 +72,7 @@ if( is_admin() ) {
 	 */
 	$config = array(
 		'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box
-		'title'          => __( 'Page Options', 'cyberchimps_core' ), // meta box title
+		'title'          => __( 'Page Options', 'primo' ), // meta box title
 		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional
@@ -93,33 +93,33 @@ if( is_admin() ) {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_slider_image',
 			'class' => '',
-			'name'  => __( 'Slider Image', 'cyberchimps_core' ),
+			'name'  => __( 'Slider Image', 'primo' ),
 			'std'   => '',
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_slider_caption',
 			'class' => '',
-			'name'  => __( 'Slider Caption', 'cyberchimps_core' )
+			'name'  => __( 'Slider Caption', 'primo' )
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_slider_url',
 			'class' => '',
-			'name'  => __( 'Custom Slide Link', 'cyberchimps_core' )
+			'name'  => __( 'Custom Slide Link', 'primo' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_slider_hidetitle',
 			'class' => 'checkbox',
-			'name'  => __( 'Title', 'cyberchimps_core' ),
+			'name'  => __( 'Title', 'primo' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_slider_hidecaption',
 			'class' => 'checkbox',
-			'name'  => __( 'Caption', 'cyberchimps_core' ),
+			'name'  => __( 'Caption', 'primo' ),
 			'std'   => 0
 		)
 	);
@@ -129,7 +129,7 @@ if( is_admin() ) {
 	*/
 	$slider_config = array(
 		'id'             => 'post_slider_options', // meta box id, unique per meta box
-		'title'          => __( 'Custom Feature Slides', 'cyberchimps_core' ), // meta box title
+		'title'          => __( 'Custom Feature Slides', 'primo' ), // meta box title
 		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional

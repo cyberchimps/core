@@ -59,7 +59,7 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 		require_once( $directory . '/cyberchimps/options/theme-upsell.php' );
 
 		// Core Translations can be filed in the /inc/languages/ directory
-		load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
+		load_theme_textdomain( 'primo', $directory . '/cyberchimps/lib/languages' );
 		load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );
 
 		// Add support for the Aside Post Formats
@@ -84,7 +84,7 @@ if ( !function_exists( 'cyberchimps_core_setup_theme' ) ):
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			                    'primary' => __( 'Primary Menu', 'cyberchimps_core' ),
+			                    'primary' => __( 'Primary Menu', 'primo' ),
 		                    ) );
 
 		//set up defaults
@@ -166,7 +166,7 @@ function cyberchimps_widgets_init() {
 	// Add left sidebar only to pro themes as it is not avialble in free.
 	if ( 'pro' == cyberchimps_theme_check() ) {
 		register_sidebar( array(
-		                  'name'          => __( 'Sidebar Left', 'cyberchimps_core' ),
+		                  'name'          => __( 'Sidebar Left', 'primo' ),
 		                  'id'            => 'sidebar-left',
 		                  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
 		                  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
@@ -176,7 +176,7 @@ function cyberchimps_widgets_init() {
 	}
 
 	register_sidebar( array(
-		                  'name'          => __( 'Sidebar Right', 'cyberchimps_core' ),
+		                  'name'          => __( 'Sidebar Right', 'primo' ),
 		                  'id'            => 'sidebar-right',
 		                  'before_widget' => apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
 		                  'after_widget'  => apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
@@ -185,7 +185,7 @@ function cyberchimps_widgets_init() {
 	                  ) );
 
 	register_sidebar( array(
-		                  'name'          => __( 'Footer Widgets', 'cyberchimps_core' ),
+		                  'name'          => __( 'Footer Widgets', 'primo' ),
 		                  'id'            => 'cyberchimps-footer-widgets',
 		                  'before_widget' => apply_filters( 'cyberchimps_footer_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
 		                  'after_widget'  => apply_filters( 'cyberchimps_footer_after_widget', '</aside>' ),

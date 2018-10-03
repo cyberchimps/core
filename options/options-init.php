@@ -29,15 +29,15 @@ function cyberchimps_edit_themes_role_check() {
 // create the admin menu for the theme options page
 function cyberchimps_admin_add_page() {
 	$cyberchimps_page = add_theme_page(
-		__( 'Theme Options Page', 'cyberchimps_core' ),
-		__( 'Theme Options', 'cyberchimps_core' ),
+		__( 'Theme Options Page', 'primo' ),
+		__( 'Theme Options', 'primo' ),
 		'edit_theme_options',
 		'cyberchimps-theme-options',
 		'cyberchimps_options_page'
 	);
 	$cyberchimps_login_page = add_theme_page(
-			__( 'CyberChimps Account', 'cyberchimps_core' ),
-			__( 'CyberChimps Account', 'cyberchimps_core' ),
+			__( 'CyberChimps Account', 'primo' ),
+			__( 'CyberChimps Account', 'primo' ),
 			'edit_theme_options',
 			'cyberchimps-account',
 			'cyberchimps_account_page'
@@ -149,7 +149,7 @@ function cyberchimps_options_page() {
 		<div class="span4">
 			<div class="cc-title">
 				<div class="icon32" id="icon-tools"><br/></div>
-				<h2><?php printf( '%1s ' . __( 'Options', 'cyberchimps_core' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
+				<h2><?php printf( '%1s ' . __( 'Options', 'primo' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
 			</div>
 			<!-- cc-title -->
 		</div>
@@ -157,11 +157,11 @@ function cyberchimps_options_page() {
 		<div class="span8">
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
-				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Support', 'primo' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-				       target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Instructions', 'primo' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
-				       target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Buy Themes', 'primo' ); ?></a></li>
 				<?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
 					<li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
 					</li>
@@ -213,10 +213,10 @@ function cyberchimps_options_page() {
 
 
 				<div class="cc-submenu-links">
-					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'primo' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-					                                                                                                'cyberchimps_core' ) ); ?>' );">
-						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
+					                                                                                                'primo' ) ); ?>' );">
+						<?php esc_attr_e( 'Restore Defaults', 'primo' ); ?>
 					</button>
 				</div>
 				<!-- cc-submenu-links -->
@@ -283,7 +283,7 @@ function cyberchimps_options_page() {
 						echo '</li>';
 					} ?>
 					<li id="left-menu-save">
-						<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+						<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'primo' ); ?>"/>
 					</li>
 				</ul>
 			</div>
@@ -320,9 +320,9 @@ function cyberchimps_options_page() {
 		<div class="cc-footer">
 			<div class="span3">
 				<div class="cc-logo">
-					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"><img
+					<a href="http://cyberchimps.com" title="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'primo' ); ?>"><img
 							src="<?php echo get_template_directory_uri(); ?>/cyberchimps/options/lib/images/options/chimp.png"
-							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'cyberchimps_core' ); ?>"/><span>CyberChimps</span></a>
+							alt="<?php esc_attr_e( 'CyberChimps WordPress Themes', 'primo' ); ?>"/><span>CyberChimps</span></a>
 				</div>
 				<!-- cc-logo -->
 			</div>
@@ -351,10 +351,10 @@ function cyberchimps_options_page() {
 				</div>
 				<!-- cc-social-container -->
 				<div class="footer-links">
-					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
+					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'primo' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-					                                                                                                'cyberchimps_core' ) ); ?>' );">
-						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
+					                                                                                                'primo' ) ); ?>' );">
+						<?php esc_attr_e( 'Restore Defaults', 'primo' ); ?>
 					</button>
 				</div>
 				<!-- footer-links -->
@@ -399,7 +399,7 @@ function cyberchimps_account_page() {
 				
 				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo "Enter CyberChimps Account Details";?></h3></div>				
 				<div class="panel panel-primary">
-<span class="ccinfo"><?php _e('To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials','iribbonpro') ?></span>
+<span class="ccinfo"><?php _e('To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials','primo') ?></span>
 		
 					<span class="updateres"><?php if ($strResponseMessage != '' ) echo $strResponseMessage; ?></span>
 				      <div class="panel-body">
@@ -644,7 +644,7 @@ function cyberchimps_create_fields( $fields ) {
 	foreach( $fields as $field_args ) {
 		$field_defaults = array(
 			'id'       => false,
-			'name'     => __( 'Default Field', 'cyberchimps_core' ),
+			'name'     => __( 'Default Field', 'primo' ),
 			'callback' => 'cyberchimps_fields_callback',
 			'section'  => 'cyberchimps_default_section',
 			'heading'  => 'cyberchimps_default_heading',
@@ -1112,12 +1112,12 @@ function cyberchimps_options_validate( $input ) {
 
 			// make sure $try is set with the unserialized data
 			if( $try ) {
-				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'primo' ), 'updated fade' );
 
 				return $try;
 			}
 			else {
-				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'primo' ), 'error fade' );
 			}
 		}
 	}
@@ -1135,12 +1135,12 @@ function cyberchimps_options_validate( $input ) {
 
 				// make sure $try is set with the unserialized data
 				if( $try ) {
-					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'primo' ), 'updated fade' );
 
 					return $try;
 				}
 				else {
-					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'primo' ), 'error fade' );
 				}
 			}
 		}
@@ -1154,7 +1154,7 @@ function cyberchimps_options_validate( $input ) {
 	 * file will be added to the option for the active theme.
 	 */
 	if( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'cyberchimps_options', 'restore_defaults', __( 'Default options restored.', 'cyberchimps_core' ), 'updated fade' );
+		add_settings_error( 'cyberchimps_options', 'restore_defaults', __( 'Default options restored.', 'primo' ), 'updated fade' );
 
 		return cyberchimps_get_default_values();
 	}
@@ -1229,7 +1229,7 @@ function cyberchimps_options_validate( $input ) {
 
 		do_action( 'cyberchimps_options_before_save', $input );
 
-		add_settings_error( 'cyberchimps_options', 'save_options', __( 'Options saved.', 'cyberchimps_core' ), 'updated fade' );
+		add_settings_error( 'cyberchimps_options', 'save_options', __( 'Options saved.', 'primo' ), 'updated fade' );
 
 		return $clean;
 	}
@@ -1278,7 +1278,7 @@ function cyberchimps_admin_bar() {
 	$wp_admin_bar->add_menu( array(
 		                         'parent' => 'appearance',
 		                         'id'     => 'cyberchimps_options_page',
-		                         'title'  => __( 'Theme Options', 'cyberchimps_core' ),
+		                         'title'  => __( 'Theme Options', 'primo' ),
 		                         'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
 	                         ) );
 }

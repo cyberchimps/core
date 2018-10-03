@@ -18,7 +18,7 @@
 function cyberchimps_header_section_order() {
 	//get the defaults from the themes function file and turn the key into the value in a new array to mirror what happens within the theme when their are options saved in the database
 	$defaults = array();
-	$default  = apply_filters( 'header_drag_and_drop_default', array( 'cyberchimps_header_content' => __( 'Logo + Icons', 'cyberchimps_core' ) ) );
+	$default  = apply_filters( 'header_drag_and_drop_default', array( 'cyberchimps_header_content' => __( 'Logo + Icons', 'primo' ) ) );
 	foreach ( $default as $key => $val ) {
 		$defaults[] = $key;
 	}

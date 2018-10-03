@@ -801,34 +801,6 @@ textarea#custom_css, textarea#html_box {
 	width: 100%;
 }
 
-/************** Upgrade to Pro ***************/
-
-.cyberchimps_pro_upgrade {
-	color: #ffffff;
-	background: #81c7ef;
-	padding: 0 10px 10px 10px;
-	border: 1px solid #5ba9d3;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	overflow: hidden;
-}
-
-.cyberchimps_pro_upgrade p {
-	color: #ffffff;
-}
-
-.cyberchimps_pro_upgrade a:link {
-	color: #006da8;
-}
-
-.cyberchimps_pro_upgrade a:visited {
-	color: #006da8;
-}
-
-.cyberchimps_pro_upgrade a:hover {
-	color: #0085cf;
-}
-
 /***************** Section Order *********************/
 .section_order {
 	text-align: left;
@@ -882,7 +854,7 @@ textarea#custom_css, textarea#html_box {
 	margin-right: -10px;
 	margin-bottom: 10px;
 	border-bottom: 1px solid #cccccc;
-	background: #ffffff; 
+	background: #ffffff;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0); /* IE6-9 */
 	padding-top:1em;
 	padding-bottom:1em;
@@ -906,7 +878,7 @@ textarea#custom_css, textarea#html_box {
 	margin-left: -10px;
 	margin-right: -10px;
 	margin-bottom: 10px;
-	background: #ffffff; 
+	background: #ffffff;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0); /* IE6-9 */
 }
 
@@ -1143,7 +1115,7 @@ img.action, .action {
 #callout_section_img
 {
 	background: url("../images/icons/callout.png") no-repeat;
-	
+
 }
 #carousel_section_img
 {

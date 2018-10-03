@@ -326,10 +326,10 @@ add_filter( 'cyberchimps_font_face', 'cyberchimps_sanitize_font_face' );
  */
 function cyberchimps_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'cyberchimps_core' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'cyberchimps_core' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'cyberchimps_core' ),
-		'repeat'    => __( 'Repeat All', 'cyberchimps_core' ),
+		'no-repeat' => __( 'No Repeat', 'primo' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'primo' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'primo' ),
+		'repeat'    => __( 'Repeat All', 'primo' ),
 	);
 
 	return apply_filters( 'cyberchimps_recognized_background_repeat', $default );
@@ -343,15 +343,15 @@ function cyberchimps_recognized_background_repeat() {
  */
 function cyberchimps_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'cyberchimps_core' ),
-		'top center'    => __( 'Top Center', 'cyberchimps_core' ),
-		'top right'     => __( 'Top Right', 'cyberchimps_core' ),
-		'center left'   => __( 'Middle Left', 'cyberchimps_core' ),
-		'center center' => __( 'Middle Center', 'cyberchimps_core' ),
-		'center right'  => __( 'Middle Right', 'cyberchimps_core' ),
-		'bottom left'   => __( 'Bottom Left', 'cyberchimps_core' ),
-		'bottom center' => __( 'Bottom Center', 'cyberchimps_core' ),
-		'bottom right'  => __( 'Bottom Right', 'cyberchimps_core' )
+		'top left'      => __( 'Top Left', 'primo' ),
+		'top center'    => __( 'Top Center', 'primo' ),
+		'top right'     => __( 'Top Right', 'primo' ),
+		'center left'   => __( 'Middle Left', 'primo' ),
+		'center center' => __( 'Middle Center', 'primo' ),
+		'center right'  => __( 'Middle Right', 'primo' ),
+		'bottom left'   => __( 'Bottom Left', 'primo' ),
+		'bottom center' => __( 'Bottom Center', 'primo' ),
+		'bottom right'  => __( 'Bottom Right', 'primo' )
 	);
 
 	return apply_filters( 'cyberchimps_recognized_background_position', $default );
@@ -365,8 +365,8 @@ function cyberchimps_recognized_background_position() {
  */
 function cyberchimps_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'cyberchimps_core' ),
-		'fixed'  => __( 'Fixed in Place', 'cyberchimps_core' )
+		'scroll' => __( 'Scroll Normally', 'primo' ),
+		'fixed'  => __( 'Fixed in Place', 'primo' )
 	);
 
 	return apply_filters( 'cyberchimps_recognized_background_attachment', $default );
@@ -443,10 +443,10 @@ function cyberchimps_recognized_font_faces() {
  */
 function cyberchimps_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'cyberchimps_core' ),
-		'italic'      => __( 'Italic', 'cyberchimps_core' ),
-		'bold'        => __( 'Bold', 'cyberchimps_core' ),
-		'bold italic' => __( 'Bold Italic', 'cyberchimps_core' )
+		'normal'      => __( 'Normal', 'primo' ),
+		'italic'      => __( 'Italic', 'primo' ),
+		'bold'        => __( 'Bold', 'primo' ),
+		'bold italic' => __( 'Bold Italic', 'primo' )
 	);
 
 	return apply_filters( 'cyberchimps_recognized_font_styles', $default );
