@@ -86,7 +86,7 @@ add_filter( 'cyberchimps_sanitize_checkbox', 'cyberchimps_sanitize_checkbox' );
 
 /* Multicheck */
 function cyberchimps_sanitize_multicheck( $input, $option ) {
-	$output = '';
+	$output = array();
 	if( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
 			$output[$key] = "0";
