@@ -106,10 +106,10 @@ if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 					$title = $parts[$i];
 				}
 
-				// No output preview if it's not an image.			
+				// No output preview if it's not an image.
 				$output .= '';
 
-				// Standard generic output if it's not an image.	
+				// Standard generic output if it's not an image.
 				$title = __( 'View File', 'cyberchimps_core' );
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span>' . $remove . '</div>';
 			}
@@ -154,10 +154,9 @@ if( !function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
 			$_posts = $wpdb->get_row( $query );
 
 			// If we've got a post, loop through and get it's ID.
-			if( count( $_posts ) ) {
+			if ( ! empty( $_posts ) ) {
 				$_id = $_posts->ID;
-			}
-			else {
+			} else {
 
 				// If no post is present, insert one.
 				// Prepare some additional data to go with the post insertion.

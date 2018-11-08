@@ -166,6 +166,7 @@ if( !function_exists( 'cyberchimps_wrapper_end' ) ) {
 //Enables woocommerce support for the theme.
 add_theme_support( 'woocommerce' );
 
+
 function cyberchimps_create_layout() {
 	global $post;
 
