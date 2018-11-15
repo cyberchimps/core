@@ -163,8 +163,17 @@ if( !function_exists( 'cyberchimps_wrapper_end' ) ) {
 	}
 }
 
-//Enables woocommerce support for the theme.
+// Enables woocommerce support for the theme.
 add_theme_support( 'woocommerce' );
+
+// wc-product-gallery-zoom.
+add_theme_support( 'wc-product-gallery-zoom' );
+
+// wc-product-gallery-lightbox.
+add_theme_support( 'wc-product-gallery-lightbox' );
+
+// wc-product-gallery-slider.
+add_theme_support( 'wc-product-gallery-slider' );
 
 
 function cyberchimps_create_layout() {

@@ -381,7 +381,7 @@ a.symbol:hover {
 /*==================Google maps element ===================*/
 .google-maps-iframe iframe
 {
-	width:100%;
+	max-width:100%;
 }
 /*==================Separator element ====================*/
 #separator_section
