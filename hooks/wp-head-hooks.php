@@ -59,7 +59,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 						<?php } ?>
 						}
             <?php }
- 
+
                   if ( !empty( $headings_styles[1] ) ) { ?>
 					h2 {
 						<?php foreach( $headings_styles[1] as $key => $headings_style_2 ) {
@@ -74,8 +74,8 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 							echo $key; ?> : <?php echo $headings_style_3; ?>;
 						<?php } ?>
 						}
-			<?php } 
-			
+			<?php }
+
 			$width = intval( cyberchimps_get_option( 'max_width' ) ) . 'px';
 			if( !cyberchimps_get_option( 'responsive_design', 'checked' ) ) {
 			?>
@@ -86,8 +86,8 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 				}
 			<?php
 			}
-			
-			
+
+
 			?>
 
 		</style>
@@ -100,14 +100,14 @@ add_action( 'wp_head', 'cyberchimps_css_styles', 50 );
 
 // Creat headings_styles array from options.
 function cyberchimps_headings_styles() {
-	
+
 	// Set header font family.
 	$headings_styles_1      = cyberchimps_get_option( 'font_family_h1' );
-	$google_font_h1 = cyberchimps_get_option( 'google_font_h1' );     
+	$google_font_h1 = cyberchimps_get_option( 'google_font_h1' );
 
     $headings_styles_2      = cyberchimps_get_option( 'font_family_h2' );
 	$google_font_h2 = cyberchimps_get_option( 'google_font_h2' );
-      
+
     $headings_styles_3      = cyberchimps_get_option( 'font_family_h3' );
 	$google_font_h3 = cyberchimps_get_option( 'google_font_h3' );
 
@@ -282,7 +282,7 @@ foreach( $headings_styles_1 as $option => $value ) {
 // creates body_styles array from options
 function cyberchimps_body_styles() {
 	$body_styles = array();
-	
+
 	if( cyberchimps_get_option( 'typography_options' ) ) {
 		$typography_options = cyberchimps_get_option( 'typography_options' );
 		// changes terminology for typography to css elements

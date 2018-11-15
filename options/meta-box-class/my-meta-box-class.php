@@ -153,7 +153,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			// Get Plugin Path
 			$plugin_path = $this->SelfPath;
-			
+
 			// Set template directory uri
 			$directory_uri = get_template_directory_uri();
 			$metabox_uri = $directory_uri . '/cyberchimps/options/meta-box-class';
@@ -170,7 +170,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Load color picker
 				wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
 				wp_enqueue_script( 'color-picker-js', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ), '', true );
-				
+
 				// Enqueue Meta Box Scripts
 				wp_enqueue_script( 'at-meta-box', $metabox_uri . '/js/meta-box.min.js', array( 'jquery' ), null, true );
 				// Enqueue Cyberchimps Scripts
@@ -414,7 +414,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 					}
 
 					echo '
-        <span class="re-control at-re-toggle"><img src="' . $plugin_path . '/images/edit.png" alt="Edit" title="Edit"/></span> 
+        <span class="re-control at-re-toggle"><img src="' . $plugin_path . '/images/edit.png" alt="Edit" title="Edit"/></span>
         <span class="re-control"><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'cyberchimps_core' ) . '" title="' . __( 'Remove', 'cyberchimps_core' ) . '" id="remove-' . $field['id'] . '"></span>
         <span class="re-control-clear"></span></div>';
 					$c = $c + 1;
@@ -469,7 +469,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
           var ' . $counter . ' = ' . $c . ';
           jQuery("#add-' . $field['id'] . '").live(\'click\', function() {
             ' . $counter . ' = ' . $counter . ' + 1;
-            jQuery(this).before(\'' . $js_code . '\');            
+            jQuery(this).before(\'' . $js_code . '\');
             update_repeater_fields();
           });
               jQuery("#remove-' . $field['id'] . '").live(\'click\', function() {
@@ -481,7 +481,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 .at_re_sort_highlight{min-height: 55px; background-color: #EEEEEE; margin: 2px;}
 .re-control-clear{clear: both; display: block;}
 .at_re_sort_handle{cursor: move;}
-.re-control{float: right; padding: 5px;}    
+.re-control{float: right; padding: 5px;}
 .at-inline{line-height: 1 !important;}
 .at-inline .at-field{border: 0px !important;}
 .at-inline .at-label{margin: 0 0 1px !important;}
@@ -603,7 +603,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			echo "<textarea class='at-textarea large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " cols='60' rows='10'>{$meta}</textarea>";
 			$this->show_field_end( $field, $meta );
 		}
-		
+
 		/**
 		 * Show Field Unfiltered Textarea.
 		 *
@@ -700,7 +700,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			}
 			else {
 				$default_settings = array( 'media_buttons' => false );
-				
+
 				// Use new wp_editor() since WP 3.3
 				$settings                 = ( isset( $field['settings'] ) && is_array( $field['settings'] ) ? $field['settings'] : $default_settings );
 				$settings['editor_class'] = 'at-editor' . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' );
@@ -806,7 +806,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$this->show_field_begin( $field, $meta );
 			echo '<div class="input-prepend ' . $field['class'] . '"><input class="of-color" name="' . $field['id'] . '" id="' . $field['id'] . '" type="text" value="' . $meta . '" />';
 			echo '<div id="' . $field['id'] . '_picker'  . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $meta ) . '"></div></div></div>';
-			
+
 			$this->show_field_end( $field, $meta );
 
 		}
@@ -1050,7 +1050,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 					if( method_exists( $this, $sanitize_func ) ) {
 						$new = call_user_func( array( $this, $sanitize_func ), $new, $old );
 					}
-					
+
 					// Call defined method to save meta value, if there's no methods, call common one.
 					$save_func = 'save_field_' . $type;
 					if( method_exists( $this, $save_func ) ) {
@@ -1116,12 +1116,12 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		/*
    * Save Editor Field.
    *
-   * @param string $post_id 
-   * @param string $field 
-   * @param string $old 
-   * @param string $new 
+   * @param string $post_id
+   * @param string $field
+   * @param string $old
+   * @param string $new
    * @since 1.0
-   * @access public 
+   * @access public
    */
 		public function save_field_editor( $post_id, $field, $old, $new ) {
 			$id  = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
@@ -2094,7 +2094,7 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 	}
 
 	/****************************** Sanitization Functions Starts *************************************/
-	
+
 	/**
 	 * Sanitize editor Field.
 	 *
@@ -2115,7 +2115,7 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 
 		return $output;
 	}
-	
+
 	/**
 	 * Sanitize text Field.
 	 *
@@ -2127,10 +2127,10 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 	 */
 	public function sanitize_field_text( $input ) {
 		$output = wp_kses_post( $input );
-		
+
 		return $output;
 	}
-	
+
 	/**
 	 * Sanitize textarea Field.
 	 *
@@ -2143,10 +2143,10 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 	public function sanitize_field_textarea( $input ) {
 		global $allowedposttags;
 		$output = wp_kses( $input, $allowedposttags );
-		
+
 		return $output;
 	}
-	
+
 	/**
 	 * Sanitize unfiltered_textarea Field.
 	 *
