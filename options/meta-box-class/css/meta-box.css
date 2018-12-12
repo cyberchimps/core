@@ -655,6 +655,6 @@ tr {
 	height: 1.6em;
 	width: 1.6em;
 }
-.dont_display{
+.display_none{
 display: none;
 }
