@@ -474,7 +474,7 @@ tr {
 	border: 1px solid #23527C;
 	color:#23527C;
 }
-.glyphicon-remove:before 
+.glyphicon-remove:before
 {
 	content: "\e014";
 }
@@ -568,7 +568,7 @@ tr {
 #callout_section_img
 {
 	background: url("../../lib/images/icons/callout.png") no-repeat;
-	
+
 }
 #carousel_section_img
 {
@@ -654,4 +654,7 @@ tr {
 	display:inline-block;
 	height: 1.6em;
 	width: 1.6em;
+}
+.display_none{
+display: none;
 }

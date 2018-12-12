@@ -2081,6 +2081,7 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		wp_enqueue_media();
 
 		$this->show_field_begin( $field, $meta );
+		$meta = is_array( $meta ) ? '' : $meta;
 
 		if( $meta ) {
 			echo "<img class='image-preview' src='{$meta}' /><br/>";
