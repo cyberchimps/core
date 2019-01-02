@@ -72,6 +72,12 @@ function cyberchimps_add_core_sections( $sections_list ) {
 		'heading' => 'cyberchimps_help_heading'
 	);
 
+	$sections_list[] = array(
+		'id'      => 'cyberchimps_verify_order_section',
+		'label'   => apply_filters( 'cyberchimps_verify_order_heading', 'CyberChimps' ),
+		'heading' => 'cyberchimps_help_heading'
+	);
+
 	/**************************** DESIGN **************************************************/
 
 	$sections_list[] = array(
@@ -437,6 +443,15 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'      => 'help_info_display',
 		'type'    => 'welcome',
 		'section' => 'cyberchimps_help_section',
+		'heading' => 'cyberchimps_help_heading'
+	);
+
+	$fields_list[] = array(
+		'name'    => __( 'Verify Order Details', 'cyberchimps_core' ),
+		'id'      => 'verify_order',
+		'type'    => 'text',
+		'std'     => '123456',
+		'section' => 'cyberchimps_verify_order_section',
 		'heading' => 'cyberchimps_help_heading'
 	);
 
