@@ -55,7 +55,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
 					h1 {
 						<?php foreach( $headings_styles[0] as $key => $headings_style_1 ) {
 						// Changed to previous code for minor font changes
-							$headings_style_1 = empty( $headings_style_1 ) ? '' : $headings_style_1;
+							$headings_style_1 = is_array( $headings_style_1 ) ? '' : $headings_style_1;
 						echo $key; ?> : <?php echo $headings_style_1; ?>;
 						<?php } ?>
 						}
@@ -64,7 +64,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
                   if ( !empty( $headings_styles[1] ) ) { ?>
 					h2 {
 						<?php foreach( $headings_styles[1] as $key => $headings_style_2 ) {
-							$headings_style_2 = empty( $headings_style_2 ) ? '' : $headings_style_2;
+							$headings_style_2 = is_array( $headings_style_2 ) ? '' : $headings_style_2;
 							echo $key; ?> : <?php echo $headings_style_2; ?>;
 						<?php } ?>
 						}
@@ -73,7 +73,7 @@ if( !function_exists( 'cyberchimps_css_styles' ) ) {
                   if ( !empty( $headings_styles[2] ) ) { ?>
 					h3 {
 						<?php foreach( $headings_styles[2] as $key => $headings_style_3 ) {
-							$headings_style_3 = empty( $headings_style_3 ) ? '' : $headings_style_3;
+							$headings_style_3 = is_array( $headings_style_3 ) ? '' : $headings_style_3;
 							echo $key; ?> : <?php echo $headings_style_3; ?>;
 						<?php } ?>
 						}
