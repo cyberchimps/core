@@ -28,7 +28,7 @@ function cyberchimps_customize( $wp_customize ) {
      * Creates a form input type with the option to add description and placeholders
      */
 	require_once( trailingslashit( get_template_directory() ) . 'cyberchimps/options/control-checkbox-multiple.php' );
-	
+
     class Cyberchimps_Form extends WP_Customize_Control {
 
         public function render_content() {
@@ -190,7 +190,7 @@ function cyberchimps_customize( $wp_customize ) {
                     }
                     else {
 						$('#customize-control-google_font_h1').show();
-                    } 
+                    }
 					$('#customize-control-font_family_h1 select').change(function () {
 						var text_change = $(this).val();
 						if (text_change != 'Google Fonts') {
@@ -239,7 +239,7 @@ function cyberchimps_customize( $wp_customize ) {
 
 				});
 
-            </script> 
+            </script>
 
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <?php
@@ -260,10 +260,10 @@ function cyberchimps_customize( $wp_customize ) {
                 <?php
             endforeach;
         }
-    }    
+    }
     /*     * ******** Class for skin color selection option ends ************ */
     $imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
-    
+
     /* --------------------------------------------------------------
       // MAIN HEADER SECTION
       -------------------------------------------------------------- */
@@ -410,7 +410,7 @@ function cyberchimps_customize( $wp_customize ) {
         'panel' => 'header_id',
     ) );
 
-    //Select social Icon Style    
+    //Select social Icon Style
     $social_choices = apply_filters( 'cyberchimps_social_icon_options', array(
         'default' => $imagepath . 'social/thumbs/icons-default.png',
         'legacy' => $imagepath . 'social/thumbs/icons-classic.png',
@@ -603,7 +603,7 @@ function cyberchimps_customize( $wp_customize ) {
         'section' => 'cyberchimps_social_media',
         'settings' => 'cyberchimps_options[googlemaps_url]'
     ) ) );
-    
+
     // Add Email Setting
     $wp_customize->add_setting( 'cyberchimps_options[social_email]', array(
         'sanitize_callback' => 'cyberchimps_sanitize_checkbox',
@@ -645,7 +645,7 @@ function cyberchimps_customize( $wp_customize ) {
         'section' => 'cyberchimps_social_media',
         'settings' => 'cyberchimps_options[rss_url]'
     ) ) );
-    
+
 // Add Instagram Setting
     $wp_customize->add_setting( 'cyberchimps_options[social_instagram]', array(
         'sanitize_callback' => 'cyberchimps_sanitize_checkbox',
@@ -867,11 +867,11 @@ function cyberchimps_customize( $wp_customize ) {
     foreach ( $category_lists as $category ) {
     	$option_categories[ $category->term_id ] = $category->name;
     }
-    
+
     $option_all_post_cat = array();
     foreach( $category_lists as $category ){
     	$option_all_post_cat[$category->term_id] = $category->name;
-    }    
+    }
     $wp_customize->add_setting( 'cyberchimps_exclude_post_cat', array( 'sanitize_callback' => 'cyberchimps_sanitize_multiple_checkboxes') );
     $wp_customize->add_control(
     		new cyberchimps_Customize_Control_Checkbox_Multiple(
@@ -914,7 +914,7 @@ function cyberchimps_customize( $wp_customize ) {
             'type' => 'image',
         ) ) );
 
-        //Slider image 1 url    
+        //Slider image 1 url
         $wp_customize->add_setting( 'cyberchimps_options[image_one_slide_url]', array(
             'type' => 'option',
             'sanitize_callback' => 'cyberchimps_text_sanitization'
@@ -939,7 +939,7 @@ function cyberchimps_customize( $wp_customize ) {
             'type' => 'image',
         ) ) );
 
-        //Slider image 2 url    
+        //Slider image 2 url
         $wp_customize->add_setting( 'cyberchimps_options[image_two_slide_url]', array(
             'type' => 'option',
             'sanitize_callback' => 'cyberchimps_text_sanitization'
@@ -964,7 +964,7 @@ function cyberchimps_customize( $wp_customize ) {
             'type' => 'image',
         ) ) );
 
-        //Slider image 3 url    
+        //Slider image 3 url
         $wp_customize->add_setting( 'cyberchimps_options[image_three_slide_url]', array(
             'type' => 'option',
             'sanitize_callback' => 'cyberchimps_text_sanitization'
@@ -1879,9 +1879,9 @@ if (!($cc_wp_version >= 4.7))
             'settings' => 'cyberchimps_options[custom_css]',
             'type' => 'textarea'
         ) ) );
-    }	
+    }
 }
- 
+
 // new typography section
     $wp_customize->add_section( 'cyberchimps_typography_section', array(
         'title' => __( 'Typography', 'cyberchimps_core' ),
@@ -1976,7 +1976,7 @@ if (!($cc_wp_version >= 4.7))
 
 // H1
       $wp_customize->add_setting( 'cyberchimps_options[font_family_h1][size]', array(
-        'default' => '14px',
+        'default' => '36px',
         'type' => 'option',
         'sanitize_callback' => 'cyberchimps_text_sanitization'
     ) );
@@ -1986,7 +1986,7 @@ if (!($cc_wp_version >= 4.7))
         'section' => 'cyberchimps_typography_section',
         'type' => 'select',
         'settings' => 'cyberchimps_options[font_family_h1][size]',
-        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+        'choices' => apply_filters( 'cyberchimps_typography_heading_sizes', '' )
     ) ) );
 // Font family for headings: h1
     $wp_customize->add_setting( 'cyberchimps_options[font_family_h1][face]', array(
@@ -2002,7 +2002,7 @@ if (!($cc_wp_version >= 4.7))
         'settings' => 'cyberchimps_options[font_family_h1][face]',
         'choices' => apply_filters( 'cyberchimps_typography_faces', $faces )
     ) );
-    
+
 //Google font family for H1
  $wp_customize->add_setting( 'cyberchimps_options[google_font_h1]', array(
         'default' => 'Arial',
@@ -2019,7 +2019,7 @@ if (!($cc_wp_version >= 4.7))
 
 // H2
       $wp_customize->add_setting( 'cyberchimps_options[font_family_h2][size]', array(
-        'default' => '14px',
+        'default' => '29px',
         'type' => 'option',
         'sanitize_callback' => 'cyberchimps_text_sanitization'
     ) );
@@ -2029,7 +2029,7 @@ if (!($cc_wp_version >= 4.7))
         'section' => 'cyberchimps_typography_section',
         'type' => 'select',
         'settings' => 'cyberchimps_options[font_family_h2][size]',
-        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+        'choices' => apply_filters( 'cyberchimps_typography_heading_sizes', '' )
     ) ) );
 
 
@@ -2064,7 +2064,7 @@ if (!($cc_wp_version >= 4.7))
 
 // H3
       $wp_customize->add_setting( 'cyberchimps_options[font_family_h3][size]', array(
-        'default' => '14px',
+        'default' => '24px',
         'type' => 'option',
         'sanitize_callback' => 'cyberchimps_text_sanitization'
     ) );
@@ -2074,11 +2074,11 @@ if (!($cc_wp_version >= 4.7))
         'section' => 'cyberchimps_typography_section',
         'type' => 'select',
         'settings' => 'cyberchimps_options[font_family_h3][size]',
-        'choices' => apply_filters( 'cyberchimps_typography_sizes', '' )
+        'choices' => apply_filters( 'cyberchimps_typography_heading_sizes', '' )
     ) ) );
 
 
-// Font family for headings: h3    
+// Font family for headings: h3
  $wp_customize->add_setting( 'cyberchimps_options[font_family_h3][face]', array(
         'default' => 'Arial',
         'type' => 'option',
