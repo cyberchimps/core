@@ -61,7 +61,7 @@ function cyberchimps_load_styles() {
 
 	wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
 	wp_enqueue_style( 'thickbox' );
-	
+
 	wp_enqueue_style( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/css/sky-tabs.css');
 }
 
@@ -87,7 +87,7 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
-	
+
 	wp_enqueue_script('cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js');
 }
 function cyberchimps_load_styles_account() {
@@ -188,14 +188,14 @@ function cyberchimps_options_page() {
 							<i class="icon-th-list"></i>
 						</a>
 					</div>
-					<!-- cc-mobil-menu -->					
-					
+					<!-- cc-mobil-menu -->
+
 				</div>
 				<!-- cc-collapse -->
 
 
 				<div class="cc-submenu-links">
-				 <a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a> 
+				 <a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
 					                                                                                                'cyberchimps_core' ) ); ?>' );">
@@ -242,12 +242,12 @@ function cyberchimps_options_page() {
 	<!-- start left menu -->
 	<div class="row-fluid cc-content cc-main-content">
 		<div class="sky-tabs sky-tabs-pos-left sky-tabs-anim-flip sky-tabs-response-to-icons">
-		<?php global $wp_settings_sections, $wp_settings_fields; ?>		
+		<?php global $wp_settings_sections, $wp_settings_fields; ?>
 		<?php $count_left_menu = 1; ?>
 		<?php	foreach( $headings_list as $heading ) {
-	
-					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) ); 
-					
+
+					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
+
 						if($count_left_menu == 1)
 						{
 							echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
@@ -259,26 +259,26 @@ function cyberchimps_options_page() {
 							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
 							if($jquery_click_hook == "cyberchimps_blog_heading")
 							{ ?>
-								
-				<?php			foreach( (array)$wp_settings_sections[$heading['id']] as $section ) 
+
+				<?php			foreach( (array)$wp_settings_sections[$heading['id']] as $section )
 								{
 									echo '<input type="radio" name="sky-tabs" id="sky-tab-'.$section['id'].'" class="sky-tab-content-'.$section['id']. '">';
 									echo '<label id="sky-tab-label-'.$section['id'].'" for="sky-tab-'.$section['id'].'" class="blog_sub_headings_new"><a class="anchor_heading" href="#wrapper_'.$section['id'].'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $section['title'] ).'</span></span></a></label>';
 								} ?>
-							
+
 			<?php			}
 						}
 
-				$count_left_menu++;	
+				$count_left_menu++;
 				}
 		?>
 				<ul>
 				<?php $count_right_items = 1; ?>
-	
+
 				<?php foreach( $headings_list as $heading ) {
-					
+
 						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
-						
+
 						echo '<li class="sky-tab-content-'.$count_right_items.'">';
 						echo '<div class="cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">'; ?>
 
@@ -287,9 +287,9 @@ function cyberchimps_options_page() {
 		<?php				echo '<ul class="nav nav-tabs" role="tablist">';
 									$i = 0;
 
-									foreach( (array)$wp_settings_sections[$heading['id']] as $section ) 
+									foreach( (array)$wp_settings_sections[$heading['id']] as $section )
 									{
-										switch($section['id'])	
+										switch($section['id'])
 										{
 											case 'cyberchimps_custom_layout_section' :
 												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-layout-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
@@ -335,22 +335,22 @@ function cyberchimps_options_page() {
 												break;
 											default:
 												$cc_section_link = '';
-										}	
+										}
 										$jquery_click_section_hook = '';
 
-										if ($i == 0) 
+										if ($i == 0)
 										{
-											echo 
+											echo
 											'<li class="active">
-												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">    
+												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">
 												'.$section['title'].'
 												</a>';
 											echo $cc_section_link;
 											echo '</li>';
 										} else{
-											echo 
+											echo
 											'<li>
-												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">    
+												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">
 												'.$section['title'].'
 												</a>';
 											echo $cc_section_link;
@@ -364,11 +364,11 @@ function cyberchimps_options_page() {
 						echo '<div class="tab-content">';
 							$j = 0;
 								foreach((array)$wp_settings_sections[$heading['id']] as $section)
-								{ 
-									if ($j == 0) 
+								{
+									if ($j == 0)
 									{
 										echo '<div class="tab-pane active" id="' . $section['id'].'">';
-									} 
+									}
 									else if ($section['id']== 'cyberchimps_blog_options_section')
 									{
 									}
@@ -377,7 +377,7 @@ function cyberchimps_options_page() {
 										echo '<div class="tab-pane" id="' . $section['id'].'">';
 									}
 									$j++;
-		
+
 									// wrapper div of all field-container divs
 									echo '<div class="field-container-wrapper" id="wrapper_'.$section['id'].'">';
 
@@ -385,12 +385,12 @@ function cyberchimps_options_page() {
 										do_action( $jquery_click_section_hook . '_before' );
 										call_user_func( $section['callback'], $section );
 
-										if( isset( $wp_settings_fields ) && isset( $wp_settings_fields[$heading['id']] ) && isset( $wp_settings_fields[$heading['id']][$section['id']] ) ) 
+										if( isset( $wp_settings_fields ) && isset( $wp_settings_fields[$heading['id']] ) && isset( $wp_settings_fields[$heading['id']][$section['id']] ) )
 										{ ?>
 										<?php if ($jquery_click_hook == "cyberchimps_blog_heading")
 												{ ?>
 													<?php
-													switch($section['id'])	
+													switch($section['id'])
 													{
 														case 'cyberchimps_drag_and_drop_section' :
 															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
@@ -458,7 +458,7 @@ function cyberchimps_options_page() {
 								} //end of foreach
 
 						echo '</div>'; // end of cc-content-section
-	
+
 						echo '</li>';
 
 				$count_right_items++;
@@ -466,7 +466,7 @@ function cyberchimps_options_page() {
 
 ?>
 				</ul>
-			
+
 			<!-- span 9 -->
 			<div class="clear"></div>
 		</div>
@@ -493,11 +493,11 @@ function cyberchimps_options_page() {
 		</div>
 		<!-- cc-footer -->
 	</div>
-		
+
 	</div>
 	<!-- row fluid -->
 	<!-- end footer -->
-	
+
 	</form>
 
 	</div>
@@ -526,12 +526,12 @@ function cyberchimps_account_page() {
 			$cc_user_login_id = get_option("cc_account_user_details");
 		}
 	}
-	?>							
-				
-				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo "Enter CyberChimps Account Details";?></h3></div>				
+	?>
+
+				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo "Enter CyberChimps Account Details";?></h3></div>
 				<div class="panel panel-primary">
-<span class="ccinfo"><?php _e('To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials','iribbonpro') ?></span>
-		
+<span class="ccinfo"><?php _e('To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials','cyberchimps_core') ?></span>
+
 					<span class="updateres"><?php if ($strResponseMessage != '' ) echo $strResponseMessage; ?></span>
 				      <div class="panel-body">
 						<form action="" id="formSettings" method="post">
@@ -541,12 +541,12 @@ function cyberchimps_account_page() {
 								  <label for="ccpwd">Password</label>
 								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password'];?>"/>
 						   </div>
-						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">						   
+						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">
 					   </form>
 					</div>
 				</div>
-			 	   
-	<?php 	 		
+
+	<?php
 		}
 
 /**
@@ -1133,8 +1133,8 @@ function cyberchimps_fields_callback( $value ) {
 			$editor_settings         = array();
 			if( isset( $value['settings'] ) ) {
 				$editor_settings = $value['settings'];
-			}		
-			
+			}
+
 			$editor_settings = array_merge( $default_editor_settings, $editor_settings );
 			wp_editor( $val, $value['id'], $editor_settings );
 			$output = '';
@@ -1418,18 +1418,18 @@ add_action( 'wp_footer', 'cyberchimps_fixed_menu_onscroll' );
 function cyberchimps_fixed_menu_onscroll()
 {
 	if( cyberchimps_get_option( 'sticky_header', 'checked' ) ) {
-            
+
 	?>
 		<script type="text/javascript">
 		jQuery(document).ready(function($){
 			$(window).scroll(function()  {
 			if ($(this).scrollTop() > 0) {
 			$('#header_section').addClass("sticky-header");
-                       
+
 			}
 			else{
 			$('#header_section').removeClass("sticky-header");
-                       
+
 			}
 			});
 		});

@@ -743,7 +743,7 @@ function cyberchimps_default_site_title() {
 			printf( __( 'Yearly Archives: %s', 'cyberchimps_core' ), get_the_date( 'Y' ) );
 		}
 		elseif( is_plugin_active( 'woocommerce/woocommerce.php' ) && is_woocommerce() && is_shop() ) {
-			_e( 'Shop', 'cyberchimps_core_scripts' );
+			_e( 'Shop', 'cyberchimps_core' );
 		}
 		else {
 			_e( 'Archives', 'cyberchimps_core' );
@@ -1370,7 +1370,7 @@ function cyberchimps_addon_fields( $fields_list ) {
 	);
 
 	$fields_list[] = array(
-		'name'     => __( 'Digital Downloads', 'cyberchimps' ),
+		'name'     => __( 'Digital Downloads', 'cyberchimps_core' ),
 		'id'       => 'digital_downloads',
 		'type'     => 'info',
 		'callback' => 'cyberchimps_digital_downloads_callback',
