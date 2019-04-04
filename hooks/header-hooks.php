@@ -16,7 +16,7 @@
  */
 
 function cyberchimps_header_section_order() {
-	//get the defaults from the themes function file and turn the key into the value in a new array to mirror what happens within the theme when their are options saved in the database
+	// get the defaults from the themes function file and turn the key into the value in a new array to mirror what happens within the theme when their are options saved in the database
 	$defaults = array();
 	$default  = apply_filters( 'header_drag_and_drop_default', array( 'cyberchimps_header_content' => __( 'Logo + Icons', 'cyberchimps_core' ) ) );
 	foreach ( $default as $key => $val ) {
@@ -40,18 +40,22 @@ function cyberchimps_logo_icons() {
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 
 		<div id="register" class="span5">
-			<?php if ( function_exists( 'cyberchimps_header_social_icons' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_social_icons' ) ) {
 				cyberchimps_header_social_icons();
-			} ?>
+			}
+			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_header_content', 'cyberchimps_logo_icons' );
@@ -61,9 +65,11 @@ function cyberchimps_logo_searchform() {
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 
 		<div id="search" class="span5">
@@ -72,7 +78,7 @@ function cyberchimps_logo_searchform() {
 			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_logo_search', 'cyberchimps_logo_searchform' );
@@ -86,12 +92,14 @@ function cyberchimps_description_icons() {
 		</div>
 
 		<div id="register" class="span5">
-			<?php if ( function_exists( 'cyberchimps_header_social_icons' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_social_icons' ) ) {
 				cyberchimps_header_social_icons();
-			} ?>
+			}
+			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_description_icons', 'cyberchimps_description_icons' );
@@ -101,18 +109,22 @@ function cyberchimps_sitename_contact() {
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 
 		<div id="register" class="span5">
-			<?php if ( function_exists( 'cyberchimps_contact_info' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_contact_info' ) ) {
 				echo cyberchimps_contact_info();
-			} ?>
+			}
+			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_sitename_contact', 'cyberchimps_sitename_contact' );
@@ -122,18 +134,22 @@ function cyberchimps_logo_description() {
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 
 		<div id="description" class="span5">
-			<?php if ( function_exists( 'cyberchimps_description' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_description' ) ) {
 				echo cyberchimps_description();
-			} ?>
+			}
+			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_logo_description', 'cyberchimps_logo_description' );
@@ -143,12 +159,14 @@ function cyberchimps_logo() {
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_logo', 'cyberchimps_logo' );
@@ -163,7 +181,7 @@ function cyberchimps_header_logo() {
 		<div id="logo">
 			<a href="<?php echo $url; ?>" title="<?php echo get_bloginfo( 'name' ); ?>"><img src="<?php echo stripslashes( $logo ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>"></a>
 		</div>
-	<?php
+		<?php
 	} else {
 		if ( function_exists( 'cyberchimps_header_site_title' ) ) {
 			cyberchimps_header_site_title();
@@ -176,7 +194,7 @@ function cyberchimps_header_site_title() {
 	<div class="hgroup">
 		<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 	</div>
-<?php
+	<?php
 }
 
 /**
@@ -195,7 +213,6 @@ function cyberchimps_header_social_icons() {
 
 	// create array of social icons to loop through to check if they are set and add title key to
 	// social networks with names different to key
-
 	$social['twitterbird']['set']   = cyberchimps_get_option( 'social_twitter', 'checked' );
 	$social['twitterbird']['title'] = 'twitter';
 	$social['twitterbird']['url']   = cyberchimps_get_option( 'twitter_url' );
@@ -218,10 +235,10 @@ function cyberchimps_header_social_icons() {
 	$social['email']['url']         = 'mailto:' . cyberchimps_get_option( 'email_url' );
 	$social['rss']['set']           = cyberchimps_get_option( 'social_rss' );
 	$social['rss']['url']           = cyberchimps_get_option( 'rss_url' );
-	$social['instagram']['set']		= cyberchimps_get_option( 'social_instagram' );
-	$social['instagram']['url']		= cyberchimps_get_option( 'instagram_url' );
-	$social['snapchat']['set']		= cyberchimps_get_option( 'social_snapchat' );
-	$social['snapchat']['url']		= cyberchimps_get_option( 'snapchat_url' );
+	$social['instagram']['set']     = cyberchimps_get_option( 'social_instagram' );
+	$social['instagram']['url']     = cyberchimps_get_option( 'instagram_url' );
+	$social['snapchat']['set']      = cyberchimps_get_option( 'social_snapchat' );
+	$social['snapchat']['url']      = cyberchimps_get_option( 'snapchat_url' );
 
 	$output = '';
 
@@ -232,16 +249,15 @@ function cyberchimps_header_social_icons() {
 	foreach ( $social as $key => $value ) {
 
 		// Check that the social icon has been set
-		if ( !empty( $value['set'] ) ) {
+		if ( ! empty( $value['set'] ) ) {
 
 			// check if title is set and use it otherwise use key as title
-			$title = ( isset( $social[$key]['title'] ) ) ? $social[$key]['title'] : $key;
+			$title = ( isset( $social[ $key ]['title'] ) ) ? $social[ $key ]['title'] : $key;
 
 			// Create the output
-			$output .= '<a href="' . esc_url( $social[$key]['url'] ) . '"' . ( "email" != $key ? ' target="_blank"' : '' )
+			$output .= '<a href="' . esc_url( $social[ $key ]['url'] ) . '"' . ( 'email' != $key ? ' target="_blank"' : '' )
 				. ' title="' . esc_attr( $link_title . ' ' . ucwords( $title ) ) . '" class="symbol ' . $key . '"></a>';
 		}
-
 	}
 
 	// Echo to the page
@@ -252,7 +268,7 @@ function cyberchimps_header_social_icons() {
 		</div>
 	</div>
 
-<?php
+	<?php
 }
 
 // Custom HTML header element.
@@ -263,32 +279,39 @@ function cyberchimps_custom_header_element_content() {
 			<?php echo stripslashes( cyberchimps_get_option( 'custom_header_element' ) ); ?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 // Sitename/Register
 function cyberchimps_logo_register_content() {
-	//global $current_user; Commented By Swapnil as global $current_user is no longer being use ?>
+	// global $current_user; Commented By Swapnil as global $current_user is no longer being use
+	?>
 	<header id="cc-header" class="row-fluid">
 		<div class="span7">
-			<?php if ( function_exists( 'cyberchimps_header_logo' ) ) {
+			<?php
+			if ( function_exists( 'cyberchimps_header_logo' ) ) {
 				cyberchimps_header_logo();
-			} ?>
+			}
+			?>
 		</div>
 
 		<div id="register" class="span5">
 			<div class="register">
-				<?php if ( !is_user_logged_in() ) : ?>
+				<?php if ( ! is_user_logged_in() ) : ?>
 					<?php wp_loginout(); ?> <?php wp_meta(); ?> | <?php wp_register( '', '', true ); ?>
 				<?php else : ?>
-					Welcome back <strong><?php // global $current_user;
+					Welcome back <strong>
+					<?php
+					// global $current_user;
 						$current_user = wp_get_current_user();
-						echo( $current_user->user_login ); ?></strong> | <?php wp_loginout(); ?>
+						echo( $current_user->user_login );
+					?>
+						</strong> | <?php wp_loginout(); ?>
 				<?php endif; ?>
 			</div>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_sitename_register', 'cyberchimps_logo_register_content' );
@@ -302,72 +325,75 @@ function cyberchimps_banner_content() {
 	$url     = cyberchimps_get_option( 'header_banner_url' );
 
 	// To fetch the alt text of image using the image src
-	$image_id = cyberchimps_get_attachment_id_from_url(cyberchimps_get_option('header_banner_image'));
-	$alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+	$image_id = cyberchimps_get_attachment_id_from_url( cyberchimps_get_option( 'header_banner_image' ) );
+	$alt_text = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
 	?>
 	<header id="cc-header" class="row-fluid">
 		<div id="banner">
-			<?php if ( $banner != "" ): ?>
+			<?php if ( $banner != '' ) : ?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $banner; ?>" alt="<?php echo $alt_text; ?>"></a>
 			<?php endif; ?>
-			<?php if ( $banner == "" ): ?>
+			<?php if ( $banner == '' ) : ?>
 				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>
 			<?php endif; ?>
 		</div>
 	</header>
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_banner', 'cyberchimps_banner_content' );
 
-//contact info
+// contact info
 function cyberchimps_contact_info() {
-	$contact = apply_filters( 'cyberchimps_header_contact', cyberchimps_get_option( 'contact_details' ) ); ?>
+	$contact = apply_filters( 'cyberchimps_header_contact', cyberchimps_get_option( 'contact_details' ) );
+	?>
 
 	<div class="contact_details">
 		<?php echo $contact; ?>
 	</div>
-<?php
+	<?php
 }
 
-//description
+// description
 function cyberchimps_description() {
-	$description = get_bloginfo( 'description' );?>
+	$description = get_bloginfo( 'description' );
+	?>
 	<div class="blog-description">
 		<p><?php echo $description; ?></p>
 	</div>
-<?php
+	<?php
 }
 
 // Function to fetch the alt text of image using url
 function cyberchimps_get_attachment_id_from_url( $attachment_url = '' ) {
 
-global $wpdb;
-$attachment_id = false;
+	global $wpdb;
+	$attachment_id = false;
 
-// If there is no url, return.
-if ( '' == $attachment_url )
-    return;
+	// If there is no url, return.
+	if ( '' == $attachment_url ) {
+		return;
+	}
 
-// Get the upload directory paths
-$upload_dir_paths = wp_upload_dir();
+	// Get the upload directory paths
+	$upload_dir_paths = wp_upload_dir();
 
-// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
-if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
 
-    // If this is the URL of an auto-generated thumbnail, get the URL of the original image
-    $attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
 
-    // Remove the upload path base directory from the attachment URL
-    $attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+		// Remove the upload path base directory from the attachment URL
+		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
 
-    // Finally, run a custom database query to get the attachment ID from the modified attachment URL
-    $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+		// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
 
-}
+	}
 
-return $attachment_id;
+	return $attachment_id;
 }
 
 ?>

@@ -22,7 +22,7 @@ class CC_Custom_Background {
 	 * Return an instance.
 	 */
 	public static function get_instance() {
-		null === self::$instance and self::$instance = new self;
+		null === self::$instance and self::$instance = new self();
 
 		return self::$instance;
 	}
@@ -38,12 +38,12 @@ class CC_Custom_Background {
 
 		add_action( 'admin_head', array( $this, 'cc_background_styles' ) );
 
-		if( empty ( $_POST[$this->option] ) ) {
+		if ( empty( $_POST[ $this->option ] ) ) {
 			return;
 		}
 
 		check_admin_referer( $this->option, "_ccnonce-$this->option" );
-		set_theme_mod( $this->option, $_POST[$this->option] );
+		set_theme_mod( $this->option, $_POST[ $this->option ] );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class CC_Custom_Background {
 					$(this).siblings('.of-radio-img-radio').attr('checked', 'checked');
 				});
 			});</script>
-	<?php
+		<?php
 	}
 
 	/**
@@ -92,7 +92,7 @@ class CC_Custom_Background {
 		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk', 'grid' );
 		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ) . '</label><br>';
 
-		foreach( $radios as $radio ) {
+		foreach ( $radios as $radio ) {
 			$html .= '<div class="images-radio-subcontainer">';
 			$html .= sprintf(
 				' <input type="radio" class="of-radio-img-radio" name="%1$s" style="display:none;" value="%2$s" id="%3$s"%4$s>',
@@ -103,8 +103,8 @@ class CC_Custom_Background {
 				addslashes( checked( $value, $radio, false ) )
 			);
 			$selected = ( $value == $radio ) ? ' of-radio-img-selected' : '';
-			$html .= '<img src="' . get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/thumbs/' . $radio . '.png" class="of-radio-img-img' . $selected . '" alt="' . $radio . '" title="' . $radio . '" />';
-			$html .= '</div>';
+			$html    .= '<img src="' . get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/thumbs/' . $radio . '.png" class="of-radio-img-img' . $selected . '" alt="' . $radio . '" title="' . $radio . '" />';
+			$html    .= '</div>';
 		}
 
 		return "$html</div>";
@@ -141,17 +141,17 @@ class CC_Custom_Background {
 
 // Default background image.
 function ifeature_background_image( $options ) {
-	$imagepath =  get_template_directory_uri() . '/cyberchimps/lib/images/';
-	$options = array(
-			'none' => $imagepath . 'backgrounds/thumbs/none.png',
-			'noise' => $imagepath . 'backgrounds/thumbs/noise.png',
-			'blue' => $imagepath . 'backgrounds/thumbs/blue.png',
-			'dark' => $imagepath . 'backgrounds/thumbs/dark.png',
-			'space' => $imagepath . 'backgrounds/thumbs/space.png',
-			'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png',
-			'silk' => $imagepath . 'backgrounds/thumbs/silk.png',
-			'grid' => $imagepath . 'backgrounds/thumbs/grid.png',
-			);
+	$imagepath = get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$options   = array(
+		'none'        => $imagepath . 'backgrounds/thumbs/none.png',
+		'noise'       => $imagepath . 'backgrounds/thumbs/noise.png',
+		'blue'        => $imagepath . 'backgrounds/thumbs/blue.png',
+		'dark'        => $imagepath . 'backgrounds/thumbs/dark.png',
+		'space'       => $imagepath . 'backgrounds/thumbs/space.png',
+		'debut_light' => $imagepath . 'backgrounds/thumbs/debut_light.png',
+		'silk'        => $imagepath . 'backgrounds/thumbs/silk.png',
+		'grid'        => $imagepath . 'backgrounds/thumbs/grid.png',
+	);
 	return $options;
 }
 add_filter( 'cyberchimps_background_image', 'ifeature_background_image' );

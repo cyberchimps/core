@@ -18,7 +18,7 @@
 /* If the user can't edit theme options, no use running this plugin */
 add_action( 'init', 'cyberchimps_edit_themes_role_check' );
 function cyberchimps_edit_themes_role_check() {
-	if( current_user_can( 'edit_theme_options' ) ) {
+	if ( current_user_can( 'edit_theme_options' ) ) {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_init', 'cyberchimps_admin_init' );
 		add_action( 'admin_menu', 'cyberchimps_admin_add_page' );
@@ -28,7 +28,7 @@ function cyberchimps_edit_themes_role_check() {
 
 // create the admin menu for the theme options page
 function cyberchimps_admin_add_page() {
-	$cyberchimps_page = add_theme_page(
+	$cyberchimps_page       = add_theme_page(
 		__( 'Theme Options Page', 'cyberchimps_core' ),
 		__( 'Theme Options', 'cyberchimps_core' ),
 		'edit_theme_options',
@@ -36,11 +36,11 @@ function cyberchimps_admin_add_page() {
 		'cyberchimps_options_page'
 	);
 	$cyberchimps_login_page = add_theme_page(
-			__( 'CyberChimps Account', 'cyberchimps_core' ),
-			__( 'CyberChimps Account', 'cyberchimps_core' ),
-			'edit_theme_options',
-			'cyberchimps-account',
-			'cyberchimps_account_page'
+		__( 'CyberChimps Account', 'cyberchimps_core' ),
+		__( 'CyberChimps Account', 'cyberchimps_core' ),
+		'edit_theme_options',
+		'cyberchimps-account',
+		'cyberchimps_account_page'
 	);
 
 	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_load_styles' );
@@ -62,7 +62,7 @@ function cyberchimps_load_styles() {
 	wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
 	wp_enqueue_style( 'thickbox' );
 
-	wp_enqueue_style( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/css/sky-tabs.css');
+	wp_enqueue_style( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/css/sky-tabs.css' );
 }
 
 function cyberchimps_load_scripts() {
@@ -88,7 +88,7 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script('cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js');
+	wp_enqueue_script( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js' );
 }
 function cyberchimps_load_styles_account() {
 
@@ -134,7 +134,7 @@ function cyberchimps_admin_init() {
 
 // create and display theme options page
 function cyberchimps_options_page() {
-?>
+	?>
 
 	<div class="wrap">
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
@@ -161,12 +161,12 @@ function cyberchimps_options_page() {
 		<div class="span8">
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
-				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
+					   target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-				       target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
+					   target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
-				       target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
-				<?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
+					   target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
+				<?php if ( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ) : ?>
 					<li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
 					</li>
 				<?php endif; ?>
@@ -197,8 +197,16 @@ function cyberchimps_options_page() {
 				<div class="cc-submenu-links">
 				 <a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-					                                                                                                'cyberchimps_core' ) ); ?>' );">
+					<button class="reset-button btn" name="reset" onclick="return confirm( '
+					<?php
+					print esc_js(
+						__(
+							'Click OK to reset. Any theme settings will be lost!',
+							'cyberchimps_core'
+						)
+					);
+					?>
+																													' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -217,14 +225,15 @@ function cyberchimps_options_page() {
 				<div class="modal-body">
 					<ul class="cc-parent nav-tab-wrapper">
 						<?php
-						foreach( $headings_list as $heading ) {
+						foreach ( $headings_list as $heading ) {
 
 							$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
 							echo '<li class="cc-has-children">';
 							echo '<a id="' . esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $heading['title'] ) . '" href="' . esc_attr( '#' . $jquery_click_hook ) . '">' . esc_html( $heading['title'] ) . '</a>';
 							echo '</li>';
-						} ?>
+						}
+						?>
 					</ul>
 				</div>
 				<div class="modal-footer">
@@ -244,227 +253,222 @@ function cyberchimps_options_page() {
 		<div class="sky-tabs sky-tabs-pos-left sky-tabs-anim-flip sky-tabs-response-to-icons">
 		<?php global $wp_settings_sections, $wp_settings_fields; ?>
 		<?php $count_left_menu = 1; ?>
-		<?php	foreach( $headings_list as $heading ) {
+		<?php
+		foreach ( $headings_list as $heading ) {
 
 					$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
-						if($count_left_menu == 1)
-						{
-							echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
-							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
-						}
-						else
-						{
-							echo '<input type="radio" name="sky-tabs" id="sky-tab'.$count_left_menu.'" class="sky-tab-content-'.$count_left_menu.'">';
-							echo '<label for="sky-tab'.$count_left_menu.'" id="sky-tab-'.$jquery_click_hook.'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $heading['title'] ).'</span></span></label>';
-							if($jquery_click_hook == "cyberchimps_blog_heading")
-							{ ?>
+			if ( $count_left_menu == 1 ) {
+				echo '<input type="radio" name="sky-tabs" checked=checked id="sky-tab' . $count_left_menu . '" class="sky-tab-content-' . $count_left_menu . '">';
+				echo '<label for="sky-tab' . $count_left_menu . '" id="sky-tab-' . $jquery_click_hook . '"><span><span><i class="fa fa-bolt"></i>' . esc_html( $heading['title'] ) . '</span></span></label>';
+			} else {
+				echo '<input type="radio" name="sky-tabs" id="sky-tab' . $count_left_menu . '" class="sky-tab-content-' . $count_left_menu . '">';
+				echo '<label for="sky-tab' . $count_left_menu . '" id="sky-tab-' . $jquery_click_hook . '"><span><span><i class="fa fa-bolt"></i>' . esc_html( $heading['title'] ) . '</span></span></label>';
+				if ( $jquery_click_hook == 'cyberchimps_blog_heading' ) {
+					?>
 
-				<?php			foreach( (array)$wp_settings_sections[$heading['id']] as $section )
-								{
-									echo '<input type="radio" name="sky-tabs" id="sky-tab-'.$section['id'].'" class="sky-tab-content-'.$section['id']. '">';
-									echo '<label id="sky-tab-label-'.$section['id'].'" for="sky-tab-'.$section['id'].'" class="blog_sub_headings_new"><a class="anchor_heading" href="#wrapper_'.$section['id'].'"><span><span><i class="fa fa-bolt"></i>'.esc_html( $section['title'] ).'</span></span></a></label>';
-								} ?>
+					<?php
+					foreach ( (array) $wp_settings_sections[ $heading['id'] ] as $section ) {
+								  echo '<input type="radio" name="sky-tabs" id="sky-tab-' . $section['id'] . '" class="sky-tab-content-' . $section['id'] . '">';
+								  echo '<label id="sky-tab-label-' . $section['id'] . '" for="sky-tab-' . $section['id'] . '" class="blog_sub_headings_new"><a class="anchor_heading" href="#wrapper_' . $section['id'] . '"><span><span><i class="fa fa-bolt"></i>' . esc_html( $section['title'] ) . '</span></span></a></label>';
+					}
+					?>
 
-			<?php			}
-						}
+					<?php
+				}
+			}
 
 				$count_left_menu++;
-				}
+		}
 		?>
 				<ul>
 				<?php $count_right_items = 1; ?>
 
-				<?php foreach( $headings_list as $heading ) {
+				<?php
+				foreach ( $headings_list as $heading ) {
 
 						$jquery_click_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $heading['id'] ) );
 
-						echo '<li class="sky-tab-content-'.$count_right_items.'">';
-						echo '<div class="cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">'; ?>
+						echo '<li class="sky-tab-content-' . $count_right_items . '">';
+						echo '<div class="cc-content-section" id="' . esc_attr( $jquery_click_hook ) . '">';
+					?>
 
-				<?php	if($jquery_click_hook != "cyberchimps_blog_heading")
-						{  ?>
-		<?php				echo '<ul class="nav nav-tabs" role="tablist">';
+					<?php
+					if ( $jquery_click_hook != 'cyberchimps_blog_heading' ) {
+						?>
+						<?php
+						echo '<ul class="nav nav-tabs" role="tablist">';
 									$i = 0;
 
-									foreach( (array)$wp_settings_sections[$heading['id']] as $section )
-									{
-										switch($section['id'])
-										{
-											case 'cyberchimps_custom_layout_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-layout-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_custom_colors_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-custom-colors/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_typography_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/design-typography-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_header_drag_drop_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_header_options_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_header_social_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-social-icons/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_header_details_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-contact-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_header_banner_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/header-banner-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_single_post_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-single-post/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_archive_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-archive/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_search_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-search/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_error_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/templates-404/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_footer_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/footer-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											case 'cyberchimps_import_export_section' :
-												$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/import-export-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
-												break;
-											default:
-												$cc_section_link = '';
-										}
-										$jquery_click_section_hook = '';
+						foreach ( (array) $wp_settings_sections[ $heading['id'] ] as $section ) {
+							switch ( $section['id'] ) {
+								case 'cyberchimps_custom_layout_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/design-layout-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_custom_colors_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/design-custom-colors/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_typography_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/design-typography-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_header_drag_drop_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/header-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_header_options_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/header-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_header_social_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/header-social-icons/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_header_details_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/header-contact-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_header_banner_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/header-banner-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_single_post_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/templates-single-post/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_archive_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/templates-archive/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_search_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/templates-search/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_error_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/templates-404/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_footer_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/footer-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								case 'cyberchimps_import_export_section':
+									$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/import-export-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections'></a>";
+									break;
+								default:
+									$cc_section_link = '';
+							}
+							$jquery_click_section_hook = '';
 
-										if ($i == 0)
-										{
-											echo
-											'<li class="active">
-												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">
-												'.$section['title'].'
+							if ( $i == 0 ) {
+								echo '<li class="active">
+												<a href="#' . $section['id'] . '" role="tab" data-toggle="tab">
+												' . $section['title'] . '
 												</a>';
-											echo $cc_section_link;
-											echo '</li>';
-										} else{
-											echo
-											'<li>
-												<a href="#'.$section['id'].'" role="tab" data-toggle="tab">
-												'.$section['title'].'
+								echo $cc_section_link;
+								echo '</li>';
+							} else {
+								echo '<li>
+												<a href="#' . $section['id'] . '" role="tab" data-toggle="tab">
+												' . $section['title'] . '
 												</a>';
-											echo $cc_section_link;
-											echo '</li>';
-										}
-										$i++;
-									} // end of foreach
+								echo $cc_section_link;
+								echo '</li>';
+							}
+							$i++;
+						} // end of foreach
 							echo '</ul>';
-						}
+					}
 
 						echo '<div class="tab-content">';
 							$j = 0;
-								foreach((array)$wp_settings_sections[$heading['id']] as $section)
-								{
-									if ($j == 0)
-									{
-										echo '<div class="tab-pane active" id="' . $section['id'].'">';
-									}
-									else if ($section['id']== 'cyberchimps_blog_options_section')
-									{
-									}
-									else
-									{
-										echo '<div class="tab-pane" id="' . $section['id'].'">';
-									}
-									$j++;
+					foreach ( (array) $wp_settings_sections[ $heading['id'] ] as $section ) {
+						if ( $j == 0 ) {
+							echo '<div class="tab-pane active" id="' . $section['id'] . '">';
+						} elseif ( $section['id'] == 'cyberchimps_blog_options_section' ) {
+						} else {
+							echo '<div class="tab-pane" id="' . $section['id'] . '">';
+						}
+						$j++;
 
-									// wrapper div of all field-container divs
-									echo '<div class="field-container-wrapper" id="wrapper_'.$section['id'].'">';
+						// wrapper div of all field-container divs
+						echo '<div class="field-container-wrapper" id="wrapper_' . $section['id'] . '">';
 
-										//Hook before section options
-										do_action( $jquery_click_section_hook . '_before' );
-										call_user_func( $section['callback'], $section );
+							// Hook before section options
+							do_action( $jquery_click_section_hook . '_before' );
+							call_user_func( $section['callback'], $section );
 
-										if( isset( $wp_settings_fields ) && isset( $wp_settings_fields[$heading['id']] ) && isset( $wp_settings_fields[$heading['id']][$section['id']] ) )
-										{ ?>
-										<?php if ($jquery_click_hook == "cyberchimps_blog_heading")
-												{ ?>
-													<?php
-													switch($section['id'])
-													{
-														case 'cyberchimps_drag_and_drop_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_blog_options_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_magazine_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-magazine-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_twitter_api_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-twitter-bar-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_boxes_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-boxes-options-not-the-box-widgets/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_callout_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-callout-section-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_slider_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-cyberchimps-slider-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_html_box_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-html-box-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_carousel_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-carousel-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_portfolio_pro_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-portfolio-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_recent_posts_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-recent-posts-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_separator_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-separator-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_blank_space_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-blank-space-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_google_maps_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-google-maps-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_video_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-video-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														case 'cyberchimps_showcase_section' :
-															$cc_section_link = "<a id='".$section['id']."_url' href='https://cyberchimps.com/guide/blog-theme-options-showcase-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
-															break;
-														default:
-															$cc_section_link = '';
-													}	?>
+						if ( isset( $wp_settings_fields ) && isset( $wp_settings_fields[ $heading['id'] ] ) && isset( $wp_settings_fields[ $heading['id'] ][ $section['id'] ] ) ) {
+							?>
+								<?php
+								if ( $jquery_click_hook == 'cyberchimps_blog_heading' ) {
+									?>
+											<?php
+											switch ( $section['id'] ) {
+												case 'cyberchimps_drag_and_drop_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-drag-drop/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_blog_options_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_magazine_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-magazine-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_twitter_api_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-twitter-bar-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_boxes_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-boxes-options-not-the-box-widgets/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_callout_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-callout-section-options/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_slider_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-cyberchimps-slider-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_html_box_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-html-box-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_carousel_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-carousel-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_portfolio_pro_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-portfolio-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_recent_posts_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-recent-posts-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_separator_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-separator-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_blank_space_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-blank-space-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_google_maps_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-google-maps-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_video_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-video-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												case 'cyberchimps_showcase_section':
+													$cc_section_link = "<a id='" . $section['id'] . "_url' href='https://cyberchimps.com/guide/blog-theme-options-showcase-drag-drop-element/' target='_blank' class='glyphicon glyphicon-question-sign cc_right_subsections_blog'></a>";
+													break;
+												default:
+													$cc_section_link = '';
+											}
+											?>
 													<h3 class="blog_section_titles"><?php echo $section['title']; ?> </h3>
-													<?php echo $cc_section_link; ?>
-										<?php   }  ?>
-							<?php		cyberchimps_do_settings_fields( $heading['id'], $section['id'] );
-										}
+												<?php echo $cc_section_link; ?>
+										<?php } ?>
+							<?php
+							cyberchimps_do_settings_fields( $heading['id'], $section['id'] );
+						}
 
-										//Hook after section options
-										do_action( $jquery_click_section_hook . '_after' );
+						// Hook after section options
+						do_action( $jquery_click_section_hook . '_after' );
 
 									echo '</div>'; // .field-container ends
 
 									echo '</div>'; // end of .tab-pane
-								} //end of foreach
+					} //end of foreach
 
 						echo '</div>'; // end of cc-content-section
 
 						echo '</li>';
 
-				$count_right_items++;
+					$count_right_items++;
 				} // end of main foreach $headings_list
 
-?>
+				?>
 				</ul>
 
 			<!-- span 9 -->
@@ -481,8 +485,16 @@ function cyberchimps_options_page() {
 				<div class="footer-links">
 					<a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
-					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-					                                                                                                'cyberchimps_core' ) ); ?>' );">
+					<button class="reset-button btn" name="reset" onclick="return confirm( '
+					<?php
+					print esc_js(
+						__(
+							'Click OK to reset. Any theme settings will be lost!',
+							'cyberchimps_core'
+						)
+					);
+					?>
+																													' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -503,43 +515,48 @@ function cyberchimps_options_page() {
 	</div>
 	<!-- container-fluid -->
 	</div><!-- wrap -->
-<?php
+	<?php
 }
 
-//Function to display login page
+// Function to display login page
 function cyberchimps_account_page() {
 	$strResponseMessage = '';
-	$cc_user_login_id = get_option("cc_account_user_details");
+	$cc_user_login_id   = get_option( 'cc_account_user_details' );
 
-	if (isset($_POST['ccSubmitBtn']))
-	{
-		//Unset value if already set
-		update_option('cc_account_user_details', '' );
-		update_option('cc_account_status', '' );
-		$username = $_POST['ccuname'];	$password = $_POST['ccpwd'];
+	if ( isset( $_POST['ccSubmitBtn'] ) ) {
+		// Unset value if already set
+		update_option( 'cc_account_user_details', '' );
+		update_option( 'cc_account_status', '' );
+		$username = $_POST['ccuname'];
+		$password = $_POST['ccpwd'];
 
-		require_once dirname(dirname( __FILE__ )) . '/class-cc-updater.php';
-		if(isset($username) && isset($password) ) {
-			$ccuser = new CC_Updater($username, $password );
+		require_once dirname( dirname( __FILE__ ) ) . '/class-cc-updater.php';
+		if ( isset( $username ) && isset( $password ) ) {
+			$ccuser             = new CC_Updater( $username, $password );
 			$strResponseMessage = $ccuser->validate();
-			set_transient('cc_validate_user_details' , 'validate_user' , WEEK_IN_SECONDS);
-			$cc_user_login_id = get_option("cc_account_user_details");
+			set_transient( 'cc_validate_user_details', 'validate_user', WEEK_IN_SECONDS );
+			$cc_user_login_id = get_option( 'cc_account_user_details' );
 		}
 	}
 	?>
 
-				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo "Enter CyberChimps Account Details";?></h3></div>
+				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo 'Enter CyberChimps Account Details'; ?></h3></div>
 				<div class="panel panel-primary">
-<span class="ccinfo"><?php _e('To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials','cyberchimps_core') ?></span>
+<span class="ccinfo"><?php _e( 'To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials', 'cyberchimps_core' ); ?></span>
 
-					<span class="updateres"><?php if ($strResponseMessage != '' ) echo $strResponseMessage; ?></span>
-				      <div class="panel-body">
+					<span class="updateres">
+					<?php
+					if ( $strResponseMessage != '' ) {
+						echo $strResponseMessage;}
+					?>
+					</span>
+					  <div class="panel-body">
 						<form action="" id="formSettings" method="post">
 							 <div class="form-group">
 								<label for="ccuname">User Name</label>
-							    <input type="text" id="ccuname" class="form-control" name="ccuname" placeholder="Enter Account User Name" data-placement="right" title="Please Enter User Name" value="<?php echo $cc_user_login_id['username'];?>"/>
+								<input type="text" id="ccuname" class="form-control" name="ccuname" placeholder="Enter Account User Name" data-placement="right" title="Please Enter User Name" value="<?php echo $cc_user_login_id['username']; ?>"/>
 								  <label for="ccpwd">Password</label>
-								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password'];?>"/>
+								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password']; ?>"/>
 						   </div>
 						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">
 					   </form>
@@ -547,7 +564,7 @@ function cyberchimps_account_page() {
 				</div>
 
 	<?php
-		}
+}
 
 /**
  * forked version of core function do_settings_sections()
@@ -557,32 +574,32 @@ function cyberchimps_account_page() {
 function cyberchimps_do_settings_sections( $page ) {
 	global $wp_settings_sections, $wp_settings_fields;
 
-	if( !isset( $wp_settings_sections ) || !isset( $wp_settings_sections[$page] ) ) {
+	if ( ! isset( $wp_settings_sections ) || ! isset( $wp_settings_sections[ $page ] ) ) {
 		return;
 	}
 
-	foreach( (array)$wp_settings_sections[$page] as $section ) {
+	foreach ( (array) $wp_settings_sections[ $page ] as $section ) {
 		$jquery_click_section_hook = '';
 		$jquery_click_section_hook = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $section['id'] ) );
 
 		echo '<div class="section-group" id="' . esc_attr( $jquery_click_section_hook ) . '">';
-		if( $section['title'] ) {
+		if ( $section['title'] ) {
 			echo "<h3><span class='glyphicon glyphicon-chevron-down'></span> {$section['title']}</h3>\n";
 		}
 
 		// wrapper div of all field-container divs
 		echo '<div class="field-container-wrapper">';
 
-		//Hook before section options
+		// Hook before section options
 		do_action( $jquery_click_section_hook . '_before' );
 
 		call_user_func( $section['callback'], $section );
 
-		if( isset( $wp_settings_fields ) && isset( $wp_settings_fields[$page] ) && isset( $wp_settings_fields[$page][$section['id']] ) ) {
+		if ( isset( $wp_settings_fields ) && isset( $wp_settings_fields[ $page ] ) && isset( $wp_settings_fields[ $page ][ $section['id'] ] ) ) {
 			cyberchimps_do_settings_fields( $page, $section['id'] );
 		}
 
-		//Hook after section options
+		// Hook after section options
 		do_action( $jquery_click_section_hook . '_after' );
 
 		echo '</div>'; // .field-container ends
@@ -598,11 +615,11 @@ function cyberchimps_do_settings_sections( $page ) {
 function cyberchimps_do_settings_fields( $page, $section ) {
 	global $wp_settings_fields;
 
-	if( !isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section] ) ) {
+	if ( ! isset( $wp_settings_fields ) || ! isset( $wp_settings_fields[ $page ] ) || ! isset( $wp_settings_fields[ $page ][ $section ] ) ) {
 		return;
 	}
 
-	foreach( (array)$wp_settings_fields[$page][$section] as $field ) {
+	foreach ( (array) $wp_settings_fields[ $page ][ $section ] as $field ) {
 		call_user_func( $field['callback'], $field['args'] );
 	}
 }
@@ -629,16 +646,15 @@ function cyberchimps_get_fields() {
 }
 
 function cyberchimps_create_sections( $sections ) {
-	if( empty( $sections ) ) {
+	if ( empty( $sections ) ) {
 		return false;
 	}
 
 	// add in error checking and proper validation, escaping, and translation calls
-	foreach( $sections as $section ) {
-		if( cyberchimps_section_exists( $section['heading'], $section['id'] ) ) {
+	foreach ( $sections as $section ) {
+		if ( cyberchimps_section_exists( $section['heading'], $section['id'] ) ) {
 			continue;
-		}
-		else {
+		} else {
 			add_settings_section(
 				$section['id'],
 				$section['label'],
@@ -661,75 +677,73 @@ function cyberchimps_drag_drop_field( $value ) {
 	$output = '';
 
 	// If the option is already saved, ovveride $val
-	if( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info' ) ) {
-		if( isset( $settings[( $value['id'] )] ) ) {
+	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info' ) ) {
+		if ( isset( $settings[ ( $value['id'] ) ] ) ) {
 
 			// Assign empty array if the array returns null
-			if( $settings[( $value['id'] )] != "" ) {
-				$val = $settings[( $value['id'] )];
-			}
-			else {
+			if ( $settings[ ( $value['id'] ) ] != '' ) {
+				$val = $settings[ ( $value['id'] ) ];
+			} else {
 				$val = null;
 			}
 			// Striping slashes of non-array options
-			if( !is_array( $val ) ) {
+			if ( ! is_array( $val ) ) {
 				$val = stripslashes( $val );
 			}
 		}
 	}
 	// Set default value to $val
-	if( empty( $val ) ) {
-		if( isset( $value['std'] ) ) {
-			if( is_array( $value['std'] ) ) {
+	if ( empty( $val ) ) {
+		if ( isset( $value['std'] ) ) {
+			if ( is_array( $value['std'] ) ) {
 				$val = array_keys( $value['std'] );
-			}
-			else {
+			} else {
 				$val = array_keys( explode( $value['std'] ) );
 			}
 		}
 	}
 
-	$output .= "<div class='section_order' id=" . esc_attr( $value['id'] ) . ">";
+	$output .= "<div class='section_order' id=" . esc_attr( $value['id'] ) . '>';
 	$output .= "<div class='left_list span5'>";
 	$output .= "<div class='inactive'>Inactive Elements</div>";
 	$output .= "<div class='list_items'>";
-	if( is_array( $val ) ) {
-		foreach( $value['options'] as $key => $option ) {
-			if( in_array( $key, $val ) ) {
+	if ( is_array( $val ) ) {
+		foreach ( $value['options'] as $key => $option ) {
+			if ( in_array( $key, $val ) ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
 			$output .= '<span class="glyphicon glyphicon-remove action"></span>';
 			$output .= "<span data-key='{$key}'>{$option}</span>";
 			$output .= "<span id='{$key}_img'></span>";
-			$output .= "</div>";
+			$output .= '</div>';
 		}
 	}
-	$output .= "</div>";
-	$output .= "</div>";
+	$output .= '</div>';
+	$output .= '</div>';
 	$output .= '<div class="options-arrow span1 hidden-phone"><span class="glyphicon glyphicon-arrow-right"></span></div>';
 	$output .= "<div class='right_list span5'>";
 	$output .= "<div class='active'>Active Elements</div>";
 	$output .= "<div class='drag'>Drag & Drop Elements</div>";
 	$output .= "<div class='list_items'>";
-	if( is_array( $val ) ) {
-		foreach( $val as $key ) {
-			if( !array_key_exists( $key, $value['options'] ) ) {
+	if ( is_array( $val ) ) {
+		foreach ( $val as $key ) {
+			if ( ! array_key_exists( $key, $value['options'] ) ) {
 				continue;
 			}
 			$output .= "<div class='list_item'>";
 			$output .= '<span class="glyphicon glyphicon-remove action"></span>';
 			$output .= "<span data-key='{$key}'>{$value['options'][$key]}</span>";
 			$output .= "<span id='{$key}_img'></span>";
-			$output .= "</div>";
+			$output .= '</div>';
 		}
 	}
-	$output .= "</div>";
+	$output .= '</div>';
 	$output .= "<input class='blog-section-order-tracker' type='hidden'  name='cyberchimps_options[blog_section_order_tracker]' />";
-	$output .= "</div>";
+	$output .= '</div>';
 	$output .= '<div id="values" data-key="' . $option_name . '"></div>';
 	$output .= '<div class="clear"></div>';
-	$output .= "</div>";
+	$output .= '</div>';
 
 	echo $output;
 }
@@ -737,14 +751,14 @@ function cyberchimps_drag_drop_field( $value ) {
 function cyberchimps_sections_callback( $section_passed ) {
 	$sections = cyberchimps_get_sections();
 
-	if( empty( $sections ) && empty( $section_passed ) ) {
+	if ( empty( $sections ) && empty( $section_passed ) ) {
 		return false;
 	}
 
-	foreach( $sections as $section ) {
-		if( $section_passed['id'] == $section['id'] ) {
+	foreach ( $sections as $section ) {
+		if ( $section_passed['id'] == $section['id'] ) {
 			echo '<p>';
-			if( isset( $section['description'] ) ) {
+			if ( isset( $section['description'] ) ) {
 				echo $section['description'];
 			}
 			echo '</p>';
@@ -759,7 +773,7 @@ function cyberchimps_sections_callback( $section_passed ) {
 function cyberchimps_section_exists( $heading, $section ) {
 	global $wp_settings_sections;
 
-	if( isset( $wp_settings_sections[$heading][$section] ) ) {
+	if ( isset( $wp_settings_sections[ $heading ][ $section ] ) ) {
 		return true;
 	}
 
@@ -767,12 +781,12 @@ function cyberchimps_section_exists( $heading, $section ) {
 }
 
 function cyberchimps_create_fields( $fields ) {
-	if( empty( $fields ) ) {
+	if ( empty( $fields ) ) {
 		return false;
 	}
 
 	// loop through and create each field
-	foreach( $fields as $field_args ) {
+	foreach ( $fields as $field_args ) {
 		$field_defaults = array(
 			'id'       => false,
 			'name'     => __( 'Default Field', 'cyberchimps_core' ),
@@ -782,13 +796,11 @@ function cyberchimps_create_fields( $fields ) {
 		);
 		$field_args     = wp_parse_args( $field_args, $field_defaults );
 
-		if( empty( $field_args['id'] ) ) {
+		if ( empty( $field_args['id'] ) ) {
 			continue;
-		}
-		elseif( !cyberchimps_section_exists( $field_args['heading'], $field_args['section'] ) ) {
+		} elseif ( ! cyberchimps_section_exists( $field_args['heading'], $field_args['section'] ) ) {
 			continue;
-		}
-		else {
+		} else {
 			add_settings_field(
 				$field_args['id'],
 				$field_args['name'],
@@ -813,28 +825,28 @@ function cyberchimps_fields_callback( $value ) {
 	$output       = '';
 
 	// Set default value to $val
-	if( isset( $value['std'] ) ) {
+	if ( isset( $value['std'] ) ) {
 		$val = $value['std'];
 	}
 
 	// If the option is already saved, ovveride $val
-	if( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info' ) ) {
-		if( isset( $settings[( $value['id'] )] ) ) {
-			$val = $settings[( $value['id'] )];
+	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info' ) ) {
+		if ( isset( $settings[ ( $value['id'] ) ] ) ) {
+			$val = $settings[ ( $value['id'] ) ];
 			// Striping slashes of non-array options
-			if( !is_array( $val ) ) {
+			if ( ! is_array( $val ) ) {
 				$val = stripslashes( $val );
 			}
 		}
 	}
 	// If there is no class set make it blank
-	if( !isset( $value['class'] ) ) {
+	if ( ! isset( $value['class'] ) ) {
 		$value['class'] = '';
 	}
 
 	// If there is a description save it for labels
 	$explain_value = '';
-	if( isset( $value['desc'] ) ) {
+	if ( isset( $value['desc'] ) ) {
 		$explain_value = $value['desc'];
 	}
 
@@ -845,11 +857,11 @@ function cyberchimps_fields_callback( $value ) {
 	$output .= '<div class="field-container' . $wrapper_class . '">';
 
 	// Output field name
-	if( $value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome' && $value['type'] != 'toggle' ) {
+	if ( $value['name'] && $value['type'] != 'info' && $value['type'] != 'welcome' && $value['type'] != 'toggle' ) {
 		$output .= '<label for="' . esc_attr( $value['id'] ) . '">' . $value['name'] . '</label>';
 	}
 
-	switch( $value['type'] ) {
+	switch ( $value['type'] ) {
 
 		// Basic text input
 		case 'text':
@@ -865,14 +877,14 @@ function cyberchimps_fields_callback( $value ) {
 		case 'textarea':
 			$rows = '8';
 
-			if( isset( $value['settings']['rows'] ) ) {
+			if ( isset( $value['settings']['rows'] ) ) {
 				$custom_rows = $value['settings']['rows'];
-				if( is_numeric( $custom_rows ) ) {
+				if ( is_numeric( $custom_rows ) ) {
 					$rows = $custom_rows;
 				}
 			}
 
-			$val = stripslashes( $val );
+			$val     = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
 			break;
 
@@ -880,34 +892,35 @@ function cyberchimps_fields_callback( $value ) {
 		case 'unfiltered_textarea':
 			$rows = '8';
 
-			if( isset( $value['settings']['rows'] ) ) {
+			if ( isset( $value['settings']['rows'] ) ) {
 				$custom_rows = $value['settings']['rows'];
-				if( is_numeric( $custom_rows ) ) {
+				if ( is_numeric( $custom_rows ) ) {
 					$rows = $custom_rows;
 				}
 			}
 
-			$val = stripslashes( $val );
+			$val     = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="'
 				.
 				$rows .
 				'">' .
 				esc_textarea(
-					$val ) . '</textarea>';
+					$val
+				) . '</textarea>';
 			break;
 
 		// css Textarea
 		case 'csstextarea':
 			$rows = '8';
 
-			if( isset( $value['settings']['rows'] ) ) {
+			if ( isset( $value['settings']['rows'] ) ) {
 				$custom_rows = $value['settings']['rows'];
-				if( is_numeric( $custom_rows ) ) {
+				if ( is_numeric( $custom_rows ) ) {
 					$rows = $custom_rows;
 				}
 			}
 
-			$val = stripslashes( $val );
+			$val     = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . strip_tags( $val ) . '</textarea>';
 			$output .= '<div id="custom-css-msg"></div>';
 			break;
@@ -916,9 +929,9 @@ function cyberchimps_fields_callback( $value ) {
 		case 'select':
 			$output .= '<select class="of-input ' . esc_attr( $value['class'] ) . '" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 
-			foreach( $value['options'] as $key => $option ) {
+			foreach ( $value['options'] as $key => $option ) {
 				$selected = '';
-				if( $val != '' ) {
+				if ( $val != '' ) {
 					$selected = selected( $val, $key, false );
 				}
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . $selected . '>' . esc_html( $option ) . '</option>';
@@ -927,24 +940,24 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 
 		// Radio Box
-		case "radio":
+		case 'radio':
 			$name = $option_name . '[' . $value['id'] . ']';
 			$val  = ( $val != '' ) ? $val : $value['std'];
-			foreach( $value['options'] as $key => $option ) {
-				$id = $option_name . '-' . $value['id'] . '-' . $key;
+			foreach ( $value['options'] as $key => $option ) {
+				$id      = $option_name . '-' . $value['id'] . '-' . $key;
 				$output .= '<div class="radio-container ' . esc_attr( $value['class'] ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $key ) . '" ' . checked( $val, $key, false ) . ' /><label for="' . esc_attr( $id ) . '" class="of-radio">' . esc_html( $option ) . '</label></div>';
 			}
 			break;
 
 		// Image Selectors
-		case "images":
-			$name = $option_name . '[' . $value['id'] . ']';
+		case 'images':
+			$name    = $option_name . '[' . $value['id'] . ']';
 			$output .= '<div class="images-radio-container">';
-			foreach( $value['options'] as $key => $option ) {
+			foreach ( $value['options'] as $key => $option ) {
 				$selected = '';
 				$checked  = '';
-				if( $val != '' ) {
-					if( $val == $key ) {
+				if ( $val != '' ) {
+					if ( $val == $key ) {
 						$selected = ' of-radio-img-selected';
 						$checked  = ' checked="checked"';
 					}
@@ -957,14 +970,14 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 
 		// Checkbox
-		case "checkbox":
+		case 'checkbox':
 			$output .= '<div class="checkbox-container"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" ' . checked( $val, 1, false ) . ' />';
 			$output .= '<label class="right-label" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags ) . '</label></div>';
 			break;
 
 		// Multicheck
-		case "multicheck":
-			foreach( $value['options'] as $key => $option ) {
+		case 'multicheck':
+			foreach ( $value['options'] as $key => $option ) {
 				$checked = '';
 				$label   = $option;
 				$option  = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $key ) );
@@ -972,8 +985,8 @@ function cyberchimps_fields_callback( $value ) {
 				$id   = $option_name . '-' . $value['id'] . '-' . $option;
 				$name = $option_name . '[' . $value['id'] . '][' . $option . ']';
 
-				if( isset( $val[$option] ) ) {
-					$checked = checked( $val[$option], 1, false );
+				if ( isset( $val[ $option ] ) ) {
+					$checked = checked( $val[ $option ], 1, false );
 				}
 
 				$output .= '<div class="checkbox-container"><input id="' . esc_attr( $id ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $name ) . '" ' . $checked . ' /><label for="' . esc_attr( $id ) . '" class="right-label">' . esc_html( $label ) . '</label></div>';
@@ -981,35 +994,34 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 
 		// Toggle Switch
-		case "toggle":
-			$checked = "";
-			if( $val ) {
+		case 'toggle':
+			$checked = '';
+			if ( $val ) {
 				$checked = 'checked="checked"';
 			}
 			$output .= '<div class="toggle-container" id="' . esc_attr( $value['id'] ) . '_container"><label for="' . esc_attr( $value['id'] ) . '">' . $value['name'] . '</label><input id="' . esc_attr( $value['id'] ) . '"' . $checked . 'class="checkbox-toggle of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" ' . checked( $val, 1, false ) . ' /></div>';
 			break;
 
 		// Color picker
-		case "color":
+		case 'color':
 			$output .= '<div class="input-prepend ' . $value['class'] . '"><div id="' . esc_attr( $value['id'] . '_picker' ) . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $val ) . '"></div></div>';
 			$output .= '<input class="of-color" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '" type="text" value="' . esc_attr( $val ) . '" /></div>';
 			break;
 
 		// Uploader
-		case "upload":
+		case 'upload':
 			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $val, null, $explain_value );
 			break;
 
 		// Typography
 		case 'typography':
-
 			unset( $font_size, $font_style, $font_face, $font_color );
 
 			$typography_defaults = array(
 				'size'  => '',
 				'face'  => '',
 				'style' => '',
-				'color' => ''
+				'color' => '',
 			);
 
 			$typography_stored = wp_parse_args( $val, $typography_defaults );
@@ -1018,60 +1030,59 @@ function cyberchimps_fields_callback( $value ) {
 				'sizes'  => cyberchimps_recognized_font_sizes(),
 				'faces'  => cyberchimps_recognized_font_faces(),
 				'styles' => cyberchimps_recognized_font_styles(),
-				'color'  => true
+				'color'  => true,
 			);
 
-			if( isset( $value['options'] ) ) {
+			if ( isset( $value['options'] ) ) {
 				$typography_options = wp_parse_args( $value['options'], $typography_options );
 			}
 
 			// Font Size
-			if( $typography_options['sizes'] ) {
+			if ( $typography_options['sizes'] ) {
 				$font_size = '<select class="of-typography of-typography-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';
 				$sizes     = $typography_options['sizes'];
-				foreach( $sizes as $i ) {
-					$size = $i . 'px';
+				foreach ( $sizes as $i ) {
+					$size       = $i . 'px';
 					$font_size .= '<option value="' . esc_attr( $size ) . '" ' . selected( $typography_stored['size'], $size, false ) . '>' . esc_html( $size ) . '</option>';
 				}
 				$font_size .= '</select>';
 			}
 
 			// Font Face
-			if( $typography_options['faces'] ) {
+			if ( $typography_options['faces'] ) {
 				$font_face = '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
 				$faces     = $typography_options['faces'];
-				foreach( $faces as $key => $face ) {
+				foreach ( $faces as $key => $face ) {
 					$font_face .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['face'], $key, false ) . '>' . esc_html( $face ) . '</option>';
 				}
 				$font_face .= '</select>';
 			}
 
 			// Font Styles
-			if( $typography_options['styles'] ) {
+			if ( $typography_options['styles'] ) {
 				$font_style = '<select class="of-typography of-typography-style" name="' . $option_name . '[' . $value['id'] . '][style]" id="' . $value['id'] . '_style">';
 				$styles     = $typography_options['styles'];
-				foreach( $styles as $key => $style ) {
+				foreach ( $styles as $key => $style ) {
 					$font_style .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['style'], $key, false ) . '>' . $style . '</option>';
 				}
 				$font_style .= '</select>';
 			}
 
 			// Font Color
-			if( $typography_options['color'] ) {
-				$font_color = '<div class="input-prepend of-typography"><div id="' . esc_attr( $value['id'] ) . '_color_picker" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
+			if ( $typography_options['color'] ) {
+				$font_color  = '<div class="input-prepend of-typography"><div id="' . esc_attr( $value['id'] ) . '_color_picker" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
 				$font_color .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" /></div>';
 			}
 
 			// Allow modification/injection of typography fields
 			$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_color' );
 			$typography_fields = apply_filters( 'cyberchimps_typography_fields', $typography_fields, $typography_stored, $option_name, $value );
-			$output .= implode( '', $typography_fields );
+			$output           .= implode( '', $typography_fields );
 
 			break;
 
 		// Background
 		case 'background':
-
 			$background = $val;
 
 			// Background Color
@@ -1079,13 +1090,13 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '<input class="of-color of-background of-background-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $background['color'] ) . '" /></div>';
 
 			// Background Image - New AJAX Uploader using Media Library
-			if( !isset( $background['image'] ) ) {
+			if ( ! isset( $background['image'] ) ) {
 				$background['image'] = '';
 			}
 
 			$output .= cyberchimps_medialibrary_uploader( $value['class'], $value['id'], $background['image'], null, '', 0, 'image' );
-			$class = 'of-background-properties';
-			if( '' == $background['image'] ) {
+			$class   = 'of-background-properties';
+			if ( '' == $background['image'] ) {
 				$class .= ' hide';
 			}
 			$output .= '<div class="' . esc_attr( $class ) . '">';
@@ -1094,25 +1105,25 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '<select class="of-background of-background-repeat" name="' . esc_attr( $option_name . '[' . $value['id'] . '][repeat]' ) . '" id="' . esc_attr( $value['id'] . '_repeat' ) . '">';
 			$repeats = cyberchimps_recognized_background_repeat();
 
-			foreach( $repeats as $key => $repeat ) {
+			foreach ( $repeats as $key => $repeat ) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['repeat'], $key, false ) . '>' . esc_html( $repeat ) . '</option>';
 			}
 			$output .= '</select>';
 
 			// Background Position
-			$output .= '<select class="of-background of-background-position" name="' . esc_attr( $option_name . '[' . $value['id'] . '][position]' ) . '" id="' . esc_attr( $value['id'] . '_position' ) . '">';
+			$output   .= '<select class="of-background of-background-position" name="' . esc_attr( $option_name . '[' . $value['id'] . '][position]' ) . '" id="' . esc_attr( $value['id'] . '_position' ) . '">';
 			$positions = cyberchimps_recognized_background_position();
 
-			foreach( $positions as $key => $position ) {
+			foreach ( $positions as $key => $position ) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['position'], $key, false ) . '>' . esc_html( $position ) . '</option>';
 			}
 			$output .= '</select>';
 
 			// Background Attachment
-			$output .= '<select class="of-background of-background-attachment" name="' . esc_attr( $option_name . '[' . $value['id'] . '][attachment]' ) . '" id="' . esc_attr( $value['id'] . '_attachment' ) . '">';
+			$output     .= '<select class="of-background of-background-attachment" name="' . esc_attr( $option_name . '[' . $value['id'] . '][attachment]' ) . '" id="' . esc_attr( $value['id'] . '_attachment' ) . '">';
 			$attachments = cyberchimps_recognized_background_attachment();
 
-			foreach( $attachments as $key => $attachment ) {
+			foreach ( $attachments as $key => $attachment ) {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['attachment'], $key, false ) . '>' . esc_html( $attachment ) . '</option>';
 			}
 			$output .= '</select>';
@@ -1128,10 +1139,10 @@ function cyberchimps_fields_callback( $value ) {
 			$default_editor_settings = array(
 				'textarea_name' => $textarea_name,
 				'media_buttons' => false,
-				'tinymce'       => array( 'plugins' => 'wordpress' )
+				'tinymce'       => array( 'plugins' => 'wordpress' ),
 			);
 			$editor_settings         = array();
-			if( isset( $value['settings'] ) ) {
+			if ( isset( $value['settings'] ) ) {
 				$editor_settings = $value['settings'];
 			}
 
@@ -1141,44 +1152,44 @@ function cyberchimps_fields_callback( $value ) {
 			break;
 
 		// Info
-		case "info":
+		case 'info':
 			$id    = '';
 			$class = 'section';
-			if( isset( $value['id'] ) ) {
+			if ( isset( $value['id'] ) ) {
 				$id = 'id="' . esc_attr( $value['id'] ) . '" ';
 			}
-			if( isset( $value['type'] ) ) {
+			if ( isset( $value['type'] ) ) {
 				$class .= ' section-' . $value['type'];
 			}
-			if( isset( $value['class'] ) ) {
+			if ( isset( $value['class'] ) ) {
 				$class .= ' ' . $value['class'];
 			}
 
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
-			if( isset( $value['name'] ) ) {
+			if ( isset( $value['name'] ) ) {
 				$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
 			}
-			if( $value['desc'] ) {
+			if ( $value['desc'] ) {
 				$output .= apply_filters( 'cyberchimps_sanitize_info', $value['desc'] ) . "\n";
 			}
 			$output .= '</div>' . "\n";
 			break;
 
 		// Welcome
-		case "welcome":
+		case 'welcome':
 			$id    = '';
 			$class = 'section';
-			if( isset( $value['id'] ) ) {
+			if ( isset( $value['id'] ) ) {
 				$id = 'id="' . esc_attr( $value['id'] ) . '" ';
 			}
-			if( isset( $value['type'] ) ) {
+			if ( isset( $value['type'] ) ) {
 				$class .= ' section-' . $value['type'];
 			}
-			if( isset( $value['class'] ) ) {
+			if ( isset( $value['class'] ) ) {
 				$class .= ' ' . $value['class'];
 			}
 			$output .= '<div ' . $id . 'class="' . esc_attr( $class ) . '">' . "\n";
-			if( isset( $value['name'] ) ) {
+			if ( isset( $value['name'] ) ) {
 				$output .= '<h4 class="heading">' . esc_html( apply_filters( 'cyberchimps_help_sub_heading', $value['name'] ) ) . '</h4>' . "\n";
 			}
 			$output .= apply_filters( 'cyberchimps_sanitize_info', apply_filters( 'cyberchimps_help_description', '' ) ) . "\n";
@@ -1186,19 +1197,19 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '</div>' . "\n";
 			break;
 
-		case "export":
-			$output .= "<textarea rows='10'>" . esc_html( serialize( $settings ) ) . "</textarea>";
+		case 'export':
+			$output .= "<textarea rows='10'>" . esc_html( serialize( $settings ) ) . '</textarea>';
 			$output .= '<br/><a class="btn btn-info export-option" href="data:text/octet-stream;charset=utf-8,' . esc_html( serialize( $settings ) ) . '" download="theme-option-backup.txt">Download</a>';
 			break;
 
-		case "import":
+		case 'import':
 			$output .= "<textarea name='import' rows='10'></textarea>";
 			$output .= "<br/><input type='file' id='import_file' name='import_file' />";
 			break;
 	}
 
-	if( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) && ( $value['type'] != "welcome" ) && ( $value['type'] != "upload" ) ) {
-		if( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
+	if ( ( $value['type'] != 'heading' ) && ( $value['type'] != 'info' ) && ( $value['type'] != 'welcome' ) && ( $value['type'] != 'upload' ) ) {
+		if ( ( $value['type'] != 'checkbox' ) && ( $value['type'] != 'editor' ) ) {
 			$output .= '<div class="desc">' . wp_kses( $explain_value, $allowedtags ) . '</div>' . "\n";
 		}
 	}
@@ -1225,7 +1236,7 @@ function cyberchimps_options_validate( $input ) {
 	 */
 
 	// Check if any file is uplaoded
-	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
+	if ( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
 
 		// Initialise WP filesystem.
 		WP_Filesystem( request_filesystem_credentials( 'options.php', '', false, false, null ) );
@@ -1233,44 +1244,42 @@ function cyberchimps_options_validate( $input ) {
 		// Get the text of the uploaded file and trim it to remove space from either end.
 		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name'] ) );
 
-		if( $import_file_text ) {
+		if ( $import_file_text ) {
 			$string = stripslashes( $import_file_text );
 
 			// check string is serialized and unserialize it
-			if( is_serialized( $string ) ) {
+			if ( is_serialized( $string ) ) {
 				$try = unserialize( ( $string ) );
 			}
 
 			// make sure $try is set with the unserialized data
-			if( $try ) {
+			if ( $try ) {
 				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
 				return $try;
-			}
-			else {
+			} else {
 				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
 			}
 		}
 	}
 	// If no file is uploaded then check for the texarea field for improt option.
 	else {
-		if( isset( $_POST['import'] ) ) {
-			if( trim( $_POST['import'] ) ) {
+		if ( isset( $_POST['import'] ) ) {
+			if ( trim( $_POST['import'] ) ) {
 
 				$string = stripslashes( trim( $_POST['import'] ) );
 
 				// check string is serialized and unserialize it
-				if( is_serialized( $string ) ) {
+				if ( is_serialized( $string ) ) {
 					$try = unserialize( ( $string ) );
 				}
 
 				// make sure $try is set with the unserialized data
-				if( $try ) {
+				if ( $try ) {
 					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
 					return $try;
-				}
-				else {
+				} else {
 					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
 				}
 			}
@@ -1284,7 +1293,7 @@ function cyberchimps_options_validate( $input ) {
 	 * button, the options defined in the theme's options.php
 	 * file will be added to the option for the active theme.
 	 */
-	if( isset( $_POST['reset'] ) ) {
+	if ( isset( $_POST['reset'] ) ) {
 		add_settings_error( 'cyberchimps_options', 'restore_defaults', __( 'Default options restored.', 'cyberchimps_core' ), 'updated fade' );
 
 		return cyberchimps_get_default_values();
@@ -1299,62 +1308,62 @@ function cyberchimps_options_validate( $input ) {
 	else {
 		$clean   = array();
 		$options = cyberchimps_get_fields();
-		foreach( $options as $option ) {
-			if( !isset( $option['id'] ) ) {
+		foreach ( $options as $option ) {
+			if ( ! isset( $option['id'] ) ) {
 				continue;
 			}
 
-			if( !isset( $option['type'] ) ) {
+			if ( ! isset( $option['type'] ) ) {
 				continue;
 			}
 
 			$id = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower( $option['id'] ) );
 
 			// Set upload to false if it wasn't sent in the $_POST
-			if( 'info' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'info' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set upload to false if it wasn't sent in the $_POST
-			if( 'upload' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'upload' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set radio to false if it wasn't sent in the $_POST
-			if( 'radio' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'radio' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set toggle to false if it wasn't sent in the $_POST
-			if( 'toggle' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'toggle' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set checkbox to false if it wasn't sent in the $_POST
-			if( 'checkbox' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'checkbox' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set checkbox to false if it wasn't sent in the $_POST
-			if( 'images' == $option['type'] && !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( 'images' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// Set each item in the multicheck to false if it wasn't sent in the $_POST
-			if( 'multicheck' == $option['type'] && !isset( $input[$id] ) ) {
-				foreach( $option['options'] as $key => $value ) {
-					$input[$id][$key] = false;
+			if ( 'multicheck' == $option['type'] && ! isset( $input[ $id ] ) ) {
+				foreach ( $option['options'] as $key => $value ) {
+					$input[ $id ][ $key ] = false;
 				}
 			}
 
 			// Catch any other id's that have not been set and set them to false. For some themes we remove options and we don't want them causing a problem
-			if( !isset( $input[$id] ) ) {
-				$input[$id] = false;
+			if ( ! isset( $input[ $id ] ) ) {
+				$input[ $id ] = false;
 			}
 
 			// For a value to be submitted to database it must pass through a sanitization filter
-			if( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
-				$clean[$id] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $input[$id], $option );
+			if ( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
+				$clean[ $id ] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $input[ $id ], $option );
 			}
 		}
 
@@ -1382,18 +1391,18 @@ function cyberchimps_options_validate( $input ) {
 function cyberchimps_get_default_values() {
 	$output = array();
 	$config = cyberchimps_get_fields();
-	foreach( (array)$config as $option ) {
-		if( !isset( $option['id'] ) ) {
+	foreach ( (array) $config as $option ) {
+		if ( ! isset( $option['id'] ) ) {
 			continue;
 		}
-		if( !isset( $option['std'] ) ) {
+		if ( ! isset( $option['std'] ) ) {
 			continue;
 		}
-		if( !isset( $option['type'] ) ) {
+		if ( ! isset( $option['type'] ) ) {
 			continue;
 		}
-		if( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
-			$output[$option['id']] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $option['std'], $option );
+		if ( has_filter( 'cyberchimps_sanitize_' . $option['type'] ) ) {
+			$output[ $option['id'] ] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $option['std'], $option );
 		}
 	}
 
@@ -1406,20 +1415,21 @@ function cyberchimps_get_default_values() {
 function cyberchimps_admin_bar() {
 	global $wp_admin_bar;
 
-	$wp_admin_bar->add_menu( array(
-		                         'parent' => 'appearance',
-		                         'id'     => 'cyberchimps_options_page',
-		                         'title'  => __( 'Theme Options', 'cyberchimps_core' ),
-		                         'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
-	                         ) );
+	$wp_admin_bar->add_menu(
+		array(
+			'parent' => 'appearance',
+			'id'     => 'cyberchimps_options_page',
+			'title'  => __( 'Theme Options', 'cyberchimps_core' ),
+			'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' ),
+		)
+	);
 }
-/** Sticky Header **/
+/** Sticky Header */
 add_action( 'wp_footer', 'cyberchimps_fixed_menu_onscroll' );
-function cyberchimps_fixed_menu_onscroll()
-{
-	if( cyberchimps_get_option( 'sticky_header', 'checked' ) ) {
+function cyberchimps_fixed_menu_onscroll() {
+	if ( cyberchimps_get_option( 'sticky_header', 'checked' ) ) {
 
-	?>
+		?>
 		<script type="text/javascript">
 		jQuery(document).ready(function($){
 			$(window).scroll(function()  {
@@ -1434,24 +1444,28 @@ function cyberchimps_fixed_menu_onscroll()
 			});
 		});
 		</script>
-	<?php
+		<?php
 	}
 }
-add_action('admin_notices', 'cyberchimps_invalid_account_details');
-//Function to display if inavalid account details
+add_action( 'admin_notices', 'cyberchimps_invalid_account_details' );
+// Function to display if inavalid account details
 function cyberchimps_invalid_account_details() {
 
-	if ( 'not_found' === get_option('cc_account_status') ) {
-		printf( __(
-		'<div class="notice notice-error is-dismissible"><p><strong>CyberChimps - Invalid Account Details</strong>. Please re-enter <a href="%1$s" class="button">Re-Enter</a></p></div>'),
-		esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
+	if ( 'not_found' === get_option( 'cc_account_status' ) ) {
+		printf(
+			__(
+				'<div class="notice notice-error is-dismissible"><p><strong>CyberChimps - Invalid Account Details</strong>. Please re-enter <a href="%1$s" class="button">Re-Enter</a></p></div>'
+			),
+			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
 		);
 	}
 
-	if ( '' === get_option('cc_account_user_details') ) {
-		printf( __(
-		'<div class="notice notice-info"><p><strong>Please enter CyberChimps Account Details in order to receive auto updates when available</strong>. <a href="%1$s" class="button">Click Here</a></p></div>'),
-		esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
+	if ( '' === get_option( 'cc_account_user_details' ) ) {
+		printf(
+			__(
+				'<div class="notice notice-info"><p><strong>Please enter CyberChimps Account Details in order to receive auto updates when available</strong>. <a href="%1$s" class="button">Click Here</a></p></div>'
+			),
+			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
 		);
 	}
 }

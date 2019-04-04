@@ -3,9 +3,8 @@
  * WooThemes Media Library-driven AJAX File Uploader Module (2010-11-05)
  *
  * Slightly modified and Forked from the Options Framework
- *
  */
-if( is_admin() ) {
+if ( is_admin() ) {
 	// Load additional css and js for image uploads on the Cyber Chimps Framework Theme Options page
 	$cyberchimps_page = 'appearance_page_cyberchimps_theme_options';
 	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_mlu_css', 0 );
@@ -16,9 +15,9 @@ if( is_admin() ) {
  * Adds the Thickbox CSS file and specific loading and button images to the header
  * on the pages where this function is called.
  */
-if( !function_exists( 'cyberchimps_mlu_css' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_css' ) ) {
 	function cyberchimps_mlu_css() {
-		$_html = '';
+		$_html  = '';
 		$_html .= '<link rel="stylesheet" href="' . dirname( __FILE__ ) . '/lib/js/thickbox/thickbox.css" type="text/css" media="screen" />' . "\n";
 		$_html .= '<script type="text/javascript">
 		var tb_pathToImage = "' . dirname( __FILE__ ) . '/lib/js/thickbox/loadingAnimation.gif";
@@ -32,7 +31,7 @@ if( !function_exists( 'cyberchimps_mlu_css' ) ) {
  * Registers and enqueues (loads) the necessary JavaScript file for working with the
  * Media Library-driven AJAX File Uploader Module.
  */
-if( !function_exists( 'cyberchimps_mlu_js' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_js' ) ) {
 	function cyberchimps_mlu_js() {
 		// Registers custom scripts for the Media Library AJAX uploader.
 		wp_enqueue_script( 'cyberchimps-medialibrary-uploader', dirname( __FILE__ ) . '/lib/js/options-medialibrary-uploader.js', array( 'jquery', 'thickbox' ) );
@@ -53,7 +52,7 @@ if( !function_exists( 'cyberchimps_mlu_js' ) ) {
  * Dependencies:
  * - optionsframework_mlu_get_silentpost()
  */
-if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
+if ( ! function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 	function cyberchimps_medialibrary_uploader( $_class, $_id, $_value, $_mode = 'full', $_desc = '', $_postid = 0, $_name = '' ) {
 
 		$output          = '';
@@ -70,47 +69,45 @@ if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
 		$int = cyberchimps_mlu_get_silentpost( $id );
 
 		// If a value is passed and we don't have a stored value, use the value that's passed through.
-		if( $_value != '' && $value == '' ) {
+		if ( $_value != '' && $value == '' ) {
 			$value = $_value;
 		}
 
-		if( $_name != '' ) {
+		if ( $_name != '' ) {
 			$name = '[' . $id . '][' . $_name . ']';
-		}
-		else {
+		} else {
 			$name = '[' . $id . ']';
 		}
 
-		if( $value ) {
+		if ( $value ) {
 			$class = ' has-file';
 		}
 
 		$output .= '<div class="input-append ' . $container_class . '"><input id="' . $id . '" class="upload" type="text" name="cyberchimps_options' . $name . '" value="' . $value . '" />' . "\n";
 		$output .= '<input id="upload_' . $id . '" class="upload_button btn" type="button" value="' . __( 'Upload', 'cyberchimps_core' ) . '" rel="' . $int . '" /></div>' . "\n";
 
-		if( $_desc != '' ) {
+		if ( $_desc != '' ) {
 			$output .= '<span class="cyberchimps_metabox_desc">' . $_desc . '</span>' . "\n";
 		}
 
 		$output .= '<div class="screenshot" id="' . $id . '_image">' . "\n";
 
-		if( $value != '' ) {
+		if ( $value != '' ) {
 			$remove = '<a href="javascript:(void);" class="mlu_remove button">Remove</a>';
 			$image  = ( strpos( $value, 'gravatar' ) ) ? $value : preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value );
-			if( $image ) {
+			if ( $image ) {
 				$output .= '<img src="' . $value . '" alt="" />' . $remove . '';
-			}
-			else {
-				$parts = explode( "/", $value );
-				for( $i = 0; $i < sizeof( $parts ); ++$i ) {
-					$title = $parts[$i];
+			} else {
+				$parts = explode( '/', $value );
+				for ( $i = 0; $i < sizeof( $parts ); ++$i ) {
+					$title = $parts[ $i ];
 				}
 
 				// No output preview if it's not an image.
 				$output .= '';
 
 				// Standard generic output if it's not an image.
-				$title = __( 'View File', 'cyberchimps_core' );
+				$title   = __( 'View File', 'cyberchimps_core' );
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span>' . $remove . '</div>';
 			}
 		}
@@ -132,21 +129,27 @@ if( !function_exists( 'cyberchimps_medialibrary_uploader' ) ) {
  * Example Usage:
  * optionsframework_mlu_get_silentpost ( 'cyberchimps_logo' );
  */
-if( !function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
 	function cyberchimps_mlu_get_silentpost( $_token ) {
 		global $wpdb;
 		$_id = 0;
 
 		$_token = strtolower( str_replace( ' ', '_', $_token ) );
 
-		if( $_token ) {
+		if ( $_token ) {
 
 			// Tell the function what to look for in a post.
-			$_args = array( 'post_type' => 'cybrchmpsthmoption', 'post_name' => 'of-' . $_token, 'post_status' => 'draft', 'comment_status' => 'closed', 'ping_status' => 'closed' );
+			$_args = array(
+				'post_type'      => 'cybrchmpsthmoption',
+				'post_name'      => 'of-' . $_token,
+				'post_status'    => 'draft',
+				'comment_status' => 'closed',
+				'ping_status'    => 'closed',
+			);
 
 			// Look in the database for a "silent" post that meets our criteria.
 			$query = 'SELECT ID FROM ' . $wpdb->posts . ' WHERE post_parent = 0';
-			foreach( $_args as $k => $v ) {
+			foreach ( $_args as $k => $v ) {
 				$query .= ' AND ' . $k . ' = "' . $v . '"';
 			} // End FOREACH Loop
 
@@ -176,11 +179,11 @@ if( !function_exists( 'cyberchimps_mlu_get_silentpost' ) ) {
 /**
  * Trigger code inside the Media Library popup.
  */
-if( !function_exists( 'cyberchimps_mlu_insidepopup' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_insidepopup' ) ) {
 
 	function cyberchimps_mlu_insidepopup() {
 
-		if( isset( $_REQUEST['is_cybrchmpsthmoption'] ) && $_REQUEST['is_cybrchmpsthmoption'] == 'yes' ) {
+		if ( isset( $_REQUEST['is_cybrchmpsthmoption'] ) && $_REQUEST['is_cybrchmpsthmoption'] == 'yes' ) {
 
 			add_action( 'admin_head', 'cyberchimps_mlu_js_popup' );
 			add_filter( 'media_upload_tabs', 'cyberchimps_mlu_modify_tabs' );
@@ -188,11 +191,11 @@ if( !function_exists( 'cyberchimps_mlu_insidepopup' ) ) {
 	}
 }
 
-if( !function_exists( 'cyberchimps_mlu_js_popup' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_js_popup' ) ) {
 	function cyberchimps_mlu_js_popup() {
 
 		$_cyberchimps_title = $_REQUEST['cyberchimps_title'];
-		if( !$_cyberchimps_title ) {
+		if ( ! $_cyberchimps_title ) {
 			$_cyberchimps_title = 'file';
 		} // End IF Statement
 		?>
@@ -226,14 +229,14 @@ if( !function_exists( 'cyberchimps_mlu_js_popup' ) ) {
 			});
 			-->
 		</script>
-	<?php
+		<?php
 	}
 }
 
 /**
  * Triggered inside the Media Library popup to modify the title of the "Gallery" tab.
  */
-if( !function_exists( 'cyberchimps_mlu_modify_tabs' ) ) {
+if ( ! function_exists( 'cyberchimps_mlu_modify_tabs' ) ) {
 	function cyberchimps_mlu_modify_tabs( $tabs ) {
 		$tabs['gallery'] = str_replace( __( 'Gallery', 'cyberchimps_core' ), __( 'Previously Uploaded', 'cyberchimps_core' ), $tabs['gallery'] );
 
