@@ -21,8 +21,7 @@
  */
 
 // TODO CyberChimps have changed the markup of this class don't just update by copying over it
-
-if( !class_exists( 'AT_Meta_Box' ) ) :
+if ( ! class_exists( 'AT_Meta_Box' ) ) :
 
 	/**
 	 * All Types Meta Box class.
@@ -77,6 +76,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 * $field_types  holds used field types
+		 *
 		 * @var array
 		 * @access public
 		 * @since 2.9.7
@@ -85,6 +85,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 * $inGroup  holds groupping boolean
+		 *
 		 * @var boolean
 		 * @access public
 		 * @since 2.9.8
@@ -102,11 +103,11 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function __construct( $meta_box ) {
 
 			// If we are not in admin area exit.
-			if( !is_admin() ) {
+			if ( ! is_admin() ) {
 				return;
 			}
 
-			//load translation
+			// load translation
 			add_filter( 'init', array( $this, 'load_textdomain' ) );
 
 			// Assign meta box values to local variables and add it's missed values.
@@ -116,29 +117,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$this->_Local_images = ( isset( $meta_box['local_images'] ) ) ? true : false;
 			$this->add_missed_values();
 
-			if( isset( $meta_box['use_with_theme'] ) ) {
-				if( $meta_box['use_with_theme'] === true ) {
+			if ( isset( $meta_box['use_with_theme'] ) ) {
+				if ( $meta_box['use_with_theme'] === true ) {
 					$this->SelfPath = get_stylesheet_directory_uri() . '/cyberchimps/options/meta-box-class';
-				}
-				elseif( $meta_box['use_with_theme'] === false ) {
+				} elseif ( $meta_box['use_with_theme'] === false ) {
 					$this->SelfPath = plugins_url( 'meta-box-class', plugin_basename( dirname( __FILE__ ) ) );
-				}
-				else {
+				} else {
 					$this->SelfPath = $meta_box['use_with_theme'];
 				}
-			}
-			else {
+			} else {
 				$this->SelfPath = plugins_url( 'meta-box-class', plugin_basename( dirname( __FILE__ ) ) );
 			}
 
 			// Add metaboxes
 			add_action( 'add_meta_boxes', array( $this, 'add' ) );
-			//add_action( 'wp_insert_post', array( $this, 'save' ) );
+			// add_action( 'wp_insert_post', array( $this, 'save' ) );
 			add_action( 'pre_post_update', array( $this, 'save' ) );
 			// Load common js, css files
 			// Must enqueue for all pages as we need js for the media upload, too.
 			add_action( 'admin_print_styles', array( $this, 'load_scripts_styles' ) );
-			//limit File type at upload
+			// limit File type at upload
 			add_filter( 'wp_handle_upload_prefilter', array( $this, 'Validate_upload_file_type' ) );
 
 		}
@@ -156,14 +154,14 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			// Set template directory uri
 			$directory_uri = get_template_directory_uri();
-			$metabox_uri = $directory_uri . '/cyberchimps/options/meta-box-class';
+			$metabox_uri   = $directory_uri . '/cyberchimps/options/meta-box-class';
 
-			//only load styles and js when needed
+			// only load styles and js when needed
 			/*
-	 * since 1.8
-	 */
+			* since 1.8
+			*/
 			global $typenow;
-			if( in_array( $typenow, $this->_meta_box['pages'] ) && $this->is_edit_page() ) {
+			if ( in_array( $typenow, $this->_meta_box['pages'] ) && $this->is_edit_page() ) {
 				// Enqueue Meta Box Style
 				wp_enqueue_style( 'at-meta-box', $metabox_uri . '/css/meta-box.css' );
 
@@ -176,20 +174,19 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueue Cyberchimps Scripts
 				wp_enqueue_script( 'meta-boxes-js', $metabox_uri . '/js/metabox-tabs.min.js', array( 'jquery' ), null, true );
 				// Enqueue Media uploader for single images TODO look into removing this and use this classes image uploader that saves images as an array. Will need to change all elements to be
-//              TODO able to work with this
+				// TODO able to work with this
 				wp_enqueue_script( 'cc-media-uploader-js', get_template_directory_uri() . '/cyberchimps/lib/js/media-uploader-new.min.js', array( 'jquery' ), null, true );
 
 				// Make upload feature work event when custom post type doesn't support 'editor'
-				if( $this->has_field( 'image' ) || $this->has_field( 'file' ) ) {
+				if ( $this->has_field( 'image' ) || $this->has_field( 'file' ) ) {
 					wp_enqueue_script( 'media-upload' );
 					add_thickbox();
 					wp_enqueue_script( 'jquery-ui-core' );
 					wp_enqueue_script( 'jquery-ui-sortable' );
 				}
 				// Check for special fields and add needed actions for them.
-
-				//this replaces the ugly check fields methods calls
-				foreach( array( 'upload', 'color', 'date', 'time', 'select' ) as $type ) {
+				// this replaces the ugly check fields methods calls
+				foreach ( array( 'upload', 'color', 'date', 'time', 'select' ) as $type ) {
 					call_user_func( array( $this, 'check_field_' . $type ) );
 				}
 			}
@@ -205,15 +202,14 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function check_field_select() {
 
 			// Check if the field is an image or file. If not, return.
-			if( !$this->has_field( 'select' ) ) {
+			if ( ! $this->has_field( 'select' ) ) {
 				return;
 			}
 			$plugin_path = $this->SelfPath;
 			// Enqueu JQuery UI, use proper version.
-
 			// Enqueu JQuery select2 library, use proper version.
-//            wp_enqueue_style( 'at-multiselect-select2-css', $plugin_path . '/js/select2/select2.css', array(), null );
-//            wp_enqueue_script( 'at-multiselect-select2-js', $plugin_path . '/js/select2/select2.js', array( 'jquery' ), false, true );
+			// wp_enqueue_style( 'at-multiselect-select2-css', $plugin_path . '/js/select2/select2.css', array(), null );
+			// wp_enqueue_script( 'at-multiselect-select2-js', $plugin_path . '/js/select2/select2.js', array( 'jquery' ), false, true );
 		}
 
 		/**
@@ -225,7 +221,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function check_field_upload() {
 
 			// Check if the field is an image or file. If not, return.
-			if( !$this->has_field( 'image' ) && !$this->has_field( 'file' ) ) {
+			if ( ! $this->has_field( 'image' ) && ! $this->has_field( 'file' ) ) {
 				return;
 			}
 
@@ -252,7 +248,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function check_field_color() {
 
-			if( $this->has_field( 'color' ) && $this->is_edit_page() ) {
+			if ( $this->has_field( 'color' ) && $this->is_edit_page() ) {
 				wp_enqueue_style( 'wp-color-picker' );
 				wp_enqueue_script( 'wp-color-picker' );
 			}
@@ -266,7 +262,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function check_field_date() {
 
-			if( $this->has_field( 'date' ) && $this->is_edit_page() ) {
+			if ( $this->has_field( 'date' ) && $this->is_edit_page() ) {
 				// Enqueu JQuery UI, use proper version.
 				$plugin_path = $this->SelfPath;
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
@@ -283,7 +279,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function check_field_time() {
 
-			if( $this->has_field( 'time' ) && $this->is_edit_page() ) {
+			if ( $this->has_field( 'time' ) && $this->is_edit_page() ) {
 				$plugin_path = $this->SelfPath;
 				// Enqueu JQuery UI, use proper version.
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
@@ -299,7 +295,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function add( $postType ) {
-			if( in_array( $postType, $this->_meta_box['pages'] ) ) {
+			if ( in_array( $postType, $this->_meta_box['pages'] ) ) {
 				add_meta_box( $this->_meta_box['id'], $this->_meta_box['title'], array( $this, 'show' ), $postType, $this->_meta_box['context'], $this->_meta_box['priority'] );
 			}
 		}
@@ -317,21 +313,21 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			wp_nonce_field( basename( __FILE__ ), 'at_meta_box_nonce' );
 			echo '<table class="form-table">';
 
-			foreach( $this->_fields as $field ) {
+			foreach ( $this->_fields as $field ) {
 				$field['multiple'] = isset( $field['multiple'] ) ? $field['multiple'] : false;
-				$meta              = get_post_meta( $post->ID, $field['id'], !$field['multiple'] );
+				$meta              = get_post_meta( $post->ID, $field['id'], ! $field['multiple'] );
 				$meta              = ( $meta !== '' ) ? $meta : @$field['std'];
 
-				if( !in_array( $field['type'], array( 'image', 'repeater', 'file' ) ) ) {
+				if ( ! in_array( $field['type'], array( 'image', 'repeater', 'file' ) ) ) {
 					$meta = is_array( $meta ) ? array_map( 'esc_attr', $meta ) : esc_attr( $meta );
 				}
 
 				$class = ( ( $field['class'] != '' ) ) ? ' class="' . $field['class'] . '-container"' : '';
-				if( $this->inGroup !== true ) {
+				if ( $this->inGroup !== true ) {
 					echo '<tr' . $class . '>';
 				}
 
-				if( isset( $field['group'] ) && $field['group'] == 'start' ) {
+				if ( isset( $field['group'] ) && $field['group'] == 'start' ) {
 					$this->inGroup = true;
 					echo '<td><table class="form-table"><tr>';
 				}
@@ -339,13 +335,12 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Call Separated methods for displaying each type of field.
 				call_user_func( array( $this, 'show_field_' . $field['type'] ), $field, $meta );
 
-				if( $this->inGroup === true ) {
-					if( isset( $field['group'] ) && $field['group'] == 'end' ) {
+				if ( $this->inGroup === true ) {
+					if ( isset( $field['group'] ) && $field['group'] == 'end' ) {
 						echo '</tr></table></td></tr>';
 						$this->inGroup = false;
 					}
-				}
-				else {
+				} else {
 					echo '</tr>';
 				}
 			}
@@ -367,49 +362,49 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$plugin_path = $this->SelfPath;
 			$this->show_field_begin( $field, $meta );
 			$class = '';
-			if( $field['sortable'] ) {
-				$class = " repeater-sortable";
+			if ( $field['sortable'] ) {
+				$class = ' repeater-sortable';
 			}
 			echo "<div class='at-repeat" . $class . "' id='{$field['id']}'>";
 
 			$c    = 0;
 			$meta = get_post_meta( $post->ID, $field['id'], true );
 
-			if( count( $meta ) > 0 && is_array( $meta ) ) {
-				foreach( $meta as $me ) {
-					//for labling toggles
-					$mmm = isset( $me[$field['fields'][0]['id']] ) ? $me[$field['fields'][0]['id']] : "";
-					if( in_array( $field['fields'][0]['type'], array( 'image', 'file' ) ) ) {
+			if ( count( $meta ) > 0 && is_array( $meta ) ) {
+				foreach ( $meta as $me ) {
+					// for labling toggles
+					$mmm = isset( $me[ $field['fields'][0]['id'] ] ) ? $me[ $field['fields'][0]['id'] ] : '';
+					if ( in_array( $field['fields'][0]['type'], array( 'image', 'file' ) ) ) {
 						$mmm = $c + 1;
 					}
 					echo '<div class="at-repater-block">' . $mmm . '<br/><table class="repeater-table" style="display: none;">';
-					if( $field['inline'] ) {
+					if ( $field['inline'] ) {
 						echo '<tr class="at-inline" VALIGN="top">';
 					}
-					foreach( $field['fields'] as $f ) {
-						//reset var $id for repeater
+					foreach ( $field['fields'] as $f ) {
+						// reset var $id for repeater
 						$id = '';
 						$id = $field['id'] . '[' . $c . '][' . $f['id'] . ']';
-						$m  = isset( $me[$f['id']] ) ? $me[$f['id']] : '';
+						$m  = isset( $me[ $f['id'] ] ) ? $me[ $f['id'] ] : '';
 						$m  = ( $m !== '' ) ? $m : $f['std'];
-						if( 'image' != $f['type'] && $f['type'] != 'repeater' ) {
+						if ( 'image' != $f['type'] && $f['type'] != 'repeater' ) {
 							$m = is_array( $m ) ? array_map( 'esc_attr', $m ) : esc_attr( $m );
 						}
-						//set new id for field in array format
+						// set new id for field in array format
 						$f['id'] = $id;
-						if( !$field['inline'] ) {
+						if ( ! $field['inline'] ) {
 							echo '<tr>';
 						}
 						call_user_func( array( $this, 'show_field_' . $f['type'] ), $f, $m );
-						if( !$field['inline'] ) {
+						if ( ! $field['inline'] ) {
 							echo '</tr>';
 						}
 					}
-					if( $field['inline'] ) {
+					if ( $field['inline'] ) {
 						echo '</tr>';
 					}
 					echo '</table>';
-					if( $field['sortable'] ) {
+					if ( $field['sortable'] ) {
 						echo '<span class="re-control"><img src="' . $plugin_path . '/images/move.png" alt="sort" title="sort" class="at_re_sort_handle" /></span>';
 					}
 
@@ -422,48 +417,46 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			}
 
 			echo '<img src="';
-			if( $this->_Local_images ) {
+			if ( $this->_Local_images ) {
 				echo $plugin_path . '/images/add.png';
-			}
-			else {
+			} else {
 				echo 'http://i.imgur.com/w5Tuc.png';
 			}
 			echo '" alt="' . __( 'Add', 'cyberchimps_core' ) . '" title="' . __( 'Add', 'cyberchimps_core' ) . '" id="add-' . $field['id'] . '"><br/></div>';
 
-			//create all fields once more for js function and catch with object buffer
+			// create all fields once more for js function and catch with object buffer
 			ob_start();
 			echo '<div class="at-repater-block"><table class="repeater-table">';
-			if( $field['inline'] ) {
+			if ( $field['inline'] ) {
 				echo '<tr class="at-inline" VALIGN="top">';
 			}
-			foreach( $field['fields'] as $f ) {
-				//reset var $id for repeater
+			foreach ( $field['fields'] as $f ) {
+				// reset var $id for repeater
 				$id      = '';
 				$id      = $field['id'] . '[CurrentCounter][' . $f['id'] . ']';
 				$f['id'] = $id;
-				if( !$field['inline'] ) {
+				if ( ! $field['inline'] ) {
 					echo '<tr>';
 				}
-				if( $f['type'] != 'editor' ) {
+				if ( $f['type'] != 'editor' ) {
 					call_user_func( array( $this, 'show_field_' . $f['type'] ), $f, '' );
-				}
-				else {
+				} else {
 					call_user_func( array( $this, 'show_field_' . $f['type'] ), $f, '', true );
 				}
-				if( !$field['inline'] ) {
+				if ( ! $field['inline'] ) {
 					echo '</tr>';
 				}
 			}
-			if( $field['inline'] ) {
+			if ( $field['inline'] ) {
 				echo '</tr>';
 			}
 			echo '</table><img src="' . $plugin_path . '/images/remove.png" alt="' . __( 'Remove', 'cyberchimps_core' ) . '" title="' . __( 'Remove', 'cyberchimps_core' ) . '" id="remove-' . $field['id'] . '"></div>';
 			$counter = 'countadd_' . $field['id'];
 			$js_code = ob_get_clean();
-			$js_code = str_replace( "\n", "", $js_code );
-			$js_code = str_replace( "\r", "", $js_code );
-			$js_code = str_replace( "'", "\"", $js_code );
-			$js_code = str_replace( "CurrentCounter", "' + " . $counter . " + '", $js_code );
+			$js_code = str_replace( "\n", '', $js_code );
+			$js_code = str_replace( "\r", '', $js_code );
+			$js_code = str_replace( "'", '"', $js_code );
+			$js_code = str_replace( 'CurrentCounter', "' + " . $counter . " + '", $js_code );
 			echo '<script>
         jQuery(document).ready(function() {
           var ' . $counter . ' = ' . $c . ';
@@ -502,11 +495,11 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function show_field_begin( $field, $meta ) {
-			echo "<td class='at-field'" . ( ( $this->inGroup === true ) ? " valign='top'" : "" ) . ">";
-			if( $field['name'] != '' || $field['name'] != false ) {
+			echo "<td class='at-field'" . ( ( $this->inGroup === true ) ? " valign='top'" : '' ) . '>';
+			if ( $field['name'] != '' || $field['name'] != false ) {
 				echo "<div class='at-label'>";
 				echo "<label for='{$field['id']}'>{$field['name']}</label>";
-				echo "</div>";
+				echo '</div>';
 			}
 		}
 
@@ -520,11 +513,11 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function show_field_end( $field, $meta = null, $group = false ) {
-			//print description
-			if( isset( $field['desc'] ) && $field['desc'] != '' ) {
+			// print description
+			if ( isset( $field['desc'] ) && $field['desc'] != '' ) {
 				echo "<div class='desc-field'>{$field['desc']}</div>";
 			}
-			echo "</td>";
+			echo '</td>';
 		}
 
 		/**
@@ -538,7 +531,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function show_field_text( $field, $meta ) {
 			$this->show_field_begin( $field, $meta );
-			echo "<input type='text' class='at-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='30' " . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . "/>";
+			echo "<input type='text' class='at-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='30' " . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . '/>';
 			$this->show_field_end( $field, $meta );
 		}
 
@@ -556,23 +549,23 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$step = ( isset( $field['step'] ) || $field['step'] != '1' ) ? "step='" . $field['step'] . "' " : '';
 			$min  = isset( $field['min'] ) ? "min='" . $field['min'] . "' " : '';
 			$max  = isset( $field['max'] ) ? "max='" . $field['max'] . "' " : '';
-			echo "<input type='number' class='at-number" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='30' " . $step . $min . $max . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . "/>";
+			echo "<input type='number' class='at-number" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='30' " . $step . $min . $max . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . '/>';
 			$this->show_field_end( $field, $meta );
 		}
 
 		/**
 		 * Show Field hidden.
 		 *
-		 * @param string $field
+		 * @param string       $field
 		 * @param string|mixed $meta
 		 *
 		 * @since 0.1.3
 		 * @access public
 		 */
 		public function show_field_hidden( $field, $meta ) {
-			//$this->show_field_begin( $field, $meta );
+			// $this->show_field_begin( $field, $meta );
 			echo "<input type='hidden' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . "class='at-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}'/>";
-			//$this->show_field_end( $field, $meta );
+			// $this->show_field_end( $field, $meta );
 		}
 
 		/**
@@ -584,9 +577,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function show_field_paragraph( $field ) {
-			//$this->show_field_begin( $field, $meta );
+			// $this->show_field_begin( $field, $meta );
 			echo '<p>' . $field['value'] . '</p>';
-			//$this->show_field_end( $field, $meta );
+			// $this->show_field_end( $field, $meta );
 		}
 
 		/**
@@ -630,16 +623,16 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function show_field_select( $field, $meta ) {
 
-			if( !is_array( $meta ) ) {
-				$meta = (array)$meta;
+			if ( ! is_array( $meta ) ) {
+				$meta = (array) $meta;
 			}
 
 			$this->show_field_begin( $field, $meta );
-			echo "<select " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' id='{$field['id']}' multiple='multiple'" : "'" ) . ">";
-			foreach( $field['options'] as $key => $value ) {
+			echo '<select ' . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' id='{$field['id']}' multiple='multiple'" : "'" ) . '>';
+			foreach ( $field['options'] as $key => $value ) {
 				echo "<option value='{$key}'" . selected( in_array( $key, $meta ), true, false ) . ">{$value}</option>";
 			}
-			echo "</select>";
+			echo '</select>';
 			$this->show_field_end( $field, $meta );
 
 		}
@@ -655,12 +648,12 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function show_field_radio( $field, $meta ) {
 
-			if( !is_array( $meta ) ) {
-				$meta = (array)$meta;
+			if ( ! is_array( $meta ) ) {
+				$meta = (array) $meta;
 			}
 
 			$this->show_field_begin( $field, $meta );
-			foreach( $field['options'] as $key => $value ) {
+			foreach ( $field['options'] as $key => $value ) {
 				echo "<input type='radio' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-radio" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' value='{$key}'" . checked( in_array( $key, $meta ), true, false ) . " /> <span class='at-radio-label'>{$value}</span>";
 			}
 			$this->show_field_end( $field, $meta );
@@ -678,7 +671,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function show_field_checkbox( $field, $meta ) {
 
 			$this->show_field_begin( $field, $meta );
-			echo "<input type='checkbox' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='rw-checkbox" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}'" . checked( !empty( $meta ), true, false ) . " />";
+			echo "<input type='checkbox' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='rw-checkbox" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}'" . checked( ! empty( $meta ), true, false ) . ' />';
 			$this->show_field_end( $field, $meta );
 
 		}
@@ -695,16 +688,15 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function show_field_editor( $field, $meta, $in_repeater = false ) {
 			$this->show_field_begin( $field, $meta );
 
-			if( $in_repeater ) {
+			if ( $in_repeater ) {
 				echo "<textarea class='at-editor theEditor large-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' cols='60' rows='10'>{$meta}</textarea>";
-			}
-			else {
+			} else {
 				$default_settings = array( 'media_buttons' => false );
 
 				// Use new wp_editor() since WP 3.3
 				$settings                 = ( isset( $field['settings'] ) && is_array( $field['settings'] ) ? $field['settings'] : $default_settings );
 				$settings['editor_class'] = 'at-editor' . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' );
-				$id                       = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
+				$id                       = str_replace( '_', '', $this->stripNumeric( strtolower( $field['id'] ) ) );
 				wp_editor( html_entity_decode( $meta ), $id, $settings );
 			}
 			$this->show_field_end( $field, $meta );
@@ -723,26 +715,28 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			wp_enqueue_media();
 			$this->show_field_begin( $field, $meta );
 
-			$std      = isset( $field['std'] ) ? $field['std'] : array( 'id' => '', 'url' => '' );
+			$std      = isset( $field['std'] ) ? $field['std'] : array(
+				'id'  => '',
+				'url' => '',
+			);
 			$multiple = isset( $field['multiple'] ) ? $field['multiple'] : false;
-			$multiple = ( $multiple ) ? "multiFile '" : "";
+			$multiple = ( $multiple ) ? "multiFile '" : '';
 			$name     = esc_attr( $field['id'] );
 			$value    = isset( $meta['id'] ) ? $meta : $std;
 			$has_file = ( empty( $value['url'] ) ) ? false : true;
 			$type     = isset( $field['mime_type'] ) ? $field['mime_type'] : '';
 			$ext      = isset( $field['ext'] ) ? $field['ext'] : '';
-			$type     = ( is_array( $type ) ? implode( "|", $type ) : $type );
-			$ext      = ( is_array( $ext ) ? implode( "|", $ext ) : $ext );
+			$type     = ( is_array( $type ) ? implode( '|', $type ) : $type );
+			$ext      = ( is_array( $ext ) ? implode( '|', $ext ) : $ext );
 			$id       = $field['id'];
-			$li       = ( $has_file ) ? "<li><a href='{$value['url']}' target='_blank'>{$value['url']}</a></li>" : "";
+			$li       = ( $has_file ) ? "<li><a href='{$value['url']}' target='_blank'>{$value['url']}</a></li>" : '';
 
 			echo "<span class='simplePanelfilePreview'><ul>{$li}</ul></span>";
 			echo "<input type='hidden' name='{$name}[id]' value='{$value['id']}'/>";
 			echo "<input type='hidden' name='{$name}[url]' value='{$value['url']}'/>";
-			if( $has_file ) {
+			if ( $has_file ) {
 				echo "<input type='button' class='{$multiple} button simplePanelfileUploadclear' id='{$id}' value='Remove File' data-mime_type='{$type}' data-ext='{$ext}'/>";
-			}
-			else {
+			} else {
 				echo "<input type='button' class='{$multiple} button simplePanelfileUpload' id='{$id}' value='Upload File' data-mime_type='{$type}' data-ext='{$ext}'/>";
 			}
 
@@ -763,26 +757,28 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$this->show_field_begin( $field, $meta );
 
-			$std   = isset( $field['std'] ) ? $field['std'] : array( 'id' => '', 'url' => '' );
+			$std   = isset( $field['std'] ) ? $field['std'] : array(
+				'id'  => '',
+				'url' => '',
+			);
 			$name  = esc_attr( $field['id'] );
 			$value = isset( $meta['id'] ) ? $meta : $std;
 
-			$value['url'] = isset( $meta['src'] ) ? $meta['src'] : $value['url']; //backwords capability
+			$value['url'] = isset( $meta['src'] ) ? $meta['src'] : $value['url']; // backwords capability
 			$has_image    = empty( $value['url'] ) ? false : true;
 			$w            = isset( $field['width'] ) ? $field['width'] : 'auto';
 			$h            = isset( $field['height'] ) ? $field['height'] : 'auto';
-			$PreviewStyle = "style='width: $w; height: $h;" . ( ( !$has_image ) ? "display: none;'" : "'" );
+			$PreviewStyle = "style='width: $w; height: $h;" . ( ( ! $has_image ) ? "display: none;'" : "'" );
 			$id           = $field['id'];
 			$multiple     = isset( $field['multiple'] ) ? $field['multiple'] : false;
-			$multiple     = ( $multiple ) ? "multiFile " : "";
+			$multiple     = ( $multiple ) ? 'multiFile ' : '';
 
 			echo "<span class='simplePanelImagePreview'><img {$PreviewStyle} src='{$value['url']}'><br/></span>";
 			echo "<input type='hidden' name='{$name}[id]' value='{$value['id']}'/>";
 			echo "<input type='hidden' name='{$name}[url]' value='{$value['url']}'/>";
-			if( $has_image ) {
+			if ( $has_image ) {
 				echo "<input class='{$multiple} button  simplePanelimageUploadclear' id='{$id}' value='Remove Image' type='button'/>";
-			}
-			else {
+			} else {
 				echo "<input class='{$multiple} button simplePanelimageUpload' id='{$id}' value='Upload Image' type='button'/>";
 			}
 			$this->show_field_end( $field, $meta );
@@ -799,13 +795,13 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function show_field_color( $field, $meta ) {
 
-			if( empty( $meta ) ) {
+			if ( empty( $meta ) ) {
 				$meta = '#';
 			}
 
 			$this->show_field_begin( $field, $meta );
 			echo '<div class="input-prepend ' . $field['class'] . '"><input class="of-color" name="' . $field['id'] . '" id="' . $field['id'] . '" type="text" value="' . $meta . '" />';
-			echo '<div id="' . $field['id'] . '_picker'  . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $meta ) . '"></div></div></div>';
+			echo '<div id="' . $field['id'] . '_picker' . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $meta ) . '"></div></div></div>';
 
 			$this->show_field_end( $field, $meta );
 
@@ -822,15 +818,15 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function show_field_checkbox_list( $field, $meta ) {
 
-			if( !is_array( $meta ) ) {
-				$meta = (array)$meta;
+			if ( ! is_array( $meta ) ) {
+				$meta = (array) $meta;
 			}
 
 			$this->show_field_begin( $field, $meta );
 
 			$html = array();
 
-			foreach( $field['options'] as $key => $value ) {
+			foreach ( $field['options'] as $key => $value ) {
 				$html[] = "<input type='checkbox' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . "  class='at-checkbox_list" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}[]' value='{$key}'" . checked( in_array( $key, $meta ), true, false ) . " /> {$value}";
 			}
 
@@ -884,25 +880,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function show_field_posts( $field, $meta ) {
 			global $post;
 
-			if( !is_array( $meta ) ) {
-				$meta = (array)$meta;
+			if ( ! is_array( $meta ) ) {
+				$meta = (array) $meta;
 			}
 			$this->show_field_begin( $field, $meta );
 			$options = $field['options'];
 			$posts   = get_posts( $options['args'] );
 			// checkbox_list
-			if( 'checkbox_list' == $options['type'] ) {
-				foreach( $posts as $p ) {
+			if ( 'checkbox_list' == $options['type'] ) {
+				foreach ( $posts as $p ) {
 					echo "<input type='checkbox' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-posts-checkbox" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}[]' value='$p->ID'" . checked( in_array( $p->ID, $meta ), true, false ) . " /> $p->post_title<br/>";
 				}
 			}
 			// select
 			else {
-				echo "<select " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-posts-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'" ) . ">";
-				foreach( $posts as $p ) {
+				echo '<select ' . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-posts-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'" ) . '>';
+				foreach ( $posts as $p ) {
 					echo "<option value='$p->ID'" . selected( in_array( $p->ID, $meta ), true, false ) . ">$p->post_title</option>";
 				}
-				echo "</select>";
+				echo '</select>';
 			}
 
 			$this->show_field_end( $field, $meta );
@@ -923,26 +919,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function show_field_taxonomy( $field, $meta ) {
 			global $post;
 
-			if( !is_array( $meta ) ) {
-				$meta = (array)$meta;
+			if ( ! is_array( $meta ) ) {
+				$meta = (array) $meta;
 			}
 			$this->show_field_begin( $field, $meta );
 			$options = $field['options'];
 			$terms   = get_terms( $options['taxonomy'], $options['args'] );
 
 			// checkbox_list
-			if( 'checkbox_list' == $options['type'] ) {
-				foreach( $terms as $term ) {
+			if ( 'checkbox_list' == $options['type'] ) {
+				foreach ( $terms as $term ) {
 					echo "<input type='checkbox' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-tax-checkbox" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}[]' value='$term->slug'" . checked( in_array( $term->slug, $meta ), true, false ) . " /> $term->name<br/>";
 				}
 			}
 			// select
 			else {
-				echo "<select " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-tax-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'" ) . ">";
-				foreach( $terms as $term ) {
+				echo '<select ' . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . " class='at-tax-select" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}" . ( $field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'" ) . '>';
+				foreach ( $terms as $term ) {
 					echo "<option value='$term->slug'" . selected( in_array( $term->slug, $meta ), true, false ) . ">$term->name</option>";
 				}
-				echo "</select>";
+				echo '</select>';
 			}
 
 			$this->show_field_end( $field, $meta );
@@ -961,25 +957,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$this->show_field_begin( $field, $meta );
 			$checked = false;
-			if( is_array( $meta ) && isset( $meta['enabled'] ) && $meta['enabled'] == 'on' ) {
+			if ( is_array( $meta ) && isset( $meta['enabled'] ) && $meta['enabled'] == 'on' ) {
 				$checked = true;
 			}
-			echo "<input type='checkbox' class='conditinal_control' name='{$field['id']}[enabled]' id='{$field['id']}'" . checked( $checked, true, false ) . " />";
-			//start showing the fields
+			echo "<input type='checkbox' class='conditinal_control' name='{$field['id']}[enabled]' id='{$field['id']}'" . checked( $checked, true, false ) . ' />';
+			// start showing the fields
 			$display = ( $checked ) ? '' : ' style="display: none;"';
 
 			echo '<div class="conditinal_container"' . $display . '><table>';
-			foreach( (array)$field['fields'] as $f ) {
-				//reset var $id for cond
+			foreach ( (array) $field['fields'] as $f ) {
+				// reset var $id for cond
 				$id = '';
 				$id = $field['id'] . '[' . $f['id'] . ']';
 				$m  = '';
-				$m  = ( isset( $meta[$f['id']] ) ) ? $meta[$f['id']] : '';
+				$m  = ( isset( $meta[ $f['id'] ] ) ) ? $meta[ $f['id'] ] : '';
 				$m  = ( $m !== '' ) ? $m : ( isset( $f['std'] ) ? $f['std'] : '' );
-				if( 'image' != $f['type'] && $f['type'] != 'repeater' ) {
+				if ( 'image' != $f['type'] && $f['type'] != 'repeater' ) {
 					$m = is_array( $m ) ? array_map( 'esc_attr', $m ) : esc_attr( $m );
 				}
-				//set new id for field in array format
+				// set new id for field in array format
 				$f['id'] = $id;
 				echo '<tr>';
 				call_user_func( array( $this, 'show_field_' . $f['type'] ), $f, $m );
@@ -1019,57 +1015,54 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$post_type_object = get_post_type_object( $post_type );
 
-			if( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) // Check Autosave
-				|| ( !isset( $_POST['post_ID'] ) || $post_id != $_POST['post_ID'] ) // Check Revision
-				|| ( !in_array( $post_type, $this->_meta_box['pages'] ) ) // Check if current post type is supported.
-				|| ( !check_admin_referer( basename( __FILE__ ), 'at_meta_box_nonce' ) ) // Check nonce - Security
-				|| ( !current_user_can( $post_type_object->cap->edit_post, $post_id ) )
-			) // Check permission
-			{
+			if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) // Check Autosave
+				|| ( ! isset( $_POST['post_ID'] ) || $post_id != $_POST['post_ID'] ) // Check Revision
+				|| ( ! in_array( $post_type, $this->_meta_box['pages'] ) ) // Check if current post type is supported.
+				|| ( ! check_admin_referer( basename( __FILE__ ), 'at_meta_box_nonce' ) ) // Check nonce - Security
+				|| ( ! current_user_can( $post_type_object->cap->edit_post, $post_id ) )
+			) {
 				return $post_id;
 			}
 
-			foreach( $this->_fields as $field ) {
+			foreach ( $this->_fields as $field ) {
 
 				$name = $field['id'];
 				$type = $field['type'];
-				$old  = get_post_meta( $post_id, $name, !$field['multiple'] );
-				$new  = ( isset( $_POST[$name] ) ) ? $_POST[$name] : ( ( $field['multiple'] ) ? array() : '' );
+				$old  = get_post_meta( $post_id, $name, ! $field['multiple'] );
+				$new  = ( isset( $_POST[ $name ] ) ) ? $_POST[ $name ] : ( ( $field['multiple'] ) ? array() : '' );
 
 				// Validate meta value
-				if( class_exists( 'at_Meta_Box_Validate' ) && method_exists( 'at_Meta_Box_Validate', $field['validate_func'] ) ) {
+				if ( class_exists( 'at_Meta_Box_Validate' ) && method_exists( 'at_Meta_Box_Validate', $field['validate_func'] ) ) {
 					$new = call_user_func( array( 'at_Meta_Box_Validate', $field['validate_func'] ), $new );
 				}
 
-				//skip on Paragraph field
-				if( $type != "paragraph" ) {
+				// skip on Paragraph field
+				if ( $type != 'paragraph' ) {
 
 					// Call defined method to sanitize meta value
 					$sanitize_func = 'sanitize_field_' . $type;
 
-					if( method_exists( $this, $sanitize_func ) ) {
+					if ( method_exists( $this, $sanitize_func ) ) {
 						$new = call_user_func( array( $this, $sanitize_func ), $new, $old );
 					}
 
 					// Call defined method to save meta value, if there's no methods, call common one.
 					$save_func = 'save_field_' . $type;
-					if( method_exists( $this, $save_func ) ) {
+					if ( method_exists( $this, $save_func ) ) {
 						call_user_func( array( $this, $save_func ), $post_id, $field, $old, $new );
-					}
-					else {
+					} else {
 						$this->save_field( $post_id, $field, $old, $new );
 					}
 				}
-
 			} // End foreach
 		}
 
 		/**
 		 * Common function for saving fields.
 		 *
-		 * @param string $post_id
-		 * @param string $field
-		 * @param string $old
+		 * @param string       $post_id
+		 * @param string       $field
+		 * @param string       $old
 		 * @param string|mixed $new
 		 *
 		 * @since 1.0
@@ -1079,15 +1072,14 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$name = $field['id'];
 			delete_post_meta( $post_id, $name );
-			if( $new === '' || $new === array() ) {
+			if ( $new === '' || $new === array() ) {
 				return;
 			}
-			if( $field['multiple'] ) {
-				foreach( $new as $add_new ) {
+			if ( $field['multiple'] ) {
+				foreach ( $new as $add_new ) {
 					add_post_meta( $post_id, $name, $add_new, false );
 				}
-			}
-			else {
+			} else {
 				update_post_meta( $post_id, $name, $new );
 			}
 		}
@@ -1095,9 +1087,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		/**
 		 * function for saving image field.
 		 *
-		 * @param string $post_id
-		 * @param string $field
-		 * @param string $old
+		 * @param string       $post_id
+		 * @param string       $field
+		 * @param string       $old
 		 * @param string|mixed $new
 		 *
 		 * @since 1.7
@@ -1106,7 +1098,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function save_field_image( $post_id, $field, $old, $new ) {
 			$name = $field['id'];
 			delete_post_meta( $post_id, $name );
-			if( $new === '' || $new === array() || $new['id'] == '' || $new['url'] == '' ) {
+			if ( $new === '' || $new === array() || $new['id'] == '' || $new['url'] == '' ) {
 				return;
 			}
 
@@ -1114,26 +1106,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/*
-   * Save Editor Field.
-   *
-   * @param string $post_id
-   * @param string $field
-   * @param string $old
-   * @param string $new
-   * @since 1.0
-   * @access public
-   */
+		* Save Editor Field.
+		*
+		* @param string $post_id
+		* @param string $field
+		* @param string $old
+		* @param string $new
+		* @since 1.0
+		* @access public
+		*/
 		public function save_field_editor( $post_id, $field, $old, $new ) {
-			$id  = str_replace( "_", "", $this->stripNumeric( strtolower( $field['id'] ) ) );
-			$new = ( isset( $_POST[$id] ) ) ? $_POST[$id] : ( ( $field['multiple'] ) ? array() : '' );
+			$id  = str_replace( '_', '', $this->stripNumeric( strtolower( $field['id'] ) ) );
+			$new = ( isset( $_POST[ $id ] ) ) ? $_POST[ $id ] : ( ( $field['multiple'] ) ? array() : '' );
 			$this->save_field( $post_id, $field, $old, $new );
 		}
 
 		/**
 		 * Save repeater Fields.
 		 *
-		 * @param string $post_id
-		 * @param string $field
+		 * @param string       $post_id
+		 * @param string       $field
 		 * @param string|mixed $old
 		 * @param string|mixed $new
 		 *
@@ -1141,32 +1133,30 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function save_field_repeater( $post_id, $field, $old, $new ) {
-			if( is_array( $new ) && count( $new ) > 0 ) {
-				foreach( $new as $n ) {
-					foreach( $field['fields'] as $f ) {
+			if ( is_array( $new ) && count( $new ) > 0 ) {
+				foreach ( $new as $n ) {
+					foreach ( $field['fields'] as $f ) {
 						$type = $f['type'];
-						switch( $type ) {
+						switch ( $type ) {
 							case 'editor':
-								$n[$f['id']] = wpautop( $n[$f['id']] );
+								$n[ $f['id'] ] = wpautop( $n[ $f['id'] ] );
 								break;
 							default:
 								break;
 						}
 					}
-					if( !$this->is_array_empty( $n ) ) {
+					if ( ! $this->is_array_empty( $n ) ) {
 						$temp[] = $n;
 					}
 				}
-				if( isset( $temp ) && count( $temp ) > 0 && !$this->is_array_empty( $temp ) ) {
+				if ( isset( $temp ) && count( $temp ) > 0 && ! $this->is_array_empty( $temp ) ) {
 					update_post_meta( $post_id, $field['id'], $temp );
-				}
-				else {
-					//  remove old meta if exists
+				} else {
+					// remove old meta if exists
 					delete_post_meta( $post_id, $field['id'] );
 				}
-			}
-			else {
-				//  remove old meta if exists
+			} else {
+				// remove old meta if exists
 				delete_post_meta( $post_id, $field['id'] );
 			}
 		}
@@ -1186,7 +1176,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$name = $field['id'];
 			delete_post_meta( $post_id, $name );
-			if( $new === '' || $new === array() || $new['id'] == '' || $new['url'] == '' ) {
+			if ( $new === '' || $new === array() || $new['id'] == '' || $new['url'] == '' ) {
 				return;
 			}
 
@@ -1220,7 +1210,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		function save_field_checkbox( $post_id, $field, $old, $new ) {
-			$new = $new ? "1" : "0";
+			$new = $new ? '1' : '0';
 			update_post_meta( $post_id, $field['id'], $new );
 		}
 
@@ -1233,16 +1223,32 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function add_missed_values() {
 
 			// Default values for meta box
-			$this->_meta_box = array_merge( array( 'context' => 'normal', 'priority' => 'high', 'pages' => array( 'post' ) ), (array)$this->_meta_box );
+			$this->_meta_box = array_merge(
+				array(
+					'context'  => 'normal',
+					'priority' => 'high',
+					'pages'    => array( 'post' ),
+				),
+				(array) $this->_meta_box
+			);
 
 			// Default values for fields
-			foreach( $this->_fields as &$field ) {
+			foreach ( $this->_fields as &$field ) {
 
 				$multiple = in_array( $field['type'], array( 'checkbox_list', 'file', 'image' ) );
 				$std      = $multiple ? array() : '';
 				$format   = 'date' == $field['type'] ? 'yy-mm-dd' : ( 'time' == $field['type'] ? 'hh:mm' : '' );
 
-				$field = array_merge( array( 'multiple' => $multiple, 'std' => $std, 'desc' => '', 'format' => $format, 'validate_func' => '' ), $field );
+				$field = array_merge(
+					array(
+						'multiple'      => $multiple,
+						'std'           => $std,
+						'desc'          => '',
+						'format'        => $format,
+						'validate_func' => '',
+					),
+					$field
+				);
 
 			} // End foreach
 
@@ -1257,26 +1263,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function has_field( $type ) {
-			//faster search in single dimention array.
-			if( count( $this->field_types ) > 0 ) {
+			// faster search in single dimention array.
+			if ( count( $this->field_types ) > 0 ) {
 				return in_array( $type, $this->field_types );
 			}
 
-			//run once over all fields and store the types in a local array
+			// run once over all fields and store the types in a local array
 			$temp = array();
-			foreach( $this->_fields as $field ) {
+			foreach ( $this->_fields as $field ) {
 				$temp[] = $field['type'];
-				if( 'repeater' == $field['type'] || 'cond' == $field['type'] ) {
-					foreach( (array)$field["fields"] as $repeater_field ) {
-						$temp[] = $repeater_field["type"];
+				if ( 'repeater' == $field['type'] || 'cond' == $field['type'] ) {
+					foreach ( (array) $field['fields'] as $repeater_field ) {
+						$temp[] = $repeater_field['type'];
 					}
 				}
 			}
 
-			//remove duplicates
+			// remove duplicates
 			$this->field_types = array_unique( $temp );
 
-			//call this function one more time now that we have an array of field types
+			// call this function one more time now that we have an array of field types
 			return $this->has_field( $type );
 		}
 
@@ -1310,9 +1316,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			$output = array();
 
-			foreach( $files as $key => $list ) {
-				foreach( $list as $index => $value ) {
-					$output[$index][$key] = $value;
+			foreach ( $files as $key => $list ) {
+				foreach ( $list as $index => $value ) {
+					$output[ $index ][ $key ] = $value;
 				}
 			}
 
@@ -1332,7 +1338,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			global $wp_version;
 
-			if( version_compare( $wp_version, '3.1', '>=' ) ) {
+			if ( version_compare( $wp_version, '3.1', '>=' ) ) {
 				return '1.8.10';
 			}
 
@@ -1342,6 +1348,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 *  Add Field to meta box (generic function)
+		 *
 		 * @author Ohad Raz
 		 * @since 1.2
 		 * @access public
@@ -1350,13 +1357,19 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $args mixed|array
 		 */
 		public function addField( $id, $args ) {
-			$new_field       = array( 'id' => $id, 'std' => '', 'desc' => '', 'style' => '' );
+			$new_field       = array(
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => '',
+			);
 			$new_field       = array_merge( $new_field, $args );
 			$this->_fields[] = $new_field;
 		}
 
 		/**
 		 *  Add Text Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1371,18 +1384,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addText( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'text', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Text Field' );
+			$new_field = array(
+				'type'  => 'text',
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => '',
+				'name'  => 'Text Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Number Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1397,18 +1417,27 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addNumber( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'number', 'id' => $id, 'std' => '0', 'desc' => '', 'style' => '', 'name' => 'Number Field', 'step' => '1', 'min' => '0' );
+			$new_field = array(
+				'type'  => 'number',
+				'id'    => $id,
+				'std'   => '0',
+				'desc'  => '',
+				'style' => '',
+				'name'  => 'Number Field',
+				'step'  => '1',
+				'min'   => '0',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Hidden Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 0.1.3
 		 * @access public
@@ -1423,18 +1452,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addHidden( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'hidden', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Text Field' );
+			$new_field = array(
+				'type'  => 'hidden',
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => '',
+				'name'  => 'Text Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Paragraph to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 0.1.3
 		 * @access public
@@ -1444,18 +1480,22 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addParagraph( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'paragraph', 'id' => $id, 'value' => '' );
+			$new_field = array(
+				'type'  => 'paragraph',
+				'id'    => $id,
+				'value' => '',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Checkbox Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1469,18 +1509,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addCheckbox( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'checkbox', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Checkbox Field' );
+			$new_field = array(
+				'type'  => 'checkbox',
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => '',
+				'name'  => 'Checkbox Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add CheckboxList Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1498,18 +1545,27 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 *   which means the last param as false to get the values in an array
 		 */
 		public function addCheckboxList( $id, $options, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'checkbox_list', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Checkbox List Field', 'options' => $options, 'multiple' => true, );
+			$new_field = array(
+				'type'     => 'checkbox_list',
+				'id'       => $id,
+				'std'      => '',
+				'desc'     => '',
+				'style'    => '',
+				'name'     => 'Checkbox List Field',
+				'options'  => $options,
+				'multiple' => true,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Textarea Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1524,18 +1580,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addTextarea( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'textarea', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Textarea Field' );
+			$new_field = array(
+				'type'  => 'textarea',
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => '',
+				'name'  => 'Textarea Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Select Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1551,18 +1614,27 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addSelect( $id, $options, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'select', 'id' => $id, 'std' => array(), 'desc' => '', 'style' => '', 'name' => 'Select Field', 'multiple' => false, 'options' => $options );
+			$new_field = array(
+				'type'     => 'select',
+				'id'       => $id,
+				'std'      => array(),
+				'desc'     => '',
+				'style'    => '',
+				'name'     => 'Select Field',
+				'multiple' => false,
+				'options'  => $options,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Radio Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1577,18 +1649,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addRadio( $id, $options, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'radio', 'id' => $id, 'std' => array(), 'desc' => '', 'style' => '', 'name' => 'Radio Field', 'options' => $options );
+			$new_field = array(
+				'type'    => 'radio',
+				'id'      => $id,
+				'std'     => array(),
+				'desc'    => '',
+				'style'   => '',
+				'name'    => 'Radio Field',
+				'options' => $options,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Date Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1603,18 +1683,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addDate( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'date', 'id' => $id, 'std' => '', 'desc' => '', 'format' => 'd MM, yy', 'name' => 'Date Field' );
+			$new_field = array(
+				'type'   => 'date',
+				'id'     => $id,
+				'std'    => '',
+				'desc'   => '',
+				'format' => 'd MM, yy',
+				'name'   => 'Date Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Time Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1629,18 +1716,26 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addTime( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'time', 'id' => $id, 'std' => '', 'desc' => '', 'format' => 'hh:mm', 'name' => 'Time Field', 'ampm' => false );
+			$new_field = array(
+				'type'   => 'time',
+				'id'     => $id,
+				'std'    => '',
+				'desc'   => '',
+				'format' => 'hh:mm',
+				'name'   => 'Time Field',
+				'ampm'   => false,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Color Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1654,18 +1749,24 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addColor( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'color', 'id' => $id, 'std' => '', 'desc' => '', 'name' => 'ColorPicker Field' );
+			$new_field = array(
+				'type' => 'color',
+				'id'   => $id,
+				'std'  => '',
+				'desc' => '',
+				'name' => 'ColorPicker Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Image Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1678,18 +1779,28 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addImage( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'image', 'id' => $id, 'desc' => '', 'name' => 'Image Field', 'std' => array( 'id' => '', 'url' => '' ), 'multiple' => false );
+			$new_field = array(
+				'type'     => 'image',
+				'id'       => $id,
+				'desc'     => '',
+				'name'     => 'Image Field',
+				'std'      => array(
+					'id'  => '',
+					'url' => '',
+				),
+				'multiple' => false,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add File Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1702,18 +1813,28 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addFile( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'file', 'id' => $id, 'desc' => '', 'name' => 'File Field', 'multiple' => false, 'std' => array( 'id' => '', 'url' => '' ) );
+			$new_field = array(
+				'type'     => 'file',
+				'id'       => $id,
+				'desc'     => '',
+				'name'     => 'File Field',
+				'multiple' => false,
+				'std'      => array(
+					'id'  => '',
+					'url' => '',
+				),
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Editor Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1728,18 +1849,25 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
 		 */
 		public function addEditor( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'editor', 'id' => $id, 'std' => '', 'desc' => '', 'style' => 'width: 300px; height: 400px', 'name' => 'Editor Editor Field' );
+			$new_field = array(
+				'type'  => 'editor',
+				'id'    => $id,
+				'std'   => '',
+				'desc'  => '',
+				'style' => 'width: 300px; height: 400px',
+				'name'  => 'Editor Editor Field',
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add Taxonomy Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1760,21 +1888,27 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			$temp      = array(
 				'args' => array( 'hide_empty' => 0 ),
 				'tax'  => 'category',
-				'type' => 'select'
+				'type' => 'select',
 			);
 			$options   = array_merge( $temp, $options );
-			$new_field = array( 'type' => 'taxonomy', 'id' => $id, 'desc' => '', 'name' => 'Taxonomy Field', 'options' => $options );
+			$new_field = array(
+				'type'    => 'taxonomy',
+				'id'      => $id,
+				'desc'    => '',
+				'name'    => 'Taxonomy Field',
+				'options' => $options,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add posts Field to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1794,23 +1928,37 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		public function addPosts( $id, $options, $args, $repeater = false ) {
 			$post_type = isset( $options['post_type'] ) ? $options['post_type'] : ( isset( $args['post_type'] ) ? $args['post_type'] : 'post' );
 			$type      = isset( $options['type'] ) ? $options['type'] : 'select';
-			$q         = array( 'posts_per_page' => -1, 'post_type' => $post_type );
-			if( isset( $options['args'] ) ) {
-				$q = array_merge( $q, (array)$options['args'] );
+			$q         = array(
+				'posts_per_page' => -1,
+				'post_type'      => $post_type,
+			);
+			if ( isset( $options['args'] ) ) {
+				$q = array_merge( $q, (array) $options['args'] );
 			}
-			$options   = array( 'post_type' => $post_type, 'type' => $type, 'args' => $q );
-			$new_field = array( 'type' => 'posts', 'id' => $id, 'desc' => '', 'name' => 'Posts Field', 'options' => $options, 'multiple' => false );
+			$options   = array(
+				'post_type' => $post_type,
+				'type'      => $type,
+				'args'      => $q,
+			);
+			$new_field = array(
+				'type'     => 'posts',
+				'id'       => $id,
+				'desc'     => '',
+				'name'     => 'Posts Field',
+				'options'  => $options,
+				'multiple' => false,
+			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 *  Add repeater Field Block to meta box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1831,7 +1979,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				'name'     => 'Reapeater Field',
 				'fields'   => array(),
 				'inline'   => false,
-				'sortable' => false
+				'sortable' => false,
 			);
 			$new_field       = array_merge( $new_field, $args );
 			$this->_fields[] = $new_field;
@@ -1839,6 +1987,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 *  Add Checkbox conditional Field to Page
+		 *
 		 * @author Ohad Raz
 		 * @since 2.9.9
 		 * @access public
@@ -1860,19 +2009,19 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				'desc'   => '',
 				'style'  => '',
 				'name'   => 'Conditional Field',
-				'fields' => array()
+				'fields' => array(),
 			);
 			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
+			if ( false === $repeater ) {
 				$this->_fields[] = $new_field;
-			}
-			else {
+			} else {
 				return $new_field;
 			}
 		}
 
 		/**
 		 * Finish Declaration of Meta Box
+		 *
 		 * @author Ohad Raz
 		 * @since 1.0
 		 * @access public
@@ -1883,6 +2032,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 * Helper function to check for empty arrays
+		 *
 		 * @author Ohad Raz
 		 * @since 1.5
 		 * @access public
@@ -1890,20 +2040,19 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @param $args mixed|array
 		 */
 		public function is_array_empty( $array ) {
-			if( !is_array( $array ) ) {
+			if ( ! is_array( $array ) ) {
 				return true;
 			}
 
-			foreach( $array as $a ) {
-				if( is_array( $a ) ) {
-					foreach( $a as $sub_a ) {
-						if( !empty( $sub_a ) && $sub_a != '' ) {
+			foreach ( $array as $a ) {
+				if ( is_array( $a ) ) {
+					foreach ( $a as $sub_a ) {
+						if ( ! empty( $sub_a ) && $sub_a != '' ) {
 							return false;
 						}
 					}
-				}
-				else {
-					if( !empty( $a ) && $a != '' ) {
+				} else {
+					if ( ! empty( $a ) && $a != '' ) {
 						return false;
 					}
 				}
@@ -1927,18 +2076,18 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @return array file with error on mismatch
 		 */
 		function Validate_upload_file_type( $file ) {
-			if( isset( $_POST['uploadeType'] ) && !empty( $_POST['uploadeType'] ) && isset( $_POST['uploadeType'] ) && $_POST['uploadeType'] == 'my_meta_box' ) {
-				$allowed = explode( "|", $_POST['uploadeType'] );
+			if ( isset( $_POST['uploadeType'] ) && ! empty( $_POST['uploadeType'] ) && isset( $_POST['uploadeType'] ) && $_POST['uploadeType'] == 'my_meta_box' ) {
+				$allowed = explode( '|', $_POST['uploadeType'] );
 				$ext     = substr( strrchr( $file['name'], '.' ), 1 );
 
-				if( !in_array( $ext, (array)$allowed ) ) {
+				if ( ! in_array( $ext, (array) $allowed ) ) {
 					$file['error'] = __( 'Sorry, you cannot upload this file type for this field.', 'cyberchimps_core' );
 
 					return $file;
 				}
 
-				foreach( get_allowed_mime_types() as $key => $value ) {
-					if( strpos( $key, $ext ) || $key == $ext ) {
+				foreach ( get_allowed_mime_types() as $key => $value ) {
+					if ( strpos( $key, $ext ) || $key == $ext ) {
 						return $file;
 					}
 				}
@@ -1960,7 +2109,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 * @return string      sanitized string
 		 */
 		public function idfy( $str ) {
-			return str_replace( " ", "_", $str );
+			return str_replace( ' ', '_', $str );
 
 		}
 
@@ -1981,12 +2130,13 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 		/**
 		 * load_textdomain
+		 *
 		 * @author Ohad Raz
 		 * @since 2.9.4
 		 * @return void
 		 */
 		public function load_textdomain() {
-			//In themes/plugins/mu-plugins directory
+			// In themes/plugins/mu-plugins directory
 			load_textdomain( 'cyberchimps_core', dirname( __FILE__ ) . '/lang/' . get_locale() . 'mo' );
 		}
 	} // End Class
@@ -1998,27 +2148,27 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 
 		$this->show_field_begin( $field, $meta );
 		echo "<div class='image-select'>";
-		foreach( $field['options'] as $key => $option ) {
+		foreach ( $field['options'] as $key => $option ) {
 			echo "<img data-key='{$key}' class='" . ( $key == $meta ? ' selected' : '' ) . "' src='{$option}' />";
 		}
 		echo "<input type='hidden' name='{$field['id']}' />";
-		echo "</div>";
+		echo '</div>';
 		$this->show_field_end( $field, $meta );
 	}
 
 	public function show_field_section_order( $field, $meta ) {
-		//Define image path
-		$image_path = get_template_directory_uri() . "/cyberchimps/lib/images/";
+		// Define image path
+		$image_path = get_template_directory_uri() . '/cyberchimps/lib/images/';
 
 		$this->show_field_begin( $field, $meta );
 
-		echo "<div class='section-order' id=" . esc_attr( $field['id'] ) . ">";
+		echo "<div class='section-order' id=" . esc_attr( $field['id'] ) . '>';
 		echo "<div class='left-list'>";
 		echo "<div id='inactive'>Inactive Elements</div>";
 		echo "<div class='list-items'>";
-		foreach( $field['options'] as $key => $option ) {
-			if( is_array( $meta ) ) {
-				if( in_array( $key, $meta ) ) {
+		foreach ( $field['options'] as $key => $option ) {
+			if ( is_array( $meta ) ) {
+				if ( in_array( $key, $meta ) ) {
 					continue;
 				}
 			}
@@ -2026,31 +2176,31 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 			echo '<span class="glyphicon glyphicon-remove action"></span>';
 			echo "<span data-key='{$key}'>{$option}</span>";
 			echo "<span id='{$key}_img'></span>";
-			echo "</div>";
+			echo '</div>';
 		}
-		echo "</div>";
-		echo "</div>";
+		echo '</div>';
+		echo '</div>';
 		echo '<div id="arrow"><span class="glyphicon glyphicon-arrow-right"></span></div>';
 		echo "<div class='right-list'>";
 		echo "<div id='active'>Active Elements</div>";
 		echo "<div class='list-items'>";
-		if( is_array( $meta ) ) {
-			foreach( $meta as $key => $option ) {
-				if( !array_key_exists( $option, $field['options'] ) ) {
+		if ( is_array( $meta ) ) {
+			foreach ( $meta as $key => $option ) {
+				if ( ! array_key_exists( $option, $field['options'] ) ) {
 					continue;
 				}
 				echo "<div class='list-item'>";
 				echo '<span class="glyphicon glyphicon-remove action"></span>';
-				echo '<span data-key="' . $option . '">' . $field['options'][$option] . '</span>';
+				echo '<span data-key="' . $option . '">' . $field['options'][ $option ] . '</span>';
 				echo "<span id='{$option}_img'></span>";
-				echo "</div>";
+				echo '</div>';
 			}
 		}
-		echo "</div>";
-		echo "</div>";
+		echo '</div>';
+		echo '</div>';
 		echo "<input class='section-order-tracker' type='hidden' id={$field['id']} name={$field['id']} />";
 		echo '<div id="values"></div>';
-		echo "</div>";
+		echo '</div>';
 
 		$this->show_field_end( $field, $meta );
 	}
@@ -2083,12 +2233,12 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 		$this->show_field_begin( $field, $meta );
 		$meta = is_array( $meta ) ? '' : $meta;
 
-		if( $meta ) {
+		if ( $meta ) {
 			echo "<img class='image-preview' src='{$meta}' /><br/>";
 		}
 
 		echo "<input type='button' class='upload-image-button' value='" . __( 'Upload', 'cyberchimps_core' ) . "' />";
-		echo "<div class='upload-desc-field'>" . __( 'or enter URL', 'cyberchimps_core' ) . "</div>";
+		echo "<div class='upload-desc-field'>" . __( 'or enter URL', 'cyberchimps_core' ) . '</div>';
 		echo "<input class='upload-image-field' type='text' size='50' name='{$field['id']}' value='{$meta}'/>";
 
 		$this->show_field_end( $field, $meta );
@@ -2106,10 +2256,9 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 	 * @access public
 	 */
 	public function sanitize_field_editor( $input ) {
-		if( current_user_can( 'unfiltered_html' ) ) {
+		if ( current_user_can( 'unfiltered_html' ) ) {
 			$output = $input;
-		}
-		else {
+		} else {
 			global $allowedtags;
 			$output = wpautop( wp_kses( $input, $allowedtags ) );
 		}
@@ -2158,10 +2307,9 @@ class CyberChimps_Meta_Box extends AT_Meta_Box {
 	 * @access public
 	 */
 	public function sanitize_field_unfiltered_textarea( $input, $old ) {
-		if( current_user_can( 'unfiltered_html' ) ) {
+		if ( current_user_can( 'unfiltered_html' ) ) {
 			return $input;
-		}
-		else {
+		} else {
 			return $old;
 		}
 	}

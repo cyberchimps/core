@@ -30,7 +30,7 @@ function cyberchimps_add_sidebar_right() {
 	get_sidebar( 'right' );
 }
 
-//Setting content classes for different sidebars
+// Setting content classes for different sidebars
 function cyberchimps_content_sbr_class( $classes ) {
 	$classes[] = 'content-sidebar-right';
 

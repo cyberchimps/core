@@ -23,16 +23,16 @@ function cyberchimps_page_section_order_action() {
 	global $post;
 
 	// Checking for password protection.
-	if( !post_password_required() ) {
+	if ( ! post_password_required() ) {
 		$page_section_order = get_post_meta( $post->ID, 'cyberchimps_page_section_order', true );
 
 		// set page default if nothing is selected
 		$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
 		$slider_size        = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
-		if( is_array( $page_section_order ) ) {
+		if ( is_array( $page_section_order ) ) {
 
 			// Check if both of slider and page were active
-			if( in_array( 'page_slider', $page_section_order ) && in_array( 'page_section', $page_section_order ) ) {
+			if ( in_array( 'page_slider', $page_section_order ) && in_array( 'page_section', $page_section_order ) ) {
 
 				// Get position of slider and blog post page in the active elements list.
 				$position_slider = array_search( 'page_slider', $page_section_order );
@@ -42,13 +42,12 @@ function cyberchimps_page_section_order_action() {
 				cyberchimps_add_half_slider_action( $slider_order );
 			}
 
-			foreach( $page_section_order as $func ) {
+			foreach ( $page_section_order as $func ) {
 
 				// checks if slider is selected at half size, if it is it removes it so we can display it above page content
-				if( $func == 'page_slider' && $slider_size == 'half' ) {
+				if ( $func == 'page_slider' && $slider_size == 'half' ) {
 					$func = '';
-				}
-				else {
+				} else {
 					?>
 					<div class="container-full-width" id="<?php echo $func; ?>_section">
 						<div class="container">
@@ -61,12 +60,11 @@ function cyberchimps_page_section_order_action() {
 						</div>
 						<!-- .container -->
 					</div>    <!-- .container-full-width -->
-				<?php
+					<?php
 				}
 			}
 		}
-	}
-	else {
+	} else {
 		// Get the form to submit password
 		?>
 		<div class="container-full-width" id="<?php echo $func; ?>_section">
@@ -86,7 +84,7 @@ function cyberchimps_page_section_order_action() {
 			</div>
 			<!-- .container -->
 		</div>    <!-- .container-full-width -->
-	<?php
+		<?php
 	}
 }
 
@@ -102,13 +100,16 @@ function cyberchimps_page() {
 
 			<?php do_action( 'cyberchimps_before_content' ); ?>
 
-			<?php while( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template
-				if( comments_open() || '0' != get_comments_number() ) {
+				if ( comments_open() || '0' != get_comments_number() ) {
 					comments_template( '', true );
 				}
 				?>
@@ -123,7 +124,7 @@ function cyberchimps_page() {
 		<?php do_action( 'cyberchimps_after_content_container' ); ?>
 
 	</div><!-- #container .row-fluid-->
-<?php
+	<?php
 }
 
 add_action( 'page_section', 'cyberchimps_page' );

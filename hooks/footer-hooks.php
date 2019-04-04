@@ -28,16 +28,17 @@ function cyberchimps_footer_credit() {
 				<footer class="site-footer row-fluid">
 					<div class="span6">
 						<div id="credit">
-							<?php if( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1' ): ?>
+							<?php if ( cyberchimps_get_option( 'footer_cyberchimps_link', 1 ) == '1' ) : ?>
 								<a href="http://cyberchimps.com/" target="_blank" title="Premium WordPress Themes By CyberChimps">
-									<?php if( 'free' == cyberchimps_theme_check() ) { ?>
+									<?php if ( 'free' == cyberchimps_theme_check() ) { ?>
 										<h4 class="cc-credit-text">CyberChimps WordPress Themes</h4></a>
-									<?php }
-									else { ?>
+										<?php
+} else {
+	?>
 										
 										<img width="150px" height="auto" class="cc-credit-logo" src="<?php echo get_template_directory_uri(); ?>/cyberchimps/lib/images/logo_cc.png" alt="Premium WordPress Themes By CyberChimps"/>
 										</a>
-                                                                              <!--  <div class="market" style="line-height:2.3"><a href="http://neilpatel.com/" rel="noindex, nofollow">Marketed  By Neil Patel</a></div>-->
+																			  <!--  <div class="market" style="line-height:2.3"><a href="http://neilpatel.com/" rel="noindex, nofollow">Marketed  By Neil Patel</a></div>-->
 									<?php } ?>
 								
 							<?php endif; ?>
@@ -58,7 +59,7 @@ function cyberchimps_footer_credit() {
 		</div>
 		<!-- .container -->
 	</div>    <!-- #after_footer -->
-<?php
+	<?php
 }
 
 add_action( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
@@ -67,18 +68,18 @@ add_action( 'cyberchimps_footer', 'cyberchimps_footer_credit' );
 function cyberchimps_footer_widgets( $params ) {
 
 	// Checked if it's footer widgets.
-	if( 'Footer Widgets' == $params[0]['name'] ) {
-	
+	if ( 'Footer Widgets' == $params[0]['name'] ) {
+
 		// Declare a widget counter globally so that we can increase it in each iteration.
 		global $footer_widget_counter;
-		$footer_widget_counter++; 
+		$footer_widget_counter++;
 
 		// If it's 5(or multiple of 5)th widget then we need to close the current row-fluid div and start a new one.
 		if ( $footer_widget_counter % 5 == 0 ) {
 			echo '</div> <div class="row-fluid">';
 		}
 	}
-	
+
 	return $params;
 }
 add_filter( 'dynamic_sidebar_params', 'cyberchimps_footer_widgets' );
