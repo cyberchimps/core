@@ -197,7 +197,7 @@ msgstr "博客"
 msgid "Logo + Icons"
 msgstr "徽标 + 图标"
 
-#: ../../inc/cc-custom-background.php
+#: ../../inc/class-cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "或选择一幅 CyberChimps 的背景图片"
 
@@ -283,26 +283,26 @@ msgstr "说明"
 msgid "Custom Feature Slides"
 msgstr "自定义类别"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Remove"
 msgstr "删除"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Add"
 msgstr "加载 Ons"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "对不起，您不能上载此文件类型为此字段。"
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Upload"
 msgstr "上传"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "or enter URL"
 msgstr "或输入URL"
 

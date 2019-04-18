@@ -197,7 +197,7 @@ msgstr "Blog"
 msgid "Logo + Icons"
 msgstr "Logo + ikon"
 
-#: ../../inc/cc-custom-background.php
+#: ../../inc/class-cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "Atau pilih salah satu gambar latar belakang CyberChimps"
 
@@ -283,26 +283,26 @@ msgstr "Keterangan"
 msgid "Custom Feature Slides"
 msgstr "Kategori kustom"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Remove"
 msgstr "Hapus"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Add"
 msgstr "Add Ons"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Maaf, Anda tidak bisa meng-upload jenis file ini untuk bidang ini."
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Upload"
 msgstr "Meng-upload"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "or enter URL"
 msgstr "atau masukkan URL"
 

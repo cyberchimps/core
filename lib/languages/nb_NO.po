@@ -197,7 +197,7 @@ msgstr "Blogg"
 msgid "Logo + Icons"
 msgstr "Logo + Ikoner"
 
-#: ../../inc/cc-custom-background.php
+#: ../../inc/class-cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "Eller velg en av CyberChimps´ bakgrunnsbilder"
 
@@ -283,26 +283,26 @@ msgstr "Bildetekst"
 msgid "Custom Feature Slides"
 msgstr "Tilpassede kategorier"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Remove"
 msgstr "Fjern"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Add"
 msgstr "Tillegg"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Beklager, du ikke kan laste opp denne filtypen for dette feltet."
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Upload"
 msgstr "Last opp"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "or enter URL"
 msgstr "eller skriv inn URL"
 

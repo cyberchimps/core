@@ -197,7 +197,7 @@ msgstr ""
 msgid "Logo + Icons"
 msgstr "Logo + ikone"
 
-#: ../../inc/cc-custom-background.php
+#: ../../inc/class-cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "Ili izaberi jednu od CyberChimps pozadinskih slika"
 
@@ -283,26 +283,26 @@ msgstr "Naslov"
 msgid "Custom Feature Slides"
 msgstr "Prilagođene kategorije"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Remove"
 msgstr "Ukloni"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Add"
 msgstr ""
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "Upload"
 msgstr "Učitaj"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/class-at-meta-box.php
 msgid "or enter URL"
 msgstr "ubaci URL"
 

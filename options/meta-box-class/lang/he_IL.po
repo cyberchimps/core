@@ -17,40 +17,40 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\wamp\\www\\dev\\ttt\\wp-content\\plugins\\My-Meta-"
 "Box\\meta-box-class\n"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:256
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:256
 msgid "Delete this image"
 msgstr "מחק תמונה זאת"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:256
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:867
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:256
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:867
 msgid "Delete"
 msgstr "מחק"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:348
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:348
 msgid "Cannot delete file. Something's wrong."
 msgstr "שגיאה במחיקת קובץ"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:560
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:605
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:560
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:605
 msgid "Remove"
 msgstr "הסר"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:572
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:572
 msgid "Add"
 msgstr "הוסף"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:863
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:863
 msgid "Uploaded files"
 msgstr "קבצים שהועלו"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:874
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:874
 msgid "Upload new files"
 msgstr "העלה קבצים חדשים"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:880
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:880
 msgid "Add more files"
 msgstr "הוסף קבצים"
 
-#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/my-meta-box-class.php:930
+#: C:\wamp\www\dev\ttt\wp-content\plugins\My-Meta-Box\meta-box-class/class-at-meta-box.php:930
 msgid "Select a color"
 msgstr "בחר צבע"
