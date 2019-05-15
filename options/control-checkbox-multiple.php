@@ -10,7 +10,7 @@
  *
  * @link http://justintadlock.com/archives/2015/05/26/multiple-checkbox-customizer-control
  */
-class Cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
+class cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
 
 	/**
 	 * The type of customize control being rendered.
@@ -29,7 +29,7 @@ class Cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Contr
 	 * @return void
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'cyberchimps-customize-controls', trailingslashit( get_template_directory_uri() ) . 'cyberchimps/options/lib/js/customize-controls.js', array( 'jquery' ), '1.0', false );
+		wp_enqueue_script( 'cyberchimps-customize-controls', trailingslashit( get_template_directory_uri() ) . 'cyberchimps/options/lib/js/customize-controls.js', array( 'jquery' ) );
 	}
 
 	/**
@@ -50,7 +50,7 @@ class Cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Contr
 		<?php endif; ?>
 
 		<?php if ( ! empty( $this->description ) ) : ?>
-			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+			<span class="description customize-control-description"><?php echo $this->description; ?></span>
 		<?php endif; ?>
 
 		<?php $multi_values = ! is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value(); ?>
@@ -60,7 +60,7 @@ class Cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Contr
 
 				<li>
 					<label>
-						<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values, true ) ); ?> />
+						<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> /> 
 						<?php echo esc_html( $label ); ?>
 					</label>
 				</li>

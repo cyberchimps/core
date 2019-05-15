@@ -197,7 +197,7 @@ msgstr "Blog"
 msgid "Logo + Icons"
 msgstr "Logo + icone"
 
-#: ../../inc/class-cc-custom-background.php
+#: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "O scegliere una delle immagini di sfondo CyberChimps"
 
@@ -283,26 +283,26 @@ msgstr "Didascalia"
 msgid "Custom Feature Slides"
 msgstr "Categorie personalizzate"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "Rimuovi"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Add"
 msgstr "Add Ons"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "Siamo spiacenti, non è possibile caricare questo tipo di file per questo campo."
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Upload"
 msgstr "Upload"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "or enter URL"
 msgstr "o immettere l'URL"
 

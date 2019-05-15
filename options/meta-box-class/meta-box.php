@@ -15,7 +15,7 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// Exit if accessed directly.
+// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -71,21 +71,20 @@ if ( is_admin() ) {
 			'id'        => 'cyberchimps_page_help',
 			'class'     => 'help-message',
 			'name'      => __( 'Need Help?', 'cyberchimps_core' ),
-			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( wp_kses( 'Visit the %s page options guide', 'cyberchimps_core' ), $themenamefull ) . '</a></td>',
+			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'cyberchimps_core' ), $themenamefull ) . '</a></td>',
 		),
 	);
-
 	/*
 	 * configure your meta box
 	 */
 	$config = array(
-		'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box.
-		'title'          => __( 'Page Options', 'cyberchimps_core' ), // meta box title.
-		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional.
-		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional.
-		'priority'       => 'high', // order of meta box: high (default), low; optional.
-		'fields'         => apply_filters( 'cyberchimps_page_metabox_options', $fields ), // list of meta fields (can be added by field arrays).
-		'local_images'   => false, // Use local or hosted images (meta box images for add/remove).
+		'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box
+		'title'          => __( 'Page Options', 'cyberchimps_core' ), // meta box title
+		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
+		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
+		'priority'       => 'high', // order of meta box: high (default), low; optional
+		'fields'         => apply_filters( 'cyberchimps_page_metabox_options', $fields ), // list of meta fields (can be added by field arrays)
+		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 		'use_with_theme' => true, // change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 	);
 
@@ -136,20 +135,20 @@ if ( is_admin() ) {
 	* configure your meta box
 	*/
 	$slider_config = array(
-		'id'             => 'post_slider_options', // meta box id, unique per meta box.
-		'title'          => __( 'Custom Feature Slides', 'cyberchimps_core' ), // meta box title.
-		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional.
-		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional.
-		'priority'       => 'high', // order of meta box: high (default), low; optional.
-		'fields'         => $slider_fields, // list of meta fields (can be added by field arrays).
-		'local_images'   => false, // Use local or hosted images (meta box images for add/remove).
+		'id'             => 'post_slider_options', // meta box id, unique per meta box
+		'title'          => __( 'Custom Feature Slides', 'cyberchimps_core' ), // meta box title
+		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional
+		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
+		'priority'       => 'high', // order of meta box: high (default), low; optional
+		'fields'         => $slider_fields, // list of meta fields (can be added by field arrays)
+		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 		'use_with_theme' => true, // change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 	);
 
 	/*
 	* Initiate your meta box
 	*/
-	if ( 'free' !== cyberchimps_theme_check() ) {
+	if ( 'free' != cyberchimps_theme_check() ) {
 		$slider_meta = new Cyberchimps_Meta_Box( $slider_config );
 	}
 	/************************************ POST SLIDER OPTIONS ENDS */

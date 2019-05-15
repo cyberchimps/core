@@ -17,65 +17,61 @@
 
 if ( ! function_exists( 'cyberchimps_core_setup_theme' ) ) :
 
-	/**
-	 * Setup the theme
-	 *
-	 * @return void [description]
-	 */
+	// Setup the theme
 	function cyberchimps_core_setup_theme() {
 
-		// Set directory path.
+		// Set directory path
 		$directory = get_template_directory();
 
-		// Load core functions file.
+		// Load core functions file
 		require_once $directory . '/cyberchimps/functions.php';
 
-		// Load core hooks file.
+		// Load core hooks file
 		require_once $directory . '/cyberchimps/inc/hooks.php';
 
-		// Load element files before meta and options.
+		// Load element files before meta and options
 		require_once $directory . '/elements/init.php';
 
-		// Load santize before options-init and options core.
+		// Load santize before options-init and options core
 		require_once $directory . '/cyberchimps/options/options-sanitize.php';
 
-		// Load core options file.
+		// Load core options file
 		require_once $directory . '/cyberchimps/options/options-init.php';
 
-		// Load default core settings.
+		// Load default core settings
 		require_once $directory . '/cyberchimps/options/options-core.php';
 
-		// Load core hooks file.
-		require_once $directory . '/cyberchimps/inc/class-cc-custom-background.php';
+		// Load core hooks file
+		require_once $directory . '/cyberchimps/inc/cc-custom-background.php';
 
-		// Load pro features if a pro theme. Load prior to meta boxes so that filters work.
-		if ( 'pro' === cyberchimps_theme_check() ) {
+		// Load pro features if a pro theme. Load prior to meta boxes so that filters work
+		if ( cyberchimps_theme_check() == 'pro' ) {
 			require_once $directory . '/elements/setup/features.php';
 		}
 
-		// Load new meta box class.
-		require_once $directory . '/cyberchimps/options/meta-box-class/class-at-meta-box.php';
+		// Load new meta box class
+		require_once $directory . '/cyberchimps/options/meta-box-class/my-meta-box-class.php';
 
-		// Load new meta box options.
+		// Load new meta box options
 		require_once $directory . '/cyberchimps/options/meta-box-class/meta-box.php';
 
 		// Load theme upsell.
 		require_once $directory . '/cyberchimps/options/theme-upsell.php';
 
-		// Core Translations can be filed in the /inc/languages/ directory.
+		// Core Translations can be filed in the /inc/languages/ directory
 		load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
 		load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );
 
-		// Add support for the Aside Post Formats.
+		// Add support for the Aside Post Formats
 		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
-		// Add default posts and comments RSS feed links to head.
+		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
 
-		// Enable support for Post Thumbnails.
+		// Enable support for Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
 
-		// add theme support for backgrounds.
+		// add theme support for backgrounds
 		$defaults = array(
 			'default-color'    => apply_filters( 'default_background_color', '' ),
 			'default-image'    => apply_filters( 'default_background_image', '' ),
@@ -93,25 +89,21 @@ if ( ! function_exists( 'cyberchimps_core_setup_theme' ) ) :
 			)
 		);
 
-		// set up defaults.
+		// set up defaults
 		$option_defaults = cyberchimps_get_default_values();
 		if ( ! get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 			update_option( 'cyberchimps_options', $option_defaults );
-		} elseif ( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) { // if not then set up defaults for this theme.
+		} //if not then set up defaults for this theme
+		elseif ( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 			$options                         = get_option( 'cyberchimps_options' );
 			$options['header_section_order'] = $option_defaults['header_section_order'];
 			$options['theme_backgrounds']    = $option_defaults['theme_backgrounds'];
 			update_option( 'cyberchimps_options', $options );
 		}
 	}
-endif; // cyberchimps_core_setup_theme.
+endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
-/**
- * [cyberchimps_custom_background_cb description]
- *
- * @return [type] [description]
- */
 function cyberchimps_custom_background_cb() {
 
 	$style = '';
@@ -122,7 +114,7 @@ function cyberchimps_custom_background_cb() {
 	// A default has to be specified in style.css. It will not be printed here.
 	$color = get_theme_mod( 'background_color' );
 
-	// CyberChimps background image.
+	// CyberChimps background image
 	$cc_background = get_theme_mod( 'cyberchimps_background' );
 
 	if ( ! $background && ! $color && ! $cc_background ) {
@@ -133,25 +125,25 @@ function cyberchimps_custom_background_cb() {
 		$image = " background-image: url('$background');";
 
 		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
-		if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ), true ) ) {
+		if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
 			$repeat = 'repeat';
 		}
 		$repeat = " background-repeat: $repeat;";
 
 		$position = get_theme_mod( 'background_position_x', 'left' );
-		if ( ! in_array( $position, array( 'center', 'right', 'left' ), true ) ) {
+		if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
 			$position = 'left';
 		}
 		$position = " background-position: top $position;";
 
 		$attachment = get_theme_mod( 'background_attachment', 'scroll' );
-		if ( ! in_array( $attachment, array( 'fixed', 'scroll' ), true ) ) {
+		if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
 			$attachment = 'scroll';
 		}
 		$attachment = " background-attachment: $attachment;";
 
 		$style = $image . $repeat . $position . $attachment;
-	} elseif ( 'none' !== $cc_background && ! empty( $cc_background ) ) {
+	} elseif ( $cc_background != 'none' && ! empty( $cc_background ) ) {
 		$img_url = get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . $cc_background . '.jpg';
 		$style   = "background-image: url( '$img_url' );";
 	} elseif ( $color ) {
@@ -161,22 +153,18 @@ function cyberchimps_custom_background_cb() {
 
 	<style type="text/css">
 		body {
-		<?php echo esc_html( trim( $style ) ); ?>
+		<?php echo trim( $style ); ?>
 		}
 	</style>
-
+	
 	<?php
 }
 
-/**
- * Register our sidebars and widgetized areas.
- *
- * @return void [description]
- */
+// Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
 
 	// Add left sidebar only to pro themes as it is not avialble in free.
-	if ( 'pro' === cyberchimps_theme_check() ) {
+	if ( 'pro' == cyberchimps_theme_check() ) {
 		register_sidebar(
 			array(
 				'name'          => __( 'Sidebar Left', 'cyberchimps_core' ),
@@ -214,11 +202,6 @@ function cyberchimps_widgets_init() {
 
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
 
-/**
- * [cyberchimps_load_hooks description]
- *
- * @return void [description]
- */
 function cyberchimps_load_hooks() {
 
 	// Set the path to hooks directory.
@@ -233,29 +216,20 @@ function cyberchimps_load_hooks() {
 
 add_action( 'after_setup_theme', 'cyberchimps_load_hooks' );
 
-/**
- * After install redirect user to options page if it's a pro theme.
- *
- * @return void [description]
- */
+// after install redirect user to options page if it's a pro theme.
 function cyberchimps_pro_welcome_notice() {
 	global $pagenow;
-	if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
+	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) {
 
-		if ( 'pro' === cyberchimps_theme_check() ) {
-			wp_safe_redirect( 'themes.php?page=cyberchimps-theme-options' );
+		if ( 'pro' == cyberchimps_theme_check() ) {
+			wp_redirect( 'themes.php?page=cyberchimps-theme-options' );
 		}
 	}
 }
 add_action( 'after_setup_theme', 'cyberchimps_pro_welcome_notice' );
 
-// Function to check for additional CSS option in WP 4.7 and above.
+// Function to check for additional CSS option in WP 4.7 and above
 add_action( 'after_setup_theme', 'cyberchimps_custom_css_migrate' );
-/**
- * Function to check for additional CSS option in WP 4.7 and above.
- *
- * @return void [description]
- */
 function cyberchimps_custom_css_migrate() {
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
 		$custom_css = cyberchimps_get_option( 'custom_css' );
@@ -270,12 +244,6 @@ function cyberchimps_custom_css_migrate() {
 	}
 }
 
-/**
- * [remove_custom_css_option description]
- *
- * @param  [type] $name [description].
- * @return [type]       [description]
- */
 function remove_custom_css_option( $name ) {
 	$mods = get_option( 'cyberchimps_options' );
 

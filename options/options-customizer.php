@@ -27,7 +27,7 @@ function cyberchimps_customize( $wp_customize ) {
 	 *
 	 * Creates a form input type with the option to add description and placeholders
 	 */
-	require_once trailingslashit( get_template_directory() ) . 'cyberchimps/options/class-cyberchimps-customize-control-checkbox-multiple.php';
+	require_once trailingslashit( get_template_directory() ) . 'cyberchimps/options/control-checkbox-multiple.php';
 
 	class Cyberchimps_Form extends WP_Customize_Control {
 
@@ -1254,7 +1254,7 @@ function cyberchimps_customize( $wp_customize ) {
 	}
 	$wp_customize->add_setting( 'cyberchimps_exclude_post_cat', array( 'sanitize_callback' => 'cyberchimps_sanitize_multiple_checkboxes' ) );
 	$wp_customize->add_control(
-		new Cyberchimps_Customize_Control_Checkbox_Multiple(
+		new cyberchimps_Customize_Control_Checkbox_Multiple(
 			$wp_customize,
 			'cyberchimps_exclude_post_cat',
 			array(

@@ -197,7 +197,7 @@ msgstr "ब्लॉग"
 msgid "Logo + Icons"
 msgstr "लोगो + माउस को आइकनों"
 
-#: ../../inc/class-cc-custom-background.php
+#: ../../inc/cc-custom-background.php
 msgid "Or choose one of CyberChimps background images"
 msgstr "या CyberChimps पृष्ठभूमि छवियों में से एक का चयन"
 
@@ -283,26 +283,26 @@ msgstr "कैप्शन"
 msgid "Custom Feature Slides"
 msgstr "कस्टम श्रेणियों"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Remove"
 msgstr "हटाना"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Add"
 msgstr "Ons जोड़ें"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr "क्षमा करें, आप इस फ़ील्ड के लिए इस प्रकार की फ़ाइल को अपलोड नहीं कर सकते।"
 
 #: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "Upload"
 msgstr "अपलोड करें"
 
-#: ../../options/meta-box-class/class-at-meta-box.php
+#: ../../options/meta-box-class/my-meta-box-class.php
 msgid "or enter URL"
 msgstr "या URL दर्ज करें"
 

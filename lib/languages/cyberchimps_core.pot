@@ -197,7 +197,7 @@ msgstr ""
 msgid "Logo + Icons"
 msgstr ""
 
-#: inc/class-cc-custom-background.php:93
+#: inc/cc-custom-background.php:93
 msgid "Or choose one of CyberChimps background images"
 msgstr ""
 
@@ -278,26 +278,26 @@ msgstr ""
 msgid "Custom Feature Slides"
 msgstr ""
 
-#: options/meta-box-class/class-at-meta-box.php:418
-#: options/meta-box-class/class-at-meta-box.php:460
+#: options/meta-box-class/my-meta-box-class.php:418
+#: options/meta-box-class/my-meta-box-class.php:460
 msgid "Remove"
 msgstr ""
 
-#: options/meta-box-class/class-at-meta-box.php:431
+#: options/meta-box-class/my-meta-box-class.php:431
 msgid "Add"
 msgstr ""
 
-#: options/meta-box-class/class-at-meta-box.php:1935
-#: options/meta-box-class/class-at-meta-box.php:1945
+#: options/meta-box-class/my-meta-box-class.php:1935
+#: options/meta-box-class/my-meta-box-class.php:1945
 msgid "Sorry, you cannot upload this file type for this field."
 msgstr ""
 
-#: options/meta-box-class/class-at-meta-box.php:2087
+#: options/meta-box-class/my-meta-box-class.php:2087
 #: options/options-medialibrary-uploader.php:113
 msgid "Upload"
 msgstr ""
 
-#: options/meta-box-class/class-at-meta-box.php:2088
+#: options/meta-box-class/my-meta-box-class.php:2088
 msgid "or enter URL"
 msgstr ""
 

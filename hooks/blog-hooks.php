@@ -15,11 +15,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-/**
- * [cyberchimps_blog_section_order_action description].
- *
- * @return void [description]
- */
 function cyberchimps_blog_section_order_action() {
 	global $post;
 
@@ -37,29 +32,29 @@ function cyberchimps_blog_section_order_action() {
 	}
 
 	$blog_section_order = cyberchimps_get_option( 'blog_section_order', $defaults );
-	// select default in case options are empty.
-	$blog_section_order = ( '' === $blog_section_order ) ? array( 'blog_post_page' ) : $blog_section_order;
+	// select default in case options are empty
+	$blog_section_order = ( $blog_section_order == '' ) ? array( 'blog_post_page' ) : $blog_section_order;
 	$slider_size        = cyberchimps_get_option( 'blog_slider_size', 'full' );
 	if ( is_array( $blog_section_order ) ) {
 
-		// Check if both of slider and blog post were active.
-		if ( in_array( 'page_slider', $blog_section_order, true ) && in_array( 'blog_post_page', $blog_section_order, true ) ) {
+		// Check if both of slider and blog post were active
+		if ( in_array( 'page_slider', $blog_section_order ) && in_array( 'blog_post_page', $blog_section_order ) ) {
 
 			// Get position of slider and blog post page in the active elements list.
-			$position_slider    = array_search( 'page_slider', $blog_section_order, true );
-			$position_blog_post = array_search( 'blog_post_page', $blog_section_order, true );
+			$position_slider    = array_search( 'page_slider', $blog_section_order );
+			$position_blog_post = array_search( 'blog_post_page', $blog_section_order );
 
 			$slider_order = $position_slider > $position_blog_post ? 'after' : 'before';
 			cyberchimps_add_half_slider_action( $slider_order );
 		}
 
 		foreach ( $blog_section_order as $func ) {
-			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content.
-			if ( 'page_slider' === $func && 'half' === $slider_size ) {
+			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
+			if ( $func == 'page_slider' && $slider_size == 'half' ) {
 				$func = '';
 			} else {
 				?>
-				<div class="container-full-width" id="<?php echo esc_html( $func ); ?>_section">
+				<div class="container-full-width" id="<?php echo $func; ?>_section">
 					<div class="container">
 						<div class="container-fluid">
 							<?php
@@ -78,11 +73,6 @@ function cyberchimps_blog_section_order_action() {
 
 add_action( 'cyberchimps_blog_content', 'cyberchimps_blog_section_order_action' );
 
-/**
- * [cyberchimps_post description]
- *
- * @return void [description].
- */
 function cyberchimps_post() {
 
 	?>
@@ -134,12 +124,14 @@ function cyberchimps_blog_title() {
 		$title_toggle = cyberchimps_get_option( 'blog_title', false );
 		if ( $title_toggle ) {
 			$title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
-
-			echo wp_kses_post(
-				apply_filters(
-					'cyberchimps_blog_title_html',
-					'<div id="cyberchimps_blog_title" class="row-fluid"><header class="page-header"><h1 class="page-title">' . $title_text . '</h1></header></div>'
-				)
+			echo apply_filters(
+				'cyberchimps_blog_title_html',
+				'
+        <div id="cyberchimps_blog_title" class="row-fluid">
+            <header class="page-header">
+                <h1 class="page-title">' . $title_text . '</h1>
+            </header>
+        </div>'
 			);
 		}
 	}
