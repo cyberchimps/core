@@ -563,9 +563,14 @@ if ( ! class_exists( 'AT_Meta_Box' ) ) :
 		 * @access public
 		 */
 		public function show_field_hidden( $field, $meta ) {
-			// $this->show_field_begin( $field, $meta );
-			echo "<input type='hidden' " . ( isset( $field['style'] ) ? "style='{$field['style']}' " : '' ) . "class='at-text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' value='{$meta}'/>";
-			// $this->show_field_end( $field, $meta );
+			// $this->show_field_begin( $field, $meta ); .
+
+			$field_id    = isset( $field['id'] ) ? $field['id'] : '';
+			$field_class = isset( $field['class'] ) ? $field['class'] : '';
+			$field_style = isset( $field['style'] ) ? $field['style'] : '';
+
+			echo '<input type="hidden" id="' . $field_id . '" value="' . $meta . '" name="' . $field_id . '" style="' . $field_style . '" class="at-text "' . $field_class . '/>';
+			// $this->show_field_end( $field, $meta ); .
 		}
 
 		/**
