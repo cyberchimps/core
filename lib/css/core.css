@@ -451,3 +451,6 @@ a.symbol:hover {
     padding: 5px;
     width: 90px;
 }
+input[type="submit"]{
+	background-color: #eeeeee;
+}
