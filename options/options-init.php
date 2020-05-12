@@ -162,8 +162,6 @@ function cyberchimps_options_page() {
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
 					   target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
-				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-					   target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
 					   target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
 				<?php if ( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ) : ?>
@@ -195,7 +193,7 @@ function cyberchimps_options_page() {
 
 
 				<div class="cc-submenu-links">
-				 <a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
+				 <a class="btn" href="https://cyberchimps.com/services" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '
 					<?php
@@ -483,7 +481,7 @@ function cyberchimps_options_page() {
 			<!-- col-md-3 -->
 			<div class="span8">
 				<div class="footer-links">
-					<a class="btn" href="https://cyberchimps.com/contact/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
+					<a class="btn" href="https://cyberchimps.com/services/" title="Need Customization" target="_blank"><?php _e( 'Need Customization?', 'cyberchimps_core' ); ?></a>
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '
 					<?php
