@@ -1056,15 +1056,8 @@ function cyberchimps_add_half_slider_action( $slider_order ) {
 // Help text
 function cyberchimps_options_help_text() {
 	$text            = '';
-	$instruction_img = get_template_directory_uri() . '/cyberchimps/options/lib/images/document.png';
 	$support_img     = get_template_directory_uri() . '/cyberchimps/options/lib/images/questionsupport.png';
 	$text           .= '<div class="cc_help_section">
-						<div class="row-fluid"><div class="span3">
-							<a href="' . apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com' ) . '" title="CyberChimps Instructions">
-								<img src="' . $instruction_img . '" alt="CyberChimps Instructions" />
-								<div class="cc_help_caption"><p>' . __( 'Instructions', 'cyberchimps_core' ) . '</p></div>
-							</a>
-						</div>
 						<div class="span3">
 							<a href="' . apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com' ) . '" title="CyberChimps Support">
 								<img src="' . $support_img . '" alt="CyberChimps Help" />
