@@ -215,6 +215,10 @@ function cyberchimps_get_layout( $layout_type ) {
 	$content_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span8' : 'cyberchimps_class_span9';
 	$sidebar_span = ( $wide_sidebar == 1 ) ? 'cyberchimps_class_span4' : 'cyberchimps_class_span3';
 
+	if ( is_page_template( 'templates/full-width-page.php' ) ) {
+		$layout_type = 'full_width';
+	}
+
 	switch ( $layout_type ) {
 		case 'full_width':
 			add_filter( 'cyberchimps_content_class', 'cyberchimps_class_span12' );
