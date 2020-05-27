@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'WC_AM_Client_2_7' ) ) {
-	class WC_AM_Client_2_7 {
+if ( ! class_exists( 'CYBWC_AM_Client_2_7' ) ) {
+	class CYBWC_AM_Client_2_7 {
 
 		/**
 		 * Class args
