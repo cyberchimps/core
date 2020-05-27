@@ -35,13 +35,6 @@ function cyberchimps_admin_add_page() {
 		'cyberchimps-theme-options',
 		'cyberchimps_options_page'
 	);
-	$cyberchimps_login_page = add_theme_page(
-		__( 'CyberChimps Account', 'cyberchimps_core' ),
-		__( 'CyberChimps Account', 'cyberchimps_core' ),
-		'edit_theme_options',
-		'cyberchimps-account',
-		'cyberchimps_account_page'
-	);
 
 	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_load_styles' );
 	add_action( "admin_print_scripts-$cyberchimps_page", 'cyberchimps_load_scripts' );
@@ -513,54 +506,6 @@ function cyberchimps_options_page() {
 	</div>
 	<!-- container-fluid -->
 	</div><!-- wrap -->
-	<?php
-}
-
-// Function to display login page
-function cyberchimps_account_page() {
-	$strResponseMessage = '';
-	$cc_user_login_id   = get_option( 'cc_account_user_details' );
-
-	if ( isset( $_POST['ccSubmitBtn'] ) ) {
-		// Unset value if already set
-		update_option( 'cc_account_user_details', '' );
-		update_option( 'cc_account_status', '' );
-		$username = $_POST['ccuname'];
-		$password = $_POST['ccpwd'];
-
-		require_once dirname( dirname( __FILE__ ) ) . '/class-cc-updater.php';
-		if ( isset( $username ) && isset( $password ) ) {
-			$ccuser             = new CC_Updater( $username, $password );
-			$strResponseMessage = $ccuser->validate();
-			set_transient( 'cc_validate_user_details', 'validate_user', WEEK_IN_SECONDS );
-			$cc_user_login_id = get_option( 'cc_account_user_details' );
-		}
-	}
-	?>
-
-				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo 'Enter CyberChimps Account Details'; ?></h3></div>
-				<div class="panel panel-primary">
-<span class="ccinfo"><?php _e( 'To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials', 'cyberchimps_core' ); ?></span>
-
-					<span class="updateres">
-					<?php
-					if ( $strResponseMessage != '' ) {
-						echo $strResponseMessage;}
-					?>
-					</span>
-					  <div class="panel-body">
-						<form action="" id="formSettings" method="post">
-							 <div class="form-group">
-								<label for="ccuname">User Name</label>
-								<input type="text" id="ccuname" class="form-control" name="ccuname" placeholder="Enter Account User Name" data-placement="right" title="Please Enter User Name" value="<?php echo $cc_user_login_id['username']; ?>"/>
-								  <label for="ccpwd">Password</label>
-								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password']; ?>"/>
-						   </div>
-						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">
-					   </form>
-					</div>
-				</div>
-
 	<?php
 }
 
