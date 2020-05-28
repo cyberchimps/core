@@ -38,8 +38,6 @@ function cyberchimps_admin_add_page() {
 
 	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_load_styles' );
 	add_action( "admin_print_scripts-$cyberchimps_page", 'cyberchimps_load_scripts' );
-	add_action( "admin_print_styles-$cyberchimps_login_page", 'cyberchimps_load_styles_account' );
-	add_action( "admin_print_scripts-$cyberchimps_login_page", 'cyberchimps_load_scripts_account' );
 }
 
 function cyberchimps_load_styles() {
@@ -82,21 +80,6 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
 
 	wp_enqueue_script( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js' );
-}
-function cyberchimps_load_styles_account() {
-
-	// Set template directory uri
-	$directory_uri = get_template_directory_uri();
-
-	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-	wp_enqueue_style( 'plugin_option_styles', $directory_uri . '/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-
-}
-function cyberchimps_load_scripts_account() {
-
-	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
 }
 
 // Load options customizer file
@@ -1388,27 +1371,5 @@ function cyberchimps_fixed_menu_onscroll() {
 		});
 		</script>
 		<?php
-	}
-}
-add_action( 'admin_notices', 'cyberchimps_invalid_account_details' );
-// Function to display if inavalid account details
-function cyberchimps_invalid_account_details() {
-
-	if ( 'not_found' === get_option( 'cc_account_status' ) ) {
-		printf(
-			__(
-				'<div class="notice notice-error is-dismissible"><p><strong>CyberChimps - Invalid Account Details</strong>. Please re-enter <a href="%1$s" class="button">Re-Enter</a></p></div>'
-			),
-			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
-		);
-	}
-
-	if ( '' === get_option( 'cc_account_user_details' ) ) {
-		printf(
-			__(
-				'<div class="notice notice-info"><p><strong>Please enter CyberChimps Account Details in order to receive auto updates when available</strong>. <a href="%1$s" class="button">Click Here</a></p></div>'
-			),
-			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
-		);
 	}
 }
