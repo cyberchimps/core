@@ -35,18 +35,9 @@ function cyberchimps_admin_add_page() {
 		'cyberchimps-theme-options',
 		'cyberchimps_options_page'
 	);
-	$cyberchimps_login_page = add_theme_page(
-		__( 'CyberChimps Account', 'cyberchimps_core' ),
-		__( 'CyberChimps Account', 'cyberchimps_core' ),
-		'edit_theme_options',
-		'cyberchimps-account',
-		'cyberchimps_account_page'
-	);
 
 	add_action( "admin_print_styles-$cyberchimps_page", 'cyberchimps_load_styles' );
 	add_action( "admin_print_scripts-$cyberchimps_page", 'cyberchimps_load_scripts' );
-	add_action( "admin_print_styles-$cyberchimps_login_page", 'cyberchimps_load_styles_account' );
-	add_action( "admin_print_scripts-$cyberchimps_login_page", 'cyberchimps_load_scripts_account' );
 }
 
 function cyberchimps_load_styles() {
@@ -89,21 +80,6 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ), '', true );
 
 	wp_enqueue_script( 'cyberchimps-skytabs', $directory_uri . '/cyberchimps/options/lib/js/sky-tabs-ie8.js' );
-}
-function cyberchimps_load_styles_account() {
-
-	// Set template directory uri
-	$directory_uri = get_template_directory_uri();
-
-	wp_enqueue_style( 'bootstrap', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
-	wp_enqueue_style( 'cyberchimps-responsive', $directory_uri . '/cyberchimps/lib/bootstrap/css/cyberchimps-responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-	wp_enqueue_style( 'plugin_option_styles', $directory_uri . '/cyberchimps/options/lib/css/options-style.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-
-}
-function cyberchimps_load_scripts_account() {
-
-	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '', true );
 }
 
 // Load options customizer file
@@ -513,54 +489,6 @@ function cyberchimps_options_page() {
 	</div>
 	<!-- container-fluid -->
 	</div><!-- wrap -->
-	<?php
-}
-
-// Function to display login page
-function cyberchimps_account_page() {
-	$strResponseMessage = '';
-	$cc_user_login_id   = get_option( 'cc_account_user_details' );
-
-	if ( isset( $_POST['ccSubmitBtn'] ) ) {
-		// Unset value if already set
-		update_option( 'cc_account_user_details', '' );
-		update_option( 'cc_account_status', '' );
-		$username = $_POST['ccuname'];
-		$password = $_POST['ccpwd'];
-
-		require_once dirname( dirname( __FILE__ ) ) . '/class-cc-updater.php';
-		if ( isset( $username ) && isset( $password ) ) {
-			$ccuser             = new CC_Updater( $username, $password );
-			$strResponseMessage = $ccuser->validate();
-			set_transient( 'cc_validate_user_details', 'validate_user', WEEK_IN_SECONDS );
-			$cc_user_login_id = get_option( 'cc_account_user_details' );
-		}
-	}
-	?>
-
-				<div class="panel-heading"><h3 class="panel-title" style="line-height: 20px;"><?php echo 'Enter CyberChimps Account Details'; ?></h3></div>
-				<div class="panel panel-primary">
-<span class="ccinfo"><?php _e( 'To receive update notifications and to update automatically, please authenticate your access using your CyberChimps Login Credentials', 'cyberchimps_core' ); ?></span>
-
-					<span class="updateres">
-					<?php
-					if ( $strResponseMessage != '' ) {
-						echo $strResponseMessage;}
-					?>
-					</span>
-					  <div class="panel-body">
-						<form action="" id="formSettings" method="post">
-							 <div class="form-group">
-								<label for="ccuname">User Name</label>
-								<input type="text" id="ccuname" class="form-control" name="ccuname" placeholder="Enter Account User Name" data-placement="right" title="Please Enter User Name" value="<?php echo $cc_user_login_id['username']; ?>"/>
-								  <label for="ccpwd">Password</label>
-								<input type="password" id="ccpwd" class="form-control" name="ccpwd" placeholder="Enter Password" data-placement="right" title="Please Enter Password" value="<?php echo $cc_user_login_id['password']; ?>"/>
-						   </div>
-						   <input type="submit" id="ccSubmitBtn" name="ccSubmitBtn" class="btn btn-primary" value="Authenticate">
-					   </form>
-					</div>
-				</div>
-
 	<?php
 }
 
@@ -1444,27 +1372,5 @@ function cyberchimps_fixed_menu_onscroll() {
 		});
 		</script>
 		<?php
-	}
-}
-add_action( 'admin_notices', 'cyberchimps_invalid_account_details' );
-// Function to display if inavalid account details
-function cyberchimps_invalid_account_details() {
-
-	if ( 'not_found' === get_option( 'cc_account_status' ) ) {
-		printf(
-			__(
-				'<div class="notice notice-error is-dismissible"><p><strong>CyberChimps - Invalid Account Details</strong>. Please re-enter <a href="%1$s" class="button">Re-Enter</a></p></div>'
-			),
-			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
-		);
-	}
-
-	if ( '' === get_option( 'cc_account_user_details' ) ) {
-		printf(
-			__(
-				'<div class="notice notice-info"><p><strong>Please enter CyberChimps Account Details in order to receive auto updates when available</strong>. <a href="%1$s" class="button">Click Here</a></p></div>'
-			),
-			esc_url( admin_url( 'admin.php?page=cyberchimps-account' ) )
-		);
 	}
 }
