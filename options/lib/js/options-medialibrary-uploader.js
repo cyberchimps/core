@@ -18,7 +18,7 @@
 
 		removeFile: function () {
 
-			$('.mlu_remove').live('click', function (event) {
+			$('.screenshot').on('click', '.mlu_remove' , function (event) {
 				$(this).hide();
 				$(this).parents().siblings('.input-append').children('.upload').attr('value', '');
 				$(this).parents('.screenshot').slideUp();
@@ -69,7 +69,7 @@
 				btnContent = true,
 				tbframe_interval;
 			// On Click
-			$('input.upload_button').live("click", function () {
+			$(".custom_logo_toggle").on("click", "input.upload_button", function () {
 				formfield = $(this).prev('input').attr('id');
 				formID = $(this).attr('rel');
 

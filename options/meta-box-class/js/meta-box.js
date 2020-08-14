@@ -34,7 +34,7 @@
          this.load_time_picker();
          this.load_date_picker();
          this.load_color_picker();
-         $(".at-re-toggle").live("click", function() {
+         $(".at-repater-block").on("click", ".at-re-toggle", function() {
              $(this).parent().find(".repeater-table").toggle("slow")
          });
          $(".repeater-sortable").sortable({
@@ -117,7 +117,7 @@
                              t.upload(e(this), "image")
                          }
                      });
-                     e(".simplePanelimageUploadclear,.simplePanelfileUploadclear").live("click", function(n) {
+                     e("li").on("click",".simplePanelimageUploadclear,.simplePanelfileUploadclear", function(n) {
                          n.preventDefault();
                          t.set_fields(e(this));
                          e(t.file_url).val("");
