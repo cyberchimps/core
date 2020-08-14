@@ -999,7 +999,8 @@ function cyberchimps_fields_callback( $value ) {
 				$font_color  = '<div class="input-prepend of-typography"><div id="' . esc_attr( $value['id'] ) . '_color_picker" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $typography_stored['color'] ) . '"></div></div>';
 				$font_color .= '<input class="of-color of-typography of-typography-color" name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" /></div>';
 			}
-
+			$font_style = isset( $font_style ) ? $font_style : '';
+			$font_color = isset( $font_color ) ? $font_color : '';
 			// Allow modification/injection of typography fields
 			$typography_fields = compact( 'font_size', 'font_face', 'font_style', 'font_color' );
 			$typography_fields = apply_filters( 'cyberchimps_typography_fields', $typography_fields, $typography_stored, $option_name, $value );

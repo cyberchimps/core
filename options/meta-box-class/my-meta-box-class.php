@@ -460,12 +460,12 @@ if ( ! class_exists( 'AT_Meta_Box' ) ) :
 			echo '<script>
         jQuery(document).ready(function() {
           var ' . $counter . ' = ' . $c . ';
-          jQuery("#add-' . $field['id'] . '").live(\'click\', function() {
+          jQuery(".re-control-clear").on(\'click\', "#add-' . $field['id'] . '", function() {
             ' . $counter . ' = ' . $counter . ' + 1;
             jQuery(this).before(\'' . $js_code . '\');
             update_repeater_fields();
           });
-              jQuery("#remove-' . $field['id'] . '").live(\'click\', function() {
+              jQuery("table,span").on(\'click\', "#remove-' . $field['id'] . '", function() {
                   jQuery(this).parent().parent().remove();
               });
           });
